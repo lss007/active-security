@@ -27,9 +27,9 @@
         <li class="nav-item"><a href="" class="nav-link">Manage Banners </a></li>
 
         <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link"> Section 1 </a></li>
-        <li class="nav-item"><a href="" class="nav-link"> Section 2 </a></li>
-        <li class="nav-item"><a href="" class="nav-link"> Section 3 </a></li>
-        <li class="nav-item"><a href="" class="nav-link"> Section 4 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link"> Section 2 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link"> Client logo </a></li>
+        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link"> Sliders </a></li>
         <li class="nav-item"><a href="" class="nav-link"> Section 5 </a></li>
 
 

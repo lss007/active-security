@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home_banners', function (Blueprint $table) {
+        Schema::create('home_section_twos', function (Blueprint $table) {
             $table->id();
-            $table->text('main_title')->nullable();
-            $table->text('main_sub_title')->nullable();
             $table->text('heading')->nullable();
-            $table->text('banner_paragaph')->nullable();
-            $table->string('banner_image')->nullable();
-            $table->string('side_img')->nullable();
-            $table->text('button_text')->nullable();
+            $table->text('title')->nullable();
+            $table->longText('para1')->nullable();
+            $table->longText('para2')->nullable();
+            $table->string('image')->nullable();
+            $table->text('button_name')->nullable();
             $table->text('button_link')->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();
             $table->timestamps();
         });
@@ -36,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_banners');
+        Schema::dropIfExists('home_section_twos');
     }
 };

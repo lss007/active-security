@@ -48,7 +48,7 @@
                     </div>
                   </div><!-- col-4 -->
         
-                   <div class="col-lg-6">
+                   <div class="col-lg-4">
                      <div class="form-group">
                        <label class="form-control-label">Button text: <span class="tx-danger">*</span></label>
                        <input class="form-control" type="text" wire:model="buttonText"  placeholder="Button text">
@@ -56,7 +56,15 @@
                     
                      </div>
                    </div><!-- col-4 -->
-                   <div class="col-lg-6">
+                   <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label">Button link: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="url" wire:model="button_link"  placeholder="Button link">
+                      @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                   
+                    </div>
+                  </div><!-- col-4 -->
+                   <div class="col-lg-4">
                     <div class="form-group">
                       <label class="form-control-label">Banner Image: <span class="tx-danger">*</span></label>
                       <input type="file" class="form-control"   wire:model="banner_Image" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" accept="image/*">

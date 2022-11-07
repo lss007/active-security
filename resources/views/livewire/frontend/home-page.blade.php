@@ -74,6 +74,7 @@
                 <li><img src="{{ asset('frontend/images/p-logo-3.svg')}}" alt="..."></li>
                 <li><img src="{{ asset('frontend/images/p-logo-4.png')}}" alt="..."></li>
                 <li><img src="{{ asset('frontend/images/p-logo-5.svg')}}" alt="..."></li>
+                
               </ul>
             </div>
           </div>

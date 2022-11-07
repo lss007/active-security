@@ -7,7 +7,7 @@ use Livewire\WithFileUploads;
 class AddHomeBanner extends Component
 {
     use WithFileUploads;
-    public $mainTitle,$mainSubTitle ,$heading ,$bannerImage ,$buttonText,$bannerParagaph ;
+    public $mainTitle,$mainSubTitle ,$heading ,$bannerImage ,$buttonText ,$button_link,$bannerParagaph ;
 
     protected $rules = [
         'mainTitle' => 'required',
@@ -38,8 +38,12 @@ class AddHomeBanner extends Component
             'main_title' =>    $this->mainTitle,
             'main_sub_title' =>    $this->mainSubTitle,
             'heading' =>    $this->heading,
-            'banner_image' =>    $fileName  ?? Null,
             'banner_paragaph' =>    $this->bannerParagaph,
+            'banner_image' =>    $fileName  ?? Null,
+            'button_text' =>    $buttonText  ?? Null,
+            'button_link' =>    $this->button_link,
+
+            
             ]);
             $notification = array(
                 'message' => 'Home Banner published successfully',

@@ -18,19 +18,24 @@
     <link href="{{asset('backend/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
-
     {{-- data table css  --}}
     <link href="{{asset('backend/lib/highlightjs/github.css')}}" rel="stylesheet">
+    {{-- editor  --}}
+    <link href="{{asset('backend/lib/medium-editor/medium-editor.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/lib/medium-editor/default.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/lib/summernote/summernote-bs4.css')}}" rel="stylesheet">
+  {{-- editor  --}}
     <link href="{{asset('backend/lib/SpinKit/spinkit.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/select2/css/select2.min.css')}}" rel="stylesheet">
     {{-- end data table css  --}}
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
-    @livewireStyles
+
       <!-- Toaster CSS -->
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
-  </head>
+      @livewireStyles
+    </head>
 
   <body>
 
@@ -68,6 +73,10 @@
     <script src="{{asset('backend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
     {{-- data table  --}}
     <script src="{{asset('backend/lib/highlightjs/highlight.pack.j')}}"></script>
+    {{-- editor  --}}
+    
+    {{-- editor  --}}
+
     <script src="{{asset('backend/lib/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{asset('backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
     <script src="{{asset('backend/lib/select2/js/select2.min.js')}}"></script>
@@ -114,7 +123,7 @@
  
  
 
-    @livewireScripts
+ 
             {{-- toastr js  --}}
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
             <script>
@@ -140,5 +149,6 @@
               @endif 
              </script>
             {{-- toastr js  --}}
+            @livewireScripts
   </body>
 </html>

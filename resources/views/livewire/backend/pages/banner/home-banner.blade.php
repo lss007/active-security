@@ -77,15 +77,28 @@
             </button>
           </div>
           <div class="modal-body pd-20">
-            <h6 class=" lh-3 mg-b-20">{{$banner->main_title}}</h6>
-            <h5 class=" lh-3 mg-b-20">{{$banner->main_sub_title}}</h5>
-            <h4 class=" lh-3 mg-b-20">{{$banner->heading}}</h4>
+            <h6 class=" lh-3 mg-b-20"><span class="text-primary">Banner Title :</span> {{isset($banner->main_title) ? $banner->main_title : "NA" }}</h6>
+            <h5 class=" lh-3 mg-b-20"> <span class="text-primary">SubTitle :</span> {{isset($banner->main_sub_title) ? $banner->main_sub_title :"NA"}}</h5>
+            <h4 class=" lh-3 mg-b-20"> <span class="text-primary">Heading :</span>{{isset($banner->heading) ? $banner->heading : "NA"}}</h4>
 
             <p class="mg-b-5">
-              {{$banner->banner_paragaph}}
+              <span class="text-primary">  Paragraph : </span>{{isset($banner->banner_paragaph) ? $banner->banner_paragaph : "NA"}}
             </p>
-       
+            <p class="mg-b-5">
+              <span class="text-primary"> Button text : </span>
+              
 
+                {{isset($banner->button_text) ? $banner->button_text : "NA"}}
+              </span>
+            </p>
+            <p class="mg-b-5">
+              <span class="text-primary"> Button Link : </span>
+              <a href="{{isset($banner->button_link) ? $banner->button_link : "https://www.example.com/"}}">
+              Button link</a>
+            </p>
+            <span class="text-primary"> Banner Image :</span>
+             <hr> 
+             
             <img width="300" class="img-fluid" src="{{(!empty($banner->banner_image))  
               ? asset('storage/Home-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." >
             

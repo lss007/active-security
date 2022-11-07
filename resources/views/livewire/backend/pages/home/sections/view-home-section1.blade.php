@@ -18,7 +18,10 @@
             <div class="card pd-20 pd-sm-40"> 
                     <div class="btn-demo">
                      <a href="{{route('addHomesection1')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
+                    @if(isset($homeSectionOne))
+
                      <a href="{{route('editHomesection1',$homeSectionOne->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
+                   @endif
                     </div><!-- btn-demo -->
             </div><!-- card -->
             

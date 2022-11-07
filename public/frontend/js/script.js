@@ -30,3 +30,11 @@ $('.cookiesCloseTrigger').click(function(){
 $('.ddLinkCol > a').click(function(){
   $(this).parent().find('ul.subMenu').slideToggle();
 })
+
+
+$('.scrollToSection').click(function(){
+  $('html, body').animate({
+    scrollTop: $( $(this).attr('href') ).offset().top - 90
+  }, 500);
+  return false;
+});

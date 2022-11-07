@@ -43,41 +43,67 @@
                    <div class="col-lg-3">
                     <div class="form-group">
                       <label class="form-control-label">Main Image : <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="mainimage" >
-                    @error('mainimage')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      <input type="file" class="form-control"   wire:model="main_img" >
+                    @error('main_img')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>
-                    @if(isset($mainimage)) <img id="output" src="{{$mainimage->temporaryUrl()}}" width="200" > @endif
-                
+                    {{-- for hidden old image if change   --}}
+                    @if(isset($main_img))
+                    @else
+
+                    <img class="img-fluid " src="{{(!empty($this->main_image)) 
+                      ? asset('storage/Home-section/'.$this->main_image):asset('no_image.jpg')}}" width="200" >
+                     
+                    @endif
+                    {{-- for hidden old image if change   --}}
+
+
+                    @if(isset($main_img))
+                         <img src="{{$main_img->temporaryUrl()}}" width="200"  class="img-fluid">
+                     @endif
                 </div><!-- col-4 -->
 
                 <div class="col-lg-3">
                     <div class="form-group">
                       <label class="form-control-label">logo Image one: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="logoimg1"  accept="image/*">
-                    @error('logoimg1')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      <input type="file" class="form-control"   wire:model="logoImg1"  accept="image/*">
+                    @error('logoImg1')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>
-                    @if(isset($logoimg1)) <img id="output" src="{{$logoimg1->temporaryUrl()}}" width="100" > @endif
+                    <img class="img-fluid {{isset($logoImg1) ? 'd-none' :  ''}}" src="{{(!empty($this->logo1)) 
+                      ? asset('storage/Home-section/'.$this->logo1):asset('no_image.jpg')}}" width="100" >
+                    @if(isset($logoImg1))
+                    <img src="{{$logoImg1->temporaryUrl()}}" width="100"  class="img-fluid">
+                    @endif
                 
                 </div><!-- col-4 -->
                 <div class="col-lg-3">
                     <div class="form-group">
                       <label class="form-control-label">logo Image two: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="logoimg2"  accept="image/*">
-                    @error('logoimg2')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      <input type="file" class="form-control"   wire:model="logoImg2"  accept="image/*">
+                    @error('logoImg2')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>
-                    @if(isset($logoimg2)) <img id="output" src="{{$logoimg2->temporaryUrl()}}" width="100" > @endif
+                    <img class="img-fluid {{isset($logoImg2) ? 'd-none' :  ''}}" src="{{(!empty($this->logo2)) 
+                      ? asset('storage/Home-section/'.$this->logo2):asset('no_image.jpg')}}" width="100" >
+                    @if(isset($logoImg2))
+                    <img src="{{$logoImg2->temporaryUrl()}}" width="100"  class="img-fluid">
+                    @endif
                 
                 </div><!-- col-4 -->
                 <div class="col-lg-3">
                     <div class="form-group">
                       <label class="form-control-label">logo Image three: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="logoimg3"  accept="image/*">
-                    @error('logoimg3')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      <input type="file" class="form-control"   wire:model="logoImg3"  accept="image/*">
+                    @error('logoImg3')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>
-                    @if(isset($logoimg3)) <img id="output" src="{{$logoimg3->temporaryUrl()}}" width="100" > @endif
+
+                    <img class="img-fluid {{isset($logoImg3) ? 'd-none' :  ''}}" src="{{(!empty($this->logo3)) 
+                      ? asset('storage/Home-section/'.$this->logo3):asset('no_image.jpg')}}" width="100" >
+                   
+                    @if(isset($logoImg3))
+                    <img src="{{$logoImg3->temporaryUrl()}}" width="100"  class="img-fluid">
+                    @endif
                 
                 </div><!-- col-4 -->
-
+              
                  
 
           

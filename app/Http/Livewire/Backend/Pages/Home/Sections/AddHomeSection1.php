@@ -8,7 +8,7 @@ use Livewire\WithFileUploads;
 class AddHomeSection1 extends Component
 {
     use WithFileUploads;
-public $heading,$sub_heading,$paragraph,$main_image,$logo1,$logo2,$logo3;
+    public $heading,$sub_heading,$paragraph,$main_image,$logo1,$logo2,$logo3;
 
     protected $rules = [
         'heading' => 'required',

@@ -11,6 +11,7 @@ class EditHomeSection1 extends Component
     use WithFileUploads;
 
     public $heading,$sub_heading,$paragraph,$main_image,$logo1,$logo2,$logo3 ,$secPostId,$editHomeSec1;
+    public $main_img , $logoImg1 ,$logoImg2 ,$logoImg3 ;
 
     public function mount($id){
         $this->secPostId = $id;
@@ -19,7 +20,7 @@ class EditHomeSection1 extends Component
         $this->sub_heading =  $this->editHomeSec1->sub_heading;
         $this->paragraph =  $this->editHomeSec1->paragraph; 
         $this->main_image = $this->editHomeSec1->main_image;
-        $this->logo1 = $this->editHomeSec1->logo1	;
+        $this->logo1 = $this->editHomeSec1->logo1;
         $this->logo2 = $this->editHomeSec1->logo2;
         $this->logo3 = $this->editHomeSec1->logo3;
 
@@ -29,20 +30,17 @@ class EditHomeSection1 extends Component
         'heading' => 'required',
         'sub_heading' => 'required',
         'paragraph' => 'required',
-        // 'main_image' => 'required|image|mimes:jpg,png,jpeg,svg,webp', 
-        // 'logo1' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:1040', 
-        // 'logo2' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:1040', 
-        // 'logo3' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:1040', 
+
     ];
 
    private function resetInputFields(){
         $this->heading = '';
         $this->sub_heading = '';
         $this->paragraph = '';
-        // $this->main_image = '';
-        // $this->logo1 = '';
-        // $this->logo2 = '';
-        // $this->logo3 = '';
+        $this->main_img = '';
+        $this->logoImg1 = '';
+        $this->logoImg2 = '';
+        $this->logoImg3 = '';
         }
     public function render()
     {
@@ -50,54 +48,77 @@ class EditHomeSection1 extends Component
     }
 
     public function updateHomeSection1(){
-        // dd($this->all());
-        // $this->validate();
 
-        // if($this->main_image)  {
-        //     $this->validate([
-        //         'main_image' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
-        //     ]);
-        //     $fileName1 = time().'_'.$this->main_image->getClientOriginalName();
-        //     $filePath1 = $this->main_image->storeAs('Home-section', $fileName1, 'public');
-        // }
-        // if($this->logo1)  {
-        //     $this->validate([
-        //         'logo1' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
-        //     ]);
-        //     $logoimg1 = time().'_'.$this->logo1->getClientOriginalName();
-        //     $filePath2 = $this->logo1->storeAs('Home-section', $logoimg1, 'public');
-        // }
+      
 
-        // if($this->logo3)  {
-        //     $this->validate([
-        //         'logo2' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
-        //     ]);
-        //     $logoimg2 = time().'_'.$this->logo2->getClientOriginalName();
-        //     $filePath3 = $this->logo2->storeAs('Home-section', $logoimg2, 'public');
-        // }
 
-        // if($this->logo3)  {
-        //     $this->validate([
-        //         'logo3' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
-        //     ]);
-        //     $logoimg3 = time().'_'.$this->logo3->getClientOriginalName();
-        //     $filePath4 = $this->logo3->storeAs('Home-section', $logoimg3, 'public');
-        // }
-             HomeSectionOne::where('id', $this->secPostId)->update([
-                    'heading' =>    $this->heading,
-                    'sub_heading' =>    $this->sub_heading,
-                    'paragraph' =>    $this->paragraph,
-                    // 'main_image' =>     $fileName1 ,
-                    // 'logo1' =>    $logoimg1 ?? Null,
-                    // 'logo2' =>   $logoimg2 ?? Null,
-                    // 'logo3' =>    $logoimg3 ?? Null,
-            ]);
-         
-            $notification = array(
-                'message' => 'Home Section updated successfully',
-                'alert-type' => 'success'
+            
+        if( $this->main_img || $this->logoImg1 || $this->logoImg2 || $this->logoImg3)  {
+     
+            if($this->main_img){    
+                      $this->validate([
+                            'main_img' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
+                        ]);
+                $fileName1 = time().'_'.$this->main_img->getClientOriginalName();
+                $filePath1 = $this->main_img->storeAs('Home-section', $fileName1, 'public');
+                HomeSectionOne::where('id', $this->secPostId)->update([
+                    'main_image' =>     $fileName1 ,
+                 ]);
+            }
+             if($this->logoImg1 ){
+                $this->validate([
+                    'logoImg1' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
+                ]);
+                $logofile1 = time().'_'.$this->logoImg1->getClientOriginalName();
+                $filePath2 = $this->logoImg1->storeAs('Home-section', $logofile1, 'public');
+                HomeSectionOne::where('id', $this->secPostId)->update([
+                    'logo1' =>     $logofile1 ,
+                 ]);
+            }
+            if( $this->logoImg2){
+                $this->validate([
+                    'logoImg2' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
+                ]);
+                $logofile2 = time().'_'.$this->logoImg2->getClientOriginalName();
+                $filePath3 = $this->logoImg2->storeAs('Home-section', $logofile2, 'public');
+                HomeSectionOne::where('id', $this->secPostId)->update([
+                    'logo2' =>     $logofile2 ,
+                 ]);
+            }  
+            if($this->logoImg3){
+                $this->validate([
+                    'logoImg3' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
+                ]);
+                $logofile3 = time().'_'.$this->logoImg3->getClientOriginalName();
+                $filePath4 = $this->logoImg3->storeAs('Home-section', $logofile3, 'public');
+                HomeSectionOne::where('id', $this->secPostId)->update([
+                    'logo3' =>     $logofile3 ,
+    
+                 ]);
+                }
+                 $notification = array(
+                'message' => 'Section Images  successfully',
+                'alert-type' => 'info'
             );
             return redirect()->route('manageHomeSection1')->with($notification);
+        }else{
+              $this->validate();
+            HomeSectionOne::where('id', $this->secPostId)->update([
+                'heading' =>    $this->heading,
+                'sub_heading' =>    $this->sub_heading,
+                'paragraph' =>    $this->paragraph,
+          
+        ]);
+            $notification = array(
+            'message' => 'Home Text Updated successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('manageHomeSection1')->with($notification);
+        }
+
+
+
+        
 
     }
 }

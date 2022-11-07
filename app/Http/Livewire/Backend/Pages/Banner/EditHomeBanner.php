@@ -8,7 +8,7 @@ use Livewire\WithFileUploads;
 class EditHomeBanner extends Component
 {
     use WithFileUploads;
-public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerImage  ,$banner_Image,$buttonText,$bannerParagaph ;
+public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerImage  ,$banner_Image,$buttonText, $button_link,$bannerParagaph ;
     public function mount($id){
             $this->hBannerId= $id;
             $this->editHomeBanner = HomeBanner::where('id', $this->hBannerId)->where('status',1)->first();
@@ -17,7 +17,11 @@ public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerI
             $this->heading =  $this->editHomeBanner->heading; 
             $this->bannerImage = $this->editHomeBanner->banner_image;
             $this->buttonText = $this->editHomeBanner->button_text	;
+            $this->button_link = $this->editHomeBanner->button_link;
             $this->bannerParagaph = $this->editHomeBanner->banner_paragaph;
+
+
+            
 
  }
     public function render()
@@ -57,6 +61,9 @@ public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerI
                         'main_sub_title' =>    $this->mainSubTitle,
                         'heading' =>    $this->heading,
                         'banner_paragaph' =>    $this->bannerParagaph,
+                        'button_text' =>    $buttonText  ?? Null,
+                        'button_link' =>    $this->button_link,
+
                 ]);
                     $notification = array(
                         'message' => 'Banner Text updated Updated',

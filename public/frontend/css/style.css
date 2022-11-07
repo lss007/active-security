@@ -92,9 +92,10 @@ body .form-select {
 	color: var(--white);
 	box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-.btnPrimary:hover {
+.btnPrimary:hover, .btn.btnPrimary:focus-visible, .btn.btnPrimary:active {
 	background-color: var(--primaryHoverColor);
 	color: var(--white);
+  border-color: transparent;
 }
 .btnPrimary2 {
   background-color: var(--p2);
@@ -247,7 +248,8 @@ body .form-select {
   bottom: 0;
   left: 50%;
   right: 50%;
-  border-bottom: 1px solid var(--secondaryColor);
+  /* border-bottom: 1px solid var(--secondaryColor); */
+  border-bottom: 2px solid var(--primaryColor);
   -webkit-transition: all 300ms ease-in-out 0s;
   -o-transition: all 300ms ease-in-out 0s;
   transition: all 300ms ease-in-out 0s;
@@ -334,7 +336,7 @@ body .form-select {
   z-index: 1;
 }
 .bannerContent {
-  max-width: 650px;
+  max-width: 600px;
 }
 .bannerContent p {
   font-size: 18px;
@@ -601,17 +603,19 @@ body .form-select {
 	-ms-align-items: center;
 	align-items: center;
 	justify-content: center;
-	width: 30px;
-	height: 30px;
+	width: 32px;
+	height: 32px;
 	background-color: var(--white);
 	border-radius: 50%;
 	position: fixed;
 	bottom: 25px;
 	-webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
+	-ms-transform: translateY(50%);
+	transform: translateY(50%);
 	left: 10px;
 	z-index: 20;
+	box-shadow: 0 0px 10px rgba(62,87,120,0.4);
+  padding: 6px;
 }
 
 
@@ -738,6 +742,9 @@ body .form-select {
 .sectonTitleCol {
 	margin: 0 auto;
 	max-width: 650px;
+}
+.sectonTitleCol.sMaxWdTitle {
+	max-width: 960px;
 }
 
 .stepsTextCol {
@@ -977,6 +984,36 @@ body .form-select {
 
 
 
+/* .bannerContent > .xlTitle {
+	max-width: 610px;
+}
+.bannerContent > .xlTitle br {
+  display: none;
+} */
+.nextSectionParent {
+  position: relative;
+}
+#nextSection {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+#nextSection {
+  top: 15px;
+}
+#nextSection {
+  top: 25px;
+}
+.serviceTitle {
+  max-width: 500px;
+}
+.contentMxWdTitle {
+  max-width: 550px;
+}
+
+
 /* Media Start */
 @media (min-width:992px) {
   .subMenu {
@@ -1062,7 +1099,7 @@ body .form-select {
   	font-size: 16px;
   }
   .bannerContent {
-  	max-width: 550px;
+  	max-width: 510px;
   }
   .sectionSpace {
   	padding: 100px 0;
@@ -1270,7 +1307,9 @@ body .form-select {
   #privacyModal .modal-body,  #privacyModal .modal-header {
   	padding: 15px;
   }
-
+  .serviceTitle {
+  	max-width: 450px;
+  }
 
 }
 
@@ -1495,6 +1534,12 @@ body .form-select {
   .smTitle {
   	font-size: 18px;
   }
+  .serviceTitle {
+  	max-width: 100%;
+  }
+  .tabStyle .nav-link {
+    font-size: 14px;
+  }
 }
 
 @media (max-width:767px) {
@@ -1652,7 +1697,10 @@ body .form-select {
   	font-size: 14px;
   }
   .bannerSection.innerPageBanner .xlTitle {
-  	margin-bottom: 2px;
+  	margin-bottom: 15px;
+  }
+  .bannerSection.innerPageBanner .bannerContent > p + .btn {
+  	margin-top: 15px;
   }
   .bannerSection.innerPageBanner {
   	/* min-height: 280px; */
@@ -1723,6 +1771,15 @@ body .form-select {
   }
   .bannerSection.s9Banner {
   	background-position: right -200px center;
+  }
+  .bannerSection.innerPageBanner.datenschutzBanner {
+  	background-position: right -150px center;
+  }
+  .bannerSection.s3Banner {
+  	background-position: left -300px center;
+  }
+  .bannerSection.s6Banner {
+  	background-position: left -350px center;
   }
 }
 @media (max-width:370px) {
