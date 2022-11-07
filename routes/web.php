@@ -4,16 +4,23 @@ use App\Http\Livewire\Backend\Dashboard;
 use App\Http\Livewire\Backend\Pages\Banner\AddHomeBanner;
 use App\Http\Livewire\Backend\Pages\Banner\EditHomeBanner;
 use App\Http\Livewire\Backend\Pages\Banner\HomeBanner;
+use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
+use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
+use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
 use App\Http\Livewire\Backend\Pages\Home\Clients\AddHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\EditHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\ViewHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Sections\AddHomeSection1;
 use App\Http\Livewire\Backend\Pages\Home\Sections\AddHomeSection2;
+use App\Http\Livewire\Backend\Pages\Home\Sections\AddHomeSection5;
 use App\Http\Livewire\Backend\Pages\Home\Sections\EditHomeSection1;
 use App\Http\Livewire\Backend\Pages\Home\Sections\EditHomeSection2;
+use App\Http\Livewire\Backend\Pages\Home\Sections\EditHomeSection5;
 use App\Http\Livewire\Backend\Pages\Home\Sections\ViewHomeSection1;
 use App\Http\Livewire\Backend\Pages\Home\Sections\ViewHomeSection2;
+use App\Http\Livewire\Backend\Pages\Home\Sections\ViewHomeSection5;
 use App\Http\Livewire\Backend\Pages\Home\Slider\AddHomeSliders;
+use App\Http\Livewire\Backend\Pages\Home\Slider\EditHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\ViewHomeSliders;
 use App\Http\Livewire\Frontend\Agb;
 use App\Http\Livewire\Frontend\BaustellenbewacHung;
@@ -89,38 +96,50 @@ Route::middleware([
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
-    Route::group(['middleware' => ['adminlogin']], function () {
-Route::get('/dashboard', Dashboard::class)->name('dashboard');
-
-
+Route::group(['middleware' => ['adminlogin']], function () {
+  Route::get('/dashboard', Dashboard::class)->name('dashboard');
 // Manage home page 
     Route::group(['prefix' =>'mange-banner'], function () {
         Route::get('/view-banner', HomeBanner::class)->name('viewHomebanner');
         Route::get('/add-banner', AddHomeBanner::class)->name('addHomebanner');
         Route::get('/edit-banner/{id}', EditHomeBanner::class)->name('editHomebanner');
-    });
+});
     //============== home page Section1 ==============
     Route::group(['prefix' =>'manage-home'], function () {
-    // Home Section1    
-    Route::get('/view-section/one', ViewHomeSection1::class)->name('manageHomeSection1');
-    Route::get('/add-section/one', AddHomeSection1::class)->name('addHomesection1');
-    Route::get('/edit-section/one/{id}', EditHomeSection1::class)->name('editHomesection1');
-    // Home Section2
-    Route::get('/view-section/two', ViewHomeSection2::class)->name('viewHomeSection2');
-    Route::get('/add-section/two', AddHomeSection2::class)->name('add_HomeSection2');
-    Route::get('/edit-section/two/{id}', EditHomeSection2::class)->name('edit_HomeSection2');
-    // View Home Clients
-    Route::get('/view-client/logo', ViewHomeClients::class)->name('viewHomeclients');
-    Route::get('/add-client/logo', AddHomeClients::class)->name('addHomeclients');
-    Route::get('/edit-client/logo/{id}', EditHomeClients::class)->name('editHomeclients');
-    // View Home Sliders
-    Route::get('/view-home/slider', ViewHomeSliders::class)->name('viewHomesliders');
-    Route::get('/add-home/slider', AddHomeSliders::class)->name('addHomesliders');
-
-    
-
-
+        // Home Section1    
+        Route::get('/view-section/one', ViewHomeSection1::class)->name('manageHomeSection1');
+        Route::get('/add-section/one', AddHomeSection1::class)->name('addHomesection1');
+        Route::get('/edit-section/one/{id}', EditHomeSection1::class)->name('editHomesection1');
+        // Home Section2
+        Route::get('/view-section/two', ViewHomeSection2::class)->name('viewHomeSection2');
+        Route::get('/add-section/two', AddHomeSection2::class)->name('add_HomeSection2');
+        Route::get('/edit-section/two/{id}', EditHomeSection2::class)->name('edit_HomeSection2');
+        // View Home Clients
+        Route::get('/view-client/logo', ViewHomeClients::class)->name('viewHomeclients');
+        Route::get('/add-client/logo', AddHomeClients::class)->name('addHomeclients');
+        Route::get('/edit-client/logo/{id}', EditHomeClients::class)->name('editHomeclients');
+        // View Home Sliders
+        Route::get('/view-home/slider', ViewHomeSliders::class)->name('viewHomesliders');
+        Route::get('/add-home/slider', AddHomeSliders::class)->name('addHomesliders');
+        Route::get('/edit-home/slider/{id}', EditHomeSliders::class)->name('editHomesliders');
+        // ViewHomeSection5
+        Route::get('/view-home/section/five', ViewHomeSection5::class)->name('ViewHomeSection5');
+        Route::get('/add-home/section/five', AddHomeSection5::class)->name('Add_Home_Section5'); 
+        Route::get('/edit-home/section/five/{id}', EditHomeSection5::class)->name('edit_Home_Section5');
+   
 });   
+    Route::group(['prefix' =>'manage-footer'], function () {
+        // FooterAddress
+        Route::get('/view', FooterAddress::class)->name('footer_address');
+        Route::get('/add', AddFooterAddress::class)->name('Add_footer_address');
+        Route::get('/edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
+
+        
+
+        
+        
+    });
+
     });
     //============== home page Section1 ==============
     

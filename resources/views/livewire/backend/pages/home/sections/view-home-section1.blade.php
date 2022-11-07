@@ -34,25 +34,25 @@
    
           <h6 class="card-body-title">
 
-            Main Meading :
+            <span class="text-primary">  Main Meading : </span>s
             <span class="tx-12 float-right badge badge-danger p-2">Created at:  {{isset($homeSectionOne->created_at) ? Carbon\Carbon::parse($homeSectionOne->created_at)->diffForHumans() : "NA"}}</span>
             {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
-          <p class="mg-b-20 mg-sm-b-30"> Main Sub Meading :  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
-          <p class="mg-b-20 mg-sm-b-30"> Paragraph {{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
+          <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Meading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
+          <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
           <div class="card wd-xs-300">
-            Main Image : 
+            <span class="text-primary">    Main Image : </span>
             <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->main_image)) 
               ? asset('storage/Home-section/'.$homeSectionOne->main_image):asset('no_image.jpg')}}" alt="..."  width="200px">
           </div><!-- card -->
 
    <hr>
-   <h2>Logo Images </h2>
+   <h2><span class="text-primary">Logo Images :</span></h2>
  
           <div class="row">
             <div class="col-md-3">
               
           <div class="card wd-xs-100">
-             Image one : 
+            <span class="text-primary">    Image one :  </span>
             <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo1)) 
               ? asset('storage/Home-section/'.$homeSectionOne->logo1):asset('no_image.jpg')}}" alt="..."  width="200px">
           </div><!-- card -->
@@ -60,7 +60,7 @@
             <div class="col-md-3">
               
               <div class="card wd-xs-100">
-                 Image two: 
+                <span class="text-primary">   Image two: </span>
                 <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo2)) 
                   ? asset('storage/Home-section/'.$homeSectionOne->logo2):asset('no_image.jpg')}}" alt="..."  width="200px">
               </div><!-- card -->
@@ -68,7 +68,7 @@
                 <div class="col-md-3">
               
                   <div class="card wd-xs-100">
-                     Image three: 
+                    <span class="text-primary">     Image three: </span>
                     <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo3)) 
                       ? asset('storage/Home-section/'.$homeSectionOne->logo3):asset('no_image.jpg')}}" alt="..."  width="200px">
                   </div><!-- card -->

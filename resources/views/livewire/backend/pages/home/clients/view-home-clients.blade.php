@@ -8,17 +8,17 @@
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title"> Manage Clients       
-            <a href="{{route('addHomesliders')}}" class="btn btn-sm btn-warning" style="float: right;"   >Add Clients</a>
+            <a href="{{route('addHomeclients')}}" class="btn btn-sm btn-warning" style="float: right;"   >Add Clients</a>
         </h6>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
                   {{-- <th class="wd-15p">Title </th>--}}
-                  <th class="wd-15p"> No </th> 
-                  <th class="wd-20p">Image</th>
+                  <th class="wd-5p"> No </th> 
+                  <th class="wd-20p ">Image</th>
                   <th class="wd-10p">Status</th>
-                  <th class="wd-25p">Action</th>
+                  <th class="wd-20p">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -28,7 +28,7 @@
             <td> {{  $keys+1}}</td>
       {{-- <td> {{Str::limit($clients->name,20,$end='....')}}</td> --}}
 
-            <td>
+            <td class="bg-dark">
               <img src="{{(!empty($clients->image)) 
                 ? asset('storage/Home-clients/'.$clients->image):asset('no_image.jpg')}}" alt="..." width="70">
             </td>

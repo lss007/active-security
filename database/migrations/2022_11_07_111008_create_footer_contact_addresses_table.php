@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home_section_sliders', function (Blueprint $table) {
+        Schema::create('footer_contact_addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('image')->nullable();
-            $table->string('button_text')->nullable();
-            $table->string('link')->nullable();
+            $table->text('telefon')->nullable();
+            $table->text('fax')->nullable();
+            $table->text('email')->nullable();
+            $table->text('address')->nullable();
+            $table->text('logo')->nullable();
             $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();
+
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_section_sliders');
+        Schema::dropIfExists('footer_contact_addresses');
     }
 };

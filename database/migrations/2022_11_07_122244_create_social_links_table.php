@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home_section_sliders', function (Blueprint $table) {
+        Schema::create('social_links', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('image')->nullable();
-            $table->string('button_text')->nullable();
+            $table->string('category')->nullable();
             $table->string('link')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('icon')->nullable();
             $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();
             $table->timestamps();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_section_sliders');
+        Schema::dropIfExists('social_links');
     }
 };

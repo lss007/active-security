@@ -45,7 +45,7 @@
               
         
                 
-        <p>{{$this->editHomeclient->image}}</p>
+      
          
         
               </div><!-- row -->

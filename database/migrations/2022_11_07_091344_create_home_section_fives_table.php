@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home_section_sliders', function (Blueprint $table) {
+        Schema::create('home_section_fives', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->longText('description')->nullable();
+            $table->text('heading')->nullable();
+            $table->text('title')->nullable();
+            $table->longText('para1')->nullable();
+            $table->longText('para2')->nullable();
             $table->string('image')->nullable();
-            $table->string('button_text')->nullable();
-            $table->string('link')->nullable();
+            $table->text('button_name')->nullable();
+            $table->text('button_link')->nullable();
             $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();
             $table->timestamps();
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_section_sliders');
+        Schema::dropIfExists('home_section_fives');
     }
 };

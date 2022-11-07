@@ -34,14 +34,16 @@
    
           <h6 class="card-body-title">
 
-            Main Meading :
+            <span class="text-primary"> Main Meading :</span>
             <span class="tx-12 float-right badge badge-danger p-2">Created at:  {{isset($homeSectionTwo->created_at) ? 
             Carbon\Carbon::parse($homeSectionTwo->created_at)->diffForHumans() : "NA"}}</span>
             {{ isset($homeSectionTwo->heading) ? $homeSectionTwo->heading : "NA" }}  </h6>
-          <p class="mg-b-20 mg-sm-b-30"> Main Sub Meading :  {{isset($homeSectionTwo->title)  ? $homeSectionTwo->title : "NA"}} </p>
-          <p class="mg-b-20 mg-sm-b-30"> Paragraph {{ isset($homeSectionTwo->para1) ? $homeSectionTwo->para1 : "NA"}} </p>
+          <h6 class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Main Sub Meading : </span> {{isset($homeSectionTwo->title)  ? $homeSectionTwo->title : "NA"}} </h6>
+          <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Paragraph : </span>{{ isset($homeSectionTwo->para1) ? $homeSectionTwo->para1 : "NA"}} </p>
+          <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph :</span>{{ isset($homeSectionTwo->para2) ? $homeSectionTwo->para2 : "NA"}} </p>
+
           <div class="card wd-xs-300">
-            Main Image : 
+            <span class="text-primary">    Main Image : </span>
             <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionTwo->image)) 
               ? asset('storage/Home-section/'.$homeSectionTwo->image):asset('no_image.jpg')}}" alt="..."  width="200px">
           </div><!-- card -->

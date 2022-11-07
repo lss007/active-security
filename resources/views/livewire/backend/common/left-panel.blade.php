@@ -4,7 +4,10 @@
     Active Secuirty </a>
   </div>
   <div class="sl-sideleft">
- 
+    @php
+    $prefix = Request::route()->getPrefix();
+
+    @endphp
 
     <label class="sidebar-label">Navigation</label>
     <div class="sl-sideleft-menu">
@@ -15,22 +18,22 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
    
-      <a href="#" class="sl-menu-link">
+      <a href="#" class="sl-menu-link ">
         <div class="sl-menu-item">
           <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
           <span class="menu-item-label">Manage Home </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link"> Banner </a></li>
+      <ul class="sl-menu-sub nav flex-column  ">
+        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner') ) active @else '' @endif"> Banner </a></li>
         <li class="nav-item"><a href="" class="nav-link">Manage Banners </a></li>
 
-        <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link"> Section 1 </a></li>
-        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link"> Section 2 </a></li>
-        <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link"> Client logo </a></li>
-        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link"> Sliders </a></li>
-        <li class="nav-item"><a href="" class="nav-link"> Section 5 </a></li>
+        <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link @if(Route::is('manageHomeSection1') ) active @else '' @endif"> Section 1 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link @if(Route::is('viewHomeSection2') ) active @else '' @endif"> Section 2 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> Client logo </a></li>
+        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" > Sliders </a></li>
+        <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif"> Section 5 </a></li>
 
 
 
@@ -44,7 +47,9 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="form-elements.html" class="nav-link">Form Elements</a></li>
+        <li class="nav-item">
+
+          <a href="{{route('footer_address')}}" class="nav-link @if(Route::is('footer_address') ) active @else '' @endif"><i class="fa fa-inbox"></i> Contact Address</a></li>
 
       </ul>
       <a href="#" class="sl-menu-link">
