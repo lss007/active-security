@@ -30,7 +30,7 @@
                           <li><a href="{{route('baustellenbewachungPage')}}">Baustellenbewachung</a></li>
                           <li><a href="{{route('openingAndclosingPage')}}">Öffnungs- und Schließddienst</a></li>
                           <li><a href="{{route('revierfahrtenPage')}}">Revierkontrollen</a></li>
-                          <li><a href="{{route('revierfahrtenPage')}}">Empfangsdienst</a></li>
+                          <li><a href="{{route('empfangsdienst')}}">Empfangsdienst</a></li>
                           <li><a href="{{route('ShopGuardPage')}}">Shop Guard</a></li>
                           <li><a href="{{route('VeranstaltungsSchutzPage')}}">Veranstaltungsschutz</a></li>
                         </ul>

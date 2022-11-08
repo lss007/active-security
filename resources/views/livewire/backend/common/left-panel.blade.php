@@ -48,21 +48,30 @@
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item">
+          <a href="{{route('footer_address')}}" class="nav-link 
+          @if(Route::is('footer_address') ) active @else '' @endif">
+           Contact Address</a></li>
 
-          <a href="{{route('footer_address')}}" class="nav-link @if(Route::is('footer_address') ) active @else '' @endif"><i class="fa fa-inbox"></i> Contact Address</a></li>
+           <li class="nav-item">
+            <a href="{{route('view_social_media')}}" class="nav-link 
+            @if(Route::is('view_social_media') ) active @else '' @endif">
+             Manage Social Media </a></li>
+
+             <li class="nav-item">
+              <a href="{{route('view_footer_logos')}}" class="nav-link 
+              @if(Route::is('view_footer_logos') ) active @else '' @endif">
+               Manage Footer Logos  </a></li>
+             
 
       </ul>
-      <a href="#" class="sl-menu-link">
+      <a href="{{route('view_services')}}" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
           <span class="menu-item-label">Dienstleistungen</span>
-          <i class="menu-item-arrow fa fa-angle-down"></i>
+        
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="blank.html" class="nav-link">Blank Page</a></li>
 
-      </ul>
 
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
@@ -113,3 +122,5 @@
 
     <br>
   </div>
+
+

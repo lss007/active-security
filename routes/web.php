@@ -7,6 +7,10 @@ use App\Http\Livewire\Backend\Pages\Banner\HomeBanner;
 use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
+use App\Http\Livewire\Backend\Pages\Footer\Logos\ViewFooterLogo;
+use App\Http\Livewire\Backend\Pages\Footer\Social\AddSocialMedia;
+use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialMedia;
+use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialMedia;
 use App\Http\Livewire\Backend\Pages\Home\Clients\AddHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\EditHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\ViewHomeClients;
@@ -22,11 +26,15 @@ use App\Http\Livewire\Backend\Pages\Home\Sections\ViewHomeSection5;
 use App\Http\Livewire\Backend\Pages\Home\Slider\AddHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\EditHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\ViewHomeSliders;
+use App\Http\Livewire\Backend\Pages\Services\AddServices;
+use App\Http\Livewire\Backend\Pages\Services\EditServices;
+use App\Http\Livewire\Backend\Pages\Services\ViewServices;
 use App\Http\Livewire\Frontend\Agb;
 use App\Http\Livewire\Frontend\BaustellenbewacHung;
 use App\Http\Livewire\Frontend\Centerbewachung;
 use App\Http\Livewire\Frontend\Contact;
 use App\Http\Livewire\Frontend\Datenschutz;
+use App\Http\Livewire\Frontend\Empfangsdienst;
 use App\Http\Livewire\Frontend\HomePage;
 use App\Http\Livewire\Frontend\Impressum;
 use App\Http\Livewire\Frontend\Jobs;
@@ -69,6 +77,10 @@ Route::get('/baustellenbewachung', BaustellenbewacHung::class)->name('baustellen
 Route::get('/opening-and-closing-service', OpeningAndClosingService::class)->name('openingAndclosingPage');
 // RevierFahrten
 Route::get('/revierfahrten', RevierFahrten::class)->name('revierfahrtenPage');
+
+// Empfangsdienst
+Route::get('/empfangsdienst', Empfangsdienst::class)->name('empfangsdienst');
+
 // ShopGuard
 Route::get('/shop-guard', ShopGuard::class)->name('ShopGuardPage');
 // VeranstaltungsSchutz
@@ -133,15 +145,41 @@ Route::group(['middleware' => ['adminlogin']], function () {
         Route::get('/view', FooterAddress::class)->name('footer_address');
         Route::get('/add', AddFooterAddress::class)->name('Add_footer_address');
         Route::get('/edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
+    
+    Route::group(['prefix' =>'social'], function () {
+        // ViewSocialMedia
+        Route::get('/view', ViewSocialMedia::class)->name('view_social_media');
+        Route::get('/add', AddSocialMedia::class)->name('add_social_media');
+        Route::get('/edit/{id}', EditSocialMedia::class)->name('edit_social_media');
+     }); 
 
-        
+    //  ViewFooterLogo
+    Route::group(['prefix' =>'logos'], function () {
+        // ViewSocialMedia
+        Route::get('/view', ViewFooterLogo::class)->name('view_footer_logos');
+        // Route::get('/edit/{id}', ViewFooterLogo::class)->name('edit_social_media');
+     }); 
 
-        
-        
     });
 
+
+    Route::group(['prefix' =>'services'], function () {
+
+        Route::get('/view', ViewServices::class)->name('view_services');
+        Route::get('/add', AddServices::class)->name('add_services');
+        Route::get('/edit/{id}', EditServices::class)->name('edit_services');
+
+        
+
+        
+
     });
-    //============== home page Section1 ==============
+                                    // home section 
+
+    // middle ware end 
+    });
+       // middle ware end
+
     
 // Manage home page 
 

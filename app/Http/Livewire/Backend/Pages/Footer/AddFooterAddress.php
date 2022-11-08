@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backend\Pages\Footer;
 
 use App\Models\FooterContactAddress;
+use App\Models\SociaCategory;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class AddFooterAddress extends Component
@@ -12,7 +13,8 @@ public $telefon ,$fax ,$email ,$address  ,$logo;
 
     public function render()
     {
-       
+     
+
         return view('livewire.backend.pages.footer.add-footer-address')->layout('layouts.backend');
     }
     protected $rules = [

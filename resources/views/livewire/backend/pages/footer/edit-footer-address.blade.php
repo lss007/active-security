@@ -93,7 +93,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card d-none">
           <div class="card-header" role="tab" id="headingTwo">
             <h6 class="mg-b-0">
               <a class="collapsed transition" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
