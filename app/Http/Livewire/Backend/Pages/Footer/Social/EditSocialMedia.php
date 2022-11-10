@@ -15,17 +15,19 @@ class EditSocialMedia extends Component
 
     public function render()
     {
-        $this->get_category = SociaCategory::get();
+        $this->get_category = SociaCategory::orderBy('name')->get();
         return view('livewire.backend.pages.footer.social.edit-social-media')->layout('layouts.backend');
     }
     public function mount($id){
         $this->socialId= $id;
-        $this->editSocial = SocialLinks::where('id', $this->socialId)->where('status',1)->first();
+        $this->editSocial = SocialLinks::where('id', $this->socialId)->first();
+        if($this->editSocial){
         $this->category  =  $this->editSocial->category;
         $this->custom_category  =  $this->editSocial->custom_category;
         $this->link  =  $this->editSocial->link;
         $this->icon  =  $this->editSocial->icon;
         $this->logo  =  $this->editSocial->logo;
+        }
 
 
     }
@@ -52,29 +54,14 @@ class EditSocialMedia extends Component
                                 'logo' =>    $fileName  ?? Null,
                                 ]);
                                 $notification = array(
-                                'message' => 'Social image Published',
+                                'message' => 'Social image updated',
                                 'alert-type' => 'info'
                                 );
                         return redirect()->route('view_social_media')->with($notification);
                   
-            }else {
-                if($this->custom_category){
-                                $this->validate([
-                                'custom_category' => 'required', 
-                                ]);
-                                 SocialLinks::where('id',$this->socialId)->update([
-                                'category' =>    $this->custom_category ,
-                                'link' =>    $this->link,
-                                 ]);
-
-                                 $notification = array(
-                                'message' => 'Social link Published',
-                                'alert-type' => 'success'
-                            );
-                            return redirect()->route('view_social_media')->with($notification);
-                    }
-                    else{
-                            $this->validate([
+            }else{
+             
+                    $this->validate([
                             'category' => 'required', 
                             ]);
                             SocialLinks::where('id',$this->socialId)->update([
@@ -83,13 +70,14 @@ class EditSocialMedia extends Component
                      
                         ]);
                             $notification = array(
-                            'message' => 'Social link Published',
+                            'message' => 'Social link updated',
                             'alert-type' => 'success'
                         );
                         return redirect()->route('view_social_media')->with($notification);
                     }
+                
             }
 
     // end mail method 
 }
-}
+

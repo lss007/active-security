@@ -14,13 +14,14 @@ class EditFooterAddress extends Component
     public $newlogo;
         public function mount($id){
                 $this->contactId= $id;
-                $this->editHomeBanner = FooterContactAddress::where('id', $this->contactId)->where('status',1)->first();
+                $this->editHomeBanner = FooterContactAddress::where('id', $this->contactId)->first();
+              if($this->contactId){
                 $this->telefon  =  $this->editHomeBanner->telefon;
                 $this->fax =  $this->editHomeBanner->fax;
                 $this->email =  $this->editHomeBanner->email; 
                 $this->address = $this->editHomeBanner->address;
                 $this->logo = $this->editHomeBanner->logo	;
-
+              }
     
      }
     public function render()

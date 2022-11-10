@@ -22,7 +22,7 @@ class ViewServices extends Component
         
         ServicesPageSection::destroy($id);
         $notification = array(
-           'message' => 'Social Link Deleted successfully',
+           'message' => 'Services Deleted successfully',
            'alert-type' => 'error'
        );
        return   redirect(request()->header('Referer'))->with($notification);
@@ -35,7 +35,7 @@ class ViewServices extends Component
                
                ]);
                $notification = array(
-                  'message' => 'Social Link status is Inactive',
+                  'message' => 'Services  status is Inactive',
                   'alert-type' => 'warning'
               );
               return   redirect(request()->header('Referer'))->with($notification);
@@ -46,7 +46,7 @@ class ViewServices extends Component
                
                ]);
                $notification = array(
-                  'message' => 'Social Link status is Active ',
+                  'message' => 'Services status is Active ',
                   'alert-type' => 'success'
               );
               return   redirect(request()->header('Referer'))->with($notification);

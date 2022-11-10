@@ -25,8 +25,7 @@ class AddServices extends Component
         'title' => 'required',
         'para1' => 'required|string', 
         'para2' => 'required|string', 
-        // 'para3' => 'required', 
-        'sec_image' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
+    
     ];
 
    private function resetInputFields(){

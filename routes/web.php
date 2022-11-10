@@ -7,6 +7,7 @@ use App\Http\Livewire\Backend\Pages\Banner\HomeBanner;
 use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
+use App\Http\Livewire\Backend\Pages\Footer\Logos\EditFooterLogo;
 use App\Http\Livewire\Backend\Pages\Footer\Logos\ViewFooterLogo;
 use App\Http\Livewire\Backend\Pages\Footer\Social\AddSocialMedia;
 use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialMedia;
@@ -138,14 +139,12 @@ Route::group(['middleware' => ['adminlogin']], function () {
         Route::get('/view-home/section/five', ViewHomeSection5::class)->name('ViewHomeSection5');
         Route::get('/add-home/section/five', AddHomeSection5::class)->name('Add_Home_Section5'); 
         Route::get('/edit-home/section/five/{id}', EditHomeSection5::class)->name('edit_Home_Section5');
-   
 });   
     Route::group(['prefix' =>'manage-footer'], function () {
         // FooterAddress
         Route::get('/view', FooterAddress::class)->name('footer_address');
         Route::get('/add', AddFooterAddress::class)->name('Add_footer_address');
         Route::get('/edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
-    
     Route::group(['prefix' =>'social'], function () {
         // ViewSocialMedia
         Route::get('/view', ViewSocialMedia::class)->name('view_social_media');
@@ -157,14 +156,13 @@ Route::group(['middleware' => ['adminlogin']], function () {
     Route::group(['prefix' =>'logos'], function () {
         // ViewSocialMedia
         Route::get('/view', ViewFooterLogo::class)->name('view_footer_logos');
+        // EditFooterLogo
+        Route::get('/edit/{id}', EditFooterLogo::class)->name('edit_footer_logos');
+
         // Route::get('/edit/{id}', ViewFooterLogo::class)->name('edit_social_media');
      }); 
-
     });
-
-
     Route::group(['prefix' =>'services'], function () {
-
         Route::get('/view', ViewServices::class)->name('view_services');
         Route::get('/add', AddServices::class)->name('add_services');
         Route::get('/edit/{id}', EditServices::class)->name('edit_services');

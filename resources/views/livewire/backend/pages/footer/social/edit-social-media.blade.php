@@ -29,15 +29,12 @@
                           <div class="form-group">
                             <label class="form-control-label">Category : <span class="tx-danger">*</span></label>
                             <select class="form-control" data-placeholder="Choose Category" wire:model="category"    aria-hidden="true">
-                          
-                              <option value="linkedin">Linkedin</option>
-                              <option value="xing">Xing</option>
-                              <option value="instagram">Instagram</option>
-                              <option value="facebook">Facebook</option>
-                              <option value="twitter">Twitter</option>
-                              <option value="pinterest">Pinterest</option>
-                              <option value="tumblr">Tumblr</option>
-                                <option value="custom">Custom</option>
+                             @if(isset($get_category))
+                                @foreach($get_category as $cat)
+                                  <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                 @endforeach
+                              @endif
+                                {{-- <option value="custom">Custom</option> --}}
 
                               </select>
                             </div>
@@ -80,9 +77,9 @@
                               </label>
                             </div>
                             <img class="img-fluid {{isset($newLogo) ? 'd-none' :  ''}}" src="{{(!empty($this->logo)) 
-                              ? asset('storage/social-logo/'.$this->logo):asset('no_image.jpg')}}" width="100" >
+                              ? asset('storage/social-logo/'.$this->logo):asset('no_image.jpg')}}" style="width:30px;"  >
                             @if(isset($newLogo))
-                            <img  src="{{$newLogo->temporaryUrl()}}" style="width:30px" >
+                            <img  src="{{$newLogo->temporaryUrl()}}" style="width:30px;" >
                           @endif
                               @error('newLogo')<span class="text-danger"> {{$message}}</span>  @enderror  
                         </div><!-- col-4 -->

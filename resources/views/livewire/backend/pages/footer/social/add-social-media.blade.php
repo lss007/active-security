@@ -29,14 +29,12 @@
                             <label class="form-control-label">Category : <span class="tx-danger">*</span></label>
                             <select class="form-control" data-placeholder="Choose Category" wire:model="category"    aria-hidden="true">
                                 <option label="Choose Category"></option>
-                                <option value="linkedin">Linkedin</option>
-                                <option value="xing">Xing</option>
-                                <option value="instagram">Instagram</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="twitter">Twitter</option>
-                                <option value="pinterest">Pinterest</option>
-                                <option value="tumblr">Tumblr</option>
-                                <option value="custom">Custom</option>
+                                @if(isset($get_category))
+                                @foreach($get_category as $cat)
+                                  <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                 @endforeach
+                              @endif
+                                {{-- <option value="custom">Custom</option> --}}
 
                               </select>
                             </div>
@@ -78,7 +76,7 @@
                               </label>
                             </div>
                             @if(isset($logo))
-                            <img  src="{{$logo->temporaryUrl()}}" style="width:30px" >
+                            <img  src="{{$logo->temporaryUrl()}}"  style="width:30px;" >
                           @endif
                               @error('logo')<span class="text-danger"> {{$message}}</span>  @enderror  
                         </div><!-- col-4 -->

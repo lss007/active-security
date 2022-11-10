@@ -12,7 +12,7 @@ class AddSocialMedia extends Component
     public $get_category, $social_cat,$category,$link ,$logo,$icon ,$custom_category;
     public function render()
     {
-            $this->get_category = SociaCategory::get();
+            $this->get_category = SociaCategory::orderBy('name')->get();
         return view('livewire.backend.pages.footer.social.add-social-media')->layout('layouts.backend');
     }
 
@@ -28,7 +28,7 @@ class AddSocialMedia extends Component
         }
 
         public function storeSocialMedia(){
-            $this->validate();
+            // $this->validate();
             // dd($this->all());
         if($this->logo)  {
             $this->validate([
@@ -41,14 +41,16 @@ class AddSocialMedia extends Component
     $this->validate([
         'custom_category' => 'required', 
     ]);
+   $cat_name = SociaCategory::create([
+        'name' =>    $this->custom_category ,
+    ]);
+
     SocialLinks::create([
-            'category' =>    $this->custom_category ,
+            'category' =>   $cat_name->name ,
             'link' =>    $this->link,
             'logo' =>    $fileName  ?? Null,
         ]);
-    SociaCategory::create([
-            'name' =>    $this->custom_category ,
-        ]);
+
         $notification = array(
             'message' => 'Social link Published',
             'alert-type' => 'success'

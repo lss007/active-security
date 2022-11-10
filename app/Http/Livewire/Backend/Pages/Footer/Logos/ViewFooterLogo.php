@@ -26,6 +26,7 @@ class ViewFooterLogo extends Component
         }
 
         public function saveFooterlogo(){
+            $this->validate();
             if($this->logo_img > 1)  
             {
                 foreach ($this->logo_img as  $img) 
@@ -40,8 +41,8 @@ class ViewFooterLogo extends Component
                             ]);
                     }
                      $notification = array(
-                    'message' => 'Home Logo Published',
-                    'alert-type' => 'success'
+                    'message' => 'Home Multiple Logo Published',
+                    'alert-type' => 'info'
                 );
                 return redirect()->route('view_footer_logos')->with($notification);
         
@@ -69,7 +70,7 @@ class ViewFooterLogo extends Component
         
             FooterLogo::destroy($id);
             $notification = array(
-               'message' => 'Social Link Deleted successfully',
+               'message' => 'Footer logo Deleted successfully',
                'alert-type' => 'error'
            );
            return   redirect(request()->header('Referer'))->with($notification);
@@ -82,7 +83,7 @@ class ViewFooterLogo extends Component
                    
                    ]);
                    $notification = array(
-                      'message' => 'Social Link status is Inactive',
+                      'message' => 'Footer logo  status is Inactive',
                       'alert-type' => 'warning'
                   );
                   return   redirect(request()->header('Referer'))->with($notification);
@@ -93,7 +94,7 @@ class ViewFooterLogo extends Component
                    
                    ]);
                    $notification = array(
-                      'message' => 'Social Link status is Active ',
+                      'message' => 'Footer logo  status is Active ',
                       'alert-type' => 'success'
                   );
                   return   redirect(request()->header('Referer'))->with($notification);

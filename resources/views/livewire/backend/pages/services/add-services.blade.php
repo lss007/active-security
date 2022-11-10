@@ -112,6 +112,7 @@
 
            
                   </div>
+                  
                   @if(isset($sec_image)) <img id="output" src="{{$sec_image->temporaryUrl()}}" width="200" > @endif
                   @error('sec_image')<span class="text-danger"> {{$message}}</span>  @enderror  
               

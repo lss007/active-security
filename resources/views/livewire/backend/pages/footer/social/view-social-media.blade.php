@@ -29,7 +29,7 @@
   <td> {{Str::limit($social->category,20,$end='....')}}</td>
   <td>
     <img src="{{(!empty($social->logo)) 
-      ? asset('storage/social-logo/'.$social->logo):asset('no_image.jpg')}}" alt="..."  style="width: 30px">
+      ? asset('storage/social-logo/'.$social->logo):asset('no_image.jpg')}}" alt="..."  style="width: 30px ; height:auto;">
     
   </td>
 
