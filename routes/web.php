@@ -28,7 +28,12 @@ use App\Http\Livewire\Backend\Pages\Home\Slider\AddHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\EditHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\ViewHomeSliders;
 use App\Http\Livewire\Backend\Pages\Services\AddServices;
+use App\Http\Livewire\Backend\Pages\Services\Banner\EditBanners;
+use App\Http\Livewire\Backend\Pages\Services\Banner\ViewBanners;
 use App\Http\Livewire\Backend\Pages\Services\EditServices;
+use App\Http\Livewire\Backend\Pages\Services\Section\AddLastSection;
+use App\Http\Livewire\Backend\Pages\Services\Section\EditLastSection;
+use App\Http\Livewire\Backend\Pages\Services\Section\ViewLastSection;
 use App\Http\Livewire\Backend\Pages\Services\ViewServices;
 use App\Http\Livewire\Frontend\Agb;
 use App\Http\Livewire\Frontend\BaustellenbewacHung;
@@ -166,11 +171,22 @@ Route::group(['middleware' => ['adminlogin']], function () {
         Route::get('/view', ViewServices::class)->name('view_services');
         Route::get('/add', AddServices::class)->name('add_services');
         Route::get('/edit/{id}', EditServices::class)->name('edit_services');
+       
+    Route::group(['prefix' =>'banner'], function () {
+        Route::get('/view', ViewBanners::class)->name('view_services_banner');
+        Route::get('/edit/{id}', EditBanners::class)->name('edit_services_banner');
+
+    });
+    Route::group(['prefix' =>'section'], function () {
+        Route::get('/view', ViewLastSection::class)->name('view_last_section');
+        Route::get('/add', AddLastSection::class)->name('add_last_section');
+        Route::get('/edit/{id}', EditLastSection::class)->name('edit_last_section');
+
 
         
 
-        
-
+    });
+    
     });
                                     // home section 
 

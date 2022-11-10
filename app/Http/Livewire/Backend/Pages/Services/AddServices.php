@@ -20,7 +20,8 @@ class AddServices extends Component
     }
 
     protected $rules = [
-        'page_cat_id' => 'required',
+      
+        'page_cat_id' =>'required|unique:services_page_sections,page_cat_id',
         'heading' => 'required',
         'title' => 'required',
         'para1' => 'required|string', 
@@ -28,6 +29,9 @@ class AddServices extends Component
     
     ];
 
+    protected $messages = [
+        'page_cat_id.unique' => 'Page Category has already been taken',
+      ];
    private function resetInputFields(){
             $this->page_cat_id = '';
             $this->heading = '';

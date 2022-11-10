@@ -24,7 +24,7 @@ class EditServices extends Component
 
     public function mount($id){
         $this->serviceId= $id;
-        $this->editervice = ServicesPageSection::where('id', $this->serviceId)->where('status',1)->first();
+        $this->editervice = ServicesPageSection::where('id', $this->serviceId)->first();
         $this->page_cat_id  =  $this->editervice->page_cat_id;
         $this->heading =  $this->editervice->heading;
         $this->title =  $this->editervice->title; 

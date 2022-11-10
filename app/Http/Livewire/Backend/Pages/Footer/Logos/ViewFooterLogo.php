@@ -75,8 +75,6 @@ class ViewFooterLogo extends Component
            );
            return   redirect(request()->header('Referer'))->with($notification);
            }
-       
-       
                  public function  inactive($id){
                     FooterLogo::where('id', $id)->update([
                        'status' =>    0,
