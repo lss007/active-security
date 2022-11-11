@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('regarding')->nullable();
             $table->text('client_message')->nullable();
             $table->string('status')->default(1);
+            $table->SoftDeletes();
+
             $table->timestamps();
         });
     }

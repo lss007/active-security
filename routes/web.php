@@ -10,6 +10,7 @@ use App\Http\Livewire\Backend\Pages\Company\EditSectionOne;
 use App\Http\Livewire\Backend\Pages\Company\EditSectionTwo;
 use App\Http\Livewire\Backend\Pages\Company\ViewSectionOne;
 use App\Http\Livewire\Backend\Pages\Company\ViewSectionTwo;
+use App\Http\Livewire\Backend\Pages\Contacts\ViewContacts;
 use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
@@ -213,6 +214,12 @@ Route::group(['middleware' => ['adminlogin']], function () {
         Route::get('/edit/{id}', EditJobSection::class)->name('edit_job_section');
         Route::get('/add', AddJobSection::class)->name('add_last_section');
 });
+Route::group(['prefix' =>'Contacts'], function () {
+    Route::get('/view', ViewContacts::class)->name('view_Contacts');
+    // Route::get('/edit/{id}', EditJobSection::class)->name('edit_job_section');
+    // Route::get('/add', AddJobSection::class)->name('add_last_section');
+});
+
 
     // middle ware end 
     });

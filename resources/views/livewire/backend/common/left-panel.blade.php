@@ -112,7 +112,7 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="accordion.html" class="nav-link">Accordion</a></li>
+        <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">View Messages</a></li>
  
       </ul>
       <a href="#" class="sl-menu-link">

@@ -64,21 +64,8 @@
           </div>
         </section>
       
-        <section>
-          <div class="partnersSection">
-            <div class="container">
-              <h4 class="mdTitle">Unternehmen, die unseren Sicherheitsdienstleistungen vertrauen.</h4>
-              <ul class="pLogo">
-                <li><img src="{{ asset('frontend/images/p-logo-1.svg')}}" alt="..."></li>
-                <li><img src="{{ asset('frontend/images/p-logo-2.svg')}}" alt="..."></li>
-                <li><img src="{{ asset('frontend/images/p-logo-3.svg')}}" alt="..."></li>
-                <li><img src="{{ asset('frontend/images/p-logo-4.png')}}" alt="..."></li>
-                <li><img src="{{ asset('frontend/images/p-logo-5.svg')}}" alt="..."></li>
-                
-              </ul>
-            </div>
-          </div>
-        </section>
+
+        @include('livewire.common.clientLogo')
       
         <section>
           <div class="sectionSpaceMd ourServicesCol">

@@ -58,6 +58,8 @@ public function sendmessage()
     }
     public function render()
     {
+
+                  
         return view('livewire.frontend.contact')->layout('layouts.frontend');
     }
 }
