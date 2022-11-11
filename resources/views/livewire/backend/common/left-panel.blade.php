@@ -89,21 +89,21 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="blank.html" class="nav-link">Blank Page</a></li>
 
+        <li class="nav-item"><a href="{{route('view_company_sections')}}" class="nav-link  
+           @if(Route::is('view_company_sections') ) active @else '' @endif"> Manage Section 1</a></li>
+           <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link  
+            @if(Route::is('viewCompanySections2') ) active @else '' @endif"> Manage Section 2</a></li>
+        
       </ul>
 
-      <a href="#" class="sl-menu-link">
+      <a href="{{route('view_job_section')}}" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
           <span class="menu-item-label">Jobs</span>
-          <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="blank.html" class="nav-link">Blank Page</a></li>
-
-      </ul>
+   
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>

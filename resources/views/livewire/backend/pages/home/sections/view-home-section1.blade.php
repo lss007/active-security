@@ -3,25 +3,19 @@
     <div class="sl-pagebody">
         <div class="sl-page-title">
           <h5>Home Page Section 1 
-
-          
-          
           </h5>
-       
-          
         </div><!-- sl-page-title -->
-   
 
-  
     <div class="row row-sm mg-t-50">
         <div class="col-lg-2 mg-t-25 mg-lg-t-0">
             <div class="card pd-20 pd-sm-40"> 
                     <div class="btn-demo">
-                     <a href="{{route('addHomesection1')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
-                    @if(isset($homeSectionOne))
-
-                     <a href="{{route('editHomesection1',$homeSectionOne->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
-                   @endif
+                      @if(isset($homeSectionOne))
+                      
+                      <a href="{{route('editHomesection1',$homeSectionOne->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
+                      @else
+                      <a href="{{route('addHomesection1')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
+                     @endif
                     </div><!-- btn-demo -->
             </div><!-- card -->
             

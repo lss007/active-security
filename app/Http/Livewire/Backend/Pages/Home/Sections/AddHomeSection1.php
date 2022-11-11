@@ -9,7 +9,19 @@ class AddHomeSection1 extends Component
 {
     use WithFileUploads;
     public $heading,$sub_heading,$paragraph,$main_image,$logo1,$logo2,$logo3;
-
+    
+    public function mount()
+    {
+     $getSection1  = HomeSectionOne::exists();
+     if($getSection1)
+     {
+         $notification = array(
+             'message' => 'Section already exists',
+             'alert-type' => 'warning'
+         );
+          return redirect()->route('manageHomeSection1')->with( $notification);
+      }
+    }
     protected $rules = [
         'heading' => 'required',
         'sub_heading' => 'required',

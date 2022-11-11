@@ -4,6 +4,12 @@ use App\Http\Livewire\Backend\Dashboard;
 use App\Http\Livewire\Backend\Pages\Banner\AddHomeBanner;
 use App\Http\Livewire\Backend\Pages\Banner\EditHomeBanner;
 use App\Http\Livewire\Backend\Pages\Banner\HomeBanner;
+use App\Http\Livewire\Backend\Pages\Company\AddSectionOne;
+use App\Http\Livewire\Backend\Pages\Company\AddSectionTwo;
+use App\Http\Livewire\Backend\Pages\Company\EditSectionOne;
+use App\Http\Livewire\Backend\Pages\Company\EditSectionTwo;
+use App\Http\Livewire\Backend\Pages\Company\ViewSectionOne;
+use App\Http\Livewire\Backend\Pages\Company\ViewSectionTwo;
 use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
@@ -27,6 +33,9 @@ use App\Http\Livewire\Backend\Pages\Home\Sections\ViewHomeSection5;
 use App\Http\Livewire\Backend\Pages\Home\Slider\AddHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\EditHomeSliders;
 use App\Http\Livewire\Backend\Pages\Home\Slider\ViewHomeSliders;
+use App\Http\Livewire\Backend\Pages\Job\AddJobSection;
+use App\Http\Livewire\Backend\Pages\Job\EditJobSection;
+use App\Http\Livewire\Backend\Pages\Job\ViewJobSection;
 use App\Http\Livewire\Backend\Pages\Services\AddServices;
 use App\Http\Livewire\Backend\Pages\Services\Banner\EditBanners;
 use App\Http\Livewire\Backend\Pages\Services\Banner\ViewBanners;
@@ -183,12 +192,27 @@ Route::group(['middleware' => ['adminlogin']], function () {
         Route::get('/edit/{id}', EditLastSection::class)->name('edit_last_section');
 
 
-        
-
     });
     
     });
-                                    // home section 
+
+                                    // home section  end 
+    Route::group(['prefix' =>'Company'], function () {
+        Route::get('/sections/view', ViewSectionOne::class)->name('view_company_sections');
+        Route::get('/sections/add', AddSectionOne::class)->name('add_company_section1');
+        Route::get('/sections/edit/{id}', EditSectionOne::class)->name('edit_company_section1');
+
+        // ViewSectionTwo
+        Route::get('/section2/view', ViewSectionTwo::class)->name('viewCompanySections2');
+        Route::get('/section2/add', AddSectionTwo::class)->name('addCompanySections2');
+        Route::get('/section2/edit/{id}', EditSectionTwo::class)->name('editCompanySections2');
+    
+    });
+ Route::group(['prefix' =>'job-section'], function () {
+        Route::get('/view', ViewJobSection::class)->name('view_job_section');
+        Route::get('/edit/{id}', EditJobSection::class)->name('edit_job_section');
+        Route::get('/add', AddJobSection::class)->name('add_last_section');
+});
 
     // middle ware end 
     });

@@ -11,7 +11,7 @@ class ViewHomeSection2 extends Component
 
     public function render()
     {
-        $this->homeSectionTwo = HomeSectionTwo::first();
+        $this->homeSectionTwo = HomeSectionTwo::latest()->first();
 
         return view('livewire.backend.pages.home.sections.view-home-section2')->layout('layouts.backend');
     }

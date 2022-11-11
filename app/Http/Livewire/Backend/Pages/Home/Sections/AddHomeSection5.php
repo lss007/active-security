@@ -11,6 +11,20 @@ class AddHomeSection5 extends Component
     use WithFileUploads;
     public $heading ,$title ,$para1 ,$para2 ,$Image ,$buttonName ,$buttonLink;
 
+
+    public function mount()
+    {
+     $getSection5  = HomeSectionFive::exists();
+     if($getSection5)
+     {
+         $notification = array(
+             'message' => 'Section already exists',
+             'alert-type' => 'warning'
+         );
+          return redirect()->route('ViewHomeSection5')->with( $notification);
+      }
+    }
+
     public function render()
     {
         return view('livewire.backend.pages.home.sections.add-home-section5')->layout('layouts.backend');

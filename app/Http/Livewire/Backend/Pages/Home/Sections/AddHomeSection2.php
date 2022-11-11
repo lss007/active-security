@@ -9,6 +9,20 @@ class AddHomeSection2 extends Component
 {
     use WithFileUploads;
     public $heading ,$title ,$para1 ,$para2 ,$Image ,$buttonName ,$buttonLink;
+
+    public function mount()
+    {
+     $getSection  = HomeSectionTwo::exists();
+     if($getSection)
+     {
+         $notification = array(
+             'message' => 'Section already exists',
+             'alert-type' => 'warning'
+         );
+          return redirect()->route('viewHomeSection2')->with( $notification);
+      }
+    }
+
     public function render()
     {
         return view('livewire.backend.pages.home.sections.add-home-section2')->layout('layouts.backend');

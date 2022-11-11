@@ -17,10 +17,11 @@
         <div class="col-lg-2 mg-t-25 mg-lg-t-0">
             <div class="card pd-20 pd-sm-40"> 
                     <div class="btn-demo">
-                     <a href="{{route('add_HomeSection2')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
-                    @if(isset($homeSectionTwo))
-
-                     <a href="{{route('edit_HomeSection2',$homeSectionTwo->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
+                      @if(isset($homeSectionTwo))
+                      
+                      <a href="{{route('edit_HomeSection2',$homeSectionTwo->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
+                      @else
+                      <a href="{{route('add_HomeSection2')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
                    @endif
                     </div><!-- btn-demo -->
             </div><!-- card -->

@@ -10,8 +10,7 @@ class ViewHomeSection5 extends Component
     public $homeSectionfive ;
     public function render()
     {
-        
-        $this->homeSectionfive = HomeSectionFive::first();
+        $this->homeSectionfive = HomeSectionFive::latest()->first();
 
         return view('livewire.backend.pages.home.sections.view-home-section5')->layout('layouts.backend');
     }

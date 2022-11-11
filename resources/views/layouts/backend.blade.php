@@ -20,6 +20,8 @@
     <link href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
     {{-- data table css  --}}
     <link href="{{asset('backend/lib/highlightjs/github.css')}}" rel="stylesheet">
+    <link href="{{asset('backend//lib/select2/css/select2.min.css')}}" rel="stylesheet">
+    
     {{-- editor  --}}
     <link href="{{asset('backend/lib/medium-editor/medium-editor.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/medium-editor/default.css')}}" rel="stylesheet">
@@ -27,7 +29,7 @@
   {{-- editor  --}}
     <link href="{{asset('backend/lib/SpinKit/spinkit.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
-    <link href="{{asset('backend/lib/select2/css/select2.min.css')}}" rel="stylesheet">
+  
     {{-- end data table css  --}}
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
@@ -73,15 +75,17 @@
     <script src="{{asset('backend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
     {{-- data table  --}}
     <script src="{{asset('backend/lib/highlightjs/highlight.pack.j')}}"></script>
+    <script src="{{asset('backend/lib/select2/js/select2.min.js')}}"></script>
     {{-- editor  --}}
     
     {{-- editor  --}}
 
     <script src="{{asset('backend/lib/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{asset('backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
-    <script src="{{asset('backend/lib/select2/js/select2.min.js')}}"></script>
 
- <script src="../js/starlight.js"></script>
+
+ {{-- <script src="{{asset('backend/js/starlight.js')}}"></script> --}}
+
  <script>
    $(function(){
      'use strict';
