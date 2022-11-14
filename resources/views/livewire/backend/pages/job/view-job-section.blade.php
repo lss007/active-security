@@ -2,12 +2,12 @@
     {{-- The whole world belongs to you. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Copmany Page Section 
+          <h5>Company Page Section 
           </h5>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
-            @if(isset($getJobsection))
+            @if(isset($getJobsection) )
             @if($getJobsection->status == 1 )
           
             
@@ -27,10 +27,13 @@
 
             
             @else
+            @if(isset($trashdata))
             <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
               Restore </a>  
+              @endif
             <a href="{{route('add_last_section')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>
-           @endif
+        
+            @endif
 
           </h6>
 

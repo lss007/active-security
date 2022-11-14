@@ -14,6 +14,7 @@ class HomeBanner extends Component
     public function render()
     {
         $this->viewHomeBanner = ModelsHomeBanner::get();
+        $this->trashdata= ModelsHomeBanner::onlyTrashed()->get();
         return view('livewire.backend.pages.banner.home-banner')->layout('layouts.backend');
     }
     public function deletebanner($id){
@@ -49,5 +50,26 @@ class HomeBanner extends Component
            );
            return   redirect(request()->header('Referer'))->with($notification);
 
+          }
+
+
+
+          public function restore($id){
+            ModelsHomeBanner::withTrashed()->find($id)->restore();
+            $notification = array(
+               'message' => 'Home Banner Restored',
+               'alert-type' => 'Success'
+           );
+           return   redirect(request()->header('Referer'))->with($notification);
+        }
+
+
+        public function fulleDelete($id){
+            ModelsHomeBanner::onlyTrashed()->find($id)->forceDelete();
+            $notification = array(
+              'message' => 'Home Banner Deleted',
+              'alert-type' => 'error'
+          );
+          return   redirect(request()->header('Referer'))->with($notification);
           }
 }

@@ -19,7 +19,7 @@ class AddLastSection extends Component
 
     protected $rules = [
         'heading' => 'required ',
-        'link' => 'required',
+        // 'link' => 'required',
         'list1' => 'required|string', 
         'list2' => 'required|string', 
         'list3' => 'required|string', 
@@ -31,7 +31,7 @@ class AddLastSection extends Component
     //   ];
      private function resetInputFields(){
             $this->heading = '';
-            $this->link = '';
+            // $this->link = '';
             $this->list1 = '';
             $this->list2 = '';
             $this->list3 = '';
@@ -46,7 +46,7 @@ class AddLastSection extends Component
             $this->validate();
             ServiceLastSection::create([
                 'heading' =>    $this->heading,
-                'link' =>    $this->link,
+                // 'link' =>    $this->link,
                 'button' =>    $this->button,
                 'list1' =>    $this->list1,
                 'list2' =>    $this->list2,

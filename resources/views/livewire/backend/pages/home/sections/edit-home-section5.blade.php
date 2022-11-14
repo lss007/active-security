@@ -48,11 +48,7 @@
                    </div>
                  </div><!-- col-4 -->
 
-                 {{-- <div class="col-lg-12">
-                      <div class="form-group mg-b-10-force">
-                        <div id="summernote" wire:model="para1">Hello, universe!</div>
-                     </div>
-                 </div> --}}
+           
      
 
 
@@ -65,14 +61,7 @@
                </div>
                </div><!-- col-4 -->
 
-               <div class="col-lg-6">
-                 <div class="form-group">
-                   <label class="form-control-label"> Button Link : <span class="tx-danger">*</span></label>
-                   <input class="form-control" type="url" wire:model="buttonLink"  placeholder="Button Name ">
-                   @error('buttonLink')<span class="text-danger"> {{$message}}</span>  @enderror  
-                 
-               </div>
-               </div><!-- col-4 -->
+             
                 
                <div class="col-lg-12">
                  <div class="form-group mg-b-10-force">

@@ -38,13 +38,7 @@
                   </div>
                </div><!-- col-4 -->
         
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label"> Button Link : </label>
-                    <input class="form-control" type="url" wire:model="link"  aria-describedby="url" placeholder="Button link ">
-                    @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
-                  </div>
-                </div><!-- col-4 -->
+           
                 
                <div class="col-lg-12">
                  <div class="form-group mg-b-10-force">

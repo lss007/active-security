@@ -8,17 +8,17 @@ use Livewire\WithFileUploads;
 class EditHomeBanner extends Component
 {
     use WithFileUploads;
-public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerImage  ,$banner_Image,$buttonText, $button_link,$bannerParagaph ;
+    public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph ;
+    public $new_Image ,$homeBannerId;
     public function mount($id){
-            $this->hBannerId= $id;
-            $this->editHomeBanner = HomeBanner::where('id', $this->hBannerId)->where('status',1)->first();
-            $this->mainTitle  =  $this->editHomeBanner->main_title;
-            $this->mainSubTitle =  $this->editHomeBanner->main_sub_title;
-            $this->heading =  $this->editHomeBanner->heading; 
+            $this->homeBannerId= $id;
+            $this->editHomeBanner = HomeBanner::where('id', $this->homeBannerId)->first();
+            $this->Heading =  $this->editHomeBanner->heading; 
+            $this->Title  =  $this->editHomeBanner->title;
+            $this->BannerParagaph = $this->editHomeBanner->banner_paragaph;
             $this->bannerImage = $this->editHomeBanner->banner_image;
             $this->buttonText = $this->editHomeBanner->button_text	;
             $this->button_link = $this->editHomeBanner->button_link;
-            $this->bannerParagaph = $this->editHomeBanner->banner_paragaph;
 
 
             
@@ -29,25 +29,23 @@ public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerI
         return view('livewire.backend.pages.banner.edit-home-banner')->layout('layouts.backend');
     }
     protected $rules = [
-        'mainTitle' => 'required',
-        'mainSubTitle' => 'required',
-        'heading' => 'required',
-        'bannerParagaph' => 'required', 
+        'Heading' => 'required',
+        'Title' => 'required',
+        'BannerParagaph' => 'required', 
     
     ];
     private function resetInputFields(){
-        $this->mainTitle = '';
-        $this->mainSubTitle = '';
-        $this->heading = '';
-        $this->bannerParagaph = '';
+        $this->Title = '';
+        $this->Heading = '';
+        $this->BannerParagaph = '';
         }
     public function updateHomeBanner(){
         // dd($this->all());
             $this->validate();
-            if($this->banner_Image){
-                $fileName = time().'_'.$this->banner_Image->getClientOriginalName();
-                $filePath = $this->banner_Image->storeAs('Home-banner', $fileName, 'public');
-                HomeBanner::where('id',  $this->hBannerId)->update([
+            if($this->new_Image){
+                $fileName = time().'_'.$this->new_Image->getClientOriginalName();
+                $filePath = $this->new_Image->storeAs('Home-banner', $fileName, 'public');
+                HomeBanner::where('id',  $this->homeBannerId)->update([
                             'banner_image' =>    $fileName,
                             ]);
                         $notification = array(
@@ -56,11 +54,10 @@ public $hBannerId ,$editHomeBanner, $mainTitle,$mainSubTitle ,$heading ,$bannerI
                         );
                         return redirect()->route('viewHomebanner')->with($notification);
             }else{
-                HomeBanner::where('id',  $this->hBannerId)->update([
-                        'main_title' =>    $this->mainTitle,
-                        'main_sub_title' =>    $this->mainSubTitle,
-                        'heading' =>    $this->heading,
-                        'banner_paragaph' =>    $this->bannerParagaph,
+                HomeBanner::where('id',  $this->homeBannerId)->update([
+                        'heading' =>    $this->Heading,
+                        'title' =>    $this->Title,
+                        'banner_paragaph' =>    $this->BannerParagaph,
                         'button_text' =>    $buttonText  ?? Null,
                         'button_link' =>    $this->button_link,
 

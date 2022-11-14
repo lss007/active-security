@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Livewire\Backend\Dashboard;
+use App\Http\Livewire\Backend\Pages\AllBanners\AddAllBanners;
+use App\Http\Livewire\Backend\Pages\AllBanners\EditAllBanners;
+use App\Http\Livewire\Backend\Pages\AllBanners\ViewAllBanners;
 use App\Http\Livewire\Backend\Pages\Banner\AddHomeBanner;
 use App\Http\Livewire\Backend\Pages\Banner\EditHomeBanner;
 use App\Http\Livewire\Backend\Pages\Banner\HomeBanner;
@@ -131,6 +134,13 @@ Route::group(['middleware' => ['adminlogin']], function () {
         Route::get('/view-banner', HomeBanner::class)->name('viewHomebanner');
         Route::get('/add-banner', AddHomeBanner::class)->name('addHomebanner');
         Route::get('/edit-banner/{id}', EditHomeBanner::class)->name('editHomebanner');
+    });
+// Manage other pages banner 
+Route::group(['prefix' =>'mange-All-banner'], function () {
+    Route::get('/view', ViewAllBanners::class)->name('view_all_banner');
+    Route::get('/add', AddAllBanners::class)->name('add_all_banners');
+    Route::get('/edit/{id}', EditAllBanners::class)->name('edit_all_banner');
+ 
 });
     //============== home page Section1 ==============
     Route::group(['prefix' =>'manage-home'], function () {
@@ -189,7 +199,7 @@ Route::group(['middleware' => ['adminlogin']], function () {
     });
     Route::group(['prefix' =>'section'], function () {
         Route::get('/view', ViewLastSection::class)->name('view_last_section');
-        Route::get('/add', AddLastSection::class)->name('add_last_section');
+        Route::get('/add', AddLastSection::class)->name('add_last_footer_section');
         Route::get('/edit/{id}', EditLastSection::class)->name('edit_last_section');
 
 

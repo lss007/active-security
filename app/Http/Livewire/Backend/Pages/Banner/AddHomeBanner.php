@@ -7,21 +7,20 @@ use Livewire\WithFileUploads;
 class AddHomeBanner extends Component
 {
     use WithFileUploads;
-    public $mainTitle,$mainSubTitle ,$heading ,$bannerImage ,$buttonText ,$button_link,$bannerParagaph ;
+    public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph ;
 
     protected $rules = [
-        'mainTitle' => 'required',
-        'mainSubTitle' => 'required',
-        'heading' => 'required',
-        'bannerParagaph' => 'required', 
+      
+        'Title' => 'required',
+        'Heading' => 'required',
+        'BannerParagaph' => 'required', 
 
     ];
 
    private function resetInputFields(){
-        $this->mainTitle = '';
-        $this->mainSubTitle = '';
-        $this->heading = '';
-        $this->bannerParagaph = '';
+       $this->Heading = '';
+        $this->Title = '';
+        $this->BannerParagaph = '';
         }
 
     public function saveHomeBanner(){
@@ -35,10 +34,9 @@ class AddHomeBanner extends Component
             $filePath = $this->bannerImage->storeAs('Home-banner', $fileName, 'public');
     }
         HomeBanner::create([
-            'main_title' =>    $this->mainTitle,
-            'main_sub_title' =>    $this->mainSubTitle,
-            'heading' =>    $this->heading,
-            'banner_paragaph' =>    $this->bannerParagaph,
+            'title' =>    $this->Title,
+            'heading' =>    $this->Heading,
+            'banner_paragaph' =>    $this->BannerParagaph,
             'banner_image' =>    $fileName  ?? Null,
             'button_text' =>    $buttonText  ?? Null,
             'button_link' =>    $this->button_link,

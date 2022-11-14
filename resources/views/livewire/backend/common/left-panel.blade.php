@@ -17,7 +17,13 @@
           <span class="menu-item-label">Dashboard</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-   
+      <a href="{{url('/')}}" class="sl-menu-link " target="_blank">
+        <div class="sl-menu-item">
+          <i class="fa fa-globe"></i>
+          <span class="menu-item-label">Website </span>
+      
+        </div><!-- menu-item -->
+      </a><!-- sl-menu-link -->
       <a href="javascript:void(0)" class="sl-menu-link ">
         <div class="sl-menu-item">
           <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
@@ -26,19 +32,25 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column  ">
-        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner') ) active @else '' @endif"> Banner </a></li>
-        <li class="nav-item"><a href="" class="nav-link">Manage Banners </a></li>
-
-        <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link @if(Route::is('manageHomeSection1') ) active @else '' @endif"> Section 1 </a></li>
-        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link @if(Route::is('viewHomeSection2') ) active @else '' @endif"> Section 2 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner') ) active @else '' @endif">Home Banner </a></li>
+        <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link @if(Route::is('manageHomeSection1') ) active @else '' @endif">Home Section 1 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link @if(Route::is('viewHomeSection2') ) active @else '' @endif">Home Section 2 </a></li>
         <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> Client logo </a></li>
-        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" > Sliders </a></li>
-        <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif"> Section 5 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" >Home Sliders </a></li>
+        <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">Home Section 5 </a></li>
 
 
 
 
       </ul>
+
+      <a href="{{route('view_all_banner')}}" class="sl-menu-link ">
+        <div class="sl-menu-item">
+          <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+          <span class="menu-item-label">Manage All Banners </span>
+       
+        </div><!-- menu-item -->
+      </a><!-- sl-menu-link -->
       <a href="javascript:void(0)" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
@@ -52,16 +64,14 @@
           @if(Route::is('footer_address') ) active @else '' @endif">
            Contact Address</a></li>
 
-           <li class="nav-item">
-            <a href="{{route('view_social_media')}}" class="nav-link 
-            @if(Route::is('view_social_media') ) active @else '' @endif">
-             Manage Social Media </a></li>
+       
 
              <li class="nav-item">
               <a href="{{route('view_footer_logos')}}" class="nav-link 
               @if(Route::is('view_footer_logos') ) active @else '' @endif">
                Manage Footer Logos  </a></li>
              
+               <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> Manage Footer Section</a></li>
 
       </ul>
       <a href="javascript:void(0)" class="sl-menu-link">
@@ -75,7 +85,6 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> Manage pages Section</a></li>
         <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> Manage Bottom Banner</a></li>
-        <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> Manage Last Section</a></li>
      
      
       </ul>
@@ -123,8 +132,10 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="table-basic.html" class="nav-link">Basic Table</a></li>
-        <li class="nav-item"><a href="table-datatable.html" class="nav-link">Data Table</a></li>
+        <li class="nav-item">
+          <a href="{{route('view_social_media')}}" class="nav-link 
+          @if(Route::is('view_social_media') ) active @else '' @endif">
+           Manage Social Media </a></li>
       </ul>
     </div><!-- sl-sideleft-menu -->
 

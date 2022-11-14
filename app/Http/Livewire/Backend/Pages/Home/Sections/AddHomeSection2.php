@@ -34,8 +34,8 @@ class AddHomeSection2 extends Component
         'para1' => 'required ',
         'para2' => 'required',
         'Image' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
-        'buttonName' => 'required',
-        'buttonLink' => 'required',
+        // 'buttonName' => 'required',
+        // 'buttonLink' => 'required',
         
     ];
     protected $messages = [

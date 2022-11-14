@@ -9,7 +9,7 @@
         <div class="card pd-20 pd-sm-40">
    
                 <h6 class="card-body-title">      
-                    <a href="{{route('add_last_section')}}" class="btn btn-sm btn-warning">Add Section</a>
+                    <a href="{{route('add_last_footer_section')}}" class="btn btn-sm btn-warning">Add Section</a>
                 </h6>
 
           <div class="table-wrapper">
@@ -18,7 +18,7 @@
                 <tr>
                   <th class="wd-5p">S.No </th>
                   <th class="wd-15p">Heading  </th>
-                  <th class="wd-15p">Link  </th>
+             
                   <th class="wd-15p">List  </th>
                   <th class="wd-10p">Status</th>
                   <th class="wd-20p">Action</th>
@@ -31,11 +31,7 @@
                     <td>{{ $key +1}} </td>
                    
                     <td>{{isset($service->heading) ?  str_limit($service->heading, $limit=15 ) : "NA" }}</td>
-                    <td>
-                        <a href="{{isset($service->link) ? $service->link : "#" }}">
-                            {{isset($service->heading) ? str_limit($service->heading, $limit=15 ) : "NA" }}
-                        </a>
-                       </td>
+                
 
           
 

@@ -65,14 +65,7 @@
                 </div>
                 </div><!-- col-4 -->
 
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label"> Button Link : <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="url" wire:model="buttonLink"  placeholder="Button Name ">
-                    @error('buttonLink')<span class="text-danger"> {{$message}}</span>  @enderror  
-                  
-                </div>
-                </div><!-- col-4 -->
+            
                  
                 <div class="col-lg-12">
                   <div class="form-group mg-b-10-force">
@@ -82,10 +75,10 @@
                       <input type="file" id="file" class="custom-file-input" wire:model="Image" >
                       <span class="custom-file-control"></span>
                     </label>
-
-           
                   </div>
-                  @if(isset($main_image)) <img id="output" src="{{$main_image->temporaryUrl()}}" width="200" > @endif
+
+                  <img class="img-fluid" src="{{(isset($this->main_image)) 
+                    ? $main_image->temporaryUrl() :asset('no_image.jpg')}}" width="150" >
                   @error('Image')<span class="text-danger"> {{$message}}</span>  @enderror  
               
               </div><!-- col-4 -->

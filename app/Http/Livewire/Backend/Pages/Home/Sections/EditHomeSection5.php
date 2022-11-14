@@ -34,7 +34,7 @@ public $newImg;
         'para1' => 'required ',
         'para2' => 'required',
         'buttonName' => 'required',
-        'buttonLink' => 'required',
+        // 'buttonLink' => 'required',
         
     ];
     protected $messages = [

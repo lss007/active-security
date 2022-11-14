@@ -11,11 +11,24 @@ class AddFooterAddress extends Component
     use WithFileUploads;
 public $telefon ,$fax ,$email ,$address  ,$logo;
 
+
+
     public function render()
     {
-     
-
         return view('livewire.backend.pages.footer.add-footer-address')->layout('layouts.backend');
+    }
+
+    public function mount()
+    {
+     $getSection1  = FooterContactAddress::exists();
+     if($getSection1)
+     {
+         $notification = array(
+             'message' => 'Address already exists',
+             'alert-type' => 'warning'
+         );
+          return redirect()->route('footer_address')->with( $notification);
+      }
     }
     protected $rules = [
         'telefon' => 'required',

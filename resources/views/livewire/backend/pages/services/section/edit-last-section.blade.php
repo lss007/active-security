@@ -63,9 +63,9 @@
 
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label"> link  : <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" wire:model="link"  placeholder="link  ">
-                    @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                    <label class="form-control-label"> Botton  Name: optional</label>
+                    <input class="form-control" type="text" wire:model="button"  placeholder="button Name  ">
+                    @error('button')<span class="text-danger"> {{$message}}</span>  @enderror  
                   
                 </div>
                 </div><!-- col-4 -->

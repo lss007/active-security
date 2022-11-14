@@ -52,7 +52,28 @@
                           
                         </div>
                         </div><!-- col-4 -->
-                  
+
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                            <label class="form-control-label"> Position : <span class="tx-danger">*</span></label>
+                              <select class="form-control" data-placeholder="Choose Section" wire:model="position" aria-hidden="true">
+                              <option label="Choose Section"></option>
+                              <option value="Inhaber">Inhaber </option>
+                              <option value="Bereichsleitung">Bereichsleitung</option>
+                            </select>
+                            @error('position')<span class="text-danger"> {{$message}}</span>  @enderror  
+                          
+                        </div>
+                        </div><!-- col-4 -->
+
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                            <label class="form-control-label"> Department : <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" wire:model="department"  placeholder="Department">
+                            @error('department')<span class="text-danger"> {{$message}}</span>  @enderror  
+                          
+                        </div>
+                        </div><!-- col-4 -->
                         <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label"> Email : <span class="tx-danger">*</span></label>
@@ -65,30 +86,12 @@
                           
 
                           
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label"> Position : <span class="tx-danger">*</span></label>
-                                <select class="form-control" data-placeholder="Choose Section" wire:model="position" aria-hidden="true">
-                                <option label="Choose Section"></option>
-                                <option value="owner">owner </option>
-                                <option value="head">Head of Department</option>
-                              </select>
-                              @error('position')<span class="text-danger"> {{$message}}</span>  @enderror  
-                            
-                          </div>
-                          </div><!-- col-4 -->
-                         <div class="col-lg-4">
-                           <div class="form-group">
-                             <label class="form-control-label"> Department : <span class="tx-danger">*</span></label>
-                             <input class="form-control" type="text" wire:model="department"  placeholder="Department">
-                             @error('department')<span class="text-danger"> {{$message}}</span>  @enderror  
-                           
-                         </div>
-                         </div><!-- col-4 -->
+                    
+                    
        
                          <div class="col-lg-6">
                             <div class="form-group">
-                              <label class="form-control-label"> Heading : <span class="tx-danger">*</span></label>
+                              <label class="form-control-label">Section Heading : <span class="tx-danger">*</span></label>
                                  <input class="form-control" type="text" wire:model="heading"  placeholder="Heading">
                                  @error('heading')<span class="text-danger"> {{$message}}</span>  @enderror  
                             

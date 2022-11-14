@@ -41,8 +41,8 @@ public $newImg;
         'para1' => 'required ',
         'para2' => 'required',
 
-        'buttonName' => 'required',
-        'buttonLink' => 'required',
+        // 'buttonName' => 'required',
+        // 'buttonLink' => 'required',
         
     ];
     protected $messages = [
@@ -57,7 +57,6 @@ public $newImg;
         $this->title = '';
         $this->para1 = '';
         $this->para2 = '';
-  
         $this->buttonName = '';
         $this->buttonLink = '';
 

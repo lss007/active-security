@@ -14,10 +14,12 @@
       <div class="col-lg-2 mg-t-25 mg-lg-t-0">
           <div class="card pd-20 pd-sm-40"> 
                   <div class="btn-demo">
-                   <a href="{{route('Add_footer_address')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
-                  @if(isset($contactAddress))
+                    @if(isset($contactAddress))
+                    <a href="{{route('edit_footer_address',$contactAddress->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
+                @else 
+                    <a href="{{route('Add_footer_address')}}"><button class="btn btn-teal active btn-block mg-b-10">Add</button> </a>
+              
 
-                   <a href="{{route('edit_footer_address',$contactAddress->id)}}"> <button class="btn btn-primary active btn-block mg-b-10">Edit</button> </a>
                  @endif
                   </div><!-- btn-demo -->
           </div><!-- card -->

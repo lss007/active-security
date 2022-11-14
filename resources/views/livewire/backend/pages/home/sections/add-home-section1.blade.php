@@ -38,45 +38,73 @@
       
                     </div>
                   </div><!-- col-4 -->
-        
-             
-                   <div class="col-lg-3">
-                    <div class="form-group">
-                      <label class="form-control-label">Main Image : <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="main_image" >
-                    @error('main_image')<span class="text-danger"> {{$message}}</span>  @enderror  
-                    </div>
-                    @if(isset($main_image)) <img id="output" src="{{$main_image->temporaryUrl()}}" width="200" > @endif
-                
-                </div><!-- col-4 -->
+ 
+                <div class="col-lg-3">
+                  <div class="form-group mg-b-10-force">
+                    <label class="form-control-label"> Main Image:  : <span class="tx-danger">*</span></label><br>
+                    <label class="custom-file">
+                      <input type="file" id="file" class="custom-file-input" wire:model="main_image" >
+                      <span class="custom-file-control"></span>
+                    </label>
+                  </div>
+                  @error('main_image')<span class="text-danger"> {{$message}}</span>  @enderror  
 
-                <div class="col-lg-3">
-                    <div class="form-group">
-                      <label class="form-control-label">logo Image one: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="logo1"  accept="image/*">
-                    @error('logo1')<span class="text-danger"> {{$message}}</span>  @enderror  
-                    </div>
-                    @if(isset($logo1)) <img id="output" src="{{$logo1->temporaryUrl()}}" width="100" > @endif
-                
+                  <img class="img-fluid" src="{{(isset($this->main_image)) 
+                    ? $main_image->temporaryUrl() :asset('no_image.jpg')}}" width="150" >
                 </div><!-- col-4 -->
+            
+                {{-- logo 1 --}}
                 <div class="col-lg-3">
-                    <div class="form-group">
-                      <label class="form-control-label">logo Image two: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="logo2"  accept="image/*">
-                    @error('logo2')<span class="text-danger"> {{$message}}</span>  @enderror  
-                    </div>
-                    @if(isset($logo2)) <img id="output" src="{{$logo2->temporaryUrl()}}" width="100" > @endif
-                
+                  <div class="form-group mg-b-10-force">
+                    <label class="form-control-label"> logo 1 Image:  : <span class="tx-danger">*</span></label><br>
+                    <label class="custom-file">
+                      <input type="file" id="file" class="custom-file-input" wire:model="logo1" >
+                      <span class="custom-file-control"></span>
+                    </label>
+                  </div>
+                  @error('logo1')<span class="text-danger"> {{$message}}</span>  @enderror  
+
+                  <img class="img-fluid" src="{{(isset($this->logo1)) 
+                    ? $logo1->temporaryUrl() :asset('no_image.jpg')}}" width="150" >
                 </div><!-- col-4 -->
+                {{-- end logo 1 --}}
+
+                {{-- logo 1 --}}
                 <div class="col-lg-3">
-                    <div class="form-group">
-                      <label class="form-control-label">logo Image three: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="logo3"  accept="image/*">
-                    @error('logo3')<span class="text-danger"> {{$message}}</span>  @enderror  
-                    </div>
-                    @if(isset($logo3)) <img id="output" src="{{$logo3->temporaryUrl()}}" width="100" > @endif
-                
+                <div class="form-group mg-b-10-force">
+                  <label class="form-control-label"> logo 2 Image:  : <span class="tx-danger">*</span></label><br>
+                  <label class="custom-file">
+                    <input type="file" id="file" class="custom-file-input" wire:model="logo2" >
+                    <span class="custom-file-control"></span>
+                  </label>
+                </div>
+                @error('logo2')<span class="text-danger"> {{$message}}</span>  @enderror  
+
+                <img class="img-fluid" src="{{(isset($this->logo2)) 
+                  ? $logo2->temporaryUrl() :asset('no_image.jpg')}}" width="150" >
+              </div><!-- col-4 -->
+              {{-- end logo 1 --}}
+
+
+                 {{-- logo 1 --}}
+                <div class="col-lg-3">
+                  <div class="form-group mg-b-10-force">
+                    <label class="form-control-label"> logo 3 Image:  : <span class="tx-danger">*</span></label><br>
+                    <label class="custom-file">
+                      <input type="file" id="file" class="custom-file-input" wire:model="logo3" >
+                      <span class="custom-file-control"></span>
+                    </label>
+                  </div>
+                  @error('logo3')<span class="text-danger"> {{$message}}</span>  @enderror  
+
+                  <img class="img-fluid" src="{{(isset($this->logo3)) 
+                    ? $logo3->temporaryUrl() :asset('no_image.jpg')}}" width="150" >
                 </div><!-- col-4 -->
+                {{-- end logo 1 --}}
+
+           
+          
+           
 
                  
 

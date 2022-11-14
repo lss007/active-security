@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home_banners', function (Blueprint $table) {
+        Schema::create('all_pages_banners', function (Blueprint $table) {
             $table->id();
+            $table->string('cat_id');
             $table->text('heading')->nullable();
             $table->text('title')->nullable();
+            $table->text('subtitle')->nullable();
             $table->text('banner_paragaph')->nullable();
             $table->string('banner_image')->nullable();
             $table->string('side_img')->nullable();
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_banners');
+        Schema::dropIfExists('all_pages_banners');
     }
 };

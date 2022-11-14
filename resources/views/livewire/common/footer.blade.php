@@ -1,46 +1,59 @@
 
 <footer>
+
+  @php
+    $footeraddress =  DB::table('footer_contact_addresses')->first();
+     $socialLinks =     DB::table('social_links')->where('status',1)->limit(5)->get();
+     $footerlogos =  DB::table('footer_logos')->where('name','=','footer')->where('status',1)->limit(5)->get();
+  @endphp
     <div class="footerColMain">
       <div class="container">
         <div class="footerTopCol">
-          <div class="row">
+          <div class="row">     
             <div class="col-lg-auto">
               <div class="footerLogo">
-                <a href="{{route('homePage')}}"><img src="{{ asset('frontend/images/footer-logo.svg')}}" alt="..."></a>
+                <a href="{{route('homePage')}}"><img src="{{(isset($footeraddress->logo)) 
+                  ? asset('storage/footer-logo/'.$footeraddress->logo) :asset('no_image.jpg')}}" alt="..."></a>
               </div>
             </div>
             <div class="col-sm-6 col-lg">
               <h4 class="footerTitle">Kontakt</h4>
               <ul class="footerIconOption">
-                <li><span class="optionIcon"><img src="{{ asset('frontend/images/phone-icon.svg')}}" alt="..."></span> Telefon: 09401 918 77 32</li>
-                <li><span class="optionIcon"><img src="{{ asset('frontend/images/fax-icon.svg')}}" alt="..."></span> Fax: 0941 99 22 65 99</li>
-                <li><span class="optionIcon"><img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> kontakt@active-sec.de</li>
+                <li><span class="optionIcon"><img src="{{ asset('frontend/images/phone-icon.svg')}}" alt="..."></span> Telefon: {{isset($footeraddress->telefon) ? $footeraddress->telefon :"NA"}}</li>
+                <li><span class="optionIcon"><img src="{{ asset('frontend/images/fax-icon.svg')}}" alt="..."></span> Fax:  {{isset($footeraddress->fax) ? $footeraddress->fax :"NA"}}</li>
+                <li><span class="optionIcon"><img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> {{isset($footeraddress->email) ? $footeraddress->email :"NA"}}</li>
               </ul>
             </div>
             <div class="col-sm-6 col-lg">
               <h4 class="footerTitle">Addresse</h4>
               <ul class="footerIconOption">
-                <li><span class="optionIcon"><img src="{{ asset('frontend/images/location-pin.svg')}}" alt="..."></span> Galgenbergstraße 12a 93053 Regensburg</li>
+                <li><span class="optionIcon"><img src="{{ asset('frontend/images/location-pin.svg')}}" alt="..."></span>{{isset($footeraddress->address) ? $footeraddress->address :"NA"}} </li>
               </ul>
             </div>
             <div class="col-lg text-center text-lg-start">
               <h4 class="footerTitle">Social media</h4>
               <ul class="socialIcons">
-                <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/linkedin.svg')}}" alt="..."></a></li>
-                <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/xing.svg')}}" alt="..."></a></li>
-                <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/instagram.svg')}}" alt="..."></a></li>
-                <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/facebook.svg')}}" alt="..."></a></li>
+                @if(isset($socialLinks))
+                @foreach($socialLinks as $links)
+                <li><a href="{{$links->link}}">
+                  <img src="{{(isset($links->logo)) 
+                    ? asset('storage/social-logo/'.$links->logo) :asset('no_image.jpg')}}" alt="..."></a>
+                </li>
+                @endforeach
+                @endif   
               </ul>
             </div>
           </div>
         </div>
         <div class="footerMdlCol">
           <div class="row g-2 align-items-center justify-content-between">
-            <div class="col-auto"><img src="{{ asset('frontend/images/dekra-1.svg')}}" alt="..."></div>
-            <div class="col-auto"><img src="{{ asset('frontend/images/dekra-2.svg')}}" alt="..."></div>
-            <div class="col-auto"><img src="{{ asset('frontend/images/bdsw.svg')}}" alt="..."></div>
-            <div class="col-auto"><img src="{{ asset('frontend/images/ihk.svg')}}" alt="..."></div>
-            <div class="col-auto"><img src="{{ asset('frontend/images/vbg.svg')}}" alt="..."></div>
+@if(isset( $footerlogos))
+@foreach( $footerlogos as $flogo)
+            <div class="col-auto"><img src="{{(isset($flogo->logo_img)) 
+              ? asset('storage/footer-logo/'.$flogo->logo_img) :asset('no_image.jpg')}}" alt="..."></div>
+@endforeach
+@endif
+
           </div>
         </div>
       </div>

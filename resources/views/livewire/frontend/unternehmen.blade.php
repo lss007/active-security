@@ -1,5 +1,7 @@
 <div>
     {{-- Nothing in the world is as soft and yielding as water. --}}
+
+
     <section>
         <div class="bannerSection innerPageBanner companyBanner">
           <div class="container">
@@ -11,22 +13,41 @@
           </div>
         </div>
       </section>
-    
+    @if(isset($companysecOne))
       <section>
         <div class="sectionSpace">
           <div class="container">
             <div class="contentCol">
-              <h2 class="lgTitle p2">active secuirty</h2>
-              <p class="lgText p2 pt-xl-1 pb-xxl-2">Ihr Sicherheitsdienst aus Regensburg.</p>
-              <p>Wir sind seit 2015 als Sicherheitsunternehmen für Gewerbe- und Privatkunden tätig und haben uns bayernweit etabliert. active security ist DEKRA-zertifiziert (nach DIN 77200 und ISO 9001) und wir sorgen durch jährliche Audits für die Einhaltung unserer Standards. Mit unserem Security-Team übernehmen wir Aufträge für mittelständische Betriebe und Großunternehmen.</p>
-              <p class="lgText p2 pt-xl-1 pb-xxl-2">Absolute Sicherheit für Kunden und Mitarbeiter.</p>
-              <p>Als Sicherheitsunternehmen achten wir auf faire und sichere Arbeitsbedingungen, denn wir sind davon überzeugt, dass dies auch Ihnen als Kunden zugutekommt. Wir sind Mitglied im BDSW und sind somit tarifgebunden, wovon unsere Mitarbeiter profitieren. Im Bereich Arbeitsschutz arbeiten wir eng mit der VBG zusammen und haben zudem eine Fachkraft für Arbeitssicherheit in unserem Team. Gemeinsam mit unserem Betriebsarzt veranstalten wir mehrmals im Jahr ASA-Sitzungen, in denen wir gemeinsam Anliegen zur Arbeitssicherheit und zum Gesundheitsschutz besprechen.</p>
-              <p>Wir sind ein von der IHK anerkannter Ausbildungsbetrieb und sorgen durch unsere mehrjährige Erfahrung für eine fundierte Berufsausbildung unserer Azubis. Auch unsere Sicherheitsmitarbeiter sind bestens ausgebildet – vom Shopguard bis zur Werkschutzfachkraft. Mit regelmäßigen Weiterbildungen und Schulungen sorgen wir dafür, dass sie immer auf dem aktuellen Stand sind und den Umgang mit neuesten Sicherheitssystemen bestens beherrschen.</p>
+              <h2 class="lgTitle p2">  {!! isset($companysecOne->heading)  ? html_entity_decode($companysecOne->heading) : "NA" !!}  
+
+              </h2>
+              <p class="lgText p2 pt-xl-1 pb-xxl-2">
+                
+                {!! isset($companysecOne->title)  ? html_entity_decode($companysecOne->title) : "NA" !!}  
+              </p>
+              <p>
+                {!! isset($companysecOne->para1)  ? html_entity_decode($companysecOne->para1) : "NA" !!}  
+              </p>
+              <p class="lgText p2 pt-xl-1 pb-xxl-2">
+                {!! isset($companysecOne->title2)  ? html_entity_decode($companysecOne->title2) : "NA" !!}  
+                
+              </p>
+              <p>
+                {!! isset($companysecOne->para2)  ? html_entity_decode($companysecOne->para2) : "NA" !!}  
+                
+              </p>
+              <p>
+                {!! isset($companysecOne->para3)  ? html_entity_decode($companysecOne->para3) : "NA" !!} 
+
+              </p>
             </div>
           </div>
         </div>
       </section>
+      @endif
     
+
+      @if($companysecTwo)
       <section>
         <div class="sectionSpace pt-0">
           <div class="container">
@@ -34,30 +55,47 @@
               <div class="col-lg-6">
                 <div class="cCardCol">
                   <div class="cCardImgCol">
-                    <img src="{{ asset('frontend/images/m-img-1.jpg')}}" alt="...">
+                    <img src="{{(isset($this->companysecTwo->profile_img)) 
+                      ? asset('storage/company-profile/'.$companysecTwo->profile_img) :asset('no_image.jpg')}}" alt="...">
                   </div>
                   <div class="cCardContent">
-                    <span class="uName">Alexander Göbel</span>
-                    <span class="desText">Inhaber</span>
-                    <p>Geprüfter Wirtschaftsfachwirt (IHK)</p>
-                    <p><a href="mailto:a.gobel@active-sec.de"><span class="emailText"> <span class="emailIcon">
-                      <img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> a.gobel@active-sec.de</span></a></p>
+                    <span class="uName">{!! isset($companysecTwo->name) ? $companysecTwo->name : "MA"!!}</span>
+                    <span class="desText">{!! isset( $companysecTwo->position) ?  $companysecTwo->position : "NA"!!}</span>
+                    <p>{!! isset($companysecTwo->department) ? $companysecTwo->department : "NA"!!}</p>
+                    <p><a href="mailto:m.schmiedefeld@active-sec.de"><span class="emailText"> 
+                      <span class="emailIcon">
+                        <img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> 
+                        {!! isset($companysecTwo->email) ? $companysecTwo->email : "NA"!!}</span></a></p>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="contentCol">
-                  <h2 class="lgTitle p2">Sicherheit beginnt...</h2>
-                  <p class="lgText p2 pt-1">Vertrauen erfahren. Sicherheit geben.</p>
-                  <p>Alexander Göbel ist Wirtschaftsfachwirt und hat langjährige Erfahrung im Sicherheitsdienst. Er hält zudem den Sachkundenachweis gem. § 34a und weiß daher ganz genau, worauf es bei wirkungsvollen Sicherheitskonzepten ankommt. Er ist innovativer Ideengeber und bezieht Kunden und Mitarbeiter in Entscheidungsprozesse ein, ohne dabei den Fokus auf Kontinuität und Qualität zu verlieren.</p>
-                  <p>Auch nachhaltiges Handeln ist für ihn von großer Bedeutung. active security arbeitet daher entsprechend einer Nachhaltigkeitsstrategie, in deren Mittelpunkt vor allem ethisches Verhalten und die soziale Verantwortung gegenüber Kunden und Mitarbeitern stehen.</p>
-                  <p>Die Zufriedenheit unserer Kunden und Mitarbeiter ist der Ausgangspunkt und Antrieb unseres Handelns. Wir setzen auf Bewährtes und Verlässliches, um auch zukünftige Herausforderungen in der Sicherheitsbranche erfolgreich zu meistern und arbeiten stets professionell und auf Augenhöhe mit unseren Partnern zusammen. Ihr Vertrauen in uns steht für mich an erster Stelle - und dafür bin ich täglich gerne im Einsatz.</p>
+                  <h2 class="lgTitle p2"> 
+                    {!! isset($companysecTwo->heading) ? $companysecTwo->heading : "NA"!!}
+                    </h2>
+           
+         
+                  <p class="lgText p2 pt-1">
+                    {!! isset($companysecTwo->title)  ? html_entity_decode($companysecTwo->title) : "NA" !!} 
+                  </p>
+                  <p>
+                    {!! isset($companysecTwo->para1)  ? html_entity_decode($companysecTwo->para1) : "NA" !!} 
+                     </p>
+                  <p>      {!! isset($companysecTwo->para2)  ? html_entity_decode($companysecTwo->para2) : "NA" !!} 
+
+                  </p>
+                  <p>      {!! isset($companysecTwo->para3)  ? html_entity_decode($companysecTwo->para3) : "NA" !!} 
+
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      @endif
+      @if($companysecThree )
       <section>
         <div class="sectionSpace pt-0">
           <div class="container">
@@ -65,31 +103,43 @@
               <div class="col-lg-6 order-lg-last">
                 <div class="cCardCol ms-lg-auto">
                   <div class="cCardImgCol">
-                    <img src="{{ asset('frontend/images/m-img-2.jpg')}}" alt="...">
+                    <img src="{{(isset($this->companysecThree->profile_img)) 
+                      ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}" alt="...">
                   </div>
                   <div class="cCardContent">
-                    <span class="uName">Markus Schmiedefeld</span>
-                    <span class="desText">Bereichsleitung</span>
-                    <p>Geprüfte Schutz- und Sicherheitskraft (IHK)</p>
+                    <span class="uName">{!! isset($companysecThree->name) ? $companysecThree->name : "MA"!!}</span>
+                    <span class="desText">{!! isset( $companysecThree->position) ?  $companysecThree->position : "NA"!!}</span>
+                    <p>{!! isset($companysecThree->department) ? $companysecThree->department : "NA"!!}</p>
                     <p><a href="mailto:m.schmiedefeld@active-sec.de"><span class="emailText"> 
                       <span class="emailIcon">
-                        <img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> m.schmiedefeld@active-sec.de</span></a></p>
+                        <img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> 
+                        {!! isset($companysecThree->email) ? $companysecThree->email : "NA"!!}</span></a></p>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="contentCol">
-                  <h2 class="lgTitle p2">...mit uns</h2>
-                  <p class="lgText p2 pt-1">Auf jeden einzelnen kommt es an.</p>
-                  <p>Als IHK-geprüfte Schutz- und Sicherheitskraft und Personenschützer ist Markus Schmiedefeld  bereits 10 Jahre im Sicherheitsdienst aktiv. Bei active security ist Herr Schmiedefeld als Bereichsleitung für das Controlling der Prozesse zuständig - und übermittelt die Anforderungen und Wünsche unserer Kunden an unsere Objektleiter und Sicherheitsmitarbeiter vor Ort. </p>
-                  <p>Als Schnittstelle unseres Teams achte ich darauf, dass alle Prozesse intern und extern optimal ablaufen. Dabei ist es mir besonders wichtig, dass sich von unseren Kunden bis zu unseren Mitarbeitern alle gut bei uns aufgehoben fühlen. Das schließt mit ein, dass ich immer erreichbar bin und auch in herausfordernden Situationen einen kühlen Kopf bewahre und lösungsorientiert denke.</p>
+                  <h2 class="lgTitle p2">   
+                    {!! isset($companysecThree->heading)  ? html_entity_decode($companysecThree->heading) : "NA" !!} 
+                   </h2>
+                  <p class="lgText p2 pt-1">
+                    {!! isset($companysecThree->title)  ? html_entity_decode($companysecThree->title) : "NA" !!} 
+                  </p>
+                  <p>
+                    {!! isset($companysecThree->para1)  ? html_entity_decode($companysecThree->para1) : "NA" !!} 
+                     </p>
+                  <p>      {!! isset($companysecThree->para2)  ? html_entity_decode($companysecThree->para2) : "NA" !!} 
+
+                  </p>
+                 
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    
+
+      @endif
       <section>
         <div class="sectionBgCol companySectionBg">
           <div class="container">
@@ -99,6 +149,8 @@
           </div>
         </div>
       </section>
+
+   
     
       @include('livewire.common.take_step')
     

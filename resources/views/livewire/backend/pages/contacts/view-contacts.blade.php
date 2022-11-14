@@ -64,15 +64,14 @@
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content tx-size-sm">
                       <div class="modal-header pd-x-20">
-                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Company Section Preview</h6>
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"> Message Preview</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body pd-20">
                 
-                        <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getrow->profile_img))  
-                          ? asset('storage/company-profile/'.$getrow->profile_img):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                        
                         
                       
                         <h6 class="mg-b-5"> <span class="text-primary">  Name  : </span>{{isset($getrow->surname) ? $getrow->surname : "NA"}}</>
@@ -80,14 +79,11 @@
                           
                         <h6 class="mg-b-5"> <span class="text-primary">  Email  : </span>{{isset($getrow->email) ? $getrow->email : "NA"}}</h6>
   
-                        <h6 class="mg-b-5"> <span class="text-primary">  regarding  : </span>{{isset($getrow->regarding) ? $getrow->regarding : "NA"}}</h6>
+                        <h6 class="mg-b-5"> <span class="text-primary">  Regarding  : </span>{{isset($getrow->regarding) ? $getrow->regarding : "NA"}}</h6>
                         
-                        <h6 class=" lh-3 mg-b-20"><span class="text-primary">client message  :</span> {{isset($getrow->client_message) ? $getrow->client_message : "NA" }}</h6>
+                        <h6 class=" lh-3 mg-b-20"><span class="text-primary">Client message  :</span> {{isset($getrow->client_message) ? $getrow->client_message : "NA" }}</h6>
                       
-  
-  
-                        <p class="mg-b-5"> <span class="text-primary">  message  : </span>{{isset($getrow->client_message) ? $getrow->client_message : "NA"}}</p>
-          
+
                    
                   </div><!-- modal-body -->
                 

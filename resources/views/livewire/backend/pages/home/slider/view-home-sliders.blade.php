@@ -134,6 +134,7 @@
           
         </div><!-- card -->
 {{--============================== start trashed data ============================== --}}
+
         @if (isset($trashdata) && count($trashdata) > 0)
         <div class="card pd-20 pd-sm-40">
           <h2>Restore Deleteed Slider   </h2>
@@ -159,7 +160,7 @@
                     ? asset('storage/Home-slider/'.$trashed->image):asset('no_image.jpg')}}" alt="..." >
                       </td>
                   <td> {{isset($trashed->title) ? str_limit($trashed->title , $limit=20 ) : "NA" }}</td>
-                  <td> {!!str_limit($slider->description, $limit=20 ) !!}</td>
+                  <td> {!!str_limit($trashed->description, $limit=20 ) !!}</td>
 
                   <td>
 

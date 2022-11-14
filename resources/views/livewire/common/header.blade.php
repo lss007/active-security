@@ -24,15 +24,15 @@
                       <li class="ddLinkCol">
                         <a href="javascript:void(0)">Dienstleistungen</a>
                         <ul class="subMenu">
-                          <li><a href="{{route('ObjektPage')}}">Objekt- und Werkschutz</a></li>
-                          <li><a href="{{route('CenterbewachungPage')}}">Centerbewachung</a></li>
-                          <li><a href="{{route('KaufhausdetektivePage')}}">Kaufhausdetektive</a></li>
-                          <li><a href="{{route('baustellenbewachungPage')}}">Baustellenbewachung</a></li>
-                          <li><a href="{{route('openingAndclosingPage')}}">Öffnungs- und Schließddienst</a></li>
-                          <li><a href="{{route('revierfahrtenPage')}}">Revierkontrollen</a></li>
-                          <li><a href="{{route('empfangsdienst')}}">Empfangsdienst</a></li>
-                          <li><a href="{{route('ShopGuardPage')}}">Shop Guard</a></li>
-                          <li><a href="{{route('VeranstaltungsSchutzPage')}}">Veranstaltungsschutz</a></li>
+                          <li><a href="{{route('ObjektPage')}}" class="@if(Route::is('ObjektPage') ) active @else '' @endif">Objekt- und Werkschutz</a></li>
+                          <li><a href="{{route('CenterbewachungPage')}}" class="@if(Route::is('CenterbewachungPage') ) active @else '' @endif">Centerbewachung</a></li>
+                          <li><a href="{{route('KaufhausdetektivePage')}}" class="@if(Route::is('KaufhausdetektivePage') ) active @else '' @endif">Kaufhausdetektive</a></li>
+                          <li><a href="{{route('baustellenbewachungPage')}}" class="@if(Route::is('baustellenbewachungPage') ) active @else '' @endif">Baustellenbewachung</a></li>
+                          <li><a href="{{route('openingAndclosingPage')}}" class="@if(Route::is('openingAndclosingPage') ) active @else '' @endif">Öffnungs- und Schließddienst</a></li>
+                          <li><a href="{{route('revierfahrtenPage')}}" class="@if(Route::is('revierfahrtenPage') ) active @else '' @endif">Revierkontrollen</a></li>
+                          <li><a href="{{route('empfangsdienst')}}" class="@if(Route::is('empfangsdienst') ) active @else '' @endif">Empfangsdienst</a></li>
+                          <li><a href="{{route('ShopGuardPage')}}" class="@if(Route::is('ShopGuardPage') ) active @else '' @endif">Shop Guard</a></li>
+                          <li><a href="{{route('VeranstaltungsSchutzPage')}}" class="@if(Route::is('VeranstaltungsSchutzPage') ) active @else '' @endif">Veranstaltungsschutz</a></li>
                         </ul>
                       </li>
                       <li><a href="{{route('UnternehmenPage')}}" class="@if(Route::is('UnternehmenPage') ) active @else '' @endif">Unternehmen</a></li>

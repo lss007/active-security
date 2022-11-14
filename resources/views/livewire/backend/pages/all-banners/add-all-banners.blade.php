@@ -9,14 +9,28 @@
 
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title">  
-            <a href="{{route('viewHomebanner')}}" class="btn btn-teal active mg-b-10"  >Back</a>
+            <a href="{{route('view_all_banner')}}" class="btn btn-teal active mg-b-10"  >Back</a>
         </h6>
-        <form  wire:submit.prevent="saveHomeBanner">
+        <form  wire:submit.prevent="saveallBanner">
              <div class="form-layout">
                <div class="row mg-b-25">
-              
+                <div class="col-lg-6">
+                    <div class="form-group mg-b-10-force" wire:ignore>
+                      <label class="form-control-label"> Section Page Name : <span class="tx-danger">*</span></label>
+                      <select  class="form-control" wire:model="pageCatId" >
+                        <option selected class="form-control">Choose Page Category </option>
+                        @if(isset($getPageCategory))
+                            @foreach($getPageCategory as $category )
+                                <option value="{{$category->id}}"  class="form-control">{{$category->page_cat_name}}</option>
+                            @endforeach
+                        @endif
+                      </select>
+                      
+                    </div>
+                    @error('pageCatId')<span class="tx-danger"> {{$message}}</span>  @enderror  
+                </div><!-- col-4 -->
             
-                 <div class="col-lg-12">
+                 <div class="col-lg-6">
                    <div class="form-group">
                      <label class="form-control-label">Banner Main Heading: <span class="tx-danger">*</span></label>
                      <input class="form-control" type="text" wire:model="Heading"  placeholder="Heading">
@@ -24,14 +38,14 @@
                    
                  </div>
                  </div><!-- col-4 -->
-                 <div class="col-lg-12">
+                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label">Banner Title: <span class="tx-danger">*</span></label>
                     <input class="form-control" type="text" wire:model="Title"  placeholder="Banner Title">
                     @error('Title')<span class="text-danger"> {{$message}}</span>  @enderror  
                 </div>
                 </div><!-- col-4 -->
-                 <div class="col-lg-12">
+                 {{-- <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Banner Paragraph: <span class="tx-danger">*</span></label>
                       <textarea class="form-control"   wire:model="BannerParagaph"> 
@@ -40,9 +54,9 @@
                       @error('BannerParagaph')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>
-                  </div><!-- col-4 -->
+                  </div><!-- col-4 --> --}}
         
-                   <div class="col-lg-4">
+                   <div class="col-lg-6">
                      <div class="form-group">
                        <label class="form-control-label">Button text: </label>
                        <input class="form-control" type="text" wire:model="buttonText"  placeholder="Button text">
@@ -50,23 +64,23 @@
                     
                      </div>
                    </div><!-- col-4 -->
-                   {{-- <div class="col-lg-4">
-                    <div class="form-group">
-                      <label class="form-control-label">Button link: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="url" wire:model="button_link"  placeholder="Button link">
-                      @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
-                   
+              
+                   <div class="col-lg-12">
+        
+                    <div class="form-group mg-b-10-force">
+                      <label class="form-control-label"> Banner Image:  : <span class="tx-danger">*</span></label><br>
+                      <label class="custom-file">
+                        <input type="file" id="file" class="custom-file-input" wire:model="bannerImage" >
+                        <span class="custom-file-control"></span>
+                      </label>
                     </div>
-                  </div><!-- col-4 --> --}}
-                   <div class="col-lg-4">
-                    <div class="form-group">
-                      <label class="form-control-label">Banner Image: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="bannerImage" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" accept="image/*">
-                    @error('bannerImage')<span class="text-danger"> {{$message}}</span>  @enderror  
-                    </div>
-                    @if(isset($bannerImage))
-                    <img id="output" src="{{$bannerImage->temporaryUrl()}}" width="200" >
-                  @endif
+                 
+                
+                    <img class="img-fluid" src="{{(isset($this->bannerImage)) 
+                      ? $bannerImage->temporaryUrl() :asset('no_image.jpg')}}" width="150" >
+  
+            
+
                   </div><!-- col-4 -->
 
                

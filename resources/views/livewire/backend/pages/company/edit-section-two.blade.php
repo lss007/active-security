@@ -70,8 +70,8 @@
                               <label class="form-control-label"> Position : <span class="tx-danger">*</span></label>
                                 <select class="form-control" data-placeholder="Choose Section" wire:model="position" aria-hidden="true">
                                 <option label="Choose Section"></option>
-                                <option value="owner">owner </option>
-                                <option value="head">Head of Department</option>
+                                <option value="Inhaber">Inhaber </option>
+                                <option value="Bereichsleitung">Bereichsleitung</option>
                               </select>
                               @error('position')<span class="text-danger"> {{$message}}</span>  @enderror  
                             

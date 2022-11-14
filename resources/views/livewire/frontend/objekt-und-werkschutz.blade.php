@@ -1,17 +1,32 @@
 <div>
     {{-- Close your eyes. Count to one. That is how long forever feels. --}}
-    <section>
-        <div class="bannerSection innerPageBanner s1Banner">
+    @if(isset($this->ObjektUndPageBanner))
+      <section>
+        <div class="bannerSection innerPageBanner s1Banner" style="background-image: url('{{asset('storage/All-banner/'.$this->ObjektUndPageBanner->banner_image)}}')">
           <div class="container">
-            <div class="bannerContent mw-100">
-              <h1 class="xlTitle">Objekt- und <br class="d-none d-lg-block"> Werschutz</h1>
-              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">Mit individuellem Objekt- und Werkschutz zu maximaler Sicherheit.</p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">Angebot einholen</a>
+            <div class="bannerContent">
+              <h1 class="xlTitle">{{	isset($ObjektUndPageBanner->heading) ? $ObjektUndPageBanner->heading : "NA"}}</h1>
+              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">{{	isset($ObjektUndPageBanner->title) ? $ObjektUndPageBanner->title : "NA"}}.</p>
+              <a href="{{route('ContactPage')}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">{{	isset($ObjektUndPageBanner->button_text) ? $ObjektUndPageBanner->button_text : "Angebot einholen"}} </a>
             </div>
           </div>
         </div>
       </section>
-    
+      @else 
+      <section>
+        <div class="bannerSection innerPageBanner ">
+          <div class="container">
+            <div class="bannerContent">
+              <h1 class="xlTitle">NA  </h1>
+              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">NA</p>
+              <a href="contact.html" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">NA </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      @endif
+     
+
       <section>
         <div class="sectionSpace">
           <div class="container">
@@ -33,6 +48,7 @@
           </div>
         </div>
       </section>
+      
     
       <section>
         <div class="sectionBgCol serviceSectionBg1">
