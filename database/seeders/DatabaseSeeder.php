@@ -19,8 +19,22 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(PageCategorySeeder::class);
         $this->call(SociaCategorySeeder::class);
-        // $this->call(HomeClientLogoSeeder::class);
-        // $this->call(HomeSectionSliderSeeder::class);
+        $this->call(HomeClientLogoSeeder::class);
+        $this->call(HomeSectionSliderSeeder::class);
+        $this->call(HomeSectionTwoSeeder::class);
+        $this->call(HomeBannerSeeder::class);
+        $this->call(AllPagesBannerSeeder::class);
+        $this->call(FooterContactAddressSeeder::class);
+        $this->call(FooterLogoSeeder::class);
+
+
+        
+
+
+
+
+        
+
 
      
 
