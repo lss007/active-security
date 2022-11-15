@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         // 
         $createuser = New User();
         $createuser->name = "Alexander";
+        $createuser->role_id = 1;
         $createuser->email = "active_security@yopmail.com";
         $createuser->password = Hash::make('12345678');
         $createuser->current_team_id = 1;
