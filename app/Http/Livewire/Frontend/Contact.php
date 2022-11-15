@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Frontend;
 
 use App\Jobs\ContactMessage;
+use App\Models\AllPagesBanner;
 use App\Models\Contact as ModelsContact;
 use Carbon\Carbon;
 
@@ -13,7 +14,15 @@ use Livewire\Component;
 class Contact extends Component
 {
 
-public $surname, $email, $regarding, $client_message ;
+public $surname, $email, $regarding, $client_message  ,$Contactmain;
+
+public function render()
+{
+
+    $this->Contactmain     = AllPagesBanner::where('cat_id' ,12)->where('status',1)->first();
+              
+    return view('livewire.frontend.contact')->layout('layouts.frontend');
+}
     protected $rules = [
         'surname' => 'required',
         'email' => 'required|email',
@@ -56,10 +65,5 @@ public function sendmessage()
             }
                 $this->resetInputFields();  
     }
-    public function render()
-    {
-
-                  
-        return view('livewire.frontend.contact')->layout('layouts.frontend');
-    }
+ 
 }

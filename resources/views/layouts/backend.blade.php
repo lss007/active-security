@@ -47,6 +47,7 @@
     <!-- ########## END: LEFT PANEL ########## -->
 
     <!-- ########## START: HEAD PANEL ########## -->
+
 @include('livewire.backend.common.header')
     <!-- ########## END: HEAD PANEL ########## -->
 

@@ -13,7 +13,7 @@ class ViewServices extends Component
                 $this->get_services_sec =  ServicesPageSection::
                 join('page_categories' , 'services_page_sections.page_cat_id' ,'page_categories.id')
                 ->select('services_page_sections.*','page_categories.page_cat_name')
-                ->latest()->get();
+                ->get();
         return view('livewire.backend.pages.services.view-services')->layout('layouts.backend');
     }
 

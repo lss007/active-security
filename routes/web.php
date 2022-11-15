@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserLogoutController;
 use App\Http\Livewire\Backend\Dashboard;
 use App\Http\Livewire\Backend\Pages\AllBanners\AddAllBanners;
 use App\Http\Livewire\Backend\Pages\AllBanners\EditAllBanners;
@@ -83,6 +84,9 @@ use Illuminate\Support\Facades\Route;
 
 //================ start Frontend routes ================
 // homepage 
+
+
+Route::get('Userlogout', [UserLogoutController::class, 'user_logout'])->name('user.logout');
 Route::get('/', HomePage::class)->name('homePage');
 // ObjektPage 
 Route::get('/objekt-und-werkschutz', ObjektUndWerkschutz::class)->name('ObjektPage');

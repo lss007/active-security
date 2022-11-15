@@ -1,17 +1,26 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
+
+    @if(isset($Contactmain))
     <section>
         <div class="bannerSection innerPageBanner contactBanner">
           <div class="container">
             <div class="bannerContent mw-100">
-              <h1 class="xlTitle">Kontakt</h1>
-              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">Wir sind gerne für Sie da.</p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">Kontaktformular</a>
+              <h1 class="xlTitle">
+                {{	isset($Contactmain->heading) ? $Contactmain->heading : "NA"}}
+
+              </h1>
+              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
+                {{	isset($Contactmain->title) ? $Contactmain->title : "NA"}}
+              </p>
+              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+                {{	isset($Contactmain->button_text) ? $Contactmain->button_text : "Kontaktformular "}} 
+                </a>
             </div>
           </div>
         </div>
       </section>
-    
+    @endif
       <section>
         <div class="sectionSpace">
           <div class="container">

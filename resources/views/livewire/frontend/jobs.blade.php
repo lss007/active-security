@@ -1,16 +1,23 @@
 <div>
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+
+    @if(isset($Jobsmain))
     <section>
-        <div class="bannerSection innerPageBanner jobsBanner">
+        <div class="bannerSection innerPageBanner jobsBanner"  style="background-image: url('{{asset('storage/All-banner/'.$this->Jobsmain->banner_image)}}')">
           <div class="container">
             <div class="bannerContent mw-100">
-              <h1 class="xlTitle">Jobs</h1>
-              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">Werden Sie Teil unseres Security Teams.</p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">Jetzt bewerben</a>
+              <h1 class="xlTitle">     {{	isset($Jobsmain->heading) ? $Jobsmain->heading : "NA"}}</h1>
+              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
+                {{	isset($Jobsmain->title) ? $Jobsmain->title : "NA"}}</p>
+              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
+
+                {{	isset($Jobsmain->button_text) ? $Jobsmain->button_text : "Angebot einholen"}} 
+              </a>
             </div>
           </div>
         </div>
       </section>
+      @endif
     @if(isset($getJobsec))
       <section>
         <div class="sectionSpace">
@@ -45,14 +52,15 @@
         </div>
       </section>
       @endif
-    
-      <section>
-        <div class="sectionBgCol jobsSectionBg">
-          <div class="container">
-            <div class="sectonTitleCol">
-              <h4 class="xlTitle">jetzt <br class="d-none d-lg-block"> durchstarten</h4>
-            </div>
-          </div>
+    @if(isset($Jobs_pagebanner))
+  <section>
+    <div class="sectionBgCol jobsSectionBg" style="background-image: url('{{asset('storage/services-banner/'.$this->Jobs_pagebanner->banner)}}')">
+      <div class="container">
+        <div class="sectonTitleCol">
+          <h4 class="xlTitle">{!! isset($Jobs_pagebanner->heading) ? $Jobs_pagebanner->heading : "NA" !!}</h4>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+      @endif
 </div>

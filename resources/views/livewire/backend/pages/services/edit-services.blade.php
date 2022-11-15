@@ -54,7 +54,7 @@
                  <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Section Paragraph 1: <span class="tx-danger">*</span></label>
-                      <textarea class="form-control"   wire:model="para1" placeholder="Add Section paragraph 1... "></textarea>
+                      <textarea class="form-control" rows="5"   wire:model="para1" placeholder="Add Section paragraph 1... "></textarea>
                       @error('para1')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>
@@ -63,7 +63,7 @@
                   <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Section Paragraph 2: <span class="tx-danger">*</span></label>
-                      <textarea class="form-control"   wire:model="para2" placeholder="Add Section paragraph 2..."></textarea>
+                      <textarea class="form-control" rows="5"   wire:model="para2" placeholder="Add Section paragraph 2..."></textarea>
                       @error('para2')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>
@@ -73,7 +73,7 @@
                   <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Section Paragraph 3: <span class="tx-danger">*</span></label>
-                      <textarea class="form-control"   wire:model="para3" placeholder="Add Section paragraph 3..."></textarea>
+                      <textarea class="form-control" rows="5"  wire:model="para3" placeholder="Add Section paragraph 3..."></textarea>
                       @error('para3')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>
@@ -83,7 +83,7 @@
                   <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Section Paragraph 4: <span class="tx-danger">*</span></label>
-                      <textarea class="form-control"   wire:model="para4" placeholder="Add Section paragraph 4... "></textarea>
+                      <textarea class="form-control" rows="5"  wire:model="para4" placeholder="Add Section paragraph 4... "></textarea>
                       @error('para4')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>
@@ -93,7 +93,7 @@
                   <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Section Paragraph 5: <span class="tx-danger">*</span></label>
-                      <textarea class="form-control"   wire:model="para5" placeholder="Add Section paragraph 5 optional ... "></textarea>
+                      <textarea class="form-control" rows="5"  wire:model="para5" placeholder="Add Section paragraph 5 optional ... "></textarea>
                       @error('para5')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>

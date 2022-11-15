@@ -1,18 +1,23 @@
 <div>
     {{-- Nothing in the world is as soft and yielding as water. --}}
 
-
+@if(isset($Unternehmenmain))
     <section>
-        <div class="bannerSection innerPageBanner companyBanner">
-          <div class="container">
-            <div class="bannerContent mw-100">
-              <h1 class="xlTitle">Da bin ich mir sicher.</h1>
-              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">Sicherheit, auf die Sie sich verlassen können.</p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">Lernen Sie uns kennen</a>
-            </div>
+      <div class="bannerSection innerPageBanner companyBanner" style="background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->banner_image)}}')">
+        <div class="container">
+          <div class="bannerContent mw-100">
+            <h1 class="xlTitle">
+              {!!	isset($Unternehmenmain->heading) ? $Unternehmenmain->heading : "NA"!!} 
+            </h1>
+            <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
+              {!!isset($Unternehmenmain->title) ? $Unternehmenmain->title : "NA"!!} </p>
+            <a href="#nextSection" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 scrollToSection"> {{	isset($Unternehmenmain->button_text) ? $Unternehmenmain->button_text : "Angebot einholen"}} </a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+@endif
     @if(isset($companysecOne))
       <section>
         <div class="sectionSpace">
@@ -140,17 +145,18 @@
       </section>
 
       @endif
-      <section>
-        <div class="sectionBgCol companySectionBg">
-          <div class="container">
-            <div class="sectonTitleCol">
-              <h4 class="xlTitle">Sicherheit aus Erfahrung</h4>
-            </div>
+
+      @if(isset($Unternehmen_pagebanner))
+    <section>
+      <div class="sectionBgCol companySectionBg" style="background-image: url('{{asset('storage/services-banner/'.$this->Unternehmen_pagebanner->banner)}}')">
+        <div class="container">
+          <div class="sectonTitleCol">
+            <h4 class="xlTitle">{!! isset($Unternehmen_pagebanner->heading) ? $Unternehmen_pagebanner->heading : "NA" !!}  </h4>
           </div>
         </div>
-      </section>
-
-   
+      </div>
+    </section>
+    @endif
     
       @include('livewire.common.take_step')
     

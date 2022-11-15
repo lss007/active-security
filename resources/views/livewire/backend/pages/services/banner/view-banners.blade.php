@@ -55,7 +55,7 @@
                               </label>
                             </div>
                             @error('banner')<span class="text-danger"> {{$message}}</span>  @enderror  <br>
-                            <img class="img-fluid " src="{{isset($banner)?  $banner->temporaryUrl() :asset('no_image.jpg')}}" width="100" >
+                            <img class="img-fluid " src="{{isset($banner)?  $banner->temporaryUrl() :asset('no_image.jpg')}}" width="200" >
                            
                           
                         

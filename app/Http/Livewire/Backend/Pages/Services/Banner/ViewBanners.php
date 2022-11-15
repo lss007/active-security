@@ -55,7 +55,7 @@ class ViewBanners extends Component
             $this->getPCategory =  PageCategory::get();
             $this->allBanners =   ServicesPageBanner::join('page_categories' , 'services_page_banners.page_cat_id' ,'page_categories.id')
             ->select('services_page_banners.*','page_categories.page_cat_name')
-            ->latest()->orderBy('created_at')->get();
+            ->orderBy('created_at')->get();
             return view('livewire.backend.pages.services.banner.view-banners')->layout('layouts.backend');
         }
 

@@ -1,49 +1,68 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
+    @if(isset($Shopmain))
     <section>
-        <div class="bannerSection innerPageBanner s8Banner">
-          <div class="container">
-            <div class="bannerContent">
-              <h1 class="xlTitle">Shop Guard</h1>
-              <p class="subTitle pt-1 pt-lg-2 pt-xl-3">Ein sicheres Gefühl für Sie und Ihre Kunden im Eingangsbereich.</p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">Angebot einholen</a>
-            </div>
+      <div class="bannerSection innerPageBanner s8Banner" style="background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}')" >
+        <div class="container">
+          <div class="bannerContent">
+            <h1 class="xlTitle">
+              {!!	isset($Shopmain->heading) ? $Shopmain->heading : "NA"!!}   </h1>
+            <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
+              {!!isset($Shopmain->title) ? $Shopmain->title : "NA"!!} 
+            </p>
+            <a href="contact.html" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              {{	isset($Shopmain->button_text) ? $Shopmain->button_text : "Angebot einholen"}}  
+            </a>
           </div>
         </div>
-      </section>
-    
-      <section>
-        <div class="sectionSpace">
-          <div class="container">
-            <div class="row gy-4 align-items-center">
-              <div class="col-lg-6">
-                <div class="imgCol pe-lg-4">
-                  <img src="{{ asset('frontend/images/s8-img-1.jpg')}}" alt="..." class="imgStyle1">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="contentCol">
-                  <h2 class="lgTitle p2">Präventive Sicherheit <br class="d-none d-lg-block"> am Eingang.</h2>
-                  <p class="lgText p2 pt-1">Die ideale Sicherheitslösung für den Handel.</p>
-                  <p>Shop Guards sind ausgebildete Sicherheitsfachkräfte, die durch ihre Präsenz Diebstählen und Raubüberfällen vorbeugen und mögliche Täter abschrecken.</p>
-                  <p>Unsere Shop Guards setzen sich aus einem erfahrenen und geschulten Team zusammen, um Übergriffe und Diebstähle präventiv zu verhindern oder im Ernstfall angemessen zu reagieren und kritische Situationen zu deeskalieren. Sie empfangen Ihre Kunden und stehen diesen mit absoluter Servicebereitschaft auch bei Fragen zur Verfügung.</p>
-                  <p>Der Shop Guard ist bei Konflikten immer zur Stelle und im Eingangsbereich präsent.</p>
-                </div>
+      </div>
+    </section>
+  @endif
+
+  @if(isset($ShopPagesection))
+    <section>
+      <div class="sectionSpace">
+        <div class="container">
+          <div class="row gy-4 align-items-center">
+            <div class="col-lg-6">
+              <div class="imgCol pe-lg-4">
+                <img src="{{(isset($this->ShopPagesection->sec_image)) 
+                  ? asset('storage/services-section/'.$ShopPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-    
-      <section>
-        <div class="sectionBgCol serviceSectionBg8">
-          <div class="container">
-            <div class="sectonTitleCol">
-              <h4 class="xlTitle">Sicherheit am Eingang</h4>
+            <div class="col-lg-6">
+              <div class="contentCol">
+                <h2 class="lgTitle p2 contentMxWdTitle">
+                  {!! isset($ShopPagesection->heading)  ? html_entity_decode($ShopPagesection->heading) : "NA" !!} </h2>
+                <p class="lgText p2 pt-1">
+                  {!! isset($ShopPagesection->title)  ? html_entity_decode($ShopPagesection->title) : "NA" !!}  </p>
+         
+                <p>{!! isset($ShopPagesection->para1)  ? html_entity_decode($ShopPagesection->para1) : "NA" !!} </p>
+                <p> {!! isset($ShopPagesection->para2)  ? html_entity_decode($ShopPagesection->para2) : "NA" !!} </p>
+                <p>  {!! isset($ShopPagesection->para3)  ? html_entity_decode($ShopPagesection->para3) : "NA" !!} </p>
+                @if(isset($ShopPagesection->para4))
+                <p>  {!! isset($ShopPagesection->para4)  ? html_entity_decode($ShopPagesection->para4) : "NA" !!} </p>
+                @endif
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  @endif
+
+
+  @if(isset($Shop_pagebanner))
+    <section>
+      <div class="sectionBgCol serviceSectionBg8" style="background-image: url('{{asset('storage/services-banner/'.$this->Shop_pagebanner->banner)}}')">
+        <div class="container">
+          <div class="sectonTitleCol">
+            <h4 class="xlTitle"> {!! isset($Shop_pagebanner->heading) ? $Shop_pagebanner->heading : "NA" !!}</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    @endif
     
       @include('livewire.common.take_step')
 </div>

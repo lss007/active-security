@@ -40,13 +40,7 @@
 
 {{-- site header  --}}
        @if(Auth::check())
-
-
-
             @livewire('navigation-menu')
-   
-      
-
        @endif
             <!-- Page Heading -->
             @if (isset($header))
