@@ -20,7 +20,14 @@ class AddPrivacySettings extends Component
 
     public function mount(){
         $this->existsjPrivacy  = PrivacySetting::exists();
-       
+        if($this->existsjPrivacy)
+        {
+            $notification = array(
+                'message' => 'Section already exists',
+                'alert-type' => 'warning'
+            );
+             return redirect()->route('view_privacy_settings')->with( $notification);
+         }
     }
 
     protected $rules = [
