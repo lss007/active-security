@@ -82,19 +82,19 @@
                       
        
                                  
-                <div class="col-lg-12">
-                    <div class="form-group mg-b-10-force">
-                      <label class="form-control-label"> Choose Profile Image : <span class="tx-danger">*</span></label><br>
-                      <label class="custom-file">
-                        <input type="file" id="file" class="custom-file-input" wire:model="image" >
-                        <span class="custom-file-control"></span>
-                      </label>
-                    </div>
-                    
-                    @if(isset($image)) <img id="output" src="{{$image->temporaryUrl()}}" width="150" > @endif
-                    @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
-                
-                </div><!-- col-4 -->
+                      <div class="col-lg-12">
+                          <div class="form-group mg-b-10-force">
+                            <label class="form-control-label"> Choose Profile Image : <span class="tx-danger">*</span></label><br>
+                            <label class="custom-file">
+                              <input type="file" id="file" class="custom-file-input" wire:model="image" >
+                              <span class="custom-file-control"></span>
+                            </label>
+                          </div>
+                          
+                          @if(isset($image)) <img id="output" src="{{$image->temporaryUrl()}}" width="150" > @endif
+                          @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                      </div><!-- col-4 -->
             
        
                  
@@ -109,7 +109,7 @@
                     
                       </div><!-- form-layout-footer -->
                     </div><!-- form-layout -->
-             </form>
+                 </form>
                 </div>
               </div>
             </div>

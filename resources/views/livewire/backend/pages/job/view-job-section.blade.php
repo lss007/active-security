@@ -28,7 +28,7 @@
             
             @else
             @if(isset($trashdata))
-            <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
+            <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
               Restore </a>  
               @endif
             <a href="{{route('add_last_section')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>

@@ -20,6 +20,10 @@ use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\Logos\EditFooterLogo;
 use App\Http\Livewire\Backend\Pages\Footer\Logos\ViewFooterLogo;
+use App\Http\Livewire\Backend\Pages\Footer\Privacy\AddPrivacySettings;
+use App\Http\Livewire\Backend\Pages\Footer\Privacy\EditPrivacySettings;
+use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\ViewPrivacySettingsTab;
+use App\Http\Livewire\Backend\Pages\Footer\Privacy\ViewPrivacySettings;
 use App\Http\Livewire\Backend\Pages\Footer\Social\AddSocialMedia;
 use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialMedia;
 use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialMedia;
@@ -183,13 +187,20 @@ Route::group(['prefix' =>'mange-All-banner'], function () {
 
     //  ViewFooterLogo
     Route::group(['prefix' =>'logos'], function () {
-        // ViewSocialMedia
         Route::get('/view', ViewFooterLogo::class)->name('view_footer_logos');
-        // EditFooterLogo
         Route::get('/edit/{id}', EditFooterLogo::class)->name('edit_footer_logos');
-
-        // Route::get('/edit/{id}', ViewFooterLogo::class)->name('edit_social_media');
      }); 
+
+    //  
+    Route::group(['prefix' =>'privacy'],function(){
+        Route::get('/view', ViewPrivacySettings::class)->name('view_privacy_settings');
+        Route::get('/add', AddPrivacySettings::class)->name('add_privacy_settings');
+        Route::get('/edit/{id}', EditPrivacySettings::class)->name('edit_privacy_settings');
+         }); 
+         Route::get('/view-tab', ViewPrivacySettingsTab::class)->name('view_privacy_Tabs');
+
+         
+
     });
     Route::group(['prefix' =>'services'], function () {
         Route::get('/view', ViewServices::class)->name('view_services');

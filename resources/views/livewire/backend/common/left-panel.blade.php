@@ -72,6 +72,12 @@
                Manage Footer Logos  </a></li>
              
                <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> Manage Footer Section</a></li>
+               
+               <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif"> Manage Privacy Settings </a></li>
+
+               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif"> Manage Privacy Tabs </a></li>
+
+               
 
       </ul>
       <a href="javascript:void(0)" class="sl-menu-link">
@@ -102,7 +108,7 @@
         <li class="nav-item"><a href="{{route('view_company_sections')}}" class="nav-link  
            @if(Route::is('view_company_sections') ) active @else '' @endif"> Manage Section 1</a></li>
            <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link  
-            @if(Route::is('viewCompanySections2') ) active @else '' @endif"> Manage Section 2</a></li>
+            @if(Route::is('viewCompanySections2') ) active @else '' @endif"> Manage Profile Sections</a></li>
         
       </ul>
 
