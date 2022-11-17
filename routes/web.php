@@ -22,6 +22,8 @@ use App\Http\Livewire\Backend\Pages\Footer\Logos\EditFooterLogo;
 use App\Http\Livewire\Backend\Pages\Footer\Logos\ViewFooterLogo;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\AddPrivacySettings;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\EditPrivacySettings;
+use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\AddPrivacySettingsTab;
+use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\EditPrivacySettingsTab;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\ViewPrivacySettingsTab;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\ViewPrivacySettings;
 use App\Http\Livewire\Backend\Pages\Footer\Social\AddSocialMedia;
@@ -198,6 +200,12 @@ Route::group(['prefix' =>'mange-All-banner'], function () {
         Route::get('/edit/{id}', EditPrivacySettings::class)->name('edit_privacy_settings');
          }); 
          Route::get('/view-tab', ViewPrivacySettingsTab::class)->name('view_privacy_Tabs');
+         Route::get('/add-tab', AddPrivacySettingsTab::class)->name('add_privacy_Tabs');
+         Route::get('/edit-tab/{id}', EditPrivacySettingsTab::class)->name('edit_privacy_Tabs');
+
+
+         
+
 
          
 

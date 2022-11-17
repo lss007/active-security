@@ -143,6 +143,10 @@
           @if(Route::is('view_social_media') ) active @else '' @endif">
            Manage Social Media </a></li>
       </ul>
+
+
+
+      
     </div><!-- sl-sideleft-menu -->
 
     <br>

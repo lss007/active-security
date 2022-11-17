@@ -32,12 +32,15 @@ class AddHomeBanner extends Component
             ]);
             $fileName = time().'_'.$this->bannerImage->getClientOriginalName();
             $filePath = $this->bannerImage->storeAs('Home-banner', $fileName, 'public');
+
+
+    
     }
         HomeBanner::create([
             'title' =>    $this->Title,
             'heading' =>    $this->Heading,
             'banner_paragaph' =>    $this->BannerParagaph,
-            'banner_image' =>    $fileName  ?? Null,
+            'banner_image' =>       $fileName   ?? Null,
             'button_text' =>    $buttonText  ?? Null,
             'button_link' =>    $this->button_link,
 

@@ -35,9 +35,11 @@
                 <div class="lMaxWd">
                   <h4 class="listTitle">KONTAKT:</h4>
                   <ul class="iconListStyle">
-                    <li><span class="listIcon"><img src="{{ asset('frontend/images/phone-icon.svg')}}" alt="..."></span> Telefon: 09401 918 77 32</li>
-                    <li><span class="listIcon"><img src="{{ asset('frontend/images/fax-icon.svg')}}" alt="..."></span> Telefax: 0941 99 22 65 99</li>
-                    <li><span class="listIcon"><img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> E-Mail: kontakt@active-sec.de</li>
+                    <li><span class="listIcon"><img src="{{ asset('frontend/images/phone-icon.svg')}}" alt="..."></span> Telefon: {{isset($getAddress->telefon) ? $getAddress->telefon : "NA" }}</li>
+                    <li><span class="listIcon"><img src="{{ asset('frontend/images/fax-icon.svg')}}" alt="..."></span> Telefax: {{isset($getAddress->fax) ? $getAddress->fax : "NA" }}</li>
+                    <li><span class="listIcon"><img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> E-Mail: {{isset($getAddress->email) ? $getAddress->email : "NA" }} </li>
+
+
                   </ul>
                 </div>
               </div>

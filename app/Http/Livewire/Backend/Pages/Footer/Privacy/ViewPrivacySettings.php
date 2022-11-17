@@ -12,8 +12,9 @@ class ViewPrivacySettings extends Component
     public function render()
     {
             $this->getPrivacy =   PrivacySetting::first();
-             $this->privacyTab =   PrivacySettingTab::get();
-            $this->trashdata= PrivacySetting::onlyTrashed()->first();
+  
+            $this->trashdata = PrivacySetting::onlyTrashed()->first();
+       
         return view('livewire.backend.pages.footer.privacy.view-privacy-settings')->layout('layouts.backend');
     }
 
@@ -45,7 +46,7 @@ class ViewPrivacySettings extends Component
         
         PrivacySetting::destroy($id);
         $notification = array(
-           'message' => 'Privacy Setting Deleted',
+           'message' => 'Privacy Setting Deleted successfully',
            'alert-type' => 'error'
        );
        return   redirect(request()->header('Referer'))->with($notification);
@@ -55,7 +56,7 @@ class ViewPrivacySettings extends Component
        public function restore($id){
         PrivacySetting::withTrashed()->find($id)->restore();
         $notification = array(
-           'message' => ' Data Restored successfully',
+           'message' => 'Privacy Setting Restored successfully',
            'alert-type' => 'success'
        );
        return   redirect(request()->header('Referer'))->with($notification);

@@ -10,7 +10,7 @@ class AddPrivacySettings extends Component
 {
 
 
-    public $paragraph ,$title ,$existsjPrivacy ,$tabs ,$cat,$list;
+    public $paragraph ,$title ,$existsjPrivacy ;
 
 
     public function render()
@@ -54,22 +54,5 @@ class AddPrivacySettings extends Component
                 return redirect()->route('view_privacy_settings')->with($notification);
     }
 
-    public function storePrivacytabs(){
-        $this->validate([
-            'tabs' => 'required',
-            'cat' => 'required',
-        ]);
-
-        PrivacySettingTab::create([
-            'tabs' =>    $this->tabs,
-            'cat' =>    $this->cat,
-            'list' =>    $this->list,
-            ]);
-
-            $notification = array(
-                'message' => 'Privacy Tab text Published',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('view_privacy_settings')->with($notification);
-    }
+  
 }

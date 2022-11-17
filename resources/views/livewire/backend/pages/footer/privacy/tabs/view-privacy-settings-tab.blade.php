@@ -2,37 +2,15 @@
     {{-- The whole world belongs to you. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Privacy Settings text : 
+          <h5>Manage Privacy Settings Tabs : 
           </h5>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
             <h6 class="card-body-title">
-                <a href="" class="btn btn-teal active mg-b-10">
+                <a href="{{route('add_privacy_Tabs')}}" class="btn btn-teal active mg-b-10">
                   ADD </a>
-                @if(isset($privacyTab))
              
-         
-    
-      
-                <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  >
-                  Inactive </a>
             
-                  <a href="javascript:void(0)" class="btn btn-info active  mg-b-10" >
-                Active</a>
-             
-                <a href=""> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
-                  @else
-                 
-                  @endif
-                
-                  <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  >
-                    Restore </a>  
-                 
-                    <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10" >
-                      Delete </a>     
-             
-               
-
               </h6>
   
             <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
@@ -65,31 +43,102 @@
                         <div class="tab-content" id="pills-tabContent">
                           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="row">
-                                <div class="col-md-6">
-                                  <h5>Diese Website wird:</h5>
-                                  <ol class="list-group">
-                                    @if(isset($privacyTab))
-                                    @foreach($privacyTab as $row)
-                                    @if($row->tabs == 1 && $row->cat ==1 )
-                                    <li class="tx-bold">{{$row->list}}</li>
-                                    @endif
-                                    @endforeach
-                                      @endif
-                                  </ol>
-                                </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                   
-                                  <h5>Diese Website wird nicht:</h5>
-                                  <ol class="list-group">
-                                    @if(isset($privacyTab))
-                                    @foreach($privacyTab as $row)
-                                    @if($row->tabs == 1 && $row->cat == 2 )
-                                    <li class="tx-bold">{{$row->list}}</li>
-                                    @endif
-                                    @endforeach
-                                      @endif
-                                  </ol>
+                                      <table class="table table-hover table-bordered mg-b-0">
+                                        <thead class="bg-info">
+                                          <tr>
+                                            <th width="80%">Diese Website wird</th>
+                                            <th  width="20%">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          @if(isset($privacyTab))
+                                          @foreach($privacyTab as $keys => $row)
+                                          <tr>
+                                            
+                                              @if($row->tabs == 1 && $row->cat ==1 )
+                                            <td> {{$keys+1}}
+                                              {{$row->list}} 
+                                          
+                                            </td>
+                                            <td>    
+                                              <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                              <i class="fa fa-edit"></i></a>
+                                          
+                                                <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
+                                                  <i class="fa fa-trash"></i></a>
+                                           
+                                             
+                                            </td>
+                                          
+                                          </tr>
+                                          @endif
+                                          @endforeach
+                                            @endif
+
+                                            @if(isset($trashdata)  )
+                                          <tr><th>Restore</th></tr>
+                                    
+                                            @foreach($trashdata as $val)
+                                          <tr>
+                                         
+                                            <td> {{$val->list}}  </td>
+                                            <td>     
+                                              <a href="javascript:void(0)"  wire:click.prevent="restore({{ $val->id}})" class="btn btn-sm btn-success" title="delete"  >
+                                                <i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0)"  wire:click.prevent="fulleDelete({{ $val->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                  <i class="fa fa-trash"></i></a>
+                                            </td>
+                                        
+                                          </tr>
+                                             @endforeach
+                                         @endif
+                                        </tbody>
+                                      </table>
+                           
+                          <hr>
+                       
+                       
+                          <table class="table table-hover table-bordered mg-b-0">
+                            <thead class="bg-danger">
+                              <tr>
+                                <th width="80%">Diese Website wird nicht:</th>
+                                <th  width="20%">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @if(isset($privacyTab))
+                              @foreach($privacyTab as $keys => $row)
+                              
+                              <tr>
+                                
+                                @if($row->tabs == 1 && $row->cat == 2 )
+                                <td> {{$keys+1}}
+                                  {{$row->list}} 
+                              
+                                </td>
+                                <td>    
+                                  <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                  <i class="fa fa-edit"></i></a>
+
+                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                    <i class="fa fa-trash"></i></a>
+                                </td>
+                              
+                              </tr>
+                              @endif
+                              @endforeach
+                                @endif
+                          
+                        
+                            </tbody>
+                          </table>
+                           
+                                
+                              
                                 </div>
+                             
                             </div>
                          
                           
@@ -127,20 +176,7 @@
                       </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" role="tab" id="headingTwo">
-                  <h6 class="mg-b-0">
-                    <a class="collapsed transition" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Privacy Tab
-                    </a>
-                  </h6>
-                </div>
-                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore.
-                  </div>
-                </div>
-              </div>
+       
  
             </div><!-- accordion -->
           </div><!-- card -->

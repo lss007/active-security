@@ -39,6 +39,15 @@ class DatabaseSeeder extends Seeder
         $this->call(CompanySectionOneSeeder::class);
         $this->call(CompanySectionTwoSeeder::class);
 
+        $this->call(SocialLinksSeeder::class);
+        $this->call(PrivacySettingSeeder::class);
+
+
+
+        
+
+
+        
 
         
 

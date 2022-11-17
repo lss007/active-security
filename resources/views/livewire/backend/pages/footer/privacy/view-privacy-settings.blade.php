@@ -45,10 +45,10 @@
                         @if(isset($trashdata))
                         <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
                           Restore </a>  
-                          @else 
+                     @else
                           <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10" wire:click.prevent="delete(1)">
                             Delete </a>     
-                          @endif
+                            @endif
                      
 
                     </h6>

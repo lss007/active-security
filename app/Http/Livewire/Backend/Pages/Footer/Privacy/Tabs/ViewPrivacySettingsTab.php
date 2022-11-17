@@ -11,6 +11,36 @@ class ViewPrivacySettingsTab extends Component
     public function render()
     {
         $this->privacyTab =   PrivacySettingTab::get();
+        $this->trashdata = PrivacySettingTab::onlyTrashed()->get();
         return view('livewire.backend.pages.footer.privacy.tabs.view-privacy-settings-tab')->layout('layouts.backend');
     }
+    public function delete($id){
+        
+        PrivacySettingTab::destroy($id);
+        $notification = array(
+           'message' => 'Privacy tab Deleted successfully',
+           'alert-type' => 'error'
+       );
+       return   redirect(request()->header('Referer'))->with($notification);
+       }
+
+       public function restore($id){
+        PrivacySettingTab::withTrashed()->find($id)->restore();
+        $notification = array(
+           'message' => 'Privacy tab  Restored successfully',
+           'alert-type' => 'success'
+       );
+       return   redirect(request()->header('Referer'))->with($notification);
+    }
+
+
+    public function fulleDelete($id){
+        PrivacySettingTab::onlyTrashed()->find($id)->forceDelete();
+        $notification = array(
+          'message' => '  Deleted successfully',
+          'alert-type' => 'error'
+      );
+      return   redirect(request()->header('Referer'))->with($notification);
+      }
+
 }

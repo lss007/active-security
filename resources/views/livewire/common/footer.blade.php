@@ -85,6 +85,13 @@
         </div>
       
         <!-- Modal -->
+@php
+  $privacyPara = DB::table('privacy_settings')->where('status' ,1)->first();
+  $privacytabs = DB::table('privacy_setting_tabs')->where('status' ,1)->get();
+
+@endphp
+
+
         <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -94,8 +101,10 @@
               </div>
               <div class="modal-body">
                 <div class="privacyModalContent">
-                  <p>Entscheiden Sie, welche Cookies Sie zulassen möchten. Sie können diese Einstellungen jederzeit ändern. Dies kann jedoch dazu führen, dass einige Funktionen nicht mehr verfügbar sind. Informationen zum Löschen der Cookies finden Sie in der Hilfe Ihres Browsers. Erfahren Sie mehr über die von uns verwendeten Cookies.</p>
-                  <h4 class="smTitle p2 pb-3">Mit dem Schieberegler können Sie verschiedene Arten von Cookies aktivieren oder deaktivieren:</h4>
+                  <p>{!! isset($privacyPara->paragraph)  ? $privacyPara->paragraph : "NA"!!}</p>
+                  <h4 class="smTitle p2 pb-3">
+                    {!! isset($privacyPara->title)  ? html_entity_decode($privacyPara->title) : "NA" !!} 
+                  </h4>
                   <div class="tabStyle">
                     <div class="row g-0">
                       <div class="col-auto">
@@ -121,26 +130,25 @@
                           <div class="col-lg-6">
                             <h4 class="smTitle p2 pb-2">Diese Website wird:</h4>
                             <ul class="pCheckList">
-                              <li>Grundlegend: Merken Sie sich Ihre Cookie-Berechtigungseinstellung</li>
-                              <li>Grundlegend: Session-Cookies zulassen</li>
-                              <li>Grundlegend: Sammeln Sie Informationen, die Sie in Kontaktformulare, Newsletter und andere Formulare auf allen Seiten eingeben</li>
-                              <li>Grundlegend: Verfolgen Sie, was Sie im Einkaufswagen eingeben</li>
-                              <li>Grundlegend: Authentifizieren Sie, dass Sie in Ihrem Benutzerkonto angemeldet sind</li>
-                              <li>Grundlegend: Merken Sie sich die von Ihnen gewählte Sprachversion</li>
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 1 && $row->cat ==1 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
                             </ul>
                           </div>
                           <div class="col-lg-6">
                             <h4 class="smTitle p2 pb-2">Diese Website wird nicht:</h4>
                             <ul class="pCheckList cList">
-                              <li>Funktionalität: Merken Sie sich die Einstellungen für soziale Medien</li>
-                              <li>Funktionalität: Merken Sie sich die ausgewählte Region und das Land</li>
-                              <li>Analytik: Verfolgen Sie Ihre besuchten Seiten und Interaktion</li>
-                              <li>Analytik: Verfolgen Sie anhand Ihrer IP-Nummer den Standort und die Region</li>
-                              <li>Analytik: Verfolgen Sie die Zeit auf jeder Seite</li>
-                              <li>Werbung: Verwenden Sie Informationen für maßgeschneiderte Werbung mit Dritten</li>
-                              <li>Werbung: Ermöglicht Ihnen, eine Verbindung zu sozialen Websites herzustellen</li>
-                              <li>Werbung: Identifizieren Sie das Gerät, das Sie verwenden</li>
-                              <li>Werbung: Sammeln Sie persönlich identifizierbare Informationen wie Name und Ort</li>
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 1 && $row->cat ==2 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
                             </ul>
                           </div>
                         </div>
