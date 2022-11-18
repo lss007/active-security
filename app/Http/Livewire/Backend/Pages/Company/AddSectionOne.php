@@ -62,6 +62,8 @@ class AddSectionOne extends Component
             'title2' =>    $this->title2,
             'para2' =>    $this->para2,
             'para3' =>    $this->para3,
+            'para4' =>    $this->para4,
+
              ]);
 
     $notification = array(
