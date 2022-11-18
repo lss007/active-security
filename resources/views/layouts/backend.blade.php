@@ -75,11 +75,10 @@
     <script src="{{asset('backend/lib/jquery-ui/jquery-ui.js')}}"></script>
     <script src="{{asset('backend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
     {{-- data table  --}}
-    <script src="{{asset('backend/lib/highlightjs/highlight.pack.j')}}"></script>
-    <script src="../lib/medium-editor/medium-editor.js"></script>
-    <script src="../lib/summernote/summernote-bs4.min.js"></script>
+    <script src="{{asset('backend/lib/highlightjs/highlight.pack.js')}}"></script>
+    <script src="{{asset('backend/lib/medium-editor/medium-editor.js')}}"></script>
+    <script src="{{asset('backend/lib/summernote/summernote-bs4.min.js')}}"></script>
 
-    <script src="../js/starlight.js"></script>
     <script>
       $(function(){
         'use strict';

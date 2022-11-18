@@ -86,7 +86,7 @@
                     <div class="col-lg-12">
                           <div class="form-group mg-b-10-force">
                             <label class="form-control-label">Section Paragraph 4: <span class="tx-danger">*</span></label>
-                            <textarea class="form-control"  id="summernote"   wire:model="para4" placeholder="Section paragraph 4"></textarea>
+                            <textarea class="form-control" rows="5"   wire:model="para4" placeholder="Section paragraph 4"></textarea>
                             @error('para4')<span class="text-danger"> {{$message}}</span>  @enderror  
             
                           </div>

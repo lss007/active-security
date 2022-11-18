@@ -12,4 +12,11 @@ class ServicesPageSection extends Model
 
     protected $guarded =[];
 
+
+
+    public function pageCatName(){
+        return $this->belongsTo(PageCategory::class,'page_cat_id' ,'id');
+      }
+
+
 }
