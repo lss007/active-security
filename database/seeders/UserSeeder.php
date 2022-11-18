@@ -28,11 +28,5 @@ class UserSeeder extends Seeder
         $createuser->current_team_id = 1;
         $createuser->save();
 
-        // $team = new Team();
-        // $team->user_id = $createuser->id;
-        // $team->name = explode(' ', $createuser->name , 2)[0]."'s Team";
-        // $team->personal_team = true;
-        // $team->save();
-
     }
 }

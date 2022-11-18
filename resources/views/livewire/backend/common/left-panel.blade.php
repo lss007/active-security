@@ -77,6 +77,10 @@
 
                <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif"> Manage Privacy Tabs </a></li>
 
+               <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Privacy Page </a></li>
+
+               
+
                
 
       </ul>
