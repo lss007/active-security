@@ -45,6 +45,12 @@
                 {!! isset($companysecOne->para3)  ? html_entity_decode($companysecOne->para3) : "NA" !!} 
 
               </p>
+              @if($companysecOne->para4)
+              <p>
+                {!! isset($companysecOne->para4)  ? html_entity_decode($companysecOne->para4) : "NA" !!} 
+
+              </p>
+              @endif
             </div>
           </div>
         </div>

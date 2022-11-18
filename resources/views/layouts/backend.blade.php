@@ -31,7 +31,7 @@
     <link href="{{asset('backend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
   
     {{-- end data table css  --}}
-    <!-- Starlight CSS -->
+    <!--  CSS -->
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
 
       <!-- Toaster CSS -->
