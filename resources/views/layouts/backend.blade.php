@@ -76,6 +76,24 @@
     <script src="{{asset('backend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
     {{-- data table  --}}
     <script src="{{asset('backend/lib/highlightjs/highlight.pack.j')}}"></script>
+    <script src="../lib/medium-editor/medium-editor.js"></script>
+    <script src="../lib/summernote/summernote-bs4.min.js"></script>
+
+    <script src="../js/starlight.js"></script>
+    <script>
+      $(function(){
+        'use strict';
+
+        // Inline editor
+        var editor = new MediumEditor('.editable');
+
+        // Summernote editor
+        $('#summernote').summernote({
+          height: 150,
+          tooltip: false
+        })
+      });
+    </script>
     <script src="{{asset('backend/lib/select2/js/select2.min.js')}}"></script>
     {{-- editor  --}}
     
@@ -83,6 +101,7 @@
 
     <script src="{{asset('backend/lib/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{asset('backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
+    
 
 
  {{-- <script src="{{asset('backend/js/starlight.js')}}"></script> --}}
