@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(PageCategorySeeder::class);
-        $this->call(SociaCategorySeeder::class);
+      
         $this->call(HomeBannerSeeder::class);
         $this->call(HomeClientLogoSeeder::class);
         $this->call(HomeSectionSliderSeeder::class);
@@ -38,7 +38,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CompanySectionOneSeeder::class);
         $this->call(CompanySectionTwoSeeder::class);
-
+        
+        $this->call(SociaCategorySeeder::class);
         $this->call(SocialLinksSeeder::class);
         $this->call(PrivacySettingSeeder::class);
 

@@ -26,8 +26,11 @@ use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\AddPrivacySettingsTab;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\EditPrivacySettingsTab;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs\ViewPrivacySettingsTab;
 use App\Http\Livewire\Backend\Pages\Footer\Privacy\ViewPrivacySettings;
+use App\Http\Livewire\Backend\Pages\Footer\Social\AddSocialCategory;
 use App\Http\Livewire\Backend\Pages\Footer\Social\AddSocialMedia;
+use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialCategory;
 use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialMedia;
+use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialCategory;
 use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialMedia;
 use App\Http\Livewire\Backend\Pages\Home\Clients\AddHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\EditHomeClients;
@@ -185,6 +188,16 @@ Route::group(['prefix' =>'mange-All-banner'], function () {
         Route::get('/view', ViewSocialMedia::class)->name('view_social_media');
         Route::get('/add', AddSocialMedia::class)->name('add_social_media');
         Route::get('/edit/{id}', EditSocialMedia::class)->name('edit_social_media');
+        
+        Route::get('/view-category', ViewSocialCategory::class)->name('view_socialMediaCat');
+        Route::get('/add-category', AddSocialCategory::class)->name('Add_socialMediaCat');
+        Route::get('/edit-category/{id}', EditSocialCategory::class)->name('edit_socialMediaCat');
+
+
+        
+
+
+        
      }); 
 
     //  ViewFooterLogo

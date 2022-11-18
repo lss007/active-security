@@ -139,9 +139,18 @@
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item">
+          <a href="{{route('view_socialMediaCat')}}" class="nav-link 
+          @if(Route::is('view_socialMediaCat') ) active @else '' @endif">
+           Manage Social Category </a></li>
+        <li class="nav-item">
           <a href="{{route('view_social_media')}}" class="nav-link 
           @if(Route::is('view_social_media') ) active @else '' @endif">
            Manage Social Media </a></li>
+
+           
+
+           
+           
       </ul>
 
 

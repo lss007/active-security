@@ -2,7 +2,7 @@
     {{-- Success is as dangerous as failure. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Contact Social Media Category </h5>
+          <h5>Update Social Media  </h5>
         </div><!-- sl-page-title -->
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title"> 
@@ -61,7 +61,7 @@
        
                          <div class="col-lg-12">
                             <div class="form-group">
-                              <label class="form-control-label"> Icon : <span class="tx-danger">*</span></label>
+                              <label class="form-control-label"> Icon :  <span class="tx-success">optional</span></label>
                               <input class="form-control" type="text" wire:model="icon"  placeholder="Social icon ">
                               @error('icon')<span class="text-danger"> {{$message}}</span>  @enderror  
                             
