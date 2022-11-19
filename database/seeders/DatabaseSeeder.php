@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AllPagesBannerSeeder::class);
         $this->call(FooterContactAddressSeeder::class);
+        $this->call(ContactSectionSeeder::class);
+
         $this->call(FooterLogoSeeder::class);
 
         $this->call(ServicesPageSectionSeeder::class);
@@ -46,6 +48,11 @@ class DatabaseSeeder extends Seeder
         $this->call(PrivacyPageTextSeeder::class);
 
         $this->call(AgbpageSeeder::class);
+
+
+
+
+        
 
 
         

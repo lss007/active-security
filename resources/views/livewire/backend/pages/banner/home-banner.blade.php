@@ -15,24 +15,24 @@
               <thead>
                 <tr>
                   <th class="wd-15p">Image </th>
-                  <th class="wd-15p">Main Heading</th>
+                  <th class="wd-20p">Main Heading</th>
                   <th class="wd-15p">Title </th>
          
                   <th class="wd-10p">Status</th>
-                  <th class="wd-25p">Action</th>
+                  <th class="wd-20p">Action</th>
                 </tr>
               </thead>
               <tbody>
 @if (isset($viewHomeBanner) && count($viewHomeBanner) > 0)
 @foreach($viewHomeBanner as $banner)
 <tr>
-  <td>
+  <td class="text-center">
     <img src="{{(!empty($banner->banner_image)) 
-      ? asset('storage/Home-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." width="70">
+      ? asset('storage/Home-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." width="100">
     
       </td>
-  <td> {{Str::limit($banner->heading,20,$end='....')}}</td>
-  <td> {{Str::limit($banner->title,20,$end='....')}}</td>
+  <td> {{Str::limit($banner->heading,30,$end='....')}}</td>
+  <td> {{Str::limit($banner->title,25,$end='....')}}</td>
 
  
   <td> 

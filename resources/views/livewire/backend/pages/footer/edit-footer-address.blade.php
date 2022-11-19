@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Contact Address/Social Media links</h5>
+          <h5>Update Contact Address</h5>
       
         </div><!-- sl-page-title -->
        
@@ -29,6 +29,21 @@
                 <form  wire:submit.prevent="updateFooterContact">
                     <div class="form-layout">
                       <div class="row mg-b-25">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label">Name: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" wire:model="name"  placeholder="Name">
+                            @error('name')<span class="text-danger"> {{$message}}</span>  @enderror  
+                        </div>
+                        </div><!-- col-4 -->
+
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label">Vat ID: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" wire:model="vatid"  placeholder="Vat ID">
+                            @error('vatid')<span class="text-danger"> {{$message}}</span>  @enderror  
+                        </div>
+                        </div><!-- col-4 -->
                         <div class="col-lg-6">
                           <div class="form-group">
                             <label class="form-control-label">Telefon: <span class="tx-danger">*</span></label>

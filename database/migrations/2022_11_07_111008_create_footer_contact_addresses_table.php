@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('footer_contact_addresses', function (Blueprint $table) {
             $table->id();
+            $table->text('name')->nullable();
+            $table->text('vatid')->nullable();
             $table->text('telefon')->nullable();
             $table->text('fax')->nullable();
             $table->text('email')->nullable();

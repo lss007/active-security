@@ -16,6 +16,8 @@ class EditFooterAddress extends Component
                 $this->contactId= $id;
                 $this->editHomeBanner = FooterContactAddress::where('id', $this->contactId)->first();
               if($this->contactId){
+                $this->name  =  $this->editHomeBanner->name;
+                $this->vatid  =  $this->editHomeBanner->vatid;
                 $this->telefon  =  $this->editHomeBanner->telefon;
                 $this->fax =  $this->editHomeBanner->fax;
                 $this->email =  $this->editHomeBanner->email; 
@@ -29,6 +31,8 @@ class EditFooterAddress extends Component
         return view('livewire.backend.pages.footer.edit-footer-address')->layout('layouts.backend');
     }
     protected $rules = [
+        'name' => 'required',
+        'vatid' => 'required',
         'telefon' => 'required',
         'fax' => 'required',
         'email' => 'required|email',
@@ -37,11 +41,14 @@ class EditFooterAddress extends Component
     ];
 
    private function resetInputFields(){
-            $this->telefon = '';
-            $this->fax = '';
-            $this->email = '';
-            $this->address = '';
-       
+                $this->name = '';
+                $this->vatid = '';
+                $this->telefon = '';
+                $this->fax = '';
+                $this->email = '';
+                $this->address = '';
+                $this->logo = '';
+                
         }
 
     public function updateFooterContact(){
@@ -65,10 +72,13 @@ class EditFooterAddress extends Component
     }else 
     {
         FooterContactAddress::where('id',$this->contactId)->update([
+            'name' => $this->name,
+            'vatid' => $this->vatid,
             'telefon' =>    $this->telefon,
             'fax' =>    $this->fax,
             'email' =>    $this->email,
             'address' =>    $this->address,
+     
             ]);
                  
             $notification = array(

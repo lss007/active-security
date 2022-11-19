@@ -2,7 +2,7 @@
 <footer>
 
   @php
-    $footeraddress =  DB::table('footer_contact_addresses')->first();
+    $footeraddress =  DB::table('footer_contact_addresses')->where('status',1)->first();
      $socialLinks =     DB::table('social_links')->where('status',1)->limit(5)->get();
      $footerlogos =  DB::table('footer_logos')->where('name','=','footer')->where('status',1)->limit(5)->get();
   @endphp

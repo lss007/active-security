@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class AddFooterAddress extends Component
 {
     use WithFileUploads;
-public $telefon ,$fax ,$email ,$address  ,$logo;
+public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid;
 
 
 
@@ -31,6 +31,8 @@ public $telefon ,$fax ,$email ,$address  ,$logo;
       }
     }
     protected $rules = [
+        'name' => 'required',
+        'vatid' => 'required',
         'telefon' => 'required',
         'fax' => 'required',
         'email' => 'required|email',
@@ -39,6 +41,8 @@ public $telefon ,$fax ,$email ,$address  ,$logo;
     ];
 
    private function resetInputFields(){
+            $this->name = '';
+            $this->vatid = '';
             $this->telefon = '';
             $this->fax = '';
             $this->email = '';
@@ -57,6 +61,8 @@ public $telefon ,$fax ,$email ,$address  ,$logo;
             $filePath = $this->logo->storeAs('footer-logo', $fileName, 'public');
     }
              FooterContactAddress::create([
+            'name' => $this->name,
+            'vatid' => $this->vatid,
             'telefon' =>    $this->telefon,
             'fax' =>    $this->fax,
             'email' =>    $this->email,

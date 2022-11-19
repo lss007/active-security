@@ -184,9 +184,9 @@ Route::group(['prefix' =>'manage-home'], function () {
 });   
 Route::group(['prefix' =>'manage-footer'], function () {
         // FooterAddress
-         Route::get('/view', FooterAddress::class)->name('footer_address');
-         Route::get('/add', AddFooterAddress::class)->name('Add_footer_address');
-         Route::get('/edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
+         Route::get('/contact-view', FooterAddress::class)->name('footer_address');
+         Route::get('/contact-add', AddFooterAddress::class)->name('Add_footer_address');
+         Route::get('/contact-edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
 Route::group(['prefix' =>'social'], function () {
         // ViewSocialMedia
          Route::get('/view', ViewSocialMedia::class)->name('view_social_media');

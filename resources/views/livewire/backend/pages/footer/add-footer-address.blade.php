@@ -31,6 +31,21 @@
                       <div class="row mg-b-25">
                         <div class="col-lg-6">
                           <div class="form-group">
+                            <label class="form-control-label">Name: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" wire:model="name"  placeholder="Name">
+                            @error('name')<span class="text-danger"> {{$message}}</span>  @enderror  
+                        </div>
+                        </div><!-- col-4 -->
+
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label">Vat ID: <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" wire:model="vatid"  placeholder="Vat ID">
+                            @error('vatid')<span class="text-danger"> {{$message}}</span>  @enderror  
+                        </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-6">
+                          <div class="form-group">
                             <label class="form-control-label">Telefon: <span class="tx-danger">*</span></label>
                             <input class="form-control" type="text" wire:model="telefon"  placeholder="telefon">
                             @error('telefon')<span class="text-danger"> {{$message}}</span>  @enderror  

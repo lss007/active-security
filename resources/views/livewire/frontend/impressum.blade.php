@@ -18,8 +18,8 @@
                 <div class="lMaxWd">
                   <h4 class="listTitle">ANGABEN GEMÄSS § 5 TMG</h4>
                   <ul class="iconListStyle">
-                    <li><span class="listIcon"><img src="{{ asset('frontend/images/user-icon.svg')}}" alt="..."></span> Alexander Göbel</li>
-                    <li><span class="listIcon"><img src="{{ asset('frontend/images/location-pin.svg')}}" alt="..."></span> Regensburger Straße 1A <br> 93083 Obertraubling <span class="d-block pt-2">USt-IdNr.: DE317415344</span></li>
+                    <li><span class="listIcon"><img src="{{ asset('frontend/images/user-icon.svg')}}" alt="..."></span> {{isset($getAddress->name) ? $getAddress->name : "NA" }}</li>
+                    <li><span class="listIcon"><img src="{{ asset('frontend/images/location-pin.svg')}}" alt="..."></span> Regensburger Straße 1A <br> 93083 Obertraubling <span class="d-block pt-2">USt-IdNr.: {{isset($getAddress->vatid) ? $getAddress->vatid : "NA" }}</span></li>
                   </ul>
                 </div>
               </div>
@@ -27,7 +27,7 @@
                 <div class="lMaxWd">
                   <h4 class="listTitle">VERTRETEN DURCH:</h4>
                   <ul class="iconListStyle">
-                    <li><span class="listIcon"><img src="{{ asset('frontend/images/user-icon.svg')}}" alt="..."></span> Alexander Göbel</li>
+                    <li><span class="listIcon"><img src="{{ asset('frontend/images/user-icon.svg')}}" alt="..."></span> {{isset($getAddress->name) ? $getAddress->name : "NA" }}</li>
                   </ul>
                 </div>
               </div>
