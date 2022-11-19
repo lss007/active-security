@@ -17,7 +17,10 @@ use App\Http\Livewire\Backend\Pages\Company\EditSectionOne;
 use App\Http\Livewire\Backend\Pages\Company\EditSectionTwo;
 use App\Http\Livewire\Backend\Pages\Company\ViewSectionOne;
 use App\Http\Livewire\Backend\Pages\Company\ViewSectionTwo;
+use App\Http\Livewire\Backend\Pages\Contacts\AddContactSection;
+use App\Http\Livewire\Backend\Pages\Contacts\EditContactSection;
 use App\Http\Livewire\Backend\Pages\Contacts\ViewContacts;
+use App\Http\Livewire\Backend\Pages\Contacts\ViewContactSection;
 use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
@@ -259,6 +262,13 @@ Route::group(['prefix' =>'job-section'], function () {
 });
 Route::group(['prefix' =>'Contacts'], function () {
     Route::get('/view', ViewContacts::class)->name('view_Contacts');
+
+
+    Route::get('/view-section', ViewContactSection::class)->name('Manage_Contacts_section');
+    Route::get('/add-section', AddContactSection::class)->name('Add_Contacts_section');
+    Route::get('/edit-section/{id}', EditContactSection::class)->name('edit_Contacts_section');
+
+    
 
 });
 

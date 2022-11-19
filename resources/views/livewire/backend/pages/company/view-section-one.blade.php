@@ -30,7 +30,7 @@
                 <div class="card-body">
                   <p>  Created at:  {{isset($getCompanySection1->created_at) ? Carbon\Carbon::parse($getCompanySection1->created_at)->diffForHumans() : "NA"}} </p>
                   <h6 class="card-body-title">
-                    <span class="text-primary">  Main Meading : </span>
+                    <span class="text-primary">  Main Heading : </span>
                     {{ isset($getCompanySection1->heading) ? $getCompanySection1->heading : "NA" }}  </h6>
                   <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary"> First Title  :</span>  {{isset($getCompanySection1->title)  ? $getCompanySection1->title : "NA"}} </p>
                   <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph 1: </span>{{ isset($getCompanySection1->para1) ? $getCompanySection1->para1 : "NA"}} </p>

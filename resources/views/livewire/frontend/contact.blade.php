@@ -27,13 +27,26 @@
             <div class="row gy-4 align-items-center">
               <div class="col-lg-6 order-lg-last">
                 <div class="imgCol ps-lg-4">
-                  <img src="{{ asset('frontend/images/img-1.jpg')}}" alt="..." class="imgStyle1">
+                  @if(isset($getContactSection))
+                  <img src="{{(isset($this->getContactSection->image)) 
+                    ? asset('storage/Contact/'.$getContactSection->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
+                  @endif
+             
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="contentCol">
-                  <h2 class="xlTitle p2">Kontakt</h2>
-                  <p class="mdText p2 pt-sm-1">Wir melden uns innerhlab von 24h zurück.</p>
+                  <h2 class="xlTitle p2">
+                    @if(isset($getContactSection))
+                    {!! isset($getContactSection->heading)  ? html_entity_decode($getContactSection->heading) : "Kontakt" !!}  
+                    @endif
+                  
+                  </h2>
+                  <p class="mdText p2 pt-sm-1">
+                    
+                    @if(isset($getContactSection))
+                    {!! isset($getContactSection->title)  ? html_entity_decode($getContactSection->title) : "Kontakt" !!}  
+                    @endif.</p>
                   <div class="contactForm">
                     <form wire:submit.prevent="sendmessage" class="formStyle">
                       <div class="row gy-3 gy-sm-4">
@@ -63,7 +76,11 @@
                         <div class="col-12">
                           <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="check1">
-                            <label class="form-check-label" for="check1">Ich erkläre mich damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. Weitere Informationen und Widerrufshinweise finden Sie in unserer Datenschutzerklärung.</label>
+                            <label class="form-check-label" for="check1">
+                    @if(isset($getContactSection->para1) )
+                    {!! isset($getContactSection->para1)  ? html_entity_decode($getContactSection->para1) : "NA" !!}  
+                      @endif
+                            </label>
                           </div>
                         </div>
                         <div class="col-12" wire:loading.attr="disabled">

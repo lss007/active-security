@@ -34,14 +34,14 @@
    
           <h6 class="card-body-title">
 
-            <span class="text-primary"> Main Meading :</span>
+            <span class="text-primary"> Main Heading :</span>
             <span class="tx-12 float-right badge badge-danger p-2">
             Created at:   
               {{isset($homeSectionfive->created_at) ? 
             Carbon\Carbon::parse($homeSectionfive->created_at)->diffForHumans() : "NA"}}
             </span>
             {{ isset($homeSectionfive->heading) ? $homeSectionfive->heading : "NA" }}  </h6>
-          <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Meading : </span> {{isset($homeSectionfive->title)  ? $homeSectionfive->title : "NA"}} </h5>
+          <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Heading : </span> {{isset($homeSectionfive->title)  ? $homeSectionfive->title : "NA"}} </h5>
           <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para1) ? $homeSectionfive->para1 : "NA"}} </p>
           <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
           <h5 class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>

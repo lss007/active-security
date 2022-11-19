@@ -55,7 +55,7 @@
                   
                   <p>  Created at:  {{isset($getJobsection->created_at) ? Carbon\Carbon::parse($getJobsection->created_at)->diffForHumans() : "NA"}} </p>
                   <h6 class="card-body-title">
-                    <span class="text-primary">  Main Meading : </span>
+                    <span class="text-primary">  Main Heading : </span>
                     {{ isset($getJobsection->heading) ? $getJobsection->heading : "NA" }}  </h6>
                   <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary"> First Title  :</span>  {{isset($getJobsection->title)  ? $getJobsection->title : "NA"}} </p>
                   <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph 1: </span>{{ isset($getJobsection->para1) ? $getJobsection->para1 : "NA"}} </p>

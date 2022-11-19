@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Frontend;
 use App\Jobs\ContactMessage;
 use App\Models\AllPagesBanner;
 use App\Models\Contact as ModelsContact;
+use App\Models\ContactSection;
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\DB;
@@ -14,13 +15,14 @@ use Livewire\Component;
 class Contact extends Component
 {
 
-public $surname, $email, $regarding, $client_message  ,$Contactmain;
+public $surname, $email, $regarding, $client_message  ,$Contactmain ,$getContactSection;
 
 public function render()
 {
 
-    $this->Contactmain     = AllPagesBanner::where('cat_id' ,12)->where('status',1)->first();
-              
+    $this->Contactmain       =   AllPagesBanner::where('cat_id' ,12)->where('status',1)->first();
+    $this->getContactSection =   ContactSection::where('status',1)->first();
+
     return view('livewire.frontend.contact')->layout('layouts.frontend');
 }
     protected $rules = [

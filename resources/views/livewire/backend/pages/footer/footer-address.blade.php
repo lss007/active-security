@@ -40,7 +40,7 @@
           <div class="card-body">
          
   
-              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary"> Main Meading   :</span> 
+              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary"> Main Heading   :</span> 
                   {{ isset($contactAddress->telefon) ? $contactAddress->telefon : "NA" }} </h5>
       
               <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Fax   :</span> 

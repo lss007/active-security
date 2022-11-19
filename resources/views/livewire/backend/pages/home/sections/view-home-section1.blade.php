@@ -28,10 +28,10 @@
    
           <h6 class="card-body-title">
 
-            <span class="text-primary">  Main Meading : </span>s
+            <span class="text-primary">  Main Heading : </span>s
             <span class="tx-12 float-right badge badge-danger p-2">Created at:  {{isset($homeSectionOne->created_at) ? Carbon\Carbon::parse($homeSectionOne->created_at)->diffForHumans() : "NA"}}</span>
             {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
-          <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Meading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
+          <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
           <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
           <div class="card wd-xs-300">
             <span class="text-primary">    Main Image : </span>
