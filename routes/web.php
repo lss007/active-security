@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\UserLogoutController;
 use App\Http\Livewire\Backend\Dashboard;
+use App\Http\Livewire\Backend\Pages\Agb\AddAgbPage;
+use App\Http\Livewire\Backend\Pages\Agb\EditAgbPage;
+use App\Http\Livewire\Backend\Pages\Agb\ViewAgbPage;
 use App\Http\Livewire\Backend\Pages\AllBanners\AddAllBanners;
 use App\Http\Livewire\Backend\Pages\AllBanners\EditAllBanners;
 use App\Http\Livewire\Backend\Pages\AllBanners\ViewAllBanners;
@@ -156,54 +159,54 @@ Route::group(['prefix' =>'mange-All-banner'], function () {
     //============== home page Section1 ==============
 Route::group(['prefix' =>'manage-home'], function () {
         // Home Section1    
-        Route::get('/view-section/one', ViewHomeSection1::class)->name('manageHomeSection1');
-        Route::get('/add-section/one', AddHomeSection1::class)->name('addHomesection1');
-        Route::get('/edit-section/one/{id}', EditHomeSection1::class)->name('editHomesection1');
+         Route::get('/view-section/one', ViewHomeSection1::class)->name('manageHomeSection1');
+         Route::get('/add-section/one', AddHomeSection1::class)->name('addHomesection1');
+         Route::get('/edit-section/one/{id}', EditHomeSection1::class)->name('editHomesection1');
         // Home Section2
-        Route::get('/view-section/two', ViewHomeSection2::class)->name('viewHomeSection2');
-        Route::get('/add-section/two', AddHomeSection2::class)->name('add_HomeSection2');
-        Route::get('/edit-section/two/{id}', EditHomeSection2::class)->name('edit_HomeSection2');
+         Route::get('/view-section/two', ViewHomeSection2::class)->name('viewHomeSection2');
+         Route::get('/add-section/two', AddHomeSection2::class)->name('add_HomeSection2');
+         Route::get('/edit-section/two/{id}', EditHomeSection2::class)->name('edit_HomeSection2');
         // View Home Clients
-        Route::get('/view-client/logo', ViewHomeClients::class)->name('viewHomeclients');
-        Route::get('/add-client/logo', AddHomeClients::class)->name('addHomeclients');
-        Route::get('/edit-client/logo/{id}', EditHomeClients::class)->name('editHomeclients');
+         Route::get('/view-client/logo', ViewHomeClients::class)->name('viewHomeclients');
+         Route::get('/add-client/logo', AddHomeClients::class)->name('addHomeclients');
+         Route::get('/edit-client/logo/{id}', EditHomeClients::class)->name('editHomeclients');
         // View Home Sliders
-        Route::get('/view-home/slider', ViewHomeSliders::class)->name('viewHomesliders');
-        Route::get('/add-home/slider', AddHomeSliders::class)->name('addHomesliders');
-        Route::get('/edit-home/slider/{id}', EditHomeSliders::class)->name('editHomesliders');
+         Route::get('/view-home/slider', ViewHomeSliders::class)->name('viewHomesliders');
+         Route::get('/add-home/slider', AddHomeSliders::class)->name('addHomesliders');
+         Route::get('/edit-home/slider/{id}', EditHomeSliders::class)->name('editHomesliders');
         // ViewHomeSection5
-        Route::get('/view-home/section/five', ViewHomeSection5::class)->name('ViewHomeSection5');
-        Route::get('/add-home/section/five', AddHomeSection5::class)->name('Add_Home_Section5'); 
-        Route::get('/edit-home/section/five/{id}', EditHomeSection5::class)->name('edit_Home_Section5');
+         Route::get('/view-home/section/five', ViewHomeSection5::class)->name('ViewHomeSection5');
+         Route::get('/add-home/section/five', AddHomeSection5::class)->name('Add_Home_Section5'); 
+         Route::get('/edit-home/section/five/{id}', EditHomeSection5::class)->name('edit_Home_Section5');
 });   
 Route::group(['prefix' =>'manage-footer'], function () {
         // FooterAddress
-        Route::get('/view', FooterAddress::class)->name('footer_address');
-        Route::get('/add', AddFooterAddress::class)->name('Add_footer_address');
-        Route::get('/edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
+         Route::get('/view', FooterAddress::class)->name('footer_address');
+         Route::get('/add', AddFooterAddress::class)->name('Add_footer_address');
+         Route::get('/edit/{id}', EditFooterAddress::class)->name('edit_footer_address');
 Route::group(['prefix' =>'social'], function () {
         // ViewSocialMedia
-        Route::get('/view', ViewSocialMedia::class)->name('view_social_media');
-        Route::get('/add', AddSocialMedia::class)->name('add_social_media');
-        Route::get('/edit/{id}', EditSocialMedia::class)->name('edit_social_media');
+         Route::get('/view', ViewSocialMedia::class)->name('view_social_media');
+         Route::get('/add', AddSocialMedia::class)->name('add_social_media');
+         Route::get('/edit/{id}', EditSocialMedia::class)->name('edit_social_media');
         
-        Route::get('/view-category', ViewSocialCategory::class)->name('view_socialMediaCat');
-        Route::get('/add-category', AddSocialCategory::class)->name('Add_socialMediaCat');
-        Route::get('/edit-category/{id}', EditSocialCategory::class)->name('edit_socialMediaCat');
+         Route::get('/view-category', ViewSocialCategory::class)->name('view_socialMediaCat');
+         Route::get('/add-category', AddSocialCategory::class)->name('Add_socialMediaCat');
+         Route::get('/edit-category/{id}', EditSocialCategory::class)->name('edit_socialMediaCat');
         
      }); 
 
     //  ViewFooterLogo
 Route::group(['prefix' =>'logos'], function () {
-        Route::get('/view', ViewFooterLogo::class)->name('view_footer_logos');
-        Route::get('/edit/{id}', EditFooterLogo::class)->name('edit_footer_logos');
+         Route::get('/view', ViewFooterLogo::class)->name('view_footer_logos');
+         Route::get('/edit/{id}', EditFooterLogo::class)->name('edit_footer_logos');
      }); 
 
     //  
 Route::group(['prefix' =>'privacy'],function(){
-        Route::get('/view', ViewPrivacySettings::class)->name('view_privacy_settings');
-        Route::get('/add', AddPrivacySettings::class)->name('add_privacy_settings');
-        Route::get('/edit/{id}', EditPrivacySettings::class)->name('edit_privacy_settings');
+         Route::get('/view', ViewPrivacySettings::class)->name('view_privacy_settings');
+         Route::get('/add', AddPrivacySettings::class)->name('add_privacy_settings');
+         Route::get('/edit/{id}', EditPrivacySettings::class)->name('edit_privacy_settings');
          }); 
          Route::get('/view-tab', ViewPrivacySettingsTab::class)->name('view_privacy_Tabs');
          Route::get('/add-tab', AddPrivacySettingsTab::class)->name('add_privacy_Tabs');
@@ -212,13 +215,13 @@ Route::group(['prefix' =>'privacy'],function(){
          Route::get('/page-view', ViewFooterPrivacy::class)->name('footer_Privacy_pageView');
          Route::get('/page-add', AddFooterPrivacy::class)->name('addfooter_Privacytext');
          Route::get('/page-edit/{id}', EditFooterPrivacy::class)->name('editfooter_Privacytext');
-
-
-         
-
-         
-
     });
+
+Route::group(['prefix' =>'Agb-page'], function () {
+        Route::get('/view', ViewAgbPage::class)->name('Agb_page_View');
+        Route::get('/add', AddAgbPage::class)->name('Agb_page_add');
+        Route::get('/edit/{id}', EditAgbPage::class)->name('Agb_page_edit');
+});
 Route::group(['prefix' =>'services'], function () {
         Route::get('/view', ViewServices::class)->name('view_services');
         Route::get('/add', AddServices::class)->name('add_services');

@@ -8,14 +8,8 @@ use Illuminate\Database\Seeder;
 
 class SocialLinksSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        //
         $social_links = array(
             array('category' => 'Facebook','link' => 'https://www.facebook.com/','logo' => '1668424708_facebook.svg','icon' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-14 11:18:28','updated_at' => '2022-11-14 11:18:28'),
             array('category' => 'Instagram','link' => 'https://www.instagram.com/','logo' => '1668424738_instagram.svg','icon' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-14 11:18:58','updated_at' => '2022-11-14 11:18:58'),

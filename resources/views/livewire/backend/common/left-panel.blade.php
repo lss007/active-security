@@ -26,7 +26,7 @@
       </a><!-- sl-menu-link -->
       <a href="javascript:void(0)" class="sl-menu-link ">
         <div class="sl-menu-item">
-          <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+          <i class="fa fa-home"></i>
           <span class="menu-item-label">Manage Home </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
@@ -46,14 +46,14 @@
 
       <a href="{{route('view_all_banner')}}" class="sl-menu-link ">
         <div class="sl-menu-item">
-          <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+          <i class="fa fa-image"></i>
           <span class="menu-item-label">Manage All Banners </span>
        
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <a href="javascript:void(0)" class="sl-menu-link">
         <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
+          <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Manage Footer </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
@@ -78,6 +78,7 @@
                <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif"> Manage Privacy Tabs </a></li>
 
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Privacy Page </a></li>
+               <li class="nav-item"><a href="{{route('Agb_page_View')}}" class="nav-link   @if(Route::is('Agb_page_View') ) active @else '' @endif"> Manage AGB Page </a></li>
 
                
 
@@ -86,7 +87,7 @@
       </ul>
       <a href="javascript:void(0)" class="sl-menu-link">
         <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+          <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Dienstleistungen</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         
@@ -102,7 +103,7 @@
 
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+          <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Unternehmen</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
@@ -118,14 +119,14 @@
 
       <a href="{{route('view_job_section')}}" class="sl-menu-link">
         <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+          <i class="fa fa-suitcase"></i>
           <span class="menu-item-label">Jobs</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
    
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+          <i class="fa fa-phone"></i>
           <span class="menu-item-label"> Contact us </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
@@ -136,7 +137,7 @@
       </ul>
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
+          <i class="fa fa-sitemap"></i>
           <span class="menu-item-label">Social Media</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->

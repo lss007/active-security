@@ -62,7 +62,7 @@
        language: {
          searchPlaceholder: 'Search...',
          sSearch: '',
-         lengthMenu: '_MENU_ items/page',
+         lengthMenu: '_MENU_ ',
        }
      });
 

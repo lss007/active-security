@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class ViewJobSection extends Component
 {
-    public $getJobsection;
+    public $getJobsection ,$trashdata;
     public function render()
     {
         $this->getJobsection =  JobSection::latest()->first();
-        $this->trashdata= JobSection::onlyTrashed()->first();
+        $this->trashdata= JobSection::onlyTrashed()->get();
         return view('livewire.backend.pages.job.view-job-section')->layout('layouts.backend');
     }
 

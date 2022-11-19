@@ -35,13 +35,20 @@ class DatabaseSeeder extends Seeder
         $this->call(ServiceLastSectionSeeder::class);
 
         $this->call(JobSectionSeeder::class);
-
+        
         $this->call(CompanySectionOneSeeder::class);
         $this->call(CompanySectionTwoSeeder::class);
-        
+
         $this->call(SociaCategorySeeder::class);
         $this->call(SocialLinksSeeder::class);
         $this->call(PrivacySettingSeeder::class);
+
+        $this->call(PrivacyPageTextSeeder::class);
+
+        $this->call(AgbpageSeeder::class);
+
+
+        
 
 
 

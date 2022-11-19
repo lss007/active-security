@@ -12,14 +12,8 @@ use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        // 
         $createuser = New User();
         $createuser->name = "Alexander";
         $createuser->role_id = 1;

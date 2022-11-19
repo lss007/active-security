@@ -13,7 +13,6 @@ class ViewFooterPrivacy extends Component
         $this->viewPrivacyPageText = PrivacyPageText::orderBy('created_at')->get();
             return view('livewire.backend.pages.privacy.view-footer-privacy')->layout('layouts.backend');
     }
-
     public function  inactive($id){
         PrivacyPageText::where('id', $id)->update([
            'status' =>    0,
