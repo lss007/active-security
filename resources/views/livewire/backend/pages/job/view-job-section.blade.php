@@ -48,11 +48,11 @@
                 </h6>
               </div><!-- card-header -->
               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            <div class="row">
+              <div class="col-md-8">
                 <div class="card-body">
 
-                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getJobsection->image))  
-                    ? asset('storage/job/'.$getJobsection->image):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
-                  
+               
                   <p>  Created at:  {{isset($getJobsection->created_at) ? Carbon\Carbon::parse($getJobsection->created_at)->diffForHumans() : "NA"}} </p>
                   <h6 class="card-body-title">
                     <span class="text-primary">  Main Heading : </span>
@@ -66,6 +66,14 @@
         
         
                 </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card-body">
+                <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getJobsection->image))  
+                  ? asset('storage/job/'.$getJobsection->image):asset('no_image.jpg')}}" alt="..." style="width:500px;" >
+                </div>
+              </div>
+            </div>
               </div>
             </div>
        

@@ -32,52 +32,57 @@
               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-body">
          
-       
-      
-   
-                    <h6 class="card-body-title">
-          <p>Created at:  {{isset($homeSectionOne->created_at) ? Carbon\Carbon::parse($homeSectionOne->created_at)->diffForHumans() : "NA"}}</p>
-                      <span class="text-primary">  Main Heading : </span>s
-                   
-                      {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
-                    <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
-                    <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
-                    <div class="card wd-xs-300">
-                      <span class="text-primary">    Main Image : </span>
-                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->main_image)) 
-                        ? asset('storage/Home-section/'.$homeSectionOne->main_image):asset('no_image.jpg')}}" alt="..."  width="200px">
-                    </div><!-- card -->
-          
-             <hr>
-             <h2><span class="text-primary">Logo Images :</span></h2>
-           
                     <div class="row">
-                      <div class="col-md-3">
-                        
-                    <div class="card wd-xs-100">
-                      <span class="text-primary">    Image one :  </span>
-                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo1)) 
-                        ? asset('storage/Home-section/'.$homeSectionOne->logo1):asset('no_image.jpg')}}" alt="..."  width="200px">
-                    </div><!-- card -->
-                      </div>
-                      <div class="col-md-3">
-                        
-                        <div class="card wd-xs-100">
-                          <span class="text-primary">   Image two: </span>
-                          <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo2)) 
-                            ? asset('storage/Home-section/'.$homeSectionOne->logo2):asset('no_image.jpg')}}" alt="..."  width="200px">
-                        </div><!-- card -->
-                          </div>
-                          <div class="col-md-3">
-                        
+                      <div class="col-md-8">
+                        <h6 class="card-body-title">
+                          <p>Created at:  {{isset($homeSectionOne->created_at) ? Carbon\Carbon::parse($homeSectionOne->created_at)->diffForHumans() : "NA"}}</p>
+                                      <span class="text-primary">  Main Heading : </span>s
+                           
+                              {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
+                            <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
+                            <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
+                     
+                  
+                                  <hr>
+                                  <h2><span class="text-primary">Logo Images :</span></h2>
+                   
+                            <div class="row">
+                              <div class="col-md-3">
+                                
                             <div class="card wd-xs-100">
-                              <span class="text-primary">     Image three: </span>
-                              <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo3)) 
-                                ? asset('storage/Home-section/'.$homeSectionOne->logo3):asset('no_image.jpg')}}" alt="..."  width="200px">
+                              <span class="text-primary">    Image one :  </span>
+                              <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo1)) ? asset('storage/Home-section/'.$homeSectionOne->logo1):asset('no_image.jpg')}}" alt="..."  width="100">
                             </div><!-- card -->
                               </div>
+                              <div class="col-md-3">
+                                
+                                <div class="card wd-xs-100">
+                                  <span class="text-primary">   Image two: </span>
+                                  <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo2))  ? asset('storage/Home-section/'.$homeSectionOne->logo2):asset('no_image.jpg')}}" alt="..."  width="100">
+                                </div><!-- card -->
+                                  </div>
+                                  <div class="col-md-3">
+                                
+                                    <div class="card wd-xs-100">
+                                      <span class="text-primary"> Image three: </span>
+                                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo3)) ? asset('storage/Home-section/'.$homeSectionOne->logo3):asset('no_image.jpg')}}" alt="..."  width="100">
+                                    </div><!-- card -->
+                                      </div>
+                            </div>
+                            
+                      </div>
+                      <div class="col-md-4">
+
+                        <div class="card wd-xs-300">
+                          <span class="text-primary">    Main Image : </span>
+                          <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->main_image)) 
+                            ? asset('storage/Home-section/'.$homeSectionOne->main_image):asset('no_image.jpg')}}" alt="..."  width="100px">
+                        </div><!-- card -->
+                      </div>
                     </div>
-                    
+      
+   
+      
                  
                 </div>
               </div>
