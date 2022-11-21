@@ -126,7 +126,7 @@ Route::get('/unternehmen', Unternehmen::class)->name('UnternehmenPage');
 // Jobs
 Route::get('/jobs', Jobs::class)->name('JobsPage');
 // Contact
-Route::get('/contact', Contact::class)->name('ContactPage');
+Route::get('/Kontakt', Contact::class)->name('ContactPage');
 // Impressum
 Route::get('/impressum', Impressum::class)->name('ImpressumPage');
 // Datenschutz

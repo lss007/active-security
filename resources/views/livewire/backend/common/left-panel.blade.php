@@ -71,11 +71,11 @@
              
                <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> Manage Footer Section</a></li>
                
-               <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif"> Manage Privacy Settings </a></li>
+               <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif">  Privatsphäre-Einstellungen</a></li>
 
-               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif"> Manage Privacy Tabs </a></li>
+               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  Datenschutz Tabs </a></li>
 
-               <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Privacy Page </a></li>
+               <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Datenschutz Page </a></li>
                <li class="nav-item"><a href="{{route('Agb_page_View')}}" class="nav-link   @if(Route::is('Agb_page_View') ) active @else '' @endif"> Manage AGB Page </a></li>
 
                
@@ -125,14 +125,14 @@
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="fa fa-phone"></i>
-          <span class="menu-item-label"> Contact us </span>
+          <span class="menu-item-label"> Kontakt  </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <a href="{{route('footer_address')}}" class="nav-link 
         @if(Route::is('footer_address') ) active @else '' @endif">
-         Contact Address</a></li>
+        Kontakt Addresse</a></li>
         <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  
           @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> View Image</a></li>
 
