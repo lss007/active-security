@@ -76,7 +76,7 @@
                <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  Datenschutz Tabs </a></li>
 
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Datenschutz Page </a></li>
-               <li class="nav-item"><a href="{{route('Agb_page_View')}}" class="nav-link   @if(Route::is('Agb_page_View') ) active @else '' @endif"> Manage AGB Page </a></li>
+               <li class="nav-item"><a href="{{route('agb_page_View')}}" class="nav-link   @if(Route::is('agb_page_View') ) active @else '' @endif"> Manage AGB Page </a></li>
 
                
 

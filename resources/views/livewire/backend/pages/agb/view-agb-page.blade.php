@@ -11,7 +11,7 @@
    
                         
          
-            <a href="{{route('Agb_page_add')}}"><button class="btn btn-teal active mg-b-10">Add  Text</button> </a>
+            <a href="{{route('agb_page_add')}}"><button class="btn btn-teal active mg-b-10">Add  Text</button> </a>
        
         </h6>
           <div class="table-wrapper">
@@ -49,7 +49,7 @@
                       @endif
                     </td>
                   <td>  
-            <a href="{{route('Agb_page_edit',$getrow->id)}}" class="btn btn-sm btn-info" title="edit" >
+            <a href="{{route('agb_page_edit',$getrow->id)}}" class="btn btn-sm btn-info" title="edit" >
               <i class="fa fa-edit"></i></a>
             <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"
             data-toggle="modal" data-target="#modaldemo{{$getrow->id}}">

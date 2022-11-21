@@ -46,6 +46,6 @@ class AddAgbPage extends Component
                 'message' => 'Agb Page Text Published',
                 'alert-type' => 'success'
                 );
-return redirect()->route('Agb_page_View')->with($notification);
+return redirect()->route('agb_page_View')->with($notification);
     }
 }
