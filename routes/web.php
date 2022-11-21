@@ -220,7 +220,7 @@ Route::group(['prefix' =>'privacy'],function(){
          Route::get('/page-edit/{id}', EditFooterPrivacy::class)->name('editfooter_Privacytext');
     });
 
-Route::group(['prefix' =>'Agb-page'], function () {
+Route::group(['prefix' =>'agb-page'], function () {
         Route::get('/view', ViewAgbPage::class)->name('agb_page_view');
         Route::get('/add', AddAgbPage::class)->name('agb_page_add');
         Route::get('/edit/{id}', EditAgbPage::class)->name('agb_page_edit');
