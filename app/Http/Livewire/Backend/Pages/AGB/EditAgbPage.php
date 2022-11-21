@@ -60,6 +60,6 @@ class EditAgbPage extends Component
            'message' => 'Agb Page Text Published',
            'alert-type' => 'success'
            );
-return redirect()->route('agb_page_View')->with($notification);
+return redirect()->route('agb_page_view')->with($notification);
     }
 }

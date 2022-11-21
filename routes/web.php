@@ -221,7 +221,7 @@ Route::group(['prefix' =>'privacy'],function(){
     });
 
 Route::group(['prefix' =>'Agb-page'], function () {
-        Route::get('/view', ViewAgbPage::class)->name('agb_page_View');
+        Route::get('/view', ViewAgbPage::class)->name('agb_page_view');
         Route::get('/add', AddAgbPage::class)->name('agb_page_add');
         Route::get('/edit/{id}', EditAgbPage::class)->name('agb_page_edit');
 });

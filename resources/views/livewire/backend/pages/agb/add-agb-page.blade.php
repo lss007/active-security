@@ -10,7 +10,7 @@
 
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
-            <a href="{{route('agb_page_View')}}" class="btn btn-teal active mg-b-10" >Back</a>
+            <a href="{{route('agb_page_view')}}" class="btn btn-teal active mg-b-10" >Back</a>
           </h6>
       
           <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
