@@ -87,9 +87,9 @@ class EditFooterAddress extends Component
             'email' =>    $this->email,
             'address' =>    $this->address,
 
-            'call_to' =>  $this->callTo,
-            'mail_to' =>  $this->mailTo,
-            'Whatsapp_to' =>  $this->WhatsappTo,
+            'call_to' =>  trim($this->callTo),
+            'mail_to' =>  trim($this->mailTo),
+            'Whatsapp_to' =>  trim($this->WhatsappTo),
      
             ]);
                  

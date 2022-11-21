@@ -71,9 +71,9 @@ public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid,$callTo,$mailTo,$
             'email' =>    $this->email,
             'address' =>    $this->address,
             'logo' =>    $fileName  ?? Null,
-            'call_to' =>  $this->callTo,
-            'mail_to' =>  $this->mailTo,
-            'Whatsapp_to' =>  $this->WhatsappTo,
+            'call_to' =>  trim($this->callTo),
+            'mail_to' =>  trim($this->mailTo),
+            'Whatsapp_to' =>  trim($this->WhatsappTo),
 
             ]);
             $notification = array(
