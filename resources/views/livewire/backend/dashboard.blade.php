@@ -67,7 +67,7 @@
     <div class="list-group list-group-flush">
       @if(isset($getContacts))
       @foreach($getContacts as $getrow) 
-      <a href="" class="list-group-item list-group-item-action media">
+      <a href="{{route('view_Contacts')}}" class="list-group-item list-group-item-action media">
         <img src="../img/img10.jpg" alt="">
         <div class="media-body">
           <div class="msg-top">
