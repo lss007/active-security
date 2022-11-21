@@ -64,6 +64,12 @@ public function sendmessage()
                 'alert-type' => 'success'
             );
                 return redirect('/')->with($notification); 
+            }else {
+                $notification = array(
+                    'message' => 'Message send  successfully ',
+                    'alert-type' => 'error'
+                );
+                return redirect('/')->with($notification);
             }
                 $this->resetInputFields();  
     }

@@ -36,7 +36,7 @@ class ContactMessage implements ShouldQueue
     {
         //
         $email = new Clientmail( $this->sendmessage );
-        Mail::to('alex@gmail.com')->send($email);
+        Mail::to('active_security@yopmail.com')->send($email);
 
     }
 }
