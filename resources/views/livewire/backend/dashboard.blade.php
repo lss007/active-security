@@ -23,7 +23,7 @@
                 </div><!-- card-header -->
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
-                  <h3 class="mg-b-0 tx-white tx-lato tx-bold">25</h3>
+                  <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($this->thisweek ) ? count($this->thisweek) : "NA"}}</h3>
                 </div><!-- card-body -->
           
               </div><!-- card -->
@@ -36,7 +36,7 @@
                 </div><!-- card-header -->
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
-                  <h3 class="mg-b-0 tx-white tx-lato tx-bold">8</h3>
+                  <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($thismonth) ? count($thismonth) : "NA"}}</h3>
                 </div><!-- card-body -->
          
               </div><!-- card -->
@@ -49,7 +49,7 @@
                 </div><!-- card-header -->
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
-                  <h3 class="mg-b-0 tx-white tx-lato tx-bold">39</h3>
+                  <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($thisyear) ? count($thisyear) : "NA"}}</h3>
                 </div><!-- card-body -->
            
               </div><!-- card -->
