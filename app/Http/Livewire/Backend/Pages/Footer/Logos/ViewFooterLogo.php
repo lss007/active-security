@@ -12,6 +12,8 @@ class ViewFooterLogo extends Component
     public function render()
     {
        $this->get_logo =  FooterLogo::get();
+     $this->trashdata= FooterLogo::onlyTrashed()->get();
+
         return view('livewire.backend.pages.footer.logos.view-footer-logo')->layout('layouts.backend');
     }
     protected $rules = [
@@ -98,4 +100,25 @@ class ViewFooterLogo extends Component
                   return   redirect(request()->header('Referer'))->with($notification);
        
                  }
+
+
+
+                 public function restore($id){
+                    FooterLogo::withTrashed()->find($id)->restore();
+                    $notification = array(
+                       'message' => ' Logo Restored successfully',
+                       'alert-type' => 'success'
+                   );
+                   return   redirect(request()->header('Referer'))->with($notification);
+                }
+
+
+                public function fulleDelete($id){
+                    FooterLogo::onlyTrashed()->find($id)->forceDelete();
+                    $notification = array(
+                      'message' => 'Logo  Deleted successfully',
+                      'alert-type' => 'error'
+                  );
+                  return   redirect(request()->header('Referer'))->with($notification);
+                  }
 }

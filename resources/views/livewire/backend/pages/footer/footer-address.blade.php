@@ -50,36 +50,55 @@
             </div><!-- card-header -->
             <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                <div class="card-body">
-            <h6 class="card-body-title">
-      
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Name   :</span> 
+                        {{ isset($contactAddress->name) ? $contactAddress->name : "NA" }} </h5>
+          
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Vat Id   :</span> 
+                          {{ isset($contactAddress->vatid) ? $contactAddress->vatid : "NA" }} </h5>
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Telefon   :</span> 
+                            {{ isset($contactAddress->telefon) ? $contactAddress->telefon : "NA" }} </h5>
+                
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Fax   :</span> 
+                           {{isset($contactAddress->fax)  ? $contactAddress->fax : "NA"}} </h5>
+                       
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Email   :</span> 
+                           {{isset($contactAddress->email)  ? $contactAddress->email : "NA"}} </h5>
+                           <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Address   :</span> 
+                            {{isset($contactAddress->address)  ? $contactAddress->address : "NA"}} </h5>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card wd-xs-300">
+                        <span class="text-primary">    Footer logo Image : </span>
+                        <img class="card-img-bottom img-fluid"  src="{{(!empty($contactAddress->logo)) 
+                          ? asset('storage/footer-logo/'.$contactAddress->logo):asset('no_image.jpg')}}" alt="..."  style="width: 100px">
+                      </div><!-- card -->
+                    </div>
+                  </div>
+                
+            
 
-           
-      
+                 <div class="card-header my-3">
+                  <h6 class="mg-b-0">
+                    <a class="tx-gray-800 transition">
+                    Footer Call, Mail and Whatsaap info; 
+                    </a>
+                  </h6>
+                </div><!-- card-header -->
 
-   
-            </h6>
-            <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Name   :</span> 
-              {{ isset($contactAddress->name) ? $contactAddress->name : "NA" }} </h5>
+                 <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Call to    :</span> 
+                  {{isset($contactAddress->call_to)  ? $contactAddress->call_to : "NA"}} </h5>
 
-              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Vat Id   :</span> 
-                {{ isset($contactAddress->vatid) ? $contactAddress->vatid : "NA" }} </h5>
-              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Telefon   :</span> 
-                  {{ isset($contactAddress->telefon) ? $contactAddress->telefon : "NA" }} </h5>
-      
-              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Fax   :</span> 
-                 {{isset($contactAddress->fax)  ? $contactAddress->fax : "NA"}} </h5>
+                  <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Mail to    :</span> 
+                    {{isset($contactAddress->mail_to)  ? $contactAddress->mail_to : "NA"}} </h5>
+
+
+                    <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Whatsapp to    :</span> 
+                      {{isset($contactAddress->Whatsapp_to)  ? $contactAddress->Whatsapp_to : "NA"}} </h5>
+
+
              
-              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Email   :</span> 
-                 {{isset($contactAddress->email)  ? $contactAddress->email : "NA"}} </h5>
-      
-      
-                 <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Address   :</span> 
-                  {{isset($contactAddress->address)  ? $contactAddress->address : "NA"}} </h5>
-              <div class="card wd-xs-300">
-                <span class="text-primary">    Footer logo Image : </span>
-                <img class="card-img-bottom img-fluid"  src="{{(!empty($contactAddress->logo)) 
-                  ? asset('storage/footer-logo/'.$contactAddress->logo):asset('no_image.jpg')}}" alt="..."  style="width: 100px">
-              </div><!-- card -->
         
 
 

@@ -78,9 +78,9 @@
   <a href="javascript:void(0)" class="fpIcon" data-bs-toggle="modal" data-bs-target="#privacyModal"><img src="{{ asset('frontend/images/fingerprint-icon.svg')}}" alt="..."></a>
         <div class="rightContactLinks">
           <ul>
-            <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/phone-icon-white.svg')}}" alt="..."></a></li>
-            <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/whatsapp-icon-white.svg')}}" alt="..."></a></li>
-            <li><a href="javascript:void(0)"><img src="{{ asset('frontend/images/email-icon-white.svg')}}" alt="..."></a></li>
+            <li><a  href="tel:{{isset($footeraddress->call_to) ? $footeraddress->call_to :"+4994019187732"}}" ><img src="{{ asset('frontend/images/phone-icon-white.svg')}}" alt="..."></a></li>
+            <li><a href="{{isset($footeraddress->Whatsapp_to) ? $footeraddress->Whatsapp_to :"javascript:void(0)"}}" target="_blank" ><img src="{{ asset('frontend/images/whatsapp-icon-white.svg')}}" alt="..."></a></li>
+            <li><a href="mailto:{{isset($footeraddress->mail_to) ? $footeraddress->mail_to :"javascript:void(0)"}}" ><img src="{{ asset('frontend/images/email-icon-white.svg')}}" alt="..."></a></li>
           </ul>
         </div>
       

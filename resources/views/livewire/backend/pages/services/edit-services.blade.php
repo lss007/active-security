@@ -124,7 +124,7 @@
                </div><!-- row -->
      
                <div class="form-layout-footer">
-                 <button class="btn btn-info mg-r-5" type="submit" wire:loading.attr="disabled">Publish Service Section</button>
+                 <button class="btn btn-info mg-r-5" type="submit" wire:loading.attr="disabled">Update Service Section</button>
                 <div  wire:loading class="pd-x-20">
                     <img src="https://paladins-draft.com/img/circle_loading.gif" width="64px" height="64" >
                 </div>

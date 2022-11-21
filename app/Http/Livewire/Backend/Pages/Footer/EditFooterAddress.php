@@ -10,7 +10,7 @@ class EditFooterAddress extends Component
 {
 
     use WithFileUploads;
-    public $contactId ,$editHomeBanner,  $telefon ,$fax ,$email ,$address  ,$logo;
+    public $contactId ,$editHomeBanner,  $telefon ,$fax ,$email ,$address  ,$logo ,$callTo,$mailTo,$WhatsappTo;
     public $newlogo;
         public function mount($id){
                 $this->contactId= $id;
@@ -23,6 +23,10 @@ class EditFooterAddress extends Component
                 $this->email =  $this->editHomeBanner->email; 
                 $this->address = $this->editHomeBanner->address;
                 $this->logo = $this->editHomeBanner->logo	;
+                $this->callTo = $this->editHomeBanner->call_to	;
+                $this->mailTo = $this->editHomeBanner->mail_to	;
+                $this->WhatsappTo = $this->editHomeBanner->Whatsapp_to	;
+
               }
     
      }
@@ -48,6 +52,10 @@ class EditFooterAddress extends Component
                 $this->email = '';
                 $this->address = '';
                 $this->logo = '';
+                $this->callTo = '';
+                $this->mail_to = '';
+                $this->logWhatsapp_too = '';
+
                 
         }
 
@@ -78,6 +86,10 @@ class EditFooterAddress extends Component
             'fax' =>    $this->fax,
             'email' =>    $this->email,
             'address' =>    $this->address,
+
+            'call_to' =>  $this->callTo,
+            'mail_to' =>  $this->mailTo,
+            'Whatsapp_to' =>  $this->WhatsappTo,
      
             ]);
                  

@@ -22,6 +22,11 @@ return new class extends Migration
             $table->text('email')->nullable();
             $table->text('address')->nullable();
             $table->text('logo')->nullable();
+            
+            $table->text('call_to')->nullable();
+            $table->text('mail_to')->nullable();
+            $table->text('Whatsapp_to')->nullable();
+
             $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();
 

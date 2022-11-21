@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class AddFooterAddress extends Component
 {
     use WithFileUploads;
-public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid;
+public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid,$callTo,$mailTo,$WhatsappTo;
 
 
 
@@ -48,6 +48,9 @@ public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid;
             $this->email = '';
             $this->address = '';
             $this->logo = '';
+            $this->callTo = '';
+            $this->mail_to = '';
+            $this->logWhatsapp_too = '';
         }
 
 
@@ -68,7 +71,9 @@ public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid;
             'email' =>    $this->email,
             'address' =>    $this->address,
             'logo' =>    $fileName  ?? Null,
-    
+            'call_to' =>  $this->callTo,
+            'mail_to' =>  $this->mailTo,
+            'Whatsapp_to' =>  $this->WhatsappTo,
 
             ]);
             $notification = array(

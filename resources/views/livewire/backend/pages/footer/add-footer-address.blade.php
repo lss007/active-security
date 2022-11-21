@@ -89,6 +89,46 @@
                                 @if(isset($logo)) <img id="output" src="{{$logo->temporaryUrl()}}" width="200" > @endif
                                 @error('logo')<span class="text-danger"> {{$message}}</span>  @enderror  
                      </div><!-- col-4 -->
+
+
+
+                     <hr>
+                     <div class="col-lg-12 my-3">
+                     <div class="card-header">
+                      <h6 class="mg-b-0">
+                        <a  class="tx-gray-900 transition ">
+                          Update Footer Icon Call, Mail and whatsapp
+                        </a>
+                      </h6>
+                    </div><!-- card-header -->
+                     </div>
+                     <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Call To  : </label>
+                        <input class="form-control" type="text" wire:model="callTo"  placeholder="Call to  ">
+                        @error('callTo')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Mail  To  : </label>
+                        <input class="form-control" type="text" wire:model="mailTo"  placeholder="Mail to  ">
+                        @error('mainTo')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Whatsapp  To  :</label>
+                        <input class="form-control" type="text" wire:model="WhatsappTo"  placeholder="Whatsapp to  ">
+                        @error('WhatsappTo')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+            
                  
             
                       </div><!-- row -->
