@@ -97,44 +97,44 @@
                                         </tbody>
                                       </table>
                            
-                          <hr>
-                       
-                       
-                          <table class="table table-hover table-bordered mg-b-0">
-                            <thead class="bg-danger">
-                              <tr>
-                                <th width="80%">Diese Website wird nicht:</th>
-                                <th  width="20%">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              @if(isset($privacyTab))
-                              @foreach($privacyTab as $keys => $row)
-                              
-                              <tr>
-                                
-                                @if($row->tabs == 1 && $row->cat == 2 )
-                                <td> {{$keys+1}}
-                                  {{$row->list}} 
-                              
-                                </td>
-                                <td>    
-                                  <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                  <i class="fa fa-edit"></i></a>
+                                      <hr>
+                                  
+                                  
+                                      <table class="table table-hover table-bordered mg-b-0">
+                                        <thead class="bg-danger">
+                                          <tr>
+                                            <th width="80%">Diese Website wird nicht:</th>
+                                            <th  width="20%">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          @if(isset($privacyTab))
+                                          @foreach($privacyTab as $keys => $row)
+                                          
+                                          <tr>
+                                            
+                                            @if($row->tabs == 1 && $row->cat == 2 )
+                                            <td> {{$keys+1}}
+                                              {{$row->list}} 
+                                          
+                                            </td>
+                                            <td>    
+                                              <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                              <i class="fa fa-edit"></i></a>
 
-                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-                                    <i class="fa fa-trash"></i></a>
-                                </td>
-                              
-                              </tr>
-                              @endif
-                              @endforeach
-                                @endif
-                          
-                        
-                            </tbody>
-                          </table>
-                           
+                                              <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                <i class="fa fa-trash"></i></a>
+                                            </td>
+                                          
+                                          </tr>
+                                          @endif
+                                          @endforeach
+                                            @endif
+                                      
+                                    
+                                        </tbody>
+                                      </table>
+                                      
                                 
                               
                                 </div>
@@ -145,32 +145,317 @@
                           </div>
                           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                            
-                            <div class="row">
-                              <div class="col-md-6">
-                                <h5>Funktionalität:</h5>
-                            
-                              </div>
+                         
+                                {{-- <h5>Funktionalität:</h5> --}}
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                        <table class="table table-hover table-bordered mg-b-0">
+                                          <thead class="bg-info">
+                                            <tr>
+                                              <th width="80%">Diese Website wird</th>
+                                              <th  width="20%">Action</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            @if(isset($privacyTab))
+                                            @foreach($privacyTab as $keys => $row)
+                                            <tr>
+                                              
+                                                @if($row->tabs == 2 && $row->cat ==1 )
+                                              <td> {{$keys+1}}
+                                                {{$row->list}} 
+                                            
+                                              </td>
+                                              <td>    
+                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                                <i class="fa fa-edit"></i></a>
+                                            
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
+                                                    <i class="fa fa-trash"></i></a>
+                                             
+                                               
+                                              </td>
+                                            
+                                            </tr>
+                                            @endif
+                                            @endforeach
+                                              @endif
+  
+                                              @if(isset($trashdata)  )
+                                            <tr><th>Restore</th></tr>
+                                      
+                                              @foreach($trashdata as $val)
+                                            <tr>
+                                           
+                                              <td> {{$val->list}}  </td>
+                                              <td>     
+                                                <a href="javascript:void(0)"  wire:click.prevent="restore({{ $val->id}})" class="btn btn-sm btn-success" title="delete"  >
+                                                  <i class="fa fa-trash"></i></a>
+                                                  <a href="javascript:void(0)"  wire:click.prevent="fulleDelete({{ $val->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                    <i class="fa fa-trash"></i></a>
+                                              </td>
+                                          
+                                            </tr>
+                                               @endforeach
+                                           @endif
+                                          </tbody>
+                                        </table>
                              
-                          </div>
+                            <hr>
+                         
+                         
+                            <table class="table table-hover table-bordered mg-b-0">
+                              <thead class="bg-danger">
+                                <tr>
+                                  <th width="80%">Diese Website wird nicht:</th>
+                                  <th  width="20%">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @if(isset($privacyTab))
+                                @foreach($privacyTab as $keys => $row)
+                                
+                                <tr>
+                                  
+                                  @if($row->tabs == 2 && $row->cat == 2 )
+                                  <td> {{$keys+1}}
+                                    {{$row->list}} 
+                                
+                                  </td>
+                                  <td>    
+                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                    <i class="fa fa-edit"></i></a>
+  
+                                    <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                      <i class="fa fa-trash"></i></a>
+                                  </td>
+                                
+                                </tr>
+                                @endif
+                                @endforeach
+                                  @endif
+                            
+                          
+                              </tbody>
+                            </table>
+                             
+                                  
+                                
+                                  </div>
+                               
+                              </div>
+
+                           
                           </div>
                           <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                            <div class="row">
-                              <div class="col-md-6">
-                                <h5>Analytik:</h5>
-                          
-                              </div>
+                         
+                                {{-- <h5>Analytik:</h5> --}}
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                        <table class="table table-hover table-bordered mg-b-0">
+                                          <thead class="bg-info">
+                                            <tr>
+                                              <th width="80%">Diese Website wird</th>
+                                              <th  width="20%">Action</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            @if(isset($privacyTab))
+                                            @foreach($privacyTab as $keys => $row)
+                                            <tr>
+                                              
+                                                @if($row->tabs == 3 && $row->cat ==1 )
+                                              <td> {{$keys+1}}
+                                                {{$row->list}} 
+                                            
+                                              </td>
+                                              <td>    
+                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                                <i class="fa fa-edit"></i></a>
+                                            
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
+                                                    <i class="fa fa-trash"></i></a>
+                                             
+                                               
+                                              </td>
+                                            
+                                            </tr>
+                                            @endif
+                                            @endforeach
+                                              @endif
+  
+                                              @if(isset($trashdata)  )
+                                            <tr><th>Restore</th></tr>
+                                      
+                                              @foreach($trashdata as $val)
+                                            <tr>
+                                           
+                                              <td> {{$val->list}}  </td>
+                                              <td>     
+                                                <a href="javascript:void(0)"  wire:click.prevent="restore({{ $val->id}})" class="btn btn-sm btn-success" title="delete"  >
+                                                  <i class="fa fa-trash"></i></a>
+                                                  <a href="javascript:void(0)"  wire:click.prevent="fulleDelete({{ $val->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                    <i class="fa fa-trash"></i></a>
+                                              </td>
+                                          
+                                            </tr>
+                                               @endforeach
+                                           @endif
+                                          </tbody>
+                                        </table>
                              
-                          </div>
+                            <hr>
+                         
+                         
+                            <table class="table table-hover table-bordered mg-b-0">
+                              <thead class="bg-danger">
+                                <tr>
+                                  <th width="80%">Diese Website wird nicht:</th>
+                                  <th  width="20%">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @if(isset($privacyTab))
+                                @foreach($privacyTab as $keys => $row)
+                                
+                                <tr>
+                                  
+                                  @if($row->tabs == 3 && $row->cat == 2 )
+                                  <td> {{$keys+1}}
+                                    {{$row->list}} 
+                                
+                                  </td>
+                                  <td>    
+                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                    <i class="fa fa-edit"></i></a>
+  
+                                    <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                      <i class="fa fa-trash"></i></a>
+                                  </td>
+                                
+                                </tr>
+                                @endif
+                                @endforeach
+                                  @endif
+                            
+                          
+                              </tbody>
+                            </table>
+                             
+                                  
+                                
+                                  </div>
+                               
+                              </div>
+                          
+                              
                           </div>
     
                           <div class="tab-pane fade" id="pills-advertising" role="advertising" aria-labelledby="pills-advertising-tab">
-                            <div class="row">
-                              <div class="col-md-6">
-                                <h5>Werbung:</h5>
                            
-                              </div>
+                                {{-- <h5>Werbung:</h5> --}}
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                        <table class="table table-hover table-bordered mg-b-0">
+                                          <thead class="bg-info">
+                                            <tr>
+                                              <th width="80%">Diese Website wird</th>
+                                              <th  width="20%">Action</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            @if(isset($privacyTab))
+                                            @foreach($privacyTab as $keys => $row)
+                                            <tr>
+                                              
+                                                @if($row->tabs == 4 && $row->cat ==1 )
+                                              <td> {{$keys+1}}
+                                                {{$row->list}} 
+                                            
+                                              </td>
+                                              <td>    
+                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                                <i class="fa fa-edit"></i></a>
+                                            
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
+                                                    <i class="fa fa-trash"></i></a>
+                                             
+                                               
+                                              </td>
+                                            
+                                            </tr>
+                                            @endif
+                                            @endforeach
+                                              @endif
+  
+                                              @if(isset($trashdata)  )
+                                            <tr><th>Restore</th></tr>
+                                      
+                                              @foreach($trashdata as $val)
+                                            <tr>
+                                           
+                                              <td> {{$val->list}}  </td>
+                                              <td>     
+                                                <a href="javascript:void(0)"  wire:click.prevent="restore({{ $val->id}})" class="btn btn-sm btn-success" title="delete"  >
+                                                  <i class="fa fa-trash"></i></a>
+                                                  <a href="javascript:void(0)"  wire:click.prevent="fulleDelete({{ $val->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                    <i class="fa fa-trash"></i></a>
+                                              </td>
+                                          
+                                            </tr>
+                                               @endforeach
+                                           @endif
+                                          </tbody>
+                                        </table>
+                             
+                            <hr>
+                         
+                         
+                            <table class="table table-hover table-bordered mg-b-0">
+                              <thead class="bg-danger">
+                                <tr>
+                                  <th width="80%">Diese Website wird nicht:</th>
+                                  <th  width="20%">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @if(isset($privacyTab))
+                                @foreach($privacyTab as $keys => $row)
+                                
+                                <tr>
+                                  
+                                  @if($row->tabs == 4 && $row->cat == 2 )
+                                  <td> {{$keys+1}}
+                                    {{$row->list}} 
+                                
+                                  </td>
+                                  <td>    
+                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                    <i class="fa fa-edit"></i></a>
+  
+                                    <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                      <i class="fa fa-trash"></i></a>
+                                  </td>
+                                
+                                </tr>
+                                @endif
+                                @endforeach
+                                  @endif
                             
-                          </div>
+                          
+                              </tbody>
+                            </table>
+                             
+                                  
+                                
+                                  </div>
+                               
+                              </div>
+                           
+                           
                           </div>
                         </div>
                       </div>

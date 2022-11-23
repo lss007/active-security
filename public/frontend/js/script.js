@@ -23,9 +23,9 @@ $('.menuBackdrop').click(function(){
   $('html').removeClass('activeMenu');
 });
 
-$('.cookiesCloseTrigger').click(function(){
-  $('.cookiesCol').fadeOut();
-})
+// $('.cookiesCloseTrigger').click(function(){
+//   $('.cookiesCol').fadeOut();
+// })
 
 $('.ddLinkCol > a').click(function(){
   $(this).parent().find('ul.subMenu').slideToggle();

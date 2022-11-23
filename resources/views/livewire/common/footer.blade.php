@@ -1,4 +1,23 @@
+<style>
+  .js-cookie-consent{
+  position: absolute;
+  bottom: 0px;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  z-index: 9999;
+  background-color: #ce2020;
+  border-color: #ce2020;
+  border: solid 1px;
+  left: 0;
+  right: 0;
+ 
+}
+.js-cookie-consent > .cookie-consent__message,.text-black{
+  color: white !important;
+}
 
+</style>
 <footer>
 
   @php
@@ -156,9 +175,96 @@
                           <a href="javascript:void(0)" class="btn btnPrimary">Speichern und schließen</a>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="funktionalität-tab-pane" role="tabpanel" aria-labelledby="funktionalität-tab" tabindex="0">Funktionalität</div>
-                      <div class="tab-pane fade" id="analytik-tab-pane" role="tabpanel" aria-labelledby="analytik-tab" tabindex="0">Analytik</div>
-                      <div class="tab-pane fade" id="werbung-tab-pane" role="tabpanel" aria-labelledby="werbung-tab" tabindex="0">Werbung</div>
+                      <div class="tab-pane fade" id="funktionalität-tab-pane" role="tabpanel" aria-labelledby="funktionalität-tab" tabindex="0">
+                        {{-- Funktionalität --}}
+               
+                        <div class="row gy-4">
+                          <div class="col-lg-6">
+                            <h4 class="smTitle p2 pb-2">Diese Website wird:</h4>
+                            <ul class="pCheckList">
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 2 && $row->cat ==1 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
+                            </ul>
+                          </div>
+                          <div class="col-lg-6">
+                            <h4 class="smTitle p2 pb-2">Diese Website wird nicht:</h4>
+                            <ul class="pCheckList cList">
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 2 && $row->cat ==2 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
+                            </ul>
+                          </div>
+                        </div>
+          
+                      </div>
+                      <div class="tab-pane fade" id="analytik-tab-pane" role="tabpanel" aria-labelledby="analytik-tab" tabindex="0">
+                        {{-- Analytik --}}
+                        <div class="row gy-4">
+                          <div class="col-lg-6">
+                            <h4 class="smTitle p2 pb-2">Diese Website wird:</h4>
+                            <ul class="pCheckList">
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 3 && $row->cat ==1 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
+                            </ul>
+                          </div>
+                          <div class="col-lg-6">
+                            <h4 class="smTitle p2 pb-2">Diese Website wird nicht:</h4>
+                            <ul class="pCheckList cList">
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 3 && $row->cat ==2 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="werbung-tab-pane" role="tabpanel" aria-labelledby="werbung-tab" tabindex="0">
+                        {{-- Werbung --}}
+
+                        <div class="row gy-4">
+                          <div class="col-lg-6">
+                            <h4 class="smTitle p2 pb-2">Diese Website wird:</h4>
+                            <ul class="pCheckList">
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 4 && $row->cat ==1 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
+                            </ul>
+                          </div>
+                          <div class="col-lg-6">
+                            <h4 class="smTitle p2 pb-2">Diese Website wird nicht:</h4>
+                            <ul class="pCheckList cList">
+                              @if(isset($privacytabs))
+                              @foreach($privacytabs as $keys => $row)
+                                  @if($row->tabs == 4 && $row->cat ==2 )
+                                  <li>   {{$row->list}} </li>
+                                  @endif
+                            @endforeach
+                            @endif
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -166,22 +272,31 @@
             </div>
           </div>
         </div>
-        
+       
+
+       
         <div class="cookiesCol">
           <div class="container">
             <div class="row gy-2 align-items-center">
-              <div class="col-sm">
+
+              @include('cookie-consent::index') 
+              {{-- <div class="col-sm">
+                
                 <div class="cText">
+                 
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
               </div>
               <div class="col-sm-auto">
                 <ul class="cookiesRightBtns">
+                 
                   <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li>
                   <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Accept</a></li>
                 </ul>
-              </div>
+              </div> --}}
+              
             </div>
           </div>
         </div>
+        
 
