@@ -11,9 +11,7 @@
   @endphp
 
 
-
-
-    <label class="sidebar-label">Navigation</label>
+    <label class="sidebar-label">Active Secuirty</label>
     <div class="sl-sideleft-menu">
       <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
         <div class="sl-menu-item">
