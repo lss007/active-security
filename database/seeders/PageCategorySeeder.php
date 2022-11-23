@@ -11,7 +11,7 @@ class PageCategorySeeder extends Seeder
     public function run()
     {
             $page_categories = array(
-                array('page_cat_name' => ' objekt-und-werkschutz','link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-17 09:29:02','updated_at' => '2022-11-17 09:29:02'),
+                array('page_cat_name' => 'objekt-und-werkschutz','link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-17 09:29:02','updated_at' => '2022-11-17 09:29:02'),
                 array('page_cat_name' => 'centerbewachung','link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-17 09:29:02','updated_at' => '2022-11-17 09:29:02'),
                 array('page_cat_name' => 'kaufhausdetektive','link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-17 09:29:02','updated_at' => '2022-11-17 09:29:02'),
                 array('page_cat_name' => 'baustellenbewachung','link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => '2022-11-17 09:29:02','updated_at' => '2022-11-17 09:29:02'),
