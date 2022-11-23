@@ -110,13 +110,11 @@ Route::get('/kaufhausdetektive', Kaufhausdetektive::class)->name('Kaufhausdetekt
 // BaustellenbewacHung
 Route::get('/baustellenbewachung', BaustellenbewacHung::class)->name('baustellenbewachungPage');
 // OpeningAndClosingService
-Route::get('/opening-and-closing-service', OpeningAndClosingService::class)->name('openingAndclosingPage');
-// RevierFahrten
-Route::get('/revierfahrten', RevierFahrten::class)->name('revierfahrtenPage');
-
+Route::get('/oeffnungs-und-schliessdienst', OpeningAndClosingService::class)->name('openingAndclosingPage');
+// revierkontrollen
+Route::get('/revierkontrollen', RevierFahrten::class)->name('revierfahrtenPage');
 // Empfangsdienst
 Route::get('/empfangsdienst', Empfangsdienst::class)->name('empfangsdienst');
-
 // ShopGuard
 Route::get('/shop-guard', ShopGuard::class)->name('ShopGuardPage');
 // VeranstaltungsSchutz
@@ -126,7 +124,7 @@ Route::get('/unternehmen', Unternehmen::class)->name('UnternehmenPage');
 // Jobs
 Route::get('/jobs', Jobs::class)->name('JobsPage');
 // Contact
-Route::get('/Kontakt', Contact::class)->name('ContactPage');
+Route::get('/kontakt', Contact::class)->name('ContactPage');
 // Impressum
 Route::get('/impressum', Impressum::class)->name('ImpressumPage');
 // Datenschutz
@@ -220,11 +218,11 @@ Route::group(['prefix' =>'privacy'],function(){
          Route::get('/page-edit/{id}', EditFooterPrivacy::class)->name('editfooter_Privacytext');
     });
 
-// Route::group(['prefix' =>'agb-page'], function () {
-//         Route::get('/view', ViewAgbPage::class)->name('agb_page_view');
-//         Route::get('/add', AddAgbPage::class)->name('agb_page_add');
-//         Route::get('/edit/{id}', EditAgbPage::class)->name('agb_page_edit');
-// });
+Route::group(['prefix' =>'agb-page'], function () {
+        Route::get('/view', ViewAgbPage::class)->name('agb_page_view');
+        Route::get('/add', AddAgbPage::class)->name('agb_page_add');
+        Route::get('/edit/{id}', EditAgbPage::class)->name('agb_page_edit');
+});
 Route::group(['prefix' =>'services'], function () {
         Route::get('/view', ViewServices::class)->name('view_services');
         Route::get('/add', AddServices::class)->name('add_services');
