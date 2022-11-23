@@ -12,7 +12,6 @@
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
                   <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($getContacts) ?count($getContacts) : "NA"}}</h3>
                 </div><!-- card-body -->
-           
               </div><!-- card -->
             </div><!-- col-3 -->
             <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
@@ -25,7 +24,6 @@
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
                   <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($this->thisweek ) ? count($this->thisweek) : "NA"}}</h3>
                 </div><!-- card-body -->
-          
               </div><!-- card -->
             </div><!-- col-3 -->
             <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
@@ -38,7 +36,6 @@
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
                   <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($thismonth) ? count($thismonth) : "NA"}}</h3>
                 </div><!-- card-body -->
-         
               </div><!-- card -->
             </div><!-- col-3 -->
             <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
@@ -51,48 +48,42 @@
                   <span class="sparkline2">5,3,9,6,5,9,7,3,5,2</span>
                   <h3 class="mg-b-0 tx-white tx-lato tx-bold">{{isset($thisyear) ? count($thisyear) : "NA"}}</h3>
                 </div><!-- card-body -->
-           
               </div><!-- card -->
             </div><!-- col-3 -->
        @php
          
        @endphp     
 
-<div class="col-md-12">
-  <div class="card widget-messages mg-t-20">
-    <div class="card-header">
-      <span>Messages</span>
-      <a href=""><i class="icon ion-more"></i></a>
-    </div><!-- card-header -->
-    <div class="list-group list-group-flush">
-      @if(isset($getContacts))
-      @foreach($getContacts as $getrow) 
-      <a href="{{route('view_Contacts')}}" class="list-group-item list-group-item-action media">
-        <img src="../img/img10.jpg" alt="">
-        <div class="media-body">
-          <div class="msg-top">
-            <span>{{isset($getrow->surname) ?  ucwords(str_limit($getrow->surname, $limit=20 )) : "NA" }}</span>
-            <span>{{Carbon\Carbon::parse($getrow->created_at)->diffForHumans()}}</span>
-          </div>
-          <p class="msg-summary"> {{isset($getrow->client_message) ?  str_limit($getrow->client_message, $limit=100 ) : "NA" }}</p>
-        </div><!-- media-body -->
-      </a><!-- list-group-item -->
-      @endforeach
+      <div class="col-md-12">
+        <div class="card widget-messages mg-t-20">
+          <div class="card-header">
+            <span>Messages</span>
+            <a href=""><i class="icon ion-more"></i></a>
+          </div><!-- card-header -->
+          <div class="list-group list-group-flush">
+            @if(isset($getContacts))
+            @foreach($getContacts as $getrow) 
+            <a href="{{route('view_Contacts')}}" class="list-group-item list-group-item-action media">
+              <img src="../img/img10.jpg" alt="">
+              <div class="media-body">
+                <div class="msg-top">
+                  <span>{{isset($getrow->surname) ?  ucwords(str_limit($getrow->surname, $limit=20 )) : "NA" }}</span>
+                  <span>{{Carbon\Carbon::parse($getrow->created_at)->diffForHumans()}}</span>
+                </div>
+                <p class="msg-summary"> {{isset($getrow->client_message) ?  str_limit($getrow->client_message, $limit=100 ) : "NA" }}</p>
+              </div><!-- media-body -->
+            </a><!-- list-group-item -->
+            @endforeach
 
-   
-      @endif
-    </div><!-- list-group -->
-    <div class="card-footer">
-      {{-- <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-3"></i> Load more messages</a> --}}
-    </div><!-- card-footer -->
-  </div>
-</div>
-
-           
+        
+            @endif
+          </div><!-- list-group -->
+          <div class="card-footer">
+            {{-- <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-3"></i> Load more messages</a> --}}
+          </div><!-- card-footer -->
+        </div>
+      </div>
           </div><!-- row -->
-  
-  
-  
         </div><!-- sl-pagebody -->
 
 </div>
