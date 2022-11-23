@@ -32,40 +32,36 @@
       ? asset('storage/All-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." width="100">
     
       </td>
-      <td class="tx-bold">  {{isset($banner->page_cat_name )? Str::limit($banner->page_cat_name,20,$end='....') : "NA"}}</td>
-  <td class="tx-bold"> {{isset($banner->heading) ? Str::limit($banner->heading,20,$end='....') :"NA"}}</td>
-  <td class="tx-bold"> {{Str::limit($banner->title,20,$end='....')}}</td>
+      <td >  {{isset($banner->page_cat_name )? Str::limit($banner->page_cat_name,20,$end='....') : "NA"}}</td>
+  <td > {{isset($banner->heading) ? Str::limit($banner->heading,20,$end='....') :"NA"}}</td>
+  <td > {{Str::limit($banner->title,20,$end='....')}}</td>
 
  
-  <td> 
-    @if($banner->status == 1 )
-      <span class="badge badge-success tx-bold">Active</span>
-      @else
-      <span class="badge badge-danger tx-bold">Inactive</span>
-      @endif
-    </td>
-  <td>  
-      <a href="{{route('edit_all_banner',$banner->id)}}" class="btn btn-sm btn-info" title="edit" >
-        <i class="fa fa-edit"></i></a>
-      <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"
-      data-toggle="modal" data-target="#modaldemo{{$banner->id}}">
-        <i class="fa fa-eye"></i></a>
-
-        @if($banner->status == 1 )
-        <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$banner->id}})">
-        <i class="fa fa-thumbs-down"></i>
+    <td> 
+      @if($banner->status == 1 )
+        <span class="badge badge-success">Active</span>
         @else
-          <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$banner->id}})">
-          <i class="fa fa-thumbs-up"></i>
+        <span class="badge badge-danger">Inactive</span>
         @endif
-      <a href="javascript:void(0)"  wire:click.prevent="deletebanner({{$banner->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-        <i class="fa fa-trash"></i></a>
+    </td>
+    <td>  
+          <a href="{{route('edit_all_banner',$banner->id)}}" class="btn btn-sm btn-info" title="edit" >
+            <i class="fa fa-edit"></i>
+          </a>
+          <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show" data-toggle="modal" data-target="#modaldemo{{$banner->id}}">
+            <i class="fa fa-eye"></i>
+          </a>
+          @if($banner->status == 1 )
+          <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$banner->id}})">
+          <i class="fa fa-thumbs-down"></i>
+          @else
+            <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$banner->id}})">
+            <i class="fa fa-thumbs-up"></i>
+          @endif
+        <a href="javascript:void(0)"  wire:click.prevent="deletebanner({{$banner->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+          <i class="fa fa-trash"></i></a>
 
-        {{-- Modal  --}}
-        
-        {{-- end modal  --}}
-
-  </td>
+    </td>
 
 </tr>
 
