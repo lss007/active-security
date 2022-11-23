@@ -24,11 +24,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
       @livewireStyles
     </head>
-  <body>
+  <body class="tx-bold">
 @include('livewire.backend.common.left-panel')
     <!-- sl-sideleft -->
 @include('livewire.backend.common.header')
-    <div class="sl-mainpanel">
+    <div class="sl-mainpanel tx-bold ">
       <nav class="breadcrumb sl-breadcrumb">
         <a class="breadcrumb-item" href="index.html">Active Secuirty</a>
         <span class="breadcrumb-item active">Dashboard</span>

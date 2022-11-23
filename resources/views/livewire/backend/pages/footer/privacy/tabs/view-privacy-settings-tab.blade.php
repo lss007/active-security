@@ -1,6 +1,6 @@
 <div>
     {{-- The whole world belongs to you. --}}
-    <div class="sl-pagebody">
+    <div class="sl-pagebody tx-bold">
         <div class="sl-page-title">
           <h5>Manage Privacy Settings Tabs : 
           </h5>
@@ -52,12 +52,8 @@
                                           @if(isset($privacyTab))
                                                @foreach($privacyTab as $keys => $row)
                                                   <tr>
-                                                    
                                                       @if($row->tabs == 1 && $row->cat ==1 )
-                                                    <td> {{$keys+1}}
-                                                      {{$row->list}} 
-                                                  
-                                                    </td>
+                                                    <td> {{$keys+1}}  {{$row->list}}  </td>
                                                     <td>    
                                                       <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
                                                       <i class="fa fa-edit"></i></a>

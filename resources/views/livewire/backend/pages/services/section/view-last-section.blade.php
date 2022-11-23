@@ -30,17 +30,17 @@
                   <tr>
                     <td>{{ $key +1}} </td>
                    
-                    <td>{{isset($service->heading) ?  str_limit($service->heading, $limit=15 ) : "NA" }}</td>
+                    <td class="tx-bold">{{isset($service->heading) ?  str_limit($service->heading, $limit=15 ) : "NA" }}</td>
                 
 
           
 
-                    <td>
+                    <td class="tx-bold">
                         
                         {!! isset($service->list1) ? str_limit($service->list1, $limit=15 ) : "NA" !!} 
                     
                     </td>
-                    <td>
+                    <td class="tx-bold">
                             @if($service->status == 1 )
                             <span class="badge badge-success">Active</span>
                             @else

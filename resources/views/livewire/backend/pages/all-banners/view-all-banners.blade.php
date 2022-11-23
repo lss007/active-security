@@ -32,16 +32,16 @@
       ? asset('storage/All-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." width="100">
     
       </td>
-      <td>  {{isset($banner->page_cat_name )? Str::limit($banner->page_cat_name,20,$end='....') : "NA"}}</td>
-  <td> {{isset($banner->heading) ? Str::limit($banner->heading,20,$end='....') :"NA"}}</td>
-  <td> {{Str::limit($banner->title,20,$end='....')}}</td>
+      <td class="tx-bold">  {{isset($banner->page_cat_name )? Str::limit($banner->page_cat_name,20,$end='....') : "NA"}}</td>
+  <td class="tx-bold"> {{isset($banner->heading) ? Str::limit($banner->heading,20,$end='....') :"NA"}}</td>
+  <td class="tx-bold"> {{Str::limit($banner->title,20,$end='....')}}</td>
 
  
   <td> 
     @if($banner->status == 1 )
-      <span class="badge badge-success">Active</span>
+      <span class="badge badge-success tx-bold">Active</span>
       @else
-      <span class="badge badge-danger">Inactive</span>
+      <span class="badge badge-danger tx-bold">Inactive</span>
       @endif
     </td>
   <td>  

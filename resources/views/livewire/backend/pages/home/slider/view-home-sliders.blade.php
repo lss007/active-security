@@ -34,8 +34,8 @@
               <img src="{{(!empty($slider->image)) 
                 ? asset('storage/Home-slider/'.$slider->image):asset('no_image.jpg')}}" alt="..." width="70">
             </td>
-            <td> {!!str_limit($slider->title, $limit=20 ) !!}</td>
-            <td> {!!str_limit($slider->description, $limit=20 ) !!}
+            <td class="tx-bold">  {!!str_limit($slider->title, $limit=20 ) !!}</td>
+            <td class="tx-bold"> {!!str_limit($slider->description, $limit=20 ) !!}
             </td>
 
             <td> 

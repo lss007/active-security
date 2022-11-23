@@ -37,9 +37,9 @@
                           Carbon\Carbon::parse($homeSectionTwo->created_at)->diffForHumans() : "NA"}}</p>
                         <span class="text-primary"> Main Heading :</span>
                           {{ isset($homeSectionTwo->heading) ? $homeSectionTwo->heading : "NA" }}  </h6>
-                        <h6 class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Main Sub Heading : </span> {{isset($homeSectionTwo->title)  ? $homeSectionTwo->title : "NA"}} </h6>
-                        <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Paragraph : </span>{{ isset($homeSectionTwo->para1) ? $homeSectionTwo->para1 : "NA"}} </p>
-                        <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph :</span>{{ isset($homeSectionTwo->para2) ? $homeSectionTwo->para2 : "NA"}} </p>
+                        <h6 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Main Sub Heading : </span> {{isset($homeSectionTwo->title)  ? $homeSectionTwo->title : "NA"}} </h6>
+                        <p class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Paragraph : </span>{{ isset($homeSectionTwo->para1) ? $homeSectionTwo->para1 : "NA"}} </p>
+                        <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph :</span>{{ isset($homeSectionTwo->para2) ? $homeSectionTwo->para2 : "NA"}} </p>
                     </div>
                     <div class="col-md-4">
                       <div class="card wd-xs-300">

@@ -114,12 +114,12 @@
                     <td>
                       <img src="{{(!empty($row->logo_img)) ? asset('storage/footer-logo/'.$row->logo_img):asset('no_image.jpg')}}" alt="..." style="height: 10%; width:30%">
                     </td>
-                    <td>{{ ucwords($row->name)}} </td>
+                    <td class="tx-bold">{{ ucwords($row->name)}} </td>
                     <td>
                             @if($row->status == 1 )
-                            <span class="badge badge-success">Active</span>
+                            <span class="badge badge-success tx-bold">Active</span>
                             @else
-                            <span class="badge badge-danger">Inactive</span>
+                            <span class="badge badge-danger tx-bold">Inactive</span>
                             @endif
                     </td>
                     <td>  

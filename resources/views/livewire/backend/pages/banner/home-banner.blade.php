@@ -31,15 +31,15 @@
       ? asset('storage/Home-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." width="100">
     
       </td>
-  <td> {{Str::limit($banner->heading,30,$end='....')}}</td>
-  <td> {{Str::limit($banner->title,25,$end='....')}}</td>
+  <td class="tx-bold"> {{Str::limit($banner->heading,30,$end='....')}}</td>
+  <td class="tx-bold"> {{Str::limit($banner->title,25,$end='....')}}</td>
 
  
   <td> 
     @if($banner->status == 1 )
-      <span class="badge badge-success">Active</span>
+      <span class="badge badge-success tx-bold">Active</span>
       @else
-      <span class="badge badge-danger">Inactive</span>
+      <span class="badge badge-danger tx-bold">Inactive</span>
       @endif
     </td>
   <td>  

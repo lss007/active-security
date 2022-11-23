@@ -32,25 +32,26 @@
             <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
               <div class="card-body">
       
- 
-                  <h6 class="card-body-title">
-          <p>  Created At :  {{isset($homeSectionfive->created_at) ? 
-            Carbon\Carbon::parse($homeSectionfive->created_at)->diffForHumans() : "NA"}}</p>
-                    <span class="text-primary"> Main Heading :</span>
-                 
-                    {{ isset($homeSectionfive->heading) ? $homeSectionfive->heading : "NA" }}  </h6>
-                  <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Heading : </span> {{isset($homeSectionfive->title)  ? $homeSectionfive->title : "NA"}} </h5>
-                  <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para1) ? $homeSectionfive->para1 : "NA"}} </p>
-                  <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
-                  <h5 class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>
-          
-          
-                  <div class="card wd-xs-300">
-                    <span class="text-primary">   Main Image : </span>
-                    <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionfive->image)) 
-                      ? asset('storage/Home-section/'.$homeSectionfive->image):asset('no_image.jpg')}}" alt="..."  width="200px">
-                  </div><!-- card -->
-          
+                <div class="row">
+                    <div class="col-md-8">
+                    <h6 class="card-body-title">
+                      <p>  Created At :  {{isset($homeSectionfive->created_at) ? 
+                        Carbon\Carbon::parse($homeSectionfive->created_at)->diffForHumans() : "NA"}}</p>
+                                <span class="text-primary"> Main Heading :</span>
+                                {{ isset($homeSectionfive->heading) ? $homeSectionfive->heading : "NA" }}  </h6>
+                              <h5 class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Main Sub Heading : </span> {{isset($homeSectionfive->title)  ? $homeSectionfive->title : "NA"}} </h5>
+                              <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para1) ? $homeSectionfive->para1 : "NA"}} </p>
+                              <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
+                              <h5 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>
+                    </div>
+                      <div class="col-md-4">
+                        <div class="card wd-xs-300">
+                          <span class="text-primary ">   Main Image : </span>
+                          <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionfive->image)) 
+                            ? asset('storage/Home-section/'.$homeSectionfive->image):asset('no_image.jpg')}}" alt="..."  width="200px">
+                        </div><!-- card -->
+                      </div>
+                </div>
           
           
            

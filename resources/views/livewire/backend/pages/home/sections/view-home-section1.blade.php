@@ -39,8 +39,8 @@
                                       <span class="text-primary">  Main Heading : </span>s
                            
                               {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
-                            <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
-                            <p class="mg-b-20 mg-sm-b-30"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
+                            <p class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
+                            <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary "> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
                      
                   
                                   <hr>
