@@ -1,17 +1,21 @@
 <div class="sl-logo">
-    <a href="">
+    <a href="{{route('dashboard')}}">
     <i class="icon ion-android-star-outline"></i> 
     Active Secuirty </a>
   </div>
   <div class="sl-sideleft">
-    @php
-    $prefix = Request::route()->getPrefix();
+ 
+   @php
+   $prefix = Request::route()->getPrefix();
+   $route = Route::current()->getName();
+  @endphp
 
-    @endphp
+
+
 
     <label class="sidebar-label">Navigation</label>
     <div class="sl-sideleft-menu">
-      <a href="{{route('dashboard')}}" class="sl-menu-link active">
+      <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
           <span class="menu-item-label">Dashboard</span>
@@ -24,7 +28,8 @@
       
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <a href="javascript:void(0)" class="sl-menu-link ">
+      
+      <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/manage-home')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-home"></i>
           <span class="menu-item-label">Manage Home </span>
@@ -44,14 +49,14 @@
 
       </ul>
 
-      <a href="{{route('view_all_banner')}}" class="sl-menu-link ">
+      <a href="{{route('view_all_banner')}}" class="sl-menu-link {{ ($prefix == '/mange-All-banner')?'active' : ''}} ">
         <div class="sl-menu-item">
           <i class="fa fa-image"></i>
           <span class="menu-item-label">Manage All Banners </span>
        
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <a href="javascript:void(0)" class="sl-menu-link">
+      <a href="javascript:void(0)" class="sl-menu-link {{ ($prefix == '/manage-footer')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Manage Footer </span>
@@ -82,8 +87,8 @@
 
                
 
-      </ul>
-      <a href="javascript:void(0)" class="sl-menu-link">
+      </ul> 
+      <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/services')?'active' : ''}} ">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Dienstleistungen</span>
@@ -99,7 +104,7 @@
       </ul>
 
 
-      <a href="#" class="sl-menu-link">
+      <a href="#" class="sl-menu-link   {{ ($prefix == '/company')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Unternehmen</span>
@@ -115,14 +120,14 @@
         
       </ul>
 
-      <a href="{{route('view_job_section')}}" class="sl-menu-link">
+      <a href="{{route('view_job_section')}}" class="sl-menu-link   {{ ($prefix == '/job-section')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-suitcase"></i>
           <span class="menu-item-label">Jobs</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
    
-      <a href="#" class="sl-menu-link">
+      <a href="#" class="sl-menu-link {{ ($prefix == '/contacts')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-phone"></i>
           <span class="menu-item-label"> Kontakt  </span>
@@ -139,7 +144,7 @@
         <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">View Messages</a></li>
  
       </ul>
-      <a href="#" class="sl-menu-link">
+      <a href="#" class="sl-menu-link   {{ ($prefix == '/social')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-sitemap"></i>
           <span class="menu-item-label">Social Media</span>
