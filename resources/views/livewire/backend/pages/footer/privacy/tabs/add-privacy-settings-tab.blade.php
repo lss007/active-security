@@ -39,10 +39,10 @@
                                   <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
                                     <option label="Choose Tab"></option>
-                                    <option value="1">Grundlegend 1</option>
-                                    <option value="2">Funktionalität 2</option>
-                                    <option value="3">Analytik 3</option>
-                                    <option value="4">Werbung 4</option>
+                                    <option value="1">1 Grundlegend</option>
+                                    <option value="2">2 Funktionalität</option>
+                                    <option value="3">3 Analytik</option>
+                                    <option value="4">4 Werbung</option>
                                   </select>
                                  @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
             
@@ -54,8 +54,8 @@
                                   <label class="form-control-label">Select Category : <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Section" wire:model="cat" aria-hidden="true">
                                     <option label="Choose Category"></option>
-                                    <option value="1">Diese Website wird 1</option>
-                                    <option value="2">Diese Website wird nicht 2</option>
+                                    <option value="1">1 Diese Website wird</option>
+                                    <option value="2">2 Diese Website wird nicht</option>
 
                                   </select>
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
