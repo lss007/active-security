@@ -16,8 +16,10 @@
         </div>
     </div>
 </div> --}}
+<div id="cookie-consent" class="cookie-consent" style="display:none;">
+  <!--- etc. -->
 
-<div class="cookiesCol">
+<div class="js-cookie-consent " >
     <div class="container">
       <div class="row gy-2 align-items-center">  
         <div class="col-sm">
@@ -27,12 +29,27 @@
         </div>
         <div class="col-sm-auto">
           <ul class="cookiesRightBtns">
-            <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li>
-            <li><a href="javascript:void(0)" class="js-cookie-consent-agree  cookie-consent__agree"> Accept</a></li>
+            <li><a href="javascript:void(0)" class="cookiesCloseTrigger" >Decline</a></li>
+            <li><a href="javascript:void(0)" class="js-cookie-consent-agree cookiesCloseTrigger cookie-consent__agree"> Accept</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  
+</div>
+   
 
 
+
+<script>
+  $(document).ready(function()
+{
+  if (!window.localStorage.getItem('accept_cookies'))
+  {
+    $('#cookie-consent').css('display','block');
+  }
+
+  // etc.
+});
+</script>

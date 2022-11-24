@@ -265,10 +265,10 @@
           </div>
         </div>
        
-
+    
         @include('cookie-consent::index') 
-        
-          {{-- <div class="cookiesCol">
+ 
+        {{-- <div class="cookiesCol ">
           <div class="container">
             <div class="row gy-2 align-items-center">  
               <div class="col-sm">
@@ -284,7 +284,7 @@
               </div>
             </div>
           </div>
-        </div>
-         --}}
+        </div> --}}
+        
         
 

@@ -24,18 +24,19 @@ $('.menuBackdrop').click(function(){
 });
 
 $('.js-cookie-consent-agree').click(function(){
-  $('.cookiesCol').fadeOut();
+  $('.js-cookie-consent').fadeOut();
 })
 
-
-// $('.cookiesCloseTrigger').click(function(){
-
-//   $('.cookie-consent').fadeOut();
-// })
 
 $('.cookiesCloseTrigger').click(function(){
-  $('.cookiesCol').fadeOut();
+  $('.js-cookie-consent').fadeOut();
 })
+
+// $('.cookiesCloseTrigger').click(function(){
+//   $('.cookiesCol').fadeOut();
+// })
+
+
 
 $('.ddLinkCol > a').click(function(){
   $(this).parent().find('ul.subMenu').slideToggle();
