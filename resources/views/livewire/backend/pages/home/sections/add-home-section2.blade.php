@@ -61,7 +61,14 @@
                 </div>
                 </div><!-- col-4 -->
 
-                 
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label"> Button Link : <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" wire:model="button_link"  placeholder="Button Link ">
+                    @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  
+                </div>
+                </div><!-- col-4 -->
                 <div class="col-lg-12">
                   <div class="form-group mg-b-10-force">
                     <label class="form-control-label"> Main Image : <span class="tx-danger">*</span></label><br>

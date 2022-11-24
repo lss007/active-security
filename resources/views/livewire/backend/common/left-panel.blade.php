@@ -13,13 +13,13 @@
       <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
-          <span class="menu-item-label">Dashboard</span>
+          <span class="menu-item-label">{{__('leftpane.dashboard')}}</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <a href="{{url('/')}}" class="sl-menu-link " target="_blank">
         <div class="sl-menu-item">
           <i class="fa fa-globe"></i>
-          <span class="menu-item-label">Website </span>
+          <span class="menu-item-label">  {{__('leftpane.website')}}</span>
       
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
@@ -27,41 +27,41 @@
       <a href="javascript:void(0)" class="sl-menu-link {{ ($prefix == '/manage-home')?'active show-sub' : ''}} ">
         <div class="sl-menu-item">
           <i class="fa fa-home"></i>
-          <span class="menu-item-label">Manage Home </span>
+          <span class="menu-item-label">  {{__('leftpane.Manage Home')}} </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column  ">
-        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner') ) active @else '' @endif">Home Banner </a></li>
-        <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link @if(Route::is('manageHomeSection1') ) active @else '' @endif">Home Section 1 </a></li>
-        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link @if(Route::is('viewHomeSection2') ) active @else '' @endif">Home Section 2 </a></li>
-        <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> Client logo </a></li>
-        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" >Home Sliders </a></li>
-        <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">Home Section 5 </a></li>
+        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner') ) active @else '' @endif">{{__('leftpane.Home banner')}} </a></li>
+        <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link @if(Route::is('manageHomeSection1') ) active @else '' @endif">{{__('leftpane.Home section1')}} </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link @if(Route::is('viewHomeSection2') ) active @else '' @endif">{{__('leftpane.Home section2')}} </a></li>
+        <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> {{__('leftpane.Client logo')}}</a></li>
+        <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" > {{__('leftpane.Home Sliders')}}</a></li>
+        <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">  {{__('leftpane.Home section5')}} </a></li>
       </ul>
 
       <a href="{{route('view_all_banner')}}" class="sl-menu-link {{ ($prefix == '/mange-All-banner')?'active show-sub' : ''}} ">
         <div class="sl-menu-item">
           <i class="fa fa-image"></i>
-          <span class="menu-item-label">Manage All Banners </span>
+          <span class="menu-item-label"> {{__('leftpane.Manage All Banners')}} </span>
        
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <a href="javascript:void(0)" class="sl-menu-link {{ ($prefix == '/manage-footer') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
-          <span class="menu-item-label">Manage Footer </span>
+          <span class="menu-item-label">{{__('leftpane.Manage Footer')}} </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item">
-              <li class="nav-item"><a href="{{route('view_footer_logos')}}" class="nav-link  @if(Route::is('view_footer_logos') ) active @else '' @endif"> Manage Footer Logos  </a></li>
-               <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> Manage Footer Section</a></li>
-               <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif">  Privatsphäre-Einstellungen</a></li>
-               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  Datenschutz Tabs </a></li>
-               <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Datenschutz Page </a></li>
-               <li class="nav-item"><a href="{{route('agb_page_view')}}" class="nav-link   @if(Route::is('agb_page_view') ) active @else '' @endif"> Manage Agb Page </a></li>
+              <li class="nav-item"><a href="{{route('view_footer_logos')}}" class="nav-link  @if(Route::is('view_footer_logos') ) active @else '' @endif">{{__('leftpane.Manage Footer Logos')}}  </a></li>
+               <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> {{__('leftpane.Manage Footer Section')}} </a></li>
+               <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif">{{__('leftpane.privacy settings')}}   </a></li>
+               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  {{__('leftpane.Privacy tabs')}}  </a></li>
+               <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif">  {{__('leftpane.Manage privacy page')}}   </a></li>
+               <li class="nav-item"><a href="{{route('agb_page_view')}}" class="nav-link   @if(Route::is('agb_page_view') ) active @else '' @endif">{{__('leftpane.Manage Agb Page')}}  </a></li>
       </ul> 
       <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/services') ? 'active show-sub' : ''}} ">
         <div class="sl-menu-item">
@@ -107,7 +107,7 @@
       <a href="#" class="sl-menu-link {{ ($prefix == '/social') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-sitemap"></i>
-          <span class="menu-item-label">Social Media</span>
+          <span class="menu-item-label">{{__('leftpane.Social Media')}}</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->

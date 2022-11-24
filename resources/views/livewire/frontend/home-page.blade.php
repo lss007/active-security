@@ -94,7 +94,7 @@
                 <p>
                   {!! isset($HomeSectiontwo->para2)  ? html_entity_decode($HomeSectiontwo->para2) : "NA" !!}  
                 </p>
-                <a href="unternehmen.html" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
+                <a href="{!! isset($HomeSectiontwo->button_link) ? $HomeSectiontwo->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3" target="_blank">
                   {!! isset($HomeSectiontwo->button_name) ? $HomeSectiontwo->button_name : "Über uns"!!}
                  </a>
               </div>

@@ -3,7 +3,7 @@
   
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Privacy  page Content  </h5>
+          <h5>Manage Privacy page Content  </h5>
          
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
@@ -22,7 +22,7 @@
                   <th class="wd-10p">Heading </th>
                   <th class="wd-10p">Title</th>
                   <th class="wd-10p"> Paragraph 1 </th>
-                  <th class="wd-10p"> Paragraph 2 </th>
+            
                   <th class="wd-10p">Status</th>
                   <th class="wd-10p">Action</th>
                 </tr>
@@ -40,9 +40,7 @@
                   <td>
                     {{isset($getrow->para1) ?  str_limit($getrow->para1, $limit=20 ) : "NA" }}
                     </td>
-                  <td> 
-                    {{isset($getrow->para2) ?  str_limit($getrow->para2, $limit=25 ) : "NA" }}
-                  </td>
+              
               
                   <td>
                     @if($getrow->status == 1 )

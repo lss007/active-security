@@ -40,7 +40,9 @@
                         <h6 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Main Sub Heading : </span> {{isset($homeSectionTwo->title)  ? $homeSectionTwo->title : "NA"}} </h6>
                         <p class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Paragraph : </span>{{ isset($homeSectionTwo->para1) ? $homeSectionTwo->para1 : "NA"}} </p>
                         <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph :</span>{{ isset($homeSectionTwo->para2) ? $homeSectionTwo->para2 : "NA"}} </p>
-                    </div>
+                        <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Button :</span> <a href="{{ isset($homeSectionTwo->button_link) ? $homeSectionTwo->button_link : "#"}}"> {{ isset($homeSectionTwo->button_name) ? $homeSectionTwo->button_name : "NA"}}</a>  </p>
+                    
+                      </div>
                     <div class="col-md-4">
                       <div class="card wd-xs-300">
                         <span class="text-primary">    Main Image : </span>
