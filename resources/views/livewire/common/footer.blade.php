@@ -1,32 +1,3 @@
-<style>
-  .js-cookie-consent{
-  /* position: absolute;
-  bottom: 0px;
-  padding: 10px;
-  text-align: left;
-  width: 100%;
-  z-index: 9999;
-  background-color: #ce2020;
-  border-color: #ce2020;
-  border: solid 1px;
-  left: 0;
-  right: 0; */
-
-  background-color: var(--secondaryColor);
-	color: #fff;
-  padding: 15px 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
- 
-}
-.js-cookie-consent > .cookie-consent__message,.text-black{
-  color: white !important;
-}
-
-</style>
 <footer>
 
   @php
@@ -283,7 +254,7 @@
         </div>
        
 
-        @include('cookie-consent::index') 
+        {{-- @include('cookie-consent::index')  --}}
         {{-- 
           <div class="cookiesCol">
           <div class="container">
