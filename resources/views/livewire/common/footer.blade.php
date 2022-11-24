@@ -1,6 +1,6 @@
 <style>
   .js-cookie-consent{
-  position: absolute;
+  /* position: absolute;
   bottom: 0px;
   padding: 10px;
   text-align: left;
@@ -10,7 +10,16 @@
   border-color: #ce2020;
   border: solid 1px;
   left: 0;
+  right: 0; */
+
+  background-color: var(--secondaryColor);
+	color: #fff;
+  padding: 15px 0;
+  position: fixed;
+  left: 0;
   right: 0;
+  bottom: 0;
+  z-index: 10;
  
 }
 .js-cookie-consent > .cookie-consent__message,.text-black{
@@ -274,29 +283,25 @@
         </div>
        
 
-       
-        <div class="cookiesCol">
+        @include('cookie-consent::index') 
+        {{-- 
+          <div class="cookiesCol">
           <div class="container">
-            <div class="row gy-2 align-items-center">
-
-              @include('cookie-consent::index') 
-              {{-- <div class="col-sm">
-                
+            <div class="row gy-2 align-items-center">  
+              <div class="col-sm">
                 <div class="cText">
-                 
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
               </div>
               <div class="col-sm-auto">
                 <ul class="cookiesRightBtns">
-                 
                   <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li>
                   <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Accept</a></li>
                 </ul>
-              </div> --}}
-              
+              </div>
             </div>
           </div>
         </div>
+         --}}
         
 

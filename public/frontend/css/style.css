@@ -623,7 +623,7 @@ body .form-select {
 	display: inline-block;
 }
 .cookiesCol {
-	/* background-color: var(--secondaryColor); */
+	background-color: var(--secondaryColor);
 	color: #fff;
   padding: 15px 0;
   position: fixed;

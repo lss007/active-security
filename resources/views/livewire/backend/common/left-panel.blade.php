@@ -4,13 +4,10 @@
     Active Secuirty </a>
   </div>
   <div class="sl-sideleft">
- 
-   @php
-   $prefix = Request::route()->getPrefix();
-   $route = Route::current()->getName();
-  @endphp
-
-
+      @php
+          $prefix = Request::route()->getPrefix();
+          $route = Route::current()->getName();
+      @endphp
     <label class="sidebar-label">Active Secuirty</label>
     <div class="sl-sideleft-menu">
       <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
@@ -27,7 +24,7 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       
-      <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/manage-home')?'active show-sub' : ''}} ">
+      <a href="javascript:void(0)" class="sl-menu-link {{ ($prefix == '/manage-home')?'active show-sub' : ''}} ">
         <div class="sl-menu-item">
           <i class="fa fa-home"></i>
           <span class="menu-item-label">Manage Home </span>
@@ -71,16 +68,13 @@
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Dienstleistungen</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
-        
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> Manage pages Section</a></li>
         <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> Manage Bottom Banner</a></li>
       </ul>
-
-
-      <a href="#" class="sl-menu-link   {{ ($prefix == '/company') ? 'active show-sub' : ''}}">
+      <a href="#" class="sl-menu-link {{ ($prefix == '/company') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">Unternehmen</span>
@@ -110,7 +104,7 @@
         <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> View Image</a></li>
         <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">View Messages</a></li>
       </ul>
-      <a href="#" class="sl-menu-link   {{ ($prefix == '/social') ? 'active show-sub' : ''}}">
+      <a href="#" class="sl-menu-link {{ ($prefix == '/social') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-sitemap"></i>
           <span class="menu-item-label">Social Media</span>

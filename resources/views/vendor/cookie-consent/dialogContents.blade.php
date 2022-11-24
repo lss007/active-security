@@ -1,4 +1,4 @@
-<div class="js-cookie-consent cookie-consent fixed bottom-0 inset-x-0 pb-2">
+{{-- <div class="js-cookie-consent cookie-consent fixed bottom-0 inset-x-0 pb-2">
     <div class="max-w-7xl mx-auto px-6">
         <div class="p-2 rounded-lg bg-yellow-100">
             <div class="flex items-center justify-between flex-wrap">
@@ -15,6 +15,24 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+<div class="cookiesCol">
+    <div class="container">
+      <div class="row gy-2 align-items-center">  
+        <div class="col-sm">
+          <div class="cText">
+            <p>{!! trans('cookie-consent::texts.message') !!}</p>
+          </div>
+        </div>
+        <div class="col-sm-auto">
+          <ul class="cookiesRightBtns">
+            <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li>
+            <li><a href="javascript:void(0)" class="js-cookie-consent-agree  cookie-consent__agree"> Accept</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
