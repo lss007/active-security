@@ -266,7 +266,7 @@
         </div>
        
 
-        @include('cookie-consent::index') 
+        {{-- @include('cookie-consent::index')  --}}
         {{-- 
           <div class="cookiesCol">
           <div class="container">
