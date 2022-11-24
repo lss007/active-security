@@ -41,10 +41,6 @@
         <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> Client logo </a></li>
         <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" >Home Sliders </a></li>
         <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">Home Section 5 </a></li>
-
-
-
-
       </ul>
 
       <a href="{{route('view_all_banner')}}" class="sl-menu-link {{ ($prefix == '/mange-All-banner')?'active' : ''}} ">
@@ -63,28 +59,12 @@
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item">
-      
-
-       
-
-             <li class="nav-item">
-              <a href="{{route('view_footer_logos')}}" class="nav-link 
-              @if(Route::is('view_footer_logos') ) active @else '' @endif">
-               Manage Footer Logos  </a></li>
-             
+              <li class="nav-item"><a href="{{route('view_footer_logos')}}" class="nav-link  @if(Route::is('view_footer_logos') ) active @else '' @endif"> Manage Footer Logos  </a></li>
                <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> Manage Footer Section</a></li>
-               
                <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif">  Privatsphäre-Einstellungen</a></li>
-
                <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  Datenschutz Tabs </a></li>
-
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif"> Manage Datenschutz Page </a></li>
                <li class="nav-item"><a href="{{route('agb_page_view')}}" class="nav-link   @if(Route::is('agb_page_view') ) active @else '' @endif"> Manage Agb Page </a></li>
-
-               
-
-               
-
       </ul> 
       <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/services')?'active' : ''}} ">
         <div class="sl-menu-item">
@@ -97,8 +77,6 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> Manage pages Section</a></li>
         <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> Manage Bottom Banner</a></li>
-     
-     
       </ul>
 
 
@@ -110,12 +88,8 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-
-        <li class="nav-item"><a href="{{route('view_company_sections')}}" class="nav-link  
-           @if(Route::is('view_company_sections') ) active @else '' @endif"> Manage Section 1</a></li>
-           <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link  
-            @if(Route::is('viewCompanySections2') ) active @else '' @endif"> Manage Profile Sections</a></li>
-        
+        <li class="nav-item"><a href="{{route('view_company_sections')}}" class="nav-link   @if(Route::is('view_company_sections') ) active @else '' @endif"> Manage Section 1</a></li>
+        <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link   @if(Route::is('viewCompanySections2') ) active @else '' @endif"> Manage Profile Sections</a></li>
       </ul>
 
       <a href="{{route('view_job_section')}}" class="sl-menu-link   {{ ($prefix == '/job-section')?'active' : ''}}">
@@ -124,7 +98,6 @@
           <span class="menu-item-label">Jobs</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-   
       <a href="#" class="sl-menu-link {{ ($prefix == '/contacts')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-phone"></i>
@@ -133,14 +106,9 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <a href="{{route('footer_address')}}" class="nav-link 
-        @if(Route::is('footer_address') ) active @else '' @endif">
-        Kontakt Addresse</a></li>
-        <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  
-          @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> View Image</a></li>
-
+        <a href="{{route('footer_address')}}" class="nav-link   @if(Route::is('footer_address') ) active @else '' @endif">   Kontakt Addresse</a></li>
+        <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> View Image</a></li>
         <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">View Messages</a></li>
- 
       </ul>
       <a href="#" class="sl-menu-link   {{ ($prefix == '/social')?'active' : ''}}">
         <div class="sl-menu-item">
@@ -150,24 +118,9 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item">
-          <a href="{{route('view_socialMediaCat')}}" class="nav-link 
-          @if(Route::is('view_socialMediaCat') ) active @else '' @endif">
-           Manage Social Category </a></li>
-        <li class="nav-item">
-          <a href="{{route('view_social_media')}}" class="nav-link 
-          @if(Route::is('view_social_media') ) active @else '' @endif">
-           Manage Social Media </a></li>
-
-           
-
-           
-           
+        <li class="nav-item"><a href="{{route('view_socialMediaCat')}}" class="nav-link   @if(Route::is('view_socialMediaCat') ) active @else '' @endif">  Manage Social Category </a></li>
+        <li class="nav-item"> <a href="{{route('view_social_media')}}" class="nav-link   @if(Route::is('view_social_media') ) active @else '' @endif">  Manage Social Media </a></li>
       </ul>
-
-
-
-      
     </div><!-- sl-sideleft-menu -->
 
     <br>
