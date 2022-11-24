@@ -8,7 +8,7 @@
           $prefix = Request::route()->getPrefix();
           $route = Route::current()->getName();
       @endphp
-    <label class="sidebar-label">Active Secuirty</label>
+    <label class="sidebar-label">Admin Panel </label>
     <div class="sl-sideleft-menu">
       <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
         <div class="sl-menu-item">
