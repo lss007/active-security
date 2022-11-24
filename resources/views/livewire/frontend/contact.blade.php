@@ -85,10 +85,11 @@
                         </div>
                         <div class="col-12" wire:loading.attr="disabled">
                           <button class="btn btnPrimary arrowBtn" type="Submit">Senden</button>
+                          <div  wire:loading >
+                            <img src="https://paladins-draft.com/img/circle_loading.gif" width="64px" height="64" >
+                           </div>
                         </div>
-                        <div  wire:loading >
-                          <img src="https://paladins-draft.com/img/circle_loading.gif" width="64px" height="64" >
-                         </div>
+                        
                       </div>
 
             

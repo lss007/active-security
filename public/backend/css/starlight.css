@@ -12086,9 +12086,9 @@ textarea.parsley-success:focus {
 .sidebar-label {
   display: block;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 1.25rem;
   font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
-  color: #adb5bd;
+  color: black;
   letter-spacing: 1px;
   white-space: nowrap;
   margin: 12px 15px 10px;
