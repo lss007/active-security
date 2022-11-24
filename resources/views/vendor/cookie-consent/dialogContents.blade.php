@@ -17,17 +17,17 @@
     </div>
 </div> --}}
 
-<div class="js-cookie-consent cookie-consent">
+<div class="cookiesCol">
     <div class="container">
       <div class="row gy-2 align-items-center">  
         <div class="col-sm">
-          <div class="cText cookie-consent__message">
+          <div class="cText">
             <p>{!! trans('cookie-consent::texts.message') !!}</p>
           </div>
         </div>
         <div class="col-sm-auto">
           <ul class="cookiesRightBtns">
-            {{-- <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li> --}}
+            <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li>
             <li><a href="javascript:void(0)" class="js-cookie-consent-agree  cookie-consent__agree"> Accept</a></li>
           </ul>
         </div>
