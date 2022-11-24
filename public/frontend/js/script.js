@@ -27,9 +27,15 @@ $('.js-cookie-consent-agree').click(function(){
   $('.cookiesCol').fadeOut();
 })
 
+
 $('.cookiesCloseTrigger').click(function(){
-  $('.cookiesCol').fadeOut();
+
+  $('.cookie-consent').fadeOut();
 })
+
+// $('.cookiesCloseTrigger').click(function(){
+//   $('.cookiesCol').fadeOut();
+// })
 
 $('.ddLinkCol > a').click(function(){
   $(this).parent().find('ul.subMenu').slideToggle();

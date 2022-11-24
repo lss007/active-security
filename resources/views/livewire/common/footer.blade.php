@@ -1,3 +1,15 @@
+<style>
+  .js-cookie-consent{
+    background-color: var(--secondaryColor);
+	color: #fff !important;
+  padding: 15px 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  }
+</style>
 <footer>
 
   @php
@@ -254,7 +266,7 @@
         </div>
        
 
-        {{-- @include('cookie-consent::index')  --}}
+        @include('cookie-consent::index') 
         {{-- 
           <div class="cookiesCol">
           <div class="container">

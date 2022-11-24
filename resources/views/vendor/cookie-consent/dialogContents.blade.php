@@ -3,7 +3,7 @@
         <div class="p-2 rounded-lg bg-yellow-100">
             <div class="flex items-center justify-between flex-wrap">
                 <div class="w-0 flex-1 items-center hidden md:inline cText">
-                    <p class="ml-3 text-black cookie-consent__message">
+                    <p class="ml-3 text-white cookie-consent__message">
                         {!! trans('cookie-consent::texts.message') !!}
                     </p>
                 </div>
@@ -17,17 +17,17 @@
     </div>
 </div> --}}
 
-<div class="cookiesCol">
+<div class="js-cookie-consent cookie-consent">
     <div class="container">
       <div class="row gy-2 align-items-center">  
         <div class="col-sm">
-          <div class="cText">
+          <div class="cText cookie-consent__message">
             <p>{!! trans('cookie-consent::texts.message') !!}</p>
           </div>
         </div>
         <div class="col-sm-auto">
           <ul class="cookiesRightBtns">
-            <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li>
+            {{-- <li><a href="javascript:void(0)" class="cookiesCloseTrigger">Decline</a></li> --}}
             <li><a href="javascript:void(0)" class="js-cookie-consent-agree  cookie-consent__agree"> Accept</a></li>
           </ul>
         </div>
