@@ -5,6 +5,31 @@
     </div><!-- sl-header-left -->
     <div class="sl-header-right">
       <nav class="nav">
+        <div class="dropdown mt-2">
+          <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+            <i class="fa fa-globe"></i> 
+            <span class="logged-name"> {{ Config::get('languages')[App::getLocale()]['display'] }}</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-header wd-200">
+            <ul class="list-unstyled user-profile-nav">
+        
+              @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+              <li>
+                  <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                      {{ $properties['native'] }}
+                  </a>
+              </li>
+          @endforeach
+            {{-- @foreach (Config::get('languages') as $lang => $language)
+              @if ($lang != App::getLocale())
+                  <li>
+                    <a href="{{ route('lang.switch', $lang) }}">  {{$language['display']}}</a>
+                  </li>
+              @endif
+            @endforeach --}}
+            </ul>
+          </div><!-- dropdown-menu -->
+        </div><!-- dropdown -->
         <div class="dropdown">
           <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
             <span class="logged-name">     {{ Auth::user()->name }}</span>

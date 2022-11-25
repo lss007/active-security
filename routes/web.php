@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\UserLogoutController;
 use App\Http\Livewire\Backend\Dashboard;
 use App\Http\Livewire\Backend\Pages\Agb\AddAgbPage;
@@ -97,6 +98,12 @@ use Illuminate\Support\Facades\Route;
 
 //================ start Frontend routes ================
 // homepage 
+// Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LangController@switchLang']);
+
+// Route::get('lang/{lang}', [LangController::class, 'switchLang'])->name('lang.switch');
+
+
+
 
 
 Route::get('Userlogout', [UserLogoutController::class, 'user_logout'])->name('user.logout');
@@ -133,6 +140,15 @@ Route::get('/datenschutz', Datenschutz::class)->name('DatenschutzPage');
 Route::get('/agb', Agb::class)->name('AgbPage');
 //================ end Frontend routes ================
 //================ start Admin routes ================
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){ //...
+
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+
+      
 
 Route::middleware([
     'auth:sanctum',
@@ -272,3 +288,5 @@ Route::group(['prefix' =>'social'], function () {
 
 });
 //================ end admin routes ================
+});
+// end language route  prefix and middleware

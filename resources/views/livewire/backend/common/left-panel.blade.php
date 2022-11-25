@@ -8,7 +8,7 @@
           $prefix = Request::route()->getPrefix();
           $route = Route::current()->getName();
       @endphp
-    <label class="sidebar-label">Admin Panel </label>
+    <label class="sidebar-label">{{__('leftpane.Admin Panel')}}</label>
     <div class="sl-sideleft-menu">
       <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
         <div class="sl-menu-item">
@@ -66,43 +66,43 @@
       <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/services') ? 'active show-sub' : ''}} ">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
-          <span class="menu-item-label">Dienstleistungen</span>
+          <span class="menu-item-label">{{__('leftpane.services')}} </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> Manage pages Section</a></li>
-        <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> Manage Bottom Banner</a></li>
+        <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> {{__('leftpane.Manage Services Section')}}</a></li>
+        <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> {{__('leftpane.Manage Bottom Banner')}}  </a></li>
       </ul>
       <a href="#" class="sl-menu-link {{ ($prefix == '/company') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
-          <span class="menu-item-label">Unternehmen</span>
+          <span class="menu-item-label">{{__('leftpane.company')}} </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{route('view_company_sections')}}" class="nav-link   @if(Route::is('view_company_sections') ) active @else '' @endif"> Manage Section 1</a></li>
-        <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link   @if(Route::is('viewCompanySections2') ) active @else '' @endif"> Manage Profile Sections</a></li>
+        <li class="nav-item"><a href="{{route('view_company_sections')}}" class="nav-link   @if(Route::is('view_company_sections') ) active @else '' @endif">{{__('leftpane.Company Section 1')}}   </a></li>
+        <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link   @if(Route::is('viewCompanySections2') ) active @else '' @endif"> {{__('leftpane.Manage Profile Section')}} </a></li>
       </ul>
 
       <a href="{{route('view_job_section')}}" class="sl-menu-link   {{ ($prefix == '/job-section')?'active' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-suitcase"></i>
-          <span class="menu-item-label">Jobs</span>
+          <span class="menu-item-label"> {{__('leftpane.Jobs')}}</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <a href="#" class="sl-menu-link {{ ($prefix == '/contacts') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
           <i class="fa fa-phone"></i>
-          <span class="menu-item-label"> Kontakt  </span>
+          <span class="menu-item-label"> {{__('leftpane.Contact')}}  </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <a href="{{route('footer_address')}}" class="nav-link   @if(Route::is('footer_address') ) active @else '' @endif">   Kontakt Addresse</a></li>
-        <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> View Image</a></li>
-        <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">View Messages</a></li>
+        <a href="{{route('footer_address')}}" class="nav-link   @if(Route::is('footer_address') ) active @else '' @endif">  {{__('leftpane.Contact Address')}} </a></li>
+        <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> {{__('leftpane.View Contact Image')}}</a></li>
+        <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">{{__('leftpane.View Contact Message')}}</a></li>
       </ul>
       <a href="#" class="sl-menu-link {{ ($prefix == '/social') ? 'active show-sub' : ''}}">
         <div class="sl-menu-item">
@@ -112,8 +112,8 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{route('view_socialMediaCat')}}" class="nav-link   @if(Route::is('view_socialMediaCat') ) active @else '' @endif">  Manage Social Category </a></li>
-        <li class="nav-item"> <a href="{{route('view_social_media')}}" class="nav-link   @if(Route::is('view_social_media') ) active @else '' @endif">  Manage Social Media </a></li>
+        <li class="nav-item"><a href="{{route('view_socialMediaCat')}}" class="nav-link   @if(Route::is('view_socialMediaCat') ) active @else '' @endif">  {{__('leftpane.Manage Social Category')}} </a></li>
+        <li class="nav-item"> <a href="{{route('view_social_media')}}" class="nav-link   @if(Route::is('view_social_media') ) active @else '' @endif">  {{__('leftpane.Manage Social Media')}}</a></li>
       </ul>
     </div><!-- sl-sideleft-menu -->
 
