@@ -53,8 +53,8 @@ class AddAllBanners extends Component
                 'heading' =>    $this->Heading,
                 // 'banner_paragaph' =>    $this->BannerParagaph,
                 'banner_image' =>    $fileName  ?? Null,
-                'button_text' =>    $buttonText  ?? Null,
-                'button_link' =>    $this->button_link,
+                'button_text' =>    trim($this->buttonText) ,
+                'button_link' =>   trim($this->button_link),
     
                 
                 ]);

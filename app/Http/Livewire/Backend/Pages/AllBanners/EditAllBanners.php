@@ -72,7 +72,7 @@ class EditAllBanners extends Component
                     'title' =>    $this->Title,
                     'heading' =>    $this->Heading,
                     // 'banner_paragaph' =>    $this->BannerParagaph,
-                    'button_text' =>    $buttonText  ?? Null,
+                    'button_text' =>    $this->buttonText ,
                     'button_link' =>    $this->button_link,
 
                 ]);

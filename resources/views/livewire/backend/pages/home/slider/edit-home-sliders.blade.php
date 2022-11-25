@@ -38,7 +38,21 @@
                   </div>
                </div><!-- col-4 -->
         
-          
+               <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label">Button link: <span class="tx-danger">*</span></label>
+                  <select class="form-control" data-placeholder="Choose Section" wire:model="link" aria-hidden="true">
+                    <option label="Choose Page link"></option>
+                  @if(isset($getRouteName))
+                  @foreach($getRouteName as $val)
+                    <option value="{{$val->route_link}}">{{$val->route_name}}</option>
+                    @endforeach
+                    @endif
+                  </select>
+                 @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
+  
+                </div>
+            </div> 
                 
                <div class="col-lg-12">
                  <div class="form-group mg-b-10-force">
@@ -59,7 +73,7 @@
                  @enderror  
              </div><!-- col-4 -->
          
-        
+         
               </div><!-- row -->
         
               <div class="form-layout-footer">

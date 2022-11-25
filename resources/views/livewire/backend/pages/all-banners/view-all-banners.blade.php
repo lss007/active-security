@@ -85,10 +85,9 @@
 
             
             <p class="mg-b-5">
-              <span class="text-primary"> Button text : </span>
-              
-
-                {{isset($banner->button_text) ? $banner->button_text : "NA"}}
+              <span class="text-primary"> Button text or link : </span>
+            <a href=" {{isset($banner->button_link) ? $banner->button_link : "#"}}"> {{isset($banner->button_text) ? $banner->button_text : "NA"}}</a>
+               
               </span>
             </p>
 

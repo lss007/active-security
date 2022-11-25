@@ -3,12 +3,12 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Home page Banner</h5>
-          <p>Manage Home Page Banner </p>
+          <h5> {{__('dashboard.Home page Banner')}}</h5>
+          <p> {{__('dashboard.Manage Home Page Banner')}} </p>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">    
-            <a href="{{route('addHomebanner')}}" class="btn btn-teal active mg-b-10"  >Add Banner</a>
+            <a href="{{route('addHomebanner')}}" class="btn btn-teal active mg-b-10"  > {{__('dashboard.Add Banner')}} </a>
         </h6>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">

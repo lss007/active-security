@@ -8,6 +8,7 @@
           $prefix = Request::route()->getPrefix();
           $route = Route::current()->getName();
       @endphp
+      {{ $prefix}}
     <label class="sidebar-label">{{__('leftpane.Admin Panel')}}</label>
     <div class="sl-sideleft-menu">
       <a href="{{route('dashboard')}}" class="sl-menu-link  @if(Route::is('dashboard') ) active @else '' @endif">
@@ -24,7 +25,7 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       
-      <a href="javascript:void(0)" class="sl-menu-link {{ ($prefix == '/manage-home')?'active show-sub' : ''}} ">
+      <a href="javascript:void(0)" class="sl-menu-link @if ($prefix == 'en/manage-home' || $prefix == 'de/manage-home')  active show-sub @else @endif ">
         <div class="sl-menu-item">
           <i class="fa fa-home"></i>
           <span class="menu-item-label">  {{__('leftpane.Manage Home')}} </span>
@@ -40,14 +41,14 @@
         <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">  {{__('leftpane.Home section5')}} </a></li>
       </ul>
 
-      <a href="{{route('view_all_banner')}}" class="sl-menu-link {{ ($prefix == '/mange-All-banner')?'active show-sub' : ''}} ">
+      <a href="{{route('view_all_banner')}}" class="sl-menu-link @if ($prefix == 'en/mange-All-banner' || $prefix == 'de/mange-All-banner')  active show-sub @else  @endif ">
         <div class="sl-menu-item">
           <i class="fa fa-image"></i>
           <span class="menu-item-label"> {{__('leftpane.Manage All Banners')}} </span>
        
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <a href="javascript:void(0)" class="sl-menu-link {{ ($prefix == '/manage-footer') ? 'active show-sub' : ''}}">
+      <a href="javascript:void(0)" class="sl-menu-link  @if ($prefix == 'en/manage-footer' || $prefix == 'de/manage-footer')  active show-sub @else  @endif ">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">{{__('leftpane.Manage Footer')}} </span>
@@ -63,7 +64,8 @@
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif">  {{__('leftpane.Manage privacy page')}}   </a></li>
                <li class="nav-item"><a href="{{route('agb_page_view')}}" class="nav-link   @if(Route::is('agb_page_view') ) active @else '' @endif">{{__('leftpane.Manage Agb Page')}}  </a></li>
       </ul> 
-      <a href="javascript:void(0)" class="sl-menu-link  {{ ($prefix == '/services') ? 'active show-sub' : ''}} ">
+      <a href="javascript:void(0)" class="sl-menu-link  @if ($prefix == 'en/services' || $prefix == 'de/services')  active show-sub @else  @endif
+      ">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">{{__('leftpane.services')}} </span>
@@ -74,7 +76,8 @@
         <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> {{__('leftpane.Manage Services Section')}}</a></li>
         <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> {{__('leftpane.Manage Bottom Banner')}}  </a></li>
       </ul>
-      <a href="#" class="sl-menu-link {{ ($prefix == '/company') ? 'active show-sub' : ''}}">
+      <a href="#" class="sl-menu-link  @if ($prefix == 'en/company' || $prefix == 'de/company')  active show-sub @else  @endif
+      ">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">{{__('leftpane.company')}} </span>
@@ -92,7 +95,8 @@
           <span class="menu-item-label"> {{__('leftpane.Jobs')}}</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
-      <a href="#" class="sl-menu-link {{ ($prefix == '/contacts') ? 'active show-sub' : ''}}">
+      <a href="#" class="sl-menu-link  @if ($prefix == 'en/contacts' || $prefix == 'de/contacts')  active show-sub @else  @endif
+      ">
         <div class="sl-menu-item">
           <i class="fa fa-phone"></i>
           <span class="menu-item-label"> {{__('leftpane.Contact')}}  </span>
@@ -104,7 +108,8 @@
         <li class="nav-item"><a href="{{route('Manage_Contacts_section')}}" class="nav-link  @if(Route::is('Manage_Contacts_section') ) active @else '' @endif"> {{__('leftpane.View Contact Image')}}</a></li>
         <li class="nav-item"><a href="{{route('view_Contacts')}}" class="nav-link">{{__('leftpane.View Contact Message')}}</a></li>
       </ul>
-      <a href="#" class="sl-menu-link {{ ($prefix == '/social') ? 'active show-sub' : ''}}">
+      <a href="#" class="sl-menu-link  @if ($prefix == 'en/social' || $prefix == 'de/social')  active show-sub @else  @endif
+      ">
         <div class="sl-menu-item">
           <i class="fa fa-sitemap"></i>
           <span class="menu-item-label">{{__('leftpane.Social Media')}}</span>

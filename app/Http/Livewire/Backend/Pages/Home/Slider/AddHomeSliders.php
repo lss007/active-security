@@ -3,15 +3,17 @@
 namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 
 use App\Models\HomeSectionSlider;
+use App\Models\RouteNameList;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class AddHomeSliders extends Component
 {
     use WithFileUploads;
-    public $title,$description,$image,$button_text,$link;
+    public $title,$description,$image,$button_text,$link ,$getRouteName;
     public function render()
     {
-        return view('livewire.backend.pages.home.slider.add-home-sliders')->layout('layouts.backend');
+            $this->getRouteName =    RouteNameList::get();
+            return view('livewire.backend.pages.home.slider.add-home-sliders')->layout('layouts.backend');
     }
     protected $rules = [
         'title' => 'required',

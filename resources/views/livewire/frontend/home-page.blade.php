@@ -12,7 +12,7 @@
             <p> 
               {{ isset($homeBanner->banner_paragaph) ? $homeBanner->banner_paragaph : "NA"}}
             </p>
-            <a href="#nextSection" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
+            <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
               
               {{ isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"}}
              </a>
@@ -177,7 +177,7 @@
                     </p>
                     <p> {!! isset($HomeSecFive->para1)  ? html_entity_decode($HomeSecFive->para1) : "NA" !!}   </p>
                     <p> {!! isset($HomeSecFive->para2)  ? html_entity_decode($HomeSecFive->para2) : "NA" !!}    </p>
-                  <a href="{{route('ContactPage')}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
+                  <a href="{!! isset($HomeSecFive->button_link)  ? html_entity_decode($HomeSecFive->button_link) : "#" !!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
   {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!}  </a>
                   </div>
                 </div>

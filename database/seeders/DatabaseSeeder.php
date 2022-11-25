@@ -48,6 +48,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PrivacyPageTextSeeder::class);
 
         $this->call(AgbpageSeeder::class);
+        $this->call(RouteNameListSeeder::class);
+
+        
 
 
 

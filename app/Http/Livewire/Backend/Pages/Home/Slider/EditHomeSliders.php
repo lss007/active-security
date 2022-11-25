@@ -4,12 +4,13 @@ namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 
 use Livewire\Component;
 use App\Models\HomeSectionSlider;
+use App\Models\RouteNameList;
 use Livewire\WithFileUploads;
 class EditHomeSliders extends Component
 {
 
     use WithFileUploads;
-    public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$link;
+    public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$link ,$getRouteName;
     public $newImage ;
         public function mount($id){
                 $this->SliderId= $id;
@@ -23,6 +24,7 @@ class EditHomeSliders extends Component
      }
     public function render()
     {
+        $this->getRouteName =    RouteNameList::get();
         return view('livewire.backend.pages.home.slider.edit-home-sliders')->layout('layouts.backend');
     }
     protected $rules = [

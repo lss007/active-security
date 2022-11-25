@@ -1,3 +1,4 @@
+
 <div class="sl-header">
     <div class="sl-header-left">
       <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
@@ -7,15 +8,16 @@
       <nav class="nav">
         <div class="dropdown mt-2">
           <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-            <i class="fa fa-globe"></i> 
+            <i class="fa fa-globe" style="font-size:1rem; "></i> 
             <span class="logged-name"> {{ Config::get('languages')[App::getLocale()]['display'] }}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-header wd-200">
             <ul class="list-unstyled user-profile-nav">
-        
+     
               @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
               <li>
-                  <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+             
                       {{ $properties['native'] }}
                   </a>
               </li>
@@ -38,9 +40,9 @@
           </a>
           <div class="dropdown-menu dropdown-menu-header wd-200">
             <ul class="list-unstyled user-profile-nav">
-              <li><a href="{{ route('profile.show') }}"><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
+              <li><a href="{{ route('profile.show') }}"><i class="icon ion-ios-person-outline"></i>{{__(('leftpane.Edit Profile'))}}</a></li>
              
-              <li><a href="{{route('user.logout')}}"><i class="icon ion-power"></i> Sign Out</a></li>
+              <li><a href="{{route('user.logout')}}"><i class="icon ion-power"></i>{{__('leftpane.Sign Out')}}</a></li>
           
             </ul>
           </div><!-- dropdown-menu -->

@@ -34,5 +34,11 @@ return [
     'Manage Social Category' => 'Soziale Kategorie verwalten',
     'Manage Social Media' =>  'Soziale Medien verwalten',
 
+        // =======================================================
+    // top header 
+    'Edit Profile' => 'Profil bearbeiten',
+    'Sign Out' => 'Austragen',
+
+
 
 ];

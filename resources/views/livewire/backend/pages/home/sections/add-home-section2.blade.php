@@ -64,7 +64,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label"> Button Link : <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" wire:model="buttonLink"  placeholder="Button Link ">
+                    <input class="form-control" type="url" wire:model="buttonLink"  placeholder="https://www.example.com/ ">
                     @error('buttonLink')<span class="text-danger"> {{$message}}</span>  @enderror  
                   
                 </div>

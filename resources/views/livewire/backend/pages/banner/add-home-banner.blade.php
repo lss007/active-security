@@ -19,7 +19,7 @@
                  <div class="col-lg-12">
                    <div class="form-group">
                      <label class="form-control-label">Banner Main Heading: <span class="tx-danger">*</span></label>
-                     <input class="form-control" type="text" wire:model="Heading"  placeholder="Heading">
+                     <input class="form-control" type="text" wire:model="Heading"  placeholder="Banner Heading">
                      @error('Heading')<span class="text-danger"> {{$message}}</span>  @enderror  
                    
                  </div>
@@ -34,15 +34,13 @@
                  <div class="col-lg-12">
                     <div class="form-group mg-b-10-force">
                       <label class="form-control-label">Banner Paragraph: <span class="tx-danger">*</span></label>
-                      <textarea class="form-control"   wire:model="BannerParagaph"> 
-              
-                      </textarea>
+                      <textarea class="form-control"   wire:model="BannerParagaph" placeholder="Banner Paragraph"></textarea>
                       @error('BannerParagaph')<span class="text-danger"> {{$message}}</span>  @enderror  
       
                     </div>
                   </div><!-- col-4 -->
         
-                   <div class="col-lg-4">
+                   <div class="col-lg-6">
                      <div class="form-group">
                        <label class="form-control-label">Button text: </label>
                        <input class="form-control" type="text" wire:model="buttonText"  placeholder="Button text">
@@ -50,24 +48,34 @@
                     
                      </div>
                    </div><!-- col-4 -->
-                   {{-- <div class="col-lg-4">
+                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label class="form-control-label">Button link: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="url" wire:model="button_link"  placeholder="Button link">
+                      <label class="form-control-label">Button link: </label>
+                      <input class="form-control" type="url" wire:model="button_link"  placeholder="https://www.example.com/  ">
                       @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
                    
                     </div>
-                  </div><!-- col-4 --> --}}
-                   <div class="col-lg-4">
-                    <div class="form-group">
-                      <label class="form-control-label">Banner Image: <span class="tx-danger">*</span></label>
-                      <input type="file" class="form-control"   wire:model="bannerImage" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" accept="image/*">
-                    @error('bannerImage')<span class="text-danger"> {{$message}}</span>  @enderror  
-                    </div>
-                    @if(isset($bannerImage))
-                    <img id="output" src="{{$bannerImage->temporaryUrl()}}" width="200" >
-                  @endif
                   </div><!-- col-4 -->
+            
+
+
+
+                  <div class="col-lg-12">
+                    <div class="form-group mg-b-10-force">
+                      <label class="form-control-label"> Banner Image:  : <span class="tx-danger">*</span></label><br>
+                      <label class="custom-file">
+                        <input type="file" id="file" class="custom-file-input" wire:model="bannerImage" >
+                        <span class="custom-file-control"></span>
+                      </label>
+                    </div>
+                    
+                    <img class="img-fluid " src="{{(isset($this->bannerImage)) 
+                      ? $bannerImage->temporaryUrl():asset('no_image.jpg')}}" width="200" >
+  
+               
+                    @error('bannerImage')<span class="text-danger"> {{$message}}</span>  @enderror  
+                
+                </div><!-- col-4 -->
 
                
 

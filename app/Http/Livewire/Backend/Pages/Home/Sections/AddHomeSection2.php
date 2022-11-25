@@ -74,8 +74,8 @@ class AddHomeSection2 extends Component
                     'title' =>    $this->title,
                     'para1' =>    $this->para1,
                     'para2' =>     $this->para2 ,
-                    'button_name' =>    $this->buttonName ?? Null,
-                    'button_link' =>   $this->buttonLink ?? Null, 
+                    'button_name' =>    trim($this->buttonName),
+                    'button_link' =>   trim($this->buttonLink), 
                     'image' =>   $fileName1  ?? Null,
                   ]);
 

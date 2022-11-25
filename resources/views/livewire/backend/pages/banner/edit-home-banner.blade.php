@@ -19,7 +19,7 @@
                <div class="col-lg-12">
                  <div class="form-group">
                    <label class="form-control-label">Banner Main Heading: <span class="tx-danger">*</span></label>
-                   <input class="form-control" type="text" wire:model="Heading"  placeholder="Heading">
+                   <input class="form-control" type="text" wire:model="Heading"  placeholder="Banner Heading">
                    @error('Heading')<span class="text-danger"> {{$message}}</span>  @enderror  
                  
                </div>
@@ -34,15 +34,13 @@
                <div class="col-lg-12">
                   <div class="form-group mg-b-10-force">
                     <label class="form-control-label">Banner Paragraph: <span class="tx-danger">*</span></label>
-                    <textarea class="form-control"   wire:model="BannerParagaph"> 
-            
-                    </textarea>
+                    <textarea class="form-control"   wire:model="BannerParagaph" placeholder="Banner Paragraph"></textarea>
                     @error('BannerParagaph')<span class="text-danger"> {{$message}}</span>  @enderror  
     
                   </div>
                 </div><!-- col-4 -->
       
-                 <div class="col-lg-4">
+                 <div class="col-lg-6">
                    <div class="form-group">
                      <label class="form-control-label">Button text: </label>
                      <input class="form-control" type="text" wire:model="buttonText"  placeholder="Button text">
@@ -50,7 +48,14 @@
                   
                    </div>
                  </div><!-- col-4 -->
-         
+                 <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Button Link: </label>
+                    <input class="form-control" type="url" wire:model="button_link"  placeholder="https://www.example.com/">
+                    @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
+      
+                  </div>
+                </div><!-- col-4 -->
             
                          
                 <div class="col-lg-12">

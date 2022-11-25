@@ -34,5 +34,10 @@ return [
     'Manage Social Category' => 'Manage Social Category',
     'Manage Social Media' =>  'Manage Social Media',
 
+    // =======================================================
+    // top header 
+    'Edit Profile' => 'Edit Profile',
+    'Sign Out' => 'Sign Out',
+
 
 ];
