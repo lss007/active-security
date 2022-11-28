@@ -85,6 +85,7 @@ use App\Http\Livewire\Frontend\ShopGuard;
 use App\Http\Livewire\Frontend\Unternehmen;
 use App\Http\Livewire\Frontend\VeranstaltungsSchutz;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
