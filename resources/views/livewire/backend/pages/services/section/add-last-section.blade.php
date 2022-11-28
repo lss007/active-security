@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Services last  Section </h5>
+          <h5>Add Optimal security Section </h5>
       
         </div><!-- sl-page-title -->
 
@@ -70,6 +70,15 @@
                 </div>
                 </div><!-- col-4 -->
      
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label"> Button Link  : optional</label>
+                    <input class="form-control" type="text" wire:model="link"  placeholder="button link  ">
+                    @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  
+                </div>
+                </div><!-- col-4 -->
                </div><!-- row -->
      
                <div class="form-layout-footer">

@@ -56,7 +56,7 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item">
               <li class="nav-item"><a href="{{route('view_footer_logos')}}" class="nav-link  @if(Route::is('view_footer_logos') ) active @else '' @endif">{{__('leftpane.Manage Footer Logos')}}  </a></li>
-               <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> {{__('leftpane.Manage Footer Section')}} </a></li>
+               <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> {{__('leftpane.Optimal section')}} </a></li>
                <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif">{{__('leftpane.privacy settings')}}   </a></li>
                <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  {{__('leftpane.Privacy tabs')}}  </a></li>
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif">  {{__('leftpane.Manage privacy page')}}   </a></li>
@@ -70,8 +70,10 @@
         </div><!-- menu-item -->
     </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link   @if(Route::is('view_services') ) active @else '' @endif"> {{__('leftpane.Manage Services Section')}}</a></li>
-        <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active @else '' @endif"> {{__('leftpane.Manage Bottom Banner')}}  </a></li>
+        <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link          @if(Route::is('view_services') ) active            @else '' @endif"> {{__('leftpane.Manage Services Section')}}</a></li>
+        <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active     @else '' @endif"> {{__('leftpane.Manage Bottom Banner')}}  </a></li>
+       
+        
       </ul>
     <a href="#" class="sl-menu-link  @if ($prefix == 'en/company' || $prefix == 'de/company')  active show-sub @else  @endif ">
         <div class="sl-menu-item">

@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Services last  Section </h5>
+          <h5>Update Optimal security  Section </h5>
       
         </div><!-- sl-page-title -->
 
@@ -66,6 +66,16 @@
                     <label class="form-control-label"> Botton  Name: optional</label>
                     <input class="form-control" type="text" wire:model="button"  placeholder="button Name  ">
                     @error('button')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  
+                </div>
+                </div><!-- col-4 -->
+
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label"> Button Link  : optional</label>
+                    <input class="form-control" type="text" wire:model="link"  placeholder="button link  ">
+                    @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
                   
                 </div>
                 </div><!-- col-4 -->

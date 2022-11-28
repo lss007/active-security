@@ -241,6 +241,9 @@ Route::group(['prefix' =>'services'], function () {
         Route::get('/banner-view', ViewBanners::class)->name('view_services_banner');
         Route::get('/banner-edit/{id}', EditBanners::class)->name('edit_services_banner');
 
+    
+
+        
 
     });
                                     // home section  end 
@@ -288,11 +291,6 @@ Route::group(['prefix' =>'social'], function () {
         Route::get('/show-routes-list', ViewRouteList::class)->name('view_route_list');
         Route::get('/add-routes', AddRouteList::class)->name('add_route_list');
         Route::get('/edit-routes/{id}', EditRouteList::class)->name('edit_route_list');
-
-        
-
-        
-
 
     });
 

@@ -3,7 +3,7 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Last Services Section  </h5>
+          <h5>Manage Optimal security Section  </h5>
     
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
@@ -17,8 +17,7 @@
               <thead>
                 <tr>
                   <th class="wd-5p">S.No </th>
-                  <th class="wd-15p">Heading  </th>
-             
+                  <th class="wd-15p">Heading  </th>             
                   <th class="wd-15p">List  </th>
                   <th class="wd-10p">Status</th>
                   <th class="wd-20p">Action</th>

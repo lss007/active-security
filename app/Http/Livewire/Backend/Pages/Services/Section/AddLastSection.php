@@ -31,7 +31,7 @@ class AddLastSection extends Component
     //   ];
      private function resetInputFields(){
             $this->heading = '';
-            // $this->link = '';
+            $this->link = '';
             $this->list1 = '';
             $this->list2 = '';
             $this->list3 = '';
@@ -46,12 +46,13 @@ class AddLastSection extends Component
             $this->validate();
             ServiceLastSection::create([
                 'heading' =>    $this->heading,
-                // 'link' =>    $this->link,
+                'link' =>    $this->link,
                 'button' =>    $this->button,
                 'list1' =>    $this->list1,
                 'list2' =>    $this->list2,
                 'list3' =>    $this->list3,
                 'list4' =>    $this->list4,
+               
 
                 ]);
                 $notification = array(

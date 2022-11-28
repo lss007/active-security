@@ -18,7 +18,7 @@ class EditLastSection extends Component
         $this->serviceId= $id;
         $this->editsection = ServiceLastSection::where('id', $this->serviceId)->first();
         $this->heading  =  $this->editsection->heading;
-        // $this->link =  $this->editsection->link;
+        $this->link =  $this->editsection->link;
         $this->button =  $this->editsection->button; 
         $this->list1 = $this->editsection->list1;
         $this->list2 = $this->editsection->list2;
@@ -37,7 +37,7 @@ class EditLastSection extends Component
 
      private function resetInputFields(){
             $this->heading = '';
-            // $this->link = '';
+            $this->link = '';
             $this->list1 = '';
             $this->list2 = '';
             $this->list3 = '';

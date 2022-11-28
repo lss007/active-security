@@ -35,6 +35,7 @@ return [
     'Manage Social Media' =>  'Manage Social Media',
     'Others' => 'others',
     'Route list' =>  'Route list',
+    'Optimal section' => 'Optimal Section',
 
     // =======================================================
     // top header 
