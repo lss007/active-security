@@ -9,7 +9,7 @@
         <div class="card pd-20 pd-sm-40">
    
                 <h6 class="card-body-title">      
-                    <a href="{{route('add_last_footer_section')}}" class="btn btn-sm btn-warning">Add Section</a>
+                    <a href="{{route('add_last_footer_section')}}" class="btn btn-teal active mg-b-10">Add Section</a>
                 </h6>
 
           <div class="table-wrapper">

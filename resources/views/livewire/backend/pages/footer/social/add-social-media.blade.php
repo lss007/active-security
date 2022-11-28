@@ -31,7 +31,7 @@
                                 <option label="Choose Category"></option>
                                 @if(isset($get_category))
                                 @foreach($get_category as $cat)
-                                  <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                  <option value="{{$cat->name}}">{{ucwords($cat->name)}}</option>
                                  @endforeach
                               @endif
                                 {{-- <option value="custom">Custom</option> --}}

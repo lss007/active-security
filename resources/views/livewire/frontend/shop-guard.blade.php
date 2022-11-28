@@ -5,12 +5,11 @@
       <div class="bannerSection innerPageBanner s8Banner" style="background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}')" >
         <div class="container">
           <div class="bannerContent">
-            <h1 class="xlTitle">
-              {!!	isset($Shopmain->heading) ? $Shopmain->heading : "NA"!!}   </h1>
+            <h1 class="xlTitle">{!!	isset($Shopmain->heading) ? $Shopmain->heading : "NA"!!}</h1>
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
               {!!isset($Shopmain->title) ? $Shopmain->title : "NA"!!} 
             </p>
-            <a href="contact.html" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+            <a href="{!! isset($Shopmain->button_link) ? $Shopmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
               {{	isset($Shopmain->button_text) ? $Shopmain->button_text : "Angebot einholen"}}  
             </a>
           </div>
@@ -26,8 +25,7 @@
           <div class="row gy-4 align-items-center">
             <div class="col-lg-6">
               <div class="imgCol pe-lg-4">
-                <img src="{{(isset($this->ShopPagesection->sec_image)) 
-                  ? asset('storage/services-section/'.$ShopPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
+                <img src="{{(isset($this->ShopPagesection->sec_image))  ? asset('storage/services-section/'.$ShopPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
               </div>
             </div>
             <div class="col-lg-6">

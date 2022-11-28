@@ -178,7 +178,7 @@
                     <p> {!! isset($HomeSecFive->para1)  ? html_entity_decode($HomeSecFive->para1) : "NA" !!}   </p>
                     <p> {!! isset($HomeSecFive->para2)  ? html_entity_decode($HomeSecFive->para2) : "NA" !!}    </p>
                   <a href="{!! isset($HomeSecFive->button_link)  ? html_entity_decode($HomeSecFive->button_link) : "#" !!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
-  {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!}  </a>
+            {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!}  </a>
                   </div>
                 </div>
               </div>

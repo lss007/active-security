@@ -7,8 +7,8 @@
           <p>Manage Home Page Client logo images </p>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
-          <h6 class="card-body-title"> Manage Clients       
-            <a href="{{route('addHomeclients')}}" class="btn btn-sm btn-warning" style="float: right;"   >Add Clients</a>
+          <h6 class="card-body-title"> 
+            <a href="{{route('addHomeclients')}}" class="btn btn-teal active mg-b-10"   >Add Clients</a>
         </h6>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">

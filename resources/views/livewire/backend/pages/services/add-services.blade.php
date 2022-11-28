@@ -23,7 +23,7 @@
                         @if(isset($pageCategory) && count($pageCategory )> 0)
                         @foreach($pageCategory as $key => $getcat)
 
-                        <option value="{{$getcat->id}}">{{$getcat->page_cat_name}}</option>
+                        <option value="{{$getcat->id}}">{{ ucwords($getcat->page_cat_name)}}</option>
 
                         @endforeach
                         @endif

@@ -64,8 +64,7 @@
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif">  {{__('leftpane.Manage privacy page')}}   </a></li>
                <li class="nav-item"><a href="{{route('agb_page_view')}}" class="nav-link   @if(Route::is('agb_page_view') ) active @else '' @endif">{{__('leftpane.Manage Agb Page')}}  </a></li>
       </ul> 
-      <a href="javascript:void(0)" class="sl-menu-link  @if ($prefix == 'en/services' || $prefix == 'de/services')  active show-sub @else  @endif
-      ">
+ <a href="javascript:void(0)" class="sl-menu-link  @if ($prefix == 'en/services' || $prefix == 'de/services')  active show-sub @else  @endif  ">
         <div class="sl-menu-item">
           <i class="fa fa-navicon"></i>
           <span class="menu-item-label">{{__('leftpane.services')}} </span>
@@ -89,7 +88,7 @@
         <li class="nav-item"><a href="{{route('viewCompanySections2')}}" class="nav-link   @if(Route::is('viewCompanySections2') ) active @else '' @endif"> {{__('leftpane.Manage Profile Section')}} </a></li>
       </ul>
 
-      <a href="{{route('view_job_section')}}" class="sl-menu-link   {{ ($prefix == '/job-section')?'active' : ''}}">
+      <a href="{{route('view_job_section')}}" class="sl-menu-link @if ($prefix == 'en/job-section' || $prefix == 'de/job-section')  active  @else  @endif">
         <div class="sl-menu-item">
           <i class="fa fa-suitcase"></i>
           <span class="menu-item-label"> {{__('leftpane.Jobs')}}</span>

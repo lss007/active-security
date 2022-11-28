@@ -7,9 +7,8 @@
           <p>Manage Home Page Slider</p>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
-          <h6 class="card-body-title"> Manage Clients       
-            <a href="{{route('addHomesliders')}}" class="btn btn-sm btn-warning" style="float: right;" 
-              >Add Slider</a>
+          <h6 class="card-body-title">      
+            <a href="{{route('addHomesliders')}}" class="btn btn-teal active mg-b-10">Add Slider</a>
         </h6>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">

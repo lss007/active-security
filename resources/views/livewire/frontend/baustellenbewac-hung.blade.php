@@ -12,7 +12,7 @@
                 {{	isset($Baustellmain->title) ? $Baustellmain->title : "NA"}}
 
               </p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              <a href="{!! isset($Baustellmain->button_link) ? $Baustellmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
                 {{	isset($Baustellmain->button_text) ? $Baustellmain->button_text : "Angebot einholen"}} 
               </a>
             </div>

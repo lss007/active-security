@@ -45,7 +45,7 @@
                     <option label="Choose Page link"></option>
                   @if(isset($getRouteName))
                   @foreach($getRouteName as $val)
-                    <option value="{{$val->route_link}}">{{$val->route_name}}</option>
+                    <option value="{{$val->route_link}}">{{ucwords($val->route_name)}}</option>
                     @endforeach
                     @endif
                   </select>

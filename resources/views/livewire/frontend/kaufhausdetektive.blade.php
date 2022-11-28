@@ -11,7 +11,7 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($Kaufhausmain->title) ? $Kaufhausmain->title : "NA"}}
               </p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
+              <a href="{!! isset($Kaufhausmain->button_link) ? $Kaufhausmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
                 {{	isset($Kaufhausmain->button_text) ? $Kaufhausmain->button_text : "Angebot einholen"}} 
               </a>
             </div>

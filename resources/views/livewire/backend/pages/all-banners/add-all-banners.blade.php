@@ -21,7 +21,7 @@
                         <option selected class="form-control">Choose Page Category </option>
                         @if(isset($getPageCategory))
                             @foreach($getPageCategory as $category )
-                                <option value="{{$category->id}}"  class="form-control">{{$category->page_cat_name}}</option>
+                                <option value="{{$category->id}}"  class="form-control">{{ ucwords($category->page_cat_name)}}</option>
                             @endforeach
                         @endif
                       </select>

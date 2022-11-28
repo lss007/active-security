@@ -11,7 +11,7 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($centerbewachung->title) ? $centerbewachung->title : "NA"}}
               </p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              <a href="{!! isset($centerbewachung->button_link) ? $centerbewachung->button_link : "#"!!}" target="__blank" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
                 {{	isset($centerbewachung->button_text) ? $centerbewachung->button_text : "Angebot einholen"}} 
               </a>
             </div>

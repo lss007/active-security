@@ -11,7 +11,7 @@
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
               {{	isset($Reviermain->title) ? $Reviermain->title : "NA"}}  
             </p>
-            <a href="contact.html" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+            <a href="{!! isset($Reviermain->button_link) ? $Reviermain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
               {{	isset($Reviermain->button_text) ? $Reviermain->button_text : "Angebot einholen"}}
             </a>
           </div>
