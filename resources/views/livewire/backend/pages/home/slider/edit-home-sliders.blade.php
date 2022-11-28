@@ -3,13 +3,13 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5> Edit and Update Home Section Slider</h5>
+          <h5> {{__('dashboard.Edit and Update Home Section Slider')}}</h5>
       
         </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-40">
-        <h6 class="card-body-title">Edit Home Section Slider 
-            <a href="{{route('viewHomesliders')}}" class="btn btn-sm btn-success" style="float: right;" >Back</a>
+        <h6 class="card-body-title">
+            <a href="{{route('viewHomesliders')}}" class="btn btn-teal active mg-b-10" >Back</a>
         </h6>
         <form  wire:submit.prevent="updateHomeSlider">
             <div class="form-layout">

@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Home Section one</h5>
+          <h5>{{__('dashboard.Update Home Section one')}}</h5>
       
         </div><!-- sl-page-title -->
 

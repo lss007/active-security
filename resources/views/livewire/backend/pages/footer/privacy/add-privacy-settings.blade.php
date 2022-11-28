@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Privacy Settings </h5>
+          <h5>{{__('dashboard.Manage or Add Privacy text')}}</h5>
       
         </div><!-- sl-page-title -->
 

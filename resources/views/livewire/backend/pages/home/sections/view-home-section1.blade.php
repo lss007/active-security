@@ -2,7 +2,8 @@
     {{-- The whole world belongs to you. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Home Page Section 1 
+          <h5>
+            {{__('dashboard.Home Page Section 1')}} 
           </h5>
         </div><!-- sl-page-title -->
 {{-- ========================== --}}
@@ -36,7 +37,7 @@
                       <div class="col-md-8">
                         <h6 class="card-body-title">
                           <p>Created at:  {{isset($homeSectionOne->created_at) ? Carbon\Carbon::parse($homeSectionOne->created_at)->diffForHumans() : "NA"}}</p>
-                                      <span class="text-primary">  Main Heading : </span>s
+                                      <span class="text-primary">  Main Heading : </span>
                            
                               {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
                             <p class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>

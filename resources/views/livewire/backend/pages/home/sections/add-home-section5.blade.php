@@ -3,13 +3,13 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Home Last Section </h5>
+          <h5> {{__('dashboard.Add Home Last Section')}}</h5>
       
         </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-40">
-        <h6 class="card-body-title">Manage Home Section 
-            <a href="{{route('ViewHomeSection5')}}" class="btn btn-sm btn-success" style="float: right;" >Back</a>
+        <h6 class="card-body-title">
+            <a href="{{route('ViewHomeSection5')}}" class="btn btn-teal active mg-b-10"  >Back</a>
         </h6>
         <form  wire:submit.prevent="saveHomeSection5">
              <div class="form-layout">

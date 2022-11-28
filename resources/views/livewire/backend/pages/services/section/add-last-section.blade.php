@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Optimal security Section </h5>
+          <h5>{{__('dashboard.Add Optimal security Section')}} </h5>
       
         </div><!-- sl-page-title -->
 

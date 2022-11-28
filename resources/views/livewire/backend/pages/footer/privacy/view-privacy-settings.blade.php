@@ -2,7 +2,7 @@
     {{-- The whole world belongs to you. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Privacy Settings text : 
+          <h5>{{__('dashboard.Manage privacy settings text')}} : 
           </h5>
         </div><!-- sl-page-title -->
 

@@ -3,8 +3,8 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Home Slider </h5>
-          <p>Manage Home Page Slider</p>
+          <h5> {{__('dashboard.Home Slider')}} </h5>
+        
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">      

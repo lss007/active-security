@@ -3,13 +3,13 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Home Section Two</h5>
+          <h5>{{__('dashboard.Update Home Section two')}}</h5>
       
         </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-40">
-        <h6 class="card-body-title">Update Home Section 
-            <a href="{{route('viewHomeSection2')}}" class="btn btn-sm btn-success" style="float: right;" >Back</a>
+        <h6 class="card-body-title">
+            <a href="{{route('viewHomeSection2')}}" class="btn btn-teal active mg-b-10"  >Back</a>
         </h6>
         <form  wire:submit.prevent="updateHomeSection2">
             <div class="form-layout">

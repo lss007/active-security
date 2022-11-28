@@ -3,11 +3,8 @@
   
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Privacy  Text</h5>
-      
+          <h5>{{__('dashboard.Add Privacy Body Text')}}</h5>
         </div><!-- sl-page-title -->
-
-
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
             <a href="{{route('footer_Privacy_pageView')}}" class="btn btn-teal active mg-b-10" >Back</a>
@@ -19,7 +16,7 @@
               <div class="card-header" role="tab" id="headingOne">
                 <h6 class="mg-b-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                    Add Privacy Text 
+                    {{__('dashboard.Add Privacy Body Text')}}
                   </a>
                 </h6>
               </div><!-- card-header -->

@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5> Home Section Slider</h5>
+          <h5> {{__('dashboard.Add Home Section Slider')}}</h5>
       
         </div><!-- sl-page-title -->
 

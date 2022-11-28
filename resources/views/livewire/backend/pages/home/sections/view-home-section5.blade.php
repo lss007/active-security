@@ -2,7 +2,7 @@
   {{-- The whole world belongs to you. --}}
   <div class="sl-pagebody">
       <div class="sl-page-title">
-        <h5>Home Page Last Section 
+        <h5>{{__('dashboard.Home Page Last Section')}}
         </h5>
       </div><!-- sl-page-title -->
 {{-- ========================== --}}

@@ -3,12 +3,12 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Home Clients </h5>
-          <p>Manage Home Page Client logo images </p>
+          <h5>{{__('dashboard.Home Clients')}}</h5>
+        
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title"> 
-            <a href="{{route('addHomeclients')}}" class="btn btn-teal active mg-b-10"   >Add Clients</a>
+            <a href="{{route('addHomeclients')}}" class="btn btn-teal active mg-b-10" >{{__('dashboard.Add Clients')}}</a>
         </h6>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">

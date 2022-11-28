@@ -3,8 +3,8 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Home page Banner</h5>
-          <p>Add  Home page Banner Image or text  </p>
+          <h5>{{__('dashboard.Add Banner')}}</h5>
+
         </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-40">
