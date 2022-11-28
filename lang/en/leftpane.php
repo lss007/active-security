@@ -33,6 +33,8 @@ return [
     'View Contact Message' => 'View Contact Message',
     'Manage Social Category' => 'Manage Social Category',
     'Manage Social Media' =>  'Manage Social Media',
+    'Others' => 'others',
+    'Route list' =>  'Route list',
 
     // =======================================================
     // top header 

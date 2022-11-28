@@ -18,13 +18,12 @@ class HomeBanner extends Component
         return view('livewire.backend.pages.banner.home-banner')->layout('layouts.backend');
     }
     public function deletebanner($id){
-        
-     ModelsHomeBanner::destroy($id);
-     $notification = array(
-        'message' => 'Home Banner Deleted successfully',
-        'alert-type' => 'error'
-    );
-    return   redirect(request()->header('Referer'))->with($notification);
+             ModelsHomeBanner::destroy($id);
+            $notification = array(
+                'message' => 'Home Banner Deleted successfully',
+                'alert-type' => 'error'
+            );
+            return   redirect(request()->header('Referer'))->with($notification);
     }
 
 

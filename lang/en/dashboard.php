@@ -11,6 +11,15 @@ return [
     'Home page Banner' => 'Home page Banner',
     'Manage Home Page Banner' =>'Manage Home Page Banner',
     'Add Banner' =>"Add Banner",
+    //Route list 
+
+    'Add Route' =>  'Add Route',
+    'Update Route' =>  'Update Route',
+   
+
+
+    
+
 
 
 

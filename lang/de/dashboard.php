@@ -11,6 +11,12 @@ return [
    'Home page Banner' => 'Homepage-Banner',
    'Manage Home Page Banner' =>'Homepage-Banner verwalten',
    'Add Banner' =>"Banner hinzufügen",
+//    Route list 
+ 
+    'Add Route' =>  'Strecke hinzufügen',
+    'Update Route' =>  'Strecke aktualisieren',
+
+
 
 
 

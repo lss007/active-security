@@ -16,8 +16,6 @@
               <li>{{isset($getLastServices->list2) ? $getLastServices->list2 : "NA"}}</li>
               <li>{{isset($getLastServices->list3) ? $getLastServices->list3 : "NA"}}</li>
               <li>{{isset($getLastServices->list4) ? $getLastServices->list4 : "NA"}}</li>
-
-           
             </ul>
             <a href="{{route('ContactPage')}}" class="btn btnPrimary arrowBtn">Machen Sie den 1. Schritt</a>
           </div>

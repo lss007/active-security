@@ -33,6 +33,9 @@ return [
     'View Contact Message' => 'Kontaktnachricht anzeigen',
     'Manage Social Category' => 'Soziale Kategorie verwalten',
     'Manage Social Media' =>  'Soziale Medien verwalten',
+    'Others' => 'Andere',
+    'Route list' =>  'Routenliste',
+
 
         // =======================================================
     // top header 

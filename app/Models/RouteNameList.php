@@ -10,5 +10,5 @@ class RouteNameList extends Model
 {
 
     use SoftDeletes;
-    protected $guarded =[];
+    protected $guarded = [];
 }

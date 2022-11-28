@@ -68,6 +68,9 @@ use App\Http\Livewire\Backend\Pages\Services\Section\AddLastSection;
 use App\Http\Livewire\Backend\Pages\Services\Section\EditLastSection;
 use App\Http\Livewire\Backend\Pages\Services\Section\ViewLastSection;
 use App\Http\Livewire\Backend\Pages\Services\ViewServices;
+use App\Http\Livewire\Backend\RoutesList\AddRouteList;
+use App\Http\Livewire\Backend\RoutesList\EditRouteList;
+use App\Http\Livewire\Backend\RoutesList\ViewRouteList;
 use App\Http\Livewire\Frontend\Agb;
 use App\Http\Livewire\Frontend\BaustellenbewacHung;
 use App\Http\Livewire\Frontend\Centerbewachung;
@@ -280,6 +283,19 @@ Route::group(['prefix' =>'social'], function () {
         Route::get('/edit/{id}', EditSocialMedia::class)->name('edit_social_media');
 });
     // middle ware end 
+    Route::group(['prefix' =>'others'], function () {
+        
+        Route::get('/show-routes-list', ViewRouteList::class)->name('view_route_list');
+        Route::get('/add-routes', AddRouteList::class)->name('add_route_list');
+        Route::get('/edit-routes/{id}', EditRouteList::class)->name('edit_route_list');
+
+        
+
+        
+
+
+    });
+
 });
        // middle ware end
 
