@@ -29,7 +29,6 @@ class Clientmail extends Mailable
     {
         return $this->subject($this->sendmessage->surname.' Message')
         ->view('email.clientemail')->with([
-
             'surname' => $this->sendmessage->surname,
             'email' => $this->sendmessage->email,
             'regarding' => $this->sendmessage->regarding,
