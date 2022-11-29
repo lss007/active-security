@@ -42,8 +42,14 @@
             <ul class="list-unstyled user-profile-nav">
               <li><a href="{{ route('profile.show') }}"><i class="icon ion-ios-person-outline"></i>{{__(('leftpane.Edit Profile'))}}</a></li>
              
-              <li><a href="{{route('user.logout')}}"><i class="icon ion-power"></i>{{__('leftpane.Sign Out')}}</a></li>
+              {{-- <li><a href="{{route('user.logout')}}"><i class="icon ion-power"></i>{{__('leftpane.Sign Out')}}</a></li> --}}
           
+              <li><a href="javascript:void(0)" onclick="$('#logout-form').submit();"><i class="icon ion-power"></i>{{__('leftpane.Sign Out')}}</a></li>
+              <form action="{{ route('user.logout') }}" method="post" id="logout-form">
+                @csrf
+            
+
+                </form>
             </ul>
           </div><!-- dropdown-menu -->
         </div><!-- dropdown -->

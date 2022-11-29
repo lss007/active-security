@@ -110,7 +110,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 
-Route::get('Userlogout', [UserLogoutController::class, 'user_logout'])->name('user.logout');
+Route::post('Userlogout', [UserLogoutController::class, 'user_logout'])->name('user.logout');
 Route::get('/', HomePage::class)->name('homePage');
 // ObjektPage 
 Route::get('/objekt-und-werkschutz', ObjektUndWerkschutz::class)->name('ObjektPage');

@@ -30,7 +30,7 @@
 @include('livewire.backend.common.header')
     <div class="sl-mainpanel tx-bold ">
       <nav class="breadcrumb sl-breadcrumb">
-        <a class="breadcrumb-item" href="index.html">Active Secuirty</a>
+        <a class="breadcrumb-item" href="#">Active Secuirty</a>
         <span class="breadcrumb-item active">Dashboard</span>
       </nav>
             <main>
