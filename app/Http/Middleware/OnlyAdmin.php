@@ -19,7 +19,12 @@ class OnlyAdmin
     {
     if(Auth::check() && Auth::user()->role_id === 1 ) {
         return $next($request);
+      
         }
+        elseif(Auth::check() && Auth::user()->role_id === 3){
+            return $next($request);
+
+       }
     else {
         // abort(403, 'Access denied');
             Auth::guard('web')->logout();

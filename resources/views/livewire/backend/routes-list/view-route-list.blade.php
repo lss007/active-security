@@ -83,14 +83,18 @@
              
                                 </div>
                             </div><!-- modal-dialog -->
-                            </div><!-- modal -->
+                </div><!-- modal -->
                   </tr>
 
                   @endforeach
               
                   @endif
+  
+            
+             
                 </tbody>
               </table>
+             
             </div><!-- table-responsive -->
   
           </div><!-- card -->

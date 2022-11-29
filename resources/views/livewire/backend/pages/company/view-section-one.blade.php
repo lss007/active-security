@@ -2,18 +2,16 @@
     {{-- The whole world belongs to you. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Company Page Section 
+          <h5>{{__('dashboard.Check out the Company Page section')}}
           </h5>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
-            @if(isset($getCompanySection1))
-                      
+            @if(isset($getCompanySection1))      
             <a href="{{route('edit_company_section1',$getCompanySection1->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
             @else
             <a href="{{route('add_company_section1')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>
            @endif
-
           </h6>
 
 

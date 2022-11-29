@@ -3,23 +3,21 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Company Section </h5>
-      
+          <h5>{{__('dashboard.Update the Company Page section')}} </h5>
         </div><!-- sl-page-title -->
-
 
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
             <a href="{{route('view_company_sections')}}" class="btn btn-teal active mg-b-10" >Back</a>
           </h6>
-      
+
           <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
             <div class="card">
            
               <div class="card-header" role="tab" id="headingOne">
                 <h6 class="mg-b-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                    Add Company Section
+                    {{__('dashboard.Update the Company Page section')}}
                   </a>
                 </h6>
               </div><!-- card-header -->

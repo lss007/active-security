@@ -2,7 +2,8 @@
     {{-- The whole world belongs to you. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Contact Page Section 
+          <h5>
+            {{__('dashboard.Contact Page section')}} 
           </h5>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">

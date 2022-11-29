@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backend\RoutesList;
 
 use App\Models\RouteNameList;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class EditRouteList extends Component
@@ -21,7 +22,14 @@ class EditRouteList extends Component
 
     ];
     public function mount($id){
-
+        if(Auth::user()->role_id != 3){
+            $notification = array(
+                'message' => 'Access denied',
+                'alert-type' => 'error'
+            );
+                return redirect()->route('view_route_list')->with($notification);
+             
+        }
         $this->editRouteId= $id;
         $this->editroute = RouteNameList::where('id', $this->editRouteId)->first();
         if($this->editroute){

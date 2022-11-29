@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Company Section 2</h5>
+          <h5>{{__('dashboard.Add company profile section')}}</h5>
       
         </div><!-- sl-page-title -->
 
@@ -19,7 +19,7 @@
               <div class="card-header" role="tab" id="headingOne">
                 <h6 class="mg-b-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                    Add Company Section 2
+                    {{__('dashboard.Add company profile section')}}
                   </a>
                 </h6>
               </div><!-- card-header -->

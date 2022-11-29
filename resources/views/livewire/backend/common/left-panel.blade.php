@@ -117,8 +117,8 @@
         <li class="nav-item"> <a href="{{route('view_social_media')}}" class="nav-link   @if(Route::is('view_social_media') ) active @else '' @endif">  {{__('leftpane.Manage Social Media')}}</a></li>
       </ul>
       {{-- Others --}}
-
-      {{-- <a href="#" class="sl-menu-link  @if ($prefix == 'en/others' || $prefix == 'de/others')  active show-sub @else  @endif ">
+@if(Auth::user()->role_id === 3)
+      <a href="#" class="sl-menu-link  @if ($prefix == 'en/others' || $prefix == 'de/others')  active show-sub @else  @endif ">
         <div class="sl-menu-item">
           <i class="fa fa-sliders"></i>
           <span class="menu-item-label">{{__('leftpane.Others')}}</span>
@@ -127,7 +127,8 @@
     </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_route_list')}}" class="nav-link   @if(Route::is('view_route_list') ) active @else '' @endif">  {{__('leftpane.Route list')}} </a></li>
-      </ul> --}}
+      </ul>
+      @endif
     </div><!-- sl-sideleft-menu -->
 
     <br>

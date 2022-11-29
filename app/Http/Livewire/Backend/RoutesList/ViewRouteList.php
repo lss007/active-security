@@ -4,9 +4,11 @@ namespace App\Http\Livewire\Backend\RoutesList;
 
 use App\Models\RouteNameList;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ViewRouteList extends Component
 {
+    use WithPagination;
     public $getNameList ,$trashdata;
  
 
@@ -65,6 +67,7 @@ class ViewRouteList extends Component
       {
   
           $this->getNameList =   RouteNameList::get();
+
           $this->trashdata= RouteNameList::onlyTrashed()->get();
   
           return view('livewire.backend.routes-list.view-route-list')->layout('layouts.backend');

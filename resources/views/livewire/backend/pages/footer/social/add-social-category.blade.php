@@ -2,7 +2,7 @@
     {{-- Success is as dangerous as failure. --}}
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add  Social Media Category </h5>
+          <h5>{{__('dashboard.Add social media category')}} </h5>
         </div><!-- sl-page-title -->
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title"> 
@@ -15,7 +15,7 @@
           <div class="card-header" role="tab" id="headingOne">
             <h6 class="mg-b-0">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                Add Social Media Category
+                {{__('dashboard.Add social media category')}}
               </a>
             </h6>
           </div><!-- card-header -->

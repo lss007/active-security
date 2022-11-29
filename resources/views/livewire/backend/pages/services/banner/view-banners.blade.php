@@ -3,7 +3,7 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Services Pages Banner  </h5>
+          <h5>{{__('dashboard.Manage Services Pages Banner')}} </h5>
     
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
@@ -12,7 +12,7 @@
               <div class="card-header" role="tab" id="headingOne">
                 <h6 class="mg-b-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                   Add Manage Services Pages Banner
+                    {{__('dashboard.Manage Services Pages Banner')}}
                   </a>
                 </h6>
               </div><!-- card-header -->

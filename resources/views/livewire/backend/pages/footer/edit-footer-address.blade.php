@@ -3,13 +3,13 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Contact Address</h5>
+          <h5>{{__('dashboard.Update contact address')}}</h5>
       
         </div><!-- sl-page-title -->
        
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title"> 
-            <a href="{{route('footer_address')}}" class="btn btn-sm btn-success"  >Back</a>
+            <a href="{{route('footer_address')}}" class="btn btn-teal active mg-b-10"  >Back</a>
         </h6>
      
        
@@ -19,7 +19,7 @@
           <div class="card-header" role="tab" id="headingOne">
             <h6 class="mg-b-0">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                Update Footer Contact Address
+                {{__('dashboard.Update contact address')}}
               </a>
             </h6>
           </div><!-- card-header -->
@@ -97,7 +97,7 @@
                          <div class="card-header">
                           <h6 class="mg-b-0">
                             <a  class="tx-gray-900 transition ">
-                              Update Footer Icon Call, Mail and whatsapp
+                             {{__('dashboard.Update footer call, email and whatsapp info:')}}
                             </a>
                           </h6>
                         </div><!-- card-header -->

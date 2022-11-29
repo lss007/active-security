@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Services Page  Section </h5>
+          <h5>{{__('dashboard.Add Services')}} </h5>
       
         </div><!-- sl-page-title -->
 

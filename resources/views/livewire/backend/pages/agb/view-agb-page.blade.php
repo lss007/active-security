@@ -3,7 +3,7 @@
   
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Agb  page Content  </h5>
+          <h5>{{__('dashboard.Manage Agb page Content')}}  </h5>
          
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
@@ -11,7 +11,7 @@
    
                         
          
-            <a href="{{route('agb_page_add')}}"><button class="btn btn-teal active mg-b-10">Add  Text</button> </a>
+            <a href="{{route('agb_page_add')}}"><button class="btn btn-teal active mg-b-10">{{__('dashboard.Add Agb text')}}</button> </a>
        
         </h6>
           <div class="table-wrapper">

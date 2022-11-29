@@ -3,7 +3,8 @@
   
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Contacts  Messages  </h5>
+          <h5> 
+            {{__('dashboard.View contact messages')}}  </h5>
          
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
@@ -12,13 +13,10 @@
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
-                
                   <th class="wd-10p">Name </th>
                   <th class="wd-10p">Email</th>
                   <th class="wd-10p">Regarding</th>
                   <th class="wd-10p">Message</th>
-              
-                 
                   <th class="wd-20p">Action</th>
                 </tr>
               </thead>
@@ -26,7 +24,6 @@
                 @if (isset($getContacts) && count($getContacts) > 0)
                 @foreach($getContacts as $getrow)
                 <tr>
-            
                   <td>
                     {{isset($getrow->surname) ?  str_limit($getrow->surname, $limit=20 ) : "NA" }}
                      </td>
@@ -38,26 +35,17 @@
                     </td>
                   <td> 
                     {{isset($getrow->client_message) ?  str_limit($getrow->client_message, $limit=25 ) : "NA" }}
-                  </td>
-              
-            
-                
-        <td>
-            <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"
-            data-toggle="modal" data-target="#modaldemo{{$getrow->id}}">
-              <i class="fa fa-eye"></i></a>
-  
-          
-            <a href="javascript:void(0)"  wire:click.prevent="delete({{$getrow->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-              <i class="fa fa-trash"></i></a>
-  
-                {{-- Modal  --}}
-                
-                {{-- end modal  --}}
-  
-              </td>
-  
-            </tr>
+                  </td> 
+                    <td>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"  data-toggle="modal" data-target="#modaldemo{{$getrow->id}}">
+                          <i class="fa fa-eye"></i></a>
+
+                        <a href="javascript:void(0)"  wire:click.prevent="delete({{$getrow->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                          <i class="fa fa-trash"></i></a>
+                            {{-- Modal  --}}
+                            {{-- end modal  --}}
+                      </td>
+                    </tr>
   
            <!-- LARGE MODAL -->
                 <div id="modaldemo{{$getrow->id}}" class="modal fade">

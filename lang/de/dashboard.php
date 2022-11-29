@@ -51,6 +51,65 @@ return [
     'Manage Privacy page Body Content' => 'Inhalt der Datenschutzseite verwalten',
     'Add Privacy Body Text' => 'Fügen Sie Datenschutztext hinzu',
     'Update Privacy Text'=> 'Datenschutztext aktualisieren',
+      // Agb page 
+    'Manage Agb page Content' =>'Inhalt der Agb-Seite verwalten',
+    'Add Agb text' => 'Agb-Text hinzufügen',
+    'Update Agb page Text'=> 'Text der Agb-Seite aktualisieren',
+     // Services page 
+    'Manage Services page Content' => 'Inhalt der Seite Dienste verwalten',
+    'Add Services' => 'Dienste hinzufügen',
+    'Update Services page' => 'Seite "Dienste aktualisieren"',
+    // services page baner 
+    'Manage Services Pages Banner' => 'Seiten-Banner für Dienste verwalten',
+    'Update Services Pages Banner' => 'Seitenbanner für Dienste aktualisieren',
+    // Company page dashboard screen 
+    'Check out the Company Page section' => 'Schauen Sie sich den Abschnitt Unternehmensseite an',
+    'Update the Company Page section' => 'Aktualisieren Sie den Abschnitt Unternehmensseite',
+    'Add Company Section' => 'Unternehmensabschnitt hinzufügen',
+    // profile section
+    'Manage Company profile section' =>'Abschnitt Unternehmensprofil verwalten',
+    'Update Company Profile section' => 'Abschnitt Unternehmensprofil aktualisieren',
+    'Add company profile section' => 'Fügen Sie den Abschnitt Unternehmensprofil hinzu',
+    // job 
+    'Content of the job page'  => 'Inhalt der Jobseite',
+    'Add content to the job page' => 'Fügen Sie Inhalte zur Jobseite hinzu',
+    'Update the job page content' => 'Aktualisieren Sie den Inhalt der Jobseite',
+    // footer 
+    'Footer contact address' => 'Fußzeile Kontaktadresse',
+    'Update contact address' => 'Kontaktadresse aktualisieren',
+    'Add contact address' => 'Kontaktadresse hinzufügen',
+    'footer call, mail and WhatsApp info:' => 'Fußzeile Anruf, Mail und WhatsApp-Info;',
+    'Update footer call, email and whatsapp info:' => 'Fußzeilenaufruf, E-Mail und WhatsApp-Informationen aktualisieren:',
+    // Contact page 
+    'Contact Page section' => 'Abschnitt Kontaktseite',
+    'Update Contact Page section' => 'Abschnitt „Kontaktseite“ aktualisieren',
+    'Add Contact Page section' => 'Abschnitt Kontaktseite hinzufügen',
+    'View contact messages' => 'Kontaktnachrichten anzeigen',
+      // Social meadia page 
+      'View and manage social media category' => 'Anzeigen und Verwalten der Social-Media-Kategorie',
+      'Add category' => 'Kategorie hinzufügen',
+      'Add social media category' => 'Kategorie für soziale Medien hinzufügen',
+      'Update social media category' => 'Aktualisieren Sie die Social-Media-Kategorie',
+
+       'View and manage social media links' => 'Anzeigen und Verwalten von Social-Media-Links',
+       'Add social media links' => 'Füge Social-Media-Links hinzu',
+       'Update social media links' => 'Aktualisieren Sie die Social-Media-Links',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

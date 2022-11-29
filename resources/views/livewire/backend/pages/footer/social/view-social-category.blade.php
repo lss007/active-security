@@ -3,12 +3,12 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Manage Social Media Category </h5>
+          <h5>{{__('dashboard.View and manage social media category')}}</h5>
     
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">      
-            <a href="{{route('Add_socialMediaCat')}}" class="btn btn-teal active mg-b-10" >Add  Category</a>
+            <a href="{{route('Add_socialMediaCat')}}" class="btn btn-teal active mg-b-10" >{{__('dashboard.Add category')}}</a>
         </h6>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">

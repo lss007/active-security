@@ -2,7 +2,7 @@
   {{-- The whole world belongs to you. --}}
   <div class="sl-pagebody">
       <div class="sl-page-title">
-        <h5>Footer Contact Address
+        <h5>{{__('dashboard.Add contact address')}}
         </h5>
       </div><!-- sl-page-title -->
       <div class="card pd-20 pd-sm-40">
@@ -44,7 +44,7 @@
             <div class="card-header" role="tab" id="headingOne">
               <h6 class="mg-b-0">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                Footer Contact Address
+                  {{__('dashboard.Footer contact address')}}
                 </a>
               </h6>
             </div><!-- card-header -->
@@ -82,7 +82,7 @@
                  <div class="card-header my-3">
                   <h6 class="mg-b-0">
                     <a class="tx-gray-800 transition">
-                    Footer Call, Mail and Whatsaap info; 
+                  {{__('dashboard.footer call, mail and WhatsApp info:')}}
                     </a>
                   </h6>
                 </div><!-- card-header -->
