@@ -3,13 +3,14 @@
 namespace App\Http\Livewire\Backend\Pages\Banner;
 
 use App\Models\HomeBanner;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class EditHomeBanner extends Component
 {
     use WithFileUploads;
     public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph ;
-    public $new_Image ,$homeBannerId;
+    public $new_Image ,$homeBannerId ,$editcropedImg; 
     public function mount($id){
             $this->homeBannerId= $id;
             $this->editHomeBanner = HomeBanner::where('id', $this->homeBannerId)->first();
@@ -24,6 +25,17 @@ class EditHomeBanner extends Component
             
 
  }
+
+ 
+
+ protected $listeners = ['editHomeBannerImg'];
+ 
+ public function editHomeBannerImg($val){       
+    $this->editcropedImg = $val;
+// dd($this->cropedImg);
+}
+
+
     public function render()
     {
         return view('livewire.backend.pages.banner.edit-home-banner')->layout('layouts.backend');
@@ -42,11 +54,24 @@ class EditHomeBanner extends Component
     public function updateHomeBanner(){
         // dd($this->all());
             $this->validate();
-            if($this->new_Image){
-                $fileName = time().'_'.$this->new_Image->getClientOriginalName();
-                $filePath = $this->new_Image->storeAs('Home-banner', $fileName, 'public');
+         
+            if($this->editcropedImg){
+                   // ===========  working ans stora at storage path   =========== 
+                            // $folderPath = public_path('upload/');
+                            $folderPath = Storage::path('public/Home-banner/');
+                            // dd($folderPath);
+                            $image_parts = explode(";base64,", $this->editcropedImg);
+                            $image_type_aux = explode("image/", $image_parts[0]);
+                            $image_type = $image_type_aux[1];
+                            $image_base64 = base64_decode($image_parts[1]);
+                            $imageName = uniqid() . '.png';
+                            $imageFullPath = $folderPath.$imageName;
+                            file_put_contents($imageFullPath, $image_base64);                
+            // ===========  working ans stora at storage path   =========== 
+                // $fileName = time().'_'.$this->new_Image->getClientOriginalName();
+                // $filePath = $this->new_Image->storeAs('Home-banner', $fileName, 'public');
                 HomeBanner::where('id',  $this->homeBannerId)->update([
-                            'banner_image' =>    $fileName,
+                            'banner_image' =>   $imageName ,
                             ]);
                         $notification = array(
                             'message' => 'Banner image Updated',

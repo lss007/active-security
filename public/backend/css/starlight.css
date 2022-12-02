@@ -24,6 +24,103 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ .image_area {
+  position: relative;
+}
+
+.croper_sec img {
+    display: block;
+    max-width: 100%;
+}
+
+.preview {
+    overflow: hidden;
+    width: 160px; 
+    height: 160px;
+    margin: 10px;
+    border: 1px solid red;
+}
+
+.modal-lg{
+    max-width: 1000px !important;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  height: 0;
+  transition: .5s ease;
+  width: 100%;
+}
+
+.image_area:hover .overlay {
+  height: 50%;
+  cursor: pointer;
+}
+
+.text {
+  color: #333;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+ label.cabinet{
+	display: block;
+	cursor: pointer;
+}
+
+label.cabinet input.file{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-30px;
+}
+.upload-demo {
+  display:none;
+}
+.upload-demo.ready {
+  display:block;
+}
+#upload-demo{
+	width: 250px;
+	height: 250px;
+  padding-bottom:25px;
+}
+label.cabinet.uploadStyle {
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  padding: 35px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+label.cabinet.uploadStyle input {
+  position:absolute;
+  left:0;
+  cursor:pointer;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:9;
+  opacity:0;
+}
 @media print {
   *,
   *::before,

@@ -7,17 +7,28 @@
     <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> Admin Panel </title>
+
     <!-- vendor css -->
     <link rel="stylesheet" href="{{asset('backend/css/bracket.css')}}">
     <link href="{{asset('backend/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
+    {{-- croper js files  --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>         --}}
+    <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/dropzone"></script>
+    <script src="https://unpkg.com/cropperjs"></script>
+    {{--  end croper js files  --}}
     {{-- data table css  --}}
     <link href="{{asset('backend/lib/highlightjs/github.css')}}" rel="stylesheet">
     <link href="{{asset('backend//lib/select2/css/select2.min.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/SpinKit/spinkit.css')}}" rel="stylesheet">
     <link href="{{asset('backend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
+    
+
     {{-- end data table css  --}}
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
       <!-- Toaster CSS -->
@@ -89,6 +100,80 @@
     <script src="{{asset('backend/js/starlight.js')}}"></script>
     <script src="{{asset('backend/js/ResizeSensor.js')}}"></script>
     <script src="{{asset('backend/js/dashboard.js')}}"></script>
+    {{-- <script src='https://foliotek.github.io/Croppie/croppie.js'></script> --}}
+    {{-- <script>
+      // Start upload preview image
+      $(".gambar").attr("src", "");
+        var $uploadCrop,
+        tempFilename,
+        rawImg,
+        imageId;
+        function readFile(input) {
+          if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+              $('.upload-demo').addClass('ready');
+              $('#cropImagePop').modal('show');
+                    rawImg = e.target.result;
+                  }
+                  reader.readAsDataURL(input.files[0]);
+              }
+              else {
+                swal("Sorry - you're browser doesn't support the FileReader API");
+            }
+        }
+
+        $uploadCrop = $('#upload-demo').croppie({
+          viewport: {
+            width: 150,
+          },
+          enforceBoundary: false,
+          enableExif: true
+        });
+        $('#cropImagePop').on('shown.bs.modal', function(){
+          // alert('Shown pop');
+          $uploadCrop.croppie('bind', {
+                url: rawImg
+           
+              }).then(function(){
+        
+                console.log('jQuery bind complete');
+              });
+        });
+
+        $('.item-img').on('change', function () { imageId = $(this).data('id'); tempFilename = $(this).val();
+                                                $('#cancelCropBtn').data('id', imageId); readFile(this); });
+        $('#cropImageBtn').on('click', function (ev) {
+          $uploadCrop.croppie('result', {
+            
+            type: 'base64',
+            format: 'jpeg',
+            size: {width: 150}
+          }).then(function (resp) {
+            console.log(resp)
+            $('#item-img-output').attr('src', resp);
+            $('#cropImagePop').modal('hide');
+            var file = dataURLtoFile(resp,'cover.png');
+            // console.log(file.name);
+            Livewire.emit('getCropImg', file.name)
+          });
+        });
+
+        function dataURLtoFile(dataurl, filename) {
+     
+        var arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), 
+            n = bstr.length, 
+            u8arr = new Uint8Array(n);
+            
+        while(n--){
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        
+        return new File([u8arr], filename, {type:mime});
+        }
+    </script> --}}
             {{-- toastr js  --}}
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
             <script>
