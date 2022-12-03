@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 
 use App\Models\HomeSectionTwo;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class AddHomeSection2 extends Component
@@ -10,9 +11,19 @@ class AddHomeSection2 extends Component
     use WithFileUploads;
     public $heading ,$title ,$para1 ,$para2 ,$Image ,$buttonName ,$buttonLink;
 
+    public $getHomeSecImg2;
+
+    protected $listeners = ['getSectionImg2'];
+        
+    public function getSectionImg2($val){   
+
+               $this->getHomeSecImg2 = $val;
+         
+           }
+
     public function mount()
     {
-     $getSection  = HomeSectionTwo::exists();
+     $getSection  = HomeSectionTwo::where('status',1)->exists();
      if($getSection)
      {
          $notification = array(
@@ -33,12 +44,13 @@ class AddHomeSection2 extends Component
         'title' => 'required|string',
         'para1' => 'required ',
         'para2' => 'required',
-        'Image' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
+        'getHomeSecImg2' => 'required', 
         // 'buttonName' => 'required',
         // 'buttonLink' => 'required',
         
     ];
     protected $messages = [
+        'getHomeSecImg2.required' => 'The Image  field is required.',
         
         'para1.required' => 'The paragraph  field is required.',
         'para2.required' => 'The paragraph  field is required.',
@@ -60,13 +72,20 @@ class AddHomeSection2 extends Component
         public function storeHomeSection2(){
             // dd($this->all());
             $this->validate();
-            if($this->Image)  
+            if($this->getHomeSecImg2)  
             {
-                $this->validate([
-                     'Image' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040',
-                     ]);
-                $fileName1 = time().'_'.$this->Image->getClientOriginalName();
-                $filePath1 = $this->Image->storeAs('Home-section', $fileName1, 'public');
+            // ===========  working ans stora at storage path   =========== 
+                            // $folderPath = public_path('upload/');
+                    $folderPath = Storage::path('public/Home-section/');
+                    // dd($folderPath);
+                    $image_parts = explode(";base64,", $this->getHomeSecImg2);
+                    $image_type_aux = explode("image/", $image_parts[0]);
+                    $image_type = $image_type_aux[1];
+                    $image_base64 = base64_decode($image_parts[1]);
+                    $imageName = time() .'_add' . '.png';
+                    $imageFullPath = $folderPath.$imageName;
+                    file_put_contents($imageFullPath, $image_base64);                
+            // ===========  working ans stora at storage path   =========== 
             }
 
                 HomeSectionTwo::create([
@@ -76,7 +95,7 @@ class AddHomeSection2 extends Component
                     'para2' =>     $this->para2 ,
                     'button_name' =>    trim($this->buttonName),
                     'button_link' =>   trim($this->buttonLink), 
-                    'image' =>   $fileName1  ?? Null,
+                    'image' =>   $imageName  ?? Null,
                   ]);
 
         $notification = array(

@@ -9,13 +9,24 @@
 {{-- ========================== --}}
    <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
+   
             @if(isset($homeSectionOne))
-              
+      
             <a href="{{route('editHomesection1',$homeSectionOne->id)}}"> 
               <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
+
+              <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"  wire:click.prevent="delete({{$homeSectionOne->id}})">
+                Delete </a> 
+
             @else
             <a href="{{route('addHomesection1')}}"><button class="btn btn-teal active  mg-b-10">Add</button> </a>
-           @endif
+            @if(isset($trashdata))
+            <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
+              Restore </a>  
+              @endif
+        
+        
+            @endif
           </h6>
        
 

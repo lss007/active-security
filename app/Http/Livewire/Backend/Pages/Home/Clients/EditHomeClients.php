@@ -11,6 +11,16 @@ class EditHomeClients extends Component
 
     public $title ,$name ,$image ,$link ,$clientId  ,$clientIng;
 
+
+
+    
+    protected $listeners = ['addClinetImage'];
+
+
+    public function addClinetImage($val){       
+            $this->storeClientImg = $val;
+        // dd($this->storeClientImg);
+        }
     public function mount($id){
         $this->clientId= $id;
         $this->editHomeclient = HomeClientLogo::where('id', $this->clientId)->where('status',1)->first();

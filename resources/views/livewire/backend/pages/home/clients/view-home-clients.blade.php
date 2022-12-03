@@ -70,6 +70,52 @@
               </tbody>
             </table>
           </div><!-- table-wrapper -->
+
+          @if (isset($trashdata) && count($trashdata) > 0)
+          <div class="card pd-20 pd-sm-40">
+          <h4>Restore Deleteed data   </h4>
+          <div class="table-responsive mg-t-25">
+          <table class="table table-hover table-bordered mg-b-0">
+            <thead class="bg-danger">
+              <tr>
+      
+                <th class="wd-20p">Image</th>
+                <th class="wd-20p">Link</th>
+            
+                <th class="wd-20p">Action</th>
+      
+              </tr>
+            </thead>
+            <tbody>
+            
+              @foreach($trashdata as $keys => $trashed)
+              <tr>
+            
+                <td>   
+                  <img width="100" class="img-fluid" src="{{(!empty($trashed->image)) 
+                    ? asset('storage/Home-clients/'.$trashed->image):asset('no_image.jpg')}}" alt="..." >
+                    </td>
+                <td> {{isset($trashed->link) ? str_limit($trashed->link , $limit=20 ) : "NA" }}</td>
+ 
+      
+                <td>
+      
+                  <button class="btn btn-primary disabled mg-b-10"  wire:click.prevent="restore({{$trashed->id}})">Restore</button>
+      
+                  <button class="btn btn-danger  mg-b-10" wire:click.prevent="fulleDelete({{$trashed->id}})">Delete</button>
+      
+              </td>
+              </tr>
+              @endforeach
+            
+      
+      
+            </tbody>
+          </table>
+          </div>
+          </div>
+      
+          @endif
         </div><!-- card -->
         
       </div><!-- sl-pagebody -->

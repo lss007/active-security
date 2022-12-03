@@ -73,9 +73,6 @@
                     </div>
                   </div><!-- col-4 -->
             
-
-
-
                   <div class="col-lg-12">
                     {{-- <div class="form-group mg-b-10-force">
                       <label class="form-control-label"> Banner Image:  : <span class="tx-danger">*</span></label><br>
@@ -87,42 +84,14 @@
                     
                     <img class="img-fluid " src="{{(isset($this->bannerImage)) 
                       ? $bannerImage->temporaryUrl():asset('no_image.jpg')}}" width="200" > --}}
-                     
-                    {{-- <label class="cabinet center-block uploadStyle">
-                        <figure class="m-0" wire:ignore>
-                          <img src="" class="upload-demo gambar img-responsive img-thumbnail" id="item-img-output" />                          
-                        </figure>
-                        <span>Upload Image here</span>
-                        <input type="file" class="item-img file center-block" name="file_photo"/>
-                      </label>                  
-                      <div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="myModalLabel">
-                                Edit Photo</h4>
-                            </div>
-                            <div class="modal-body">
-                              <div id="upload-demo" class="center-block"></div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="button" id="cropImageBtn" class="btn btn-primary">Crop</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div> --}}
-
-              
-                  <label class="form-control-label"> Banner Image:  : <span class="tx-danger">*</span></label><br>
+                    <label class="form-control-label"> Banner Image:   <span class="tx-danger">*</span></label><br>
                     <div class="row croper_sec">
               
                         <div class="col-md-12">
                           <div class="image_area">
                             <form method="post">
-                              <label for="upload_image" class="cabinet uploadStyle "> 
-                                <img src="" id="uploaded_image" class="img-responsive img-circle" wire:ignore /> 
+                              <label for="upload_image" class="cabinet uploadStyle ">  
+                                <img src="" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  width="50%"/> 
                                 <span>Upload Image</span>                          
                                 <input type="file" name="image" class="image" id="upload_image"  />
                               </label>
@@ -132,19 +101,21 @@
                         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="modalLabel">Crop Image Before Upload</h5>
+                                <div class="modal-header pd-y-20 pd-x-25">
+                          
+                                  <h5 class="modal-title tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="modalLabel">Crop Image Before Upload</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">×</span>
                                   </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body pd-25">
+                           
                                   <div class="img-container">
                                       <div class="row">
                                           <div class="col-md-8">
                                               <img src="" id="sample_image" />
                                           </div>
-                                          <div class="col-md-4">
+                                          <div class="col-md-4 ">
                                               <div class="preview"></div>
                                           </div>
                                       </div>
@@ -159,16 +130,10 @@
                       </div>			
                     </div>
                
-                    @error('cropedImg')<span class="text-danger"> {{$message}}</span>  @enderror  
+                    {{-- @error('addClinetImage')<span class="text-danger"> {{$message}}</span>  @enderror   --}}
                 
                 </div><!-- col-4 -->
 
-               
-
-                 
-
-          
-     
                </div><!-- row -->
      
                <div class="form-layout-footer">
@@ -187,30 +152,7 @@
 
       $(document).ready(function(){
       
-        /*function readURL(input)
-        {
-            if(input.files && input.files[0])
-            {
-              var reader = new FileReader();
-          
-              reader.onload = function(event) {
-                  $('#uploaded_image').attr('src', event.target.result);
-                  $('#uploaded_image').removeClass('img-circle');
-                  $('#upload_image').after('<div align="center" id="crop_button_area"><br /><button type="button" class="btn btn-primary" id="crop">Crop</button></div>')
-              }
-              reader.readAsDataURL(input.files[0]); // convert to base64 string
-            }
-          }
-      
-          $("#upload_image").change(function() {
-            readURL(this);
-            var image = document.getElementById("uploaded_image");
-            cropper = new Cropper(image, {
-              aspectRatio: 1,
-              viewMode: 3,
-              preview: '.preview'
-            });
-        });*/
+
       
         
         var $modal = $('#modal');
@@ -248,10 +190,12 @@
       
         $modal.on('shown.bs.modal', function() {
             cropper = new Cropper(image, {
-              aspectRatio: 1,
+              // aspectRatio: 1,
               viewMode: 3,
-              preview: '.preview'
+              fillColor: '#fff',
+              preview: '.preview',
             });
+          
         }).on('hidden.bs.modal', function() {
              cropper.destroy();
              cropper = null;
@@ -259,10 +203,14 @@
       
         $("#crop").click(function(){
             canvas = cropper.getCroppedCanvas({
-                width: 400,
-                height: 400,
+                // width: 400,
+                // height: 400,
+     
+                fillColor: '#fff',
+                imageSmoothingEnabled: false,
+                imageSmoothingQuality: 'high',
             });
-      
+
             canvas.toBlob(function(blob) {
                 //url = URL.createObjectURL(blob);
                 var reader = new FileReader();
@@ -275,18 +223,7 @@
               $modal.modal('hide');
               $('#uploaded_image').attr('src', base64data);
               
-                    // $.ajax({
-                    //   url: "upload.php",
-                    //     method: "POST",                	
-                    //     data: {image: base64data},
-                    //     success: function(data){
-              
-                    //         console.log(data);
-                    //         $modal.modal('hide');
-                    //         $('#uploaded_image').attr('src', data);
-                    //         alert("success upload image");
-                    //     }
-                    //   });
+                
                  }
             });
           });

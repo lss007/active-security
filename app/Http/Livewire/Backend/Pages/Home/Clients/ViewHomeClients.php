@@ -11,6 +11,8 @@ class ViewHomeClients extends Component
     public function render()
     {
         $this->viewHomeClients = HomeClientLogo::get();
+        $this->trashdata= HomeClientLogo::onlyTrashed()->get();
+
         return view('livewire.backend.pages.home.clients.view-home-clients')->layout('layouts.backend');
     }
 
@@ -51,4 +53,22 @@ class ViewHomeClients extends Component
        );
        return   redirect(request()->header('Referer'))->with($notification);
        }
+
+       public function restore($id){
+        HomeClientLogo::withTrashed()->find($id)->restore();
+        $notification = array(
+           'message' => ' Data Restored successfully',
+           'alert-type' => 'success'
+       );
+       return   redirect(request()->header('Referer'))->with($notification);
+    }
+
+    public function fulleDelete($id){
+        HomeClientLogo::onlyTrashed()->find($id)->forceDelete();
+        $notification = array(
+          'message' => 'Fully  Deleted successfully',
+          'alert-type' => 'error'
+      );
+      return   redirect(request()->header('Referer'))->with($notification);
+      }
 }

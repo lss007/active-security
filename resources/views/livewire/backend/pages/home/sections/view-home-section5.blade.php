@@ -11,9 +11,17 @@
           @if(isset($homeSectionfive))
                     <a href="{{route('edit_Home_Section5',$homeSectionfive->id)}}">
                        <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
+                       <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"   wire:click.prevent="delete({{$homeSectionfive->id}})">
+                        Delete </a> 
                     @else
                     <a href="{{route('Add_Home_Section5')}}">
                       <button class="btn btn-teal active  mg-b-10">Add</button> </a>
+
+
+                      @if(isset($trashdata))
+                      <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
+                        Restore </a>  
+                     @endif
                  @endif
         </h6>
      

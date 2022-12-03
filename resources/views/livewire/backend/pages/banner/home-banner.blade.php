@@ -7,19 +7,7 @@
           <p> {{__('dashboard.Manage Home Page Banner')}} </p>
         </div><!-- sl-page-title -->
 
-        {{-- alert  --}}
 
-       
-@if(Session::has('message') )
-<div class="alert alert-info" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <strong class="d-block d-sm-inline-block-force">Well done!</strong>  {{ Session::get('message') }}
-</div><!-- alert -->
-@endif
-
-{{-- alert --}}
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">    
             <a href="{{route('addHomebanner')}}" class="btn btn-teal active mg-b-10"  > {{__('dashboard.Add Banner')}} </a>

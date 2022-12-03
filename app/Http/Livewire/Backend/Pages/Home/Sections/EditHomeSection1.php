@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 use Livewire\Component;
 
 use App\Models\HomeSectionOne;
+use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 class EditHomeSection1 extends Component
 {
@@ -12,7 +13,14 @@ class EditHomeSection1 extends Component
 
     public $heading,$sub_heading,$paragraph,$main_image,$logo1,$logo2,$logo3 ,$secPostId,$editHomeSec1;
     public $main_img , $logoImg1 ,$logoImg2 ,$logoImg3 ;
+    public $editSecCropedImg1;
 
+    protected $listeners = ['editSection1Img'];
+        
+    public function editSection1Img($val){       
+               $this->editSecCropedImg1 = $val;
+         
+           }
     public function mount($id){
         $this->secPostId = $id;
         $this->editHomeSec1 = HomeSectionOne::where('id', $this->secPostId)->first();
@@ -24,6 +32,16 @@ class EditHomeSection1 extends Component
         $this->logo2 = $this->editHomeSec1->logo2;
         $this->logo3 = $this->editHomeSec1->logo3;
 
+        $getSection1  = HomeSectionOne::where('id', $this->secPostId)->where('status',Null)->exists();
+        if($getSection1)
+        {
+            $notification = array(
+                'message' => 'Access denied ',
+                'alert-type' => 'error'
+            );
+             return redirect()->route('manageHomeSection1')->with( $notification);
+         }
+       
     }
 
     protected $rules = [
@@ -53,16 +71,26 @@ class EditHomeSection1 extends Component
 
 
             
-        if( $this->main_img || $this->logoImg1 || $this->logoImg2 || $this->logoImg3)  {
+        if( $this->editSecCropedImg1 || $this->logoImg1 || $this->logoImg2 || $this->logoImg3)  {
      
-            if($this->main_img){    
-                      $this->validate([
-                            'main_img' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
-                        ]);
-                $fileName1 = time().'_'.$this->main_img->getClientOriginalName();
-                $filePath1 = $this->main_img->storeAs('Home-section', $fileName1, 'public');
-                HomeSectionOne::where('id', $this->secPostId)->update([
-                    'main_image' =>     $fileName1 ,
+            if($this->editSecCropedImg1){    
+         
+                // $fileName1 = time().'_'.$this->main_img->getClientOriginalName();
+                // $filePath1 = $this->main_img->storeAs('Home-section', $fileName1, 'public');
+             // ===========  working ans stora at storage path   =========== 
+                            // $folderPath = public_path('upload/');
+                            $folderPath = Storage::path('public/Home-section/');
+                            // dd($folderPath);
+                            $image_parts = explode(";base64,", $this->editSecCropedImg1);
+                            $image_type_aux = explode("image/", $image_parts[0]);
+                            $image_type = $image_type_aux[1];
+                            $image_base64 = base64_decode($image_parts[1]);
+                            $imageName = uniqid() . '.png';
+                            $imageFullPath = $folderPath.$imageName;
+                            file_put_contents($imageFullPath, $image_base64);                
+            // ===========  working ans stora at storage path   =========== 
+            HomeSectionOne::where('id', $this->secPostId)->update([
+                    'main_image' =>     $imageName ,
                  ]);
             }
              if($this->logoImg1 ){

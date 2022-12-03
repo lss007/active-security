@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 use App\Models\HomeSectionFive;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class EditHomeSection5 extends Component
@@ -12,7 +13,21 @@ class EditHomeSection5 extends Component
     }
     use WithFileUploads;
     public $postId, $heading ,$title ,$para1 ,$para2 ,$Image ,$buttonName ,$buttonLink;
-public $newImg;
+    public $newImg ,$edittHomeImg5;
+
+
+
+    
+
+    protected $listeners = ['editSecImg5'];
+        
+    public function editSecImg5($val){   
+
+               $this->edittHomeImg5 = $val;
+         
+           }
+
+
     public function mount($id){
         $this->postId = $id;
 
@@ -25,6 +40,15 @@ public $newImg;
         $this->buttonName = $this->editHomeSec5->button_name;
         $this->buttonLink = $this->editHomeSec5->button_link;
 
+        $getSection1  = HomeSectionFive::where('id', $this->postId)->where('status',Null)->exists();
+        if($getSection1)
+        {
+            $notification = array(
+                'message' => 'Access denied ',
+                'alert-type' => 'error'
+            );
+             return redirect()->route('ViewHomeSection5')->with( $notification);
+         }
 
 
     }
@@ -58,22 +82,25 @@ public $newImg;
 
         public function update_HomeSection5(){
             //  dd($this->all());
-             $this->validate();
-             if($this->newImg)  
+            
+             if($this->edittHomeImg5)  
              {
-                 $this->validate([
-                      'newImg' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040',
-                      ]);
-                 $fileName1 = time().'_'.$this->newImg->getClientOriginalName();
-                 $filePath1 = $this->newImg->storeAs('Home-section', $fileName1, 'public');
+            // ===========  working ans stora at storage path   =========== 
+                            // $folderPath = public_path('upload/');
+                            $folderPath = Storage::path('public/Home-section/');
+                            // dd($folderPath);
+                            $image_parts = explode(";base64,", $this->edittHomeImg5);
+                            $image_type_aux = explode("image/", $image_parts[0]);
+                            $image_type = $image_type_aux[1];
+                            $image_base64 = base64_decode($image_parts[1]);
+                            $imageName = time() .'_edit' . '.png';
+                            $imageFullPath = $folderPath.$imageName;
+                            file_put_contents($imageFullPath, $image_base64);                
+                    // ===========  working ans stora at storage path   =========== 
+
                  HomeSectionFive::where('id',$this->postId )->update([
-                    'heading' =>    $this->heading,
-                    'title' =>    $this->title,
-                    'para1' =>    $this->para1,
-                    'para2' =>     $this->para2 ,
-                    'button_name' =>    $this->buttonName ?? Null,
-                    'button_link' =>   $this->buttonLink ?? Null,
-                    'image' =>   $fileName1  ?? Null,
+            
+                    'image' =>   $imageName  ?? Null,
                   ]);
 
             $notification = array(
@@ -82,6 +109,7 @@ public $newImg;
              return redirect()->route('ViewHomeSection5')->with($notification);
              }
              else {
+                //  $this->validate();
                 HomeSectionFive::where('id',$this->postId )->update([
                     'heading' =>    $this->heading,
                     'title' =>    $this->title,
