@@ -12,9 +12,10 @@
           <h6 class="card-body-title">    
             <a href="{{route('addHomebanner')}}" class="btn btn-teal active mg-b-10"  > {{__('dashboard.Add Banner')}} </a>
         </h6>
-          <div class="table-wrapper">
-            <table id="datatable1" class="table display responsive nowrap">
-              <thead>
+ 
+              <div class="table-responsive">
+                <table  class="table table-hover table-bordered mg-b-0">
+                  <thead class="bg-info">
                 <tr>
                   <th class="wd-15p">Image </th>
                   <th class="wd-20p">Main Heading</th>
@@ -44,7 +45,7 @@
       <span class="badge badge-danger tx-bold">Inactive</span>
       @endif
     </td>
-  <td>  
+  <td class="text-center">  
       <a href="{{route('editHomebanner',$banner->id)}}" class="btn btn-sm btn-info" title="edit" >
         <i class="fa fa-edit"></i></a>
       <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"

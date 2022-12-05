@@ -18,14 +18,10 @@ class ViewHomeSliders extends Component
     }
     public function render()
     {
-        $viewHomeSlider = HomeSectionSlider::where('title', 'like', '%'.$this->search.'%')->paginate(5);
-
-
-    
-    //    $this->trashdata= HomeSectionSlider::onlyTrashed()->get();
-
+       $viewHomeSlider = HomeSectionSlider::where('title', 'like', '%'.$this->search.'%')->paginate(6);
+       $trashdata = HomeSectionSlider::onlyTrashed()->paginate(3);
         return view('livewire.backend.pages.home.slider.view-home-sliders',[
-            'viewHomeSliders' => $viewHomeSlider,
+            'viewHomeSliders' => $viewHomeSlider, 'trashdatas' =>$trashdata,
         ])->layout('layouts.backend');
 
     }

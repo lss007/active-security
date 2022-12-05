@@ -10,9 +10,9 @@
           <h6 class="card-body-title"> 
             <a href="{{route('addHomeclients')}}" class="btn btn-teal active mg-b-10" >{{__('dashboard.Add Clients')}}</a>
         </h6>
-          <div class="table-wrapper">
-            <table id="datatable1" class="table display responsive nowrap">
-              <thead>
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered mg-b-0">
+            <thead class="bg-info">
                 <tr>
                   {{-- <th class="wd-15p">Title </th>--}}
                   <th class="wd-5p"> No </th> 
@@ -39,7 +39,7 @@
                 <span class="badge badge-danger">Inactive</span>
               @endif
             </td>
-          <td>  
+          <td class="text-center">  
           <a href="{{route('editHomeclients',$clients->id)}}" class="btn btn-sm btn-info" title="edit" >
             <i class="fa fa-edit"></i></a>
             <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"
