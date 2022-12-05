@@ -33,17 +33,34 @@
                   
                    </div>
                  </div><!-- col-4 --> --}}
-                  {{-- <div class="col-lg-12">
 
-                   <div class="form-group">
-                     <label class="form-control-label">Choose Client Image: <span class="tx-danger">*</span></label>
-                     <input type="file" class="form-control"   wire:model="image"  multiple>
-                   @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
-                   </div>
              
-                 </div><!-- col-4 --> --}}
+
+
+                   <div class="col-lg-12">
         
-                  <div class="col-lg-12">
+                    <div class="form-group mg-b-10-force">
+                      <label class="form-control-label"> Choose Client Image:<span class="tx-danger">*</span></label><br>
+                      <label class="custom-file">
+                        <input type="file" id="file" class="custom-file-input" wire:model="image"  multiple >
+                        <span class="custom-file-control"></span>
+                      </label>
+                    </div>
+                    
+                    @if(isset($image))
+                    @foreach( $image as $img )
+                    <img class="img-fluid bg-dark p-2" src="{{$img->temporaryUrl() }}" width="150" >
+                    @endforeach
+                    @else 
+                    <img class="img-fluid" src="{{ asset('no_image.jpg') }}" width="150" >
+                    @endif
+                    <br>
+                    @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
+
+                  </div><!-- col-4 -->
+            
+        
+                  {{-- <div class="col-lg-12">
                       <label class="form-control-label"> Client  Image:   <span class="tx-danger">*</span></label><br>
                       <div class="row croper_sec">
                 
@@ -94,7 +111,7 @@
                  
                     
                  
-                </div><!-- col-12 -->
+                </div><!-- col-12 --> --}}
         
                 
         
@@ -114,7 +131,7 @@
        </div> 
        {{-- card end  --}}
     </div>
-    <script>
+    {{-- <script>
 
       $(document).ready(function(){
       
@@ -154,8 +171,11 @@
         $modal.on('shown.bs.modal', function() {
             cropper = new Cropper(image, {
               // aspectRatio: 1,
-              viewMode: 2,
-              preview: '.preview'
+              // viewMode: 2,
+              autoCropArea : 1,
+              
+              preview: '.preview',
+              fillColor: 'red',
               
             });
         }).on('hidden.bs.modal', function() {
@@ -165,12 +185,18 @@
       
         $("#crop").click(function(){
             canvas = cropper.getCroppedCanvas({
-                // width: 400,
-                // height: 400,
-                aspectRatio: 1,
-                fillColor: '#fff',
-                imageSmoothingEnabled: false,
-                imageSmoothingQuality: 'high',
+              // width: 400,
+              // height: 400,
+              // aspectRatio: 1,
+              // width: 577,
+              // height: 377,
+              // minWidth: 256,
+              // minHeight: 256,
+              maxWidth: 5472,
+              maxHeight: 3648,
+              // fillColor: '#fff',
+              imageSmoothingEnabled: true,
+              imageSmoothingQuality: 'high',
             });
 
             canvas.toBlob(function(blob) {
@@ -179,19 +205,20 @@
                  reader.readAsDataURL(blob); 
                  reader.onloadend = function() {
                     var base64data = reader.result;  
-                  console.log(base64data);
+                  // console.log(base64data);
               Livewire.emit('addClinetImage',  base64data)
         
               $modal.modal('hide');
               $('#uploaded_image').attr('src', base64data);
-              
+              document.getElementById("uploaded_image").style.backgroundColor = "black";
+          
                 
                  }
             });
           });
         
       });
-    </script>
+    </script> --}}
 </div>
 
 

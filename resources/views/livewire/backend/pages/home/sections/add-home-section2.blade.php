@@ -207,6 +207,7 @@
             cropper = new Cropper(image, {
               // aspectRatio: 1,
               viewMode: 3,
+              autoCropArea : 1,
               preview: '.preview'
               
             });
@@ -219,7 +220,7 @@
             canvas = cropper.getCroppedCanvas({
                 // width: 400,
                 // height: 400,
-                aspectRatio: 1,
+                // aspectRatio: 1,
                 fillColor: '#fff',
                 imageSmoothingEnabled: false,
                 imageSmoothingQuality: 'high',

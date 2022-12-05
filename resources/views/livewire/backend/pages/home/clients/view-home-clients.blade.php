@@ -42,6 +42,9 @@
           <td>  
           <a href="{{route('editHomeclients',$clients->id)}}" class="btn btn-sm btn-info" title="edit" >
             <i class="fa fa-edit"></i></a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show"
+            data-toggle="modal" data-target="#modaldemo{{$clients->id}}">
+              <i class="fa fa-eye"></i></a>
             @if($clients->status == 1 )
               <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive"  wire:click.prevent="inactive({{$clients->id}})">
               <i class="fa fa-thumbs-down"></i>
@@ -59,7 +62,26 @@
           </td>
 
     </tr>
+   <!-- LARGE MODAL -->
+   <div id="modaldemo{{$clients->id}}" class="modal fade">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content tx-size-sm">
+        <div class="modal-header pd-x-20">
+          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Client Logo Preview</h6>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pd-20 bg-dark">
 
+          <img width="200" class="img-fluid" src="{{(!empty($clients->image))  
+            ? asset('storage/Home-clients/'.$clients->image):asset('no_image.jpg')}}" alt="..." >
+          
+        </div><!-- modal-body -->
+       
+      </div>
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
 
        @endforeach
     @else

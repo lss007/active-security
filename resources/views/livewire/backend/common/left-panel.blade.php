@@ -32,7 +32,7 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column  ">
-        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner') ) active @else '' @endif">{{__('leftpane.Home banner')}} </a></li>
+        <li class="nav-item"><a href="{{route('viewHomebanner')}}" class="nav-link @if(Route::is('viewHomebanner')  ) active @else '' @endif">{{__('leftpane.Home banner')}} </a></li>
         <li class="nav-item"><a href="{{route('manageHomeSection1')}}" class="nav-link @if(Route::is('manageHomeSection1') ) active @else '' @endif">{{__('leftpane.Home section1')}} </a></li>
         <li class="nav-item"><a href="{{route('viewHomeSection2')}}" class="nav-link @if(Route::is('viewHomeSection2') ) active @else '' @endif">{{__('leftpane.Home section2')}} </a></li>
         <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> {{__('leftpane.Client logo')}}</a></li>

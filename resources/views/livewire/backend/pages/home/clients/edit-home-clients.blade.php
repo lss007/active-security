@@ -21,22 +21,34 @@
                     @error('title')<span class="text-danger"> {{$message}}</span>  @enderror  
                 </div>
                 </div><!-- col-4 --> --}}
-          
-        
-        
-            
+                {{-- <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label"> link: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="url" wire:model="button_link"  placeholder="Button link">
+                    @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  </div>
+                </div><!-- col-4 --> --}}
                   {{-- <div class="col-lg-4">
                    <div class="form-group">
-                     <label class="form-control-label"> link: <span class="tx-danger">*</span></label>
+                     <label class="form-control-label"> Client Image: <span class="tx-danger">*</span></label>
                      <input class="form-control" type="url" wire:model="button_link"  placeholder="Button link">
                      @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
-                  
                    </div>
                  </div><!-- col-4 --> --}}
                  <div class="col-lg-12">
-                  <label class="form-control-label"> Client  Image:   <span class="tx-danger">*</span></label><br>
-                  <div class="row croper_sec">
-            
+                  <div class="form-group mg-b-10-force">
+                    <label class="form-control-label"> Edit/Update Client Image:<span class="tx-danger">*</span></label><br>
+                    <label class="custom-file">
+                      <input type="file" id="file" class="custom-file-input" wire:model="clientIng"   >
+                      <span class="custom-file-control"></span>
+                    </label>
+                  </div>
+                  <img class="img-fluid bg-dark p-2 {{isset($clientIng) ? 'd-none' :  ''}}" src="{{(!empty($this->image)) 
+                    ? asset('storage/Home-clients/'.$this->image):asset('no_image.jpg')}}" width="100" >
+                  @if(isset($clientIng))
+                   <img id="output" src="{{$clientIng->temporaryUrl()}}" width="150" class="bg-dark p-2" > @endif
+                  @error('newimage')<span class="text-danger"> {{$message}}</span>  @enderror 
+                  {{-- <div class="row croper_sec">
                       <div class="col-md-12">
                         <div class="image_area">
                           <form method="post">
@@ -48,9 +60,7 @@
                           </form>
                         </div>
                       </div>
-
                      @error('getSectionCropedImg')<span class="text-danger"> {{$message}}</span>  @enderror  
-
                       <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
@@ -79,27 +89,14 @@
                           </div>
                         </div>
                     </div>			
-                  </div>
-             
-                  @error('cropedImg')<span class="text-danger"> {{$message}}</span>  @enderror  
-              
-             
+                  </div> --}}
             </div><!-- col-12 -->
-        
-              
-        
-                
-      
-         
-        
               </div><!-- row -->
-        
               <div class="form-layout-footer">
                 <button class="btn btn-info mg-r-5" type="submit" wire:loading.attr="disabled">Update</button>
                <div  wire:loading class="pd-x-20">
                    <img src="https://paladins-draft.com/img/circle_loading.gif" width="64px" height="64" >
                </div>
-            
               </div><!-- form-layout-footer -->
             </div><!-- form-layout -->
         </form>

@@ -190,6 +190,7 @@
             cropper = new Cropper(image, {
               // aspectRatio: 1,
               viewMode: 3,
+              autoCropArea : 1,
               preview: '.preview'
               
             });

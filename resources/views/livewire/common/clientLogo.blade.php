@@ -1,5 +1,5 @@
 @php
-            $getlogo = DB::table('home_client_logos')->where('status',1)->get();
+            $getlogo = DB::table('home_client_logos')->where('status',1)->whereNull('deleted_at')->get();
 @endphp
 
 <section>

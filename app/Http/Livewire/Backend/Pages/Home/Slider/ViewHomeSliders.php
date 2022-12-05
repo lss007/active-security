@@ -4,25 +4,41 @@ namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 
 use App\Models\HomeSectionSlider;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ViewHomeSliders extends Component
 {
-    public $trashdata , $viewHomeSlider;
+    use WithPagination;
+
+    public $trashdata ,$search='' ;
+ 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
     public function render()
     {
-        $this->viewHomeSlider = HomeSectionSlider::get();
+        $viewHomeSlider = HomeSectionSlider::where('title', 'like', '%'.$this->search.'%')->paginate(5);
 
-       $this->trashdata= HomeSectionSlider::onlyTrashed()->get();
 
-        return view('livewire.backend.pages.home.slider.view-home-sliders')->layout('layouts.backend');
+    
+    //    $this->trashdata= HomeSectionSlider::onlyTrashed()->get();
+
+        return view('livewire.backend.pages.home.slider.view-home-sliders',[
+            'viewHomeSliders' => $viewHomeSlider,
+        ])->layout('layouts.backend');
+
     }
     public function deleteSlider($id){
+        // dd($this->id);
+        $products = HomeSectionSlider::whereKey($this->id);
+        $products->delete();
         HomeSectionSlider::destroy($id);
         $notification = array(
            'message' => 'Home Slider Trashed',
            'alert-type' => 'info'
        );
-       return   redirect(request()->header('Referer'))->with($notification);
+       return   redirect()->route('viewHomesliders')->with($notification);
     }
 
     // retore 
@@ -32,7 +48,7 @@ class ViewHomeSliders extends Component
            'message' => 'Home Slider Restored successfully',
            'alert-type' => 'Success'
        );
-       return   redirect(request()->header('Referer'))->with($notification);
+       return   redirect()->route('viewHomesliders')->with($notification);
     }
 
     public function fulleDelete($id){
@@ -41,7 +57,7 @@ class ViewHomeSliders extends Component
         'message' => 'Home Slider Deleted successfully',
         'alert-type' => 'error'
     );
-    return   redirect(request()->header('Referer'))->with($notification);
+    return   redirect()->route('viewHomesliders')->with($notification);
     }
 
     public function  inactive($id){
@@ -53,7 +69,7 @@ class ViewHomeSliders extends Component
            'message' => 'Home slider status is Inactive',
            'alert-type' => 'warning'
        );
-       return   redirect(request()->header('Referer'))->with($notification);
+       return   redirect()->route('viewHomesliders')->with($notification);
       }
       public function  active($id){
         HomeSectionSlider::where('id', $id)->update([
@@ -64,7 +80,7 @@ class ViewHomeSliders extends Component
            'message' => 'Home Slider status is Active ',
            'alert-type' => 'success'
        );
-       return   redirect(request()->header('Referer'))->with($notification);
+       return   redirect()->route('viewHomesliders')->with($notification);
 
       }
 }

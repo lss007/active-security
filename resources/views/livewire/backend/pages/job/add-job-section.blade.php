@@ -91,8 +91,11 @@
                             </label>
                           </div>
                           
-                          @if(isset($image)) <img id="output" src="{{$image->temporaryUrl()}}" width="150" > @endif
-                          @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
+                          @if(isset($image)) 
+                          <img id="output" src="{{$image->temporaryUrl()}}" width="150" > 
+                          @endif
+                          @error('image')<span class="text-danger"> {{$message}}</span> 
+                           @enderror  
                       
                       </div><!-- col-4 -->
             

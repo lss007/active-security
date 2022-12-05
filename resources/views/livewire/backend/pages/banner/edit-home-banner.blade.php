@@ -81,7 +81,7 @@
                             <form method="post">
                               <label for="upload_image" class="cabinet uploadStyle "> 
                                 <img src="{{(isset($this->bannerImage)) 
-                                  ? asset('storage/Home-banner/'.$this->bannerImage):asset('no_image.jpg')}}" id="uploaded_image" class="img-responsive img-fluid rounded" wire:ignore  width="50%"/> 
+                                  ? asset('storage/Home-banner/'.$this->bannerImage):asset('no_image.jpg')}}" id="uploaded_image" class="img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
                                 <span>Upload Image</span>                          
                                 <input type="file" name="image" class="image" id="upload_image"  />
                               </label>
@@ -181,7 +181,7 @@
       $modal.on('shown.bs.modal', function() {
           cropper = new Cropper(image, {
             // aspectRatio: 1,
-
+            autoCropArea : 1,
             viewMode: 3,
             preview: '.preview'
           });

@@ -91,7 +91,7 @@
                           <div class="image_area">
                             <form method="post">
                               <label for="upload_image" class="cabinet uploadStyle ">  
-                                <img src="" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  width="50%"/> 
+                                <img src="" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
                                 <span>Upload Image</span>                          
                                 <input type="file" name="image" class="image" id="upload_image"  />
                               </label>
@@ -192,6 +192,7 @@
             cropper = new Cropper(image, {
               // aspectRatio: 1,
               viewMode: 3,
+              autoCropArea : 1,
               fillColor: '#fff',
               preview: '.preview',
             });
@@ -205,9 +206,7 @@
             canvas = cropper.getCroppedCanvas({
                 // width: 400,
                 // height: 400,
-     
-                fillColor: '#fff',
-                imageSmoothingEnabled: false,
+                imageSmoothingEnabled: true,
                 imageSmoothingQuality: 'high',
             });
 

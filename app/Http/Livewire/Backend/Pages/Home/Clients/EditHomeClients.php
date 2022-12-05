@@ -14,17 +14,25 @@ class EditHomeClients extends Component
 
 
     
-    protected $listeners = ['addClinetImage'];
+    // protected $listeners = ['addClinetImage'];
 
 
-    public function addClinetImage($val){       
-            $this->storeClientImg = $val;
-        // dd($this->storeClientImg);
-        }
+    // public function addClinetImage($val){       
+    //         $this->storeClientImg = $val;
+    //     // dd($this->storeClientImg);
+    //     }
     public function mount($id){
         $this->clientId= $id;
         $this->editHomeclient = HomeClientLogo::where('id', $this->clientId)->where('status',1)->first();
-
+        if( $this->editHomeclient != Null){
+            $this->image  =  $this->editHomeclient->image;
+        }else {
+            $notification = array(
+                'message' => 'Not Editable',
+                'alert-type' => 'error'
+            );
+            return redirect()->route('viewHomeclients')->with($notification);
+        }
     }
     public function render()
     {
@@ -32,11 +40,11 @@ class EditHomeClients extends Component
     }
 
     protected $rules = [
-        'clientIng.*' =>  'required|image|mimes:jpg,png,jpeg,svg,webp|max:1040', 
+        'clientIng' =>  'required|image|mimes:jpg,png,jpeg,svg,webp|max:1040', 
     ];
 
    private function resetInputFields(){
-        $this->image = '';
+        $this->clientIng = '';
    
         }
 
@@ -44,11 +52,10 @@ public function saveHomeclients(){
 
     if($this->clientIng)  
     {
-        $fileName = time().'_'.$this->clientIng->getClientOriginalName();
+        $fileName = time().'_up'.$this->clientIng->getClientOriginalName();
             $filePath = $this->clientIng->storeAs('Home-clients', $fileName, 'public');
              HomeClientLogo::where('id', $this->clientId)->update([
-                     'image' =>    $fileName,
-                 ]);
+                     'image' =>    $fileName, ]);
         $notification = array(
             'message' => 'Home Client Updated',
             'alert-type' => 'info'

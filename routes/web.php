@@ -193,6 +193,8 @@ Route::group(['prefix' =>'manage-home'], function () {
         // View Home Sliders
          Route::get('/view-home/slider', ViewHomeSliders::class)->name('viewHomesliders');
          Route::get('/add-home/slider', AddHomeSliders::class)->name('addHomesliders');
+      
+
          Route::get('/edit-home/slider/{id}', EditHomeSliders::class)->name('editHomesliders');
         // ViewHomeSection5
          Route::get('/view-home/section/five', ViewHomeSection5::class)->name('ViewHomeSection5');
