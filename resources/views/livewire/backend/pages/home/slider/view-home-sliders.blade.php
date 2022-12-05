@@ -152,52 +152,52 @@
             
         </div><!-- card -->
 {{--============================== start trashed data ============================== --}}
-@if (isset($trashdatas) && count($trashdatas) > 0)
-<div class="card pd-20 pd-sm-40">
-  <h2>Restore Deleteed Slider   </h2>
-  <div class="table-responsive mg-t-25">
-    <table class="table table-hover table-bordered mg-b-0">
-      <thead class="bg-danger">
-        <tr>
-    
-          <th class="wd-15p">Image</th>
-          <th class="wd-20p">Title</th>
-          <th class="wd-40p">Description</th>
-          <th>Action</th>
+          @if (isset($trashdatas))
+          <div class="card pd-20 pd-sm-40">
+            <h2>Restore Deleteed Slider   </h2>
+            <div class="table-responsive mg-t-25">
+              <table class="table table-hover table-bordered mg-b-0">
+                <thead class="bg-danger">
+                  <tr>
+              
+                    <th class="wd-15p">Image</th>
+                    <th class="wd-20p">Title</th>
+                    <th class="wd-40p">Description</th>
+                    <th>Action</th>
 
-        </tr>
-      </thead>
-      <tbody>
-      
-        @foreach($trashdatas as $keys => $trashed)
-        <tr>
-     
-          <td>   
-            <img width="300" class="img-fluid" src="{{(!empty($trashed->image))  
-            ? asset('storage/Home-slider/'.$trashed->image):asset('no_image.jpg')}}" alt="..." >
-              </td>
-          <td> {{isset($trashed->title) ? str_limit($trashed->title , $limit=20 ) : "NA" }}</td>
-          <td> {!!str_limit($trashed->description, $limit=20 ) !!}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  @foreach($trashdatas as $keys => $trashed)
+                  <tr>
+              
+                    <td>   
+                      <img width="300" class="img-fluid" src="{{(!empty($trashed->image))  
+                      ? asset('storage/Home-slider/'.$trashed->image):asset('no_image.jpg')}}" alt="..." >
+                        </td>
+                    <td> {{isset($trashed->title) ? str_limit($trashed->title , $limit=20 ) : "NA" }}</td>
+                    <td> {!!str_limit($trashed->description, $limit=20 ) !!}</td>
 
-          <td>
+                    <td>
 
-            <button class="btn btn-primary disabled mg-b-10"  wire:click.prevent="restore({{$trashed->id}})">Restore</button>
+                      <button class="btn btn-primary disabled mg-b-10"  wire:click.prevent="restore({{$trashed->id}})">Restore</button>
 
-            <button class="btn btn-danger  mg-b-10" wire:click.prevent="fulleDelete({{$trashed->id}})">Delete</button>
+                      <button class="btn btn-danger  mg-b-10" wire:click.prevent="fulleDelete({{$trashed->id}})">Delete</button>
 
-        </td>
-        </tr>
-        @endforeach
-     
+                  </td>
+                  </tr>
+                  @endforeach
+              
 
-    
-      </tbody>
-    </table>
-  </div>
-  {{ $trashdatas->links("pagination::bootstrap-4") }}
-</div>
+              
+                </tbody>
+              </table>
+            </div>
+            {{ $trashdatas->links("pagination::bootstrap-4") }}
+          </div>
 
-@endif  
+          @endif  
 {{--============================== end trashed data ============================== --}}
 
       </div><!-- sl-pagebody -->

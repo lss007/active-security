@@ -65,7 +65,7 @@
                   @if(isset($image))  <img  src="{{$image->temporaryUrl()}}" width="200" > @endif
                  @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
              </div><!-- col-4 --> --}}
-         
+          <!-- crop image col-12 -->
              <div class="col-lg-12">
  
               <label class="form-control-label"> Upload Slider Image:   <span class="tx-danger">*</span></label><br>
@@ -116,7 +116,8 @@
          
               @error('sliderCropedImg')<span class="text-danger"> {{$message}}</span>  @enderror  
           
-          </div><!-- col-4 -->
+          </div>
+          <!-- crop image col-12 -->
               </div><!-- row -->
         
               <div class="form-layout-footer">
