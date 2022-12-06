@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('title')->nullable();
             $table->text('banner_paragaph')->nullable();
             $table->string('banner_image')->nullable();
+            $table->string('tablet_banner')->nullable();
+            $table->string('mobile_banner')->nullable();
             $table->string('side_img')->nullable();
             $table->text('button_text')->nullable();
             $table->text('button_link')->nullable();

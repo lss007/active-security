@@ -145,7 +145,7 @@
             </p>
         
             
-            {{ $viewHomeSliders->links("pagination::bootstrap-4") }}
+            {{ $viewHomeSliders->links() }}
 
 
 

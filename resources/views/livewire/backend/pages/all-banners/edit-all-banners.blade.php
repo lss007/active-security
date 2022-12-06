@@ -102,7 +102,8 @@
                     <div class="image_area">
                       <form method="post">
                         <label for="uploadallBannerImg" class="cabinet uploadStyle ">  
-                          <img src="" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
+                          <img src="{{(isset($this->bannerImage))? asset('storage/All-banner/'.$this->bannerImage):asset('no_image.jpg')}}" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded"
+                           wire:ignore  style="max-height: auto ; width:200px;"/> 
                           <span>Upload Banner Image</span>                          
                           <input type="file" name="image" class="image" id="uploadallBannerImg"  />
                         </label>

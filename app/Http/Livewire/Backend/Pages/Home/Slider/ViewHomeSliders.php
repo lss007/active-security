@@ -11,7 +11,8 @@ class ViewHomeSliders extends Component
     use WithPagination;
 
     public $trashdata ,$search='' ;
- 
+    protected $paginationTheme = 'bootstrap';
+
     public function updatingSearch()
     {
         $this->resetPage();

@@ -10,18 +10,27 @@ class ViewAllBanners extends Component
 {
 
     use WithPagination;
-    public $search='' ;
+    public   $search='' ;
+    private  $viewallBanner;
+    protected $paginationTheme = 'bootstrap';
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+ 
     public function render()
     {
 
-        $viewallBanner = AllPagesBanner::join('page_categories', 'all_pages_banners.cat_id','page_categories.id')
-        ->select('all_pages_banners.*','page_categories.page_cat_name')->where('heading', 'like', '%'.$this->search.'%')->orWhere('title', 'LIKE', '%'.$this->search.'%')->paginate(10);
- 
+        $this->viewallBanner = AllPagesBanner::join('page_categories', 'all_pages_banners.cat_id','page_categories.id')
+        ->select('all_pages_banners.*','page_categories.page_cat_name')
+        ->where('heading', 'like', '%'.trim($this->search).'%')
+        ->orWhere('title', 'like', '%'.trim($this->search).'%')->paginate(5);
+        // ->when($this->search, fn ($query, $search) => $query->where('heading', 'like', '%' . $search . '%'))
       
         $trashdata= AllPagesBanner::onlyTrashed()->paginate(3);
  
         return view('livewire.backend.pages.all-banners.view-all-banners',[
-            'viewallBanners' => $viewallBanner, 'trashdatas' => $trashdata,
+            'viewallBanners' => $this->viewallBanner, 'trashdatas' => $trashdata,
         ])->layout('layouts.backend');
     }
 

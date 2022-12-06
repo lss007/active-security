@@ -9,29 +9,46 @@ use Livewire\WithFileUploads;
 class EditHomeBanner extends Component
 {
     use WithFileUploads;
-    public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph ;
-    public $new_Image ,$homeBannerId ,$editcropedImg; 
+    public $Heading ,$Title,$bannerImage ,$tabletBanner ,$mobileBanner ,$buttonText ,$button_link,$BannerParagaph ;
+    public $new_Image ,$homeBannerId ,$editcropedImg ,$editcropedImg2,$editcropedImg3; 
     public function mount($id){
             $this->homeBannerId= $id;
             $this->editHomeBanner = HomeBanner::where('id', $this->homeBannerId)->first();
-            $this->Heading =  $this->editHomeBanner->heading; 
-            $this->Title  =  $this->editHomeBanner->title;
-            $this->BannerParagaph = $this->editHomeBanner->banner_paragaph;
-            $this->bannerImage = $this->editHomeBanner->banner_image;
-            $this->buttonText = $this->editHomeBanner->button_text	;
-            $this->button_link = $this->editHomeBanner->button_link;
 
 
-            
-
+            if( $this->editHomeBanner != Null){
+                $this->Heading =  $this->editHomeBanner->heading; 
+                $this->Title  =  $this->editHomeBanner->title;
+                $this->BannerParagaph = $this->editHomeBanner->banner_paragaph;
+                $this->bannerImage = $this->editHomeBanner->banner_image;
+                $this->tabletBanner = $this->editHomeBanner->tablet_banner;
+                $this->mobileBanner = $this->editHomeBanner->mobile_banner;
+                $this->buttonText = $this->editHomeBanner->button_text	;
+                $this->button_link = $this->editHomeBanner->button_link;
+            }else {
+                $notification = array(
+                    'message' => 'Not Editable',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('viewHomebanner')->with($notification);
+            }
+    
  }
 
  
 
- protected $listeners = ['editHomeBannerImg'];
+ protected $listeners = ['editHomeBannerImg' ,'editHomeBannerImg2','editHomeBannerImg3'];
  
  public function editHomeBannerImg($val){       
     $this->editcropedImg = $val;
+// dd($this->cropedImg);
+}
+public function editHomeBannerImg2($val){       
+    $this->editcropedImg2 = $val;
+// dd($this->cropedImg);
+}
+public function editHomeBannerImg3($val){       
+    $this->editcropedImg3 = $val;
 // dd($this->cropedImg);
 }
 
@@ -44,19 +61,29 @@ class EditHomeBanner extends Component
         'Heading' => 'required',
         'Title' => 'required',
         'BannerParagaph' => 'required', 
-    
+        // 'editcropedImg' => 'required', 
+        // 'editcropedImg2' => 'required', 
+        // 'editcropedImg3' => 'required', 
     ];
+    // protected $messages = [
+    //     'editcropedImg.required' => 'The Banner Image field is required.',
+    //     'editcropedImg2.required' => 'The Tablet Banner  field is required.',
+    //     'editcropedImg3.required' => 'The Mobile Banner  field is required.',
+    //   ];
     private function resetInputFields(){
         $this->Title = '';
         $this->Heading = '';
         $this->BannerParagaph = '';
+        $this->editcropedImg = '';
+        $this->editcropedImg2 = '';
+        $this->editcropedImg3 = '';
         }
     public function updateHomeBanner(){
         // dd($this->all());
-            $this->validate();
+            // $this->validate();
          
             if($this->editcropedImg){
-                   // ===========  working ans stora at storage path   =========== 
+            // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/Home-banner/');
                             // dd($folderPath);
@@ -64,14 +91,44 @@ class EditHomeBanner extends Component
                             $image_type_aux = explode("image/", $image_parts[0]);
                             $image_type = $image_type_aux[1];
                             $image_base64 = base64_decode($image_parts[1]);
-                            $imageName = uniqid() . '.png';
+                            $imageName = time().'_up_desk' . '.png';
                             $imageFullPath = $folderPath.$imageName;
                             file_put_contents($imageFullPath, $image_base64);                
             // ===========  working ans stora at storage path   =========== 
-                // $fileName = time().'_'.$this->new_Image->getClientOriginalName();
-                // $filePath = $this->new_Image->storeAs('Home-banner', $fileName, 'public');
+            if($this->editcropedImg2){
+                            // ===========  working ans stora at storage path   =========== 
+                            // $folderPath = public_path('upload/');
+                            $folderPath2 = Storage::path('public/Home-banner/');
+                            // dd($folderPath);
+                            $image_parts2 = explode(";base64,", $this->editcropedImg2);
+                            $image_type_aux2 = explode("image/", $image_parts2[0]);
+                            $image_type2 = $image_type_aux2[1];
+                            $image_base642 = base64_decode($image_parts2[1]);
+                            $imageName2 = time().'_up_tab' . '.png';
+                            $imageFullPath2 = $folderPath2.$imageName2;
+                            file_put_contents($imageFullPath2, $image_base642);                
+            // ===========  working ans stora at storage path   =========== 
+            }
+            if($this->editcropedImg3){
+                            // ===========  working ans stora at storage path   =========== 
+                            // $folderPath = public_path('upload/');
+                            $folderPath3 = Storage::path('public/Home-banner/');
+                            // dd($folderPath);
+                            $image_parts3 = explode(";base64,", $this->editcropedImg3);
+                            $image_type_aux3 = explode("image/", $image_parts3[0]);
+                            $image_type3 = $image_type_aux3[1];
+                            $image_base643 = base64_decode($image_parts3[1]);
+                            $imageName3 = time().'_up_mob' . '.png';
+                            $imageFullPath3 = $folderPath3.$imageName3;
+                            file_put_contents($imageFullPath3, $image_base643);                
+            // ===========  working ans stora at storage path   =========== 
+            }
+   
                 HomeBanner::where('id',  $this->homeBannerId)->update([
                             'banner_image' =>   $imageName ,
+                            'tablet_banner' =>   $imageName2 ,
+                            'mobile_banner' =>   $imageName3 ,
+
                             ]);
                         $notification = array(
                             'message' => 'Banner image Updated',

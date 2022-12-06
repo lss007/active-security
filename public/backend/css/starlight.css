@@ -24,7 +24,9 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
+.img-container .pointerNone {
+  pointer-events: none;
+}
  .image_area {
   position: relative;
 }
@@ -3268,6 +3270,15 @@ tbody.collapse.show {
   .navbar-expand-md > .container-fluid {
     padding-right: 0;
     padding-left: 0;
+  }
+  .croper_sec .modal-dialog.modal-lg {
+    width: 94%;
+  }
+  .cropper-container.cropper-bg {
+    width: 100% !important;
+  }
+  .cropper-crop-box {
+    width: 100% !important;
   }
 }
 @media (min-width: 768px) {

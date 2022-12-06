@@ -126,7 +126,7 @@
         </p>
     
         
-        {{ $viewallBanners->links("pagination::bootstrap-4") }}
+        {{ $viewallBanners->links() }}
     {{--============================== start trashed data ============================== --}}
     @if (isset($trashdatas ) && count($trashdatas) > 0)
     <div class="card pd-20 pd-sm-40">
