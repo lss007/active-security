@@ -81,7 +81,8 @@ public function editHomeBannerImg3($val){
     public function updateHomeBanner(){
         // dd($this->all());
             // $this->validate();
-         
+               
+        if( $this->editcropedImg || $this->editcropedImg2 || $this->editcropedImg3 )  {
             if($this->editcropedImg){
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
@@ -93,7 +94,12 @@ public function editHomeBannerImg3($val){
                             $image_base64 = base64_decode($image_parts[1]);
                             $imageName = time().'_up_desk' . '.png';
                             $imageFullPath = $folderPath.$imageName;
-                            file_put_contents($imageFullPath, $image_base64);                
+                            file_put_contents($imageFullPath, $image_base64);    
+                            HomeBanner::where('id',  $this->homeBannerId)->update([
+                                'banner_image' =>   $imageName ,
+                                ]);
+            }
+
             // ===========  working ans stora at storage path   =========== 
             if($this->editcropedImg2){
                             // ===========  working ans stora at storage path   =========== 
@@ -108,6 +114,12 @@ public function editHomeBannerImg3($val){
                             $imageFullPath2 = $folderPath2.$imageName2;
                             file_put_contents($imageFullPath2, $image_base642);                
             // ===========  working ans stora at storage path   =========== 
+            HomeBanner::where('id',  $this->homeBannerId)->update([
+         
+                'tablet_banner' =>   $imageName2 ,
+        
+
+                ]);
             }
             if($this->editcropedImg3){
                             // ===========  working ans stora at storage path   =========== 
@@ -122,20 +134,23 @@ public function editHomeBannerImg3($val){
                             $imageFullPath3 = $folderPath3.$imageName3;
                             file_put_contents($imageFullPath3, $image_base643);                
             // ===========  working ans stora at storage path   =========== 
-            }
-   
-                HomeBanner::where('id',  $this->homeBannerId)->update([
-                            'banner_image' =>   $imageName ,
-                            'tablet_banner' =>   $imageName2 ,
-                            'mobile_banner' =>   $imageName3 ,
+            HomeBanner::where('id',  $this->homeBannerId)->update([
+           
+                'mobile_banner' =>   $imageName3 ,
 
-                            ]);
-                        $notification = array(
-                            'message' => 'Banner image Updated',
-                            'alert-type' => 'info'
-                        );
-                        return redirect()->route('viewHomebanner')->with($notification);
-            }else{
+                ]);
+            }
+            // end inner if 
+   
+            $notification = array(
+                'message' => 'Banner image Updated',
+                'alert-type' => 'info'
+            );
+            return redirect()->route('viewHomebanner')->with($notification);
+                 
+            }
+            // end outer if 
+         else{
                 HomeBanner::where('id',  $this->homeBannerId)->update([
                         'heading' =>    $this->Heading,
                         'title' =>    $this->Title,
