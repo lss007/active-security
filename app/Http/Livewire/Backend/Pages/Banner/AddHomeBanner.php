@@ -55,7 +55,7 @@ class AddHomeBanner extends Component
 
         public function saveHomeBanner(){
            
-                // $this->validate();
+                $this->validate();
             if($this->cropedImg)  
             {
                 // $this->validate([

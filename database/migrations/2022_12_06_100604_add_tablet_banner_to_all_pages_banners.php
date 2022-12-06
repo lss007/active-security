@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('home_banners', function (Blueprint $table) {
+        Schema::table('all_pages_banners', function (Blueprint $table) {
+            //
             $table->string('tablet_banner')->after('banner_image')->nullable();
             $table->string('mobile_banner')->after('tablet_banner')->nullable();
         });
@@ -26,11 +27,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('home_banners', function (Blueprint $table) {
+        Schema::table('all_pages_banners', function (Blueprint $table) {
             //
             $table->dropColumn('tablet_banner');
             $table->dropColumn('mobile_banner');
-
         });
     }
 };

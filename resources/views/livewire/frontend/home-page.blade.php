@@ -2,7 +2,22 @@
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if(isset($homeBanner))
     <section>
-      <div class="bannerSection " style="background-image: url('{{asset('storage/Home-banner/'.$homeBanner->banner_image)}}')">
+      <style>
+        .bannerSection {
+          background-image: url('{{asset('storage/Home-banner/'.$homeBanner->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection {
+            background-image: url('{{asset('storage/Home-banner/'.$homeBanner->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection {
+            background-image: url('{{asset('storage/Home-banner/'.$homeBanner->mobile_banner)}}');
+          }
+        }
+      </style>
+      <div class="bannerSection ">
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">{{ isset($homeBanner->heading) ? $homeBanner->heading : "NA"}}</h1>

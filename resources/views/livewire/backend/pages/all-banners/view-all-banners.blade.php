@@ -102,12 +102,30 @@
                   </span>
                 </p>
     
-                <span class="text-primary"> Banner Image :</span>
-                 <hr> 
-                 
-                <img width="300" class="img-fluid" src="{{(!empty($banner->banner_image))  
-                  ? asset('storage/All-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." >
-                
+      
+                <div class="row">
+                  <div class="col-md-4">
+                    <span class="text-primary">Desktop Banner Image :</span>
+                    <hr> 
+                    <img width="200" class="img-fluid" src="{{(!empty($banner->banner_image))  
+                    ? asset('storage/All-banner/'.$banner->banner_image):asset('no_image.jpg')}}" alt="..." >
+                  </div>
+                  <div class="col-md-4">
+                    <span class="text-primary">Tablet Banner Image :</span>
+                    <hr> 
+                    <img width="200" class="img-fluid" src="{{(!empty($banner->tablet_banner))  
+                    ? asset('storage/All-banner/'.$banner->tablet_banner):asset('no_image.jpg')}}" alt="..." >
+                  </div>
+                  <div class="col-md-4">
+                    <span class="text-primary">Mobile Banner Image :</span>
+                    <hr> 
+                    <img width="200" class="img-fluid" src="{{(!empty($banner->mobile_banner))  
+                    ? asset('storage/All-banner/'.$banner->mobile_banner):asset('no_image.jpg')}}" alt="..." >
+                  </div>
+        
+                  </div>
+
+
                       </div><!-- modal-body -->
                     
                     </div>

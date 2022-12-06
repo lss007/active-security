@@ -80,7 +80,7 @@ public function editHomeBannerImg3($val){
         }
     public function updateHomeBanner(){
         // dd($this->all());
-            // $this->validate();
+            $this->validate();
                
         if( $this->editcropedImg || $this->editcropedImg2 || $this->editcropedImg3 )  {
             if($this->editcropedImg){
