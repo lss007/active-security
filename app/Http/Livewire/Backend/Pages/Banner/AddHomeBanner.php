@@ -18,16 +18,12 @@ class AddHomeBanner extends Component
         'cropedImg'     => 'required', 
         'cropedImg2'     => 'required', 
         'cropedImg3'     => 'required', 
-
     ];
     protected $messages = [
         'cropedImg.required' => 'The Banner Image field is required.',
         'cropedImg2.required' => 'The Tablet Banner  field is required.',
         'cropedImg3.required' => 'The Mobile Banner  field is required.',
-
-   
       ];
-
     protected $listeners = ['getCropImg' ,'getCropImg2' ,'getCropImg3'];
 
     public function getCropImg($val){       
@@ -49,14 +45,12 @@ class AddHomeBanner extends Component
             $this->cropedImg = '';
             $this->cropedImg2 = '';
             $this->cropedImg3 = '';
-
-
         }
 
-        public function saveHomeBanner(){
+    public function saveHomeBanner(){
            
-                $this->validate();
-            if($this->cropedImg)  
+            $this->validate();
+        if($this->cropedImg)  
             {
                 // $this->validate([
                 //     'cropedImg' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
@@ -69,13 +63,13 @@ class AddHomeBanner extends Component
                             $image_type_aux = explode("image/", $image_parts[0]);
                             $image_type = $image_type_aux[1];
                             $image_base64 = base64_decode($image_parts[1]);
-                            $imageName = time().'desk' . '.png';
+                            $imageName = time().'_desk' . '.png';
                             $imageFullPath = $folderPath.$imageName;
                             file_put_contents($imageFullPath, $image_base64);                
             // ===========  working ans stora at storage path   =========== 
 
             }
-            if($this->cropedImg2)  
+        if($this->cropedImg2)  
             {
            
              // ===========  working ans stora at storage path   =========== 
@@ -86,13 +80,13 @@ class AddHomeBanner extends Component
                             $image_type_aux2 = explode("image/", $image_parts[0]);
                             $image_type2 = $image_type_aux2[1];
                             $image_base642 = base64_decode($image_parts2[1]);
-                            $imageName2 = time().'tab' . '.png';
+                            $imageName2 = time().'_tab' . '.png';
                             $imageFullPath2 = $folderPath2.$imageName2;
                             file_put_contents($imageFullPath2, $image_base642);                
             // ===========  working ans stora at storage path   =========== 
 
             }
-            if($this->cropedImg3)  
+        if($this->cropedImg3)  
             {
         
              // ===========  working ans stora at storage path   =========== 
@@ -103,7 +97,7 @@ class AddHomeBanner extends Component
                             $image_type_aux3 = explode("image/", $image_parts[0]);
                             $image_type3 = $image_type_aux3[1];
                             $image_base643 = base64_decode($image_parts3[1]);
-                            $imageName3 = uniqid().'mob' . '.png';
+                            $imageName3 = time().'_mob' . '.png';
                             $imageFullPath3 = $folderPath3.$imageName3;
                             file_put_contents($imageFullPath3, $image_base643);                
             // ===========  working ans stora at storage path   =========== 

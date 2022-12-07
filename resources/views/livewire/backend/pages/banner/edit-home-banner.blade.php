@@ -90,7 +90,7 @@
                                               <img src="" id="sample_image" />
                                           </div>
                                           <div class="col-md-4">
-                                              <div class="preview"></div>
+                                              <div class="preview pointerNone"></div>
                                           </div>
                                       </div>
                                   </div>

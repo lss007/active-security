@@ -30,7 +30,6 @@ class EditAllBanners extends Component
             $this->bannerImage = $this->editAllBanner->banner_image;
             $this->tablet_banner = $this->editAllBanner->tablet_banner;
             $this->mobile_banner = $this->editAllBanner->mobile_banner;
-
             $this->buttonText = $this->editAllBanner->button_text	;
             $this->button_link = $this->editAllBanner->button_link;
         }else {
@@ -46,16 +45,11 @@ class EditAllBanners extends Component
 
     public function updateAllBannerImg($val){       
             $this->updateCropedImg = $val;
-       
-      
         }
-
-        public function updateAllBannerImg2($val){       
+    public function updateAllBannerImg2($val){       
             $this->updateCropedImg2 = $val;
-           
         }
-
-        public function updateAllBannerImg3($val){       
+    public function updateAllBannerImg3($val){       
             $this->updateCropedImg3 = $val;
             // dd($this->updateCropedImg3);
         }
@@ -70,16 +64,10 @@ class EditAllBanners extends Component
         'pageCatId' => 'required',
         'Title' => 'required',
         'Heading' => 'required',
-
-
-
     ];
 
     protected $messages = [
         'pageCatId.required' => 'Page Category required',
-        
-
-    
       ];
    private function resetInputFields(){
         $this->pageCatId = '';
@@ -167,8 +155,8 @@ class EditAllBanners extends Component
                     return redirect()->route('view_all_banner')->with($notification);
     }
     // main if end 
-        else 
-            {
+    else 
+        {
                 AllPagesBanner::where('id', $this->allBannerId)->update([
                     'cat_id' => $this->pageCatId,
                     'title' =>    $this->Title,

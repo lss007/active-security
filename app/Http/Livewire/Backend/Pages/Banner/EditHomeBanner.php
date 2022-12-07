@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backend\Pages\Banner;
 
 use App\Models\HomeBanner;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -87,6 +88,12 @@ public function editHomeBannerImg3($val){
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/Home-banner/');
+
+                            $imagePath = Storage::path('public/Home-banner/'. $this->bannerImage);
+                            if(File::exists($imagePath)){
+                                // dd($imagePath);
+                                unlink($imagePath);
+                            }
                             // dd($folderPath);
                             $image_parts = explode(";base64,", $this->editcropedImg);
                             $image_type_aux = explode("image/", $image_parts[0]);
@@ -105,6 +112,12 @@ public function editHomeBannerImg3($val){
                             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/Home-banner/');
+
+                            $imagePath2 = Storage::path('public/Home-banner/'. $this->tabletBanner);
+                            if(File::exists($imagePath2)){
+                                // dd($imagePath);
+                                unlink($imagePath2);
+                            }
                             // dd($folderPath);
                             $image_parts2 = explode(";base64,", $this->editcropedImg2);
                             $image_type_aux2 = explode("image/", $image_parts2[0]);
@@ -125,6 +138,11 @@ public function editHomeBannerImg3($val){
                             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/Home-banner/');
+                            $imagePath3 = Storage::path('public/Home-banner/'. $this->mobileBanner);
+                            if(File::exists($imagePath3)){
+                                // dd($imagePath);
+                                unlink($imagePath3);
+                            }
                             // dd($folderPath);
                             $image_parts3 = explode(";base64,", $this->editcropedImg3);
                             $image_type_aux3 = explode("image/", $image_parts3[0]);
