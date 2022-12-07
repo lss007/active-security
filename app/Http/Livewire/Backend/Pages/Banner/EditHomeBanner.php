@@ -89,10 +89,10 @@ public function editHomeBannerImg3($val){
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/Home-banner/');
 
-                            $imagePath = Storage::path('public/Home-banner/'. $this->bannerImage);
-                            if(File::exists($imagePath)){
+                            $imagePath1 = Storage::path('public/Home-banner/'. $this->bannerImage);
+                            if(File::exists($imagePath1)){
                                 // dd($imagePath);
-                                unlink($imagePath);
+                                unlink($imagePath1);
                             }
                             // dd($folderPath);
                             $image_parts = explode(";base64,", $this->editcropedImg);
