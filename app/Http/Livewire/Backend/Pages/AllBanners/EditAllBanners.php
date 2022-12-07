@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Backend\Pages\AllBanners;
 
 use App\Models\AllPagesBanner;
 use App\Models\PageCategory;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -14,10 +15,8 @@ class EditAllBanners extends Component
     public $getPageCategory ,$pageCatId,$editAllBanner ,$allBannerId ,$NewBanner;
     public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph ;
 
-
     public $updateCropedImg ,$updateCropedImg2,$updateCropedImg3 ;
     
-
     public function mount($id){
         $this->allBannerId= $id;
         $this->editAllBanner = AllPagesBanner::where('id', $this->allBannerId)->first();
@@ -42,23 +41,21 @@ class EditAllBanners extends Component
     }
 
     protected $listeners = ['updateAllBannerImg' ,'updateAllBannerImg2','updateAllBannerImg3'];
-
-    public function updateAllBannerImg($val){       
-            $this->updateCropedImg = $val;
-        }
-    public function updateAllBannerImg2($val){       
-            $this->updateCropedImg2 = $val;
-        }
-    public function updateAllBannerImg3($val){       
-            $this->updateCropedImg3 = $val;
-            // dd($this->updateCropedImg3);
-        }
+            public function updateAllBannerImg($val){       
+                    $this->updateCropedImg = $val;
+                }
+            public function updateAllBannerImg2($val){       
+                    $this->updateCropedImg2 = $val;
+                }
+            public function updateAllBannerImg3($val){       
+                    $this->updateCropedImg3 = $val;
+                    // dd($this->updateCropedImg3);
+                }
     public function render()
     {
         $this->getPageCategory =  PageCategory::get();
         return view('livewire.backend.pages.all-banners.edit-all-banners')->layout('layouts.backend');
     }
-
 
     protected $rules = [
         'pageCatId' => 'required',
@@ -86,10 +83,15 @@ class EditAllBanners extends Component
         
         if($this->updateCropedImg)  
         {
-            dd($this->updateCropedImg);
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/All-banner/');
+
+                            $imagePath1 = Storage::path('public/All-banner/'. $this->bannerImage);
+                            if(File::exists($imagePath1)){
+                                // dd($imagePath);
+                                unlink($imagePath1);
+                            }
                             // dd($folderPath);
                             $image_parts = explode(";base64,", $this->updateCropedImg);
                             $image_type_aux = explode("image/", $image_parts[0]);
@@ -110,6 +112,11 @@ class EditAllBanners extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/All-banner/');
+                            $imagePath2 = Storage::path('public/All-banner/'. $this->tablet_banner);
+                            if(File::exists($imagePath2)){
+                                // dd($imagePath);
+                                unlink($imagePath2);
+                            }
                             // dd($folderPath);
                             $image_parts2 = explode(";base64,", $this->updateCropedImg2);
                             $image_type_aux2 = explode("image/", $image_parts2[0]);
@@ -131,12 +138,17 @@ class EditAllBanners extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/All-banner/');
+                            $imagePath3 = Storage::path('public/All-banner/'. $this->mobile_banner);
+                            if(File::exists($imagePath3)){
+                                // dd($imagePath);
+                                unlink($imagePath3);
+                            }
                             // dd($folderPath);
                             $image_parts3 = explode(";base64,", $this->updateCropedImg3);
                             $image_type_aux3 = explode("image/", $image_parts3[0]);
                             $image_type3 = $image_type_aux3[1];
                             $image_base643 = base64_decode($image_parts3[1]);
-                            $imageName3 = time().'_up_desk' . '.png';
+                            $imageName3 = time().'_up_mpb' . '.png';
                             $imageFullPath3 = $folderPath3.$imageName3;
                             file_put_contents($imageFullPath3, $image_base643);                
             // ===========  working ans stora at storage path   =========== 

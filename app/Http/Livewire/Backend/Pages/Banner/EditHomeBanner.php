@@ -40,18 +40,18 @@ class EditHomeBanner extends Component
 
  protected $listeners = ['editHomeBannerImg' ,'editHomeBannerImg2','editHomeBannerImg3'];
  
- public function editHomeBannerImg($val){       
-    $this->editcropedImg = $val;
-// dd($this->cropedImg);
-}
-public function editHomeBannerImg2($val){       
-    $this->editcropedImg2 = $val;
-// dd($this->cropedImg);
-}
-public function editHomeBannerImg3($val){       
-    $this->editcropedImg3 = $val;
-// dd($this->cropedImg);
-}
+        public function editHomeBannerImg($val){       
+            $this->editcropedImg = $val;
+        // dd($this->cropedImg);
+        }
+        public function editHomeBannerImg2($val){       
+            $this->editcropedImg2 = $val;
+        // dd($this->cropedImg);
+        }
+        public function editHomeBannerImg3($val){       
+            $this->editcropedImg3 = $val;
+        // dd($this->cropedImg);
+        }
 
 
     public function render()
