@@ -2,10 +2,38 @@
     {{-- Close your eyes. Count to one. That is how long forever feels. --}}
     @if(isset($this->ObjektUndPageBanner))
       <section>
-        <div class="bannerSection innerPageBanner s1Banner" style="background-image: url('{{asset('storage/All-banner/'.$this->ObjektUndPageBanner->banner_image)}}')">
+        <style>
+          .bannerSection.innerPageBanner.s1Banner {
+            background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->banner_image)}}');
+          }
+          @media (max-width: 991px) {
+            .bannerSection.innerPageBanner.s1Banner {
+              background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->tablet_banner)}}');
+            }
+          }
+          @media (max-width: 767px) {
+            .bannerSection.innerPageBanner.s1Banner {
+              background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->mobile_banner)}}');
+            }
+          }
+        </style>
+        <div class="bannerSection innerPageBanner s1Banner" >
           <div class="container">
             <div class="bannerContent">
               <h1 class="xlTitle">
+                {{-- detect  --}}
+                @if((new \Jenssegers\Agent\Agent())->isDesktop())
+                 Detect Desktop  <br>
+               
+                @endif
+
+                 @if((new \Jenssegers\Agent\Agent())->isMobile())
+
+                  Detect  Mobile  <br>
+
+                 @endif
+                {{-- end detect  --}}
+
                 {{	isset($ObjektUndPageBanner->heading) ? $ObjektUndPageBanner->heading : "NA"}}
               </h1>
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">

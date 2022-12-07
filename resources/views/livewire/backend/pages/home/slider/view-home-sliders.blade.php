@@ -152,7 +152,7 @@
             
         </div><!-- card -->
 {{--============================== start trashed data ============================== --}}
-          @if (isset($trashdatas))
+          @if (isset($trashdatas) && count($trashdatas)> 0)
           <div class="card pd-20 pd-sm-40">
             <h2>Restore Deleteed Slider   </h2>
             <div class="table-responsive mg-t-25">

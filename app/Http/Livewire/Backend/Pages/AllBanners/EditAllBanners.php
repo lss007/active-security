@@ -41,13 +41,13 @@ class EditAllBanners extends Component
     }
 
     protected $listeners = ['updateAllBannerImg' ,'updateAllBannerImg2','updateAllBannerImg3'];
-            public function updateAllBannerImg($val){       
+             public function updateAllBannerImg($val){       
                     $this->updateCropedImg = $val;
                 }
-            public function updateAllBannerImg2($val){       
+             public function updateAllBannerImg2($val){       
                     $this->updateCropedImg2 = $val;
                 }
-            public function updateAllBannerImg3($val){       
+             public function updateAllBannerImg3($val){       
                     $this->updateCropedImg3 = $val;
                     // dd($this->updateCropedImg3);
                 }
@@ -66,23 +66,21 @@ class EditAllBanners extends Component
     protected $messages = [
         'pageCatId.required' => 'Page Category required',
       ];
-   private function resetInputFields(){
+    private function resetInputFields(){
         $this->pageCatId = '';
         $this->Heading = '';
         $this->Title = '';
         $this->updateCropedImg = '';
         $this->updateCropedImg2 = '';
         $this->updateCropedImg3 = '';
-
         // $this->BannerParagaph = '';
         }
     public function updateallBanner(){
         $this->validate();
-
-        if( $this->updateCropedImg || $this->updateCropedImg2 || $this->updateCropedImg3 )  {
-        
-        if($this->updateCropedImg)  
+        if($this->updateCropedImg || $this->updateCropedImg2 || $this->updateCropedImg3 )  
         {
+            if($this->updateCropedImg)  
+            {
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/All-banner/');
@@ -105,10 +103,10 @@ class EditAllBanners extends Component
                     'banner_image' =>    $imageName  ?? Null,
                     ]);
               
-        }
+            }
 
-        if($this->updateCropedImg2)  
-        {
+            if($this->updateCropedImg2)  
+            {
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/All-banner/');
@@ -130,11 +128,11 @@ class EditAllBanners extends Component
                     'tablet_banner' =>    $imageName2  ?? Null,
                     ]);
               
-        }
+            }
 
 
-        if($this->updateCropedImg3)  
-        {
+            if($this->updateCropedImg3)  
+            {
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/All-banner/');
@@ -156,7 +154,7 @@ class EditAllBanners extends Component
                     'mobile_banner' =>    $imageName3  ?? Null,
                     ]);
               
-        }
+            }
         // end  inner if 
 
 

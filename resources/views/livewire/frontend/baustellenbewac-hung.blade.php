@@ -2,6 +2,22 @@
     {{-- The whole world belongs to you. --}}
     @if(isset($Baustellmain))
     <section>
+
+      <style>
+        .bannerSection.innerPageBanner.s4Banner {
+          background-image: url('{{asset('storage/All-banner/'.$Baustellmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s4Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Baustellmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s4Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Baustellmain->mobile_banner)}}');
+          }
+        }
+      </style>
         <div class="bannerSection innerPageBanner s4Banner">
           <div class="container">
             <div class="bannerContent mw-100">

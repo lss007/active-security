@@ -2,7 +2,22 @@
     {{-- Close your eyes. Count to one. That is how long forever feels. --}}
     @if(isset($Reviermain))
     <section>
-      <div class="bannerSection innerPageBanner " style="background-image: url('{{asset('storage/All-banner/'.$Reviermain->banner_image)}}')"   >
+      <style>
+        .bannerSection.innerPageBanner.s6Banner {
+          background-image: url('{{asset('storage/All-banner/'.$Reviermain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s6Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Reviermain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s6Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Reviermain->mobile_banner)}}');
+          }
+        }
+      </style>
+      <div class="bannerSection innerPageBanner s6Banner"    >
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">

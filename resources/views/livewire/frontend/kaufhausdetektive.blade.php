@@ -2,7 +2,22 @@
     {{-- The Master doesn't talk, he acts. --}}
     @if(isset($Kaufhausmain))
     <section>
-        <div class="bannerSection innerPageBanner "  style="background-image: url('{{asset('storage/All-banner/'.$this->Kaufhausmain->banner_image)}}')">
+      <style>
+        .bannerSection.innerPageBanner.s3Banner {
+          background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s3Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s3Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->mobile_banner)}}');
+          }
+        }
+      </style>
+        <div class="bannerSection innerPageBanner s3Banner"  >
           <div class="container">
             <div class="bannerContent mw-100">
               <h1 class="xlTitle">

@@ -2,7 +2,22 @@
     {{-- Stop trying to control. --}}
     @if(isset($veranstmain))
       <section>
-        <div class="bannerSection innerPageBanner s9Banner" style="background-image: url('{{asset('storage/All-banner/'.$veranstmain->banner_image)}}')">
+        <style>
+          .bannerSection.innerPageBanner.s9Banner {
+            background-image: url('{{asset('storage/All-banner/'.$veranstmain->banner_image)}}');
+          }
+          @media (max-width: 991px) {
+            .bannerSection.innerPageBanner.s9Banner {
+              background-image: url('{{asset('storage/All-banner/'.$veranstmain->tablet_banner)}}');
+            }
+          }
+          @media (max-width: 767px) {
+            .bannerSection.innerPageBanner.s9Banner {
+              background-image: url('{{asset('storage/All-banner/'.$veranstmain->mobile_banner)}}');
+            }
+          }
+        </style>
+        <div class="bannerSection innerPageBanner s9Banner" >
           <div class="container">
             <div class="bannerContent">
               <h1 class="xlTitle">{!!	isset($veranstmain->heading) ? $veranstmain->heading : "NA"!!}</h1>

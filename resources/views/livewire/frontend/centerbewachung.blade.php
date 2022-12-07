@@ -1,8 +1,24 @@
 <div>
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
+    
     @if(isset($centerbewachung))
     <section>
-        <div class="bannerSection innerPageBanner " style="background-image: url('{{asset('storage/All-banner/'.$this->centerbewachung->banner_image)}}')">
+      <style>
+        .bannerSection.innerPageBanner.s2Banner {
+          background-image: url('{{asset('storage/All-banner/'.$centerbewachung->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s2Banner {
+            background-image: url('{{asset('storage/All-banner/'.$centerbewachung->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s2Banner {
+            background-image: url('{{asset('storage/All-banner/'.$centerbewachung->mobile_banner)}}');
+          }
+        }
+      </style>
+        <div class="bannerSection innerPageBanner s2Banner" >
           <div class="container">
             <div class="bannerContent mw-100">
               <h1 class="xlTitle">

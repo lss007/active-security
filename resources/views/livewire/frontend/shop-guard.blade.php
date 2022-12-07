@@ -2,7 +2,23 @@
     {{-- Success is as dangerous as failure. --}}
     @if(isset($Shopmain))
     <section>
-      <div class="bannerSection innerPageBanner s8Banner" style="background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}')" >
+      <style>
+        .bannerSection.innerPageBanner.s8Banner {
+          background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s8Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Shopmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s8Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Shopmain->mobile_banner)}}');
+          }
+        }
+      </style>
+      <div class="bannerSection innerPageBanner s8Banner" 
+      >
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">{!!	isset($Shopmain->heading) ? $Shopmain->heading : "NA"!!}</h1>

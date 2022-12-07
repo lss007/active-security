@@ -3,7 +3,22 @@
 
 @if(isset($Unternehmenmain))
     <section>
-      <div class="bannerSection innerPageBanner companyBanner" style="background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->banner_image)}}')">
+      <style>
+        .bannerSection.innerPageBanner.companyBanner {
+          background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.companyBanner {
+            background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.companyBanner {
+            background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->mobile_banner)}}');
+          }
+        }
+      </style>
+      <div class="bannerSection innerPageBanner companyBanner" >
         <div class="container">
           <div class="bannerContent mw-100">
             <h1 class="xlTitle">

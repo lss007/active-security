@@ -3,7 +3,22 @@
    
 @if(isset($Openingmain))
     <section>
-      <div class="bannerSection innerPageBanner " style="background-image: url('{{asset('storage/All-banner/'.$this->Openingmain->banner_image)}}')">
+      <style>
+        .bannerSection.innerPageBanner.s5Banner {
+          background-image: url('{{asset('storage/All-banner/'.$Openingmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s5Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Openingmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s5Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Openingmain->mobile_banner)}}');
+          }
+        }
+      </style>
+      <div class="bannerSection innerPageBanner s5Banner" >
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">

@@ -2,7 +2,22 @@
     {{-- Stop trying to control. --}}
     @if(isset($Empfanmain))
     <section>
-      <div class="bannerSection innerPageBanner s7Banner" style="background-image: url('{{asset('storage/All-banner/'.$this->Empfanmain->banner_image)}}')">
+      <style>
+        .bannerSection.innerPageBanner.s7Banner {
+          background-image: url('{{asset('storage/All-banner/'.$Empfanmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.s7Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Empfanmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.s7Banner {
+            background-image: url('{{asset('storage/All-banner/'.$Empfanmain->mobile_banner)}}');
+          }
+        }
+      </style>
+      <div class="bannerSection innerPageBanner s7Banner" >
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">

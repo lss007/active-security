@@ -3,7 +3,22 @@
 
     @if(isset($Jobsmain))
     <section>
-        <div class="bannerSection innerPageBanner jobsBanner"  style="background-image: url('{{asset('storage/All-banner/'.$this->Jobsmain->banner_image)}}')">
+      <style>
+        .bannerSection.innerPageBanner.jobsBanner {
+          background-image: url('{{asset('storage/All-banner/'.$Jobsmain->banner_image)}}');
+        }
+        @media (max-width: 991px) {
+          .bannerSection.innerPageBanner.jobsBanner {
+            background-image: url('{{asset('storage/All-banner/'.$Jobsmain->tablet_banner)}}');
+          }
+        }
+        @media (max-width: 767px) {
+          .bannerSection.innerPageBanner.jobsBanner {
+            background-image: url('{{asset('storage/All-banner/'.$Jobsmain->mobile_banner)}}');
+          }
+        }
+      </style>
+        <div class="bannerSection innerPageBanner jobsBanner"  >
           <div class="container">
             <div class="bannerContent mw-100">
               <h1 class="xlTitle">     {{	isset($Jobsmain->heading) ? $Jobsmain->heading : "NA"}}</h1>
