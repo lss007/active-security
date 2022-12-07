@@ -21,18 +21,7 @@
           <div class="container">
             <div class="bannerContent">
               <h1 class="xlTitle">
-                {{-- detect  --}}
-                @if((new \Jenssegers\Agent\Agent())->isDesktop())
-                 Detect Desktop  <br>
-               
-                @endif
-
-                 @if((new \Jenssegers\Agent\Agent())->isMobile())
-
-                  Detect  Mobile  <br>
-
-                 @endif
-                {{-- end detect  --}}
+      
 
                 {{	isset($ObjektUndPageBanner->heading) ? $ObjektUndPageBanner->heading : "NA"}}
               </h1>
