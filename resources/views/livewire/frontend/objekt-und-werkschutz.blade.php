@@ -59,7 +59,7 @@
                   ? asset('storage/services-section/'.$ObjektUndPagesection->mobile_banner) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
 
                 @else 
-                <img wire:poll src="{{(isset($this->ObjektUndPagesection->sec_image)) 
+                <img  src="{{(isset($this->ObjektUndPagesection->sec_image)) 
                   ? asset('storage/services-section/'.$ObjektUndPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
               
 
