@@ -26,7 +26,10 @@ class ViewServices extends Component
                 join('page_categories','services_page_sections.page_cat_id' ,'page_categories.id')
                 ->select('services_page_sections.*','page_categories.page_cat_name')
                  ->where('heading', 'like', '%'.trim($this->search).'%')
-                ->orWhere('title', 'like', '%'.trim($this->search).'%')->paginate(5);
+                ->orWhere('page_cat_name', 'like', '%'.trim($this->search).'%')
+                ->orWhere('title', 'like', '%'.trim($this->search).'%')
+
+                ->paginate(5);
                 $this->trashdata = ServicesPageSection::onlyTrashed()->get();
               
               
