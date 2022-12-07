@@ -128,7 +128,7 @@ class EditServices extends Component
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/services-section/');
 
-                            $imagePath2 = Storage::path('public/services-section/'. $this->tablet_banner);
+                            $imagePath2 = Storage::path('public/services-section/'. $this->tabletBanner);
                             if(File::exists($imagePath2)){
                                 // dd($imagePath);
                                 unlink($imagePath2);
@@ -151,7 +151,7 @@ class EditServices extends Component
                 // ===========  working ans stora at storage path   =========== 
                         // $folderPath = public_path('upload/');
                         $folderPath3 = Storage::path('public/services-section/');
-                        $imagePath3 = Storage::path('public/services-section/'. $this->mobile_banner);
+                        $imagePath3 = Storage::path('public/services-section/'. $this->mobileBanner);
                         if(File::exists($imagePath3)){
                             // dd($imagePath);
                             unlink($imagePath3);
