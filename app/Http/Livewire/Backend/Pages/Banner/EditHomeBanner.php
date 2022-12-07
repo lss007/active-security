@@ -109,7 +109,7 @@ class EditHomeBanner extends Component
 
             // ===========  working ans stora at storage path   =========== 
             if($this->editcropedImg2){
-                            // ===========  working ans stora at storage path   =========== 
+            // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/Home-banner/');
 
@@ -135,7 +135,7 @@ class EditHomeBanner extends Component
                 ]);
             }
             if($this->editcropedImg3){
-                            // ===========  working ans stora at storage path   =========== 
+            // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/Home-banner/');
                             $imagePath3 = Storage::path('public/Home-banner/'. $this->mobileBanner);

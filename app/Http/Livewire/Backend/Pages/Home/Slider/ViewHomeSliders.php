@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 
 use App\Models\HomeSectionSlider;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -49,6 +51,12 @@ class ViewHomeSliders extends Component
     }
 
     public function fulleDelete($id){
+        $getimg  = HomeSectionSlider::onlyTrashed()->find($id);
+        $imagePath = Storage::path('public/Home-slider/'. $getimg->image);
+        if(File::exists($imagePath)){
+            // dd($imagePath);
+            unlink($imagePath);
+        }
       HomeSectionSlider::onlyTrashed()->find($id)->forceDelete();
       $notification = array(
         'message' => 'Home Slider Deleted successfully',

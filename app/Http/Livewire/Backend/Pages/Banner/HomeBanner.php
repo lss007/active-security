@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\Banner;
 
 use App\Models\HomeBanner as ModelsHomeBanner;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 use function PHPUnit\Framework\fileExists;
@@ -64,6 +66,21 @@ class HomeBanner extends Component
 
 
         public function fulleDelete($id){
+            $getimg  = ModelsHomeBanner::onlyTrashed()->find($id);
+            $imagePath = Storage::path('public/Home-banner/'. $getimg->banner_image);
+            $imagePath2 = Storage::path('public/Home-banner/'. $getimg->tablet_banner);
+            $imagePath3 = Storage::path('public/Home-banner/'. $getimg->mobile_banner);
+
+           
+            if(File::exists($imagePath)){
+                unlink($imagePath);
+            }
+            if(File::exists($imagePath2)){
+                unlink($imagePath2);
+            }
+            if(File::exists($imagePath3)){
+                unlink($imagePath3);
+            }
             ModelsHomeBanner::onlyTrashed()->find($id)->forceDelete();
             $notification = array(
               'message' => 'Home Banner Deleted',

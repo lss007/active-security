@@ -78,7 +78,7 @@
                                                 <img src="" id="homeEdit1img" />
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="preview"></div>
+                                                <div class="preview pointerNone"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                       </label>
                     </div>
                     <img class="img-fluid {{isset($logoImg1) ? 'd-none' :  ''}}" src="{{(!empty($this->logo1)) 
-                      ? asset('storage/Home-section/'.$this->logo1):asset('no_image.jpg')}}" width="100" >
+                      ? asset('storage/Home-section/'.$this->logo1):asset('no_image.jpg')}}" width="50" >
                     @if(isset($logoImg1))
                     <img src="{{$logoImg1->temporaryUrl()}}" width="100"  class="img-fluid">
                     @endif
@@ -126,7 +126,7 @@
 
                 
                     <img class="img-fluid {{isset($logoImg2) ? 'd-none' :  ''}}" src="{{(!empty($this->logo2)) 
-                      ? asset('storage/Home-section/'.$this->logo2):asset('no_image.jpg')}}" width="100" >
+                      ? asset('storage/Home-section/'.$this->logo2):asset('no_image.jpg')}}" width="50" >
                     @if(isset($logoImg2))
                     <img src="{{$logoImg2->temporaryUrl()}}" width="100"  class="img-fluid">
                     @endif
@@ -145,7 +145,7 @@
                  
 
                     <img class="img-fluid {{isset($logoImg3) ? 'd-none' :  ''}}" src="{{(!empty($this->logo3)) 
-                      ? asset('storage/Home-section/'.$this->logo3):asset('no_image.jpg')}}" width="100" >
+                      ? asset('storage/Home-section/'.$this->logo3):asset('no_image.jpg')}}" width="50" >
                    
                     @if(isset($logoImg3))
                     <img src="{{$logoImg3->temporaryUrl()}}" width="100"  class="img-fluid">

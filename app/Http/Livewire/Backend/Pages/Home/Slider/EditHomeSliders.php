@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 use Livewire\Component;
 use App\Models\HomeSectionSlider;
 use App\Models\RouteNameList;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 class EditHomeSliders extends Component
@@ -67,6 +68,13 @@ class EditHomeSliders extends Component
         // ===========  working ans stora at storage path   =========== 
                         // $folderPath = public_path('upload/');
                         $folderPath = Storage::path('public/Home-slider/');
+
+                        $imagePath = Storage::path('public/Home-slider/'. $this->image );
+
+                        if(File::exists($imagePath)){
+                  
+                            unlink($imagePath);
+                        }
                         // dd($folderPath);
                         $image_parts = explode(";base64,", $this->updateCropedImg);
                         $image_type_aux = explode("image/", $image_parts[0]);

@@ -103,7 +103,7 @@
                                               <img src="" id="homeSectionImg2" />
                                           </div>
                                           <div class="col-md-4">
-                                              <div class="preview"></div>
+                                              <div class="preview  pointerNone"></div>
                                           </div>
                                       </div>
                                   </div>

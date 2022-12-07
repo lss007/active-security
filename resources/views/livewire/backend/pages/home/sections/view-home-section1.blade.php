@@ -58,26 +58,26 @@
                                   <hr>
                                   <h2><span class="text-primary">Logo Images :</span></h2>
                    
-                            <div class="row">
+                            <div class="row " >
                               <div class="col-md-3">
                                 
                             <div class="card wd-xs-100">
                               <span class="text-primary">    Image one :  </span>
-                              <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo1)) ? asset('storage/Home-section/'.$homeSectionOne->logo1):asset('no_image.jpg')}}" alt="..."  width="100">
+                              <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo1)) ? asset('storage/Home-section/'.$homeSectionOne->logo1):asset('no_image.jpg')}}" alt="..."  style="width: 50px">
                             </div><!-- card -->
                               </div>
                               <div class="col-md-3">
                                 
                                 <div class="card wd-xs-100">
                                   <span class="text-primary">   Image two: </span>
-                                  <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo2))  ? asset('storage/Home-section/'.$homeSectionOne->logo2):asset('no_image.jpg')}}" alt="..."  width="100">
+                                  <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo2))  ? asset('storage/Home-section/'.$homeSectionOne->logo2):asset('no_image.jpg')}}" alt="..."   style="width: 50px">
                                 </div><!-- card -->
                                   </div>
                                   <div class="col-md-3">
                                 
                                     <div class="card wd-xs-100">
                                       <span class="text-primary"> Image three: </span>
-                                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo3)) ? asset('storage/Home-section/'.$homeSectionOne->logo3):asset('no_image.jpg')}}" alt="..."  width="100">
+                                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->logo3)) ? asset('storage/Home-section/'.$homeSectionOne->logo3):asset('no_image.jpg')}}" alt="..."   style="width: 50px">
                                     </div><!-- card -->
                                       </div>
                             </div>

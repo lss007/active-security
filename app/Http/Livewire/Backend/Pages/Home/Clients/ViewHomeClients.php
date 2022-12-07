@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\Home\Clients;
 
 use App\Models\HomeClientLogo;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class ViewHomeClients extends Component
@@ -64,6 +66,13 @@ class ViewHomeClients extends Component
     }
 
     public function fulleDelete($id){
+        $getimg  = HomeClientLogo::onlyTrashed()->find($id);
+        $imagePath = Storage::path('public/Home-clients/'. $getimg->image);
+        if(File::exists($imagePath)){
+            // dd($imagePath);
+ 
+            unlink($imagePath);
+        }
         HomeClientLogo::onlyTrashed()->find($id)->forceDelete();
         $notification = array(
           'message' => 'Fully  Deleted successfully',

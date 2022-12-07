@@ -121,7 +121,7 @@
                 ? asset('storage/Home-banner/'.$banner->mobile_banner):asset('no_image.jpg')}}" alt="..." >
               </div>
     
-              </div>
+            </div>
             
           </div><!-- modal-body -->
          
@@ -131,6 +131,12 @@
 
 @endforeach
 @else
+<tr>
+  <td colspan="5" class="text-center text-danger">
+    <span>No record found</span>
+
+  </td>
+</tr>
   
 @endif
                 
@@ -143,7 +149,7 @@
     {{--============================== start trashed data ============================== --}}
 
     @if (isset($trashdata) && count($trashdata) > 0)
-    <div class="card pd-20 pd-sm-40">
+  <div class="card pd-20 pd-sm-40">
     <h4>Restore Deleteed Banner   </h4>
     <div class="table-responsive mg-t-25">
     <table class="table table-hover table-bordered mg-b-0">
@@ -184,8 +190,7 @@
       </tbody>
     </table>
     </div>
-    </div>
-
+  </div>
     @endif
     {{--============================== end trashed data ============================== --}}
         </div><!-- card -->

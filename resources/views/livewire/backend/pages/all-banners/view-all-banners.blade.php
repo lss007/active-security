@@ -133,6 +133,12 @@
                 </div><!-- modal -->
               @endforeach
             @else
+            <tr>
+              <td  class="text-center text-danger">
+                <span>No record found</span>
+            
+              </td>
+            </tr>
             @endif
             
             </tbody>

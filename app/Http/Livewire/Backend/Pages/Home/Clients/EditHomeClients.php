@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\Home\Clients;
 
 use App\Models\HomeClientLogo;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 class EditHomeClients extends Component
@@ -53,7 +55,14 @@ public function saveHomeclients(){
     if($this->clientIng)  
     {
         $fileName = time().'_up'.$this->clientIng->getClientOriginalName();
-            $filePath = $this->clientIng->storeAs('Home-clients', $fileName, 'public');
+        $filePath = $this->clientIng->storeAs('Home-clients', $fileName, 'public');
+
+            $imagePath = Storage::path('public/Home-clients/'. $this->image);
+
+            if(File::exists($imagePath)){
+      
+                unlink($imagePath);
+            }
              HomeClientLogo::where('id', $this->clientId)->update([
                      'image' =>    $fileName, ]);
         $notification = array(

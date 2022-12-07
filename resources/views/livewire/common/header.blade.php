@@ -1,11 +1,16 @@
 
 <header>
+  @php
+         $navbarlogos =  DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
+  
+  @endphp
     <div class="headerCol">
       <div class="container">
         <div class="row g-2 align-items-center">
           <div class="col col-lg-auto">
             <div class="logoCol">
-              <a href="{{url('/')}}"><img src="{{ asset('frontend/images/logo.svg')}}" alt="Logo" /></a>
+              
+              <a href="{{url('/')}}"><img src="{{(isset($navbarlogos->logo_img))  ? asset('storage/footer-logo/'.$navbarlogos->logo_img) :asset('frontend/images/logo.svg')}}" alt="Logo" /></a>
             </div>
           </div>
           <div class="col-auto col-lg">

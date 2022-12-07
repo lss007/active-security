@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\AllBanners;
 
 use App\Models\AllPagesBanner;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -86,6 +88,25 @@ class ViewAllBanners extends Component
    
    
            public function fulleDelete($id){
+
+            $getimg  = AllPagesBanner::onlyTrashed()->find($id);
+            $imagePath = Storage::path('public/All-banner/'. $getimg->banner_image);
+            $imagePath2 = Storage::path('public/All-banner/'. $getimg->tablet_banner);
+            $imagePath3 = Storage::path('public/All-banner/'. $getimg->mobile_banner);
+
+           
+            if(File::exists($imagePath)){
+            
+                unlink($imagePath);
+            }
+            if(File::exists($imagePath2)){
+            
+                unlink($imagePath2);
+            }
+            if(File::exists($imagePath3)){
+            
+                unlink($imagePath3);
+            }
             AllPagesBanner::onlyTrashed()->find($id)->forceDelete();
                $notification = array(
                  'message' => ' Banner Deleted',
