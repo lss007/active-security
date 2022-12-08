@@ -1,4 +1,4 @@
-ss<div>
+<div>
     {{-- The whole world belongs to you. --}}
     @if(isset($Baustellmain))
     <section>
