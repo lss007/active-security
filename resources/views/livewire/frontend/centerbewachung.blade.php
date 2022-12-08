@@ -79,7 +79,33 @@
 @if(isset($center_pagebanner))
 
       <section>
-        <div class="sectionBgCol "  style="background-image: url('{{asset('storage/services-banner/'.$this->center_pagebanner->banner)}}')">
+        <style>
+          .sectionBgCol.serviceSectionBg2 {
+            background-image: url('{{asset('storage/services-banner/'.$center_pagebanner->banner)}}');
+          }
+  
+          @media (max-width: 991px) {
+            .sectionBgCol.serviceSectionBg2 {
+              background-image: url('{{asset('storage/services-banner/'.$center_pagebanner->tablet_banner)}}');
+            }
+          }
+        </style>
+      @if(isset($center_pagebanner->mobile_banner))
+          <style>
+            @media (max-width: 767px) {
+              .sectionBgCol.serviceSectionBg2 {
+                background-image: url('{{asset('storage/services-banner/'.$center_pagebanner->mobile_banner)}}');
+              }
+            }
+          </style>
+      @else 
+          <style>
+            .sectionBgCol.serviceSectionBg2 {
+              background-image: url('{{asset('storage/services-banner/'.$center_pagebanner->banner)}}');
+            }
+            </style>
+      @endif
+        <div class="sectionBgCol serviceSectionBg2"  >
           <div class="container">
             <div class="sectonTitleCol">
               <h4 class="xlTitle">

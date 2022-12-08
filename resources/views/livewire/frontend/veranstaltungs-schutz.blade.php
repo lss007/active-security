@@ -72,7 +72,33 @@
 
     @if($veranstpagebanner)
     <section>
-      <div class="sectionBgCol serviceSectionBg9" style="background-image: url('{{asset('storage/services-banner/'.$this->veranstpagebanner->banner)}}')">
+      <style>
+        .sectionBgCol.serviceSectionBg9 {
+          background-image: url('{{asset('storage/services-banner/'.$veranstpagebanner->banner)}}');
+        }
+  
+        @media (max-width: 991px) {
+          .sectionBgCol.serviceSectionBg9 {
+            background-image: url('{{asset('storage/services-banner/'.$veranstpagebanner->tablet_banner)}}');
+          }
+        }
+      </style>
+    @if(isset($veranstpagebanner->mobile_banner))
+        <style>
+          @media (max-width: 767px) {
+            .sectionBgCol.serviceSectionBg9 {
+              background-image: url('{{asset('storage/services-banner/'.$veranstpagebanner->mobile_banner)}}');
+            }
+          }
+        </style>
+    @else 
+        <style>
+          .sectionBgCol.serviceSectionBg9 {
+            background-image: url('{{asset('storage/services-banner/'.$veranstpagebanner->banner)}}');
+          }
+          </style>
+    @endif
+      <div class="sectionBgCol serviceSectionBg9" >
         <div class="container">
           <div class="sectonTitleCol">
             <h4 class="xlTitle">{!! isset($veranstpagebanner->heading) ? $veranstpagebanner->heading : "NA" !!}</h4>

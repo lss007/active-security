@@ -14,11 +14,14 @@
         <form  wire:submit.prevent="saveallBanner">
              <div class="form-layout">
                <div class="row mg-b-25">
+                
                 <div class="col-lg-6">
+             
+                
                     <div class="form-group mg-b-10-force" wire:ignore>
                       <label class="form-control-label"> Select  Page Name : <span class="tx-danger">*</span></label>
-                      <select  class="form-control" wire:model="pageCatId" >
-                        <option selected class="form-control">Choose Page Category </option>
+                      <select  class="form-control " wire:model="pageCatId" >
+                        <option selected class="form-control" disabled>Choose Page Category </option>
                         @if(isset($getPageCategory))
                             @foreach($getPageCategory as $category )
                                 <option value="{{$category->id}}"  class="form-control">{{ ucwords($category->page_cat_name)}}</option>
@@ -74,7 +77,7 @@
                     </div>
                   </div><!-- col-4 -->
               
-                   <div class="col-lg-12">
+                <div class="col-lg-12">
         
                     {{-- <div class="form-group mg-b-10-force">
                       <label class="form-control-label"> Banner Image:  : <span class="tx-danger">*</span></label><br>

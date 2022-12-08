@@ -1,4 +1,4 @@
-<div>
+s<div>
     {{-- The whole world belongs to you. --}}
     @if(isset($Baustellmain))
     <section>
@@ -84,7 +84,34 @@
     @endif
 @if(isset($Baustell_pagebanner))
   <section>
-    <div class="sectionBgCol " style="background-image: url('{{asset('storage/services-banner/'.$this->Baustell_pagebanner->banner)}}')">
+    
+      <style>
+        .sectionBgCol.serviceSectionBg4 {
+          background-image: url('{{asset('storage/services-banner/'.$Baustell_pagebanner->banner)}}');
+        }
+
+        @media (max-width: 991px) {
+          .sectionBgCol.serviceSectionBg4 {
+            background-image: url('{{asset('storage/services-banner/'.$Baustell_pagebanner->tablet_banner)}}');
+          }
+        }
+      </style>
+    @if(isset($Baustell_pagebanner->mobile_banner))
+        <style>
+          @media (max-width: 767px) {
+            .sectionBgCol.serviceSectionBg4 {
+              background-image: url('{{asset('storage/services-banner/'.$Baustell_pagebanner->mobile_banner)}}');
+            }
+          }
+        </style>
+    @else 
+        <style>
+          .sectionBgCol.serviceSectionBg4 {
+            background-image: url('{{asset('storage/services-banner/'.$Baustell_pagebanner->banner)}}');
+          }
+          </style>
+    @endif
+    <div class="sectionBgCol serviceSectionBg4" >
       <div class="container">
         <div class="sectonTitleCol sMaxWdTitle">
           <h4 class="xlTitle">{!! isset($Baustell_pagebanner->heading) ? $Baustell_pagebanner->heading : "NA" !!}</h4>

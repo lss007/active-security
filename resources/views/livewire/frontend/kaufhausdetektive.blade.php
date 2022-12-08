@@ -73,7 +73,34 @@
       @endif
     @if(isset($Kaufhaus_pagebanner))
       <section>
-        <div class="sectionBgCol " style="background-image: url('{{asset('storage/services-banner/'.$this->Kaufhaus_pagebanner->banner)}}')">
+
+        <style>
+          .sectionBgCol.serviceSectionBg3 {
+            background-image: url('{{asset('storage/services-banner/'.$Kaufhaus_pagebanner->banner)}}');
+          }
+    
+          @media (max-width: 991px) {
+            .sectionBgCol.serviceSectionBg3 {
+              background-image: url('{{asset('storage/services-banner/'.$Kaufhaus_pagebanner->tablet_banner)}}');
+            }
+          }
+        </style>
+      @if(isset($Kaufhaus_pagebanner->mobile_banner))
+          <style>
+            @media (max-width: 767px) {
+              .sectionBgCol.serviceSectionBg3 {
+                background-image: url('{{asset('storage/services-banner/'.$Kaufhaus_pagebanner->mobile_banner)}}');
+              }
+            }
+          </style>
+      @else 
+          <style>
+            .sectionBgCol.serviceSectionBg3 {
+              background-image: url('{{asset('storage/services-banner/'.$Kaufhaus_pagebanner->banner)}}');
+            }
+            </style>
+      @endif
+        <div class="sectionBgCol serviceSectionBg3" >
           <div class="container">
             <div class="sectonTitleCol">
               <h4 class="xlTitle">

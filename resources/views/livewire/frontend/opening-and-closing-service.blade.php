@@ -90,7 +90,33 @@
 
   @if(isset($Opening_pagebanner))
     <section>
-      <div class="sectionBgCol " style="background-image: url('{{asset('storage/services-banner/'.$this->Opening_pagebanner->banner)}}')">
+      <style>
+        .sectionBgCol.serviceSectionBg5 {
+          background-image: url('{{asset('storage/services-banner/'.$Opening_pagebanner->banner)}}');
+        }
+  
+        @media (max-width: 991px) {
+          .sectionBgCol.serviceSectionBg5 {
+            background-image: url('{{asset('storage/services-banner/'.$Opening_pagebanner->tablet_banner)}}');
+          }
+        }
+      </style>
+    @if(isset($Opening_pagebanner->mobile_banner))
+        <style>
+          @media (max-width: 767px) {
+            .sectionBgCol.serviceSectionBg5 {
+              background-image: url('{{asset('storage/services-banner/'.$Opening_pagebanner->mobile_banner)}}');
+            }
+          }
+        </style>
+    @else 
+        <style>
+          .sectionBgCol.serviceSectionBg5 {
+            background-image: url('{{asset('storage/services-banner/'.$Opening_pagebanner->banner)}}');
+          }
+          </style>
+    @endif
+      <div class="sectionBgCol serviceSectionBg5" >
         <div class="container">
           <div class="sectonTitleCol">
             <h4 class="xlTitle">

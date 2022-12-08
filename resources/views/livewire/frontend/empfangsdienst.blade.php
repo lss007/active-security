@@ -71,7 +71,33 @@
     @endif
   @if(isset($Empfan_pagebanner))
     <section>
-      <div class="sectionBgCol serviceSectionBg7"  style="background-image: url('{{asset('storage/services-banner/'.$this->Empfan_pagebanner->banner)}}')">
+      <style>
+        .sectionBgCol.serviceSectionBg7 {
+          background-image: url('{{asset('storage/services-banner/'.$Empfan_pagebanner->banner)}}');
+        }
+
+        @media (max-width: 991px) {
+          .sectionBgCol.serviceSectionBg7 {
+            background-image: url('{{asset('storage/services-banner/'.$Empfan_pagebanner->tablet_banner)}}');
+          }
+        }
+      </style>
+    @if(isset($Empfan_pagebanner->mobile_banner))
+        <style>
+          @media (max-width: 767px) {
+            .sectionBgCol.serviceSectionBg7 {
+              background-image: url('{{asset('storage/services-banner/'.$Empfan_pagebanner->mobile_banner)}}');
+            }
+          }
+        </style>
+    @else 
+        <style>
+          .sectionBgCol.serviceSectionBg7 {
+            background-image: url('{{asset('storage/services-banner/'.$Empfan_pagebanner->banner)}}');
+          }
+          </style>
+    @endif
+      <div class="sectionBgCol serviceSectionBg7"  >
         <div class="container">
           <div class="sectonTitleCol">
             <h4 class="xlTitle">

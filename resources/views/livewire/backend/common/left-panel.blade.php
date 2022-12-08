@@ -1,6 +1,7 @@
 <div class="sl-logo">
     <a href="{{route('dashboard')}}">
-    <i class="icon ion-android-star-outline"></i> 
+    {{-- <i class="icon ion-android-star-outline"></i>  --}}
+    <img src="{{asset('frontend/images/favicon.ico')}}" alt="" class="img-fluid dashboard_icon">
     Active Secuirty </a>
   </div>
   <div class="sl-sideleft">

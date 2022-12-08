@@ -10,10 +10,11 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{asset('backend/css/bracket.css')}}">
-    <link href="{{asset('backend/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('backend/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
-    <link href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
-    <link href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('backend/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet"> --}}
     {{-- croper js files  --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>         --}}
@@ -25,7 +26,7 @@
     {{-- data table css  --}}
     <link href="{{asset('backend/lib/highlightjs/github.css')}}" rel="stylesheet">
     <link href="{{asset('backend//lib/select2/css/select2.min.css')}}" rel="stylesheet">
-    <link href="{{asset('backend/lib/SpinKit/spinkit.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('backend/lib/SpinKit/spinkit.css')}}" rel="stylesheet"> --}}
     <link href="{{asset('backend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
     
 
@@ -65,6 +66,15 @@
     <script src="{{asset('backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
  {{-- <script src="{{asset('backend/js/starlight.js')}}"></script> --}}
  <script>
+   
+      $(function(){
+        'use strict';
+
+        $('.select2').select2({
+          minimumResultsForSearch: Infinity
+        });
+      })
+ 
    $(function(){
      'use strict';
 
@@ -91,12 +101,12 @@
 {{-- end data table  --}}
     <script src="{{asset('backend/lib/jquery.sparkline.bower/jquery.sparkline.min.js')}}"></script>
     <script src="{{asset('backend/lib/d3/d3.js')}}"></script>
-    <script src="{{asset('backend/lib/rickshaw/rickshaw.min.js')}}"></script>
-    <script src="{{asset('backend/lib/chart.js/Chart.js')}}"></script>
-    <script src="{{asset('backend/lib/Flot/jquery.flot.js')}}"></script>
-    <script src="{{asset('backend/lib/Flot/jquery.flot.pie.js')}}"></script>
-    <script src="{{asset('backend/lib/Flot/jquery.flot.resize.js')}}"></script>
-    <script src="{{asset('backend/lib/flot-spline/jquery.flot.spline.js')}}"></script>
+    {{-- <script src="{{asset('backend/lib/rickshaw/rickshaw.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/lib/chart.js/Chart.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/lib/Flot/jquery.flot.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/lib/Flot/jquery.flot.pie.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/lib/Flot/jquery.flot.resize.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/lib/flot-spline/jquery.flot.spline.js')}}"></script> --}}
     <script src="{{asset('backend/js/starlight.js')}}"></script>
     <script src="{{asset('backend/js/ResizeSensor.js')}}"></script>
     <script src="{{asset('backend/js/dashboard.js')}}"></script>

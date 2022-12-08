@@ -23,15 +23,13 @@
                     <div class="form-layout">
                       <div class="row mg-b-25">
                
-                  
+                       
                 
-                        <div class="col-lg-4">
+                        <div class="col-lg-6" wire:ignore>
                             <div class="form-group">
                               <label class="form-control-label"> Section Name : <span class="tx-danger">*</span></label>
-                              <select  class="form-control" wire:model="name" >
-                    
-                                <option selected class="form-control">Choose Category </option>
-    
+                              <select  class="form-control select2" wire:model="name" >
+                                <option selected class="form-control" disabled>Choose Category </option>
                                 <option value="navbar"  class="form-control">Navbar</option>
                                 <option value="footer" class="form-control">Footer</option>
                               </select>
@@ -39,7 +37,7 @@
                             
                           </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="form-group mg-b-10-force">
                               <label class="form-control-label">Choose Logo image : <span class="tx-danger">*</span></label><br>
                               <label class="custom-file">

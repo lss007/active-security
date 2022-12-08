@@ -169,7 +169,33 @@
 
       @if(isset($Unternehmen_pagebanner))
     <section>
-      <div class="sectionBgCol companySectionBg" style="background-image: url('{{asset('storage/services-banner/'.$this->Unternehmen_pagebanner->banner)}}')">
+      <style>
+        .sectionBgCol.companySectionBg {
+          background-image: url('{{asset('storage/services-banner/'.$Unternehmen_pagebanner->banner)}}');
+        }
+  
+        @media (max-width: 991px) {
+          .sectionBgCol.companySectionBg {
+            background-image: url('{{asset('storage/services-banner/'.$Unternehmen_pagebanner->tablet_banner)}}');
+          }
+        }
+      </style>
+    @if(isset($Unternehmen_pagebanner->mobile_banner))
+        <style>
+          @media (max-width: 767px) {
+            .sectionBgCol.companySectionBg {
+              background-image: url('{{asset('storage/services-banner/'.$Unternehmen_pagebanner->mobile_banner)}}');
+            }
+          }
+        </style>
+    @else 
+        <style>
+          .sectionBgCol.companySectionBg {
+            background-image: url('{{asset('storage/services-banner/'.$Unternehmen_pagebanner->banner)}}');
+          }
+          </style>
+    @endif
+      <div class="sectionBgCol companySectionBg" >
         <div class="container">
           <div class="sectonTitleCol">
             <h4 class="xlTitle">{!! isset($Unternehmen_pagebanner->heading) ? $Unternehmen_pagebanner->heading : "NA" !!}  </h4>
