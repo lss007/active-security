@@ -28,11 +28,14 @@
               @if (isset($getSectionData) && count($getSectionData) > 0)
               @foreach($getSectionData as $getrow)
               <tr>
-                <td>
-                  {{isset($getrow->name) ?  str_limit($getrow->name, $limit=20 ) : "NA" }}
+                <td class="text-center">
+                  <img class="img-fluid rounded-circle mb-2" src="{{(!empty($getrow->profile_img))  
+                    ? asset('storage/company-profile/'.$getrow->profile_img):asset('no_image.jpg')}}" alt="..." width="100"><br>
+                  {{isset($getrow->name) ?  str_limit($getrow->name, $limit=25 ) : "NA" }}
+
                    </td>
                 <td> 
-                  {{isset($getrow->position) ?  str_limit($getrow->position, $limit=20) : "NA" }}
+                  {{isset($getrow->position) ?  str_limit($getrow->position, $limit=25) : "NA" }}
                 </td>
                 <td>
                   {{isset($getrow->department) ?  str_limit($getrow->department, $limit=20 ) : "NA" }}
