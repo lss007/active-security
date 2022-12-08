@@ -72,13 +72,13 @@ class HomeBanner extends Component
             $imagePath3 = Storage::path('public/Home-banner/'. $getimg->mobile_banner);
 
            
-            if(File::exists($imagePath)){
+            if(File::exists($imagePath) && isset( $getimg->banner_image)){
                 unlink($imagePath);
             }
-            if(File::exists($imagePath2)){
+            if(File::exists($imagePath2) && isset( $getimg->tablet_banner)){
                 unlink($imagePath2);
             }
-            if(File::exists($imagePath3)){
+            if(File::exists($imagePath3) && isset($getimg->mobile_banner)){
                 unlink($imagePath3);
             }
             ModelsHomeBanner::onlyTrashed()->find($id)->forceDelete();

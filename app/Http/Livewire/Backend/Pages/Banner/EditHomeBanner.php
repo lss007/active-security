@@ -88,11 +88,12 @@ class EditHomeBanner extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/Home-banner/');
-
+                            if(isset($this->bannerImage)){
                             $imagePath1 = Storage::path('public/Home-banner/'. $this->bannerImage);
                             if(File::exists($imagePath1)){
                                 // dd($imagePath);
                                 unlink($imagePath1);
+                            }
                             }
                             // dd($folderPath);
                             $image_parts = explode(";base64,", $this->editcropedImg);
@@ -112,11 +113,12 @@ class EditHomeBanner extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/Home-banner/');
-
+                            if($this->tabletBanner){
                             $imagePath2 = Storage::path('public/Home-banner/'. $this->tabletBanner);
                             if(File::exists($imagePath2)){
                                 // dd($imagePath);
                                 unlink($imagePath2);
+                            }
                             }
                             // dd($folderPath);
                             $image_parts2 = explode(";base64,", $this->editcropedImg2);
@@ -138,10 +140,12 @@ class EditHomeBanner extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/Home-banner/');
+                            if($this->mobileBanner){
                             $imagePath3 = Storage::path('public/Home-banner/'. $this->mobileBanner);
                             if(File::exists($imagePath3)){
                                 // dd($imagePath);
                                 unlink($imagePath3);
+                                }
                             }
                             // dd($folderPath);
                             $image_parts3 = explode(";base64,", $this->editcropedImg3);

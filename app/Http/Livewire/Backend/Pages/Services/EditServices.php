@@ -53,6 +53,7 @@ class EditServices extends Component
             $this->title =  $this->editervice->title; 
             $this->sec_image = $this->editervice->sec_image;
             $this->tabletBanner = $this->editervice->tablet_banner;
+  
             $this->mobileBanner = $this->editervice->mobile_banner;
     
             $this->para1 = $this->editervice->para1	;
@@ -103,12 +104,13 @@ class EditServices extends Component
                   // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/services-section/');
-
+                            if(isset($this->sec_image)){
                             $imagePath1 = Storage::path('public/services-section/'. $this->sec_image);
-                            if(File::exists($imagePath1)){
+                            if(File::exists($imagePath1 ) ){
                                 // dd($imagePath);
                                 unlink($imagePath1);
                             }
+                             }
                             // dd($folderPath);
                             $image_parts = explode(";base64,", $this->editServicesImg);
                             $image_type_aux = explode("image/", $image_parts[0]);
@@ -127,12 +129,14 @@ class EditServices extends Component
                     // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/services-section/');
-
+                        if(isset($this->tabletBanner)){
                             $imagePath2 = Storage::path('public/services-section/'. $this->tabletBanner);
+                          
                             if(File::exists($imagePath2)){
                                 // dd($imagePath);
                                 unlink($imagePath2);
                             }
+                        }
                             // dd($folderPath);
                             $image_parts2 = explode(";base64,", $this->editServicesImg2);
                             $image_type_aux2 = explode("image/", $image_parts2[0]);
@@ -151,10 +155,12 @@ class EditServices extends Component
                 // ===========  working ans stora at storage path   =========== 
                         // $folderPath = public_path('upload/');
                         $folderPath3 = Storage::path('public/services-section/');
+                        if(isset($this->mobileBanner)){
                         $imagePath3 = Storage::path('public/services-section/'. $this->mobileBanner);
                         if(File::exists($imagePath3)){
                             // dd($imagePath);
                             unlink($imagePath3);
+                        }
                         }
                         // dd($folderPath);
                         $image_parts3 = explode(";base64,", $this->editServicesImg3);

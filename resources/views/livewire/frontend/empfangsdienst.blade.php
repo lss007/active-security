@@ -41,9 +41,19 @@
           <div class="row gy-4 align-items-center">
             <div class="col-lg-6">
               <div class="imgCol pe-lg-4">
-                <img src="{{(isset($this->EmpfanPagesection->sec_image)) 
-                  ? asset('storage/services-section/'.$EmpfanPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
-              </div>
+
+             
+             <picture>
+              <source media="(min-width:992px)" srcset="{{(isset($this->EmpfanPagesection->sec_image)) 
+                ? asset('storage/services-section/'.$EmpfanPagesection->sec_image) :asset('no_image.jpg')}}">
+              <source media="(min-width:768px)" srcset="{{(isset($this->EmpfanPagesection->tablet_banner)) 
+                ? asset('storage/services-section/'.$EmpfanPagesection->tablet_banner) :
+                asset('storage/services-section/'.$EmpfanPagesection->sec_image)}}">
+              <img class="imgStyle1" src="{{(isset($this->EmpfanPagesection->mobile_banner)) 
+                ? asset('storage/services-section/'.$EmpfanPagesection->mobile_banner) :
+                asset('storage/services-section/'.$EmpfanPagesection->sec_image)}}" alt="" style="width:auto;">
+          </picture>
+            </div>
             </div>
             <div class="col-lg-6">
               <div class="contentCol">

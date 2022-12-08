@@ -82,18 +82,17 @@ class ViewServices extends Component
     public function fulleDelete($id){
             $getimg  = ServicesPageSection::onlyTrashed()->find($id);
             $imagePath = Storage::path('public/services-section/'. $getimg->sec_image);
-      
             $imagePath2 = Storage::path('public/services-section/'. $getimg->tablet_banner);
             $imagePath3 = Storage::path('public/services-section/'. $getimg->mobile_banner);
 
         
-            if(File::exists($imagePath)){
+            if(File::exists($imagePath) && isset($getimg->sec_image)){
                 unlink($imagePath);
             }
-            if(File::exists($imagePath2)){
+            if(File::exists($imagePath2) && isset( $getimg->tablet_banner)){
                 unlink($imagePath2);
             }
-            if(File::exists($imagePath3)){
+            if(File::exists($imagePath3) && isset($getimg->mobile_banner) ){
                 unlink($imagePath3);
             }
             ServicesPageSection::onlyTrashed()->find($id)->forceDelete();

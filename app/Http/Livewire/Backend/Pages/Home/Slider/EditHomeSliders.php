@@ -71,7 +71,7 @@ class EditHomeSliders extends Component
 
                         $imagePath = Storage::path('public/Home-slider/'. $this->image );
 
-                        if(File::exists($imagePath)){
+                        if(File::exists($imagePath) && isset($this->image )){
                   
                             unlink($imagePath);
                         }

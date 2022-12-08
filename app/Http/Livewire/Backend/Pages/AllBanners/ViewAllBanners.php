@@ -95,15 +95,15 @@ class ViewAllBanners extends Component
             $imagePath3 = Storage::path('public/All-banner/'. $getimg->mobile_banner);
 
            
-            if(File::exists($imagePath)){
+            if(File::exists($imagePath) && $getimg->banner_image){
             
                 unlink($imagePath);
             }
-            if(File::exists($imagePath2)){
+            if(File::exists($imagePath2) && $getimg->tablet_banner){
             
                 unlink($imagePath2);
             }
-            if(File::exists($imagePath3)){
+            if(File::exists($imagePath3) && $getimg->mobile_banner){
             
                 unlink($imagePath3);
             }

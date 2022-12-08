@@ -19,10 +19,22 @@ class EditBanners extends Component
     public function mount($id){
         $this->bannerId= $id;
         $this->editerviceBanner = ServicesPageBanner::where('id', $this->bannerId)->where('status',1)->first();
-        $this->pageCatId  =  $this->editerviceBanner->page_cat_id;
-        $this->heading =  $this->editerviceBanner->heading;
-        $this->banner =  $this->editerviceBanner->banner; 
-        $this->link = $this->editerviceBanner->link;
+      
+        if( $this->editerviceBanner != Null){
+            $this->pageCatId  =  $this->editerviceBanner->page_cat_id;
+            $this->heading =  $this->editerviceBanner->heading;
+            $this->banner =  $this->editerviceBanner->banner; 
+            $this->link = $this->editerviceBanner->link;
+        }else {
+            $notification = array(
+                'message' => 'Not Editable',
+                'alert-type' => 'error'
+            );
+            return redirect()->route('view_services_banner')->with($notification);
+        }
+      
+      
+  
         }
         protected $rules = [
             'pageCatId' =>'required',

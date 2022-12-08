@@ -44,26 +44,16 @@
               <div class="col-lg-6">
                 <div class="imgCol pe-lg-4">
                    {{-- detect  --}}
-                @if((new \Jenssegers\Agent\Agent())->isDesktop())
-                <img wire:poll src="{{(isset($this->ObjektUndPagesection->sec_image)) 
-                  ? asset('storage/services-section/'.$ObjektUndPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
-              
-               
-               @elseif((new \Jenssegers\Agent\Agent())->isTablet())
-               <img wire:poll src="{{(isset($this->ObjektUndPagesection->tablet_banner)) 
-                ? asset('storage/services-section/'.$ObjektUndPagesection->tablet_banner) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
-            
-                @elseif((new \Jenssegers\Agent\Agent())->isMobile())
+                  
 
-                <img wire:poll  src="{{(isset($this->ObjektUndPagesection->mobile_banner)) 
-                  ? asset('storage/services-section/'.$ObjektUndPagesection->mobile_banner) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
-
-                @else 
-                <img  src="{{(isset($this->ObjektUndPagesection->sec_image)) 
-                  ? asset('storage/services-section/'.$ObjektUndPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
-              
-
-                @endif
+                <picture>
+                  <source media="(min-width:992px)" srcset="{{(isset($this->ObjektUndPagesection->sec_image)) 
+                    ? asset('storage/services-section/'.$ObjektUndPagesection->sec_image) :asset('no_image.jpg')}}">
+                  <source media="(min-width:768px)" srcset="{{(isset($this->ObjektUndPagesection->tablet_banner)) 
+                    ? asset('storage/services-section/'.$ObjektUndPagesection->tablet_banner) :asset('storage/services-section/'.$ObjektUndPagesection->sec_image)}}">
+                  <img class="imgStyle1" src="{{(isset($this->ObjektUndPagesection->mobile_banner)) 
+                    ? asset('storage/services-section/'.$ObjektUndPagesection->mobile_banner) :asset('storage/services-section/'.$ObjektUndPagesection->sec_image)}}" alt="" style="width:auto;">
+                </picture>
                {{-- end detect  --}}
 
                 </div>

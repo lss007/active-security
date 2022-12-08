@@ -84,12 +84,13 @@ class EditAllBanners extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/All-banner/');
-
+                        if($this->bannerImage){
                             $imagePath1 = Storage::path('public/All-banner/'. $this->bannerImage);
-                            if(File::exists($imagePath1)){
+                            if(File::exists($imagePath1) ){
                                 // dd($imagePath);
                                 unlink($imagePath1);
                             }
+                        }
                             // dd($folderPath);
                             $image_parts = explode(";base64,", $this->updateCropedImg);
                             $image_type_aux = explode("image/", $image_parts[0]);
@@ -110,10 +111,12 @@ class EditAllBanners extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/All-banner/');
+                            if($this->tablet_banner){
                             $imagePath2 = Storage::path('public/All-banner/'. $this->tablet_banner);
-                            if(File::exists($imagePath2)){
-                                // dd($imagePath);
-                                unlink($imagePath2);
+                                if(File::exists($imagePath2)){
+                                    // dd($imagePath);
+                                    unlink($imagePath2);
+                                }
                             }
                             // dd($folderPath);
                             $image_parts2 = explode(";base64,", $this->updateCropedImg2);
@@ -136,10 +139,12 @@ class EditAllBanners extends Component
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/All-banner/');
+                            if($this->mobile_banner){
                             $imagePath3 = Storage::path('public/All-banner/'. $this->mobile_banner);
-                            if(File::exists($imagePath3)){
-                                // dd($imagePath);
-                                unlink($imagePath3);
+                                if(File::exists($imagePath3)){
+                                    // dd($imagePath);
+                                    unlink($imagePath3);
+                                }
                             }
                             // dd($folderPath);
                             $image_parts3 = explode(";base64,", $this->updateCropedImg3);

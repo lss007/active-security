@@ -53,7 +53,7 @@ class ViewHomeSliders extends Component
     public function fulleDelete($id){
         $getimg  = HomeSectionSlider::onlyTrashed()->find($id);
         $imagePath = Storage::path('public/Home-slider/'. $getimg->image);
-        if(File::exists($imagePath)){
+        if(File::exists($imagePath) && isset( $getimg->image)){
             // dd($imagePath);
             unlink($imagePath);
         }

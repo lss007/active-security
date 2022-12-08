@@ -41,7 +41,16 @@
           <div class="row gy-4 align-items-center">
             <div class="col-lg-6">
               <div class="imgCol pe-lg-4">
-                <img src="{{(isset($this->ShopPagesection->sec_image))  ? asset('storage/services-section/'.$ShopPagesection->sec_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
+             <picture>
+              <source media="(min-width:992px)" srcset="{{(isset($this->ShopPagesection->sec_image)) 
+                ? asset('storage/services-section/'.$ShopPagesection->sec_image) :asset('no_image.jpg')}}">
+              <source media="(min-width:768px)" srcset="{{(isset($this->ShopPagesection->tablet_banner)) 
+                ? asset('storage/services-section/'.$ShopPagesection->tablet_banner) :
+                asset('storage/services-section/'.$ShopPagesection->sec_image)}}">
+              <img class="imgStyle1" src="{{(isset($this->ShopPagesection->mobile_banner)) 
+                ? asset('storage/services-section/'.$ShopPagesection->mobile_banner) :
+                asset('storage/services-section/'.$ShopPagesection->sec_image)}}" alt="" style="width:auto;">
+          </picture>
               </div>
             </div>
             <div class="col-lg-6">
