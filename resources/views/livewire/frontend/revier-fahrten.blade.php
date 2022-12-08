@@ -4,19 +4,28 @@
     <section>
       <style>
         .bannerSection.innerPageBanner.s6Banner {
-          background-image: url('{{asset('storage/All-banner/'.$Reviermain->banner_image)}}');
-        }
-        @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.s6Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Reviermain->tablet_banner)}}');
-          }
-        }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.s6Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Reviermain->mobile_banner)}}');
-          }
-        }
-      </style>
+           background-image: url('{{asset('storage/All-banner/'.$Reviermain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.s6Banner {
+             background-image: url('{{asset('storage/All-banner/'.$Reviermain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Reviermain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.s6Banner{
+                 background-image: url('{{asset('storage/All-banner/'.$Reviermain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.s6Banner { 
+                background-image: url('{{asset('storage/All-banner/'.$Reviermain->banner_image)}}');  }
+         </style>
+       @endif
       <div class="bannerSection innerPageBanner s6Banner"    >
         <div class="container">
           <div class="bannerContent">

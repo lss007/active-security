@@ -26,7 +26,9 @@ class ViewAllBanners extends Component
         $this->viewallBanner = AllPagesBanner::join('page_categories', 'all_pages_banners.cat_id','page_categories.id')
         ->select('all_pages_banners.*','page_categories.page_cat_name')
         ->where('heading', 'like', '%'.trim($this->search).'%')
-        ->orWhere('title', 'like', '%'.trim($this->search).'%')->paginate(5);
+        ->orWhere('title', 'like', '%'.trim($this->search).'%')
+        ->orWhere('page_cat_name', 'like', '%'.trim($this->search).'%')
+        ->paginate(5);
         // ->when($this->search, fn ($query, $search) => $query->where('heading', 'like', '%' . $search . '%'))
       
         $trashdata= AllPagesBanner::onlyTrashed()->paginate(3);

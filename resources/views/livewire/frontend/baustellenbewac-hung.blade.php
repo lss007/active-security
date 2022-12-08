@@ -1,4 +1,4 @@
-s<div>
+ss<div>
     {{-- The whole world belongs to you. --}}
     @if(isset($Baustellmain))
     <section>
@@ -12,12 +12,22 @@ s<div>
             background-image: url('{{asset('storage/All-banner/'.$Baustellmain->tablet_banner)}}');
           }
         }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.s4Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Baustellmain->mobile_banner)}}');
-          }
-        }
-      </style>
+        </style>
+
+      @if(isset($Baustellmain->mobile_banner))
+        <style>
+            @media (max-width: 767px) {
+              .bannerSection.innerPageBanner.s4Banner {
+                background-image: url('{{asset('storage/All-banner/'.$Baustellmain->mobile_banner)}}');
+              }
+            }
+        </style>
+      @else 
+          <style>
+            .bannerSection.innerPageBanner.s4Banner {  background-image: url('{{asset('storage/All-banner/'.$Baustellmain->banner_image)}}');  }
+            </style>
+      @endif
+
         <div class="bannerSection innerPageBanner s4Banner">
           <div class="container">
             <div class="bannerContent mw-100">

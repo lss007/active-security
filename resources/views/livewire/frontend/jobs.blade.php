@@ -5,19 +5,28 @@
     <section>
       <style>
         .bannerSection.innerPageBanner.jobsBanner {
-          background-image: url('{{asset('storage/All-banner/'.$Jobsmain->banner_image)}}');
-        }
-        @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.jobsBanner {
-            background-image: url('{{asset('storage/All-banner/'.$Jobsmain->tablet_banner)}}');
-          }
-        }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.jobsBanner {
-            background-image: url('{{asset('storage/All-banner/'.$Jobsmain->mobile_banner)}}');
-          }
-        }
-      </style>
+           background-image: url('{{asset('storage/All-banner/'.$Jobsmain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.jobsBanner {
+             background-image: url('{{asset('storage/All-banner/'.$Jobsmain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Jobsmain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.jobsBanner{
+                 background-image: url('{{asset('storage/All-banner/'.$Jobsmain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.jobsBanner { 
+                background-image: url('{{asset('storage/All-banner/'.$Jobsmain->banner_image)}}');  }
+         </style>
+       @endif
         <div class="bannerSection innerPageBanner jobsBanner"  >
           <div class="container">
             <div class="bannerContent mw-100">

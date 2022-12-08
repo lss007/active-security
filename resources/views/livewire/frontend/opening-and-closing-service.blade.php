@@ -5,19 +5,28 @@
     <section>
       <style>
         .bannerSection.innerPageBanner.s5Banner {
-          background-image: url('{{asset('storage/All-banner/'.$Openingmain->banner_image)}}');
-        }
-        @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.s5Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Openingmain->tablet_banner)}}');
-          }
-        }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.s5Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Openingmain->mobile_banner)}}');
-          }
-        }
-      </style>
+           background-image: url('{{asset('storage/All-banner/'.$Openingmain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.s5Banner {
+             background-image: url('{{asset('storage/All-banner/'.$Openingmain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Openingmain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.s5Banner{
+                 background-image: url('{{asset('storage/All-banner/'.$Openingmain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.s5Banner { 
+                background-image: url('{{asset('storage/All-banner/'.$Openingmain->banner_image)}}');  }
+         </style>
+       @endif
       <div class="bannerSection innerPageBanner s5Banner" >
         <div class="container">
           <div class="bannerContent">

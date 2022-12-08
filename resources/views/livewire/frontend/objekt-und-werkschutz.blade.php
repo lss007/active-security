@@ -4,19 +4,28 @@
       <section>
         <style>
           .bannerSection.innerPageBanner.s1Banner {
-            background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->banner_image)}}');
-          }
-          @media (max-width: 991px) {
-            .bannerSection.innerPageBanner.s1Banner {
-              background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->tablet_banner)}}');
-            }
-          }
-          @media (max-width: 767px) {
-            .bannerSection.innerPageBanner.s1Banner {
-              background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->mobile_banner)}}');
-            }
-          }
-        </style>
+             background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->banner_image)}}');
+           }
+           @media (max-width: 991px) {
+             .bannerSection.innerPageBanner.s1Banner {
+               background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->tablet_banner)}}');
+             }
+           }
+           </style>
+         @if(isset($ObjektUndPageBanner->mobile_banner))
+           <style>
+               @media (max-width: 767px) {
+                 .bannerSection.innerPageBanner.s1Banner{
+                   background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->mobile_banner)}}');
+                 }
+               }
+           </style>
+         @else 
+           <style>
+               .bannerSection.innerPageBanner.s1Banner { 
+                  background-image: url('{{asset('storage/All-banner/'.$ObjektUndPageBanner->banner_image)}}');  }
+           </style>
+         @endif
         <div class="bannerSection innerPageBanner s1Banner" >
           <div class="container">
             <div class="bannerContent">

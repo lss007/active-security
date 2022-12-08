@@ -4,21 +4,29 @@
     <section>
       <style>
         .bannerSection.innerPageBanner.s8Banner {
-          background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}');
-        }
-        @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.s8Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Shopmain->tablet_banner)}}');
-          }
-        }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.s8Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Shopmain->mobile_banner)}}');
-          }
-        }
-      </style>
-      <div class="bannerSection innerPageBanner s8Banner" 
-      >
+           background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.s8Banner {
+             background-image: url('{{asset('storage/All-banner/'.$Shopmain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Shopmain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.s8Banner{
+                 background-image: url('{{asset('storage/All-banner/'.$Shopmain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.s8Banner { 
+                background-image: url('{{asset('storage/All-banner/'.$Shopmain->banner_image)}}');  }
+         </style>
+       @endif
+      <div class="bannerSection innerPageBanner s8Banner"  >
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">{!!	isset($Shopmain->heading) ? $Shopmain->heading : "NA"!!}</h1>

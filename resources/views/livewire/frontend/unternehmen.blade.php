@@ -5,19 +5,28 @@
     <section>
       <style>
         .bannerSection.innerPageBanner.companyBanner {
-          background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->banner_image)}}');
-        }
-        @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.companyBanner {
-            background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->tablet_banner)}}');
-          }
-        }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.companyBanner {
-            background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->mobile_banner)}}');
-          }
-        }
-      </style>
+           background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.companyBanner {
+             background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Unternehmenmain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.companyBanner{
+                 background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.companyBanner { 
+                background-image: url('{{asset('storage/All-banner/'.$Unternehmenmain->banner_image)}}');  }
+         </style>
+       @endif
       <div class="bannerSection innerPageBanner companyBanner" >
         <div class="container">
           <div class="bannerContent mw-100">

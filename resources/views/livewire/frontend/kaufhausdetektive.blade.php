@@ -4,19 +4,28 @@
     <section>
       <style>
         .bannerSection.innerPageBanner.s3Banner {
-          background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->banner_image)}}');
-        }
-        @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.s3Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->tablet_banner)}}');
-          }
-        }
-        @media (max-width: 767px) {
-          .bannerSection.innerPageBanner.s3Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->mobile_banner)}}');
-          }
-        }
-      </style>
+           background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.s3Banner {
+             background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Kaufhausmain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.s3Banner{
+                 background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.s3Banner { 
+                background-image: url('{{asset('storage/All-banner/'.$Kaufhausmain->banner_image)}}');  }
+         </style>
+       @endif
         <div class="bannerSection innerPageBanner s3Banner"  >
           <div class="container">
             <div class="bannerContent mw-100">
