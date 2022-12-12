@@ -51,8 +51,6 @@
             <div class="row gy-4 align-items-center">
               <div class="col-lg-6">
                 <div class="imgCol pe-lg-4">
-
-                    
             <picture>
               <source media="(min-width:992px)" srcset="{{(isset($this->KaufhausPagesection->sec_image)) 
                 ? asset('storage/services-section/'.$KaufhausPagesection->sec_image) :asset('no_image.jpg')}}">
@@ -63,7 +61,6 @@
                 ? asset('storage/services-section/'.$KaufhausPagesection->mobile_banner) :
                 asset('storage/services-section/'.$KaufhausPagesection->sec_image)}}" alt="" style="width:auto;">
             </picture>
-              
               </div>
               </div>
               <div class="col-lg-6">

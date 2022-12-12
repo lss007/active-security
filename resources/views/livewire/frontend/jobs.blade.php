@@ -49,8 +49,17 @@
             <div class="row gy-4 align-items-center">
               <div class="col-lg-6">
                 <div class="imgCol pe-lg-4">
-                  <img src=" {{(!empty($getJobsec->image)) 
-                    ? asset('storage/job') . '/' .  $getJobsec->image:url('upload/no_image.jpg')}}" alt="..." class="imgStyle1">
+                  <picture>
+                    <source media="(min-width:992px)" srcset="{{(isset($this->getJobsec->image)) 
+                      ? asset('storage/job/'.$getJobsec->image) :asset('no_image.jpg')}}">
+                    <source media="(min-width:768px)" srcset="{{(isset($this->getJobsec->tablet_banner)) 
+                      ? asset('storage/job/'.$getJobsec->tablet_banner) :
+                      asset('storage/job/'.$getJobsec->image)}}">
+                    <img class="imgStyle1" src="{{(isset($this->getJobsec->mobile_banner)) 
+                      ? asset('storage/job/'.$getJobsec->mobile_banner) :
+                      asset('storage/job/'.$getJobsec->image)}}" alt="" style="width:auto;">
+                  </picture>
+
                 </div>
 
                

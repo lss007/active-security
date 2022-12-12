@@ -90,8 +90,18 @@
               <div class="col-lg-6">
                 <div class="cCardCol">
                   <div class="cCardImgCol">
-                    <img src="{{(isset($this->companysecTwo->profile_img)) 
-                      ? asset('storage/company-profile/'.$companysecTwo->profile_img) :asset('no_image.jpg')}}" alt="...">
+                    <picture>
+                      <source media="(min-width:992px)" srcset="{{(isset($this->companysecTwo->profile_img)) 
+                        ? asset('storage/company-profile/'.$companysecTwo->profile_img) :asset('no_image.jpg')}}">
+                      <source media="(min-width:768px)" srcset="{{(isset($this->companysecTwo->tablet_banner)) 
+                        ? asset('storage/company-profile/'.$companysecTwo->tablet_banner) :
+                        asset('storage/company-profile/'.$companysecTwo->profile_img)}}">
+                      <img class="imgStyle1" src="{{(isset($this->companysecTwo->mobile_banner)) 
+                        ? asset('storage/company-profile/'.$companysecTwo->mobile_banner) :
+                        asset('storage/company-profile/'.$companysecTwo->profile_img)}}" alt="" style="width:auto;">
+                    </picture>
+                    {{-- <img src="{{(isset($this->companysecTwo->profile_img)) 
+                      ? asset('storage/company-profile/'.$companysecTwo->profile_img) :asset('no_image.jpg')}}" alt="..."> --}}
                   </div>
                   <div class="cCardContent">
                     <span class="uName">{!! isset($companysecTwo->name) ? $companysecTwo->name : "MA"!!}</span>
@@ -138,8 +148,18 @@
               <div class="col-lg-6 order-lg-last">
                 <div class="cCardCol ms-lg-auto">
                   <div class="cCardImgCol">
-                    <img src="{{(isset($this->companysecThree->profile_img)) 
-                      ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}" alt="...">
+                    <picture>
+                      <source media="(min-width:992px)" srcset="{{(isset($this->companysecThree->profile_img)) 
+                        ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}">
+                      <source media="(min-width:768px)" srcset="{{(isset($this->companysecThree->tablet_banner)) 
+                        ? asset('storage/company-profile/'.$companysecThree->tablet_banner) :
+                        asset('storage/company-profile/'.$companysecTwo->profile_img)}}">
+                      <img class="imgStyle1" src="{{(isset($this->companysecThree->mobile_banner)) 
+                        ? asset('storage/company-profile/'.$companysecThree->mobile_banner) :
+                        asset('storage/company-profile/'.$companysecThree->profile_img)}}" alt="" style="width:auto;">
+                    </picture>
+                    {{-- <img src="{{(isset($this->companysecThree->profile_img)) 
+                      ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}" alt="..."> --}}
                   </div>
                   <div class="cCardContent">
                     <span class="uName">{!! isset($companysecThree->name) ? $companysecThree->name : "MA"!!}</span>

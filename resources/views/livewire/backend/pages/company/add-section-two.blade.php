@@ -137,7 +137,7 @@
        
 
                           <div class="col-lg-4">
-                            <label class="form-control-label"> Banner Image For Desktop:   <span class="tx-danger"> *</span></label><br>
+                            <label class="form-control-label">  Image For Desktop:   <span class="tx-danger"> *</span></label><br>
                               <div class="row croper_sec">
                                 <div class="col-md-12">
                                   <div class="image_area">
@@ -187,7 +187,7 @@
                               
                            {{-- tablet --}}
                            <div class="col-lg-4">
-                            <label class="form-control-label"> Banner Image For Tablet:   <span class="tx-danger"> *</span></label><br>
+                            <label class="form-control-label">  Image For Tablet:   <span class="tx-danger"> *</span></label><br>
                               <div class="row croper_sec">
                                 <div class="col-md-12">
                                   <div class="image_area">
@@ -238,7 +238,7 @@
               
                           {{-- For mobile  --}}
                           <div class="col-lg-4">
-                            <label class="form-control-label"> Banner Image For Mobile:   <span class="tx-danger"> *</span></label><br>
+                            <label class="form-control-label">  Image For Mobile:   <span class="tx-danger"> *</span></label><br>
                               <div class="row croper_sec">
                                 <div class="col-md-12">
                                   <div class="image_area">

@@ -132,9 +132,9 @@
                           </div><!-- col-4 -->
                           @endif
        
-                    
+                          {{-- Desktop --}}
                           <div class="col-lg-4">
-                            <label class="form-control-label"> Banner Image For Desktop:   <span class="tx-danger"> *</span></label><br>
+                            <label class="form-control-label">  Image For Desktop:   <span class="tx-danger"> *</span></label><br>
                               <div class="row croper_sec">
                                 <div class="col-md-12">
                                   <div class="image_area">
@@ -180,11 +180,11 @@
                                 </div><!-- modal -->
                                 {{-- end large model  --}}                     
                             </div>
-                          </div>
-                              
-                           {{-- tablet --}}
+                          </div>  
+                          {{-- Desktop --}}
+                          {{-- Tablet --}}
                            <div class="col-lg-4">
-                            <label class="form-control-label"> Banner Image For Tablet:   <span class="tx-danger"> *</span></label><br>
+                            <label class="form-control-label">  Image For Tablet:   <span class="tx-danger"> *</span></label><br>
                               <div class="row croper_sec">
                                 <div class="col-md-12">
                                   <div class="image_area">
@@ -231,11 +231,10 @@
                                 {{-- end large model  --}}                     
                             </div>
                           </div>
-                           {{-- tablet  --}}
-              
-                          {{-- For mobile  --}}
+                          {{-- Tablet  --}}
+                          {{-- For Mobile  --}}
                           <div class="col-lg-4">
-                            <label class="form-control-label"> Banner Image For Mobile:   <span class="tx-danger"> *</span></label><br>
+                            <label class="form-control-label">  Image For Mobile:   <span class="tx-danger"> *</span></label><br>
                               <div class="row croper_sec">
                                 <div class="col-md-12">
                                   <div class="image_area">
@@ -282,7 +281,7 @@
                                 {{-- end large model  --}}                     
                             </div>
                           </div>
-                          {{-- for mobile  --}}
+                          {{-- for Mobile  --}}
                  
             
                       </div><!-- row -->

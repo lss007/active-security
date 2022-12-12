@@ -9,32 +9,35 @@
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
             @if(isset($getJobsection) )
-            @if($getJobsection->status == 1 )
-          
-            
+            {{-- @if($getJobsection->status == 1 )
             <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  wire:click.prevent="inactive({{$getJobsection->id}})">
               Inactive </a>
             @else
               <a href="javascript:void(0)" class="btn btn-info active  mg-b-10" wire:click.prevent="active({{$getJobsection->id}})">
             Active</a>
-            @endif
+            @endif --}}
         
-            <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"  wire:click.prevent="delete({{$getJobsection->id}})">
-              Delete </a>      
+            <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10"  wire:click.prevent="delete({{$getJobsection->id}})">
+              Trash </a>      
 
-           
+          
+              
             <a href="{{route('edit_job_section',$getJobsection->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
            
 
             
             @else
+            <a href="{{route('add_last_section')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>
+
             @if(isset($trashdata))
             <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
               Restore </a>  
+
+              {{-- <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"  wire:click.prevent="fulleDelete({{$trashdata->id}})">
+                Delete </a>   --}}
               @endif
-            <a href="{{route('add_last_section')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>
-        
-            @endif
+       
+            @endif 
 
           </h6>
 
@@ -50,7 +53,7 @@
               </div><!-- card-header -->
               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-12">
                 <div class="card-body">
 
                
@@ -67,13 +70,32 @@
         
         
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card-body">
-                <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getJobsection->image))  
-                  ? asset('storage/job/'.$getJobsection->image):asset('no_image.jpg')}}" alt="..." style="width:500px;" >
+
+
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <span class="text-primary">For Desktop :</span>
+                  <hr>
+                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getJobsection->image))  
+                    ? asset('storage/job/'.$getJobsection->image):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                  </div>
+                  <div class="col-md-4">
+                    <span class="text-primary">For Tablet :</span>
+                  <hr>
+                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getJobsection->tablet_banner))  
+                    ? asset('storage/job/'.$getJobsection->tablet_banner):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                  </div>
+                  <div class="col-md-4">
+                    <span class="text-primary">For Mobile :</span>
+                  <hr>
+                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getJobsection->mobile_banner))  
+                    ? asset('storage/job/'.$getJobsection->mobile_banner):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                  </div>
                 </div>
+                
               </div>
+             
             </div>
               </div>
             </div>
