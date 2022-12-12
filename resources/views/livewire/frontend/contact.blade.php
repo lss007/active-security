@@ -28,8 +28,17 @@
               <div class="col-lg-6 order-lg-last">
                 <div class="imgCol ps-lg-4">
                   @if(isset($getContactSection))
-                  <img src="{{(isset($this->getContactSection->image)) 
-                    ? asset('storage/Contact/'.$getContactSection->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
+
+                        <picture>
+                          <source media="(min-width:992px)" srcset="{{(isset($this->getContactSection->image)) 
+                            ? asset('storage/Contact/'.$getContactSection->image) :asset('no_image.jpg')}}">
+                          <source media="(min-width:768px)" srcset="{{(isset($this->getContactSection->tablet_img)) 
+                            ? asset('storage/Contact/'.$getContactSection->tablet_img) :
+                            asset('storage/Contact/'.$getContactSection->image)}}">
+                          <img class="imgStyle1" src="{{(isset($this->getContactSection->mobile_img)) 
+                            ? asset('storage/Contact/'.$getContactSection->mobile_img) :
+                            asset('storage/Contact/'.$getContactSection->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                        </picture>
                   @endif
              
                 </div>

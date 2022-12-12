@@ -56,20 +56,157 @@
                           </div><!-- col-4 -->
                       
        
-                                 
-                      <div class="col-lg-12">
-                          <div class="form-group mg-b-10-force">
-                            <label class="form-control-label"> Choose  Image : <span class="tx-danger">*</span></label><br>
-                            <label class="custom-file">
-                              <input type="file" id="file" class="custom-file-input" wire:model="image" >
-                              <span class="custom-file-control"></span>
-                            </label>
+                          <div class="col-lg-4">
+                            <label class="form-control-label">  Image For Desktop:   <span class="tx-danger"> *</span></label><br>
+                              <div class="row croper_sec">
+                                <div class="col-md-12">
+                                  <div class="image_area">
+                                    <form method="post">
+                                      <label for="upload_contact_img1" class="cabinet uploadStyle ">  
+                                        <img src="" id="uploaded_contact_img1"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:100px;"/> 
+                                        <span>Upload Image</span>                          
+                                        <input type="file" name="image" class="image" id="upload_contact_img1"  />
+                                      </label>
+                                    </form>
+                                  </div>
+                                </div>
+                            @error('ConCropedImg')<span class="text-danger"> {{$message}}</span>  @enderror  
+              
+                                {{-- start large model  --}}
+                                <div id="contactmodal1" class="modal fade" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content tx-size-sm">
+                                      <div class="modal-header pd-x-20">
+                                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Crop Image Before Upload For Desktop</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body pd-20">
+                                        <div class="img-container">
+                                          <div class="row">
+                                              <div class="col-md-8">
+                                                  <img src="" id="contact_image1" />
+                                              </div>
+                                              <div class="col-md-4 pointerNone">
+                                                  <div class="preview"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div><!-- modal-body -->
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal" > Cancel</button>
+                                        <button type="button" class="btn btn-info pd-x-20"  id="crop">Crop</button>
+                                      </div>
+                                    </div>
+                                  </div><!-- modal-dialog -->
+                                </div><!-- modal -->
+                                {{-- end large model  --}}                     
+                            </div>
                           </div>
-                          
-                          @if(isset($image)) <img id="output" src="{{$image->temporaryUrl()}}" width="150" > @endif
-                          @error('image')<span class="text-danger"> {{$message}}</span>  @enderror  
-                      
-                      </div><!-- col-4 -->
+                              
+                           {{-- tablet --}}
+                           <div class="col-lg-4">
+                            <label class="form-control-label">  Image For Tablet:   <span class="tx-danger"> *</span></label><br>
+                              <div class="row croper_sec">
+                                <div class="col-md-12">
+                                  <div class="image_area">
+                                    <form method="post">
+                                      <label for="upload_contact_img2" class="cabinet uploadStyle ">  
+                                        <img src="" id="uploaded_contact_img2"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
+                                        <span>Upload Image</span>                          
+                                        <input type="file" name="image" class="image" id="upload_contact_img2"  />
+                                      </label>
+                                    </form>
+                                  </div>
+                                </div>
+                            @error('ConCropedImg2')<span class="text-danger"> {{$message}}</span>  @enderror  
+              
+                                {{-- start large model  --}}
+                                <div id="contactmodal2" class="modal fade" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content tx-size-sm">
+                                      <div class="modal-header pd-x-20">
+                                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Crop Image Before Upload For Tablet</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body pd-20">
+                                        <div class="img-container">
+                                          <div class="row">
+                                              <div class="col-md-8">
+                                                  <img src="" id="contact_image2" />
+                                              </div>
+                                              <div class="col-md-4 pointerNone">
+                                                  <div class="preview"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div><!-- modal-body -->
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal" > Cancel</button>
+                                        <button type="button" class="btn btn-info pd-x-20"  id="crop2">Crop</button>
+                                      </div>
+                                    </div>
+                                  </div><!-- modal-dialog -->
+                                </div><!-- modal -->
+                                {{-- end large model  --}}                     
+                            </div>
+                          </div>
+                           {{-- tablet  --}}
+              
+                          {{-- For mobile  --}}
+                          <div class="col-lg-4">
+                            <label class="form-control-label">  Image For Mobile:   <span class="tx-danger"> *</span></label><br>
+                              <div class="row croper_sec">
+                                <div class="col-md-12">
+                                  <div class="image_area">
+                                    <form method="post">
+                                      <label for="upload_contact_img3" class="cabinet uploadStyle ">  
+                                        <img src="" id="uploaded_contact_img3"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
+                                        <span>Upload Image</span>                          
+                                        <input type="file" name="image" class="image" id="upload_contact_img3"  />
+                                      </label>
+                                    </form>
+                                  </div>
+                                </div>
+                            @error('ConCropedImg3')<span class="text-danger"> {{$message}}</span>  @enderror  
+              
+                                {{-- start large model  --}}
+                                <div id="contactmodal3" class="modal fade" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content tx-size-sm">
+                                      <div class="modal-header pd-x-20">
+                                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Crop Image Before Upload For Mobile</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body pd-20">
+                                        <div class="img-container">
+                                          <div class="row">
+                                              <div class="col-md-8">
+                                                  <img src="" id="contact_image3" />
+                                              </div>
+                                              <div class="col-md-4 pointerNone">
+                                                  <div class="preview"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div><!-- modal-body -->
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal" > Cancel</button>
+                                        <button type="button" class="btn btn-info pd-x-20"  id="crop3">Crop</button>
+                                      </div>
+                                    </div>
+                                  </div><!-- modal-dialog -->
+                                </div><!-- modal -->
+                                {{-- end large model  --}}                     
+                            </div>
+                          </div>
+                          {{-- for mobile  --}}
+            
             
        
                  
@@ -123,4 +260,164 @@
  
        {{-- card end  --}}
     </div>
+    <script>
+      $(document).ready(function(){
+        var $modal = $('#contactmodal1');
+        var image = document.getElementById('contact_image1');
+        var cropper;
+        $('#upload_contact_img1').change(function(event){
+            var files = event.target.files;
+            var done = function (url) {
+                image.src = url;
+                $modal.modal('show');
+            };
+            if (files && files.length > 0)
+            {
+                  reader = new FileReader();
+                  reader.onload = function (event) {
+                      done(reader.result);
+                  };
+                  reader.readAsDataURL(files[0]);
+            }
+        });
+        $modal.on('shown.bs.modal', function() {
+            cropper = new Cropper(image, {
+              // aspectRatio: 1,
+              viewMode: 3,
+              autoCropArea : 1,
+              fillColor: '#fff',
+              preview: '.preview',
+            });
+        }).on('hidden.bs.modal', function() {
+              cropper.destroy();
+              cropper = null;
+        });
+        $("#crop").click(function(){
+            canvas = cropper.getCroppedCanvas({
+                // width: 400,
+                // height: 400,
+                imageSmoothingEnabled: true,
+                imageSmoothingQuality: 'high',
+            });
+            canvas.toBlob(function(blob) {
+                //url = URL.createObjectURL(blob);
+                var reader = new FileReader();
+                  reader.readAsDataURL(blob); 
+                  reader.onloadend = function() {
+                    var base64data = reader.result;  
+              Livewire.emit('addContactImg',  base64data)
+              $modal.modal('hide');
+              $('#uploaded_contact_img1').attr('src', base64data);
+                  }
+            });
+          });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        var $modal = $('#contactmodal2');
+        var image = document.getElementById('contact_image2');
+        var cropper;
+        $('#upload_contact_img2').change(function(event){
+            var files = event.target.files;
+            var done = function (url) {
+                image.src = url;
+                $modal.modal('show');
+            };
+            if (files && files.length > 0)
+            {
+                  reader = new FileReader();
+                  reader.onload = function (event) {
+                      done(reader.result);
+                  };
+                  reader.readAsDataURL(files[0]);
+            }
+        });
+        $modal.on('shown.bs.modal', function() {
+            cropper = new Cropper(image, {
+              // aspectRatio: 1,
+              viewMode: 3,
+              autoCropArea : 1,
+              fillColor: '#fff',
+              preview: '.preview',
+            });
+        }).on('hidden.bs.modal', function() {
+             cropper.destroy();
+             cropper = null;
+        });
+        $("#crop2").click(function(){
+            canvas = cropper.getCroppedCanvas({
+                // width: 400,
+                // height: 400,
+                imageSmoothingEnabled: true,
+                imageSmoothingQuality: 'high',
+            });
+            canvas.toBlob(function(blob) {
+                //url = URL.createObjectURL(blob);
+                var reader = new FileReader();
+                 reader.readAsDataURL(blob); 
+                 reader.onloadend = function() {
+                    var base64data = reader.result;  
+              Livewire.emit('addContactImg2',  base64data)
+              $modal.modal('hide');
+              $('#uploaded_contact_img2').attr('src', base64data);
+                 }
+            });
+          });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        var $modal = $('#contactmodal3');
+        var image = document.getElementById('contact_image3');
+        var cropper;
+        $('#upload_contact_img3').change(function(event){
+            var files = event.target.files;
+            var done = function (url) {
+                image.src = url;
+                $modal.modal('show');
+            };
+            if (files && files.length > 0)
+            {
+                  reader = new FileReader();
+                  reader.onload = function (event) {
+                      done(reader.result);
+                  };
+                  reader.readAsDataURL(files[0]);
+            }
+        });
+        $modal.on('shown.bs.modal', function() {
+            cropper = new Cropper(image, {
+              // aspectRatio: 1,
+              viewMode: 3,
+              autoCropArea : 1,
+              fillColor: '#fff',
+              preview: '.preview',
+            });
+        }).on('hidden.bs.modal', function() {
+             cropper.destroy();
+             cropper = null;
+        });
+        $("#crop3").click(function(){
+            canvas = cropper.getCroppedCanvas({
+                // width: 400,
+                // height: 400,
+                imageSmoothingEnabled: true,
+                imageSmoothingQuality: 'high',
+            });
+            canvas.toBlob(function(blob) {
+                //url = URL.createObjectURL(blob);
+                var reader = new FileReader();
+                 reader.readAsDataURL(blob); 
+                 reader.onloadend = function() {
+                    var base64data = reader.result;  
+              Livewire.emit('addContactImg3',  base64data)
+              $modal.modal('hide');
+              $('#uploaded_contact_img3').attr('src', base64data);
+                 }
+            });
+          });
+        
+      });
+    </script>
 </div>

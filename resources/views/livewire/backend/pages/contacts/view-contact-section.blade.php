@@ -10,28 +10,21 @@
           <h6 class="card-body-title">
             @if(isset($fetchContactData) )
             @if($fetchContactData->status == 1 )
-          
-            
-            <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  wire:click.prevent="inactive({{$fetchContactData->id}})">
-              Inactive </a>
+              <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  
+              wire:click.prevent="inactive({{$fetchContactData->id}})">Inactive </a>
             @else
-              <a href="javascript:void(0)" class="btn btn-info active  mg-b-10" wire:click.prevent="active({{$fetchContactData->id}})">
-            Active</a>
+              <a href="javascript:void(0)" class="btn btn-info active  mg-b-10"
+               wire:click.prevent="active({{$fetchContactData->id}})"> Active</a>
             @endif
-        
-            <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"  wire:click.prevent="delete({{$fetchContactData->id}})">
-              Delete </a>      
-
-           
-            <a href="{{route('edit_Contacts_section',$fetchContactData->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
-           
-
-            
+              <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10" 
+               wire:click.prevent="delete({{$fetchContactData->id}})"> Trash </a>      
+              <a href="{{route('edit_Contacts_section',$fetchContactData->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
             @else
             @if(isset($trashdata))
-            <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
-              Restore </a>  
-              @endif
+              <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})"> Restore </a>  
+              {{-- <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10" 
+              wire:click.prevent="fulleDelete({{$trashdata->id}})"> Delete </a>   --}}
+            @endif
             <a href="{{route('Add_Contacts_section')}}">
                 <button class="btn btn-teal active mg-b-10">Add</button> </a>
         
@@ -51,9 +44,26 @@
               </div><!-- card-header -->
               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-body">
-
-                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($fetchContactData->image))  
-                    ? asset('storage/Contact/'.$fetchContactData->image):asset('no_image.jpg')}}" alt="..." style="width:300px;" >
+                  <div class="row">
+                    <div class="col-md-4"> 
+                      <span class="text-primary">For Desktop :</span>
+                      <hr>
+                      <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($fetchContactData->image))  
+                      ? asset('storage/Contact/'.$fetchContactData->image):asset('no_image.jpg')}}" alt="..." style="width:200px;" ></div>
+                    <div class="col-md-4">
+                      <span class="text-primary">For Tablet :</span>
+                      <hr>
+                      <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($fetchContactData->tablet_img))  
+                        ? asset('storage/Contact/'.$fetchContactData->tablet_img):asset('no_image.jpg')}}" alt="..." style="width:200px;" >
+                    </div>
+                    <div class="col-md-4">
+                      <span class="text-primary">For Mobile :</span>
+                      <hr>
+                      <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($fetchContactData->mobile_img))  
+                        ? asset('storage/Contact/'.$fetchContactData->mobile_img):asset('no_image.jpg')}}" alt="..." style="width:200px;" >
+                    </div>
+                  </div>
+                 
                   
                   <p>  Created at:  {{isset($fetchContactData->created_at) ? Carbon\Carbon::parse($fetchContactData->created_at)->diffForHumans() : "NA"}} </p>
                   <h2 class="card-body-title">
