@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\Company;
 
 use App\Models\companySectionTwo;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class ViewSectionTwo extends Component
@@ -55,6 +57,25 @@ class ViewSectionTwo extends Component
             }
         
             public function fulleDelete($id){
+
+                $getimg  = companySectionTwo::onlyTrashed()->find($id);
+                $imagePath = Storage::path('public/company-profile/'. $getimg->profile_img);
+                $imagePath2 = Storage::path('public/company-profile/'. $getimg->tablet_banner);
+                $imagePath3 = Storage::path('public/company-profile/'. $getimg->mobile_banner);
+    
+               
+                if(File::exists($imagePath) && $getimg->profile_img){
+                
+                    unlink($imagePath);
+                }
+                if(File::exists($imagePath2) && $getimg->tablet_banner){
+                
+                    unlink($imagePath2);
+                }
+                if(File::exists($imagePath3) && $getimg->mobile_banner){
+                
+                    unlink($imagePath3);
+                }
                 companySectionTwo::onlyTrashed()->find($id)->forceDelete();
               $notification = array(
                 'message' => 'Section  Deleted successfully',

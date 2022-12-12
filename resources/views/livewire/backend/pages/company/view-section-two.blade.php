@@ -88,28 +88,38 @@
                     </div>
                     <div class="modal-body pd-20">
               
-                      <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getrow->profile_img))  
-                        ? asset('storage/company-profile/'.$getrow->profile_img):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
-                      
-                    
-                      <h6 class="mg-b-5"> <span class="text-primary">  Name  : </span>{{isset($getrow->name) ? $getrow->name : "NA"}}</>
-
-                        
-                      <h6 class="mg-b-5"> <span class="text-primary">  Email  : </span>{{isset($getrow->email) ? $getrow->email : "NA"}}</h6>
-
-                      <h6 class="mg-b-5"> <span class="text-primary">  Department  : </span>{{isset($getrow->department) ? $getrow->department : "NA"}}</h6>
-                      
-                      <h6 class=" lh-3 mg-b-20"><span class="text-primary">Main Heading :</span> {{isset($getrow->heading) ? $getrow->heading : "NA" }}</h6>
-                      <h6 class=" lh-3 mg-b-20"><span class="text-primary"> Title :</span> {{isset($getrow->title) ? $getrow->title : "NA" }}</h6>
-
-
-                      <p class="mg-b-5"> <span class="text-primary">  Paragraph 1 : </span>{{isset($getrow->para1) ? $getrow->para1 : "NA"}}</p>
-        
+                <div class="row">
+                  <div class="col-md-4">
+                    <span class="text-primary">For Desktop :</span>
+                  <hr>
+                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getrow->profile_img)) ? asset('storage/company-profile/'.$getrow->profile_img):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                  </div>
+                  <div class="col-md-4">
+                    <span class="text-primary">For Tablet :</span>
+                  <hr>
+                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getrow->tablet_banner)) ? asset('storage/company-profile/'.$getrow->tablet_banner):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                  </div>
+                  <div class="col-md-4">
+                    <span class="text-primary">For Mobile :</span>
+                  <hr>
+                  <img width="80" class="img-fluid rounded mb-2" src="{{(!empty($getrow->mobile_banner)) ? asset('storage/company-profile/'.$getrow->mobile_banner):asset('no_image.jpg')}}" alt="..." style="width:100px;" >
+                  </div>
+                </div>
+                  <h6 class="mg-b-5"> <span class="text-primary">  Name  : </span>{{isset($getrow->name) ? $getrow->name : "NA"}}</>
+                  <h6 class="mg-b-5"> <span class="text-primary">  Email  : </span>{{isset($getrow->email) ? $getrow->email : "NA"}}</h6>
+                  <h6 class="mg-b-5"> <span class="text-primary">  Department  : </span>{{isset($getrow->department) ? $getrow->department : "NA"}}</h6>
+                  <h6 class=" lh-3 mg-b-20"><span class="text-primary">Main Heading :</span> {{isset($getrow->heading) ? $getrow->heading : "NA" }}</h6>
+                  <h6 class=" lh-3 mg-b-20"><span class="text-primary"> Title :</span> {{isset($getrow->title) ? $getrow->title : "NA" }}</h6>
+                  <p class="mg-b-5"> <span class="text-primary">  Paragraph 1 : </span>{{isset($getrow->para1) ? $getrow->para1 : "NA"}}</p>
+                @if(isset($getrow->para2))
                   <p class="mg-b-5"> <span class="text-primary">  Paragraph 2 : </span>{{isset($getrow->para2) ? $getrow->para2 : "NA"}}</p>
-                
+                @endif
+                @if(isset($getrow->para3))
                   <p class="mg-b-5"> <span class="text-primary">  Paragraph 3 : </span>{{isset($getrow->para3) ? $getrow->para3 : "NA"}}</p>
+                @endif
+                @if(isset($getrow->para4))
                   <p class="mg-b-5"> <span class="text-primary">  Paragraph 4 : </span>{{isset($getrow->para4) ? $getrow->para4 : "NA"}}</p>
-
+                @endif
                  
                 </div><!-- modal-body -->
               
@@ -118,9 +128,9 @@
           </div><!-- modal -->
 
               @endforeach
-              @else
+            @else
                 
-              @endif
+          @endif
                               
 
             </tbody>
