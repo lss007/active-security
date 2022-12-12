@@ -12,7 +12,7 @@ class ViewContactSection extends Component
     public $fetchContactData;
     public function render()
     {
-     $this->fetchContactData =    ContactSection::where('status',1)->first();
+     $this->fetchContactData =    ContactSection::first();
      $this->trashdata= ContactSection::onlyTrashed()->first();
         return view('livewire.backend.pages.contacts.view-contact-section')->layout('layouts.backend');
     }

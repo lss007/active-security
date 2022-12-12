@@ -18,6 +18,8 @@
             @endif
               <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10" 
                wire:click.prevent="delete({{$fetchContactData->id}})"> Trash </a>      
+
+
               <a href="{{route('edit_Contacts_section',$fetchContactData->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
             @else
             @if(isset($trashdata))
