@@ -183,17 +183,16 @@
               <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 order-lg-last">
                   <div class="imgCol ps-lg-4">
-                      
-                <picture>
-                  <source media="(min-width:992px)" srcset="{{(isset($this->HomeSecFive->image)) 
-                    ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}">
-                  <source media="(min-width:768px)" srcset="{{(isset($this->HomeSecFive->tablet_img)) 
-                    ? asset('storage/Home-section/'.$HomeSecFive->tablet_img) 
-                    :asset('storage/Home-section/'.$HomeSecFive->image)}}">
-                  <img class="imgStyle1" src="{{(isset($this->HomeSecFive->mobile_img)) 
-                    ? asset('storage/Home-section/'.$HomeSecFive->mobile_img) 
-                    :asset('storage/Home-section/'.$HomeSecFive->image)}}" alt="" style="width:auto;" class="imgStyle1">
-                </picture>
+                    <picture>
+                      <source media="(min-width:992px)" srcset="{{(isset($this->HomeSecFive->image)) 
+                        ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}">
+                      <source media="(min-width:768px)" srcset="{{(isset($this->HomeSecFive->tablet_img)) 
+                        ? asset('storage/Home-section/'.$HomeSecFive->tablet_img) 
+                        :asset('storage/Home-section/'.$HomeSecFive->image)}}">
+                      <img class="imgStyle1" src="{{(isset($this->HomeSecFive->mobile_img)) 
+                        ? asset('storage/Home-section/'.$HomeSecFive->mobile_img) 
+                        :asset('storage/Home-section/'.$HomeSecFive->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                    </picture>
                     {{-- <img src="{{(isset($this->HomeSecFive->image)) ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1"> --}}
                   </div>
                 </div>
