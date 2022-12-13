@@ -28,7 +28,7 @@
                         <div class="col-lg-6" wire:ignore>
                             <div class="form-group">
                               <label class="form-control-label"> Section Name : <span class="tx-danger">*</span></label>
-                              <select  class="form-control select2" wire:model="name" >
+                              <select  class="form-control " wire:model="name" >
                                 <option selected class="form-control" disabled>Choose Category </option>
                                 <option value="navbar"  class="form-control">Navbar</option>
                                 <option value="footer" class="form-control">Footer</option>

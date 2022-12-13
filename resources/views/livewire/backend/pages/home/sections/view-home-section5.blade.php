@@ -16,14 +16,13 @@
                     @else
                     <a href="{{route('Add_Home_Section5')}}">
                       <button class="btn btn-teal active  mg-b-10">Add</button> </a>
-
-
                       @if(isset($trashdata))
                       <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
-                        Restore </a>  
-                        <a href="javascript:void(0)" class="btn btn-danger  mg-b-10"  wire:click.prevent="fulleDelete({{$trashdata->id}})">
-                          fulleDelete </a>  
-                        
+                        Restore 
+                      </a>  
+                      <a href="javascript:void(0)" class="btn btn-danger  mg-b-10"  wire:click.prevent="fulleDelete({{$trashdata->id}})">
+                        Delete 
+                      </a>  
                      @endif
                  @endif
         </h6>
@@ -46,14 +45,15 @@
                 <div class="row">
                     <div class="col-md-10">
                     <h6 class="card-body-title">
-                      <p>  Created At :  {{isset($homeSectionfive->created_at) ? 
+                      <p>  
+                        Created At :  {{isset($homeSectionfive->created_at) ? 
                         Carbon\Carbon::parse($homeSectionfive->created_at)->diffForHumans() : "NA"}}</p>
-                                <span class="text-primary"> Main Heading :</span>
+                      <span class="text-primary"> Main Heading :</span>
                                 {{ isset($homeSectionfive->heading) ? $homeSectionfive->heading : "NA" }}  </h6>
-                              <h5 class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Main Sub Heading : </span> {{isset($homeSectionfive->title)  ? $homeSectionfive->title : "NA"}} </h5>
-                              <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para1) ? $homeSectionfive->para1 : "NA"}} </p>
-                              <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
-                              <h5 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>
+                      <h5 class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Main Sub Heading : </span> {{isset($homeSectionfive->title)  ? $homeSectionfive->title : "NA"}} </h5>
+                      <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para1) ? $homeSectionfive->para1 : "NA"}} </p>
+                      <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
+                      <h5 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>
                   
                       <div class="row">
                         <div class="col-md-4">
@@ -75,19 +75,9 @@
                       </div>
                     </div>
                 </div>
-          
-          
-           
-        
-         
-                  
-         
-               
               </div>
             </div>
           </div>
-        
-         
         </div><!-- accordion -->
       </div><!-- card -->
 {{-- ================================= --}}

@@ -59,9 +59,9 @@
 
                   </div><!-- col-4 -->
             
-        
-                  {{-- <div class="col-lg-12">
-                      <label class="form-control-label"> Client  Image:   <span class="tx-danger">*</span></label><br>
+                  <div class="col-lg-12">
+                    <hr style=" border: 2px dashed  rgb(10, 12, 10);">
+                      <label class="form-control-label"> <h3> Upload Client Image By Crope Function:  <span class="tx-danger">*</span></h3> </label><br>
                       <div class="row croper_sec">
                 
                           <div class="col-md-12">
@@ -111,7 +111,7 @@
                  
                     
                  
-                </div><!-- col-12 --> --}}
+                </div><!-- col-12 -->
         
                 
         
@@ -131,7 +131,7 @@
        </div> 
        {{-- card end  --}}
     </div>
-    {{-- <script>
+    <script>
 
       $(document).ready(function(){
       
@@ -146,19 +146,9 @@
                 image.src = url;
                 $modal.modal('show');
             };
-            //var reader;
-            //var file;
-            //var url;
-      
+
             if (files && files.length > 0)
             {
-                /*file = files[0];
-                if(URL)
-                {
-                  done(URL.createObjectURL(file));
-                }
-                else if(FileReader)
-                {*/
                   reader = new FileReader();
                   reader.onload = function (event) {
                       done(reader.result);
@@ -170,10 +160,7 @@
       
         $modal.on('shown.bs.modal', function() {
             cropper = new Cropper(image, {
-              // aspectRatio: 1,
-              // viewMode: 2,
               autoCropArea : 1,
-              
               preview: '.preview',
               fillColor: 'red',
               
@@ -218,7 +205,7 @@
           });
         
       });
-    </script> --}}
+    </script> 
 </div>
 
 

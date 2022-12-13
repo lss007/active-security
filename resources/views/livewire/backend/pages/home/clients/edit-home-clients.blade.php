@@ -48,12 +48,13 @@
                   @if(isset($clientIng))
                    <img id="output" src="{{$clientIng->temporaryUrl()}}" width="150" class="bg-dark p-2" > @endif
                   @error('newimage')<span class="text-danger"> {{$message}}</span>  @enderror 
-                  {{-- <div class="row croper_sec">
+              
+                  <div class="row croper_sec">
                       <div class="col-md-12">
                         <div class="image_area">
                           <form method="post">
                             <label for="addClientImg" class="cabinet uploadStyle ">  
-                              <img src="" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
+                              <img src="{{(isset($this->image))? asset('storage/Home-clients/'.$this->image):asset('no_image.jpg')}}" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
                               <span>Upload Image</span>                          
                               <input type="file" name="image" class="image" id="addClientImg"  />
                             </label>
@@ -89,7 +90,7 @@
                           </div>
                         </div>
                     </div>			
-                  </div> --}}
+                  </div>
             </div><!-- col-12 -->
               </div><!-- row -->
               <div class="form-layout-footer">
@@ -103,6 +104,81 @@
        </div> 
        {{-- card end  --}}
     </div>
+    <script>
+
+      $(document).ready(function(){
+      
+        var $modal = $('#modal');
+        var image = document.getElementById('clientImages');
+        var cropper;
+      
+        //$("body").on("change", ".image", function(e){
+        $('#addClientImg').change(function(event){
+            var files = event.target.files;
+            var done = function (url) {
+                image.src = url;
+                $modal.modal('show');
+            };
+
+            if (files && files.length > 0)
+            {
+                  reader = new FileReader();
+                  reader.onload = function (event) {
+                      done(reader.result);
+                  };
+                  reader.readAsDataURL(files[0]);
+                //}
+            }
+        });
+      
+        $modal.on('shown.bs.modal', function() {
+            cropper = new Cropper(image, {
+              autoCropArea : 1,
+              preview: '.preview',
+              fillColor: 'red',
+              
+            });
+        }).on('hidden.bs.modal', function() {
+             cropper.destroy();
+             cropper = null;
+        });
+      
+        $("#crop").click(function(){
+            canvas = cropper.getCroppedCanvas({
+              // width: 400,
+              // height: 400,
+              // aspectRatio: 1,
+              // width: 577,
+              // height: 377,
+              // minWidth: 256,
+              // minHeight: 256,
+              maxWidth: 5472,
+              maxHeight: 3648,
+              // fillColor: '#fff',
+              imageSmoothingEnabled: true,
+              imageSmoothingQuality: 'high',
+            });
+
+            canvas.toBlob(function(blob) {
+                //url = URL.createObjectURL(blob);
+                var reader = new FileReader();
+                 reader.readAsDataURL(blob); 
+                 reader.onloadend = function() {
+                    var base64data = reader.result;  
+                  // console.log(base64data);
+              Livewire.emit('editClinetImage',  base64data)
+        
+              $modal.modal('hide');
+              $('#uploaded_image').attr('src', base64data);
+              document.getElementById("uploaded_image").style.backgroundColor = "black";
+          
+                
+                 }
+            });
+          });
+        
+      });
+    </script> 
 </div>
 
 
