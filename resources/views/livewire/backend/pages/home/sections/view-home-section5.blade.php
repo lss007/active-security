@@ -44,7 +44,7 @@
               <div class="card-body">
       
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                     <h6 class="card-body-title">
                       <p>  Created At :  {{isset($homeSectionfive->created_at) ? 
                         Carbon\Carbon::parse($homeSectionfive->created_at)->diffForHumans() : "NA"}}</p>
@@ -54,7 +54,7 @@
                               <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para1) ? $homeSectionfive->para1 : "NA"}} </p>
                               <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
                               <h5 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>
-                    </div>
+                  
                       <div class="row">
                         <div class="col-md-4">
                           <span class="text-primary ">   Main Image : </span>
@@ -73,6 +73,7 @@
                             ? asset('storage/Home-section/'.$homeSectionfive->mobile_img):asset('no_image.jpg')}}" alt="..."  width="200px">
                         </div><!-- card -->
                       </div>
+                    </div>
                 </div>
           
           

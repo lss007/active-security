@@ -48,7 +48,7 @@
                 <div class="card-body">
          
                     <div class="row">
-                      <div class="col-md-8">
+                      <div class="col-md-10">
                         <h6 class="card-body-title">
                           <p>Created at:  {{isset($homeSectionOne->created_at) ? Carbon\Carbon::parse($homeSectionOne->created_at)->diffForHumans() : "NA"}}</p>
                                       <span class="text-primary">  Main Heading : </span>
@@ -59,17 +59,17 @@
                      <hr>
                      <div class="row">
                       <div class="col-md-4">
-                        <span class="text-primary">    Main Image for Desktop: </span>
+                        <span class="text-primary">Main Image for Desktop: </span>
                       <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->main_image)) 
                         ? asset('storage/Home-section/'.$homeSectionOne->main_image):asset('no_image.jpg')}}" alt="..."  width="100px">
                       </div>
                       <div class="col-md-4">
-                        <span class="text-primary">    Main Image for Tablet: </span>
+                        <span class="text-primary">Main Image for Tablet: </span>
                       <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->tablet_img)) 
                         ? asset('storage/Home-section/'.$homeSectionOne->tablet_img):asset('no_image.jpg')}}" alt="..."  width="100px">
                       </div>
                       <div class="col-md-4">
-                        <span class="text-primary">    Main Image for Mobile: </span>
+                        <span class="text-primary">Main Image for Mobile: </span>
                       <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->mobile_img)) 
                         ? asset('storage/Home-section/'.$homeSectionOne->mobile_img):asset('no_image.jpg')}}" alt="..."  width="100px">
                       </div>
