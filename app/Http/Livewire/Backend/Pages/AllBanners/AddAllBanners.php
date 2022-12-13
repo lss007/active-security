@@ -47,8 +47,8 @@ class AddAllBanners extends Component
 
     protected $messages = [
         'bannerCropedImg.required' => 'The Banner Image field is required',
-        'bannerCropedImg2.required' => 'The Tablet Banner field is required',
-        'bannerCropedImg3.required' => 'The Mobile Banner field is required',
+        'bannerCropedImg2.required' => 'The Tablet Image field is required',
+        'bannerCropedImg3.required' => 'The Mobile Image field is required',
         'pageCatId.required' => 'Page Category required',
       ];
     private function resetInputFields(){

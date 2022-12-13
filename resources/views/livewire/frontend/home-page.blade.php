@@ -50,8 +50,18 @@
           <div class="row gy-4 align-items-center">
             <div class="col-lg-6">
               <div class="imgCol pe-lg-4">
-                <img src="{{(isset($this->active_secuirty->main_image)) 
-                  ? asset('storage/Home-section/'.$active_secuirty->main_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
+                <picture>
+                  <source media="(min-width:992px)" srcset="{{(isset($this->active_secuirty->main_image)) 
+                    ? asset('storage/Home-section/'.$active_secuirty->main_image) :asset('no_image.jpg')}}">
+                  <source media="(min-width:768px)" srcset="{{(isset($this->active_secuirty->tablet_img)) 
+                    ? asset('storage/Home-section/'.$active_secuirty->tablet_img) 
+                    :asset('storage/Home-section/'.$active_secuirty->main_image)}}">
+                  <img class="imgStyle1" src="{{(isset($this->active_secuirty->mobile_img)) 
+                    ? asset('storage/Home-section/'.$active_secuirty->mobile_img) 
+                    :asset('storage/Home-section/'.$active_secuirty->main_image)}}" alt="" style="width:auto;" class="imgStyle1">
+                </picture>
+                {{-- <img src="{{(isset($this->active_secuirty->main_image)) 
+                  ? asset('storage/Home-section/'.$active_secuirty->main_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1"> --}}
               </div>
             </div>
             <div class="col-lg-6">
@@ -62,7 +72,7 @@
                  {!! isset($active_secuirty->paragraph)  
                  ? html_entity_decode($active_secuirty->paragraph) : "NA" !!}  
                 </p>
-                <div class="asImgsCol">
+                <div class="asImgsCol text-center">
                   <ul>
 
                
@@ -91,10 +101,18 @@
           <div class="row gy-4 align-items-center">
             <div class="col-lg-6 order-lg-last">
               <div class="imgCol ps-lg-4">
-                <img src="{{(isset($this->HomeSectiontwo->image)) 
-                  ? asset('storage/Home-section/'.$HomeSectiontwo->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
-
-               
+                {{-- <img src="{{(isset($this->HomeSectiontwo->image)) 
+                  ? asset('storage/Home-section/'.$HomeSectiontwo->image) :asset('no_image.jpg')}}" alt="..." > --}}
+                  <picture>
+                    <source media="(min-width:992px)" srcset="{{(isset($this->HomeSectiontwo->image)) 
+                      ? asset('storage/Home-section/'.$HomeSectiontwo->image) :asset('no_image.jpg')}}">
+                    <source media="(min-width:768px)" srcset="{{(isset($this->HomeSectiontwo->tablet_img)) 
+                      ? asset('storage/Home-section/'.$HomeSectiontwo->tablet_img) 
+                      :asset('storage/Home-section/'.$HomeSectiontwo->image)}}">
+                    <img class="imgStyle1" src="{{(isset($this->HomeSectiontwo->mobile_img)) 
+                      ? asset('storage/Home-section/'.$HomeSectiontwo->mobile_img) 
+                      :asset('storage/Home-section/'.$HomeSectiontwo->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                  </picture>
               </div>
             </div>
             <div class="col-lg-6">
@@ -134,33 +152,21 @@
                     <div class="swiper-slide">
                       <div class="serviceCard">
                         <div class="servImgCol">
-                          <img src="{{(isset($slider->image)) 
-                            ? asset('storage/Home-slider/'.$slider->image) :asset('no_image.jpg')}}" alt="..." class="servImg">
-                          <h4 class="servTitle">
-
-                            {!! isset($slider->title) ? $slider->title : "NA"!!}
+                          <img src="{{(isset($slider->image))  ? asset('storage/Home-slider/'.$slider->image) :asset('no_image.jpg')}}" alt="..." class="servImg">
+                          <h4 class="servTitle"> {!! isset($slider->title) ? $slider->title : "NA"!!}
                           </h4>
                         </div>
                         <div class="servContentColMain">
                           <div class="servContentCol">
-                            <h4 class="servTitle">
-                              {!! isset($slider->title) ? $slider->title : "NA"!!}
-
-
-                            </h4>
-                            <p>
-                              {!! isset($slider->description) ? $slider->description : "NA"!!}
-                             
-                            </p>
+                            <h4 class="servTitle"> {!! isset($slider->title) ? $slider->title : "NA"!!} </h4>
+                            <p> {!! isset($slider->description) ? $slider->description : "NA"!!} </p>
                             <a href="{{route($slider->link)}}" class="btn btnPrimary2">mehr erfahren</a>
                           </div>
                         </div>
                       </div>
                     </div>
                       @endforeach
-              
-
-                  </div>
+                     </div>
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
@@ -177,23 +183,28 @@
               <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 order-lg-last">
                   <div class="imgCol ps-lg-4">
-                    <img src="{{(isset($this->HomeSecFive->image)) 
-                      ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1">
+                      
+                <picture>
+                  <source media="(min-width:992px)" srcset="{{(isset($this->HomeSecFive->image)) 
+                    ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}">
+                  <source media="(min-width:768px)" srcset="{{(isset($this->HomeSecFive->tablet_img)) 
+                    ? asset('storage/Home-section/'.$HomeSecFive->tablet_img) 
+                    :asset('storage/Home-section/'.$HomeSecFive->image)}}">
+                  <img class="imgStyle1" src="{{(isset($this->HomeSecFive->mobile_img)) 
+                    ? asset('storage/Home-section/'.$HomeSecFive->mobile_img) 
+                    :asset('storage/Home-section/'.$HomeSecFive->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                </picture>
+                    {{-- <img src="{{(isset($this->HomeSecFive->image)) ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1"> --}}
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="contentCol">
-                    <h2 class="lgTitle p2">   
-              {!! isset($HomeSecFive->heading)  ? html_entity_decode($HomeSecFive->heading) : "NA" !!}  
-                    </h2>
-                    <p class="lgText p2 pt-1">
-             {!! isset($HomeSecFive->title)  ? html_entity_decode($HomeSecFive->title) : "NA" !!}  
-
-                    </p>
+                    <h2 class="lgTitle p2">{!! isset($HomeSecFive->heading)  ? html_entity_decode($HomeSecFive->heading) : "NA" !!}   </h2>
+                    <p class="lgText p2 pt-1"> {!! isset($HomeSecFive->title)  ? html_entity_decode($HomeSecFive->title) : "NA" !!}   </p>
                     <p> {!! isset($HomeSecFive->para1)  ? html_entity_decode($HomeSecFive->para1) : "NA" !!}   </p>
                     <p> {!! isset($HomeSecFive->para2)  ? html_entity_decode($HomeSecFive->para2) : "NA" !!}    </p>
-                  <a href="{!! isset($HomeSecFive->button_link)  ? html_entity_decode($HomeSecFive->button_link) : "#" !!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
-            {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!}  </a>
+                    <a href="{!! isset($HomeSecFive->button_link)  ? html_entity_decode($HomeSecFive->button_link) : "#" !!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
+                    {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!}  </a>
                   </div>
                 </div>
               </div>
@@ -201,9 +212,4 @@
           </div>
         </section>
     @endif
-      
- 
-      
-        
-     
 </div>

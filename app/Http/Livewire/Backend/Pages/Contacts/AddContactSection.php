@@ -47,9 +47,9 @@ protected $listeners = ['addContactImg' ,'addContactImg2','addContactImg3'];
         }
     protected $messages = [
         'para1.required' => 'The paragraph field is required.',
-        'ConCropedImg.required'  =>  'The Banner Image field is required',
-        'ConCropedImg2.required' => 'The Tablet Banner field is required',
-        'ConCropedImg3.required' => 'The Mobile Banner field is required',
+        'ConCropedImg.required'  =>  'The Desktop Image field is required',
+        'ConCropedImg2.required' => 'The Tablet Image field is required',
+        'ConCropedImg3.required' => 'The Mobile Image field is required',
     ];  
     public function saveContactSection(){
         $this->validate();

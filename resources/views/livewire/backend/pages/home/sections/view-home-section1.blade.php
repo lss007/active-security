@@ -15,14 +15,17 @@
             <a href="{{route('editHomesection1',$homeSectionOne->id)}}"> 
               <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
 
-              <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"  wire:click.prevent="delete({{$homeSectionOne->id}})">
-                Delete </a> 
+              <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10"  wire:click.prevent="delete({{$homeSectionOne->id}})">
+                Trash </a> 
 
             @else
             <a href="{{route('addHomesection1')}}"><button class="btn btn-teal active  mg-b-10">Add</button> </a>
             @if(isset($trashdata))
             <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
-              Restore </a>  
+              Restore </a> 
+              {{-- <a href="javascript:void(0)" class="btn btn-danger  mg-b-10"  wire:click.prevent="fulleDelete({{$trashdata->id}})">
+                Delete </a>  --}}
+               
               @endif
         
         
@@ -53,7 +56,26 @@
                               {{ isset($homeSectionOne->heading) ? $homeSectionOne->heading : "NA" }}  </h6>
                             <p class="mg-b-20 mg-sm-b-30 tx-bold"> <span class="text-primary">Main Sub Heading :</span>  {{isset($homeSectionOne->sub_heading)  ? $homeSectionOne->sub_heading : "NA"}} </p>
                             <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary "> Paragraph : </span>{{ isset($homeSectionOne->paragraph) ? $homeSectionOne->paragraph : "NA"}} </p>
-                     
+                     <hr>
+                     <div class="row">
+                      <div class="col-md-4">
+                        <span class="text-primary">    Main Image for Desktop: </span>
+                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->main_image)) 
+                        ? asset('storage/Home-section/'.$homeSectionOne->main_image):asset('no_image.jpg')}}" alt="..."  width="100px">
+                      </div>
+                      <div class="col-md-4">
+                        <span class="text-primary">    Main Image for Tablet: </span>
+                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->tablet_img)) 
+                        ? asset('storage/Home-section/'.$homeSectionOne->tablet_img):asset('no_image.jpg')}}" alt="..."  width="100px">
+                      </div>
+                      <div class="col-md-4">
+                        <span class="text-primary">    Main Image for Mobile: </span>
+                      <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->mobile_img)) 
+                        ? asset('storage/Home-section/'.$homeSectionOne->mobile_img):asset('no_image.jpg')}}" alt="..."  width="100px">
+                      </div>
+                      
+                    </div>
+                    <!-- card -->
                   
                                   <hr>
                                   <h2><span class="text-primary">Logo Images :</span></h2>
@@ -83,14 +105,9 @@
                             </div>
                             
                       </div>
-                      <div class="col-md-4">
-
-                        <div class="card wd-xs-300">
-                          <span class="text-primary">    Main Image : </span>
-                          <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionOne->main_image)) 
-                            ? asset('storage/Home-section/'.$homeSectionOne->main_image):asset('no_image.jpg')}}" alt="..."  width="100px">
-                        </div><!-- card -->
-                      </div>
+                    
+                     
+                    
                     </div>
       
    

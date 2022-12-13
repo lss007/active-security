@@ -16,13 +16,10 @@
               <table class="table table-hover table-bordered mg-b-0">
                 <thead class="bg-info">
                   <tr>
-               
-                    <th >S.no </th>
-         
+                  <th >S.no </th>
                   <th >Route Name </th>
                   <th >Route Link </th>
                   <th >Created at  </th>
-
                   <th >Action</th>
                   </tr>
                 </thead>

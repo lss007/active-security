@@ -89,8 +89,8 @@
             <div class="row gy-4 align-items-center">
               <div class="col-lg-6">
                 <div class="cCardCol">
-                  <div class="cCardImgCol">
-                    <picture>
+                  <div class="cCardImgCol text-center">
+                    <picture >
                       <source media="(min-width:992px)" srcset="{{(isset($this->companysecTwo->profile_img)) 
                         ? asset('storage/company-profile/'.$companysecTwo->profile_img) :asset('no_image.jpg')}}">
                       <source media="(min-width:768px)" srcset="{{(isset($this->companysecTwo->tablet_banner)) 
@@ -147,7 +147,7 @@
             <div class="row gy-4 align-items-center">
               <div class="col-lg-6 order-lg-last">
                 <div class="cCardCol ms-lg-auto">
-                  <div class="cCardImgCol">
+                  <div class="cCardImgCol text-center">
                     <picture>
                       <source media="(min-width:992px)" srcset="{{(isset($this->companysecThree->profile_img)) 
                         ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}">

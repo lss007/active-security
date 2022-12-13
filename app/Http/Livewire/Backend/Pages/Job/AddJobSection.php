@@ -60,8 +60,8 @@ class AddJobSection extends Component
             'para2.required' => 'The paragraph field is required.',
             'image.required' => 'The profile image field is required.',
             'jobCropedImg.required'  => 'The Banner Image field is required',
-            'jobCropedImg2.required' => 'The Tablet Banner field is required',
-            'jobCropedImg3.required' => 'The Mobile Banner field is required',
+            'jobCropedImg2.required' => 'The Tablet Image field is required',
+            'jobCropedImg3.required' => 'The Mobile Image field is required',
         ]; 
         private function resetInputFields(){
                     $this->heading   ='';

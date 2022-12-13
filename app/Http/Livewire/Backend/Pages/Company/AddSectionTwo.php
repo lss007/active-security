@@ -52,8 +52,8 @@ use WithFileUploads;
     ];
     protected $messages = [
         'companyCropedImg.required'  =>  'The Banner Image field is required',
-        'companyCropedImg2.required' => 'The Tablet Banner field is required',
-        'companyCropedImg3.required' => 'The Mobile Banner field is required',
+        'companyCropedImg2.required' => 'The Tablet Image field is required',
+        'companyCropedImg3.required' => 'The Mobile Image field is required',
     ];
    private function resetInputFields(){
             $this->section_id   = '';

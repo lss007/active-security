@@ -11,7 +11,7 @@
           @if(isset($homeSectionfive))
                     <a href="{{route('edit_Home_Section5',$homeSectionfive->id)}}">
                        <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
-                       <a href="javascript:void(0)" class="btn btn-danger active  mg-b-10"   wire:click.prevent="delete({{$homeSectionfive->id}})">
+                       <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10"   wire:click.prevent="delete({{$homeSectionfive->id}})">
                         Delete </a> 
                     @else
                     <a href="{{route('Add_Home_Section5')}}">
@@ -21,6 +21,9 @@
                       @if(isset($trashdata))
                       <a href="javascript:void(0)" class="btn btn-warning  mg-b-10"  wire:click.prevent="restore({{$trashdata->id}})">
                         Restore </a>  
+                        <a href="javascript:void(0)" class="btn btn-danger  mg-b-10"  wire:click.prevent="fulleDelete({{$trashdata->id}})">
+                          fulleDelete </a>  
+                        
                      @endif
                  @endif
         </h6>
@@ -41,7 +44,7 @@
               <div class="card-body">
       
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                     <h6 class="card-body-title">
                       <p>  Created At :  {{isset($homeSectionfive->created_at) ? 
                         Carbon\Carbon::parse($homeSectionfive->created_at)->diffForHumans() : "NA"}}</p>
@@ -52,11 +55,22 @@
                               <p class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Paragraph : </span>{{ isset($homeSectionfive->para2) ? $homeSectionfive->para2 : "NA"}} </p>
                               <h5 class="mg-b-20 mg-sm-b-30 tx-bold"><span class="text-primary"> Button link  :</span><a href="{{ isset($homeSectionfive->button_link) ? $homeSectionfive->button_link : "NA"}} ">{{ isset($homeSectionfive->button_name) ? $homeSectionfive->button_name : "NA"}} </a></h5>
                     </div>
-                      <div class="col-md-4">
-                        <div class="card wd-xs-300">
+                      <div class="row">
+                        <div class="col-md-4">
                           <span class="text-primary ">   Main Image : </span>
                           <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionfive->image)) 
                             ? asset('storage/Home-section/'.$homeSectionfive->image):asset('no_image.jpg')}}" alt="..."  width="200px">
+                        </div><!-- card -->
+                        <div class="col-md-4">
+                          <span class="text-primary ">   Main Image : </span>
+                          <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionfive->tablet_img)) 
+                            ? asset('storage/Home-section/'.$homeSectionfive->tablet_img):asset('no_image.jpg')}}" alt="..."  width="200px">
+                        </div><!-- card -->
+
+                        <div class="col-md-4">
+                          <span class="text-primary ">   Main Image : </span>
+                          <img class="card-img-bottom img-fluid"  src="{{(!empty($homeSectionfive->mobile_img)) 
+                            ? asset('storage/Home-section/'.$homeSectionfive->mobile_img):asset('no_image.jpg')}}" alt="..."  width="200px">
                         </div><!-- card -->
                       </div>
                 </div>

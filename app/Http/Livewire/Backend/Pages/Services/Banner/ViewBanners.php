@@ -48,9 +48,9 @@ class ViewBanners extends Component
         'pageCatId.unique' => 'Page Category has already been taken',
         'heading.required' => 'The Heading field is required.',
     
-        'getBottomBanner1.required' => 'The Desktop Banner field is required',
-        'getBottomBanner2.required' => 'The Tablet Banner field is required',
-        'getBottomBanner3.required' => 'The Mobile Banner field is required',
+        'getBottomBanner1.required' => 'The Desktop Image field is required',
+        'getBottomBanner2.required' => 'The Tablet Image field is required',
+        'getBottomBanner3.required' => 'The Mobile Image field is required',
       ];
    private function resetInputFields(){
           $this->pageCatId = '';

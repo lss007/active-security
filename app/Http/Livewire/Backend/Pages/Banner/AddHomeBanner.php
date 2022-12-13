@@ -21,8 +21,8 @@ class AddHomeBanner extends Component
     ];
     protected $messages = [
         'cropedImg.required' => 'The Banner Image field is required.',
-        'cropedImg2.required' => 'The Tablet Banner  field is required.',
-        'cropedImg3.required' => 'The Mobile Banner  field is required.',
+        'cropedImg2.required' => 'The Tablet Image  field is required.',
+        'cropedImg3.required' => 'The Mobile Image  field is required.',
       ];
     protected $listeners = ['getCropImg' ,'getCropImg2' ,'getCropImg3'];
 

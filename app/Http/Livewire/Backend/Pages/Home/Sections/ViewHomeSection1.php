@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 
 use App\Models\HomeSectionOne;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class ViewHomeSection1 extends Component
@@ -55,4 +57,28 @@ class ViewHomeSection1 extends Component
        );
        return   redirect(request()->header('Referer'))->with($notification);
     }
+
+    public function fulleDelete($id){
+        $getimg  = HomeSectionOne::onlyTrashed()->find($id);
+        $imagePath = Storage::path('public/Home-section/'. $getimg->main_image);
+        $imagePath2 = Storage::path('public/Home-section/'. $getimg->tablet_img);
+        $imagePath3 = Storage::path('public/Home-section/'. $getimg->mobile_img);
+
+       
+        if(File::exists($imagePath) && isset( $getimg->main_image)){
+            unlink($imagePath);
+        }
+        if(File::exists($imagePath2) && isset( $getimg->tablet_img)){
+            unlink($imagePath2);
+        }
+        if(File::exists($imagePath3) && isset($getimg->mobile_img)){
+            unlink($imagePath3);
+        }
+        HomeSectionOne::onlyTrashed()->find($id)->forceDelete();
+        $notification = array(
+          'message' => 'Home section fully Deleted',
+          'alert-type' => 'error'
+      );
+      return   redirect(request()->header('Referer'))->with($notification);
+      }
 }

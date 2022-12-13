@@ -15,8 +15,6 @@ class EditHomeBanner extends Component
     public function mount($id){
             $this->homeBannerId= $id;
             $this->editHomeBanner = HomeBanner::where('id', $this->homeBannerId)->first();
-
-
             if( $this->editHomeBanner != Null){
                 $this->Heading =  $this->editHomeBanner->heading; 
                 $this->Title  =  $this->editHomeBanner->title;
@@ -26,7 +24,8 @@ class EditHomeBanner extends Component
                 $this->mobileBanner = $this->editHomeBanner->mobile_banner;
                 $this->buttonText = $this->editHomeBanner->button_text	;
                 $this->button_link = $this->editHomeBanner->button_link;
-            }else {
+            }
+            else {
                 $notification = array(
                     'message' => 'Not Editable',
                     'alert-type' => 'error'

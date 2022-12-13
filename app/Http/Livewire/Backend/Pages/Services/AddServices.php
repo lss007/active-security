@@ -55,9 +55,9 @@ class AddServices extends Component
     protected $messages = [
         'page_cat_id.unique' => 'Page Category has already been taken',
 
-        'getServicesImg.required' => 'The Desktop Banner field is required',
-        'getServicesImg2.required' => 'The Tablet Banner field is required',
-        'getServicesImg3.required' => 'The Mobile Banner field is required',
+        'getServicesImg.required' => 'The Desktop Image field is required',
+        'getServicesImg2.required' => 'The Tablet Image field is required',
+        'getServicesImg3.required' => 'The Mobile Image field is required',
       ];
    private function resetInputFields(){
             $this->page_cat_id = '';
