@@ -3,7 +3,9 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>{{__('dashboard.Manage Footer and Top Navbar Section logo')}} </h5>
+          <h5>{{__('dashboard.Manage Footer and Top Navbar Section logo')}}
+            <span class="float-right">Total :{{isset($get_logo) ? count($get_logo): "NA" }}</span>
+          </h5>
     
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">

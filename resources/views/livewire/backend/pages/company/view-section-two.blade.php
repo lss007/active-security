@@ -3,7 +3,9 @@
 
   <div class="sl-pagebody">
       <div class="sl-page-title">
-        <h5>{{__('dashboard.Manage Company profile section')}}  </h5>
+        <h5>{{__('dashboard.Manage Company profile section')}}  
+          <span class="float-right"> Total :{{isset($getSectionData) ?count($getSectionData) : "NA" }}</span>
+        </h5>
        
       </div><!-- sl-page-title -->
       <div class="card pd-20 pd-sm-40">
