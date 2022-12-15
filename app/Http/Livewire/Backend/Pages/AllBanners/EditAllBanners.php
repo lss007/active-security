@@ -59,7 +59,7 @@ class EditAllBanners extends Component
 
     protected $rules = [
         'pageCatId' => 'required',
-        'Title' => 'required',
+        // 'Title' => 'required',
         'Heading' => 'required',
     ];
 

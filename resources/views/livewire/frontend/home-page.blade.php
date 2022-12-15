@@ -74,8 +74,6 @@
                 </p>
                 <div class="asImgsCol text-center">
                   <ul>
-
-               
                     <li>
                       <img src="{{(isset($this->active_secuirty->logo1)) 
                       ? asset('storage/Home-section/'.$active_secuirty->logo1) :asset('no_image.jpg')}}" alt="...">
@@ -182,7 +180,7 @@
         @endif
 
 
-@if(isset($HomeSecFive))
+    @if(isset($HomeSecFive))
         <section>
           <div class="sectionSpaceMd lightBg analysisColMain">
             <div class="container">

@@ -1,15 +1,40 @@
 <div>
     {{-- Because she competes with no one, no one can compete with her. --}}
+    @if(isset($impressum_pagebanner))
     <section>
+      <style>
+        .bannerSection.innerPageBanner.impressumBanner {
+           background-image: url('{{asset('storage/All-banner/'.$impressum_pagebanner->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.impressumBanner {
+             background-image: url('{{asset('storage/All-banner/'.$impressum_pagebanner->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($impressum_pagebanner->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.impressumBanner{
+                 background-image: url('{{asset('storage/All-banner/'.$impressum_pagebanner->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.impressumBanner { 
+                background-image: url('{{asset('storage/All-banner/'.$impressum_pagebanner->banner_image)}}');  }
+         </style>
+       @endif
         <div class="bannerSection innerPageBanner impressumBanner">
           <div class="container">
             <div class="bannerContent">
-              <h1 class="xlTitle">Impressum</h1>
+              <h1 class="xlTitle"> {{	isset($impressum_pagebanner->heading) ? $impressum_pagebanner->heading : "NA"}}  </h1>
             </div>
           </div>
         </div>
       </section>
-    
+    @endif
       <section>
         <div class="sectionSpace">
           <div class="container">

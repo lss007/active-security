@@ -37,8 +37,8 @@ class AddAllBanners extends Component
 
     protected $rules = [
         'pageCatId' => 'required',
-        'Title' => 'required',
         'Heading' => 'required',
+        // 'Title' => 'required',
         'bannerCropedImg' => 'required',
         'bannerCropedImg2' => 'required',
         'bannerCropedImg3' => 'required',

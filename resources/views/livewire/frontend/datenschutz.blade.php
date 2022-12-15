@@ -1,15 +1,40 @@
 <div>
     {{-- The Master doesn't talk, he acts. --}}
+    @if($datenschutz_pagebanner)
     <section>
+      <style>
+        .bannerSection.innerPageBanner.datenschutzBanner {
+           background-image: url('{{asset('storage/All-banner/'.$datenschutz_pagebanner->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.datenschutzBanner {
+             background-image: url('{{asset('storage/All-banner/'.$datenschutz_pagebanner->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($datenschutz_pagebanner->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.datenschutzBanner{
+                 background-image: url('{{asset('storage/All-banner/'.$datenschutz_pagebanner->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.datenschutzBanner { 
+                background-image: url('{{asset('storage/All-banner/'.$datenschutz_pagebanner->banner_image)}}');  }
+         </style>
+       @endif
         <div class="bannerSection innerPageBanner datenschutzBanner">
           <div class="container">
             <div class="bannerContent">
-              <h1 class="xlTitle">Datenschutz </h1>
+              <h1 class="xlTitle">{{	isset($datenschutz_pagebanner->heading) ? $datenschutz_pagebanner->heading : "NA"}}</h1>
             </div>
           </div>
         </div>
       </section>
-    
+    @endif
       <section>
         <div class="sectionSpace">
           <div class="container">
