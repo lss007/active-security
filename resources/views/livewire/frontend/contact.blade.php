@@ -3,6 +3,30 @@
 
     @if(isset($Contactmain))
     <section>
+      <style>
+        .bannerSection.innerPageBanner.contactBanner {
+           background-image: url('{{asset('storage/All-banner/'.$Contactmain->banner_image)}}');
+         }
+         @media (max-width: 991px) {
+           .bannerSection.innerPageBanner.contactBanner {
+             background-image: url('{{asset('storage/All-banner/'.$Contactmain->tablet_banner)}}');
+           }
+         }
+         </style>
+       @if(isset($Contactmain->mobile_banner))
+         <style>
+             @media (max-width: 767px) {
+               .bannerSection.innerPageBanner.contactBanner{
+                 background-image: url('{{asset('storage/All-banner/'.$Contactmain->mobile_banner)}}');
+               }
+             }
+         </style>
+       @else 
+         <style>
+             .bannerSection.innerPageBanner.contactBanner { 
+                background-image: url('{{asset('storage/All-banner/'.$Contactmain->banner_image)}}');  }
+         </style>
+       @endif
         <div class="bannerSection innerPageBanner contactBanner">
           <div class="container">
             <div class="bannerContent mw-100">
