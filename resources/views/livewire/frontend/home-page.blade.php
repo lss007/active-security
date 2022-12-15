@@ -152,7 +152,13 @@
                     <div class="swiper-slide">
                       <div class="serviceCard">
                         <div class="servImgCol">
-                          <img src="{{(isset($slider->image))  ? asset('storage/Home-slider/'.$slider->image) :asset('no_image.jpg')}}" alt="..." class="servImg">
+                            <picture  >
+                            <source media="(min-width:992px)" srcset="{{(isset($slider->image))? asset('storage/Home-slider/'.$slider->image):asset('no_image.jpg')}}">
+                            <source media="(min-width:768px)" srcset="{{(isset($slider->tablet_img))? asset('storage/Home-slider/'.$slider->tablet_img ) :asset('storage/Home-slider/'.$slider->image)}}">
+                            <img src="{{(isset($slider->mobile_img))? asset('storage/Home-slider/'.$slider->mobile_img) :asset('storage/Home-slider/'.$slider->image)}}" alt="" style="width:auto;"  class="servImg">
+                          </picture>
+                          {{-- <img  src="{{(isset($slider->image))  ? asset('storage/Home-slider/'.$slider->image) 
+                          :asset('no_image.jpg')}}" alt="..." class="servImg"> --}}
                           <h4 class="servTitle"> {!! isset($slider->title) ? $slider->title : "NA"!!}
                           </h4>
                         </div>
