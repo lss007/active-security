@@ -180,7 +180,7 @@
 
             @if (isset($trashdata) && count($trashdata) > 0)
             <div class="card pd-20 pd-sm-40">
-              <h4>Restore Deleteed Logos   </h4>
+              <h4>Restore Deleted Logos   </h4>
               <div class="table-responsive mg-t-25">
               <table class="table table-hover table-bordered mg-b-0">
                 <thead class="bg-danger">
