@@ -78,9 +78,11 @@ class EditHomeSliders extends Component
                 // ===========  working ans stora at storage path   =========== 
                     // $folderPath = public_path('upload/');
                     $folderPath = Storage::path('public/Home-slider/');
+                    if($this->image ){
                     $imagePath = Storage::path('public/Home-slider/'. $this->image );
-                    if(File::exists($imagePath) && isset($this->image )){
+                    if(File::exists($imagePath) ){
                         unlink($imagePath);
+                        }
                     }
                     // dd($folderPath);
                     $image_parts = explode(";base64,", $this->updateCropedImg);
@@ -101,9 +103,11 @@ class EditHomeSliders extends Component
                     // ===========  working ans stora at storage path   =========== 
                         // $folderPath = public_path('upload/');
                         $folderPath2 = Storage::path('public/Home-slider/');
+                        if($this->tabletImg){
                         $imagePath2 = Storage::path('public/Home-slider/'. $this->tabletImg );
-                        if(File::exists($imagePath2) && isset($this->tabletImg )){
+                        if(File::exists($imagePath2) ){
                             unlink($imagePath2);
+                            }
                         }
                         // dd($folderPath);
                         $image_parts2 = explode(";base64,", $this->updateCropedImg2);
@@ -124,9 +128,11 @@ class EditHomeSliders extends Component
                         // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/Home-slider/');
+                            if($this->mobileImg ){
                             $imagePath3 = Storage::path('public/Home-slider/'. $this->mobileImg );
-                            if(File::exists($imagePath3) && isset($this->mobileImg )){
+                            if(File::exists($imagePath3) ){
                                 unlink($imagePath3);
+                                }
                             }
                             // dd($folderPath);
                             $image_parts3 = explode(";base64,", $this->updateCropedImg3);
