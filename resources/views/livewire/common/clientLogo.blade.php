@@ -1,5 +1,5 @@
 @php
-            $getlogo = DB::table('home_client_logos')->where('status',1)->whereNull('deleted_at')->get()->take(5);
+ $getlogo = DB::table('home_client_logos')->where('status',1)->whereNull('deleted_at')->get()->take(5);
 @endphp
 
 <section>
@@ -11,8 +11,7 @@
             @foreach( $getlogo  as $logo)
           <li><img src="{{ asset('storage/Home-clients/'.$logo->image)}}" alt="..."></li>
           @endforeach
-            @endif
-          
+          @endif
         </ul>
       </div>
     </div>

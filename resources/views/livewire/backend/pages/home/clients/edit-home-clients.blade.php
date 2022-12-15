@@ -48,13 +48,14 @@
                   @if(isset($clientIng))
                    <img id="output" src="{{$clientIng->temporaryUrl()}}" width="150" class="bg-dark p-2" > @endif
                   @error('newimage')<span class="text-danger"> {{$message}}</span>  @enderror 
-              
+                  <hr style=" border: 2px dashed  rgb(10, 12, 10);">
+                  <label class="form-control-label"> <h3> Update Client Image By Crope Function:  <span class="tx-danger">*</span></h3> </label><br>
                   <div class="row croper_sec">
                       <div class="col-md-12">
                         <div class="image_area">
                           <form method="post">
                             <label for="addClientImg" class="cabinet uploadStyle ">  
-                              <img src="{{(isset($this->image))? asset('storage/Home-clients/'.$this->image):asset('no_image.jpg')}}" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
+                              <img src="{{(isset($this->image))? asset('storage/Home-clients/'.$this->image):asset('no_image.jpg')}}" id="uploaded_image"  class="wd--  bg-dark  img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px; "/> 
                               <span>Upload Image</span>                          
                               <input type="file" name="image" class="image" id="addClientImg"  />
                             </label>

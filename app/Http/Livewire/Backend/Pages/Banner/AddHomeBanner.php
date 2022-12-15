@@ -77,7 +77,7 @@ class AddHomeBanner extends Component
                             $folderPath2 = Storage::path('public/Home-banner/');
                             // dd($folderPath);
                             $image_parts2 = explode(";base64,", $this->cropedImg2);
-                            $image_type_aux2 = explode("image/", $image_parts[0]);
+                            $image_type_aux2 = explode("image/", $image_parts2[0]);
                             $image_type2 = $image_type_aux2[1];
                             $image_base642 = base64_decode($image_parts2[1]);
                             $imageName2 = time().'_tab' . '.png';
@@ -109,7 +109,7 @@ class AddHomeBanner extends Component
             'banner_paragaph' =>    $this->BannerParagaph,
             'banner_image' =>       $imageName  ?? Null,
             'tablet_banner' =>       $imageName2  ?? Null,
-            'mobile_banner' =>       $imageName2  ?? Null,
+            'mobile_banner' =>       $imageName3  ?? Null,
             'button_text' =>    $buttonText  ?? Null,
             'button_link' =>    $this->button_link,
 

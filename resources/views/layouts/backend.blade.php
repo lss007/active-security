@@ -34,7 +34,8 @@
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
       <!-- Toaster CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
-      @livewireStyles
+
+    @livewireStyles
     </head>
   <body class="tx-bold">
 @include('livewire.backend.common.left-panel')
@@ -139,6 +140,6 @@
             {{-- toastr js  --}}
             @livewireScripts
 
-            
+   
   </body>
 </html>

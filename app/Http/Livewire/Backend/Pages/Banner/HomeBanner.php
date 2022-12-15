@@ -21,10 +21,12 @@ class HomeBanner extends Component
     }
     public function deletebanner($id){
              ModelsHomeBanner::destroy($id);
+       
             $notification = array(
                 'message' => 'Home Banner Deleted successfully',
                 'alert-type' => 'error'
             );
+
             return   redirect(request()->header('Referer'))->with($notification);
     }
 

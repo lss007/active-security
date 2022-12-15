@@ -53,6 +53,21 @@ class ViewHomeSliders extends Component
     public function fulleDelete($id){
         $getimg  = HomeSectionSlider::onlyTrashed()->find($id);
         $imagePath = Storage::path('public/Home-slider/'. $getimg->image);
+        $imagePath2 = Storage::path('public/Home-slider/'. $getimg->tablet_img);
+        $imagePath3 = Storage::path('public/Home-slider/'. $getimg->mobile_img);
+
+       
+        if(File::exists($imagePath) && isset( $getimg->image)){
+            unlink($imagePath);
+        }
+        if(File::exists($imagePath2) && isset( $getimg->tablet_img)){
+            unlink($imagePath2);
+        }
+        if(File::exists($imagePath3) && isset($getimg->mobile_img)){
+            unlink($imagePath3);
+        }
+        $getimg  = HomeSectionSlider::onlyTrashed()->find($id);
+        $imagePath = Storage::path('public/Home-slider/'. $getimg->image);
         if(File::exists($imagePath) && isset( $getimg->image)){
             // dd($imagePath);
             unlink($imagePath);
@@ -67,25 +82,25 @@ class ViewHomeSliders extends Component
 
     public function  inactive($id){
         HomeSectionSlider::where('id', $id)->update([
-            'status' =>    0,
-        
-        ]);
-        $notification = array(
-           'message' => 'Home slider status is Inactive',
-           'alert-type' => 'warning'
-       );
-       return   redirect()->route('viewHomesliders')->with($notification);
-      }
-      public function  active($id){
-        HomeSectionSlider::where('id', $id)->update([
-            'status' =>   1,
-        
-        ]);
-        $notification = array(
-           'message' => 'Home Slider status is Active ',
-           'alert-type' => 'success'
-       );
-       return   redirect()->route('viewHomesliders')->with($notification);
+                'status' =>    0,
+            
+            ]);
+                 $notification = array(
+                     'message' => 'Home slider status is Inactive',
+                      'alert-type' => 'warning'
+               );
+            return   redirect()->route('viewHomesliders')->with($notification);
+        }
+    public function  active($id){
+            HomeSectionSlider::where('id', $id)->update([
+                'status' =>   1,
+            
+            ]);
+                 $notification = array(
+                    'message' => 'Home Slider status is Active ',
+                    'alert-type' => 'success'
+                );
+        return   redirect()->route('viewHomesliders')->with($notification);
 
       }
 }

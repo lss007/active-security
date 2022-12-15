@@ -68,7 +68,7 @@
                             <div class="image_area">
                               <form method="post">
                                 <label for="addClientImg" class="cabinet uploadStyle ">  
-                                  <img src="" id="uploaded_image"  class="wd-- img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
+                                  <img src="" id="uploaded_image"  class="wd-- bg-dark img-responsive img-fluid rounded" wire:ignore  style="max-height: auto ; width:200px;"/> 
                                   <span>Upload Image</span>                          
                                   <input type="file" name="image" class="image" id="addClientImg"  />
                                 </label>
