@@ -3,10 +3,19 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>{{__('dashboard.Home Clients')}}</h5>
+          <h5>{{__('dashboard.Home Clients')}}
+            <span class="float-right"> Total Clients: {{isset($viewHomeClients) ?count($viewHomeClients)  : "NA" }}</span>
+          </h5>
         
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
+          <div class="col-lg-12">
+            <div class="form-group">
+               <label class="form-control-label"> Search here : </label>
+               <input class="form-control" placeholder="Search" type="text" wire:model="search">  <br> 
+
+             </div>
+          </div><!-- col-4 -->
           <h6 class="card-body-title"> 
             <a href="{{route('addHomeclients')}}" class="btn btn-teal active mg-b-10" >{{__('dashboard.Add Clients')}}</a>
         </h6>
@@ -92,7 +101,13 @@
               </tbody>
             </table>
           </div><!-- table-wrapper -->
+          <p>
 
+            Showing {{ $viewHomeClients->firstItem() }} to {{ $viewHomeClients->lastItem() }} of total {{$viewHomeClients->total()}}
+          </p>
+      
+          
+          {{ $viewHomeClients->links() }}
           @if (isset($trashdata) && count($trashdata) > 0)
           <div class="card pd-20 pd-sm-40">
           <h4>Restore Deleted data   </h4>
@@ -135,6 +150,7 @@
             </tbody>
           </table>
           </div>
+   
           </div>
       
           @endif

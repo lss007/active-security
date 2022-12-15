@@ -4,7 +4,8 @@
     <div class="sl-pagebody">
         <div class="sl-page-title">
           <h5> 
-            {{__('dashboard.View contact messages')}}  </h5>
+            {{__('dashboard.View contact messages')}} 
+            <span class="float-right"> Total :{{isset($getContacts) ?count($getContacts) : "0" }}</span> </h5>
          
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">

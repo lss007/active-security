@@ -3,7 +3,9 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>{{__('dashboard.Manage Services page Content')}}  </h5>
+          <h5>{{__('dashboard.Manage Services page Content')}} 
+          
+            <span class="float-right"> Total : {{isset($get_services_sec) ?$get_services_sec->total()  : "NA" }}</span> </h5>
          
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">

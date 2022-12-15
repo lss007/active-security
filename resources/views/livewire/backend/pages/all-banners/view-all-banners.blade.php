@@ -3,14 +3,16 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5> {{__('dashboard.All Pages Banner')}}</h5>
-     
+          <h5> {{__('dashboard.All Pages Banner')}}
+            <span class="float-right"> Total Banner: {{isset($viewallBanners) ?$viewallBanners->total()  : "NA" }}</span>
+          </h5>
+    
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <div class="col-lg-12">
             <div class="form-group">
                <label class="form-control-label"> Search Banner : </label>
-               <input class="form-control" placeholder="Search by heading.." type="text" wire:model="search">  <br> 
+               <input class="form-control" placeholder="Search" type="text" wire:model="search">  <br> 
 
              </div>
           </div><!-- col-4 -->

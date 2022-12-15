@@ -7,15 +7,28 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
+
 class ViewHomeClients extends Component
 {
 
+    use WithPagination;
+    private $viewHomeClients;
+    public   $search='' ;
+    protected $paginationTheme = 'bootstrap';
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+ 
     public function render()
     {
-        $this->viewHomeClients = HomeClientLogo::get();
+        $this->viewHomeClients = HomeClientLogo::orWhere('image', 'like', '%'.trim($this->search).'%')->paginate(3);
         $this->trashdata= HomeClientLogo::onlyTrashed()->get();
 
-        return view('livewire.backend.pages.home.clients.view-home-clients')->layout('layouts.backend');
+        return view('livewire.backend.pages.home.clients.view-home-clients',[
+            'viewHomeClients' => $this->viewHomeClients,
+        ])->layout('layouts.backend');
     }
 
    

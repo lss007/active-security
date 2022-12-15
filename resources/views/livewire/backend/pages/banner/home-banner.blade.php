@@ -3,7 +3,9 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5> {{__('dashboard.Home page Banner')}}</h5>
+          <h5> {{__('dashboard.Home page Banner')}}
+            <span class="float-right"> Total :{{isset($viewHomeBanner) ?count($viewHomeBanner)  : "0" }}</span>
+          </h5>
           <p> {{__('dashboard.Manage Home Page Banner')}} </p>
         </div><!-- sl-page-title -->
 

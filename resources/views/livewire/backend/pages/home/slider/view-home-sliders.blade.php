@@ -3,7 +3,9 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5> {{__('dashboard.Home Slider')}} </h5>
+          <h5> {{__('dashboard.Home Slider')}} 
+            <span class="float-right"> Total slider: {{isset($viewHomeSliders) ?$viewHomeSliders->total()  : "NA" }}</span>
+          </h5>
         
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">

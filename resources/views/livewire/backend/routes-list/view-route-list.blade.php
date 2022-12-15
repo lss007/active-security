@@ -96,11 +96,6 @@
   
           </div><!-- card -->
         <div class="card pd-20 pd-sm-40">
-
-
-        
-   
-
     {{--============================== start trashed data ============================== --}}
 
     @if (isset($trashdata) && count($trashdata) > 0)
