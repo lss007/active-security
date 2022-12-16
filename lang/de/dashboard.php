@@ -7,7 +7,7 @@ return [
     "THIS MONTH'S" => "DIESES MONATS",
     "THIS YEAR'S" => "DIESE JAHRE",
     "MESSAGES" => "MITTEILUNGEN",
-    // homepagebanner 
+    // Home page banner 
    'Home page Banner' => 'Homepage-Banner',
    'Manage Home Page Banner' =>'Homepage-Banner verwalten',
    'Add Banner' =>"Banner hinzufügen",
@@ -51,11 +51,11 @@ return [
     'Manage Privacy page Body Content' => 'Inhalt der Datenschutzseite verwalten',
     'Add Privacy Body Text' => 'Fügen Sie Datenschutztext hinzu',
     'Update Privacy Text'=> 'Datenschutztext aktualisieren',
-      // Agb page 
+    // Agb page 
     'Manage Agb page Content' =>'Inhalt der Agb-Seite verwalten',
     'Add Agb text' => 'Agb-Text hinzufügen',
     'Update Agb page Text'=> 'Text der Agb-Seite aktualisieren',
-     // Services page 
+    // Services page 
     'Manage Services page Content' => 'Inhalt der Seite Dienste verwalten',
     'Add Services' => 'Dienste hinzufügen',
     'Update Services page' => 'Seite "Dienste aktualisieren"',
@@ -85,15 +85,15 @@ return [
     'Update Contact Page section' => 'Abschnitt „Kontaktseite“ aktualisieren',
     'Add Contact Page section' => 'Abschnitt Kontaktseite hinzufügen',
     'View contact messages' => 'Kontaktnachrichten anzeigen',
-      // Social meadia page 
-      'View and manage social media category' => 'Anzeigen und Verwalten der Social-Media-Kategorie',
-      'Add category' => 'Kategorie hinzufügen',
-      'Add social media category' => 'Kategorie für soziale Medien hinzufügen',
-      'Update social media category' => 'Aktualisieren Sie die Social-Media-Kategorie',
+    // Social meadia page 
+    'View and manage social media category' => 'Anzeigen und Verwalten der Social-Media-Kategorie',
+    'Add category' => 'Kategorie hinzufügen',
+    'Add social media category' => 'Kategorie für soziale Medien hinzufügen',
+    'Update social media category' => 'Aktualisieren Sie die Social-Media-Kategorie',
 
-       'View and manage social media links' => 'Anzeigen und Verwalten von Social-Media-Links',
-       'Add social media links' => 'Füge Social-Media-Links hinzu',
-       'Update social media links' => 'Aktualisieren Sie die Social-Media-Links',
+    'View and manage social media links' => 'Anzeigen und Verwalten von Social-Media-Links',
+    'Add social media links' => 'Füge Social-Media-Links hinzu',
+    'Update social media links' => 'Aktualisieren Sie die Social-Media-Links',
 
 
 

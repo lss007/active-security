@@ -91,6 +91,7 @@ return [
     'Add category' => 'Add category',
     'Add social media category' => 'Add social media category',
     'Update social media category' => 'Update social media category',
+    
     'View and manage social media links' => 'View and manage social media links',
     'Add social media links' => 'Add social media links',
     'Update social media links' => 'Update social media links',

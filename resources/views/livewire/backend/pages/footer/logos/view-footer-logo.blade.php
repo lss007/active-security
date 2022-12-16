@@ -88,22 +88,16 @@
       
           </div><!-- accordion -->
 
-
     {{-- ========================================================================================== --}}
-           
-    
-     
-
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
-                  <th class="wd-15p">S.No </th>
+                  <th class="wd-5p">S.No </th>
                   <th class="wd-15p">Image </th>
                   <th class="wd-15p">Category </th>
-        
                   <th class="wd-10p">Status</th>
-                  <th class="wd-25p">Action</th>
+                  <th class="wd-20p">Action</th>
                 </tr>
               </thead>
               <tbody>

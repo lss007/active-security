@@ -128,8 +128,8 @@
               @foreach($trashdata as $keys => $trashed)
               <tr>
             
-                <td>   
-                  <img width="100" class="img-fluid" src="{{(!empty($trashed->image)) 
+                <td class="bg-dark">   
+                  <img width="100" class="img-fluid " src="{{(!empty($trashed->image)) 
                     ? asset('storage/Home-clients/'.$trashed->image):asset('no_image.jpg')}}" alt="..." >
                     </td>
                 <td> {{isset($trashed->link) ? str_limit($trashed->link , $limit=20 ) : "NA" }}</td>

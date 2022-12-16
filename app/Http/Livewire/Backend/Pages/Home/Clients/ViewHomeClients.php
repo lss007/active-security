@@ -23,7 +23,7 @@ class ViewHomeClients extends Component
  
     public function render()
     {
-        $this->viewHomeClients = HomeClientLogo::orWhere('image', 'like', '%'.trim($this->search).'%')->paginate(3);
+        $this->viewHomeClients = HomeClientLogo::orWhere('image', 'like', '%'.trim($this->search).'%')->paginate(5);
         $this->trashdata= HomeClientLogo::onlyTrashed()->get();
 
         return view('livewire.backend.pages.home.clients.view-home-clients',[
