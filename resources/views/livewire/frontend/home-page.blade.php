@@ -27,7 +27,8 @@
             <p> 
               {{ isset($homeBanner->banner_paragaph) ? $homeBanner->banner_paragaph : "NA"}}
             </p>
-            <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
+            {{-- <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
+            <a href="#nextSection" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
               
               {{ isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"}}
              </a>

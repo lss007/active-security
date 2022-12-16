@@ -13,7 +13,8 @@
         <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
         {{-- end frontend css  --}}
         <!-- Toaster CSS -->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+        <link src="{{asset('frontend/css/toastr.css')}}" rel="stylesheet" type="text/css">
+
         <!-- Styles -->
         @livewireStyles
     </head>
@@ -35,7 +36,8 @@
 
         {{-- frontend site js and footer --}}
         @include('livewire.common.footer')
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+              {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
+              <script src="{{asset('frontend/js/jquery.js')}}" type="text/javascript"></script>
               <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
               <script src="{{asset('frontend/js/swiper-bundle.min.js')}}" type="text/javascript"></script>
               <script src="{{asset('frontend/js/script.js')}}" type="text/javascript"></script>
@@ -65,7 +67,7 @@
              @stack('modals')
         @livewireScripts
         {{-- toastr js  --}}
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
         <script>
           @if(Session::has('message'))
           var type = "{{ Session::get('alert-type','info') }}"

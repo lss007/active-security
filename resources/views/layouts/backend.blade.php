@@ -33,7 +33,7 @@
     {{-- end data table css  --}}
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
       <!-- Toaster CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+      <link src="{{asset('frontend/css/toastr.css')}}" rel="stylesheet" type="text/css">
 
     @livewireStyles
     </head>
@@ -114,7 +114,7 @@
     {{-- <script src='https://foliotek.github.io/Croppie/croppie.js'></script> --}}
     
             {{-- toastr js  --}}
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
   <script>
       @if(Session::has('message'))
       var type = "{{ Session::get('alert-type','info') }}"
