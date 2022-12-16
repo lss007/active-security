@@ -93,11 +93,20 @@ a {
   -o-transition: all 300ms ease-in-out 0s;
   transition: all 300ms ease-in-out 0s;
 }
+/* ------------------ */
+
 .asImgsCol img {
 	max-width: 200px;
 	max-height: 220px;
 	object-fit: contain;
 }
+.footerMdlCol img {
+	max-width: 150px;
+	max-height: 150px;
+	-o-object-fit: contain;
+	object-fit: contain;
+}
+/* ------------------- */
 a:hover {
 	color: var(--primaryColor);
 }
@@ -1182,12 +1191,20 @@ body .form-select {
   .serviceSliderCol {
   	padding-top: 40px;
   }
-  .footerMdlCol img {
-  	max-width: 150px;
-  	max-height: 150px;
-    -o-object-fit: cover;
-    object-fit: cover;
+  /* ----------------  */
+  .asImgsCol img {
+    max-width: 200px;
+    max-height: 220px;
+    object-fit: contain;
   }
+  .footerMdlCol img {
+    max-width: 150px;
+    max-height: 150px;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+  /* ----------------  */
+
   .asImgsCol img {
   	max-width: 200px;
   	max-height: 200px;
