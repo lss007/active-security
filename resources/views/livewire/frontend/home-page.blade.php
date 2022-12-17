@@ -165,11 +165,11 @@
                           <div class="servContentCol">
                             <h4 class="servTitle"> {!! isset($slider->title) ? $slider->title : "NA"!!} </h4>
                             <p> {!! isset($slider->description) ? $slider->description : "NA"!!} </p>
-                            @if(  $slider->link == 'custom')
+                            {{-- @if(  $slider->link == 'custom')
                             <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                             @else
                             <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
-                            @endif
+                            @endif --}}
                           </div>
                         </div>
                       </div>
