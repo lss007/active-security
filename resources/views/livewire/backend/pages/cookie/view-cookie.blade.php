@@ -9,21 +9,10 @@
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
             @if(isset($getCookies) )
-        
-          
-          
-
-            
             @else
             <a href="{{route('add_cookies')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>
-
-    
-       
             @endif 
-
           </h6>
-
-
           <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
             <div class="card">
               <div class="card-header" role="tab" id="headingOne">
