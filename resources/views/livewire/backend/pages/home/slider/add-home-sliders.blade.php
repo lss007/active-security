@@ -35,7 +35,7 @@
                   </div>
                </div><!-- col-4 -->
         
-               <div class="col-lg-6">
+          <div class="col-lg-6">
                 @if($link ==  'custom')
                 <div class="form-group">
                   <label class="form-control-label"> Custom link : </label>
@@ -59,7 +59,7 @@
                 </div>
                 @endif
               
-            </div> 
+          </div> 
                 
       
           {{-- for desktop --}}
