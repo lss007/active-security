@@ -39,9 +39,10 @@
                </div><!-- col-4 -->
         
                <div class="col-lg-6">
+          
                 @if($custom == '1' )
                 <div class="form-group">
-                  <label class="form-control-label"> Custom link : </label>
+                  <label class="form-control-label">Custom link : </label>
                   <input class="form-control" type="url" wire:model="customLink"  placeholder="https://www.example.com/ ">
                   @error('customLink')<span class="text-danger"> {{$message}}</span>  @enderror  
                 </div>

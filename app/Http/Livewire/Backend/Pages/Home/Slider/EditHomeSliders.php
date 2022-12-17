@@ -43,7 +43,7 @@ class EditHomeSliders extends Component
                 $this->mobileImg =  $this->editHomeSlider->mobile_img; 
                 $this->button_text = $this->editHomeSlider->button_text	;
                 $this->link = $this->editHomeSlider->link;
-                $this->editcustomLink = $this->editHomeSlider->custom_Link;
+                $this->customLink = $this->editHomeSlider->custom_Link;
 
             }else {
                 $notification = array(
