@@ -57,7 +57,7 @@ class AddHomeSliders extends Component
         }
         public function  storeHomeSlider(){
             // dd($this->customLink);
-           $this->validate();
+        //    $this->validate();
            if($this->sliderCropedImg)  {
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');

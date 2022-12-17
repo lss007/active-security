@@ -160,22 +160,17 @@ class EditHomeSliders extends Component
         else{
             if($this->customLink){
                 HomeSectionSlider::where('id',$this->SliderId )->update([
-                    'custom_Link' =>    $this->customLink,
-                    'link' =>    Null ,
+                    'custom_Link' => $this->customLink,
+                   
                     ]);
             }
-            else{
-                HomeSectionSlider::where('id',$this->SliderId )->update([
-                    'link' =>    $this->link ,
-                    'custom_Link' =>   NUll,
-                    ]);
-            }
+       
+       
                 HomeSectionSlider::where('id',$this->SliderId )->update([
                 'title' =>    $this->title,
                 'description' =>    $this->description,
                 'button_text' =>    $this->button_text,
-                // 'link' =>    $this->link ?? NUll,
-
+                'link' =>  $this->link ,
                 ]);
                     $notification = array(
                         'message' => 'Home Slider Updated successfully',
