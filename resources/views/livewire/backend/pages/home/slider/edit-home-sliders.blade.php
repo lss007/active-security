@@ -39,10 +39,17 @@
                </div><!-- col-4 -->
         
                <div class="col-lg-6">
+                @if($custom == '1' )
                 <div class="form-group">
-                  <label class="form-control-label">Button link: <span class="tx-danger">*</span></label>
+                  <label class="form-control-label"> Custom link : </label>
+                  <input class="form-control" type="url" wire:model="customLink"  placeholder="https://www.example.com/ ">
+                  @error('customLink')<span class="text-danger"> {{$message}}</span>  @enderror  
+                </div>
+              @else 
+                <div class="form-group">
+                  <label class="form-control-label">Button Page link: <span class="tx-danger">*</span></label>
                   <select class="form-control" data-placeholder="Choose Section" wire:model="link" aria-hidden="true">
-                    <option label="Choose Page link"></option>
+                    <option label="Choose Page link "></option>
                   @if(isset($getRouteName))
                   @foreach($getRouteName as $val)
                     <option value="{{$val->route_link}}">{{ucwords($val->route_name)}}</option>
@@ -50,8 +57,14 @@
                     @endif
                   </select>
                  @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
-  
                 </div>
+                @endif
+                <div class="form-group">
+                  <div class="customCheck">
+                      <input type="checkbox" wire:model="custom"  value="1"/>
+                      <label for="custom">Would you like to add Custom link?</label>
+                  </div>
+              </div>
             </div> 
                 
                {{-- <div class="col-lg-12">

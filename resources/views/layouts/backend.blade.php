@@ -16,12 +16,23 @@
     <link rel="stylesheet" href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
     {{-- <link rel="stylesheet" href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet"> --}}
     {{-- croper js files  --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> --}}
+    {{-- <link rel="stylesheet" href="{{asset('backend/js/jquery.js')}}"> --}}
+    <script src="{{asset('backend/js/jquery.js')}}"></script>
+
     {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>         --}}
-    <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
-    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
-    <script src="https://unpkg.com/dropzone"></script>
-    <script src="https://unpkg.com/cropperjs"></script>
+    {{-- <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" /> --}}
+    <link rel="stylesheet" href="{{asset('backend/css/dropzone.css')}}">
+
+    {{-- <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/> --}}
+    <link rel="stylesheet" href="{{asset('backend/css/cropper.css')}}">
+
+    {{-- <script src="https://unpkg.com/dropzone"></script> --}}
+    <script src="{{asset('backend/js/dropzone.js')}}"></script>
+
+    {{-- <script src="https://unpkg.com/cropperjs"></script> --}}
+    <script src="{{asset('backend/js/cropper.js')}}"></script>
+
     {{--  end croper js files  --}}
     {{-- data table css  --}}
     <link href="{{asset('backend/lib/highlightjs/github.css')}}" rel="stylesheet">

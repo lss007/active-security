@@ -37,7 +37,9 @@
             <td> {{  $viewHomeSliders->firstItem() + $loop->index  }}</td>
             <td>
               <img src="{{(!empty($slider->image))  ? asset('storage/Home-slider/'.$slider->image):asset('no_image.jpg')}}" alt="..." width="70">  </td>
-            <td class="tx-bold">  {!!str_limit($slider->title, $limit=20 ) !!}</td>
+            <td class="tx-bold">  {!!str_limit($slider->title, $limit=20 ) !!}
+            <br>Created at :{{Carbon\Carbon::parse($slider->created_at)->diffForHumans()}}
+            </td>
             <td> 
               @if($slider->status == 1 )
                 <span class="badge badge-success">Active</span>
@@ -94,9 +96,16 @@
                       </span>
                     </p>
                     <p class="mg-b-5">
-                      <span class="text-primary"> Button Link : </span>
-                      <a href="{{isset($slider->link) ? $slider->link : "https://www.example.com/"}}">
-                        {{isset($slider->link) ? $slider->link : "NA"}}</a>
+                   
+
+                        @if(  $slider->link == NUll)
+                        <span class="text-primary"> Custom Link : </span>
+                        <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                        @else
+                        <span class="text-primary"> Route Link : </span>
+
+                        <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                        @endif
                     </p>
                     <div class="row">
                       <div class="col-md-4">
@@ -131,28 +140,17 @@
 
                   @endforeach
                 @else
-              
             @endif
-       
             </tbody>
           </table>
         </div><!-- table-responsive -->
 
-
-        
-       
             <!-- table-wrapper -->
-            <p>
-
-              Showing {{ $viewHomeSliders->firstItem() }} to {{ $viewHomeSliders->lastItem() }} of total {{$viewHomeSliders->total()}}
+            <p> Showing {{ $viewHomeSliders->firstItem() }}
+               to {{ $viewHomeSliders->lastItem() }} 
+               of total {{$viewHomeSliders->total()}}
             </p>
-        
-            
             {{ $viewHomeSliders->links() }}
-
-
-
-            
         </div><!-- card -->
 {{--============================== start trashed data ============================== --}}
           @if (isset($trashdatas) && count($trashdatas)> 0)
@@ -162,32 +160,24 @@
               <table class="table table-hover table-bordered mg-b-0">
                 <thead class="bg-danger">
                   <tr>
-              
                     <th class="wd-15p">Image</th>
                     <th class="wd-20p">Title</th>
                     <th class="wd-40p">Description</th>
                     <th>Action</th>
-
                   </tr>
                 </thead>
                 <tbody>
-                
                   @foreach($trashdatas as $keys => $trashed)
                   <tr>
-              
                     <td>   
                       <img width="300" class="img-fluid" src="{{(!empty($trashed->image))  
                       ? asset('storage/Home-slider/'.$trashed->image):asset('no_image.jpg')}}" alt="..." >
                         </td>
                     <td> {{isset($trashed->title) ? str_limit($trashed->title , $limit=20 ) : "NA" }}</td>
                     <td> {!!str_limit($trashed->description, $limit=20 ) !!}</td>
-
                     <td>
-
                       <button class="btn btn-primary disabled mg-b-10"  wire:click.prevent="restore({{$trashed->id}})">Restore</button>
-
                       <button class="btn btn-danger  mg-b-10" wire:click.prevent="fulleDelete({{$trashed->id}})">Delete</button>
-
                   </td>
                   </tr>
                   @endforeach

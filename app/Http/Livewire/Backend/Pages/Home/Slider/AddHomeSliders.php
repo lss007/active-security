@@ -10,8 +10,8 @@ use Livewire\WithFileUploads;
 class AddHomeSliders extends Component
 {
     use WithFileUploads;
-    public $title, $description, $image, $button_text;
-    public $sliderCropedImg ,$sliderCropedImg2 ,$sliderCropedImg3, $link, $getRouteName;
+    public $title, $description, $image, $button_text ,$custom;
+    public $sliderCropedImg ,$sliderCropedImg2 ,$sliderCropedImg3, $link,$customLink, $getRouteName;
     protected $listeners = ['addSliderImg' ,'addSliderImg2' ,'addSliderImg3'];   
     public function addSliderImg($val){       
             $this->sliderCropedImg = $val;
@@ -25,6 +25,8 @@ class AddHomeSliders extends Component
             $this->sliderCropedImg3 = $val;
             // dd($this->sliderCropedImg);
         }
+ 
+
     public function render()
     {
         $this->getRouteName = RouteNameList::get();
@@ -48,14 +50,15 @@ class AddHomeSliders extends Component
             $this->sliderCropedImg = '';
             $this->button_text = '';
             $this->link = '';
+            $this->customLink = '';
             $this->sliderCropedImg = '';
             $this->sliderCropedImg2 = '';
             $this->sliderCropedImg3 = '';
         }
         public function  storeHomeSlider(){
+            // dd($this->customLink);
         //    $this->validate();
            if($this->sliderCropedImg)  {
-
             // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath = Storage::path('public/Home-slider/');
@@ -65,14 +68,11 @@ class AddHomeSliders extends Component
                             $image_type = $image_type_aux[1];
                             $image_base64 = base64_decode($image_parts[1]);
                             $imageName = time().'_ad_desk'. '.png';
-                            
                             $imageFullPath = $folderPath.$imageName;
                             file_put_contents($imageFullPath, $image_base64);                
             // ===========  working ans stora at storage path   =========== 
             }
-            if($this->sliderCropedImg2)  
-            {
-           
+            if($this->sliderCropedImg2){
              // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/Home-slider/');
@@ -88,9 +88,7 @@ class AddHomeSliders extends Component
             // ===========  working ans stora at storage path   =========== 
 
             }
-        if($this->sliderCropedImg3)  
-            {
-        
+        if($this->sliderCropedImg3){
              // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/Home-slider/');
@@ -104,7 +102,6 @@ class AddHomeSliders extends Component
                             $imageFullPath3 = $folderPath3.$imageName3;
                             file_put_contents($imageFullPath3, $image_base643);                
             // ===========  working ans stora at storage path   =========== 
-
             }
                  
 
@@ -112,8 +109,9 @@ class AddHomeSliders extends Component
             'title' =>    $this->title,
             'description' =>    $this->description,
             'button_text' =>    $this->button_text,
-            'link' =>    $this->link,
-            'image' =>    $imageName  ?? Null,
+            'custom_Link' =>    $this->customLink,
+            'link' =>           $this->link,
+            'image' =>         $imageName  ?? Null,
             'tablet_img' =>    $imageName2  ?? Null,
             'mobile_img' =>    $imageName3  ?? Null,
             ]);

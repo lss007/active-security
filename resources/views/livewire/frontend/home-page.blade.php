@@ -165,7 +165,11 @@
                           <div class="servContentCol">
                             <h4 class="servTitle"> {!! isset($slider->title) ? $slider->title : "NA"!!} </h4>
                             <p> {!! isset($slider->description) ? $slider->description : "NA"!!} </p>
-                            <a href="{{route($slider->link)}}" class="btn btnPrimary2">mehr erfahren</a>
+                            @if(  $slider->link == NUll)
+                            <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                            @else
+                            <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                            @endif
                           </div>
                         </div>
                       </div>

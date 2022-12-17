@@ -11,9 +11,9 @@ use Livewire\WithFileUploads;
 class EditHomeSliders extends Component
 {
     use WithFileUploads;
-    public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$link ,$getRouteName;
+    public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$link ,$custom,$customLink,$getRouteName;
 
-    public $newImage ,$updateCropedImg ,$updateCropedImg2 ,$updateCropedImg3;
+    public $newImage ,$updateCropedImg ,$updateCropedImg2 ,$updateCropedImg3 ;
 
     public $tabletImg,$mobileImg ;
 
@@ -31,6 +31,7 @@ class EditHomeSliders extends Component
             $this->updateCropedImg3 = $val;
             // dd($this->updateCropedImg3);
         }
+      
     public function mount($id){
             $this->SliderId= $id;
             $this->editHomeSlider = HomeSectionSlider::where('id', $this->SliderId)->where('status',1)->first();
@@ -42,6 +43,8 @@ class EditHomeSliders extends Component
                 $this->mobileImg =  $this->editHomeSlider->mobile_img; 
                 $this->button_text = $this->editHomeSlider->button_text	;
                 $this->link = $this->editHomeSlider->link;
+                $this->editcustomLink = $this->editHomeSlider->custom_Link;
+
             }else {
                 $notification = array(
                     'message' => 'Not Editable',
@@ -155,11 +158,23 @@ class EditHomeSliders extends Component
                             return redirect()->route('viewHomesliders')->with($notification);
             }
         else{
+            if($this->customLink){
+                HomeSectionSlider::where('id',$this->SliderId )->update([
+                    'custom_Link' =>    $this->customLink,
+                    'link' =>    Null ,
+                    ]);
+            }
+            else{
+                HomeSectionSlider::where('id',$this->SliderId )->update([
+                    'link' =>    $this->link ,
+                    'custom_Link' =>   NUll,
+                    ]);
+            }
                 HomeSectionSlider::where('id',$this->SliderId )->update([
                 'title' =>    $this->title,
                 'description' =>    $this->description,
                 'button_text' =>    $this->button_text,
-                'link' =>    $this->link,
+                // 'link' =>    $this->link ?? NUll,
 
                 ]);
                     $notification = array(
