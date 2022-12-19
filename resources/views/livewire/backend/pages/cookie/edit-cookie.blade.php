@@ -3,7 +3,7 @@
     
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Cookie </h5>
+          <h5>{{__('dashboard.Update cookies')}} </h5>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
@@ -14,7 +14,7 @@
               <div class="card-header" role="tab" id="headingOne">
                 <h6 class="mg-b-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                    Update Cookie
+                    {{__('dashboard.Update cookies')}} 
                   </a>
                 </h6>
               </div><!-- card-header -->

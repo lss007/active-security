@@ -3,7 +3,7 @@
     <div class="sl-pagebody">
         <div class="sl-page-title">
           <h5>
-       Manage Cookie Text
+    {{__('dashboard.Manage Cookies Text')}}
           </h5>
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
@@ -41,7 +41,7 @@
               <div class="card-header" role="tab" id="headingOne">
                 <h6 class="mg-b-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
-                   View Cookie
+                    {{__('dashboard.Manage Cookies Text')}}
                   </a>
                 </h6>
               </div><!-- card-header -->
@@ -60,7 +60,7 @@
                     </div>
                   </div>
 
-                  <h6 class="card-body-title"><span class="text-primary"> View Cookie text  : </span>{{ isset($getcookies->text) ? $getcookies->text : "NA" }}  </h6>
+                  <h6 class="card-body-title"><span class="text-primary"> View Cookie Text  : </span>{{ isset($getcookies->text) ? $getcookies->text : "NA" }}  </h6>
                   <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Accept Button Text  : </span>  {{isset($getcookies->decline)  ? $getcookies->decline : "NA"}} </p>
                   <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Decline Button Text  : </span>  {{isset($getcookies->accept)  ? $getcookies->accept : "NA"}} </p>
                 </div>

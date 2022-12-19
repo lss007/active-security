@@ -95,40 +95,16 @@ return [
     'View and manage social media links' => 'View and manage social media links',
     'Add social media links' => 'Add social media links',
     'Update social media links' => 'Update social media links',
-
-
-
-
-    
-    
-    
-
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-
-   
-
-
-    
-
-    
-
     
     //Route list 
     'Add Route' =>  'Add Route',
     'Update Route' =>  'Update Route',
-   
+   //Manage cookie
+   'Manage Cookies Text' => 'Manage Cookies Text',
+   'Add Cookie' => 'Add Cookie',
+   'Update cookies' => 'Update cookies',
+
+ 
 
 
     

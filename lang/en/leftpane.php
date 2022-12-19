@@ -36,11 +36,14 @@ return [
     'Others' => 'others',
     'Route list' =>  'Route list',
     'Optimal section' => 'Optimal Section',
-
+     // Manage cookie
+    'Manage Cookie' => 'Manage Cookie',
     // =======================================================
     // top header 
     'Edit Profile' => 'Edit Profile',
     'Sign Out' => 'Sign Out',
+   
+
 
 
 ];

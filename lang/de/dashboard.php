@@ -94,39 +94,14 @@ return [
     'View and manage social media links' => 'Anzeigen und Verwalten von Social-Media-Links',
     'Add social media links' => 'Füge Social-Media-Links hinzu',
     'Update social media links' => 'Aktualisieren Sie die Social-Media-Links',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   //    Route list 
+    // Route list 
     'Add Route' =>  'Strecke hinzufügen',
     'Update Route' =>  'Strecke aktualisieren',
+     // Manage cookie
+     'Manage Cookies Text' => 'Cookie-Text verwalten',
+     'Add Cookie' => 'Plätzchen hinzufügen',
+    'Update cookies' => 'Cookies aktualisieren',
+
 
 
 

@@ -35,12 +35,14 @@ return [
     'Manage Social Media' =>  'Soziale Medien verwalten',
     'Others' => 'Andere',
     'Route list' =>  'Routenliste',
-
+    // Manage cookie
+    'Manage Cookie' => 'Cookie verwalten',
 
         // =======================================================
     // top header 
     'Edit Profile' => 'Profil bearbeiten',
     'Sign Out' => 'Austragen',
+
 
 
 
