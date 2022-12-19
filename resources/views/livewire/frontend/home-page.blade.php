@@ -170,7 +170,7 @@
                             @else
                             <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                             @endif --}}
-                        @if(  isset($$slider->link))
+                        @if(  $slider->link != NULL)
                         <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                         
                         @else
