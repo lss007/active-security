@@ -158,15 +158,35 @@ class EditHomeSliders extends Component
             }
         else{
          
-       
-       
+            if( $this->customLink){
                 HomeSectionSlider::where('id',$this->SliderId )->update([
-                'title' =>    $this->title,
-                'description' =>    $this->description,
-                'button_text' =>    $this->button_text,
-                'link' =>  $this->link ,
-                'custom_Link' => $this->customLink,
-                ]);
+                    'title' =>    $this->title,
+                    'description' =>  $this->description,
+                    'button_text' =>  $this->button_text,
+                    'custom_Link' =>  $this->customLink,
+                    'link' =>         NULL,
+
+
+                    ]);
+            }else{
+                HomeSectionSlider::where('id',$this->SliderId )->update([
+                    'title' =>    $this->title,
+                    'description' =>  $this->description,
+                    'button_text' =>  $this->button_text,
+                    'link' =>         $this->link,
+                    'custom_Link' => NULL,
+
+      
+                    ]);
+                }
+       
+                // HomeSectionSlider::where('id',$this->SliderId )->update([
+                // 'title' =>    $this->title,
+                // 'description' =>    $this->description,
+                // 'button_text' =>    $this->button_text,
+                // 'link' =>  $this->link ,
+                // 'custom_Link' => $this->customLink,
+                // ]);
                     $notification = array(
                         'message' => 'Home Slider Updated successfully',
                         'alert-type' => 'success'
