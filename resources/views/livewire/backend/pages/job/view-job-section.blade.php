@@ -9,13 +9,7 @@
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
             @if(isset($getJobsection) )
-            {{-- @if($getJobsection->status == 1 )
-            <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  wire:click.prevent="inactive({{$getJobsection->id}})">
-              Inactive </a>
-            @else
-              <a href="javascript:void(0)" class="btn btn-info active  mg-b-10" wire:click.prevent="active({{$getJobsection->id}})">
-            Active</a>
-            @endif --}}
+
         
             <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10"  wire:click.prevent="delete({{$getJobsection->id}})">
               Trash </a>      

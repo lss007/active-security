@@ -22,7 +22,9 @@ use App\Http\Livewire\Backend\Pages\Contacts\AddContactSection;
 use App\Http\Livewire\Backend\Pages\Contacts\EditContactSection;
 use App\Http\Livewire\Backend\Pages\Contacts\ViewContacts;
 use App\Http\Livewire\Backend\Pages\Contacts\ViewContactSection;
-
+use App\Http\Livewire\Backend\Pages\Cookie\AddCookie;
+use App\Http\Livewire\Backend\Pages\Cookie\EditCookie;
+use App\Http\Livewire\Backend\Pages\Cookie\ViewCookie;
 use App\Http\Livewire\Backend\Pages\Footer\AddFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\EditFooterAddress;
 use App\Http\Livewire\Backend\Pages\Footer\FooterAddress;
@@ -205,8 +207,13 @@ Route::group(['prefix' =>'manage-home'], function () {
 Route::group(['prefix' =>'manage-footer'], function () {
         // FooterAddress
         
-    
+        
+        Route::get('/view-cookie', ViewCookie::class)->name('admin_view_cookie');
+        Route::get('/add-cookie', AddCookie::class)->name('admin_add_cookie');
+        Route::get('/edit-cookie/{id}', EditCookie::class)->name('admin_edit_cookie');
 
+        
+        
         
  
 

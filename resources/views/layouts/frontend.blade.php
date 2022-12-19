@@ -13,7 +13,8 @@
         <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
         {{-- end frontend css  --}}
         <!-- Toaster CSS -->
-        <link src="{{asset('frontend/css/toastr.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{asset('frontend/js/toastr.min.js')}}" type="text/javascript"></script>
+
 
         <!-- Styles -->
         @livewireStyles

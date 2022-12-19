@@ -165,8 +165,6 @@ class EditHomeSliders extends Component
                     'button_text' =>  $this->button_text,
                     'custom_Link' =>  $this->customLink,
                     'link' =>         NULL,
-
-
                     ]);
             }else{
                 HomeSectionSlider::where('id',$this->SliderId )->update([

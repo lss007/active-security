@@ -18,19 +18,23 @@
 </div> --}}
 <div id="cookie-consent" class="cookie-consent" style="display:none;">
   <!--- etc. -->
-
+@php
+    $cookiesdata =  DB::table('cookies')->first();
+@endphp
 <div class="js-cookie-consent " >
     <div class="container">
       <div class="row gy-2 align-items-center">  
         <div class="col-sm">
           <div class="cText">
-            <p>{!! trans('cookie-consent::texts.message') !!}</p>
+            {{-- <p>{!! trans('cookie-consent::texts.message') !!}</p> --}}
+
+            {!! isset($cookiesdata->text)  ? html_entity_decode($cookiesdata->text) : trans('cookie-consent::texts.message') !!}  
           </div>
         </div>
         <div class="col-sm-auto">
           <ul class="cookiesRightBtns">
-            <li><a href="javascript:void(0)" class="cookiesCloseTrigger" >Decline</a></li>
-            <li><a href="javascript:void(0)" class="js-cookie-consent-agree cookiesCloseTrigger cookie-consent__agree"> Accept</a></li>
+            <li><a href="javascript:void(0)" class="cookiesCloseTrigger" > {!! isset($cookiesdata->decline)  ? html_entity_decode($cookiesdata->decline) : "Decline" !!}  </a></li>
+            <li><a href="javascript:void(0)" class="js-cookie-consent-agree cookiesCloseTrigger cookie-consent__agree"> {!! isset($cookiesdata->accept)  ? html_entity_decode($cookiesdata->accept) : "Accept" !!} </a></li>
           </ul>
         </div>
       </div>
