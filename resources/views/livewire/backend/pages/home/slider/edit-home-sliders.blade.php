@@ -39,7 +39,7 @@
                </div><!-- col-4 -->
         
                <div class="col-lg-6">
-                @if($link ==  NULL)
+                @if($link ==  'custom')
                 <div class="form-group">
                   <label class="form-control-label"> Custom link : </label>
                   <input class="form-control" type="url" wire:model="customLink"  placeholder="https://www.example.com/ ">
@@ -54,9 +54,9 @@
                   @foreach($getRouteName as $val)
                     <option value="{{$val->route_link}}">{{ucwords($val->route_name)}}</option>
                     @endforeach
-                @if( $this->link == NULL)
+                {{-- @if( $this->link == NULL) --}}
                     <option value="custom" class="text-danger">Custom link</option>
-                @endif
+                {{-- @endif --}}
                     @endif
                   </select>
                  @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  

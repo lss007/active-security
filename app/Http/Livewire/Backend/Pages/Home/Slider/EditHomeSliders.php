@@ -157,8 +157,8 @@ class EditHomeSliders extends Component
                             return redirect()->route('viewHomesliders')->with($notification);
             }
         else{
-         
-            if( $this->customLink){
+            $exists =  HomeSectionSlider::where('custom_Link',$this->customLink)->where('id',$this->SliderId )->first();
+            if( !$exists){
                 HomeSectionSlider::where('id',$this->SliderId )->update([
                     'title' =>    $this->title,
                     'description' =>  $this->description,
@@ -173,8 +173,6 @@ class EditHomeSliders extends Component
                     'button_text' =>  $this->button_text,
                     'link' =>         $this->link,
                     'custom_Link' => NULL,
-
-      
                     ]);
                 }
        
