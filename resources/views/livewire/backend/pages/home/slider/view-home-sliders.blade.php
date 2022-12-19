@@ -96,16 +96,17 @@
                       </span>
                     </p>
                     <p class="mg-b-5">
-                   
+                      @if(  isset($$slider->link))
+                      <span class="text-primary"> Custom Link : </span>
+                      <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                      
+                      @else
+                      <span class="text-primary"> Route Link : </span>
 
-                    {{-- @if($slider->link == NULL)
-                        <span class="text-primary"> Custom Link : </span>
-                        <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
-                    @endif
-                    @if($slider->custom_Link ==  NULL)
-                        <span class="text-primary"> Route Link : </span>
-                        <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
-                    @endif --}}
+                      <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                      @endif
+
+              
                     </p>
                     <div class="row">
                       <div class="col-md-4">
