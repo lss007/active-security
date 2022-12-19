@@ -4,7 +4,7 @@
     <div class="sl-pagebody">
         <div class="sl-page-title">
           <h5> {{__('dashboard.Home Slider')}} 
-            <span class="float-right"> Total slider: {{isset($viewHomeSliders) ?$viewHomeSliders->total()  : "NA" }}</span>
+            {{-- <span class="float-right"> Total slider: {{isset($viewHomeSliders) ?$viewHomeSliders->total()  : "NA" }}</span> --}}
           </h5>
         
         </div><!-- sl-page-title -->
@@ -34,7 +34,7 @@
               @if (isset($viewHomeSliders))
               @foreach($viewHomeSliders as $keys => $slider)
            <tr>
-            <td> {{  $viewHomeSliders->firstItem() + $loop->index  }}</td>
+            {{-- <td> {{  $viewHomeSliders->firstItem() + $loop->index  }}</td> --}}
             <td>
               <img src="{{(!empty($slider->image))  ? asset('storage/Home-slider/'.$slider->image):asset('no_image.jpg')}}" alt="..." width="70">  </td>
             <td class="tx-bold">  {!!str_limit($slider->title, $limit=20 ) !!}
@@ -98,14 +98,14 @@
                     <p class="mg-b-5">
                    
 
-                    @if(  $slider->link == Null)
+                    {{-- @if(  $slider->link == Null)
                         <span class="text-primary"> Custom Link : </span>
                         <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                     @endif
                     @if(!isset($slider->custom_Link))
                         <span class="text-primary"> Route Link : </span>
                         <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
-                    @endif
+                    @endif --}}
                     </p>
                     <div class="row">
                       <div class="col-md-4">
@@ -146,11 +146,11 @@
         </div><!-- table-responsive -->
 
             <!-- table-wrapper -->
-            <p> Showing {{ $viewHomeSliders->firstItem() }}
+            {{-- <p> Showing {{ $viewHomeSliders->firstItem() }}
                to {{ $viewHomeSliders->lastItem() }} 
                of total {{$viewHomeSliders->total()}}
             </p>
-            {{ $viewHomeSliders->links() }}
+            {{ $viewHomeSliders->links() }} --}}
         </div><!-- card -->
 {{--============================== start trashed data ============================== --}}
           @if (isset($trashdatas) && count($trashdatas)> 0)

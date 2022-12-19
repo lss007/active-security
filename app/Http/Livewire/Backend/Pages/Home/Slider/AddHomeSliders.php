@@ -103,35 +103,17 @@ class AddHomeSliders extends Component
                             file_put_contents($imageFullPath3, $image_base643);                
             // ===========  working ans stora at storage path   =========== 
             }
-                 if( $this->customLink)
-                 {
-                    HomeSectionSlider::create([
-                        'title' =>    $this->title,
-                        'description' =>    $this->description,
-                        'button_text' =>    $this->button_text,
-                        // 'custom_Link' =>    $this->customLink,
-                        // 'link' =>           $this->link,
-                        'custom_Link' =>    $this->customLink,
-                        'link' => NULL,
-                        'image' =>         $imageName  ?? Null,
-                        'tablet_img' =>    $imageName2  ?? Null,
-                        'mobile_img' =>    $imageName3  ?? Null,
-                        ]);
-                 }else{
-                    HomeSectionSlider::create([
-                        'title' =>    $this->title,
-                        'description' =>    $this->description,
-                        'button_text' =>    $this->button_text,
-                        // 'custom_Link' =>    $this->customLink,
-                        // 'link' =>           $this->link,
-                        'custom_Link' =>    NULL,
-                        'link' =>           $this->link,
-                        'image' =>         $imageName  ?? Null,
-                        'tablet_img' =>    $imageName2  ?? Null,
-                        'mobile_img' =>    $imageName3  ?? Null,
-                        ]);
-                 }
-
+                HomeSectionSlider::create([
+                    'title' =>    $this->title,
+                    'description' =>  $this->description,
+                    'button_text' =>  $this->button_text,
+                    'custom_Link' =>  $this->customLink,
+                    'link' =>         $this->link,
+                    'image' =>        $imageName  ?? Null,
+                    'tablet_img' =>   $imageName2  ?? Null,
+                    'mobile_img' =>   $imageName3  ?? Null,
+                    ]);
+             
             $notification = array(
                 'message' => 'Home Slider published successfully',
                 'alert-type' => 'success'

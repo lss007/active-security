@@ -21,15 +21,16 @@ class EditHomeSliders extends Component
 
     public function updateSliderImg($val){       
             $this->updateCropedImg = $val;
-            // dd($this->updateCropedImg);
+            // dd('desktop' .$this->updateCropedImg);
+          
         }
         public function updateSliderImg2($val){       
             $this->updateCropedImg2 = $val;
-            // dd($this->updateCropedImg2);
+            // dd('tablet'. $this->updateCropedImg2);
         }
         public function updateSliderImg3($val){       
             $this->updateCropedImg3 = $val;
-            // dd($this->updateCropedImg3);
+            // dd('mobile'.$this->updateCropedImg3);
         }
       
     public function mount($id){
@@ -62,7 +63,6 @@ class EditHomeSliders extends Component
     protected $rules = [
         'title' => 'required',
         'description' => 'required',
-
      ];
    private function resetInputFields(){
             $this->title  = '';
@@ -87,12 +87,11 @@ class EditHomeSliders extends Component
                         unlink($imagePath);
                         }
                     }
-                    // dd($folderPath);
                     $image_parts = explode(";base64,", $this->updateCropedImg);
                     $image_type_aux = explode("image/", $image_parts[0]);
                     $image_type = $image_type_aux[1];
                     $image_base64 = base64_decode($image_parts[1]);
-                    $imageName = time().'_up'. '.png';
+                    $imageName = time().'_up_desk'. '.png';
                     $imageFullPath = $folderPath.$imageName;
                     file_put_contents($imageFullPath, $image_base64);                
                 // ===========  working ans stora at storage path   =========== 
@@ -117,7 +116,7 @@ class EditHomeSliders extends Component
                         $image_type_aux2 = explode("image/", $image_parts2[0]);
                         $image_type2 = $image_type_aux2[1];
                         $image_base642 = base64_decode($image_parts2[1]);
-                        $imageName2 = time().'_up'. '.png';
+                        $imageName2 = time().'_up_tab'. '.png';
                         $imageFullPath2 = $folderPath2.$imageName2;
                         file_put_contents($imageFullPath2, $image_base642);                
                     // ===========  working ans stora at storage path   =========== 
@@ -142,7 +141,7 @@ class EditHomeSliders extends Component
                             $image_type_aux3 = explode("image/", $image_parts3[0]);
                             $image_type3 = $image_type_aux3[1];
                             $image_base643 = base64_decode($image_parts3[1]);
-                            $imageName3 = time().'_up'. '.png';
+                            $imageName3 = time().'_up_mob'. '.png';
                             $imageFullPath3 = $folderPath3.$imageName3;
                             file_put_contents($imageFullPath3, $image_base643);                
                         // ===========  working ans stora at storage path   =========== 
@@ -158,12 +157,7 @@ class EditHomeSliders extends Component
                             return redirect()->route('viewHomesliders')->with($notification);
             }
         else{
-            if($this->customLink){
-                HomeSectionSlider::where('id',$this->SliderId )->update([
-                    'custom_Link' => $this->customLink,
-                   
-                    ]);
-            }
+         
        
        
                 HomeSectionSlider::where('id',$this->SliderId )->update([
@@ -171,6 +165,7 @@ class EditHomeSliders extends Component
                 'description' =>    $this->description,
                 'button_text' =>    $this->button_text,
                 'link' =>  $this->link ,
+                'custom_Link' => $this->customLink,
                 ]);
                     $notification = array(
                         'message' => 'Home Slider Updated successfully',
