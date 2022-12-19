@@ -96,7 +96,7 @@
                       </span>
                     </p>
                     <p class="mg-b-5">
-                      @if(  isset($$slider->link))
+                      @if(  isset($slider->link))
                       <span class="text-primary"> Custom Link : </span>
                       <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                       
