@@ -61,8 +61,8 @@
                   </div>
 
                   <h6 class="card-body-title"><span class="text-primary"> View Cookie text  : </span>{{ isset($getcookies->text) ? $getcookies->text : "NA" }}  </h6>
-                  <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Accept Text  : </span>  {{isset($getcookies->decline)  ? $getcookies->decline : "NA"}} </p>
-                  <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Decline Text  : </span>  {{isset($getcookies->accept)  ? $getcookies->accept : "NA"}} </p>
+                  <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Accept Button Text  : </span>  {{isset($getcookies->decline)  ? $getcookies->decline : "NA"}} </p>
+                  <p class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Decline Button Text  : </span>  {{isset($getcookies->accept)  ? $getcookies->accept : "NA"}} </p>
                 </div>
               </div>
             </div>
