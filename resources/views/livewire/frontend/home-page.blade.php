@@ -170,12 +170,11 @@
                             @else
                             <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                             @endif --}}
-                        @if(  !isset($$slider->link))
-                            <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
-                        @endif
-
-                        @if(!isset($slider->custom_Link))
-                            <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                        @if(  isset($$slider->link))
+                        <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                        
+                        @else
+                        <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                         @endif
                           </div>
                         </div>
