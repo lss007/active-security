@@ -107,9 +107,12 @@
      
                 @endif --}}
                 @if(  $slider->link != NUll)
+              <span class="text-primary"> Route Link : </span>
+
                 <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                 
                 @else
+                <span class="text-primary"> Custom Link : </span>
                 <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                 @endif
                     </p>
