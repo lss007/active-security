@@ -38,13 +38,13 @@
                             </div>
                           </div><!-- col-4 -->
 
-                          <div class="col-lg-12">
+                          {{-- <div class="col-lg-12">
                             <div class="form-group">
                               <label class="form-control-label">Actual  Route Link : <span class="tx-danger">*</span></label>
-                                 <input class="form-control" type="text" wire:model="RouteLink"  placeholder="Actual  Route Link">
+                                 <input class="form-control" type="text" wire:model="RouteLink" disabled  placeholder="Actual  Route Link">
                                  @error('RouteLink')<span class="text-danger"> {{$message}}</span>  @enderror  
                             </div>
-                          </div><!-- col-4 -->
+                          </div><!-- col-4 --> --}}
 
 
                   

@@ -17,7 +17,7 @@ class EditRouteList extends Component
     protected $rules = [
       
         'RouteName' => 'required',
-        'RouteLink' => 'required',
+        // 'RouteLink' => 'required',
      
 
     ];

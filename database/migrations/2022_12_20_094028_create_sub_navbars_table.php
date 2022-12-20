@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('navbars', function (Blueprint $table) {
+        Schema::create('sub_navbars', function (Blueprint $table) {
             $table->id();
+            $table->string('navbar_id')->nullable();
             $table->string('route_name')->nullable();
             $table->string('route_link')->nullable()->unique();
             $table->integer('ordering')->default(0);
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('navbars');
+        Schema::dropIfExists('sub_navbars');
     }
 };

@@ -2,7 +2,22 @@
 <header>
   @php
          $navbarlogos =  DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
-  
+         
+         $navitems =  DB::table('navbars')->where('status',1)->where('ordering',1)->first();
+         $navitems2 =  DB::table('navbars')->where('status',1)->where('ordering',2)->first();
+         $navitems3 =  DB::table('navbars')->where('status',1)->where('ordering',3)->first();
+         $navitems4 =  DB::table('navbars')->where('status',1)->where('ordering',4)->first();
+         $navitems5 =  DB::table('navbars')->where('status',1)->where('ordering',5)->first();
+         $subnavbars =  DB::table('sub_navbars')
+         ->join('route_name_lists','sub_navbars.route_link' ,'route_name_lists.id')
+         ->select('sub_navbars.*','route_name_lists.route_link')
+         ->OrderBy('route_name')
+         ->where('sub_navbars.status', 1)
+         ->get();
+
+        //  dd($subnavbars);
+
+
   @endphp
     <div class="headerCol">
       <div class="container">
@@ -24,12 +39,23 @@
               <div class="row gy-3 gx-0 align-items-center">
                 <div class="col-lg">
                   <div class="navCol">
+           
                     <ul>
-                      <li><a href="{{route('homePage')}}" class="@if(Route::is('homePage') ) active @else '' @endif">Home</a></li>
+                      <li><a href="{{route('homePage')}}" class="@if(Route::is('homePage') ) active @else '' @endif">{{isset($navitems->route_name) ? $navitems->route_name : "NA"}}</a></li>
+               
                       <li class="ddLinkCol">
-                        <a href="javascript:void(0)">Dienstleistungen</a>
+                        <a href="javascript:void(0)">{{isset($navitems2->route_name) ? $navitems2->route_name : "NA"}}</a>
+                       
+                       @if(isset($subnavbars))
+                    
                         <ul class="subMenu">
-                          <li><a href="{{route('ObjektPage')}}" class="@if(Route::is('ObjektPage') ) active @else '' @endif">Objekt- und Werkschutz</a></li>
+                          @foreach($subnavbars as $val)
+                          
+                          <li><a href="{{isset($val->route_link) ? route($val->route_link) : "#"}}" class="@if(Route::is(isset($val->route_link) ? $val->route_link : "") ) active @else '' @endif">{{isset($val->route_name) ? $val->route_name : "NA"}}</a></li>
+
+                          @endforeach
+                        @else
+                          {{-- <li><a href="{{route('ObjektPage')}}" class="@if(Route::is('ObjektPage') ) active @else '' @endif">Objekt- und Werkschutz</a></li>
                           <li><a href="{{route('CenterbewachungPage')}}" class="@if(Route::is('CenterbewachungPage') ) active @else '' @endif">Centerbewachung</a></li>
                           <li><a href="{{route('KaufhausdetektivePage')}}" class="@if(Route::is('KaufhausdetektivePage') ) active @else '' @endif">Kaufhausdetektive</a></li>
                           <li><a href="{{route('baustellenbewachungPage')}}" class="@if(Route::is('baustellenbewachungPage') ) active @else '' @endif">Baustellenbewachung</a></li>
@@ -38,15 +64,18 @@
                           <li><a href="{{route('empfangsdienst')}}" class="@if(Route::is('empfangsdienst') ) active @else '' @endif">Empfangsdienst</a></li>
                           <li><a href="{{route('ShopGuardPage')}}" class="@if(Route::is('ShopGuardPage') ) active @else '' @endif">Shop Guard</a></li>
                           <li><a href="{{route('VeranstaltungsSchutzPage')}}" class="@if(Route::is('VeranstaltungsSchutzPage') ) active @else '' @endif">Veranstaltungsschutz</a></li>
+                        --}}
+                        @endif
                         </ul>
                       </li>
-                      <li><a href="{{route('UnternehmenPage')}}" class="@if(Route::is('UnternehmenPage') ) active @else '' @endif">Unternehmen</a></li>
-                      <li><a href="{{route('JobsPage')}}" class="@if(Route::is('JobsPage') ) active @else '' @endif">Jobs</a></li>
+                      <li><a href="{{route('UnternehmenPage')}}" class="@if(Route::is('UnternehmenPage') ) active @else '' @endif">{{isset($navitems3->route_name) ? $navitems3->route_name : "NA"}}</a></li>
+                      <li><a href="{{route('JobsPage')}}" class="@if(Route::is('JobsPage') ) active @else '' @endif">{{isset($navitems4->route_name) ? $navitems4->route_name : "NA"}}</a></li>
                     </ul>
+                  
                   </div>
                 </div>
                 <div class="col-lg-auto">
-                  <a href="{{route('ContactPage')}}" class="btn btnPrimary arrowBtn mt-sm-2 mt-lg-0">Kontakt</a>
+                  <a href="{{route('ContactPage')}}" class="btn btnPrimary arrowBtn mt-sm-2 mt-lg-0">{{isset($navitems5->route_name) ? $navitems5->route_name : "NA"}}</a>
                 </div>
 
             

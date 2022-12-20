@@ -27,7 +27,7 @@
         <h6 class="card-body-title">  
             <a href="{{route('viewHomebanner')}}" class="btn btn-teal active mg-b-10"  >Back</a>
         </h6>
-        <form  wire:submit.prevent="saveHomeBanner">
+      <form  wire:submit.prevent="saveHomeBanner">
              <div class="form-layout">
                <div class="row mg-b-25">
                  <div class="col-lg-12">
@@ -225,7 +225,7 @@
 
                   <!-- col-12 -->
 
-   {{--  
+                    {{--  
                        <!--   old model -->
                           <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">

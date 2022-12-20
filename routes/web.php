@@ -60,6 +60,12 @@ use App\Http\Livewire\Backend\Pages\Home\Slider\ViewHomeSliders;
 use App\Http\Livewire\Backend\Pages\Job\AddJobSection;
 use App\Http\Livewire\Backend\Pages\Job\EditJobSection;
 use App\Http\Livewire\Backend\Pages\Job\ViewJobSection;
+use App\Http\Livewire\Backend\Pages\Navbar\AddNavbar;
+use App\Http\Livewire\Backend\Pages\Navbar\AddSubNavbar;
+use App\Http\Livewire\Backend\Pages\Navbar\EditNavbar;
+use App\Http\Livewire\Backend\Pages\Navbar\EditSubNavbar;
+use App\Http\Livewire\Backend\Pages\Navbar\ViewNavbar;
+use App\Http\Livewire\Backend\Pages\Navbar\ViewSubNavbar;
 use App\Http\Livewire\Backend\Pages\Privacy\AddFooterPrivacy;
 use App\Http\Livewire\Backend\Pages\Privacy\EditFooterPrivacy;
 use App\Http\Livewire\Backend\Pages\Privacy\ViewFooterPrivacy;
@@ -71,6 +77,7 @@ use App\Http\Livewire\Backend\Pages\Services\Section\AddLastSection;
 use App\Http\Livewire\Backend\Pages\Services\Section\EditLastSection;
 use App\Http\Livewire\Backend\Pages\Services\Section\ViewLastSection;
 use App\Http\Livewire\Backend\Pages\Services\ViewServices;
+
 use App\Http\Livewire\Backend\RoutesList\AddRouteList;
 use App\Http\Livewire\Backend\RoutesList\EditRouteList;
 use App\Http\Livewire\Backend\RoutesList\ViewRouteList;
@@ -296,6 +303,7 @@ Route::group(['prefix' =>'social'], function () {
         Route::get('/view', ViewSocialMedia::class)->name('view_social_media');
         Route::get('/add', AddSocialMedia::class)->name('add_social_media');
         Route::get('/edit/{id}', EditSocialMedia::class)->name('edit_social_media');
+        
 });
     // middle ware end 
     Route::group(['prefix' =>'others'], function () {
@@ -305,6 +313,24 @@ Route::group(['prefix' =>'social'], function () {
         Route::get('/edit-routes/{id}', EditRouteList::class)->name('edit_route_list');
 
     });
+    Route::group(['prefix' =>'navbar'], function () {
+        Route::get('/shownavbar', ViewNavbar::class)->name('view_navbar_list');
+        Route::get('/addnavbar', AddNavbar::class)->name('add_navbar_list');
+        Route::get('/editnavbar/{id}', EditNavbar::class)->name('edit_navbar_list');
+        
+        // ViewSubNavbar
+        Route::get('/view-subnavbar', ViewSubNavbar::class)->name('view_Subnavbar_list');
+        Route::get('/add-subnavbar', AddSubNavbar::class)->name('add_Subnavbar_list');
+        Route::get('/edit-subnavbar/{id}', EditSubNavbar::class)->name('edit_Subnavbar_list');
+
+
+
+
+        
+
+        
+    });
+    
 
 });
        // middle ware end

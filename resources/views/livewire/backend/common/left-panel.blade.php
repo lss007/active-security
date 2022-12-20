@@ -41,6 +41,27 @@
         <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">  {{__('leftpane.Home section5')}} </a></li>
       </ul>
 
+      
+      {{-- ---------------- --}}
+      <a href="javascript:void(0)" class="sl-menu-link @if ($prefix == 'en/navbar' || $prefix == 'de/navbar')  active show-sub @else @endif ">
+        <div class="sl-menu-item">
+          <i class="icon ion-navicon-round"></i>
+          <span class="menu-item-label">  Navbar</span>
+          <i class="menu-item-arrow fa fa-angle-down"></i>
+          
+        </div>
+        <!-- menu-item -->
+      </a>
+      <!-- sl-menu-link -->
+      <ul class="sl-menu-sub nav flex-column  ">
+        <li class="nav-item"><a href="{{route('view_navbar_list')}}" class="nav-link @if(Route::is('view_navbar_list') ) active @else '' @endif">
+            View Navbar</a></li>
+            <li class="nav-item"><a href="{{route('view_Subnavbar_list')}}" class="nav-link @if(Route::is('view_Subnavbar_list') ) active @else '' @endif">
+              View Subnavbar list</a></li>
+            
+      </ul>
+      {{-- ------------------- --}}
+
     <a href="{{route('view_all_banner')}}" class="sl-menu-link @if ($prefix == 'en/mange-All-banner' || $prefix == 'de/mange-All-banner')  active show-sub @else  @endif ">
         <div class="sl-menu-item">
           <i class="fa fa-image"></i>
@@ -74,8 +95,6 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_services')}}" class="nav-link          @if(Route::is('view_services') ) active            @else '' @endif"> {{__('leftpane.Manage Services Section')}}</a></li>
         <li class="nav-item"><a href="{{route('view_services_banner')}}" class="nav-link   @if(Route::is('view_services_banner') ) active     @else '' @endif"> {{__('leftpane.Manage Bottom Banner')}}  </a></li>
-       
-        
       </ul>
     <a href="#" class="sl-menu-link  @if ($prefix == 'en/company' || $prefix == 'de/company')  active show-sub @else  @endif ">
         <div class="sl-menu-item">

@@ -22,7 +22,6 @@ class EditHomeSliders extends Component
     public function updateSliderImg($val){       
             $this->updateCropedImg = $val;
             // dd('desktop' .$this->updateCropedImg);
-          
         }
         public function updateSliderImg2($val){       
             $this->updateCropedImg2 = $val;
