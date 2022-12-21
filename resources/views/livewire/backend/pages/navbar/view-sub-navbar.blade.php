@@ -3,7 +3,7 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>NavBar Sublinks
+          <h5>{{__('dashboard.Manage Submenu')}}
             <span class="float-right"> Total Sublinks: {{isset($viewSubLink) ?count($viewSubLink)  : "NA" }}</span>
           </h5>
         
@@ -20,9 +20,11 @@
             <button wire:click.prevent="deleteSE"
             onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
             class="btn btn-danger active mg-b-10">
-        Delete Selected
+            {{__('dashboard.Delete selected')}}
     </button>
-            <a href="{{route('add_Subnavbar_list')}}" class="btn btn-teal active mg-b-10" >Add Sublink</a>
+            <a href="{{route('add_Subnavbar_list')}}" class="btn btn-teal active mg-b-10" >
+            {{__('dashboard.Add Submenu')}}
+            </a>
         </h6>
         <div class="table-responsive">
           <table class="table table-hover table-bordered mg-b-0">

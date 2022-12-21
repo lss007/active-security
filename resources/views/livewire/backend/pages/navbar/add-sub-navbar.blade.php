@@ -5,7 +5,7 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Add Sublinks  </h5>
+          <h5>    {{__('dashboard.Add Submenu')}} </h5>
         
         </div><!-- sl-page-title -->
    {{-- @if ($errors->any())
@@ -49,7 +49,7 @@
            
                  <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label">Route Name :<span class="tx-danger">*</span></label>
+                        <label class="form-control-label">Menu Name :<span class="tx-danger">*</span></label>
                         <input class="form-control" type="text" wire:model="routeName"  placeholder="Route Name">
                         @error('routeName')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>

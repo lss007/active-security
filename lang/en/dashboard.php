@@ -96,13 +96,24 @@ return [
     'Add social media links' => 'Add social media links',
     'Update social media links' => 'Update social media links',
     
-    //Route list 
+    // Route list 
     'Add Route' =>  'Add Route',
     'Update Route' =>  'Update Route',
-   //Manage cookie
+   // Manage cookie
    'Manage Cookies Text' => 'Manage Cookies Text',
    'Add Cookie' => 'Add Cookie',
    'Update cookies' => 'Update cookies',
+   // Navbar 
+   'Manage menu' => 'Manage menu',
+   'Add menu item' => 'Add Menu Item',
+   'Delete selected'=> 'Delete selected',
+   'Update Menu Item' => 'Update Menu Item',
+   'Enter menu item' => 'Enter menu item',
+    // submenu 
+    'Manage Submenu' => 'Manage Submenu',
+    'Add Submenu' => 'Add Submenu',
+    'Update Submenu' => 'Update Submenu',
+   
 
  
 

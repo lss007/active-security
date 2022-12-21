@@ -3,7 +3,8 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>NavBar Items
+          <h5>
+            {{__('dashboard.Manage menu')}}
             <span class="float-right"> Total Navbar: {{isset($viewSiteNavbar) ?count($viewSiteNavbar)  : "NA" }}</span>
           </h5>
         
@@ -20,9 +21,11 @@
             <button wire:click.prevent="deleteSE"
             onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
             class="btn btn-danger active mg-b-10">
-        Delete Selected
+        {{__('dashboard.Delete selected')}}
     </button>
-            <a href="{{route('add_navbar_list')}}" class="btn btn-teal active mg-b-10" >Add Navbar</a>
+            <a href="{{route('add_navbar_list')}}" class="btn btn-teal active mg-b-10" >
+            {{__('dashboard.Add menu item')}}
+            </a>
         </h6>
         <div class="table-responsive">
           <table class="table table-hover table-bordered mg-b-0">

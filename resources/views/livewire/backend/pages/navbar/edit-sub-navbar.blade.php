@@ -5,7 +5,7 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Sublinks  </h5>
+          <h5>{{__('dashboard.Update Submenu')}}  </h5>
         
         </div><!-- sl-page-title -->
 
@@ -20,7 +20,7 @@
           
                  <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label">Main Navbar :<span class="tx-danger">*</span></label>
+                        <label class="form-control-label">Select Main Navbar :<span class="tx-danger">*</span></label>
                         <select class="form-control" data-placeholder="Choose Section" wire:model="navbarLink" aria-hidden="true">
                             <option label="Choose Route Name"></option>
                           @if(isset($editNavlink))

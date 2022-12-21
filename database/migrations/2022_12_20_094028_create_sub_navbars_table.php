@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('navbar_id')->nullable();
             $table->string('route_name')->nullable();
-            $table->string('route_link')->nullable()->unique();
+            $table->string('route_link')->nullable();
             $table->integer('ordering')->default(0);
             $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();

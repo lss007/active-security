@@ -97,10 +97,25 @@ return [
     // Route list 
     'Add Route' =>  'Strecke hinzufügen',
     'Update Route' =>  'Strecke aktualisieren',
-     // Manage cookie
-     'Manage Cookies Text' => 'Cookie-Text verwalten',
-     'Add Cookie' => 'Plätzchen hinzufügen',
+    // Manage cookie
+    'Manage Cookies Text' => 'Cookie-Text verwalten',
+    'Add Cookie' => 'Plätzchen hinzufügen',
     'Update cookies' => 'Cookies aktualisieren',
+    //Navbar 
+    'Manage menu' => 'Menü verwalten',
+    'Add menu item' => 'Menüpunkt hinzufügen',
+   'Delete selected'=> 'Ausgewählte löschen',
+   'Update Menu Item' => 'Menüpunkt aktualisieren',
+   'Enter menu item' => 'Menüpunkt eingeben',
+    // submenu 
+    'Manage Submenu' => 'Untermenü verwalten',
+    'Add Submenu' => 'Untermenü hinzufügen',
+    'Update Submenu' => 'Untermenü aktualisieren',
+
+
+
+
+
 
 
 

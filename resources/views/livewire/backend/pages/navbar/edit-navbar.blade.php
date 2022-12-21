@@ -5,7 +5,9 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5>Update Navbar Route Name</h5>
+          <h5>
+            {{__('dashboard.Update Menu Item')}}
+          </h5>
         
         </div><!-- sl-page-title -->
    {{-- @if ($errors->any())
@@ -33,7 +35,7 @@
                <div class="row mg-b-25">
                  <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label">Route Name :<span class="tx-danger">*</span></label>
+                        <label class="form-control-label">{{__('dashboard.Enter menu item')}}<span class="tx-danger">*</span></label>
                         <input class="form-control" type="text" wire:model="name"  placeholder="Route Name">
                         @error('name')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>

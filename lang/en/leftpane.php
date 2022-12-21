@@ -42,6 +42,8 @@ return [
     // top header 
     'Edit Profile' => 'Edit Profile',
     'Sign Out' => 'Sign Out',
+    'Menubar' => 'Show Menu',
+    'Show submenu' => 'Show submenu',
    
 
 

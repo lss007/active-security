@@ -42,6 +42,10 @@ return [
     // top header 
     'Edit Profile' => 'Profil bearbeiten',
     'Sign Out' => 'Austragen',
+    'Menubar' => 'Show Menue',
+    'Show submenu' => 'Untermenü anzeigen',
+
+
 
 
 

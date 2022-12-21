@@ -37,7 +37,7 @@ class EditSubNavbar extends Component
     protected $messages = [
         'navbarLink.required' => 'Main Navbar link field is required.',
         'routeName.required' => 'Sublink Name field is required.',
- 
+
     ]; 
 
         public function updateSubLinks()
@@ -46,7 +46,7 @@ class EditSubNavbar extends Component
                     $SaveSub =  SubNavbar::find($this->subLinkId);
                     $SaveSub->navbar_id = $this->navbarLink;
                     $SaveSub->route_name = $this->routeName;
-                    $SaveSub->route_link  =  $this->link;
+                    // $SaveSub->route_link  =  $this->link;
 
                     $SaveSub->save();
                     $notification = array(
