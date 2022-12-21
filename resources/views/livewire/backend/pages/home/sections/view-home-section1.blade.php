@@ -11,7 +11,13 @@
           <h6 class="card-body-title">
    
             @if(isset($homeSectionOne))
-      
+            @if($homeSectionOne->status == 1 )
+                <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  title="Hide from Frontend" 
+                wire:click.prevent="inactive({{$homeSectionOne->id}})">Inactive </a>
+            @else
+                <a href="javascript:void(0)" class="btn btn-info active  mg-b-10" title="Show from Frontend" 
+                wire:click.prevent="active({{$homeSectionOne->id}})"> Active</a>
+            @endif
             <a href="{{route('editHomesection1',$homeSectionOne->id)}}"> 
               <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
 

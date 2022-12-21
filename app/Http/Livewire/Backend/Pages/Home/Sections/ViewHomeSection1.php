@@ -12,7 +12,7 @@ class ViewHomeSection1 extends Component
     public $homeSectionOne,$trashdata;
     public function render()
     {
-        $this->homeSectionOne = HomeSectionOne::where('status',1)->first();
+        $this->homeSectionOne = HomeSectionOne::first();
         $this->trashdata = HomeSectionOne::onlyTrashed()->first();
         return view('livewire.backend.pages.home.sections.view-home-section1')->layout('layouts.backend');
     }

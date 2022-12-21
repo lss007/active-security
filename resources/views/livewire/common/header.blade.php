@@ -41,20 +41,18 @@
                   <div class="navCol">
            
                     <ul>
+                    @if(isset($navitems->route_name))
                       <li><a href="{{route('homePage')}}" class="@if(Route::is('homePage') ) active @else '' @endif">{{isset($navitems->route_name) ? $navitems->route_name : "NA"}}</a></li>
-               
+                    @endif
+                    @if(isset($navitems2->route_name))
                       <li class="ddLinkCol">
                         <a href="javascript:void(0)">{{isset($navitems2->route_name) ? $navitems2->route_name : "NA"}}</a>
-                       
-                       @if(isset($subnavbars))
-                    
+                    @if(isset($subnavbars))
                         <ul class="subMenu">
-                          @foreach($subnavbars as $val)
-                          
+                    @foreach($subnavbars as $val)   
                           <li><a href="{{isset($val->route_link) ? route($val->route_link) : "#"}}" class="@if(Route::is(isset($val->route_link) ? $val->route_link : "") ) active @else '' @endif">{{isset($val->route_name) ? $val->route_name : "NA"}}</a></li>
-
-                          @endforeach
-                        @else
+                    @endforeach
+                    @else
                           {{-- <li><a href="{{route('ObjektPage')}}" class="@if(Route::is('ObjektPage') ) active @else '' @endif">Objekt- und Werkschutz</a></li>
                           <li><a href="{{route('CenterbewachungPage')}}" class="@if(Route::is('CenterbewachungPage') ) active @else '' @endif">Centerbewachung</a></li>
                           <li><a href="{{route('KaufhausdetektivePage')}}" class="@if(Route::is('KaufhausdetektivePage') ) active @else '' @endif">Kaufhausdetektive</a></li>
@@ -65,11 +63,16 @@
                           <li><a href="{{route('ShopGuardPage')}}" class="@if(Route::is('ShopGuardPage') ) active @else '' @endif">Shop Guard</a></li>
                           <li><a href="{{route('VeranstaltungsSchutzPage')}}" class="@if(Route::is('VeranstaltungsSchutzPage') ) active @else '' @endif">Veranstaltungsschutz</a></li>
                         --}}
-                        @endif
+                     @endif
                         </ul>
                       </li>
-                      <li><a href="{{route('UnternehmenPage')}}" class="@if(Route::is('UnternehmenPage') ) active @else '' @endif">{{isset($navitems3->route_name) ? $navitems3->route_name : "NA"}}</a></li>
-                      <li><a href="{{route('JobsPage')}}" class="@if(Route::is('JobsPage') ) active @else '' @endif">{{isset($navitems4->route_name) ? $navitems4->route_name : "NA"}}</a></li>
+                      @endif
+                      @if(isset($navitems3->route_name))
+                        <li><a href="{{route('UnternehmenPage')}}" class="@if(Route::is('UnternehmenPage') ) active @else '' @endif">{{isset($navitems3->route_name) ? $navitems3->route_name : "NA"}}</a></li>
+                      @endif
+                      @if(isset($navitems4->route_name))
+                        <li><a href="{{route('JobsPage')}}" class="@if(Route::is('JobsPage') ) active @else '' @endif">{{isset($navitems4->route_name) ? $navitems4->route_name : "NA"}}</a></li>
+                      @endif
                     </ul>
                   
                   </div>

@@ -13,4 +13,26 @@ class ViewSectionOne extends Component
                 $this->getCompanySection1  = CompanySectionOne::latest()->first();
         return view('livewire.backend.pages.company.view-section-one')->layout('layouts.backend');
     }
+    public function  inactive($id){
+        CompanySectionOne::where('id', $id)->update([
+           'status' =>    0,
+       ]);
+       $notification = array(
+          'message' => 'Section  status is Inactive',
+          'alert-type' => 'warning'
+      );
+      return   redirect(request()->header('Referer'))->with($notification);
+     }
+     public function  active($id){
+        CompanySectionOne::where('id', $id)->update([
+           'status' =>   1,
+       
+       ]);
+       $notification = array(
+          'message' => 'Section status is Active ',
+          'alert-type' => 'success'
+      );
+      return   redirect(request()->header('Referer'))->with($notification);
+
+     }
 }

@@ -219,14 +219,8 @@ Route::group(['prefix' =>'manage-footer'], function () {
         Route::get('/add-cookie', AddCookie::class)->name('admin_add_cookie');
         Route::get('/edit-cookie/{id}', EditCookie::class)->name('admin_edit_cookie');
 
-        
-        
-        
- 
-
          Route::get('/logos-view', ViewFooterLogo::class)->name('view_footer_logos');
          Route::get('/logosedit/{id}', EditFooterLogo::class)->name('edit_footer_logos');
-
 
          Route::get('/privacy-view', ViewPrivacySettings::class)->name('view_privacy_settings');
          Route::get('/privacy-add', AddPrivacySettings::class)->name('add_privacy_settings');

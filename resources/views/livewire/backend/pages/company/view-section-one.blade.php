@@ -8,6 +8,13 @@
         <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">
             @if(isset($getCompanySection1))      
+            @if($getCompanySection1->status == 1 )
+            <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  
+            wire:click.prevent="inactive({{$getCompanySection1->id}})">Inactive </a>
+       @else
+            <a href="javascript:void(0)" class="btn btn-info active  mg-b-10"
+             wire:click.prevent="active({{$getCompanySection1->id}})"> Active</a>
+          @endif
             <a href="{{route('edit_company_section1',$getCompanySection1->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
             @else
             <a href="{{route('add_company_section1')}}"><button class="btn btn-teal active mg-b-10">Add</button> </a>

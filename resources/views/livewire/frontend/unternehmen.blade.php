@@ -82,7 +82,7 @@
       @endif
     
 
-      @if($companysecTwo)
+      @if(isset($companysecTwo))
       <section>
         <div class="sectionSpace pt-0">
           <div class="container">
@@ -140,7 +140,7 @@
         </div>
       </section>
       @endif
-      @if($companysecThree )
+      @if(isset($companysecThree ))
       <section>
         <div class="sectionSpace pt-0">
           <div class="container">
@@ -148,16 +148,18 @@
               <div class="col-lg-6 order-lg-last">
                 <div class="cCardCol ms-lg-auto">
                   <div class="cCardImgCol text-center">
+                 
                     <picture>
                       <source media="(min-width:992px)" srcset="{{(isset($this->companysecThree->profile_img)) 
                         ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}">
                       <source media="(min-width:768px)" srcset="{{(isset($this->companysecThree->tablet_banner)) 
-                        ? asset('storage/company-profile/'.$companysecThree->tablet_banner) :
-                        asset('storage/company-profile/'.$companysecTwo->profile_img)}}">
+                        ? asset('storage/company-profile/'.$companysecThree->profile_img) :
+                        asset('storage/company-profile/'.$companysecThree->tablet_banner)}}">
                       <img class="imgStyle1" src="{{(isset($this->companysecThree->mobile_banner)) 
                         ? asset('storage/company-profile/'.$companysecThree->mobile_banner) :
                         asset('storage/company-profile/'.$companysecThree->profile_img)}}" alt="" style="width:auto;">
                     </picture>
+                
                     {{-- <img src="{{(isset($this->companysecThree->profile_img)) 
                       ? asset('storage/company-profile/'.$companysecThree->profile_img) :asset('no_image.jpg')}}" alt="..."> --}}
                   </div>

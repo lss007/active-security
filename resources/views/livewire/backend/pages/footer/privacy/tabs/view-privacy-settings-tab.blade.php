@@ -55,8 +55,16 @@
                                                       @if($row->tabs == 1 && $row->cat ==1 )
                                                     <td> {{$keys+1}}  {{$row->list}}  </td>
                                                     <td>    
+
                                                       <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
                                                       <i class="fa fa-edit"></i></a>
+                                                      @if($row->status == 1 )
+                                                      <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
+                                                      <i class="fa fa-thumbs-down"></i>
+                                                      @else
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
+                                                        <i class="fa fa-thumbs-up"></i>
+                                                      @endif
                                                         <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
                                                           <i class="fa fa-trash"></i></a>
                                                     </td>
@@ -64,15 +72,16 @@
                                                  @endif
                                               @endforeach
                                            @endif
-                                             @if(isset($trashdata)  )
+                                             @if(isset($trashdata)  && count($trashdata) > 0 )
                                              <tr><th>Restore</th></tr>
                                               @foreach($trashdata as $val)
                                                 <tr>
                                                     <td> {{$val->list}}  </td>
                                                     <td>     
-                                                      <a href="javascript:void(0)"  wire:click.prevent="restore({{ $val->id}})" class="btn btn-sm btn-success" title="delete"  >
+                                                      <a href="javascript:void(0)"  wire:click.prevent="restore({{ $val->id}})" class="btn btn-sm btn-success" title="Restore"  >
                                                       <i class="fa fa-trash"></i></a>
-                                                      <a href="javascript:void(0)"  wire:click.prevent="fulleDelete({{ $val->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                           
+                                                      <a href="javascript:void(0)"  wire:click.prevent="fulleDelete({{ $val->id}})" class="btn btn-sm btn-danger" title="Full Delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
                                                       <i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
@@ -99,6 +108,13 @@
                                                 <td>    
                                                   <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
                                                   <i class="fa fa-edit"></i></a>
+                                                  @if($row->status == 1 )
+                                                  <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
+                                                  <i class="fa fa-thumbs-down"></i>
+                                                  @else
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                  @endif
                                                   <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
                                                     <i class="fa fa-trash"></i></a>
                                                 </td>
@@ -143,7 +159,7 @@
                                         @endif
                                         @endforeach
                                           @endif
-                                          @if(isset($trashdata)  )
+                                          @if(isset($trashdata) && count($trashdata) > 0  )
                                         <tr><th>Restore</th></tr>
                                           @foreach($trashdata as $val)
                                         <tr>
@@ -221,7 +237,7 @@
                                                   @endif
                                                @endforeach
                                             @endif
-                                              @if(isset($trashdata)  )
+                                              @if(isset($trashdata) && count($trashdata) > 0  )
                                             <tr><th>Restore</th></tr>
                                       
                                               @foreach($trashdata as $val)
@@ -304,7 +320,7 @@
                                             @endforeach
                                           @endif
   
-                                              @if(isset($trashdata)  )
+                                              @if(isset($trashdata) && count($trashdata) > 0  )
                                             <tr><th>Restore</th></tr>
                                       
                                               @foreach($trashdata as $val)

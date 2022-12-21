@@ -12,7 +12,7 @@ class ViewJobSection extends Component
     public $getJobsection ,$trashdata;
     public function render()
     {
-        $this->getJobsection =  JobSection::latest()->where('status',1)->first();
+        $this->getJobsection =  JobSection::latest()->first();
         $this->trashdata= JobSection::onlyTrashed()->first();
         return view('livewire.backend.pages.job.view-job-section')->layout('layouts.backend');
     }

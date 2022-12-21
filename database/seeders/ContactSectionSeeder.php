@@ -17,7 +17,7 @@ class ContactSectionSeeder extends Seeder
     {
 /* `active_security`.`contact_sections` */
 $contact_sections = array(
-    array('heading' => 'Kontakt','title' => 'Wir melden uns innerhlab von 24h zurück.','para1' => 'Ich erkläre mich damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. Weitere Informationen und Widerrufshinweise finden Sie in unserer Datenschutzerklärung.','image' => '1669017383_P1360544-Edit 1.jpg','status' => '1','deleted_at' => NULL,'created_at' => '2022-11-19 07:22:02','updated_at' => '2022-11-21 07:56:23')
+    array('heading' => 'Kontakt','title' => 'Wir melden uns innerhlab von 24h zurück.','para1' => 'Ich erkläre mich damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. Weitere Informationen und Widerrufshinweise finden Sie in unserer Datenschutzerklärung.','image' => '1670843741_up_desk.png','status' => '1','deleted_at' => NULL,'created_at' => '2022-11-19 07:22:02','updated_at' => '2022-11-21 07:56:23')
   );
   foreach ( $contact_sections as $key => $name) {
     ContactSection::create($name);

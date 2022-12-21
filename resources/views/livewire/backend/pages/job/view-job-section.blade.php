@@ -15,7 +15,14 @@
               Trash </a>      
 
           
-              
+              @if($getJobsection->status == 1 )
+              <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  
+              wire:click.prevent="inactive({{$getJobsection->id}})">Inactive </a>
+         @else
+              <a href="javascript:void(0)" class="btn btn-info active  mg-b-10"
+               wire:click.prevent="active({{$getJobsection->id}})"> Active</a>
+            @endif
+
             <a href="{{route('edit_job_section',$getJobsection->id)}}"> <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
            
 

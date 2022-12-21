@@ -16,10 +16,11 @@ class HomeSectionOneSeeder extends Seeder
     public function run()
     {
       /* `active_security`.`home_section_ones` */
-$home_section_ones = array(
-    array('heading' => ' active secuirty','sub_heading' => 'Zertifiziert. Zuverlässig. Professionell.','paragraph' => 'Wir sind Experten auf unserem Gebiet: Mit langjähriger Erfahrung im Sicherheitsdienst setzen wir unsere Fachkompetenz für Sie ein. Wir sorgen diskret und zuverlässig für den Schutz Ihres Unternehmens.','main_image' => '1668418272_img-1.jpg','logo1' => '1669012549_Dekra-2.png','logo2' => '1669012549_Dekra-1.png','logo3' => '1669012549_BDSW.png','status' => '1','deleted_at' => NULL,'created_at' => '2022-11-14 09:31:12','updated_at' => '2022-11-21 06:35:49')
-  );
+
   
+  $home_section_ones = array(
+    array('heading' => ' active secuirty','sub_heading' => 'Zertifiziert. Zuverlässig. Professionell.','paragraph' => 'Wir sind Experten auf unserem Gebiet: Mit langjähriger Erfahrung im Sicherheitsdienst setzen wir unsere Fachkompetenz für Sie ein. Wir sorgen diskret und zuverlässig für den Schutz Ihres Unternehmens.','main_image' => '639803e59e8b2.png','tablet_img' => '1670906853_ad_.png','mobile_img' => '1670906929ad_mob.png','logo1' => '1671186729_upDekra-1.svg','logo2' => '1671186799_upDekra-2.svg','logo3' => '1670908216_upBDSW.png','status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now())
+  );
           foreach ( $home_section_ones as $key => $name) {
             HomeSectionOne::create($name);
         }

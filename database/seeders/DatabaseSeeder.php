@@ -52,6 +52,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CookieSeeder::class);
         
         $this->call(NavbarSeeder::class);
+        $this->call(SubNavbarSeeder::class);
+
+        
 
 
         

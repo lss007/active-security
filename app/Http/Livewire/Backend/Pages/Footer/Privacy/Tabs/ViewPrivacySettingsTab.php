@@ -36,11 +36,32 @@ class ViewPrivacySettingsTab extends Component
 
     public function fulleDelete($id){
         PrivacySettingTab::onlyTrashed()->find($id)->forceDelete();
-        $notification = array(
-          'message' => '  Deleted successfully',
-          'alert-type' => 'error'
-      );
+                $notification = array(
+                'message' => '  Deleted successfully',
+                'alert-type' => 'error'
+            );
       return   redirect(request()->header('Referer'))->with($notification);
       }
 
+      public function  inactive($id){
+                PrivacySettingTab::where('id', $id)->update([
+                'status' =>    0,
+            ]);
+            $notification = array(
+                'message' => 'Privacy Tab  Inactive',
+                'alert-type' => 'warning'
+            );
+            return   redirect(request()->header('Referer'))->with($notification);
+        }
+     public function  active($id){
+                PrivacySettingTab::where('id', $id)->update([
+                'status' =>   1,
+            ]);
+            $notification = array(
+                'message' => 'Privacy Tab Active ',
+                'alert-type' => 'success'
+            );
+      return   redirect(request()->header('Referer'))->with($notification);
+
+     }
 }

@@ -9,6 +9,13 @@
  <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title">
           @if(isset($homeSectionTwo)) 
+          @if($homeSectionTwo->status == 1 )
+            <a href="javascript:void(0)" class="btn btn-success active  mg-b-10"  
+             wire:click.prevent="inactive({{$homeSectionTwo->id}})">Inactive </a>
+          @else
+              <a href="javascript:void(0)" class="btn btn-info active  mg-b-10"
+              wire:click.prevent="active({{$homeSectionTwo->id}})"> Active</a>
+          @endif
           <a href="{{route('edit_HomeSection2',$homeSectionTwo->id)}}"> 
               <button class="btn btn-primary active  mg-b-10">Edit</button> </a>
               <a href="javascript:void(0)" class="btn btn-warning active  mg-b-10"   wire:click.prevent="delete({{$homeSectionTwo->id}})">
