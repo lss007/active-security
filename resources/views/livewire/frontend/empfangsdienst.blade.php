@@ -3,28 +3,21 @@
     @if(isset($Empfanmain))
     <section>
       <style>
-        .bannerSection.innerPageBanner.s7Banner {
-           background-image: url('{{asset('storage/All-banner/'.$Empfanmain->banner_image)}}');
-         }
+        .bannerSection.innerPageBanner.s7Banner {background-image: url('{{asset('storage/All-banner/'.$Empfanmain->banner_image)}}');  }
          @media (max-width: 991px) {
-           .bannerSection.innerPageBanner.s7Banner {
-             background-image: url('{{asset('storage/All-banner/'.$Empfanmain->tablet_banner)}}');
-           }
+        .bannerSection.innerPageBanner.s7Banner {background-image: url('{{asset('storage/All-banner/'.$Empfanmain->tablet_banner)}}'); }
          }
-         </style>
+      </style>
        @if(isset($Empfanmain->mobile_banner))
-         <style>
-             @media (max-width: 767px) {
-               .bannerSection.innerPageBanner.s7Banner{
-                 background-image: url('{{asset('storage/All-banner/'.$Empfanmain->mobile_banner)}}');
-               }
-             }
-         </style>
+      <style>
+          @media (max-width: 767px) {
+            .bannerSection.innerPageBanner.s7Banner{background-image: url('{{asset('storage/All-banner/'.$Empfanmain->mobile_banner)}}');  }
+          }
+      </style>
        @else 
-         <style>
-             .bannerSection.innerPageBanner.s7Banner { 
-                background-image: url('{{asset('storage/All-banner/'.$Empfanmain->banner_image)}}');  }
-         </style>
+      <style>
+          .bannerSection.innerPageBanner.s7Banner {background-image: url('{{asset('storage/All-banner/'.$Empfanmain->banner_image)}}');  }
+      </style>
        @endif
       <div class="bannerSection innerPageBanner s7Banner" >
         <div class="container">

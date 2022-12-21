@@ -2,23 +2,18 @@
     {{-- The whole world belongs to you. --}}
     @if(isset($Baustellmain))
     <section>
-
       <style>
-        .bannerSection.innerPageBanner.s4Banner {
-          background-image: url('{{asset('storage/All-banner/'.$Baustellmain->banner_image)}}');
+        .bannerSection.innerPageBanner.s4Banner {  background-image: url('{{asset('storage/All-banner/'.$Baustellmain->banner_image)}}');
         }
         @media (max-width: 991px) {
-          .bannerSection.innerPageBanner.s4Banner {
-            background-image: url('{{asset('storage/All-banner/'.$Baustellmain->tablet_banner)}}');
+          .bannerSection.innerPageBanner.s4Banner { background-image: url('{{asset('storage/All-banner/'.$Baustellmain->tablet_banner)}}');
           }
         }
         </style>
-
       @if(isset($Baustellmain->mobile_banner))
         <style>
             @media (max-width: 767px) {
-              .bannerSection.innerPageBanner.s4Banner {
-                background-image: url('{{asset('storage/All-banner/'.$Baustellmain->mobile_banner)}}');
+              .bannerSection.innerPageBanner.s4Banner {  background-image: url('{{asset('storage/All-banner/'.$Baustellmain->mobile_banner)}}');
               }
             }
         </style>

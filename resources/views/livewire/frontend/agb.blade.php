@@ -3,27 +3,21 @@
     @if($agb_pagebanner)
     <section>
       <style>
-        .bannerSection.innerPageBanner.datenschutzBanner {
-           background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->banner_image)}}');
-         }
-         @media (max-width: 991px) {
-           .bannerSection.innerPageBanner.datenschutzBanner {
-             background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->tablet_banner)}}');
-           }
-         }
+      .bannerSection.innerPageBanner.datenschutzBanner {background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->banner_image)}}'); }
+              @media (max-width: 991px) {
+      .bannerSection.innerPageBanner.datenschutzBanner {background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->tablet_banner)}}');  }        
+        }
          </style>
        @if(isset($agb_pagebanner->mobile_banner))
          <style>
              @media (max-width: 767px) {
-               .bannerSection.innerPageBanner.datenschutzBanner{
-                 background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->mobile_banner)}}');
+               .bannerSection.innerPageBanner.datenschutzBanner{background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->mobile_banner)}}');
                }
              }
          </style>
        @else 
          <style>
-             .bannerSection.innerPageBanner.datenschutzBanner { 
-                background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->banner_image)}}');  }
+             .bannerSection.innerPageBanner.datenschutzBanner {background-image: url('{{asset('storage/All-banner/'.$agb_pagebanner->banner_image)}}');  }
          </style>
        @endif
         <div class="bannerSection innerPageBanner datenschutzBanner">
