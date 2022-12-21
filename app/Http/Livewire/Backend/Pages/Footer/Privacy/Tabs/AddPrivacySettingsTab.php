@@ -15,7 +15,7 @@ class AddPrivacySettingsTab extends Component
 
     public function storePrivacytab(){
         $this->validate([
-            // 'tabs' => 'required',
+            'list' => 'required',
             // 'cat' => 'required',
         ]);
 
