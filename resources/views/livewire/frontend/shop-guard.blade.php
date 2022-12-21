@@ -33,7 +33,7 @@
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
               {!!isset($Shopmain->title) ? $Shopmain->title : "NA"!!} 
             </p>
-            <a href="{!! isset($Shopmain->button_link) ? $Shopmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+            <a href="{!! isset($Shopmain->button_link) ? $Shopmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
               {{	isset($Shopmain->button_text) ? $Shopmain->button_text : "Angebot einholen"}}  
             </a>
           </div>
@@ -44,6 +44,10 @@
 
   @if(isset($ShopPagesection))
     <section>
+      <div class="nextSectionParent">
+        <div id="nextSection"></div>
+      </div>
+
       <div class="sectionSpace">
         <div class="container">
           <div class="row gy-4 align-items-center">

@@ -35,7 +35,8 @@
             </h1>
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
               {!!isset($Unternehmenmain->title) ? $Unternehmenmain->title : "NA"!!} </p>
-            <a href="#nextSection" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 scrollToSection"> {{	isset($Unternehmenmain->button_text) ? $Unternehmenmain->button_text : "Angebot einholen"}} </a>
+              
+            <a href="{!!isset($Unternehmenmain->button_link) ? $Unternehmenmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 scrollToSection"> {{	isset($Unternehmenmain->button_text) ? $Unternehmenmain->button_text : "Angebot einholen"}} </a>
           </div>
         </div>
       </div>
@@ -44,6 +45,9 @@
 @endif
     @if(isset($companysecOne))
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
         <div class="sectionSpace">
           <div class="container">
             <div class="contentCol">

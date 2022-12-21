@@ -36,7 +36,7 @@
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
               {{	isset($Openingmain->title) ? $Openingmain->title : "NA"}}
             </p>
-            <a href="{!! isset($Openingmain->button_link) ? $Openingmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+            <a href="{!! isset($Openingmain->button_link) ? $Openingmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
               {{	isset($Openingmain->button_text) ? $Openingmain->button_text : "Angebot einholen"}}
             </a>
           </div>
@@ -47,6 +47,9 @@
 
   @if(isset($OpeningPagesection))
     <section>
+      <div class="nextSectionParent">
+        <div id="nextSection"></div>
+      </div>
       <div class="sectionSpace">
         <div class="container">
           <div class="row gy-4 align-items-center">

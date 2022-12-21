@@ -37,7 +37,7 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($Contactmain->title) ? $Contactmain->title : "NA"}}
               </p>
-              <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              <a href="{!!isset($Contactmain->button_link) ? $Contactmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
                 {{	isset($Contactmain->button_text) ? $Contactmain->button_text : "Kontaktformular "}} 
                 </a>
             </div>
@@ -46,6 +46,9 @@
       </section>
     @endif
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
         <div class="sectionSpace">
           <div class="container">
             <div class="row gy-4 align-items-center">

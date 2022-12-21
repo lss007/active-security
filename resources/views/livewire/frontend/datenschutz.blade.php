@@ -36,6 +36,9 @@
       </section>
     @endif
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
         <div class="sectionSpace">
           <div class="container">
             <div class="privacyContent">

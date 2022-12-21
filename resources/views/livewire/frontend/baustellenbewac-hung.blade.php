@@ -38,7 +38,7 @@
                 {{	isset($Baustellmain->title) ? $Baustellmain->title : "NA"}}
 
               </p>
-              <a href="{!! isset($Baustellmain->button_link) ? $Baustellmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              <a href="{!! isset($Baustellmain->button_link) ? $Baustellmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
                 {{	isset($Baustellmain->button_text) ? $Baustellmain->button_text : "Angebot einholen"}} 
               </a>
             </div>
@@ -49,6 +49,9 @@
 
     @if(isset($BaustellPagesection))
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
         <div class="sectionSpace">
           <div class="container">
             <div class="row gy-4 align-items-center">

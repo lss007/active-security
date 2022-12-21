@@ -31,7 +31,7 @@
             <div class="bannerContent">
               <h1 class="xlTitle">{!!	isset($veranstmain->heading) ? $veranstmain->heading : "NA"!!}</h1>
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">{!!	isset($veranstmain->title) ? $veranstmain->title : "NA"!!}</p>
-              <a href="{!! isset($veranstmain->button_link) ? $veranstmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">{{	isset($veranstmain->button_text) ? $veranstmain->button_text : "Angebot einholen"}}  </a>
+              <a href="{!! isset($veranstmain->button_link) ? $veranstmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">{{	isset($veranstmain->button_text) ? $veranstmain->button_text : "Angebot einholen"}}  </a>
             </div>
           </div>
         </div>
@@ -40,6 +40,10 @@
 
     @if(isset($veranstPagesection))
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
+
         <div class="sectionSpace">
           <div class="container">
             <div class="row gy-4 align-items-center">

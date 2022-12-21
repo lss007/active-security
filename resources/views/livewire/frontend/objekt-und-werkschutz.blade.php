@@ -37,7 +37,7 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($ObjektUndPageBanner->title) ? $ObjektUndPageBanner->title : "NA"}}
               </p>
-              <a href="{!! isset($ObjektUndPageBanner->button_link) ? $ObjektUndPageBanner->button_link : "#"!!}" target="__blank" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              <a href="{!! isset($ObjektUndPageBanner->button_link) ? $ObjektUndPageBanner->button_link : "#nextSection"!!}" target="__blank" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
                 {{	isset($ObjektUndPageBanner->button_text) ? $ObjektUndPageBanner->button_text : "Angebot einholen"}} </a>
             </div>
           </div>
@@ -47,6 +47,9 @@
      
 @if(isset($ObjektUndPagesection))
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
         <div class="sectionSpace">
           <div class="container">
             <div class="row gy-4 align-items-center">

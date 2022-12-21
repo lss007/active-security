@@ -35,7 +35,7 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($Kaufhausmain->title) ? $Kaufhausmain->title : "NA"}}
               </p>
-              <a href="{!! isset($Kaufhausmain->button_link) ? $Kaufhausmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
+              <a href="{!! isset($Kaufhausmain->button_link) ? $Kaufhausmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
                 {{	isset($Kaufhausmain->button_text) ? $Kaufhausmain->button_text : "Angebot einholen"}} 
               </a>
             </div>
@@ -46,6 +46,9 @@
 
     @if(isset($KaufhausPagesection))
       <section>
+        <div class="nextSectionParent">
+          <div id="nextSection"></div>
+        </div>
         <div class="sectionSpace">
           <div class="container">
             <div class="row gy-4 align-items-center">

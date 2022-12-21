@@ -35,7 +35,7 @@
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">    
               {{	isset($Empfanmain->title) ? $Empfanmain->title : "NA"}}
             </p>
-            <a href="{!! isset($Empfanmain->button_link) ? $Empfanmain->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+            <a href="{!! isset($Empfanmain->button_link) ? $Empfanmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
               {{	isset($Empfanmain->button_text) ? $Empfanmain->button_text : "Angebot einholen"}} 
              </a>
           </div>
@@ -45,6 +45,9 @@
     @endif
   @if(isset($EmpfanPagesection))
     <section>
+      <div class="nextSectionParent">
+        <div id="nextSection"></div>
+      </div>
       <div class="sectionSpace">
         <div class="container">
           <div class="row gy-4 align-items-center">
