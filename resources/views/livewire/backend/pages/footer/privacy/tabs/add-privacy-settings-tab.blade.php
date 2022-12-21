@@ -34,7 +34,7 @@
                         <div class="form-layout">
                           <div class="row mg-b-25">
                        
-                            <div class="col-lg-6">
+                            {{-- <div class="col-lg-6">
                                 <div class="form-group">
                                   <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
@@ -61,7 +61,7 @@
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
             
                                 </div>
-                            </div>   
+                            </div>    --}}
                    
                              <div class="col-lg-12">
                                 <div class="form-group">
