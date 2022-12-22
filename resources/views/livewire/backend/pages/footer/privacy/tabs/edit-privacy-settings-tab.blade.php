@@ -48,24 +48,24 @@
             
                                 </div>
                             </div>    --}}
-                                <div class="col-lg-6">
-                                <div class="form-group" >
-                                  <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
-                                
-                                    @foreach ($privacyMenu as $key =>  $node)                                   
-                                      <div class="" >
-                                        <label class="ckbox" >
-                                          <input type="checkbox" id="{{ $node->id }}" wire:model="edittabs.{{$node->id }}" value="{{ $node->id }}" >
-                                          <span class="tx-bold">{{ $node->name }} </span>
-                                        </label>
-                                      </div>
-        
-                                     @endforeach
+                            <div class="col-lg-6">
+                              <div class="form-group" >
+                                <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
+                              
+                                  @foreach ($privacyMenu as $key =>  $node)                                   
+                                    <div class="" >
+                                      <label class="ckbox" >
+                                        <input type="checkbox" id="{{ $node->id }}" wire:model="edittabs.{{$node->id }}" value="{{ $node->id }}" >
+                                        <span class="tx-bold">{{ $node->name }} </span>
+                                      </label>
+                                    </div>
+      
+                                   @endforeach
 
-                                 @error('edittabs')<span class="text-danger"> {{$message}}</span>  @enderror  
-            
-                                </div>
-                            </div>   
+                               @error('edittabs')<span class="text-danger"> {{$message}}</span>  @enderror  
+          
+                              </div>
+                          </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">

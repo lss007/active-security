@@ -23,11 +23,11 @@ class EditPrivacySettingsTab extends Component
         $this->cat =  $this->editprivacy->cat;
         $this->list =  $this->editprivacy->list;
 
-            foreach( $this->privacyMenu  as $val){
+            // foreach( $this->privacyMenu  as $val){
       
-                    $this->edittabs[$val->id] = $val->id;
+            //         $this->edittabs[$val->id] = $val->id;
                 
-            }
+            // }
     }
     public function updatePrivacytab(){
    
@@ -35,16 +35,10 @@ class EditPrivacySettingsTab extends Component
             // 'tabs' => 'required',
             'cat' => 'required',
         ]);
-            // foreach($this->tabs as $val){
-            //         PrivacySettingTab::where('id',$this->privacytabId)->update([
-            //             'tabs' =>     $val,
-            //             'cat' =>    $this->cat,
-            //             'list' =>    $this->list,
-            //             ]);
-            //      }
-            if(is_array($this->edittabs)){ 
+     
+            if($this->edittabs){ 
                 $deleteServices=PrivacySettingTab::where('id',$this->privacytabId)->delete(); 
-                foreach (array_filter($this->edittabs) as $service) {
+                foreach ($this->edittabs as $service) {
                   $UserPostServices= new PrivacySettingTab();
                   $UserPostServices->tabs = $service;
                   $UserPostServices->cat = $this->cat;
@@ -55,7 +49,6 @@ class EditPrivacySettingsTab extends Component
             }else{
                 
                     PrivacySettingTab::where('id',$this->privacytabId)->update([
-             
                         'cat' =>    $this->cat,
                         'list' =>    $this->list,
                         ]);
