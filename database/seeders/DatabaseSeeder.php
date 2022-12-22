@@ -53,10 +53,14 @@ class DatabaseSeeder extends Seeder
         
         $this->call(NavbarSeeder::class);
         $this->call(SubNavbarSeeder::class);
+        
+        $this->call(PrivacyMenuSeeder::class);
+
 
         
+        
 
-
+        
         
 
         

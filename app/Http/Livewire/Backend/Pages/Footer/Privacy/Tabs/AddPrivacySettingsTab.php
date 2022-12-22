@@ -2,14 +2,16 @@
 
 namespace App\Http\Livewire\Backend\Pages\Footer\Privacy\Tabs;
 
+use App\Models\PrivacyMenuTab;
 use App\Models\PrivacySettingTab;
 use Livewire\Component;
 
 class AddPrivacySettingsTab extends Component
 {
-    public $tabs ,$cat,$list;
+    public $tabs ,$cat,$list,$privacyMenu ,$alltab;
     public function render()
     {
+            $this->privacyMenu =    PrivacyMenuTab::get();
         return view('livewire.backend.pages.footer.privacy.tabs.add-privacy-settings-tab')->layout('layouts.backend');
     }
 
@@ -20,7 +22,7 @@ class AddPrivacySettingsTab extends Component
         ]);
 
         PrivacySettingTab::create([
-            // 'tabs' =>    $this->tabs,
+            // 'tabs' =>    $this->alltab ?? Null,
             // 'cat' =>    $this->cat,
             'list' =>    $this->list,
             ]);

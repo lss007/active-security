@@ -39,17 +39,18 @@
                                   <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
                                     <option label="Choose Tab"></option>
-                                    <option value="1">1 Grundlegend</option>
-                                    <option value="2">2 Funktionalität</option>
-                                    <option value="3">3 Analytik</option>
-                                    <option value="4">4 Werbung</option>
+                                    @if(isset($privacyMenu))
+                                        @foreach($privacyMenu as $key => $val)
+                                          <option value="{{ $val->id}}">{{$key+1}} {{$val->name}}</option>
+                                        @endforeach
+                                    @endif
                                   </select>
                                  @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
             
                                 </div>
-                            </div>   
+                            </div>    --}}
 
-                            <div class="col-lg-6">
+                          {{--   <div class="col-lg-6">
                                 <div class="form-group">
                                   <label class="form-control-label">Select Category : <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Section" wire:model="cat" aria-hidden="true">
@@ -62,7 +63,7 @@
             
                                 </div>
                             </div>    --}}
-                   
+                           
                              <div class="col-lg-12">
                                 <div class="form-group">
                                   <label class="form-control-label"> Add List text  : <span class="tx-danger">*</span></label>
@@ -71,6 +72,13 @@
                                 
                                 </div>
                               </div><!-- col-4 -->
+
+                              {{-- <div class="col-lg-3">
+                                <div class="form-group">
+                                  <label class="form-control-label"> Show on All    : <span class="tx-danger">*</span></label>
+                                     <input class="form-control" type="checkbox" wire:model="alltab" value="0" >
+                                </div>
+                              </div><!-- col-4 --> --}}
                      
                           </div><!-- row -->
                 
