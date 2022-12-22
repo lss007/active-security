@@ -8,33 +8,60 @@ use Livewire\Component;
 
 class EditPrivacySettingsTab extends Component
 {
-    public $tabs ,$cat,$list ,$privacytabId ,$privacyMenu;
+    public $tabs=[] ,$edittabs,$cat,$list ,$privacytabId ,$privacyMenu;
     public function render()
     {
-        $this->privacyMenu =    PrivacyMenuTab::get();
-
-        return view('livewire.backend.pages.footer.privacy.tabs.edit-privacy-settings-tab')->layout('layouts.backend');
+    return view('livewire.backend.pages.footer.privacy.tabs.edit-privacy-settings-tab')->layout('layouts.backend');
     }
 
     public function mount($id){
         $this->privacytabId = $id;
+        $this->privacyMenu =    PrivacyMenuTab::get();
+   
         $this->editprivacy= PrivacySettingTab::where('id', $this->privacytabId)->first();
         $this->tabs  =  $this->editprivacy->tabs;
         $this->cat =  $this->editprivacy->cat;
         $this->list =  $this->editprivacy->list;
 
+            foreach( $this->privacyMenu  as $val){
+      
+                    $this->edittabs[$val->id] = $val->id;
+                
+            }
     }
     public function updatePrivacytab(){
+   
         $this->validate([
-            'tabs' => 'required',
+            // 'tabs' => 'required',
             'cat' => 'required',
         ]);
-
-        PrivacySettingTab::where('id',$this->privacytabId)->update([
-            'tabs' =>    $this->tabs,
-            'cat' =>    $this->cat,
-            'list' =>    $this->list,
-            ]);
+            // foreach($this->tabs as $val){
+            //         PrivacySettingTab::where('id',$this->privacytabId)->update([
+            //             'tabs' =>     $val,
+            //             'cat' =>    $this->cat,
+            //             'list' =>    $this->list,
+            //             ]);
+            //      }
+            if(is_array($this->edittabs)){ 
+                $deleteServices=PrivacySettingTab::where('id',$this->privacytabId)->delete(); 
+                foreach (array_filter($this->edittabs) as $service) {
+                  $UserPostServices= new PrivacySettingTab();
+                  $UserPostServices->tabs = $service;
+                  $UserPostServices->cat = $this->cat;
+                  $UserPostServices->list = $this->list;
+                  $UserPostServices->save();
+                }
+            
+            }else{
+                
+                    PrivacySettingTab::where('id',$this->privacytabId)->update([
+             
+                        'cat' =>    $this->cat,
+                        'list' =>    $this->list,
+                        ]);
+             
+            }
+           
 
             $notification = array(
                 'message' => 'Privacy Tab text Updated',

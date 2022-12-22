@@ -49,17 +49,20 @@
                                 </div>
                             </div>    --}}
                                 <div class="col-lg-6">
-                                <div class="form-group">
+                                <div class="form-group" >
                                   <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
-                                  <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
-                                    <option label="Choose Tab"></option>
-                                    @if(isset($privacyMenu))
-                                        @foreach($privacyMenu as $key => $val)
-                                          <option value="{{ $val->id}}">{{$key+1}} {{$val->name}}</option>
-                                        @endforeach
-                                    @endif
-                                  </select>
-                                 @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
+                                
+                                    @foreach ($privacyMenu as $key =>  $node)                                   
+                                      <div class="" >
+                                        <label class="ckbox" >
+                                          <input type="checkbox" id="{{ $node->id }}" wire:model="edittabs.{{$node->id }}" value="{{ $node->id }}" >
+                                          <span class="tx-bold">{{ $node->name }} </span>
+                                        </label>
+                                      </div>
+        
+                                     @endforeach
+
+                                 @error('edittabs')<span class="text-danger"> {{$message}}</span>  @enderror  
             
                                 </div>
                             </div>   
@@ -71,7 +74,6 @@
                                     <option label="Choose Category"></option>
                                     <option value="1">1 Diese Website wird</option>
                                     <option value="2">2 Diese Website wird nicht</option>
-
                                   </select>
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
             
@@ -80,8 +82,10 @@
                    
                              <div class="col-lg-12">
                                 <div class="form-group">
-                                  <label class="form-control-label"> Add List text  : <span class="tx-danger">*</span></label>
-                                     <input class="form-control" type="text" wire:model="list"  placeholder="Add list ">
+                                  <label class="form-control-label"> Edit List text  : <span class="tx-danger">*</span></label>
+                                     {{-- <input class="form-control" type="text" wire:model="list"  placeholder="Add list "> --}}
+                                <textarea class="form-control" type="text" wire:model="list" placeholder="Add list  ">                    </textarea>
+
                                      @error('list')<span class="text-danger"> {{$message}}</span>  @enderror  
                                 
                                 </div>

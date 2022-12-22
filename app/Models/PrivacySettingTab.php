@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PrivacySettingTab extends Model
 {
-    use SoftDeletes;
+    use HasFactory;
+
     protected $guarded =[];
 }

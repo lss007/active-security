@@ -50,7 +50,27 @@
                                 </div>
                             </div>    --}}
 
-                          {{--   <div class="col-lg-6">
+
+                            <div class="col-lg-6">
+                              <div class="form-group" >
+                                <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
+                              
+                                  @foreach ($privacyMenu as $key =>  $node)                                   
+                                    <div class="" >
+                                      <label class="ckbox" >
+                                        <input type="checkbox" id="{{ $node->id }}" wire:model="tabs.{{$node->id }}" value="{{ $node->id }}" >
+                                        <span class="tx-bold">{{ $node->name }} </span>
+                                      </label>
+                                    </div>
+      
+                                   @endforeach
+
+                               @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
+          
+                              </div>
+                          </div>   
+
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                   <label class="form-control-label">Select Category : <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Section" wire:model="cat" aria-hidden="true">
@@ -62,16 +82,21 @@
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
             
                                 </div>
-                            </div>    --}}
+                            </div>   
                            
                              <div class="col-lg-12">
                                 <div class="form-group">
                                   <label class="form-control-label"> Add List text  : <span class="tx-danger">*</span></label>
-                                     <input class="form-control" type="text" wire:model="list"  placeholder="Add list ">
+                                     {{-- <input class="form-control" type="text" wire:model="list"  placeholder="Add list "> --}}
+                                <textarea class="form-control" type="text" wire:model="list" placeholder="Add list  ">                    </textarea>
+                                   
                                      @error('list')<span class="text-danger"> {{$message}}</span>  @enderror  
                                 
                                 </div>
                               </div><!-- col-4 -->
+
+
+                            
 
                               {{-- <div class="col-lg-3">
                                 <div class="form-group">
