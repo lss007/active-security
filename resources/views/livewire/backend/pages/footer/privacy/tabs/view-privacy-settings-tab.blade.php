@@ -52,7 +52,7 @@
                                         @if(isset($privacyTab))
                                              @foreach($privacyTab as $keys => $row)
                                             
-                                             @if($row->tabs == 0 && $row->cat ==1 )
+                                             @if($row->tab_id == 1 && $row->cat_id == 0 )
                                                 <tr>
                                                   <td>   {{$row->list}}  </td>
                                                   <td>    
@@ -65,7 +65,7 @@
                                                       <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
                                                   </td>
                                                 </tr>
-                                                @elseif($row->tabs == 1 && $row->cat ==1 )
+                                                @elseif($row->tab_id == 1 && $row->cat_id == 1 )
                                                 <tr>
                                                   <td>  {{$row->list}}  </td>
                                                   <td>    
@@ -101,7 +101,7 @@
                                       <tbody>
                                         @if(isset($privacyTab))
                                         @foreach($privacyTab as $keys => $row)
-                                        @if($row->tabs == 0 && $row->cat == 2 )
+                                        @if($row->tab_id == 1 && $row->cat_id == 0 )
                                           <tr>
                                             <td> {{$row->list}}  </td>
                                               <td>    
@@ -118,7 +118,7 @@
                                                   <i class="fa fa-trash"></i></a>
                                               </td>
                                           </tr>
-                                          @elseif($row->tabs == 1 && $row->cat == 2 )
+                                          @elseif($row->tab_id == 1 && $row->cat_id == 2 )
                                           <tr>
                                             <td>  {{$row->list}}  </td>
                                               <td>    
@@ -157,7 +157,7 @@
                                     <tbody>
                                       @if(isset($privacyTab))
                                       @foreach($privacyTab as $keys => $row)
-                                      @if($row->tabs == 0 && $row->cat ==1 )
+                                      @if($row->tab_id == 2 && $row->cat_id ==0 )
                                       <tr>
                                         <td>    {{$row->list}}   </td>
                                         <td>    
@@ -170,7 +170,7 @@
                                             <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
                                         </td>
                                       </tr>
-                                      @elseif($row->tabs == 2 && $row->cat ==1 )
+                                      @elseif($row->tab_id == 2 && $row->cat_id ==1 )
                                       <tr>
                                         <td>   {{$row->list}}   </td>
                                         <td>    
@@ -200,7 +200,7 @@
                                   <tbody>
                                     @if(isset($privacyTab))
                                     @foreach($privacyTab as $keys => $row)
-                                    @if($row->tabs == 0 && $row->cat == 2 )
+                                    @if($row->tab_id == 2 && $row->cat_id == 0 )
                                     <tr>
                                        <td>  {{$row->list}} </td>
                                       <td>    
@@ -214,7 +214,7 @@
                                       </td>
                                     </tr>
 
-                                    @elseif($row->tabs == 2 && $row->cat == 2 )
+                                    @elseif($row->tab_id == 2 && $row->cat_id == 2 )
                                     <tr>
                                        <td>  {{$row->list}} </td>
                                       <td>    
@@ -251,7 +251,7 @@
                                         <tbody>
                                           @if(isset($privacyTab))
                                             @foreach($privacyTab as $keys => $row)
-                                            @if($row->tabs == 0 && $row->cat ==1 )
+                                            @if($row->tab_id == 3 && $row->cat_id ==0 )
                                                 <tr>
                                                   <td>   {{$row->list}} </td>
                                                   <td>    
@@ -268,7 +268,7 @@
                                                         <i class="fa fa-trash"></i></a>
                                                   </td>
                                                 </tr>
-                                                @elseif($row->tabs == 3 && $row->cat ==1 )
+                                                @elseif($row->tab_id == 3 && $row->cat_id ==1 )
                                                 <tr>
                                                   <td>   {{$row->list}} </td>
                                                   <td>    
@@ -305,7 +305,7 @@
                             <tbody>
                               @if(isset($privacyTab))
                                  @foreach($privacyTab as $keys => $row)
-                                 @if($row->tabs == 0 && $row->cat == 2 )
+                                 @if($row->tab_id == 3 && $row->cat_id == 0 )
                                   <tr>
                                     <td>  {{$row->list}}  </td>
                                     <td>    
@@ -322,7 +322,7 @@
                                         <i class="fa fa-trash"></i></a>
                                     </td>
                                   </tr>
-                                  @elseif($row->tabs == 3 && $row->cat == 2 )
+                                  @elseif($row->tab_id == 3 && $row->cat_id == 2 )
                                   <tr>
                                     <td>  {{$row->list}}  </td>
                                     <td>    
@@ -364,7 +364,7 @@
                                         <tbody>
                                         @if(isset($privacyTab))
                                           @foreach($privacyTab as $keys => $row)
-                                          @if($row->tabs == 0 && $row->cat ==1 )
+                                          @if($row->tab_id == 4 && $row->cat_id ==0 )
                                             <tr>
                                               <td>   {{$row->list}} 
                                               </td>
@@ -378,7 +378,7 @@
                                                   <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
                                               </td>
                                             </tr>
-                                            @elseif($row->tabs == 4 && $row->cat ==1 )
+                                            @elseif($row->tab_id == 4 && $row->cat_id ==1 )
                                             <tr>
                                               <td>   {{$row->list}} 
                                               </td>
@@ -414,7 +414,7 @@
                               @if(isset($privacyTab))
                               @foreach($privacyTab as $keys => $row)
                               
-                              @if($row->tabs == 0 && $row->cat == 2 )
+                              @if($row->tab_id == 4 && $row->cat_id == 0 )
                               <tr>  
                                 <td>   {{$row->list}} 
                                 </td>
@@ -433,7 +433,7 @@
                                 </td>
                               
                               </tr>
-                              @elseif($row->tabs == 4 && $row->cat == 2 )
+                              @elseif($row->tab_id == 4 && $row->cat_id == 2 )
                               <tr>  
                                 <td>   {{$row->list}} 
                                 </td>

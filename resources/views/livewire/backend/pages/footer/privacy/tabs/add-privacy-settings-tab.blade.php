@@ -34,7 +34,7 @@
                         <div class="form-layout">
                           <div class="row mg-b-25">
                        
-                            {{-- <div class="col-lg-6">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                   <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
@@ -48,10 +48,10 @@
                                  @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
             
                                 </div>
-                            </div>    --}}
+                            </div>   
 
 
-                            <div class="col-lg-6">
+                            {{-- <div class="col-lg-6">
                               <div class="form-group" >
                                 <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
                               
@@ -62,13 +62,12 @@
                                         <span class="tx-bold">{{ $node->name }} </span>
                                       </label>
                                     </div>
-      
                                    @endforeach
-
+                              
                                @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
           
                               </div>
-                          </div>   
+                          </div>    --}}
 
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -77,24 +76,60 @@
                                     <option label="Choose Category"></option>
                                     <option value="1">1 Diese Website wird</option>
                                     <option value="2">2 Diese Website wird nicht</option>
-
                                   </select>
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
-            
                                 </div>
-                            </div>   
-                           
-                             <div class="col-lg-12">
+                            </div>  
+
+                              <!-- col-10 -->
+  
+                         
+                              <div class="col-lg-10">
+                                <label class="form-control-label"> Add List text  : <span class="tx-danger">*</span></label>
+                              </div>
+                              <div class="col-md-2">
+                                <label class="form-control-label"> Add New  </label>
+                              </div>
+                            
+
+
+                      
+                             <div class="col-lg-10">
                                 <div class="form-group">
-                                  <label class="form-control-label"> Add List text  : <span class="tx-danger">*</span></label>
-                                     {{-- <input class="form-control" type="text" wire:model="list"  placeholder="Add list "> --}}
-                                <textarea class="form-control" type="text" wire:model="list" placeholder="Add list  ">                    </textarea>
-                                   
-                                     @error('list')<span class="text-danger"> {{$message}}</span>  @enderror  
+                                <textarea class="form-control" type="text" wire:model="list.0" placeholder="Add list  ">                    
+                                </textarea>
+                                     @error('list.0')<span class="text-danger"> {{$message}}</span>  @enderror  
                                 
                                 </div>
-                              </div><!-- col-4 -->
+                              </div>
+                              <!-- col-10 -->
+                                    <!-- col-10 -->
+                             <div class="col-lg-2">
+                              <div class="form-group">
+                                    <button class="btn btn-info" wire:click.prevent="add({{$i}})"> Add Paragraph</button>
+                              </div>
+                            </div>
 
+                     
+                            <!-- col-10 -->
+                            @foreach($inputs as $key => $value)
+                              <div class="col-lg-10">
+                                 <div class="form-group">
+                                   <textarea class="form-control" type="text" wire:model="list.{{ $value }}" placeholder="Add list {{ $key+1}}   ">                    </textarea>
+
+                                      @error('list.'.$value)<span class="text-danger"> {{$message}}</span>  @enderror  
+                                 </div>
+                               </div>
+                               <!-- col-10 -->
+                                     <!-- col-10 -->
+                              <div class="col-lg-2">
+                               <div class="form-group">
+                                     <button class="btn btn-danger" wire:click.prevent="remove({{$key}})">  Remove</button>
+                               </div>
+                             </div>
+ 
+                         
+                            @endforeach
 
                             
 
@@ -129,4 +164,12 @@
  
        {{-- card end  --}}
     </div>
+
+
+
+
+ 
+
+ 
+
 </div>

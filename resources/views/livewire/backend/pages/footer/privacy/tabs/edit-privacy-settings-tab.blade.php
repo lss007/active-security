@@ -55,14 +55,14 @@
                                   @foreach ($privacyMenu as $key =>  $node)                                   
                                     <div class="" >
                                       <label class="ckbox" >
-                                        <input type="checkbox" id="{{ $node->id }}" wire:model="edittabs.{{$node->id }}" value="{{ $node->id }}" >
+                                        <input type="checkbox" id="{{ $node->id }}" wire:model="editTabs.{{$node->id }}" value="{{ $node->id }}" >
                                         <span class="tx-bold">{{ $node->name }} </span>
                                       </label>
                                     </div>
       
                                    @endforeach
 
-                               @error('edittabs')<span class="text-danger"> {{$message}}</span>  @enderror  
+                               @error('editTabs')<span class="text-danger"> {{$message}}</span>  @enderror  
           
                               </div>
                           </div>
@@ -74,6 +74,7 @@
                                     <option label="Choose Category"></option>
                                     <option value="1">1 Diese Website wird</option>
                                     <option value="2">2 Diese Website wird nicht</option>
+
                                   </select>
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
             

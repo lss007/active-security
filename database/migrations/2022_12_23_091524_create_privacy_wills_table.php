@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('privacy_setting_tabs', function (Blueprint $table) {
+        Schema::create('privacy_wills', function (Blueprint $table) {
             $table->id();
             $table->string('tab_id')->nullable();
             $table->string('cat_id')->nullable();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privacy_setting_tabs');
+        Schema::dropIfExists('privacy_wills');
     }
 };

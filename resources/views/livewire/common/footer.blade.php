@@ -143,9 +143,9 @@
                             <ul class="pCheckList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                                  @if( $row->tabs == 0   && $row->cat == 1)
+                                  @if( $row->tab_id == 1   && $row->cat_id == 0)
                                   <li>   {{$row->list}} </li>
-                                  @elseif(  $row->tabs == 1  && $row->cat == 1  )
+                                  @elseif(  $row->tab_id == 1  && $row->cat_id == 1  )
                                   <li>   {{$row->list}} </li>
                                
                                   @endif
@@ -158,9 +158,9 @@
                             <ul class="pCheckList cList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                              @if( $row->tabs == 0  && $row->cat == 2)
+                              @if( $row->tab_id == 1  && $row->cat_id == 0)
                               <li>   {{$row->list}} </li>
-                              @elseif(  $row->tabs == 1  && $row->cat == 2  )
+                              @elseif(  $row->tab_id == 1  && $row->cat_id == 2  )
                               <li>   {{$row->list}} </li>
                            
                               @endif
@@ -182,9 +182,9 @@
                             <ul class="pCheckList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                                  @if( $row->tabs == 0   && $row->cat == 1)
+                                  @if( $row->tab_id == 2   && $row->cat_id == 0)
                                   <li>   {{$row->list}} </li>
-                                  @elseif(  $row->tabs == 2  && $row->cat == 1  )
+                                  @elseif(  $row->tab_id == 2  && $row->cat_id == 1  )
                                   <li>   {{$row->list}} </li>
                               
                                   @endif
@@ -197,9 +197,9 @@
                             <ul class="pCheckList cList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                              @if( $row->tabs == 0   && $row->cat == 2 )
+                              @if( $row->tab_id == 2   && $row->cat_id == 0 )
                               <li>   {{$row->list}} </li>
-                              @elseif(  $row->tabs == 2  && $row->cat == 2  )
+                              @elseif(  $row->tab_id == 2  && $row->cat_id == 2  )
                               <li>   {{$row->list}} </li>
                            
                               @endif
@@ -218,9 +218,9 @@
                             <ul class="pCheckList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                              @if( $row->tabs == 0  && $row->cat == 1 )
+                              @if( $row->tab_id == 3  && $row->cat_id == 0 )
                               <li>   {{$row->list}} </li>
-                              @elseif(  $row->tabs == 3  && $row->cat == 1  )
+                              @elseif(  $row->tab_id == 3  && $row->cat_id == 1  )
                               <li>   {{$row->list}} </li>
                            
                               @endif
@@ -233,9 +233,9 @@
                             <ul class="pCheckList cList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                              @if( $row->tabs == 0   && $row->cat == 2)
+                              @if( $row->tab_id == 3   && $row->cat_id == 0)
                               <li>   {{$row->list}} </li>
-                              @elseif(  $row->tabs == 3  && $row->cat == 2  )
+                              @elseif(  $row->tab_id == 3  && $row->cat_id == 2  )
                               <li>   {{$row->list}} </li>
                            
                               @endif
@@ -254,9 +254,9 @@
                             <ul class="pCheckList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                              @if( $row->tabs == 0  && $row->cat == 1)
+                              @if( $row->tab_id == 4  && $row->cat_id == 0)
                               <li>   {{$row->list}} </li>
-                              @elseif(  $row->tabs == 4  && $row->cat == 1  )
+                              @elseif(  $row->tab_id == 4  && $row->cat_id == 1  )
                               <li>   {{$row->list}} </li>
                            
                               @endif
@@ -269,9 +269,9 @@
                             <ul class="pCheckList cList">
                               @if(isset($privacytabs))
                               @foreach($privacytabs as $keys => $row)
-                              @if( $row->tabs == 0 && $row->cat == 2 )
+                              @if( $row->tab_id == 4 && $row->cat_id == 0 )
                               <li>   {{$row->list}} </li>
-                              @elseif(  $row->tabs == 4  && $row->cat == 2  )
+                              @elseif(  $row->tab_id == 4  && $row->cat_id == 2  )
                               <li>   {{$row->list}} </li>
                            
                               @endif
