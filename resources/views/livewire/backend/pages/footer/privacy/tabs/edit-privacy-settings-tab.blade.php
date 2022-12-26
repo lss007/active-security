@@ -33,48 +33,32 @@
                     <form  wire:submit.prevent="updatePrivacytab">
                         <div class="form-layout">
                           <div class="row mg-b-25">
-{{--                        
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                  <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
-                                  <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
-                                    <option label="Choose Tab"></option>
-                                    <option value="1">1 Grundlegend</option>
-                                    <option value="2">2 Funktionalität</option>
-                                    <option value="3">3 Analytik</option>
-                                    <option value="4">4 Werbung</option>
-                                  </select>
-                                 @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
-            
-                                </div>
-                            </div>    --}}
-                            <div class="col-lg-6">
-                              <div class="form-group" >
+                              <div class="form-group">
                                 <label class="form-control-label">Select Tab: <span class="tx-danger">*</span></label>
-                              
-                                  @foreach ($privacyMenu as $key =>  $node)                                   
-                                    <div class="" >
-                                      <label class="ckbox" >
-                                        <input type="checkbox" id="{{ $node->id }}" wire:model="editTabs.{{$node->id }}" value="{{ $node->id }}" >
-                                        <span class="tx-bold">{{ $node->name }} </span>
-                                      </label>
-                                    </div>
-      
-                                   @endforeach
-
-                               @error('editTabs')<span class="text-danger"> {{$message}}</span>  @enderror  
-          
+                                <select class="form-control" data-placeholder="Choose Tab" wire:model="tabs" aria-hidden="true">
+                                  <option label="Choose Tab"></option>
+                                  @if(isset($privacyMenu))
+                                      @foreach($privacyMenu as $key => $val)
+                                        <option value="{{ $val->id}}">{{$key+1}} {{$val->name}}</option>
+                                      @endforeach
+                                  @endif
+                                </select>
+                               @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
                               </div>
-                          </div>
+                          </div> 
+           
 
                             <div class="col-lg-6">
                                 <div class="form-group">
                                   <label class="form-control-label">Select Category : <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Section" wire:model="cat" aria-hidden="true">
                                     <option label="Choose Category"></option>
+                                    @if($tabs == 1)
                                     <option value="1">1 Diese Website wird</option>
+                                    @else
                                     <option value="2">2 Diese Website wird nicht</option>
-
+                                    @endif
                                   </select>
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
             

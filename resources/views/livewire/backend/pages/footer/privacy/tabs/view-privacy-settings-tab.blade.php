@@ -21,7 +21,6 @@
 
               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                   <div class="card-body">
-                   
                       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Grundlegend</a>
@@ -40,7 +39,7 @@
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                           <div class="row">
                               <div class="col-md-12">
-                                
+  {{-- ========================== start Grundlegend left  ========================== --}}
                                     <table class="table table-hover table-bordered mg-b-0">
                                       <thead class="bg-info">
                                         <tr>
@@ -50,9 +49,8 @@
                                       </thead>
                                       <tbody>
                                         @if(isset($privacyTab))
-                                             @foreach($privacyTab as $keys => $row)
-                                            
-                                             @if($row->tab_id == 1 && $row->cat_id == 0 )
+                                          @foreach($privacyTab as $keys => $row)
+                                             @if($row->tab_id == 1 && $row->cat_id == 1 )
                                                 <tr>
                                                   <td>   {{$row->list}}  </td>
                                                   <td>    
@@ -65,32 +63,14 @@
                                                       <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
                                                   </td>
                                                 </tr>
-                                                @elseif($row->tab_id == 1 && $row->cat_id == 1 )
-                                                <tr>
-                                                  <td>  {{$row->list}}  </td>
-                                                  <td>    
-                                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >  <i class="fa fa-edit"></i></a>
-                                                    @if($row->status == 1 )
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
-                                                    @else
-                                                      <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"> <i class="fa fa-thumbs-up"></i>
-                                                    @endif
-                                                      <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
-                                                  </td>
-                                                </tr>
-
-                                               @endif
-
-                                                                                     <!-- LARGE MODAL -->
-
-                                            @endforeach
-                                         @endif
-                               
+                                              @endif
+                                          @endforeach
+                                        @endif
                                       </tbody>
                                     </table>
                                     <hr>
                                 
-                                
+  {{-- ========================== start Grundlegend  right  section  ========================== --}}
                                     <table class="table table-hover table-bordered mg-b-0">
                                       <thead class="bg-danger">
                                         <tr>
@@ -99,54 +79,61 @@
                                         </tr>
                                       </thead>
                                       <tbody>
-                                        @if(isset($privacyTab))
+                                      @if(isset($privacyTab))
                                         @foreach($privacyTab as $keys => $row)
-                                        @if($row->tab_id == 1 && $row->cat_id == 0 )
-                                          <tr>
-                                            <td> {{$row->list}}  </td>
-                                              <td>    
-                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                                <i class="fa fa-edit"></i></a>
-                                                @if($row->status == 1 )
-                                                <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
-                                                <i class="fa fa-thumbs-down"></i>
-                                                @else
-                                                  <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
-                                                  <i class="fa fa-thumbs-up"></i>
-                                                @endif
-                                                <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-                                                  <i class="fa fa-trash"></i></a>
-                                              </td>
-                                          </tr>
-                                          @elseif($row->tab_id == 1 && $row->cat_id == 2 )
-                                          <tr>
-                                            <td>  {{$row->list}}  </td>
-                                              <td>    
-                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                                <i class="fa fa-edit"></i></a>
-                                                @if($row->status == 1 )
-                                                <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
-                                                <i class="fa fa-thumbs-down"></i>
-                                                @else
-                                                  <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
-                                                  <i class="fa fa-thumbs-up"></i>
-                                                @endif
-                                                <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-                                                  <i class="fa fa-trash"></i></a>
-                                              </td>
-                                          </tr>
-                                        @endif
-                                        @endforeach
+                                          @if($row->tab_id == 2 && $row->cat_id == 2 )
+                                            <tr>
+                                              <td> {{$row->list}}  </td>
+                                                <td>    
+                                                  <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                                  <i class="fa fa-edit"></i></a>
+                                                  @if($row->status == 1 )
+                                                  <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
+                                                  <i class="fa fa-thumbs-down"></i>
+                                                  @else
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                  @endif
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                    <i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
                                           @endif
+                                        @endforeach
+                                      @endif
+                                          @if(isset($privacyTab))
+                                          @foreach($privacyTab as $keys => $row)
+                                          @if($row->tab_id == 3 && $row->cat_id == 2 )
+                                            <tr>
+                                              <td> {{$row->list}}  </td>
+                                                <td>    
+                                                  <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                                  <i class="fa fa-edit"></i></a>
+                                                  @if($row->status == 1 )
+                                                  <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
+                                                  <i class="fa fa-thumbs-down"></i>
+                                                  @else
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                  @endif
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                    <i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                          @endif
+                                          @endforeach
+                                            @endif
                                       </tbody>
                                     </table>
+{{-- ========================== end  Grundlegend  right  section  ========================== --}}
+
                               </div>
                           </div>
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                              {{-- <h5>Funktionalität:</h5> --}}
                               <div class="row">
                                 <div class="col-md-12">
+{{-- ========================== start Funktionalität left  ==========================--}}
                                   <table class="table table-hover table-bordered mg-b-0">
                                     <thead class="bg-info">
                                       <tr>
@@ -157,39 +144,52 @@
                                     <tbody>
                                       @if(isset($privacyTab))
                                       @foreach($privacyTab as $keys => $row)
-                                      @if($row->tab_id == 2 && $row->cat_id ==0 )
-                                      <tr>
-                                        <td>    {{$row->list}}   </td>
-                                        <td>    
-                                          <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
-                                          @if($row->status == 1 )
-                                          <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">  <i class="fa fa-thumbs-down"></i>
-                                          @else
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">  <i class="fa fa-thumbs-up"></i>
+                                         @if($row->tab_id == 1 && $row->cat_id == 1 )
+                                            <tr>
+                                              <td>   {{$row->list}}  </td>
+                                              <td>    
+                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >  <i class="fa fa-edit"></i></a>
+                                                @if($row->status == 1 )
+                                                <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
+                                                @else
+                                                  <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"> <i class="fa fa-thumbs-up"></i>
+                                                @endif
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
+                                              </td>
+                                            </tr>
                                           @endif
-                                            <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
-                                        </td>
-                                      </tr>
-                                      @elseif($row->tab_id == 2 && $row->cat_id ==1 )
-                                      <tr>
-                                        <td>   {{$row->list}}   </td>
-                                        <td>    
-                                          <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
-                                          @if($row->status == 1 )
-                                          <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">  <i class="fa fa-thumbs-down"></i>
-                                          @else
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">  <i class="fa fa-thumbs-up"></i>
-                                          @endif
-                                            <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
-                                        </td>
-                                      </tr>
-                                      @endif
                                       @endforeach
-                                        @endif
-                           
+                                    @endif
+                                    @if(isset($privacyTab))
+                                    @foreach($privacyTab as $keys => $row)
+                                      @if($row->tab_id == 2 && $row->cat_id == 2 )
+                                        <tr>
+                                          <td> {{$row->list}}  </td>
+                                            <td>    
+                                              <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                              <i class="fa fa-edit"></i></a>
+                                              @if($row->status == 1 )
+                                              <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
+                                              <i class="fa fa-thumbs-down"></i>
+                                              @else
+                                                <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
+                                                <i class="fa fa-thumbs-up"></i>
+                                              @endif
+                                              <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                                <i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                      @endif
+                                    @endforeach
+                                  @endif
+                     
                                     </tbody>
                                   </table>
-                                <hr>
+{{-- ========================== send  Funktionalität left  ==========================--}}
+
+                <hr>
+
+{{-- ========================== start Funktionalität right  ==========================--}}
                                 <table class="table table-hover table-bordered mg-b-0">
                                   <thead class="bg-danger">
                                     <tr>
@@ -200,38 +200,30 @@
                                   <tbody>
                                     @if(isset($privacyTab))
                                     @foreach($privacyTab as $keys => $row)
-                                    @if($row->tab_id == 2 && $row->cat_id == 0 )
-                                    <tr>
-                                       <td>  {{$row->list}} </td>
-                                      <td>    
-                                        <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
-                                        @if($row->status == 1 )
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"><i class="fa fa-thumbs-down"></i>
-                                        @else
-                                          <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"><i class="fa fa-thumbs-up"></i>
-                                        @endif
-                                        <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()"><i class="fa fa-trash"></i></a>
-                                      </td>
-                                    </tr>
-
-                                    @elseif($row->tab_id == 2 && $row->cat_id == 2 )
-                                    <tr>
-                                       <td>  {{$row->list}} </td>
-                                      <td>    
-                                        <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
-                                        @if($row->status == 1 )
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"><i class="fa fa-thumbs-down"></i>
-                                        @else
-                                          <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"><i class="fa fa-thumbs-up"></i>
-                                        @endif
-                                        <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()"><i class="fa fa-trash"></i></a>
-                                      </td>
-                                    </tr>
-                                      @endif
-                                      @endforeach
+                                    @if($row->tab_id == 3 && $row->cat_id == 2 )
+                                      <tr>
+                                        <td> {{$row->list}}  </td>
+                                          <td>    
+                                            <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
+                                            <i class="fa fa-edit"></i></a>
+                                            @if($row->status == 1 )
+                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
+                                            <i class="fa fa-thumbs-down"></i>
+                                            @else
+                                              <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
+                                              <i class="fa fa-thumbs-up"></i>
+                                            @endif
+                                            <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+                                              <i class="fa fa-trash"></i></a>
+                                          </td>
+                                      </tr>
+                                    @endif
+                                    @endforeach
                                       @endif
                                   </tbody>
                                 </table>
+{{-- ========================== end Funktionalität right  ==========================--}}
+
                                 </div>
                             </div>
 
@@ -241,6 +233,7 @@
                               {{-- <h5>Analytik:</h5> --}}
                               <div class="row">
                                 <div class="col-md-12">
+{{--========================== start  Analytik left  ==========================--}}
                                       <table class="table table-hover table-bordered mg-b-0">
                                         <thead class="bg-info">
                                           <tr>
@@ -250,51 +243,68 @@
                                         </thead>
                                         <tbody>
                                           @if(isset($privacyTab))
-                                            @foreach($privacyTab as $keys => $row)
-                                            @if($row->tab_id == 3 && $row->cat_id ==0 )
+                                          @foreach($privacyTab as $keys => $row)
+                                             @if($row->tab_id == 1 && $row->cat_id == 1 )
                                                 <tr>
-                                                  <td>   {{$row->list}} </td>
+                                                  <td>   {{$row->list}}  </td>
                                                   <td>    
-                                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                                    <i class="fa fa-edit"></i></a>
+                                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >  <i class="fa fa-edit"></i></a>
                                                     @if($row->status == 1 )
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
-                                                    <i class="fa fa-thumbs-down"></i>
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
                                                     @else
-                                                      <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
-                                                      <i class="fa fa-thumbs-up"></i>
+                                                      <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"> <i class="fa fa-thumbs-up"></i>
                                                     @endif
-                                                      <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
-                                                        <i class="fa fa-trash"></i></a>
+                                                      <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
                                                   </td>
                                                 </tr>
-                                                @elseif($row->tab_id == 3 && $row->cat_id ==1 )
-                                                <tr>
-                                                  <td>   {{$row->list}} </td>
-                                                  <td>    
-                                                    <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                                    <i class="fa fa-edit"></i></a>
-                                                    @if($row->status == 1 )
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
-                                                    <i class="fa fa-thumbs-down"></i>
-                                                    @else
-                                                      <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
-                                                      <i class="fa fa-thumbs-up"></i>
-                                                    @endif
-                                                      <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >
-                                                        <i class="fa fa-trash"></i></a>
-                                                  </td>
-                                                </tr>
+                                              @endif
+                                          @endforeach
+                                        @endif
+                                        {{-- 2nd part  --}}
+                                        @if(isset($privacyTab))
+                                        @foreach($privacyTab as $keys => $row)
+                                           @if($row->tab_id == 2 && $row->cat_id == 2 )
+                                              <tr>
+                                                <td>   {{$row->list}}  </td>
+                                                <td>    
+                                                  <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >  <i class="fa fa-edit"></i></a>
+                                                  @if($row->status == 1 )
+                                                  <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
+                                                  @else
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"> <i class="fa fa-thumbs-up"></i>
+                                                  @endif
+                                                    <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
+                                                </td>
+                                              </tr>
+                                            @endif
+                                        @endforeach
+                                      @endif
+                                      {{-- 3rd part  --}}
+                                      @if(isset($privacyTab))
+                                      @foreach($privacyTab as $keys => $row)
+                                         @if($row->tab_id == 3 && $row->cat_id == 2 )
+                                            <tr>
+                                              <td>   {{$row->list}}  </td>
+                                              <td>    
+                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >  <i class="fa fa-edit"></i></a>
+                                                @if($row->status == 1 )
+                                                <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
+                                                @else
+                                                  <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})"> <i class="fa fa-thumbs-up"></i>
                                                 @endif
-                                             @endforeach
+                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >   <i class="fa fa-trash"></i></a>
+                                              </td>
+                                            </tr>
                                           @endif
-                            
+                                      @endforeach
+                                    @endif
                                         </tbody>
                                       </table>
-                           
-                          <hr>
-                       
-                       
+{{--========================== end  Analytik left  ==========================--}}
+            
+        <hr>
+
+{{--========================== start   Analytik right  ==========================--}}
                           <table class="table table-hover table-bordered mg-b-0">
                             <thead class="bg-danger">
                               <tr>
@@ -305,7 +315,7 @@
                             <tbody>
                               @if(isset($privacyTab))
                                  @foreach($privacyTab as $keys => $row)
-                                 @if($row->tab_id == 3 && $row->cat_id == 0 )
+                                 @if($row->tab_id == 4 && $row->cat_id == 2 )
                                   <tr>
                                     <td>  {{$row->list}}  </td>
                                     <td>    
@@ -322,28 +332,14 @@
                                         <i class="fa fa-trash"></i></a>
                                     </td>
                                   </tr>
-                                  @elseif($row->tab_id == 3 && $row->cat_id == 2 )
-                                  <tr>
-                                    <td>  {{$row->list}}  </td>
-                                    <td>    
-                                      <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                      <i class="fa fa-edit"></i></a>
-                                      @if($row->status == 1 )
-                                      <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
-                                      <i class="fa fa-thumbs-down"></i>
-                                      @else
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
-                                        <i class="fa fa-thumbs-up"></i>
-                                      @endif
-                                      <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-                                        <i class="fa fa-trash"></i></a>
-                                    </td>
-                                  </tr>
+                          
                                   @endif
                                 @endforeach
                             @endif
                             </tbody>
                           </table>
+{{--========================== end   Analytik right  ==========================--}}
+
                                 </div>
                             </div>
                         </div>
@@ -353,7 +349,7 @@
                               {{-- <h5>Werbung:</h5> --}}
                               <div class="row">
                                 <div class="col-md-12">
-                                  
+{{--========================== start  Werbung left ==========================--}}
                                       <table class="table table-hover table-bordered mg-b-0">
                                         <thead class="bg-info">
                                           <tr>
@@ -364,21 +360,7 @@
                                         <tbody>
                                         @if(isset($privacyTab))
                                           @foreach($privacyTab as $keys => $row)
-                                          @if($row->tab_id == 4 && $row->cat_id ==0 )
-                                            <tr>
-                                              <td>   {{$row->list}} 
-                                              </td>
-                                              <td>    
-                                                <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
-                                                @if($row->status == 1 )
-                                                <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
-                                                @else
-                                                  <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">  <i class="fa fa-thumbs-up"></i>
-                                                @endif
-                                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
-                                              </td>
-                                            </tr>
-                                            @elseif($row->tab_id == 4 && $row->cat_id ==1 )
+                                          @if($row->tab_id == 1 && $row->cat_id == 1 )
                                             <tr>
                                               <td>   {{$row->list}} 
                                               </td>
@@ -395,13 +377,74 @@
                                             @endif
                                           @endforeach
                                         @endif
-
-              
+                                        {{-- 2nd part  --}}
+                                        @if(isset($privacyTab))
+                                        @foreach($privacyTab as $keys => $row)
+                                        @if($row->tab_id == 2 && $row->cat_id == 2 )
+                                          <tr>
+                                            <td>   {{$row->list}} 
+                                            </td>
+                                            <td>    
+                                              <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
+                                              @if($row->status == 1 )
+                                              <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
+                                              @else
+                                                <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">  <i class="fa fa-thumbs-up"></i>
+                                              @endif
+                                                <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
+                                            </td>
+                                          </tr>
+                                          @endif
+                                        @endforeach
+                                      @endif
+                                      {{-- 3rd part  --}}
+                                      @if(isset($privacyTab))
+                                      @foreach($privacyTab as $keys => $row)
+                                      @if($row->tab_id == 3 && $row->cat_id == 2 )
+                                        <tr>
+                                          <td>   {{$row->list}} 
+                                          </td>
+                                          <td>    
+                                            <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
+                                            @if($row->status == 1 )
+                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
+                                            @else
+                                              <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">  <i class="fa fa-thumbs-up"></i>
+                                            @endif
+                                              <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
+                                          </td>
+                                        </tr>
+                                        @endif
+                                      @endforeach
+                                    @endif
+                                    {{-- 4th part --}}
+                                    @if(isset($privacyTab))
+                                    @foreach($privacyTab as $keys => $row)
+                                    @if($row->tab_id == 4 && $row->cat_id == 2 )
+                                      <tr>
+                                        <td>   {{$row->list}} 
+                                        </td>
+                                        <td>    
+                                          <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" > <i class="fa fa-edit"></i></a>
+                                          @if($row->status == 1 )
+                                          <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})"> <i class="fa fa-thumbs-down"></i>
+                                          @else
+                                            <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">  <i class="fa fa-thumbs-up"></i>
+                                          @endif
+                                            <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  >  <i class="fa fa-trash"></i></a>
+                                        </td>
+                                      </tr>
+                                      @endif
+                                    @endforeach
+                                  @endif
                                         </tbody>
                                       </table>
+{{--========================== end  Werbung left ==========================--}}
+
                            
                           <hr>
                        
+{{--========================== start  Werbung right ==========================--}}
                        
                           <table class="table table-hover table-bordered mg-b-0">
                             <thead class="bg-danger">
@@ -433,25 +476,7 @@
                                 </td>
                               
                               </tr>
-                              @elseif($row->tab_id == 4 && $row->cat_id == 2 )
-                              <tr>  
-                                <td>   {{$row->list}} 
-                                </td>
-                                <td>    
-                                  <a href="{{route('edit_privacy_Tabs',$row->id)}}" class="btn btn-sm btn-info" title="edit" >
-                                  <i class="fa fa-edit"></i></a>
-                                  @if($row->status == 1 )
-                                  <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$row->id}})">
-                                  <i class="fa fa-thumbs-down"></i>
-                                  @else
-                                    <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$row->id}})">
-                                    <i class="fa fa-thumbs-up"></i>
-                                  @endif
-                                  <a href="javascript:void(0)"  wire:click.prevent="delete({{ $row->id}})" class="btn btn-sm btn-info" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
-                                    <i class="fa fa-trash"></i></a>
-                                </td>
-                              
-                              </tr>
+                       
                               @endif
                               @endforeach
                                 @endif
@@ -459,6 +484,7 @@
                         
                             </tbody>
                           </table>
+{{--========================== end  Werbung right ==========================--}}
                            
                                 
                               

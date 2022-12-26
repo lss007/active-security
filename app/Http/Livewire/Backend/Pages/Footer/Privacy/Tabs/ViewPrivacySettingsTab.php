@@ -15,8 +15,8 @@ class ViewPrivacySettingsTab extends Component
         // $this->trashdata = PrivacySettingTab::onlyTrashed()->get();
         return view('livewire.backend.pages.footer.privacy.tabs.view-privacy-settings-tab')->layout('layouts.backend');
     }
+
     public function delete($id){
-        
         PrivacyWill::destroy($id);
         $notification = array(
            'message' => 'Privacy tab Deleted successfully',
@@ -25,15 +25,14 @@ class ViewPrivacySettingsTab extends Component
        return   redirect(request()->header('Referer'))->with($notification);
        }
 
-       public function restore($id){
+    public function restore($id){
         PrivacyWill::withTrashed()->find($id)->restore();
         $notification = array(
            'message' => 'Privacy tab  Restored successfully',
            'alert-type' => 'success'
-       );
-       return   redirect(request()->header('Referer'))->with($notification);
+        );
+        return   redirect(request()->header('Referer'))->with($notification);
     }
-
 
     public function fulleDelete($id){
         PrivacyWill::onlyTrashed()->find($id)->forceDelete();
@@ -41,10 +40,10 @@ class ViewPrivacySettingsTab extends Component
                 'message' => '  Deleted successfully',
                 'alert-type' => 'error'
             );
-      return   redirect(request()->header('Referer'))->with($notification);
+        return   redirect(request()->header('Referer'))->with($notification);
       }
 
-      public function  inactive($id){
+    public function  inactive($id){
         PrivacyWill::where('id', $id)->update([
                 'status' =>    0,
             ]);
@@ -52,17 +51,17 @@ class ViewPrivacySettingsTab extends Component
                 'message' => 'Privacy Tab  Inactive',
                 'alert-type' => 'warning'
             );
-            return   redirect(request()->header('Referer'))->with($notification);
+        return   redirect(request()->header('Referer'))->with($notification);
         }
-     public function  active($id){
+    public function  active($id){
         PrivacyWill::where('id', $id)->update([
                 'status' =>   1,
             ]);
             $notification = array(
-                'message' => 'Privacy Tab Active ',
+                'message' => 'Privacy Tab Active',
                 'alert-type' => 'success'
             );
-      return   redirect(request()->header('Referer'))->with($notification);
+        return   redirect(request()->header('Referer'))->with($notification);
 
      }
 }

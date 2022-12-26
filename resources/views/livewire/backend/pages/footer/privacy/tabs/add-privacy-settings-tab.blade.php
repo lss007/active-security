@@ -9,16 +9,11 @@
 
         <div class="card pd-20 pd-sm-40">
             <h6 class="card-body-title">
-                <a href="{{route('view_privacy_Tabs')}}" class="btn btn-teal active mg-b-10">
-                  Back </a>
-               
+                <a href="{{route('view_privacy_Tabs')}}" class="btn btn-teal active mg-b-10"> Back </a>
               </h6>
-  
             <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
               <div class="card">
-             
 
-              
                 <div class="card-header" role="tab" id="headingOne">
                   <h6 class="mg-b-0">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="tx-gray-800 transition">
@@ -46,7 +41,6 @@
                                     @endif
                                   </select>
                                  @error('tabs')<span class="text-danger"> {{$message}}</span>  @enderror  
-            
                                 </div>
                             </div>   
 
@@ -74,8 +68,11 @@
                                   <label class="form-control-label">Select Category : <span class="tx-danger">*</span></label>
                                   <select class="form-control" data-placeholder="Choose Section" wire:model="cat" aria-hidden="true">
                                     <option label="Choose Category"></option>
+                                    @if($tabs == 1)
                                     <option value="1">1 Diese Website wird</option>
+                                    @else
                                     <option value="2">2 Diese Website wird nicht</option>
+                                    @endif
                                   </select>
                                  @error('cat')<span class="text-danger"> {{$message}}</span>  @enderror  
                                 </div>
@@ -115,8 +112,8 @@
                             @foreach($inputs as $key => $value)
                               <div class="col-lg-10">
                                  <div class="form-group">
-                                   <textarea class="form-control" type="text" wire:model="list.{{ $value }}" placeholder="Add list {{ $key+1}}   ">                    </textarea>
-
+                                   <textarea class="form-control" type="text" wire:model="list.{{ $value }}" placeholder="Add list {{ $key+1}}"> 
+                                  </textarea>
                                       @error('list.'.$value)<span class="text-danger"> {{$message}}</span>  @enderror  
                                  </div>
                                </div>
