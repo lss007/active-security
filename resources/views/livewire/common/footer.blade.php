@@ -145,11 +145,9 @@
                               @foreach($privacytabs as $keys => $row)
                                   @if( $row->tab_id == 1   && $row->cat_id == 1)
                                   <li>   {{$row->list}} </li>
-                               
                                  @else
-
                                   @endif
-                            @endforeach
+                               @endforeach
                             @endif
                             </ul>
                           </div>
@@ -183,9 +181,7 @@
                             </ul>
                           </div>
                         </div>
-                        <div class="pt-3 pt-xl-4 text-end">
-                          <a href="javascript:void(0)" class="btn btnPrimary">Speichern und schließen</a>
-                        </div>
+                     
                       </div>
                       <div class="tab-pane fade" id="funktionalität-tab-pane" role="tabpanel" aria-labelledby="funktionalität-tab" tabindex="0">
                         {{-- Funktionalität --}}
@@ -266,7 +262,7 @@
                           @foreach($privacytabs as $keys => $row)
                           @if( $row->tab_id == 3  && $row->cat_id == 2 )
                           <li>   {{$row->list}} </li>
-                      @else
+                         @else
                           @endif
                         @endforeach
                         @endif
@@ -299,7 +295,7 @@
                               @foreach($privacytabs as $keys => $row)
                               @if( $row->tab_id == 1  && $row->cat_id == 1)
                               <li>   {{$row->list}} </li>
-                          @else
+                           @else
                               @endif
                             @endforeach
                             @endif
@@ -307,7 +303,7 @@
                             @foreach($privacytabs as $keys => $row)
                             @if( $row->tab_id == 2  && $row->cat_id == 2)
                             <li>   {{$row->list}} </li>
-                        @else
+                            @else
                             @endif
                           @endforeach
                           @endif
@@ -315,7 +311,7 @@
                           @foreach($privacytabs as $keys => $row)
                           @if( $row->tab_id == 3  && $row->cat_id == 2)
                           <li>   {{$row->list}} </li>
-                      @else
+                            @else
                           @endif
                         @endforeach
                         @endif
@@ -323,7 +319,7 @@
                         @foreach($privacytabs as $keys => $row)
                         @if( $row->tab_id == 4  && $row->cat_id == 2)
                         <li>   {{$row->list}} </li>
-                    @else
+                           @else
                         @endif
                       @endforeach
                       @endif
@@ -340,7 +336,11 @@
                             </ul>
                           </div>
                         </div>
+                        
                       </div>
+                    </div>
+                    <div class="pt-3 pt-xl-4 text-end">
+                      <a href="javascript:void(0)" class="btn btnPrimary">Speichern und schließen</a>
                     </div>
                   </div>
                 </div>
