@@ -8,14 +8,19 @@ use Livewire\Component;
 
 class ViewPrivacySettingsTab extends Component
 {
-    public $privacyTab ;
+    public $privacyTab ,$selectedlist=[] ,$getAllPrivacy;
     public function render()
     {
         $this->privacyTab =   PrivacyWill::get();
+        $this->getAllPrivacy=   PrivacyWill::Orderby('list')->get();
+
         // $this->trashdata = PrivacySettingTab::onlyTrashed()->get();
         return view('livewire.backend.pages.footer.privacy.tabs.view-privacy-settings-tab')->layout('layouts.backend');
     }
 
+
+
+    
     public function delete($id){
         PrivacyWill::destroy($id);
         $notification = array(
@@ -24,6 +29,19 @@ class ViewPrivacySettingsTab extends Component
        );
        return   redirect(request()->header('Referer'))->with($notification);
        }
+
+    public function deleteSE(){
+        // dd($this->selectedUser);
+        $dlist = PrivacyWill::whereKey($this->selectedlist);
+        $dlist->delete();
+    
+        $notification = array(
+        'message' => 'All list Deleted',
+        'alert-type' => 'error'
+    );
+    return   redirect(request()->header('Referer'))->with($notification);
+
+}
 
     public function restore($id){
         PrivacyWill::withTrashed()->find($id)->restore();

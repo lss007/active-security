@@ -56,6 +56,9 @@ class DatabaseSeeder extends Seeder
         
         $this->call(PrivacyMenuSeeder::class);
 
+        $this->call(PrivacyWillSeeder::class);
+
+
 
         
         
