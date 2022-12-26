@@ -33,7 +33,9 @@
         </div>
         <div class="col-sm-auto">
           <ul class="cookiesRightBtns">
-            <li><a href="javascript:void(0)" class="cookiesCloseTrigger" > {!! isset($cookiesdata->decline)  ? html_entity_decode($cookiesdata->decline) : "Decline" !!}  </a></li>
+            {{-- <li><a href="javascript:void(0)" class="cookiesCloseTrigger" > {!! isset($cookiesdata->decline)  ? html_entity_decode($cookiesdata->decline) : "Decline" !!}  </a></li> --}}
+            <li><a href="javascript:void(0)" class="js-cookie-consent-agree cookiesCloseTrigger cookie-consent__agree"> {!! isset($cookiesdata->decline)  ? html_entity_decode($cookiesdata->decline) : "Decline" !!}  </a></li>
+           
             <li><a href="javascript:void(0)" class="js-cookie-consent-agree cookiesCloseTrigger cookie-consent__agree"> {!! isset($cookiesdata->accept)  ? html_entity_decode($cookiesdata->accept) : "Accept" !!} </a></li>
           </ul>
         </div>
