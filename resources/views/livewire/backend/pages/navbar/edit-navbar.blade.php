@@ -30,7 +30,7 @@
         <h6 class="card-body-title">  
             <a href="{{route('view_navbar_list')}}" class="btn btn-teal active mg-b-10"  >Back</a>
         </h6>
-        <form  wire:submit.prevent="updatesubLink">
+        <form  wire:submit.prevent="updateRouteName">
              <div class="form-layout">
                <div class="row mg-b-25">
                  <div class="col-lg-6">
