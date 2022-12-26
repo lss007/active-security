@@ -46,7 +46,7 @@
       <a href="javascript:void(0)" class="sl-menu-link @if ($prefix == 'en/navbar' || $prefix == 'de/navbar')  active show-sub @else @endif ">
         <div class="sl-menu-item">
           <i class="icon ion-navicon-round"></i>
-          <span class="menu-item-label">  Navbar <img src="{{asset('new.gif')}}" alt="" style="width:50px"></span>
+          <span class="menu-item-label">  Navbar </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
           
         </div>
@@ -81,7 +81,7 @@
               <li class="nav-item"><a href="{{route('view_footer_logos')}}" class="nav-link  @if(Route::is('view_footer_logos') ) active @else '' @endif">{{__('leftpane.Manage Footer Logos')}}  </a></li>
                <li class="nav-item"><a href="{{route('view_last_section')}}" class="nav-link   @if(Route::is('view_last_section') ) active @else '' @endif"> {{__('leftpane.Optimal section')}} </a></li>
                <li class="nav-item"><a href="{{route('view_privacy_settings')}}" class="nav-link   @if(Route::is('view_privacy_settings') ) active @else '' @endif">{{__('leftpane.privacy settings')}}   </a></li>
-               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  {{__('leftpane.Privacy tabs')}}  </a></li>
+               <li class="nav-item"><a href="{{route('view_privacy_Tabs')}}" class="nav-link   @if(Route::is('view_privacy_Tabs') ) active @else '' @endif">  {{__('leftpane.Privacy tabs')}} <img src="{{asset('new.gif')}}" alt="" style="width:40px"> </a></li>
                <li class="nav-item"><a href="{{route('footer_Privacy_pageView')}}" class="nav-link   @if(Route::is('footer_Privacy_pageView') ) active @else '' @endif">  {{__('leftpane.Manage privacy page')}}   </a></li>
                <li class="nav-item"><a href="{{route('agb_page_view')}}" class="nav-link   @if(Route::is('agb_page_view') ) active @else '' @endif">{{__('leftpane.Manage Agb Page')}}  </a></li>
                <li class="nav-item"><a href="{{route('admin_view_cookie')}}" class="nav-link   @if(Route::is('admin_view_cookie') ) active @else '' @endif">{{__('leftpane.Manage Cookie')}} </a> </li>
