@@ -103,7 +103,7 @@
 @endphp
 
 
-        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal fade  " id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
               <div class="modal-header">
@@ -340,16 +340,17 @@
                       </div>
                     </div>
                     <div class="pt-3 pt-xl-4 text-end">
-                      <a href="javascript:void(0)" class="btn btnPrimary">Speichern und schließen</a>
+                      <a href="javascript:void(0)" data-bs-dismiss="modal" class="btn btnPrimary js-cookie-consent-agree cookiesCloseTrigger cookie-consent__agree">Speichern und schließen</a>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
-       
-    
+   
+
         @include('cookie-consent::index') 
  
         {{-- <div class="cookiesCol ">
