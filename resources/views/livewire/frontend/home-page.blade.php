@@ -176,7 +176,7 @@
                     $httplink  = substr( $slider->link, 0, 4 ) === "http"
                     
                  @endphp
-
+    @if(isset($slider->link)) 
                         @if( $httplink == true ) 
                         
                           <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
@@ -185,6 +185,7 @@
                         
                      
                         @endif
+     @endif
                           </div>
                         </div>
                       </div>
