@@ -39,11 +39,11 @@
                </div><!-- col-4 -->
         
                <div class="col-lg-6">
-                @if($link ==  'custom')
+                @if($showDiv)
                 <div class="form-group">
                   <label class="form-control-label"> Custom link : </label>
-                  <input class="form-control" type="url" wire:model="customLink"  placeholder="https://www.example.com/ ">
-                  @error('customLink')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  <input class="form-control" type="url" wire:model="link"  placeholder="https://www.example.com/ ">
+                  @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
                 </div>
               @else 
                 <div class="form-group">
@@ -54,16 +54,19 @@
                   @foreach($getRouteName as $val)
                     <option value="{{$val->route_link}}">{{ucwords($val->route_name)}}</option>
                     @endforeach
-                {{-- @if( $this->link == NULL) --}}
-                    <option value="custom" class="text-danger">Custom link</option>
-                {{-- @endif --}}
+                    {{-- <option value="custom" class="text-danger">Custom link</option> --}}
                     @endif
                   </select>
                  @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
   
                 </div>
                 @endif
-              
+                <div class="form-group">
+                  <input type="checkbox"  class=""   wire:click="$toggle('showDiv')">
+                  <label class="form-control-label">Would you like to add Custom link ?<span class="tx-danger">*</span></label>
+
+             
+                </div>
           </div> 
                 
                {{-- <div class="col-lg-12">

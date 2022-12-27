@@ -172,11 +172,18 @@
                             @else
                             <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                             @endif --}}
-                        @if(  $slider->link != NULL)
+                 @php
+                    $httplink  = substr( $slider->link, 0, 4 ) === "http"
+                    
+                 @endphp
+
+                        @if( $httplink ) 
+                        
+                          <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                       @else
                         <a href="{{route($slider->link,'#nextSection')}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                         
-                        @else
-                        <a href="{{$slider->custom_Link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                     
                         @endif
                           </div>
                         </div>

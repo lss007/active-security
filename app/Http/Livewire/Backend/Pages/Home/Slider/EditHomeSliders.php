@@ -11,12 +11,11 @@ use Livewire\WithFileUploads;
 class EditHomeSliders extends Component
 {
     use WithFileUploads;
-    public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$link ,$custom,$customLink,$getRouteName;
-
+    public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$custom,$customLink,$getRouteName;
     public $newImage ,$updateCropedImg ,$updateCropedImg2 ,$updateCropedImg3 ;
-
+    public $link;
     public $tabletImg,$mobileImg ;
-
+    public $showDiv =  false;
     protected $listeners = ['updateSliderImg' ,'updateSliderImg2' ,'updateSliderImg3']; 
 
     public function updateSliderImg($val){       
@@ -31,7 +30,10 @@ class EditHomeSliders extends Component
             $this->updateCropedImg3 = $val;
             // dd('mobile'.$this->updateCropedImg3);
         }
-      
+        public function showDiv()
+        {
+            $this->showDiv =! $this->showDiv;
+        }
     public function mount($id){
             $this->SliderId= $id;
             $this->editHomeSlider = HomeSectionSlider::where('id', $this->SliderId)->where('status',1)->first();
@@ -43,7 +45,8 @@ class EditHomeSliders extends Component
                 $this->mobileImg =  $this->editHomeSlider->mobile_img; 
                 $this->button_text = $this->editHomeSlider->button_text	;
                 $this->link = $this->editHomeSlider->link;
-                $this->customLink = $this->editHomeSlider->custom_Link;
+           
+                // $this->customLink = $this->editHomeSlider->custom_Link;
 
             }else {
                 $notification = array(
@@ -75,6 +78,8 @@ class EditHomeSliders extends Component
         }
     public function updateHomeSlider(){
         $this->validate();
+
+        // dd($this->link);
         if($this->updateCropedImg || $this->updateCropedImg2 || $this->updateCropedImg3){
             if($this->updateCropedImg)  {
                 // ===========  working ans stora at storage path   =========== 
@@ -156,24 +161,24 @@ class EditHomeSliders extends Component
                             return redirect()->route('viewHomesliders')->with($notification);
             }
         else{
-            $exists =  HomeSectionSlider::where('custom_Link',$this->customLink)->where('id',$this->SliderId )->first();
-            if( !$exists){
-                HomeSectionSlider::where('id',$this->SliderId )->update([
-                    'title' =>    $this->title,
-                    'description' =>  $this->description,
-                    'button_text' =>  $this->button_text,
-                    'custom_Link' =>  $this->customLink,
-                    'link' =>         NULL,
-                    ]);
-            }else{
+            // $exists =  HomeSectionSlider::where('custom_Link',$this->customLink)->where('id',$this->SliderId )->first();
+            // if( !$exists){
+            //     HomeSectionSlider::where('id',$this->SliderId )->update([
+            //         'title' =>    $this->title,
+            //         'description' =>  $this->description,
+            //         'button_text' =>  $this->button_text,
+            //         'custom_Link' =>  $this->customLink,
+            //         'link' =>         NULL,
+            //         ]);
+            // }else{
                 HomeSectionSlider::where('id',$this->SliderId )->update([
                     'title' =>    $this->title,
                     'description' =>  $this->description,
                     'button_text' =>  $this->button_text,
                     'link' =>         $this->link,
-                    'custom_Link' => NULL,
+                    // 'custom_Link' => NULL,
                     ]);
-                }
+                // }
        
                 // HomeSectionSlider::where('id',$this->SliderId )->update([
                 // 'title' =>    $this->title,

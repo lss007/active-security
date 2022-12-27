@@ -10,9 +10,11 @@ use Livewire\WithFileUploads;
 class AddHomeSliders extends Component
 {
     use WithFileUploads;
-    public $title, $description, $image, $button_text ,$custom;
-    public $sliderCropedImg ,$sliderCropedImg2 ,$sliderCropedImg3, $link,$customLink, $getRouteName;
+    public $title, $description, $image, $button_text ,$custom ,$link;
+    public $sliderCropedImg ,$sliderCropedImg2 ,$sliderCropedImg3,$customLink, $getRouteName;
     protected $listeners = ['addSliderImg' ,'addSliderImg2' ,'addSliderImg3'];   
+    public $showDiv =  false;
+ 
     public function addSliderImg($val){       
             $this->sliderCropedImg = $val;
             // dd($this->sliderCropedImg);
@@ -26,7 +28,10 @@ class AddHomeSliders extends Component
             // dd($this->sliderCropedImg);
         }
  
-
+        public function showDiv()
+        {
+            $this->showDiv =! $this->showDiv;
+        }
     public function render()
     {
         $this->getRouteName = RouteNameList::get();
@@ -103,17 +108,17 @@ class AddHomeSliders extends Component
                             file_put_contents($imageFullPath3, $image_base643);                
             // ===========  working ans stora at storage path   =========== 
             }
-            if( $this->customLink){
-                HomeSectionSlider::create([
-                    'title' =>    $this->title,
-                    'description' =>  $this->description,
-                    'button_text' =>  $this->button_text,
-                    'custom_Link' =>  $this->customLink,
-                    'image' =>        $imageName  ?? Null,
-                    'tablet_img' =>   $imageName2  ?? Null,
-                    'mobile_img' =>   $imageName3  ?? Null,
-                    ]);
-            }else{
+            // if( $this->customLink){
+            //     HomeSectionSlider::create([
+            //         'title' =>    $this->title,
+            //         'description' =>  $this->description,
+            //         'button_text' =>  $this->button_text,
+            //         'custom_Link' =>  $this->customLink,
+            //         'image' =>        $imageName  ?? Null,
+            //         'tablet_img' =>   $imageName2  ?? Null,
+            //         'mobile_img' =>   $imageName3  ?? Null,
+            //         ]);
+            // }else{
                 HomeSectionSlider::create([
                     'title' =>    $this->title,
                     'description' =>  $this->description,
@@ -123,7 +128,7 @@ class AddHomeSliders extends Component
                     'tablet_img' =>   $imageName2  ?? Null,
                     'mobile_img' =>   $imageName3  ?? Null,
                     ]);
-                }
+                // }
             $notification = array(
                 'message' => 'Home Slider published successfully',
                 'alert-type' => 'success'
