@@ -3,21 +3,21 @@
     @if(isset($homeBanner))
     <section>
       <style>
-        .bannerSection {
+        .bannerSection.homeBanner {
           background-image: url('{{asset('storage/Home-banner/'.$homeBanner->banner_image)}}');
         }
         @media (max-width: 991px) {
-          .bannerSection {
+          .bannerSection.homeBanner {
             background-image: url('{{asset('storage/Home-banner/'.$homeBanner->tablet_banner)}}');
           }
         }
         @media (max-width: 767px) {
-          .bannerSection {
+          .bannerSection.homeBanner {
             background-image: url('{{asset('storage/Home-banner/'.$homeBanner->mobile_banner)}}');
           }
         }
       </style>
-      <div class="bannerSection ">
+      <div class="bannerSection homeBanner">
         <div class="container">
           <div class="bannerContent">
             <h1 class="xlTitle">{{ isset($homeBanner->heading) ? $homeBanner->heading : "NA"}}</h1>
@@ -27,6 +27,7 @@
             <p> 
               {{ isset($homeBanner->banner_paragaph) ? $homeBanner->banner_paragaph : "NA"}}
             </p>
+       
             {{-- <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
             <a href="{!!isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
               

@@ -67,6 +67,7 @@
                         </ul>
                       </li>
                       @endif
+                   
                       @if(isset($navitems3->route_name))
                         <li><a href="{{route('UnternehmenPage')}}" class="@if(Route::is('UnternehmenPage') ) active @else '' @endif">{{isset($navitems3->route_name) ? $navitems3->route_name : "NA"}}</a></li>
                       @endif
