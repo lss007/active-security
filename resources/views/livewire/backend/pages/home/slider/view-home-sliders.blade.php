@@ -101,7 +101,7 @@
                       
                    @endphp
   
-                          @if($httplink ) 
+                          @if($httplink == true) 
                           <span class="text-primary"> Custom Link : </span>
                           
                           <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
