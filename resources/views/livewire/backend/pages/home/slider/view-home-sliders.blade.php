@@ -96,7 +96,7 @@
                       </span>
                     </p>
                     <p class="mg-b-5">
-                      @php
+                      {{-- @php
                       $httplink  = substr( $slider->link, 0, 4 ) === "http"
                       
                    @endphp
@@ -109,7 +109,7 @@
                           <a href="{{route($slider->link,'#nextSection')}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                           
                        
-                          @endif
+                          @endif --}}
               {{-- @if(isset($slider->link))
               <span class="text-primary"> Route Link : </span>
                <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
