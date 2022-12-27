@@ -111,7 +111,7 @@
                     <span class="uName">{!! isset($companysecTwo->name) ? $companysecTwo->name : "MA"!!}</span>
                     <span class="desText">{!! isset( $companysecTwo->position) ?  $companysecTwo->position : "NA"!!}</span>
                     <p>{!! isset($companysecTwo->department) ? $companysecTwo->department : "NA"!!}</p>
-                    <p><a href="mailto:m.schmiedefeld@active-sec.de"><span class="emailText"> 
+                    <p><a href="mailto:{!! isset($companysecTwo->email) ? $companysecTwo->email : "#"!!}"><span class="emailText"> 
                       <span class="emailIcon">
                         <img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> 
                         {!! isset($companysecTwo->email) ? $companysecTwo->email : "NA"!!}</span></a></p>
@@ -171,7 +171,7 @@
                     <span class="uName">{!! isset($companysecThree->name) ? $companysecThree->name : "MA"!!}</span>
                     <span class="desText">{!! isset( $companysecThree->position) ?  $companysecThree->position : "NA"!!}</span>
                     <p>{!! isset($companysecThree->department) ? $companysecThree->department : "NA"!!}</p>
-                    <p><a href="mailto:m.schmiedefeld@active-sec.de"><span class="emailText"> 
+                    <p><a href="mailto:{!! isset($companysecThree->email) ? $companysecThree->email : "NA"!!}"><span class="emailText"> 
                       <span class="emailIcon">
                         <img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> 
                         {!! isset($companysecThree->email) ? $companysecThree->email : "NA"!!}</span></a></p>

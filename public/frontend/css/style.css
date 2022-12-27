@@ -1412,7 +1412,7 @@ body .form-select {
     top: 0;
     bottom: 0;
     overflow-y: auto;
-    background-color: #000;
+    background-color: #3e5778;
     width: 270px;
     padding: 20px;
     -webkit-transform: translateX(-100%);
