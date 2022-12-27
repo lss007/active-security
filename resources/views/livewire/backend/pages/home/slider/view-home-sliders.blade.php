@@ -98,10 +98,12 @@
                     <p class="mg-b-5">
                       @php
                       $httplink  =  strpos( $slider->link, 'http') === 0;
-                    
+                 
                    @endphp
   
-                          @if($httplink == true) 
+                          @if($httplink && $slider->link) 
+
+                         
                           <span class="text-primary"> Custom Link : </span>
                           
                           <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
