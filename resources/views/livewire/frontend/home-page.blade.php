@@ -177,7 +177,7 @@
                     
                  @endphp
 
-                        @if( $httplink ) 
+                        @if( $httplink == true ) 
                         
                           <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                        @else
