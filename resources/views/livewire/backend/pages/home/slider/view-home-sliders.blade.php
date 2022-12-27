@@ -101,14 +101,15 @@
                       
                    @endphp
   
-                          @if(!$httplink ) 
-                          <span class="text-primary"> Route Link : </span>
-                          <a href="{{route($slider->link,'#nextSection')}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                          @if($httplink ) 
+                          <span class="text-primary"> Custom Link : </span>
+                          
+                          <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                           
                           @else
 
-                          <span class="text-primary"> Custom Link : </span>
-                            <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                          <span class="text-primary"> Route Link : </span>
+                            <a href="{{route($slider->link,'#nextSection')}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                        
                        
                           @endif
