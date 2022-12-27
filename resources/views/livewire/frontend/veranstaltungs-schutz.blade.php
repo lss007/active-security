@@ -58,7 +58,7 @@
                       asset('storage/services-section/'.$veranstPagesection->sec_image)}}">
                     <img class="imgStyle1" src="{{(isset($this->veranstPagesection->mobile_banner)) 
                       ? asset('storage/services-section/'.$veranstPagesection->mobile_banner) :
-                      asset('storage/services-section/'.$veranstPagesection->sec_image)}}" alt="" style="width:auto;">
+                      asset('storage/services-section/'.$veranstPagesection->sec_image)}}" alt="" >
                 </picture>
                 </div>
               </div>

@@ -61,7 +61,7 @@
                     :asset('storage/Home-section/'.$active_secuirty->main_image)}}">
                   <img class="imgStyle1" src="{{(isset($this->active_secuirty->mobile_img)) 
                     ? asset('storage/Home-section/'.$active_secuirty->mobile_img) 
-                    :asset('storage/Home-section/'.$active_secuirty->main_image)}}" alt="" style="width:auto;" class="imgStyle1">
+                    :asset('storage/Home-section/'.$active_secuirty->main_image)}}" alt=""  class="imgStyle1">
                 </picture>
                 {{-- <img src="{{(isset($this->active_secuirty->main_image)) 
                   ? asset('storage/Home-section/'.$active_secuirty->main_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1"> --}}
@@ -112,7 +112,7 @@
                       :asset('storage/Home-section/'.$HomeSectiontwo->image)}}">
                     <img class="imgStyle1" src="{{(isset($this->HomeSectiontwo->mobile_img)) 
                       ? asset('storage/Home-section/'.$HomeSectiontwo->mobile_img) 
-                      :asset('storage/Home-section/'.$HomeSectiontwo->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                      :asset('storage/Home-section/'.$HomeSectiontwo->image)}}" alt=""  class="imgStyle1">
                   </picture>
               </div>
             </div>
@@ -156,7 +156,7 @@
                             <picture  >
                             <source media="(min-width:992px)" srcset="{{(isset($slider->image))? asset('storage/Home-slider/'.$slider->image):asset('no_image.jpg')}}">
                             <source media="(min-width:768px)" srcset="{{(isset($slider->tablet_img))? asset('storage/Home-slider/'.$slider->tablet_img ) :asset('storage/Home-slider/'.$slider->image)}}">
-                            <img src="{{(isset($slider->mobile_img))? asset('storage/Home-slider/'.$slider->mobile_img) :asset('storage/Home-slider/'.$slider->image)}}" alt="" style="width:auto;"  class="servImg">
+                            <img src="{{(isset($slider->mobile_img))? asset('storage/Home-slider/'.$slider->mobile_img) :asset('storage/Home-slider/'.$slider->image)}}" alt=""   class="servImg">
                           </picture>
                           {{-- <img  src="{{(isset($slider->image))  ? asset('storage/Home-slider/'.$slider->image) 
                           :asset('no_image.jpg')}}" alt="..." class="servImg"> --}}
@@ -208,7 +208,7 @@
                         :asset('storage/Home-section/'.$HomeSecFive->image)}}">
                       <img class="imgStyle1" src="{{(isset($this->HomeSecFive->mobile_img)) 
                         ? asset('storage/Home-section/'.$HomeSecFive->mobile_img) 
-                        :asset('storage/Home-section/'.$HomeSecFive->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                        :asset('storage/Home-section/'.$HomeSecFive->image)}}" alt=""  class="imgStyle1">
                     </picture>
                     {{-- <img src="{{(isset($this->HomeSecFive->image)) ? asset('storage/Home-section/'.$HomeSecFive->image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1"> --}}
                   </div>

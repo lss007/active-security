@@ -60,7 +60,7 @@
                       asset('storage/job/'.$getJobsec->image)}}">
                     <img class="imgStyle1" src="{{(isset($this->getJobsec->mobile_banner)) 
                       ? asset('storage/job/'.$getJobsec->mobile_banner) :
-                      asset('storage/job/'.$getJobsec->image)}}" alt="" style="width:auto;">
+                      asset('storage/job/'.$getJobsec->image)}}" alt="" >
                   </picture>
 
                 </div>

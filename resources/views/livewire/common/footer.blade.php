@@ -285,8 +285,6 @@
                         </div>
                       </div>
                       <div class="tab-pane fade" id="werbung-tab-pane" role="tabpanel" aria-labelledby="werbung-tab" tabindex="0">
-                        {{-- Werbung --}}
-
                         <div class="row gy-4">
                           <div class="col-lg-6">
                             <h4 class="smTitle p2 pb-2">Diese Website wird:</h4>
@@ -313,30 +311,25 @@
                           <li>   {{$row->list}} </li>
                             @else
                           @endif
-                        @endforeach
-                        @endif
-                        @if(isset($privacytabs))
-                        @foreach($privacytabs as $keys => $row)
-                        @if( $row->tab_id == 4  && $row->cat_id == 2)
-                        <li>   {{$row->list}} </li>
-                           @else
-                        @endif
-                      @endforeach
-                      @endif
+                            @endforeach
+                            @endif
+                            @if(isset($privacytabs))
+                            @foreach($privacytabs as $keys => $row)
+                            @if( $row->tab_id == 4  && $row->cat_id == 2)
+                            <li>   {{$row->list}} </li>
+                              @else
+                            @endif
+                          @endforeach
+                          @endif
                             </ul>
                           </div>
                           <div class="col-lg-6">
                             <h4 class="smTitle p2 pb-2">Diese Website wird nicht:</h4>
                             <ul class="pCheckList cList">
-                     
-                     
                               {{-- <li>  </li> --}}
-                           
-                           
                             </ul>
                           </div>
                         </div>
-                        
                       </div>
                     </div>
                     <div class="pt-3 pt-xl-4 text-end">

@@ -65,7 +65,7 @@
                           asset('storage/services-section/'.$RevierPagesection->sec_image)}}">
                         <img class="imgStyle1" src="{{(isset($this->RevierPagesection->mobile_banner)) 
                           ? asset('storage/services-section/'.$RevierPagesection->mobile_banner) :
-                          asset('storage/services-section/'.$RevierPagesection->sec_image)}}" alt="" style="width:auto;">
+                          asset('storage/services-section/'.$RevierPagesection->sec_image)}}" alt="" >
                     </picture>
             
             </div>

@@ -64,7 +64,7 @@
                   <source media="(min-width:768px)" srcset="{{(isset($this->ObjektUndPagesection->tablet_banner)) 
                     ? asset('storage/services-section/'.$ObjektUndPagesection->tablet_banner) :asset('storage/services-section/'.$ObjektUndPagesection->sec_image)}}">
                   <img class="imgStyle1" src="{{(isset($this->ObjektUndPagesection->mobile_banner)) 
-                    ? asset('storage/services-section/'.$ObjektUndPagesection->mobile_banner) :asset('storage/services-section/'.$ObjektUndPagesection->sec_image)}}" alt="" style="width:auto;">
+                    ? asset('storage/services-section/'.$ObjektUndPagesection->mobile_banner) :asset('storage/services-section/'.$ObjektUndPagesection->sec_image)}}" alt="">
                 </picture>
                {{-- end detect  --}}
 

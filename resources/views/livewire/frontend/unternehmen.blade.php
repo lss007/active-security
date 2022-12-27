@@ -102,7 +102,7 @@
                         asset('storage/company-profile/'.$companysecTwo->profile_img)}}">
                       <img class="imgStyle1" src="{{(isset($this->companysecTwo->mobile_banner)) 
                         ? asset('storage/company-profile/'.$companysecTwo->mobile_banner) :
-                        asset('storage/company-profile/'.$companysecTwo->profile_img)}}" alt="" style="width:auto;">
+                        asset('storage/company-profile/'.$companysecTwo->profile_img)}}" alt="" >
                     </picture>
                     {{-- <img src="{{(isset($this->companysecTwo->profile_img)) 
                       ? asset('storage/company-profile/'.$companysecTwo->profile_img) :asset('no_image.jpg')}}" alt="..."> --}}

@@ -61,7 +61,7 @@
                 asset('storage/services-section/'.$ShopPagesection->sec_image)}}">
               <img class="imgStyle1" src="{{(isset($this->ShopPagesection->mobile_banner)) 
                 ? asset('storage/services-section/'.$ShopPagesection->mobile_banner) :
-                asset('storage/services-section/'.$ShopPagesection->sec_image)}}" alt="" style="width:auto;">
+                asset('storage/services-section/'.$ShopPagesection->sec_image)}}" alt="">
           </picture>
               </div>
             </div>

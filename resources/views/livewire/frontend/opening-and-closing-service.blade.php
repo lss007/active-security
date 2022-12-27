@@ -63,7 +63,7 @@
                       asset('storage/services-section/'.$OpeningPagesection->sec_image)}}">
                     <img class="imgStyle1" src="{{(isset($this->OpeningPagesection->mobile_banner)) 
                       ? asset('storage/services-section/'.$OpeningPagesection->mobile_banner) :
-                      asset('storage/services-section/'.$OpeningPagesection->sec_image)}}" alt="" style="width:auto;">
+                      asset('storage/services-section/'.$OpeningPagesection->sec_image)}}" alt="" >
                 </picture>
             </div>
             </div>

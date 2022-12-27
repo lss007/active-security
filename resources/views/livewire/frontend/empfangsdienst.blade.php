@@ -56,7 +56,7 @@
                 asset('storage/services-section/'.$EmpfanPagesection->sec_image)}}">
               <img class="imgStyle1" src="{{(isset($this->EmpfanPagesection->mobile_banner)) 
                 ? asset('storage/services-section/'.$EmpfanPagesection->mobile_banner) :
-                asset('storage/services-section/'.$EmpfanPagesection->sec_image)}}" alt="" style="width:auto;">
+                asset('storage/services-section/'.$EmpfanPagesection->sec_image)}}" alt="" >
           </picture>
             </div>
             </div>

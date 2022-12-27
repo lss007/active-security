@@ -64,7 +64,7 @@
                             asset('storage/Contact/'.$getContactSection->image)}}">
                           <img class="imgStyle1" src="{{(isset($this->getContactSection->mobile_img)) 
                             ? asset('storage/Contact/'.$getContactSection->mobile_img) :
-                            asset('storage/Contact/'.$getContactSection->image)}}" alt="" style="width:auto;" class="imgStyle1">
+                            asset('storage/Contact/'.$getContactSection->image)}}" alt=""  class="imgStyle1">
                         </picture>
                   @endif
              

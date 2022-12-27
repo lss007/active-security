@@ -62,7 +62,7 @@
                 asset('storage/services-section/'.$KaufhausPagesection->sec_image)}}">
               <img class="imgStyle1" src="{{(isset($this->KaufhausPagesection->mobile_banner)) 
                 ? asset('storage/services-section/'.$KaufhausPagesection->mobile_banner) :
-                asset('storage/services-section/'.$KaufhausPagesection->sec_image)}}" alt="" style="width:auto;">
+                asset('storage/services-section/'.$KaufhausPagesection->sec_image)}}" alt="" >
             </picture>
               </div>
               </div>
