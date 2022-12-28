@@ -42,6 +42,8 @@ use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialCategory;
 use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialMedia;
 use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialCategory;
 use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialMedia;
+use App\Http\Livewire\Backend\Pages\HashTag\AddHashTag;
+use App\Http\Livewire\Backend\Pages\HashTag\ViewHashTag;
 use App\Http\Livewire\Backend\Pages\Home\Clients\AddHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\EditHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\ViewHomeClients;
@@ -246,6 +248,7 @@ Route::group(['prefix' =>'manage-footer'], function () {
  
     });
 
+
 Route::group(['prefix' =>'services'], function () {
         Route::get('/view', ViewServices::class)->name('view_services');
         Route::get('/add', AddServices::class)->name('add_services');
@@ -316,16 +319,17 @@ Route::group(['prefix' =>'social'], function () {
         Route::get('/view-subnavbar', ViewSubNavbar::class)->name('view_Subnavbar_list');
         Route::get('/add-subnavbar', AddSubNavbar::class)->name('add_Subnavbar_list');
         Route::get('/edit-subnavbar/{id}', EditSubNavbar::class)->name('edit_Subnavbar_list');
-
-
-
-
-        
-
-        
+ 
     });
     
+    // ViewHashTag
+    Route::group(['prefix' =>'hashTag'], function () {
+        Route::get('/view', ViewHashTag::class)->name('view_Allhashtag');
+        Route::get('/add', AddHashTag::class)->name('add_Allhashtag');
 
+        
+
+    });
 });
        // middle ware end
 

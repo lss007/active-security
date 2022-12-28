@@ -41,7 +41,7 @@
     @if(isset($veranstPagesection))
       <section>
         <div class="nextSectionParent">
-          <div id="nextSection"></div>
+          <div id="1"></div>
         </div>
 
         <div class="sectionSpace">
@@ -85,6 +85,9 @@
 
     @if($veranstpagebanner)
     <section>
+      <div class="nextSectionParent">
+        <div id="2"></div>
+      </div>
       <style>
         .sectionBgCol.serviceSectionBg9 {
           background-image: url('{{asset('storage/services-banner/'.$veranstpagebanner->banner)}}');

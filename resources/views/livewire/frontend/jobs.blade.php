@@ -45,7 +45,7 @@
     @if(isset($getJobsec))
       <section>
         <div class="nextSectionParent">
-          <div id="nextSection"></div>
+          <div id="1"></div>
         </div>
         <div class="sectionSpace">
           <div class="container">
@@ -89,7 +89,12 @@
       </section>
       @endif
     @if(isset($Jobs_pagebanner))
+   
   <section>
+    
+    <div class="nextSectionParent">
+      <div id="2"></div>
+    </div>
     <style>
       .sectionBgCol.jobsSectionBg {
         background-image: url('{{asset('storage/services-banner/'.$Jobs_pagebanner->banner)}}');

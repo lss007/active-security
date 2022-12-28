@@ -29,7 +29,8 @@
             </p>
        
             {{-- <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
-            <a href="{!!isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
+            {{-- <a href="{!!isset($homeBanner->button_link) ? $homeBanner->button_link.'#2' : "#1"!!}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
+            <a href="" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
               
               {{ isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"}}
              </a>
@@ -45,7 +46,7 @@
     @if(isset($active_secuirty))
     <section>
       <div class="nextSectionParent">
-        <div id="nextSection"></div>
+        <div id="1"></div>
       </div>
 
       <div class="sectionSpace">
@@ -97,6 +98,9 @@
 
     @if(isset($HomeSectiontwo))
     <section>
+      <div class="nextSectionParent">
+        <div id="2"></div>
+      </div>
       <div class="sectionSpaceMd lightBg">
         <div class="container">
           <div class="row gy-4 align-items-center">
@@ -142,6 +146,9 @@
         @include('livewire.common.clientLogo')
         @if(isset($HomeSliders) && count($HomeSliders) > 0)
         <section>
+          <div class="nextSectionParent">
+            <div id="4"></div>
+          </div>
           <div class="sectionSpaceMd ourServicesCol">
             <div class="container">
               <h4 class="lgTitle serviceTitle">unsere Dienstleistungen</h4>
@@ -176,12 +183,12 @@
                     $httplink  = substr( $slider->link, 0, 4 ) === "http"
                     
                  @endphp
-    @if(isset($slider->link)) 
+             @if(isset($slider->link)) 
                         @if( $httplink == true ) 
                         
                           <a href="{{$slider->link}}" target="_blank" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
                        @else
-                        <a href="{{route($slider->link,'#nextSection')}}"  class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                        <a href="{{route($slider->link)}}{{isset($slider->custom_Link) ? '#'.$slider->custom_Link : ''}}"  class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                         
                      
                         @endif
@@ -203,6 +210,9 @@
 
     @if(isset($HomeSecFive))
         <section>
+          <div class="nextSectionParent">
+            <div id="5"></div>
+          </div>
           <div class="sectionSpaceMd lightBg analysisColMain">
             <div class="container">
               <div class="row gy-4 align-items-center">

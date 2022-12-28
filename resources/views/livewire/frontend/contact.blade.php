@@ -47,7 +47,7 @@
     @endif
       <section>
         <div class="nextSectionParent">
-          <div id="nextSection"></div>
+          <div id="1"></div>
         </div>
         <div class="sectionSpace">
           <div class="container">
@@ -137,7 +137,9 @@
           </div>
         </div>
       </section>
-    
+      <div class="nextSectionParent">
+        <div id="2"></div>
+      </div>
       @include('livewire.common.clientLogo')
 
 </div>

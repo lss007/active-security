@@ -49,7 +49,7 @@
 @if($centerPagesection)
   <section>
     <div class="nextSectionParent">
-      <div id="nextSection"></div>
+      <div id="7"></div>
     </div>
     <div class="sectionSpace">
       <div class="container">

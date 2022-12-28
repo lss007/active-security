@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 
+use App\Models\HashTag;
 use Livewire\Component;
 use App\Models\HomeSectionSlider;
 use App\Models\RouteNameList;
@@ -13,10 +14,10 @@ class EditHomeSliders extends Component
     use WithFileUploads;
     public $SliderId ,$editHomeSlider,$title,$description,$image,$button_text,$custom,$customLink,$getRouteName;
     public $newImage ,$updateCropedImg ,$updateCropedImg2 ,$updateCropedImg3 ;
-    public $link;
+    public $link  ,$getRouteId ,$gethashtag ,$selectRoute;
     public $tabletImg,$mobileImg ;
     public $showDiv =  false;
-    protected $listeners = ['updateSliderImg' ,'updateSliderImg2' ,'updateSliderImg3']; 
+    protected $listeners = ['updateSliderImg' ,'updateSliderImg2' ,'updateSliderImg3','selectroute']; 
 
     public function updateSliderImg($val){       
             $this->updateCropedImg = $val;
@@ -34,6 +35,12 @@ class EditHomeSliders extends Component
         {
             $this->showDiv =! $this->showDiv;
         }
+
+        public function selectroute($val){
+            $this->getRouteId = $val;
+            // dd($this->getRouteId);
+          }
+
     public function mount($id){
             $this->SliderId= $id;
             $this->editHomeSlider = HomeSectionSlider::where('id', $this->SliderId)->where('status',1)->first();
@@ -46,7 +53,7 @@ class EditHomeSliders extends Component
                 $this->button_text = $this->editHomeSlider->button_text	;
                 $this->link = $this->editHomeSlider->link;
            
-                // $this->customLink = $this->editHomeSlider->custom_Link;
+                $this->customLink = $this->editHomeSlider->custom_Link;
 
             }else {
                 $notification = array(
@@ -59,7 +66,9 @@ class EditHomeSliders extends Component
      }
     public function render()
     {
-            $this->getRouteName =    RouteNameList::get();
+            $this->gethashtag = HashTag::where('page_id', $this->getRouteId)->get();
+
+            $this->getRouteName =    RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
             return view('livewire.backend.pages.home.slider.edit-home-sliders')->layout('layouts.backend');
     }
     protected $rules = [
@@ -176,7 +185,7 @@ class EditHomeSliders extends Component
                     'description' =>  $this->description,
                     'button_text' =>  $this->button_text,
                     'link' =>         $this->link,
-                    // 'custom_Link' => NULL,
+                    'custom_Link' =>  $this->customLink,
                     ]);
                 // }
        

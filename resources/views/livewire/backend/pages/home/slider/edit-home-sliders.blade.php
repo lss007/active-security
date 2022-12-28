@@ -68,7 +68,41 @@
              
                 </div>
           </div> 
-                
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-control-label">Select Page for Tag : <span class="tx-danger">*</span></label>
+              <select class="form-control" data-placeholder="Choose Section" wire:model="selectRoute" aria-hidden="true" 
+              
+              onchange='Livewire.emit("selectroute", this.value)'>
+                <option label="Choose Page link "></option>
+              @if(isset($getRouteName))
+              @foreach($getRouteName as $key => $val)
+                <option value="{{$val->id}}"> {{$key+1}}) {{ucwords($val->route_name)}}</option>
+                @endforeach
+                {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                @endif
+              </select>
+
+            </div>
+          </div>
+
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label class="form-control-label">Hash Tag section <span class="tx-danger">*</span></label>
+    <select class="form-control" data-placeholder="Choose Tag" wire:model="customLink" aria-hidden="true">
+      <option label="Choose Tag"></option>
+    @if(isset($gethashtag))
+    @foreach($gethashtag as $key => $val)
+      <option value="{{$val->section_id}}"> {{$key+1}}) Section {{ucwords($val->section_id)}}</option>
+      @endforeach
+      {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+      @endif
+    </select>
+   @error('customLink')<span class="text-danger"> {{$message}}</span>  @enderror  
+
+  </div>
+</div>
                {{-- <div class="col-lg-12">
 
                  <div class="form-group mg-b-10-force">

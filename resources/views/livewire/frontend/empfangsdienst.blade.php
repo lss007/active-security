@@ -39,7 +39,7 @@
   @if(isset($EmpfanPagesection))
     <section>
       <div class="nextSectionParent">
-        <div id="nextSection"></div>
+        <div id="1"></div>
       </div>
       <div class="sectionSpace">
         <div class="container">
@@ -76,6 +76,9 @@
     @endif
   @if(isset($Empfan_pagebanner))
     <section>
+      <div class="nextSectionParent">
+        <div id="2"></div>
+      </div>
       <style>
         .sectionBgCol.serviceSectionBg7 {
           background-image: url('{{asset('storage/services-banner/'.$Empfan_pagebanner->banner)}}');

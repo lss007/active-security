@@ -45,7 +45,7 @@
     @if(isset($BaustellPagesection))
       <section>
         <div class="nextSectionParent">
-          <div id="nextSection"></div>
+          <div id="1"></div>
         </div>
         <div class="sectionSpace">
           <div class="container">
@@ -92,7 +92,9 @@
     @endif
 @if(isset($Baustell_pagebanner))
   <section>
-    
+    <div class="nextSectionParent">
+      <div id="2"></div>
+    </div>
       <style>
         .sectionBgCol.serviceSectionBg4 {
           background-image: url('{{asset('storage/services-banner/'.$Baustell_pagebanner->banner)}}');

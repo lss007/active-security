@@ -3,6 +3,9 @@
 @endphp
 
 <section>
+  <div class="nextSectionParent">
+    <div id="3"></div>
+  </div>
     <div class="partnersSection">
       <div class="container">
         <h4 class="mdTitle">Unternehmen, die unseren Sicherheitsdienstleistungen vertrauen.</h4>

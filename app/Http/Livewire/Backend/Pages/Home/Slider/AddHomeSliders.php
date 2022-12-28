@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend\Pages\Home\Slider;
 
+use App\Models\HashTag;
 use App\Models\HomeSectionSlider;
 use App\Models\RouteNameList;
 use Illuminate\Support\Facades\Storage;
@@ -10,9 +11,10 @@ use Livewire\WithFileUploads;
 class AddHomeSliders extends Component
 {
     use WithFileUploads;
-    public $title, $description, $image, $button_text ,$custom ,$link;
+    public $title, $description, $image, $button_text ,$custom ,$link,$gethashtag ,$getRouteId;
+    public $selectRoute ;
     public $sliderCropedImg ,$sliderCropedImg2 ,$sliderCropedImg3,$customLink, $getRouteName;
-    protected $listeners = ['addSliderImg' ,'addSliderImg2' ,'addSliderImg3'];   
+    protected $listeners = ['addSliderImg' ,'addSliderImg2' ,'addSliderImg3' ,'selectroute'];   
     public $showDiv =  false;
  
     public function addSliderImg($val){       
@@ -32,9 +34,17 @@ class AddHomeSliders extends Component
         {
             $this->showDiv =! $this->showDiv;
         }
+
+        public function selectroute($val){
+            $this->getRouteId = $val;
+            // dd($this->getRouteId);
+          }
     public function render()
-    {
-        $this->getRouteName = RouteNameList::get();
+     {
+      
+
+             $this->gethashtag = HashTag::where('page_id', $this->getRouteId)->get();
+        $this->getRouteName = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
         return view('livewire.backend.pages.home.slider.add-home-sliders')->layout('layouts.backend');
     }
     protected $rules = [
@@ -124,6 +134,7 @@ class AddHomeSliders extends Component
                     'description' =>  $this->description,
                     'button_text' =>  $this->button_text,
                     'link' =>         $this->link,
+                    'custom_Link' =>  $this->customLink,
                     'image' =>        $imageName  ?? Null,
                     'tablet_img' =>   $imageName2  ?? Null,
                     'mobile_img' =>   $imageName3  ?? Null,

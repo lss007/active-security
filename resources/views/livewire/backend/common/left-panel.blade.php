@@ -39,6 +39,9 @@
         <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> {{__('leftpane.Client logo')}}</a></li>
         <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" > {{__('leftpane.Home Sliders')}}</a></li>
         <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">  {{__('leftpane.Home section5')}} </a></li>
+        <li class="nav-item"><a href="{{route('view_Allhashtag')}}" class="nav-link @if(Route::is('view_Allhashtag') ) active @else '' @endif">  All Hashtags </a></li>
+       
+        
       </ul>
 
       

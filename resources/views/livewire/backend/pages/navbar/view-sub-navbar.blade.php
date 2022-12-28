@@ -17,11 +17,10 @@
              </div>
           </div><!-- col-4 -->
           <h6 class="card-body-title"> 
-            <button wire:click.prevent="deleteSE"
-            onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
+            <button wire:click.prevent="deleteSE" onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
             class="btn btn-danger active mg-b-10">
             {{__('dashboard.Delete selected')}}
-    </button>
+            </button>
             <a href="{{route('add_Subnavbar_list')}}" class="btn btn-teal active mg-b-10" >
             {{__('dashboard.Add Submenu')}}
             </a>

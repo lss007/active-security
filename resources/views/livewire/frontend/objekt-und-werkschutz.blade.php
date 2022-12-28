@@ -48,7 +48,7 @@
 @if(isset($ObjektUndPagesection))
       <section>
         <div class="nextSectionParent">
-          <div id="nextSection"></div>
+          <div id="1"></div>
         </div>
         <div class="sectionSpace">
           <div class="container">
@@ -109,6 +109,9 @@
 @endif
     @if(isset($Services_pagebanner))
       <section>
+        <div class="nextSectionParent">
+          <div id="2"></div>
+        </div>
           <style>
           .sectionBgCol.serviceSectionBg1 {
             background-image: url('{{asset('storage/services-banner/'.$Services_pagebanner->banner)}}');

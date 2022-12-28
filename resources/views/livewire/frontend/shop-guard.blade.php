@@ -45,7 +45,7 @@
   @if(isset($ShopPagesection))
     <section>
       <div class="nextSectionParent">
-        <div id="nextSection"></div>
+        <div id="1"></div>
       </div>
 
       <div class="sectionSpace">
@@ -89,6 +89,9 @@
 
   @if(isset($Shop_pagebanner))
     <section>
+      <div class="nextSectionParent">
+        <div id="2"></div>
+      </div>
       <style>
         .sectionBgCol.serviceSectionBg8 {
           background-image: url('{{asset('storage/services-banner/'.$Shop_pagebanner->banner)}}');

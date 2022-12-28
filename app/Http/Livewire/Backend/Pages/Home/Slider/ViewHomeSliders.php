@@ -28,17 +28,7 @@ class ViewHomeSliders extends Component
         ])->layout('layouts.backend');
 
     }
-    public function deleteSlider($id){
-        // dd($this->id);
-        $products = HomeSectionSlider::whereKey($this->id);
-        $products->delete();
-        HomeSectionSlider::destroy($id);
-        $notification = array(
-           'message' => 'Home Slider Trashed',
-           'alert-type' => 'info'
-       );
-       return   redirect()->route('viewHomesliders')->with($notification);
-    }
+
 
     // retore 
     public function restore($id){
@@ -103,4 +93,16 @@ class ViewHomeSliders extends Component
         return   redirect()->route('viewHomesliders')->with($notification);
 
       }
+
+      public function deleteSlider($id){
+        // dd($this->id);
+        $products = HomeSectionSlider::whereKey($this->id);
+        $products->delete();
+        HomeSectionSlider::destroy($id);
+        $notification = array(
+           'message' => 'Home Slider Trashed',
+           'alert-type' => 'info'
+       );
+       return   redirect()->route('viewHomesliders')->with($notification);
+    }
 }

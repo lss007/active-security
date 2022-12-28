@@ -4,6 +4,9 @@
 @if(isset($getLastServices))
 
 <section>
+  <div class="nextSectionParent">
+    <div id="3"></div>
+  </div>
     <div class="stepsTextCol">
       <div class="container">
         <div class="row gy-3">

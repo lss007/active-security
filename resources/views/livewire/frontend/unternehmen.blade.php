@@ -46,7 +46,7 @@
     @if(isset($companysecOne))
       <section>
         <div class="nextSectionParent">
-          <div id="nextSection"></div>
+          <div id="1"></div>
         </div>
         <div class="sectionSpace">
           <div class="container">
@@ -88,6 +88,9 @@
 
       @if(isset($companysecTwo))
       <section>
+        <div class="nextSectionParent">
+          <div id="2"></div>
+        </div>
         <div class="sectionSpace pt-0">
           <div class="container">
             <div class="row gy-4 align-items-center">
@@ -146,6 +149,9 @@
       @endif
       @if(isset($companysecThree ))
       <section>
+        <div class="nextSectionParent">
+          <div id="3"></div>
+        </div>
         <div class="sectionSpace pt-0">
           <div class="container">
             <div class="row gy-4 align-items-center">
@@ -204,6 +210,9 @@
 
       @if(isset($Unternehmen_pagebanner))
     <section>
+      <div class="nextSectionParent">
+        <div id="4"></div>
+      </div>
       <style>
         .sectionBgCol.companySectionBg {
           background-image: url('{{asset('storage/services-banner/'.$Unternehmen_pagebanner->banner)}}');
