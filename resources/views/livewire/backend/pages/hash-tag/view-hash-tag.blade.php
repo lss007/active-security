@@ -53,9 +53,9 @@
 
           
           <td class="text-center">  
-            <a href="{{route('edit_all_banner',$banner->id)}}" class="btn btn-sm btn-info" title="edit" >
+            {{-- <a href="{{route('edit_all_banner',$banner->id)}}" class="btn btn-sm btn-info" title="edit" >
               <i class="fa fa-edit"></i>
-            </a>
+            </a> --}}
        
             @if($banner->status == 1 )
             <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$banner->id}})">
