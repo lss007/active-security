@@ -90,6 +90,7 @@
                   <label class="form-control-label">Would you like to add Custom link ?<span class="tx-danger">*</span></label>
                 </div>
               </div><!-- col-4 -->
+              @if(!$showDiv)
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="form-control-label">Hash Tag section <span class="tx-danger">*</span></label>
@@ -105,7 +106,8 @@
                   @error('hashTag')<span class="text-danger"> {{$message}}</span>  @enderror  
                 </div>
               </div>
-
+              @else
+              @endif
             <!-- col-12 -->
             {{-- tablet --}}
             <div class="col-lg-12">

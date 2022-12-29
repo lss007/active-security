@@ -35,9 +35,26 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($Kaufhausmain->title) ? $Kaufhausmain->title : "NA"}}
               </p>
-              <a href="{!! isset($Kaufhausmain->button_link) ? $Kaufhausmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
-                {{	isset($Kaufhausmain->button_text) ? $Kaufhausmain->button_text : "Angebot einholen"}} 
-              </a>
+    
+
+                        {{-- ================== --}}
+            @php
+            $gethttplink  =  strpos( $Kaufhausmain->button_link, 'http') === 0;
+      @endphp
+      @if(isset($Kaufhausmain->button_link)) 
+        @if( $gethttplink )
+          <a href="{{$Kaufhausmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
+            {!! isset($Kaufhausmain->button_name)  ? html_entity_decode($Kaufhausmain->button_name) : "Gleich beraten lassen" !!} 
+          </a>
+        @else
+            <a href="{{route($Kaufhausmain->routeName->route_link)}}{{isset($Kaufhausmain->hash_tag_id) ? '#'.$Kaufhausmain->hash_tag_id : ''}}" 
+              class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+              {!! isset($Kaufhausmain->button_name)  ? html_entity_decode($Kaufhausmain->button_name) : "Gleich beraten lassen" !!} 
+            </a>
+        @endif
+        @else
+      @endif
+      {{-- ===================== --}}
             </div>
           </div>
         </div>

@@ -36,7 +36,26 @@
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
               {!!isset($Unternehmenmain->title) ? $Unternehmenmain->title : "NA"!!} </p>
               
-            <a href="{!!isset($Unternehmenmain->button_link) ? $Unternehmenmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 scrollToSection"> {{	isset($Unternehmenmain->button_text) ? $Unternehmenmain->button_text : "Angebot einholen"}} </a>
+         
+                 {{-- ================== --}}
+                 @php
+                      $gethttplink  =  strpos( $Unternehmenmain->button_link, 'http') === 0;
+                @endphp
+                @if(isset($Unternehmenmain->button_link)) 
+                  @if( $gethttplink )
+                    <a href="{{$Unternehmenmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 scrollToSection" target="_blank">
+                      {!! isset($Unternehmenmain->button_name)  ? html_entity_decode($Unternehmenmain->button_name) : "Gleich beraten lassen" !!} 
+                    </a>
+                  @else
+                      <a href="{{route($Unternehmenmain->routeName->route_link)}}{{isset($Unternehmenmain->hash_tag_id) ? '#'.$Unternehmenmain->hash_tag_id : ''}}" 
+                        class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 scrollToSection">
+                        {!! isset($Unternehmenmain->button_name)  ? html_entity_decode($Unternehmenmain->button_name) : "Gleich beraten lassen" !!} 
+                      </a>
+                  @endif
+                  @else
+                @endif
+                {{-- ===================== --}}
+         
           </div>
         </div>
       </div>

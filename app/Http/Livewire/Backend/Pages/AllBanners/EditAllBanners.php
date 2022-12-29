@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\Backend\Pages\AllBanners;
 
 use App\Models\AllPagesBanner;
+use App\Models\HashTag;
 use App\Models\PageCategory;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -16,6 +18,7 @@ class EditAllBanners extends Component
     public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph ;
 
     public $updateCropedImg ,$updateCropedImg2,$updateCropedImg3 ;
+    public $showcustomDiv ,$getRouteId ,$gethashtag ,$getRouteList ,$hashTag;
     
     public function mount($id){
         $this->allBannerId= $id;
@@ -40,7 +43,15 @@ class EditAllBanners extends Component
         }
     }
 
-    protected $listeners = ['updateAllBannerImg' ,'updateAllBannerImg2','updateAllBannerImg3'];
+    protected $listeners = ['updateAllBannerImg' ,'updateAllBannerImg2','updateAllBannerImg3' ,'editSection'];
+
+    public function showcustomDiv(){
+        $this->showcustomDiv =! $this->showcustomDiv;
+    }
+
+    public function editSection($val){
+            $this->getRouteId = $val;
+    }
              public function updateAllBannerImg($val){       
                     $this->updateCropedImg = $val;
                 }
@@ -54,6 +65,10 @@ class EditAllBanners extends Component
     public function render()
     {
         $this->getPageCategory =  PageCategory::get();
+        $this->gethashtag = HashTag::where('page_id', $this->getRouteId)->get();
+        
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.all-banners.edit-all-banners')->layout('layouts.backend');
     }
 
@@ -179,6 +194,7 @@ class EditAllBanners extends Component
                     // 'banner_paragaph' =>    $this->BannerParagaph,
                     'button_text' =>    $this->buttonText ,
                     'button_link' =>    $this->button_link,
+                    'hash_tag_id' => $this->hashTag,
 
                 ]);
                         $notification = array(

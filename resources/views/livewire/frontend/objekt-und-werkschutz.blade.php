@@ -37,9 +37,26 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($ObjektUndPageBanner->title) ? $ObjektUndPageBanner->title : "NA"}}
               </p>
-              <a href="{!! isset($ObjektUndPageBanner->button_link) ? $ObjektUndPageBanner->button_link : "#nextSection"!!}" target="__blank" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-                {{	isset($ObjektUndPageBanner->button_text) ? $ObjektUndPageBanner->button_text : "Angebot einholen"}} </a>
-            </div>
+         
+                        {{-- ================== --}}
+                        @php
+                        $gethttplink  =  strpos( $ObjektUndPageBanner->button_link, 'http') === 0;
+                  @endphp
+                  @if(isset($ObjektUndPageBanner->button_link)) 
+                    @if( $gethttplink )
+                      <a href="{{$ObjektUndPageBanner->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
+                        {!! isset($ObjektUndPageBanner->button_name)  ? html_entity_decode($ObjektUndPageBanner->button_name) : "Gleich beraten lassen" !!} 
+                      </a>
+                    @else
+                        <a href="{{route($ObjektUndPageBanner->routeName->route_link)}}{{isset($ObjektUndPageBanner->hash_tag_id) ? '#'.$ObjektUndPageBanner->hash_tag_id : ''}}" 
+                          class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+                          {!! isset($ObjektUndPageBanner->button_name)  ? html_entity_decode($ObjektUndPageBanner->button_name) : "Gleich beraten lassen" !!} 
+                        </a>
+                    @endif
+                    @else
+                  @endif
+                  {{-- ===================== --}}
+              </div>
           </div>
         </div>
       </section>

@@ -37,9 +37,26 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($centerbewachung->title) ? $centerbewachung->title : "NA"}}
               </p>
-              <a href="{!! isset($centerbewachung->button_link) ? $centerbewachung->button_link : "#nextSection"!!}" target="__blank" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-                {{	isset($centerbewachung->button_text) ? $centerbewachung->button_text : "Angebot einholen"}} 
-              </a>
+         
+                       
+            {{-- ================== --}}
+            @php
+            $gethttplink  =  strpos( $centerbewachung->button_link, 'http') === 0;
+            @endphp
+
+            @if(isset($centerbewachung->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$centerbewachung->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
+                  {!! isset($centerbewachung->button_name)  ? html_entity_decode($centerbewachung->button_name) : "Gleich beraten lassen" !!} 
+                </a>
+              @else
+                  <a href="{{route($centerbewachung->routeName->route_link)}}{{isset($centerbewachung->hash_tag_id) ? '#'.$centerbewachung->hash_tag_id : ''}}" 
+                    class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+                    {!! isset($centerbewachung->button_name)  ? html_entity_decode($centerbewachung->button_name) : "Gleich beraten lassen" !!} 
+                  </a>
+              @endif
+            @endif
+            {{-- ===================== --}}
             </div>
           </div>
         </div>

@@ -31,7 +31,26 @@
             <div class="bannerContent">
               <h1 class="xlTitle">{!!	isset($veranstmain->heading) ? $veranstmain->heading : "NA"!!}</h1>
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">{!!	isset($veranstmain->title) ? $veranstmain->title : "NA"!!}</p>
-              <a href="{!! isset($veranstmain->button_link) ? $veranstmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">{{	isset($veranstmain->button_text) ? $veranstmain->button_text : "Angebot einholen"}}  </a>
+           
+                  {{-- ================== --}}
+                  @php
+                  $gethttplink  =  strpos( $veranstmain->button_link, 'http') === 0;
+            @endphp
+            @if(isset($veranstmain->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$veranstmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 " target="_blank">
+                  {!! isset($veranstmain->button_name)  ? html_entity_decode($veranstmain->button_name) : "Gleich beraten lassen" !!} 
+                </a>
+              @else
+                  <a href="{{route($veranstmain->routeName->route_link)}}{{isset($veranstmain->hash_tag_id) ? '#'.$veranstmain->hash_tag_id : ''}}" 
+                    class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4 ">
+                    {!! isset($veranstmain->button_name)  ? html_entity_decode($veranstmain->button_name) : "Gleich beraten lassen" !!} 
+                  </a>
+              @endif
+              @else
+            @endif
+            {{-- ===================== --}}
+           
             </div>
           </div>
         </div>

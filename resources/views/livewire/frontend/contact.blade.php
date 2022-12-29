@@ -37,9 +37,28 @@
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($Contactmain->title) ? $Contactmain->title : "NA"}}
               </p>
-              <a href="{!!isset($Contactmain->button_link) ? $Contactmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-                {{	isset($Contactmain->button_text) ? $Contactmain->button_text : "Kontaktformular "}} 
+            
+
+            {{-- ================== --}}
+            @php
+            $gethttplink  =  strpos( $Contactmain->button_link, 'http') === 0;
+            @endphp
+
+            @if(isset($Contactmain->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$Contactmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
+                  {!! isset($Contactmain->button_name)  ? html_entity_decode($Contactmain->button_name) : "Gleich beraten lassen" !!} 
                 </a>
+              @else
+                  <a href="{{route($Contactmain->routeName->route_link)}}{{isset($Contactmain->hash_tag_id) ? '#'.$Contactmain->hash_tag_id : ''}}" 
+                    class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+                    {!! isset($Contactmain->button_name)  ? html_entity_decode($Contactmain->button_name) : "Gleich beraten lassen" !!} 
+                  </a>
+              @endif
+              @else
+           
+            @endif
+            {{-- ===================== --}}
             </div>
           </div>
         </div>

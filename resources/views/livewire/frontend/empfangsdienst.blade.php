@@ -28,9 +28,29 @@
             <p class="subTitle pt-1 pt-lg-2 pt-xl-3">    
               {{	isset($Empfanmain->title) ? $Empfanmain->title : "NA"}}
             </p>
-            <a href="{!! isset($Empfanmain->button_link) ? $Empfanmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-              {{	isset($Empfanmain->button_text) ? $Empfanmain->button_text : "Angebot einholen"}} 
-             </a>
+       
+
+
+                    {{-- ================== --}}
+            @php
+            $gethttplink  =  strpos( $Empfanmain->button_link, 'http') === 0;
+            @endphp
+
+            @if(isset($Empfanmain->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$Empfanmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
+                  {!! isset($Empfanmain->button_name)  ? html_entity_decode($Empfanmain->button_name) : "Gleich beraten lassen" !!} 
+                </a>
+              @else
+                  <a href="{{route($Empfanmain->routeName->route_link)}}{{isset($Empfanmain->hash_tag_id) ? '#'.$Empfanmain->hash_tag_id : ''}}" 
+                    class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+                    {!! isset($Empfanmain->button_name)  ? html_entity_decode($Empfanmain->button_name) : "Gleich beraten lassen" !!} 
+                  </a>
+              @endif
+              @else
+           
+            @endif
+            {{-- ===================== --}}
           </div>
         </div>
       </div>

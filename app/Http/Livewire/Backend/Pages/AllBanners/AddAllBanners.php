@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\Backend\Pages\AllBanners;
 
 use App\Models\AllPagesBanner;
+use App\Models\HashTag;
 use App\Models\PageCategory;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -17,8 +19,19 @@ class AddAllBanners extends Component
 
     public $bannerCropedImg, $bannerCropedImg2,$bannerCropedImg3;
 
-    protected $listeners = ['addAllBannerImg' ,'addAllBannerImg2','addAllBannerImg3'];
+    public $showcustomDiv ,$getRouteid ,$hashTag;
+
+    protected $listeners = ['addAllBannerImg' ,'addAllBannerImg2','addAllBannerImg3','selectSection'];
         
+    public function showcustomDiv(){
+        $this->showcustomDiv =! $this->showcustomDiv;
+    }
+    
+    public function selectSection($val){
+        $this->getRouteid = $val;
+        // dd($this->getRouteid);
+     }
+
     public function addAllBannerImg($val){       
             $this->bannerCropedImg = $val;
             // dd($this->bannerCropedImg);
@@ -31,7 +44,11 @@ class AddAllBanners extends Component
         }
     public function render()
     {
-        $this->getPageCategory =  PageCategory::get();
+        $this->getPageCategory =  PageCategory::orderBy('page_cat_name')->get();
+        $this->gethashtag = HashTag::where('page_id', $this->getRouteid)->get();
+        
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.all-banners.add-all-banners')->layout('layouts.backend');
     }
 
@@ -59,7 +76,9 @@ class AddAllBanners extends Component
         }
 
     public function saveallBanner(){
-            $this->validate();
+        // dd($this->hashTag);    
+        $this->validate();
+
             if($this->bannerCropedImg)  {
                 // $this->validate([
                 //     'bannerImage' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2040', 
@@ -115,6 +134,7 @@ class AddAllBanners extends Component
                 'mobile_banner' =>    $imageName3  ?? Null,
                 'button_text' =>    trim($this->buttonText) ,
                 'button_link' =>   trim($this->button_link),
+                'hash_tag_id' => $this->hashTag,
                 ]);
                 $notification = array(
                     'message' => ' Banner Published ',

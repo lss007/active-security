@@ -33,10 +33,25 @@
               <h1 class="xlTitle">     {{	isset($Jobsmain->heading) ? $Jobsmain->heading : "NA"}}</h1>
               <p class="subTitle pt-1 pt-lg-2 pt-xl-3">
                 {{	isset($Jobsmain->title) ? $Jobsmain->title : "NA"}}</p>
-              <a href="{!!isset($Jobsmain->button_link) ? $Jobsmain->button_link : "#nextSection"!!}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4"> 
 
-                {{	isset($Jobsmain->button_text) ? $Jobsmain->button_text : "Angebot einholen"}} 
-              </a>
+          {{-- ================== --}}
+            @php
+                  $gethttplink  =  strpos( $Jobsmain->button_link, 'http') === 0;
+            @endphp
+            @if(isset($Jobsmain->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$Jobsmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
+                  {!! isset($Jobsmain->button_name)  ? html_entity_decode($Jobsmain->button_name) : "Gleich beraten lassen" !!} 
+                </a>
+              @else
+                  <a href="{{route($Jobsmain->routeName->route_link)}}{{isset($Jobsmain->hash_tag_id) ? '#'.$Jobsmain->hash_tag_id : ''}}" 
+                    class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
+                    {!! isset($Jobsmain->button_name)  ? html_entity_decode($Jobsmain->button_name) : "Gleich beraten lassen" !!} 
+                  </a>
+              @endif
+              @else
+            @endif
+            {{-- ===================== --}}
             </div>
           </div>
         </div>
@@ -80,7 +95,8 @@
                   <p>
                     {!!isset($getJobsec->para2) ? $getJobsec->para2 : "NA"!!}
                   </p>
-                  <a href="javascript:void(0)" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">Hier gehts zu allen offenen Stellen</a>
+              
+                  <a href="{{isset($getJobsec->link) ? $getJobsec->link :""}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">{{isset($getJobsec->button_name) ? $getJobsec->button_name :"Hier gehts zu allen offenen Stellen"}}</a>
                 </div>
               </div>
             </div>
