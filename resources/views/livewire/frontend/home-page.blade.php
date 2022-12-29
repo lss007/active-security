@@ -30,10 +30,26 @@
        
             {{-- <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
             {{-- <a href="{!!isset($homeBanner->button_link) ? $homeBanner->button_link.'#2' : "#1"!!}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
-            <a href="" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
+           
+            @php
+              $httplink  =  strpos( $homeBanner->button_link, 'http') === 0;
+           @endphp
+
+            @if(isset($homeBanner->button_link)) 
+                @if( $httplink )
+                  <a href="{{$homeBanner->button_link}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection" target="_blank">
+                    {!! isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"!!}
+                  </a>
+                @else
+                    <a href="{{route($homeBanner->routeName->route_link)}}{{isset($homeBanner->hash_tag_id) ? '#'.$homeBanner->hash_tag_id : ''}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection">
+                      {!! isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"!!} 
+                    </a>
+                @endif
+
+             @endif
+             {{-- <a href="" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
               
-              {{ isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"}}
-             </a>
+             {{-- </a> --}}
           </div>
         </div>
       </div>
@@ -132,9 +148,27 @@
                 <p>
                   {!! isset($HomeSectiontwo->para2)  ? html_entity_decode($HomeSectiontwo->para2) : "NA" !!}  
                 </p>
-                <a href="{!! isset($HomeSectiontwo->button_link) ? $HomeSectiontwo->button_link : "#"!!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3" target="_blank">
-                  {!! isset($HomeSectiontwo->button_name) ? $HomeSectiontwo->button_name : "Über uns"!!}
-                 </a>
+          
+
+            {{-- ================== --}}
+            @php
+            $gethttplink  =  strpos( $HomeSectiontwo->button_link, 'http') === 0;
+            @endphp
+
+            @if(isset($HomeSectiontwo->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$HomeSectiontwo->button_link}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3" target="_blank">
+                  {!! isset($HomeSectiontwo->button_text) ? $HomeSectiontwo->button_text : "Über uns"!!}
+                </a>
+              @else
+                  <a href="{{route($HomeSectiontwo->routeName->route_link)}}{{isset($HomeSectiontwo->hash_tag_id) ? '#'.$HomeSectiontwo->hash_tag_id : ''}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
+                    {!! isset($HomeSectiontwo->button_text) ? $HomeSectiontwo->button_text : "Über uns"!!} 
+                  </a>
+              @endif
+            @endif
+            {{-- ===================== --}}
+
+                 
               </div>
             </div>
           </div>
@@ -179,20 +213,16 @@
                             @else
                             <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
                             @endif --}}
-                 @php
-                    $httplink  = substr( $slider->link, 0, 4 ) === "http"
-                    
-                 @endphp
-             @if(isset($slider->link)) 
-                        @if( $httplink == true ) 
-                        
-                          <a href="{{$slider->link}}" target="_blank" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
-                       @else
-                        <a href="{{route($slider->link)}}{{isset($slider->custom_Link) ? '#'.$slider->custom_Link : ''}}"  class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
-                        
-                     
-                        @endif
-     @endif
+                              @php
+                                  $httplink  = substr( $slider->link, 0, 4 ) === "http"
+                              @endphp
+                              @if(isset($slider->link)) 
+                                @if( $httplink == true ) 
+                                  <a href="{{$slider->link}}" target="_blank" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
+                                @else
+                                <a href="{{route($slider->link)}}{{isset($slider->custom_Link) ? '#'.$slider->custom_Link : ''}}"  class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
+                                @endif
+                              @endif
                           </div>
                         </div>
                       </div>
@@ -237,8 +267,28 @@
                     <p class="lgText p2 pt-1"> {!! isset($HomeSecFive->title)  ? html_entity_decode($HomeSecFive->title) : "NA" !!}   </p>
                     <p> {!! isset($HomeSecFive->para1)  ? html_entity_decode($HomeSecFive->para1) : "NA" !!}   </p>
                     <p> {!! isset($HomeSecFive->para2)  ? html_entity_decode($HomeSecFive->para2) : "NA" !!}    </p>
-                    <a href="{!! isset($HomeSecFive->button_link)  ? html_entity_decode($HomeSecFive->button_link) : "#" !!}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
-                    {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!}  </a>
+
+                 
+                 
+                 
+            {{-- ================== --}}
+            @php
+            $gethttplink  =  strpos( $HomeSecFive->button_link, 'http') === 0;
+            @endphp
+
+            @if(isset($HomeSecFive->button_link)) 
+              @if( $gethttplink )
+                <a href="{{$HomeSecFive->button_link}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3" target="_blank">
+                  {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!} 
+                </a>
+              @else
+                  <a href="{{route($HomeSecFive->routeName->route_link)}}{{isset($HomeSecFive->hash_tag_id) ? '#'.$HomeSecFive->hash_tag_id : ''}}" 
+                    class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
+                    {!! isset($HomeSecFive->button_name)  ? html_entity_decode($HomeSecFive->button_name) : "Gleich beraten lassen" !!} 
+                  </a>
+              @endif
+            @endif
+            {{-- ===================== --}}
                   </div>
                 </div>
               </div>

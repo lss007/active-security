@@ -5,23 +5,21 @@
     <div class="sl-pagebody">
         <div class="sl-page-title">
           <h5>Add Home page Banner</h5>
-          <p>Add  Home page Banner Image or text  </p>
+          <p>Add  Home page Banner Image or text </p>
         </div><!-- sl-page-title -->
-   @if ($errors->any())
-       @foreach ($errors->all() as $error)
-    
-            <div class="alert alert-danger" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <div class="d-flex align-items-center justify-content-start">
-    
-                <i class="icon ion-ios-close alert-icon tx-24"></i>
-                <span><strong>Oh snap!</strong>  {{ucwords($error)}}.</span>
-              </div><!-- d-flex -->
-            </div><!-- alert -->
-       @endforeach
-    @endif
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                  <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="d-flex align-items-center justify-content-start">
+                      <i class="icon ion-ios-close alert-icon tx-24"></i>
+                      <span><strong>Oh snap!</strong>  {{ucwords($error)}}.</span>
+                    </div><!-- d-flex -->
+                  </div><!-- alert -->
+            @endforeach
+          @endif
 
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title">  
@@ -61,15 +59,55 @@
                     
                      </div>
                    </div><!-- col-4 -->
-                   <div class="col-lg-6">
+              <div class="col-lg-6">
+                    @if($showDiv)
                     <div class="form-group">
-                      <label class="form-control-label">Button link: </label>
-                      <input class="form-control" type="url" wire:model="button_link"  placeholder="https://www.example.com/  ">
+                      <label class="form-control-label"> Custom link : </label>
+                      <input class="form-control" type="url" wire:model="button_link"  placeholder="https://www.example.com/ ">
+                      @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                    </div>
+                      @else
+                    <div class="form-group">
+                      <label class="form-control-label">Page link: </label>
+                      <select class="form-control" data-placeholder="Choose Section" wire:model="button_link" aria-hidden="true" 
+                      onchange='Livewire.emit("selectSection", this.value)'
+                      >
+                         <option label="Choose Page link "></option>
+                       @if(isset($getRouteList))
+                       @foreach($getRouteList as $key => $val)
+                         <option value="{{$val->id}}"> {{$key+1}}) {{ucwords($val->route_name)}}</option>
+                         @endforeach
+                         {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                         @endif
+                       </select>
                       @error('button_link')<span class="text-danger"> {{$message}}</span>  @enderror  
                    
                     </div>
-                   </div><!-- col-4 -->
-            
+                    @endif
+                      
+                <div class="form-group">
+                  <input type="checkbox"  class=""   wire:click="$toggle('showDiv')">
+                  <label class="form-control-label">Would you like to add Custom link ?<span class="tx-danger">*</span></label>
+                </div>
+              </div><!-- col-4 -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-control-label">Hash Tag section <span class="tx-danger">*</span></label>
+                      <select class="form-control" data-placeholder="Choose Tag" wire:model="hashTag" aria-hidden="true">
+                        <option label="Choose Tag"></option>
+                            @if(isset($gethashtag))
+                            @foreach($gethashtag as $key => $val)
+                            <option value="{{$val->section_id}}"> {{$key+1}}) Section {{ucwords($val->section_id)}}</option>
+                            @endforeach
+                            {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                            @endif
+                      </select>
+                  @error('hashTag')<span class="text-danger"> {{$message}}</span>  @enderror  
+                </div>
+              </div>
+
+            <!-- col-12 -->
+            {{-- tablet --}}
             <div class="col-lg-12">
               <label class="form-control-label"> Banner Image For Desktop:   <span class="tx-danger"> *</span></label><br>
                 <div class="row croper_sec">
@@ -118,8 +156,7 @@
                   {{-- end large model  --}}                     
               </div>
             </div>
-                
-             {{-- tablet --}}
+            {{-- tablet --}}
              <div class="col-lg-12">
               <label class="form-control-label"> Banner Image For Tablet:   <span class="tx-danger"> *</span></label><br>
                 <div class="row croper_sec">
@@ -168,8 +205,7 @@
                   {{-- end large model  --}}                     
               </div>
             </div>
-             {{-- tablet  --}}
-
+            {{-- tablet  --}}
             {{-- For mobile  --}}
             <div class="col-lg-12">
               <label class="form-control-label"> Banner Image For Mobile:   <span class="tx-danger"> *</span></label><br>
@@ -220,44 +256,7 @@
               </div>
             </div>
             {{-- for mobile  --}}
-
-
-
-                  <!-- col-12 -->
-
-                    {{--  
-                       <!--   old model -->
-                          <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header pd-y-20 pd-x-25">
-                          
-                                  <h5 class="modal-title tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="modalLabel">Crop Image Before Upload</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">×</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body pd-25">
-                           
-                                  <div class="img-container">
-                                      <div class="row">
-                                          <div class="col-md-8">
-                                              <img src="" id="sample_image" />
-                                          </div>
-                                          <div class="col-md-4 ">
-                                              <div class="preview"></div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                  <button type="button" class="btn btn-primary" id="crop">Crop</button>
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                       --}}
+            <!-- col-12 -->
                </div><!-- row -->
      
                <div class="form-layout-footer">

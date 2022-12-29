@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 
+use App\Models\HashTag;
 use App\Models\HomeSectionFive;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -12,7 +14,16 @@ class AddHomeSection5 extends Component
     use WithFileUploads;
     public $heading ,$title ,$para1 ,$para2 ,$Image ,$buttonName ,$buttonLink;
     public $getHome5Img, $getHome5Img2, $getHome5Img3;
-    protected $listeners = ['getSection5Img' ,'getSection5Img2','getSection5Img3'];    
+    public $showCustom5Div ,$getRouteId ,$hashTag ;
+    protected $listeners = ['getSection5Img' ,'getSection5Img2','getSection5Img3','selectSection5'];    
+
+    public function showCustom5Div(){
+        $this->showCustom5Div = $this->showCustom5Div;
+    }
+    public function selectSection5($val){
+        $this->getRouteId =$val;
+        // dd( $this->getRouteId);
+    }
             public function getSection5Img($val){   
                     $this->getHome5Img = $val;
 
@@ -41,6 +52,10 @@ class AddHomeSection5 extends Component
 
     public function render()
     {
+        $this->gethashtag = HashTag::where('page_id', $this->getRouteId)->get();
+
+
+        $this->getRouteName = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
         return view('livewire.backend.pages.home.sections.add-home-section5')->layout('layouts.backend');
     }
 
@@ -78,7 +93,7 @@ class AddHomeSection5 extends Component
 
         public function saveHomeSection5(){
               // dd($this->all());
-              $this->validate();
+            //   $this->validate();
               if($this->getHome5Img)  
               {
                       // ===========  working ans stora at storage path   =========== 
@@ -135,6 +150,7 @@ class AddHomeSection5 extends Component
                       'image' =>        $imageName  ?? Null,
                       'tablet_img' =>   $imageName2  ?? Null,
                       'mobile_img' =>   $imageName3  ?? Null,
+                      'hash_tag_id' => $hashTag  ?? Null,
 
                     ]);
   

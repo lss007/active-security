@@ -3,7 +3,8 @@
 
     <div class="sl-pagebody">
         <div class="sl-page-title">
-          <h5> All Hash Tags
+          <h5> Manage All Hash Tags
+        
             <span class="float-right"> Total : {{isset($viewallhashtag) ?$viewallhashtag->total()  : "NA" }}</span>
           </h5>
     
@@ -39,32 +40,32 @@
             </thead>
             <tbody>
               @if(isset($viewallhashtag))
-              @foreach($viewallhashtag as $banner)
+              @foreach($viewallhashtag as $value)
               <tr>
                 <td class="text-center">
                   {{  $viewallhashtag->firstItem() + $loop->index  }} 
              
                     </td>
-                    <td >  {{isset($banner->route_name )? Str::limit($banner->route_name,20,$end='....') : "NA"}}</td>
+                    <td >  {{isset($value->route_name )? Str::limit($value->route_name,20,$end='....') : "NA"}}</td>
                 <td > 
-                  {{Str::limit($banner->section_id,20,$end='....')}}
+                  {{Str::limit($value->section_id,20,$end='....')}}
                 </td>
 
 
           
           <td class="text-center">  
-            {{-- <a href="{{route('edit_all_banner',$banner->id)}}" class="btn btn-sm btn-info" title="edit" >
+            {{-- <a href="{{route('edit_Allhashtag',$value->id)}}" class="btn btn-sm btn-info" title="edit" >
               <i class="fa fa-edit"></i>
             </a> --}}
        
-            @if($banner->status == 1 )
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$banner->id}})">
+            @if($value->status == 1 )
+            <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$value->id}})">
             <i class="fa fa-thumbs-down"></i>
             @else
-              <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$banner->id}})">
+              <a href="javascript:void(0)" class="btn btn-sm btn-info mx-2" title="Active" wire:click.prevent="active({{$value->id}})">
               <i class="fa fa-thumbs-up"></i>
             @endif
-          <a href="javascript:void(0)"  wire:click.prevent="delete({{$banner->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
+          <a href="javascript:void(0)"  wire:click.prevent="delete({{$value->id}})" class="btn btn-sm btn-danger" title="delete"  onclick="confirm('Are you sure you want to delete this?') || event.stopImmediatePropagation()">
             <i class="fa fa-trash"></i></a>
 
             </td>
@@ -120,7 +121,7 @@
                 
                  
                 </td>
-              <td>  {{Str::limit($banner->title,50,$end='....')}}</td>
+              <td>  {{Str::limit($value->title,50,$end='....')}}</td>
 
               <td>
 

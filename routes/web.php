@@ -43,6 +43,7 @@ use App\Http\Livewire\Backend\Pages\Footer\Social\EditSocialMedia;
 use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialCategory;
 use App\Http\Livewire\Backend\Pages\Footer\Social\ViewSocialMedia;
 use App\Http\Livewire\Backend\Pages\HashTag\AddHashTag;
+use App\Http\Livewire\Backend\Pages\HashTag\EditHashTag;
 use App\Http\Livewire\Backend\Pages\HashTag\ViewHashTag;
 use App\Http\Livewire\Backend\Pages\Home\Clients\AddHomeClients;
 use App\Http\Livewire\Backend\Pages\Home\Clients\EditHomeClients;
@@ -325,6 +326,9 @@ Route::group(['prefix' =>'social'], function () {
     // ViewHashTag
     Route::group(['prefix' =>'hashTag'], function () {
         Route::get('/view', ViewHashTag::class)->name('view_Allhashtag');
+        Route::get('/edit/{id}', EditHashTag::class)->name('edit_Allhashtag');
+
+        
         Route::get('/add', AddHashTag::class)->name('add_Allhashtag');
 
         

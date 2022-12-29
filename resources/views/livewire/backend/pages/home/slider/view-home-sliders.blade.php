@@ -96,26 +96,20 @@
                       </span>
                     </p>
                     <p class="mg-b-5">
-                      @php
+                  @php
                       $httplink  =  strpos( $slider->link, 'http') === 0;
-                 
                    @endphp
   
-                          @if(isset($slider->link)) 
-                              @if( $httplink )
-                         
+                    @if(isset($slider->link)) 
+                        @if( $httplink )
                           <span class="text-primary"> Custom Link : </span>
-                          
                           <a href="{{$slider->link}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>
-                          
-                          @else
-
+                        @else
                           <span class="text-primary"> Route Link : </span>
                             <a href="{{route($slider->link,'#nextSection')}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!} </a>
-                      @endif
+                        @endif
 
-                       
-                          @endif
+                     @endif
               {{-- @if(isset($slider->link))
               <span class="text-primary"> Route Link : </span>
                <a href="{{route($slider->link)}}" class="btn btnPrimary2">{!! isset($slider->button_text) ? $slider->button_text : "mehr erfahren"!!}</a>

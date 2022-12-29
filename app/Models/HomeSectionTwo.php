@@ -11,4 +11,7 @@ class HomeSectionTwo extends Model
     use SoftDeletes;
     protected $guarded =[];
 
+    public function routeName(){
+        return  $this->belongsTo(RouteNameList::class , 'button_link' ,'id');
+     }
 }

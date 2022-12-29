@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Livewire\Backend\Pages\Banner;
+
+use App\Models\HashTag;
 use App\Models\HomeBanner ;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -9,7 +12,8 @@ class AddHomeBanner extends Component
 {
     use WithFileUploads;
     public $Heading ,$Title,$bannerImage ,$buttonText ,$button_link,$BannerParagaph;
-    public $cropedImg ,$cropedImg2,$cropedImg3;
+    public $cropedImg ,$cropedImg2,$cropedImg3 ,$showDiv;
+    public $getRouteList ,$getRouteId ,$hashTag;
 
     protected $rules = [
         'Title'         => 'required',
@@ -24,7 +28,7 @@ class AddHomeBanner extends Component
         'cropedImg2.required' => 'The Tablet Image  field is required.',
         'cropedImg3.required' => 'The Mobile Image  field is required.',
       ];
-    protected $listeners = ['getCropImg' ,'getCropImg2' ,'getCropImg3'];
+    protected $listeners = ['getCropImg' ,'getCropImg2' ,'getCropImg3' ,'selectSection'];
 
     public function getCropImg($val){       
                 $this->cropedImg = $val;
@@ -44,12 +48,20 @@ class AddHomeBanner extends Component
             $this->BannerParagaph = '';
             $this->cropedImg = '';
             $this->cropedImg2 = '';
+            $this->button_link ='';
             $this->cropedImg3 = '';
         }
 
-    public function saveHomeBanner(){
-           
-            $this->validate();
+    public function showDiv()
+        {
+            $this->showDiv =! $this->showDiv;
+        }
+
+    public function selectSection($val){
+            $this->getRouteId = $val;
+          }
+    public function saveHomeBanner(){ 
+            // $this->validate();
         if($this->cropedImg)  
             {
                 // $this->validate([
@@ -71,7 +83,6 @@ class AddHomeBanner extends Component
             }
         if($this->cropedImg2)  
             {
-           
              // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath2 = Storage::path('public/Home-banner/');
@@ -84,11 +95,9 @@ class AddHomeBanner extends Component
                             $imageFullPath2 = $folderPath2.$imageName2;
                             file_put_contents($imageFullPath2, $image_base642);                
             // ===========  working ans stora at storage path   =========== 
-
             }
         if($this->cropedImg3)  
             {
-        
              // ===========  working ans stora at storage path   =========== 
                             // $folderPath = public_path('upload/');
                             $folderPath3 = Storage::path('public/Home-banner/');
@@ -104,16 +113,16 @@ class AddHomeBanner extends Component
 
             }
         HomeBanner::create([
-            'title' =>    $this->Title,
-            'heading' =>    $this->Heading,
-            'banner_paragaph' =>    $this->BannerParagaph,
-            'banner_image' =>       $imageName  ?? Null,
-            'tablet_banner' =>       $imageName2  ?? Null,
-            'mobile_banner' =>       $imageName3  ?? Null,
+            'title' =>          $this->Title,
+            'heading' =>        $this->Heading,
+            'banner_paragaph' =>$this->BannerParagaph,
+            'banner_image' =>   $imageName  ?? Null,
+            'tablet_banner' =>  $imageName2  ?? Null,
+            'mobile_banner' =>  $imageName3  ?? Null,
             'button_text' =>    $buttonText  ?? Null,
             'button_link' =>    $this->button_link,
-
-            
+            'hash_tag_id' =>    $this->hashTag ?? Null,
+            'status'  => 0,
             ]);
             $notification = array(
                 'message' => 'Home Banner published successfully',
@@ -125,6 +134,10 @@ class AddHomeBanner extends Component
     }
     public function render()
     {
+        $this->gethashtag = HashTag::where('page_id', $this->getRouteId)->get();
+        
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.banner.add-home-banner')->layout('layouts.backend');
     }
 

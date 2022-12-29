@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 
+use App\Models\HashTag;
 use Livewire\Component;
 use App\Models\HomeSectionTwo;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
@@ -13,8 +15,8 @@ class EditHomeSection2 extends Component
 
     public $postId, $heading ,$title ,$para1 ,$para2 ,$Image ,$buttonName ,$buttonLink;
     public $newImg  ,$tabletImg ,$mobileImg ,$editHomeSecImg ,$editHomeSecImg2 ,$editHomeSecImg3;
-
-    protected $listeners = ['editSection2Img' ,'editSection2Img2' ,'editSection2Img3'];
+    public $showcustomDiv ,$getRouteId, $gethashtag ,$getRouteName ,$hashTag;
+    protected $listeners = ['editSection2Img' ,'editSection2Img2' ,'editSection2Img3' ,'selectSection2'];
 
         public function editSection2Img($val){   
                 $this->editHomeSecImg = $val;
@@ -46,6 +48,9 @@ class EditHomeSection2 extends Component
                         $this->mobileImg = $this->editHomeSec2->mobile_img;
                         $this->buttonName = $this->editHomeSec2->button_name;
                         $this->buttonLink = $this->editHomeSec2->button_link;
+                        $this->hashTag = $this->editHomeSec2->hash_tag_id;
+
+                        
                     }
                     else {
                         $notification = array(
@@ -67,8 +72,27 @@ class EditHomeSection2 extends Component
          }
     }
 
+    
+    public function showcustomDiv()
+        {
+            $this->showcustomDiv =! $this->showcustomDiv;
+        }
+
+
+    public function selectSection2($val){
+            $this->getRouteId = $val;
+       
+          }
     public function render()
     {
+        if($this->getRouteId){
+
+            $this->gethashtag = HashTag::where('page_id', $this->getRouteId)->get();
+        }else{
+            $this->gethashtag = HashTag::where('page_id', $this->buttonLink)->get();
+
+        }
+        $this->getRouteName = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
         return view('livewire.backend.pages.home.sections.edit-home-section2')->layout('layouts.backend');
     }
 
@@ -93,8 +117,8 @@ class EditHomeSection2 extends Component
         $this->buttonLink = '';
     }
         public function updateHomeSection2(){
-            // dd($this->all());
-            // $this->validate();
+            // dd( $this->hashTag);
+            $this->validate();
             if($this->editHomeSecImg || $this->editHomeSecImg2 || $this->editHomeSecImg3){
             if($this->editHomeSecImg)  
             {
@@ -192,6 +216,7 @@ class EditHomeSection2 extends Component
                     'para2' =>     $this->para2 ,
                     'button_name' =>    trim($this->buttonName),
                     'button_link' =>  trim( $this->buttonLink),
+                    'hash_tag_id' => $this->hashTag,
                 
                   ]);
 

@@ -61,15 +61,54 @@
                </div>
                </div><!-- col-4 -->
                <div class="col-lg-6">
+                @if($showCustom5Div)
+                <div class="form-group">
+                  <label class="form-control-label"> Custom link : </label>
+                  <input class="form-control" type="url" wire:model="buttonLink"  placeholder="https://www.example.com/ ">
+                  @error('buttonLink')<span class="text-danger"> {{$message}}</span>  @enderror  
+                </div>
+                @else
                 <div class="form-group">
                   <label class="form-control-label"> Button Link : <span class="tx-danger">*</span></label>
-                  <input class="form-control" type="url" wire:model="buttonLink"  placeholder="https://www.example.com/  ">
+                  {{-- <input class="form-control" type="url" wire:model="buttonLink"  placeholder="https://www.example.com/  "> --}}
+                  <select class="form-control" data-placeholder="Choose Section" wire:model="buttonLink" aria-hidden="true" 
+                  onchange='Livewire.emit("selectSection5", this.value)'
+                  >
+                       <option label="Choose Page link "></option>
+                     @if(isset($getRouteName))
+                     @foreach($getRouteName as $key => $val)
+                       <option value="{{$val->id}}"> {{$key+1}}) {{ucwords($val->route_name)}}</option>
+                       @endforeach
+                       {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                       @endif
+                     </select>
                   @error('buttonLink')<span class="text-danger"> {{$message}}</span>  @enderror  
                 
               </div>
+              @endif
+              <div class="form-group">
+                <input type="checkbox"  class=""   wire:click="$toggle('showCustom5Div')">
+                <label class="form-control-label">Would you like to add Custom link ?<span class="tx-danger">*</span></label>
+              </div>
               </div><!-- col-4 -->
-             
-                
+             @if(!$showCustom5Div)
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="form-control-label">Hash Tag section <span class="tx-danger">*</span></label>
+                      <select class="form-control" data-placeholder="Choose Tag" wire:model="hashTag" aria-hidden="true">
+                        <option label="Choose Tag"></option>
+                            @if(isset($gethashtag))
+                            @foreach($gethashtag as $key => $val)
+                            <option value="{{$val->section_id}}"> {{$key+1}}) Section {{ucwords($val->section_id)}}</option>
+                            @endforeach
+                            {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                            @endif
+                      </select>
+                  @error('hashTag')<span class="text-danger"> {{$message}}</span>  @enderror  
+                </div>
+              </div>   
+              @else
+              @endif  
               <div class="col-lg-4">
              
                 <label class="form-control-label"> Main Image : <span class="tx-danger">*</span></label><br>

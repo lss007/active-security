@@ -98,11 +98,26 @@
                 {{isset($banner->button_text) ? $banner->button_text : "NA"}}
               </span>
             </p>
-            <p class="mg-b-5">
-              <span class="text-primary"> Button Link : </span>
-              <a href="{{isset($banner->button_link) ? $banner->button_link : "https://www.example.com/"}}">
-              Button link</a>
-            </p>
+         
+
+
+            @php
+            $httplink  =  strpos( $banner->button_link, 'http') === 0;
+         @endphp
+
+          @if(isset($banner->button_link)) 
+              @if( $httplink )
+              <span class="text-primary"> Custom Link : </span>
+                <a href="{{$banner->button_link}}" class="">
+                  {!! isset($banner->button_text) ? $banner->button_text : "Jetzt mehr erfahren"!!}
+                </a>
+              @else
+              <span class="text-primary"> Route Link : </span>
+                  <a href="{{route($banner->routeName->route_link,'#nextSection')}}" class="">
+                    {!! isset($banner->button_text) ? $banner->button_text : "Jetzt mehr erfahren"!!} 
+                  </a>
+              @endif
+            @endif
             <div class="row">
               <div class="col-md-4">
                 <span class="text-primary">Desktop Banner Image :</span>

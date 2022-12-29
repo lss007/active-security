@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Backend\Pages\Home\Sections;
 
+use App\Models\HashTag;
 use App\Models\HomeSectionTwo;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -13,8 +15,17 @@ class AddHomeSection2 extends Component
 
     public $addHomeSecImg, $addHomeSecImg2, $addHomeSecImg3;
 
-    protected $listeners = ['getSection2Img' ,'getSection2Img2' ,'getSection2Img3'];
+    public $showcustomDiv ,$getRouteName, $gethashtag ,$getsection;
+
+    protected $listeners = ['getSection2Img' ,'getSection2Img2' ,'getSection2Img3' ,'selectSection2'];
         
+    public function showcustomDiv(){
+        $this->showcustomDiv != $this->showcustomDiv;
+    } 
+    public function selectSection2($val){
+        $this->getsection = $val;
+        // dd($this->getValue);
+    }
     public function getSection2Img($val){   
                 $this->addHomeSecImg = $val;
             }
@@ -40,6 +51,9 @@ class AddHomeSection2 extends Component
 
     public function render()
         {
+            $this->gethashtag = HashTag::where('page_id', $this->getsection)->get();
+
+            $this->getRouteName = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
             return view('livewire.backend.pages.home.sections.add-home-section2')->layout('layouts.backend');
         }
 
@@ -72,7 +86,7 @@ class AddHomeSection2 extends Component
             }
     public function storeHomeSection2(){
             // dd($this->all());
-            // $this->validate();
+            $this->validate();
             if($this->addHomeSecImg)  
             {
             // ===========  working ans stora at storage path   =========== 

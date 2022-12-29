@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Backend\Pages\Banner;
 
+use App\Models\HashTag;
 use App\Models\HomeBanner;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -12,6 +14,7 @@ class EditHomeBanner extends Component
     use WithFileUploads;
     public $Heading ,$Title,$bannerImage ,$tabletBanner ,$mobileBanner ,$buttonText ,$button_link,$BannerParagaph ;
     public $new_Image ,$homeBannerId ,$editcropedImg ,$editcropedImg2,$editcropedImg3; 
+    public $updateRouteId, $showDiv ,$getRouteId ,$hashTag;
     public function mount($id){
             $this->homeBannerId= $id;
             $this->editHomeBanner = HomeBanner::where('id', $this->homeBannerId)->first();
@@ -24,6 +27,9 @@ class EditHomeBanner extends Component
                 $this->mobileBanner = $this->editHomeBanner->mobile_banner;
                 $this->buttonText = $this->editHomeBanner->button_text	;
                 $this->button_link = $this->editHomeBanner->button_link;
+                $this->hashTag = $this->editHomeBanner->hash_tag_id;
+
+            
             }
             else {
                 $notification = array(
@@ -37,7 +43,7 @@ class EditHomeBanner extends Component
 
  
 
- protected $listeners = ['editHomeBannerImg' ,'editHomeBannerImg2','editHomeBannerImg3'];
+ protected $listeners = ['editHomeBannerImg' ,'editHomeBannerImg2','editHomeBannerImg3','updateSection'];
  
         public function editHomeBannerImg($val){       
             $this->editcropedImg = $val;
@@ -52,9 +58,28 @@ class EditHomeBanner extends Component
         // dd($this->cropedImg);
         }
 
+        public function showDiv()
+        {
+            $this->showDiv =! $this->showDiv;
+        }
 
+    public function updateSection($val){
+            $this->updateRouteId = $val;
+            // dd(  $this->updateRouteId );
+          }
     public function render()
     {
+        if($this->updateRouteId ){
+
+            $this->gethashtag = HashTag::where('page_id', $this->updateRouteId)->get();  
+        }else{
+            
+            $this->gethashtag = HashTag::where('page_id', $this->button_link)->get();  
+
+        }
+        
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.banner.edit-home-banner')->layout('layouts.backend');
     }
     protected $rules = [
