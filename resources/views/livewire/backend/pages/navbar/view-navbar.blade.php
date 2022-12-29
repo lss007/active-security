@@ -28,7 +28,7 @@
             </a>
         </h6>
         <div class="table-responsive">
-          <table class="table table-hover table-bordered mg-b-0">
+          <table class="table table-hover table-bordered mg-b-0"  wire:sortable="updateTaskOrder">
             <thead class="bg-info">
                 <tr>
                   {{-- <th class="wd-15p">Title </th>--}}
@@ -42,7 +42,7 @@
               <tbody>
           @if (isset($viewSiteNavbar) && count($viewSiteNavbar) > 0)
           @foreach($viewSiteNavbar as $keys => $value)
-    <tr>
+      <tr wire:sortable.item="{{ $value->id }}" wire:key="task-{{ $value->id }}">
             <td>           
                <input type="checkbox" wire:model="selectedUser" value="{{ $value->id }}">
                {{  $keys+1}}</td>
@@ -183,7 +183,6 @@
 
       <!-- modal -->
 </div>
-
 
   
 {{-- ================== --}}

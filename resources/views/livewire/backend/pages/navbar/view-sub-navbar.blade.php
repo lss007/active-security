@@ -17,16 +17,17 @@
              </div>
           </div><!-- col-4 -->
           <h6 class="card-body-title"> 
-            <button wire:click.prevent="deleteSE" onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
+            <button wire:click.prevent="deleteSE"
+            onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
             class="btn btn-danger active mg-b-10">
             {{__('dashboard.Delete selected')}}
-            </button>
+    </button>
             <a href="{{route('add_Subnavbar_list')}}" class="btn btn-teal active mg-b-10" >
             {{__('dashboard.Add Submenu')}}
             </a>
         </h6>
         <div class="table-responsive">
-          <table class="table table-hover table-bordered mg-b-0">
+          <table class="table table-hover table-bordered mg-b-0" wire:sortable="updateTaskOrder">
             <thead class="bg-info">
                 <tr>
                   {{-- <th class="wd-15p">Title </th>--}}
@@ -40,7 +41,7 @@
               <tbody>
           @if (isset($viewSubLink) && count($viewSubLink) > 0)
           @foreach($viewSubLink as $keys => $value)
-    <tr>
+    <tr wire:sortable.item="{{ $value->id }}" wire:key="task-{{ $value->id }}">
             <td>           
                <input type="checkbox" wire:model="selectedsub" value="{{ $value->id }}">
                {{  $keys+1}}</td>

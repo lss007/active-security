@@ -18,13 +18,20 @@ class ViewNavbar extends Component
     }
     public function render()
     {
-        $this->trashdata = Navbar::onlyTrashed()->get();
-      $this->viewSiteNavbar =  Navbar::Where('route_name', 'like', '%'.trim($this->search).'%')->OrderBy('route_name')->paginate(10);
+        $this->trashdata = Navbar::onlyTrashed()->orderBy('ordering')->get();
+      $this->viewSiteNavbar =  Navbar::orderBy('ordering')->Where('route_name', 'like', '%'.trim($this->search).'%')->OrderBy('route_name')->paginate(10);
         return view('livewire.backend.pages.navbar.view-navbar',[
             'viewSiteNavbar' => $this->viewSiteNavbar,
         ])->layout('layouts.backend');
         
     }
+
+      public function updateTaskOrder($tasks){
+
+              foreach ($tasks as $task) {
+                Navbar::find($task['value'])->update(['ordering' => $task['order']]);
+              }
+    } 
 
 
     public function deleteSE(){
