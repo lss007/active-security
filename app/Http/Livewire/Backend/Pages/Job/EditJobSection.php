@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Backend\Pages\Job;
 
+use App\Models\HashTag;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\JobSection;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,8 +17,17 @@ class EditJobSection extends Component
     public $newimage ,$tabletBanner,$mobileBanner;
 
     public $CropedImg, $CropedImg2,$CropedImg3;
-    protected $listeners = ['updateJobImg' ,'updateJobImg2','updateJobImg3'];
+    public $showDiv ,$routeId ,$gethashtag ,$getRouteList ,$hashTag;
+    protected $listeners = ['updateJobImg' ,'updateJobImg2','updateJobImg3' ,'selectSection'];
         
+    public function showDiv(){
+        $this->showDiv =! $this->showDiv;
+    }
+
+    public function selectSection($val){
+        $this->routeId = $val;
+        // dd($this->routeId);
+    }
         public function updateJobImg($val)
         {       
             $this->CropedImg = $val;
@@ -62,6 +73,10 @@ class EditJobSection extends Component
     }
     public function render()
     {
+
+        $this->gethashtag = HashTag::where('page_id', $this->routeId)->get();
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.job.edit-job-section')->layout('layouts.backend');
     }
         protected $rules = [
@@ -176,6 +191,8 @@ class EditJobSection extends Component
                         'para2' =>         $this->para2,
                         'button_name' =>   $this->button_name,
                         'link' =>          $this->button_link,
+                        'hash_tag_id' => $this->hashTag,
+
                       
                     ]);
                     $notification = array(

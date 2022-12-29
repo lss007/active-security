@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Backend\Pages\Job;
 
+use App\Models\HashTag;
 use App\Models\JobSection;
+use App\Models\RouteNameList;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -11,8 +13,17 @@ class AddJobSection extends Component
     use WithFileUploads;
     public $heading,$title,$para1,$title2,$para2,$image,$button_name,$button_link;
     public $jobCropedImg, $jobCropedImg2,$jobCropedImg3;
-    protected $listeners = ['CropJobImg' ,'CropJobImg2','CropJobImg3'];
+    public $showDiv ,$routeId ,$gethashtag ,$getRouteList ,$hashTag;
+    protected $listeners = ['CropJobImg' ,'CropJobImg2','CropJobImg3','selectSection'];
         
+    public function showDiv(){
+        $this->showDiv =! $this->showDiv;
+    }
+
+    public function selectSection($val){
+        $this->routeId = $val;
+        // dd($this->routeId);
+    }
         public function CropJobImg($val)
         {       
             $this->jobCropedImg = $val;
@@ -42,6 +53,10 @@ class AddJobSection extends Component
     }
     public function render()
     {
+        $this->gethashtag = HashTag::where('page_id', $this->routeId)->get();
+        
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.job.add-job-section')->layout('layouts.backend');
     }
         protected $rules = [
@@ -76,7 +91,7 @@ class AddJobSection extends Component
         
                 }
   
-                public function storejobsection(){
+        public function storejobsection(){
                     // $this->validate();
                     if($this->jobCropedImg)  {
                         // ===========  working ans stora at storage path   =========== 
@@ -121,16 +136,18 @@ class AddJobSection extends Component
                     // ===========  working ans stora at storage path   =========== 
                 }
                         JobSection::create([
-                        'heading' =>    $this->heading,
-                        'title' =>      $this->title,
-                        'para1' =>      $this->para1,
-                        'title2' =>      $this->title2,
-                        'para2' =>      $this->para2,
-                        'button_name' =>      $this->button_name,
-                        'link' => $this->button_link,
-                        'image' => $imageName ,
-                        'tablet_banner' => $imageName2 ,
-                        'mobile_banner' => $imageName3 ,
+                            'heading' =>    $this->heading,
+                            'title' =>      $this->title,
+                            'para1' =>      $this->para1,
+                            'title2' =>      $this->title2,
+                            'para2' =>      $this->para2,
+                            'button_name' =>      $this->button_name,
+                            'link' => $this->button_link,
+                            'image' => $imageName  ?? NULL,
+                            'tablet_banner' => $imageName2  ?? NULL,
+                            'mobile_banner' => $imageName3 ?? NULL,
+                            'hash_tag_id' => $this->hashTag,
+
                         ]);
 
                 $notification = array(

@@ -96,7 +96,27 @@
                     {!!isset($getJobsec->para2) ? $getJobsec->para2 : "NA"!!}
                   </p>
               
-                  <a href="{{isset($getJobsec->link) ? $getJobsec->link :""}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">{{isset($getJobsec->button_name) ? $getJobsec->button_name :"Hier gehts zu allen offenen Stellen"}}</a>
+                  {{-- <a href="{{isset($getJobsec->link) ? $getJobsec->link :""}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3">{{isset($getJobsec->button_name) ? $getJobsec->button_name :"Hier gehts zu allen offenen Stellen"}}</a> --}}
+              
+                        {{-- ================== --}}
+      @php
+            $gethttplink  =  strpos( $getJobsec->link, 'http') === 0;
+      @endphp
+
+      @if(isset($getJobsec->link)) 
+        @if( $gethttplink )
+          <a href="{{$getJobsec->link}}" class="btn btnPrimary arrowBtn mt-1 mt-sm-3" target="_blank">
+            {!! isset($getJobsec->button_name)  ? html_entity_decode($getJobsec->button_name) : "Gleich beraten lassen" !!} 
+          </a>
+        @else
+            <a href="{{route($getJobsec->routeName->route_link)}}{{isset($getJobsec->hash_tag_id) ? '#'.$getJobsec->hash_tag_id : ''}}" 
+              class="btn btnPrimary arrowBtn mt-1 mt-sm-3">
+              {!! isset($getJobsec->button_name)  ? html_entity_decode($getJobsec->button_name) : "Gleich beraten lassen" !!} 
+            </a>
+        @endif
+        @else
+      @endif
+      {{-- ===================== --}}
                 </div>
               </div>
             </div>
