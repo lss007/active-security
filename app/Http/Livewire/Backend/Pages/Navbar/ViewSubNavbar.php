@@ -20,12 +20,20 @@ class ViewSubNavbar extends Component
     public function render()
     {
 
-        $this->trashdata = SubNavbar::onlyTrashed()->get();
-        $this->viewSubLink =  SubNavbar::Where('route_name', 'like', '%'.trim($this->search).'%')->OrderBy('route_name')->paginate(10);
+        $this->trashdata = SubNavbar::onlyTrashed()->orderBy('ordering')->get();
+        $this->viewSubLink =  SubNavbar::orderBy('ordering')->Where('route_name', 'like', '%'.trim($this->search).'%')->OrderBy('route_name')->paginate(10);
         return view('livewire.backend.pages.navbar.view-sub-navbar',[
             'viewSubLink' => $this->viewSubLink,
         ])->layout('layouts.backend');
     }
+
+    public function updateTaskOrder($tasks){
+
+              foreach ($tasks as $task) {
+                SubNavbar::find($task['value'])->update(['ordering' => $task['order']]);
+              }
+    } 
+
 
     public function  inactive($id){
         SubNavbar::where('id', $id)->update([
