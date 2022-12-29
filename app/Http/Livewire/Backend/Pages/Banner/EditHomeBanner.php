@@ -203,6 +203,8 @@ class EditHomeBanner extends Component
                         'banner_paragaph' =>    $this->BannerParagaph,
                         'button_text' =>    $buttonText  ?? Null,
                         'button_link' =>    $this->button_link,
+            'hash_tag_id' =>    $this->hashTag ?? Null,
+
 
                 ]);
                     $notification = array(
