@@ -11,7 +11,7 @@
          $subnavbars =  DB::table('sub_navbars')
          ->join('route_name_lists','sub_navbars.route_link' ,'route_name_lists.id')
          ->select('sub_navbars.*','route_name_lists.route_link')
-         ->OrderBy('route_name')
+         ->OrderBy('ordering')
          ->where('sub_navbars.status', 1)
          ->get();
 
