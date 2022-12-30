@@ -40,22 +40,30 @@
                         @error('name')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>
                  </div><!-- col-4 -->
-                 {{-- <div class="col-lg-6">
+                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label">Select Route :<span class="tx-danger">*</span></label>
                         <select class="form-control" data-placeholder="Choose Section" wire:model="link" aria-hidden="true">
                             <option label="Choose Route Name"></option>
                           @if(isset($getRouteNameList))
-                          @foreach($getRouteNameList as $val)
-                            <option value="{{$val->id}}">{{ucwords($val->route_name)}}</option>
+                          @foreach($getRouteNameList as $key => $val)
+                            <option value="{{$val->id}}">{{$key+1}}) {{ucwords($val->route_name)}}</option>
                             @endforeach
                      
                             @endif
                           </select>
                         @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
                     </div>
-                 </div><!-- col-4 --> --}}
-           
+                 </div><!-- col-4 -->
+                 <div class="col-lg-6">
+                  <div class="form-group">
+                      <label class="form-control-label">Order no :<span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" wire:model="order"  placeholder="Order no">
+                      @error('order')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      <span class="text-danger">Last oder number is :
+                    {{  $this->lastOrder->ordering}} </span>
+                  </div>
+               </div><!-- col-4 -->
                
         
               

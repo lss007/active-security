@@ -17,7 +17,13 @@
         $socialLinks =     DB::table('social_links')->where('status',1)->limit(5)->get();
         $footerlogos =  DB::table('footer_logos')->where('name','=','footer')->where('status',1)->limit(8)->get();
      
-        $footerMenu =  DB::table('navbars')->orderBy('ordering')->whereIn('ordering', [6,7,8])->where('status',1)->get();
+        $footerMenu =  DB::table('navbars')
+        ->join('route_name_lists','navbars.route_link' ,'route_name_lists.id')
+         ->select('navbars.*','route_name_lists.route_link')
+         ->OrderBy('ordering')
+         ->where('navbars.status', 1)
+         ->whereIn('ordering', [6,7,8])
+         ->get();
   
       
 
@@ -82,14 +88,12 @@
               <ul class="footerLinks">
                 @if(isset($footerMenu))
                   @foreach($footerMenu as $val )
-                  
-            
               @if($val->ordering == 6 )
-                <li><a href="{{route('AgbPage')}}">{{ $val->route_name }}</a></li>
+                <li><a href="{{isset($val->route_link) ? route($val->route_link) : "#"}}">{{ $val->route_name }}</a></li>
                 @elseif($val->ordering == 7 ) 
-                <li><a href="{{route('ImpressumPage')}}">{{ $val->route_name }}</a></li>
+                <li><a href="{{isset($val->route_link) ? route($val->route_link) : "#"}}">{{ $val->route_name }}</a></li>
                 @elseif($val->ordering == 8 )
-                <li><a href="{{route('DatenschutzPage')}}">{{ $val->route_name }}</a></li>
+                <li><a href="{{isset($val->route_link) ? route($val->route_link) : "#"}}">{{ $val->route_name }}</a></li>
                 @else
            @endif
                 @endforeach

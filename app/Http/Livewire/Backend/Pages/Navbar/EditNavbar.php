@@ -8,18 +8,25 @@ use Livewire\Component;
 
 class EditNavbar extends Component
 {
-    public $getRouteNameList,$editNavRoute, $name, $link;
+    public $getRouteNameList,$editNavRoute, $name, $link ,$order ,$lastOrder;
     public function render()
     {
-        $this->getRouteNameList = RouteNameList::get();
+        $this->lastOrder = Navbar::orderBy('ordering','desc')->first();
+
+        $this->getRouteNameList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.navbar.edit-navbar')->layout('layouts.backend');
     }
     public function mount($id){
         $this->routeId= $id;
         $this->editNavRoute = Navbar::where('id', $this->routeId)->first();
+               
+              
         if( $this->editNavRoute != Null){
             $this->name =  $this->editNavRoute->route_name; 
             $this->link =  $this->editNavRoute->route_link; 
+       
+
         }
         else {
             $notification = array(
@@ -31,27 +38,33 @@ class EditNavbar extends Component
      }
             protected $rules = [
                 'name'         => 'required',
-                // 'link'       => 'required|unique:navbars,route_link,',
+                'link'       => 'required|unique:navbars,route_link,',
+                'order'       => 'required|unique:navbars,ordering',
+
 
             ];
             protected $messages = [
                 'name.required' => 'Route Name field is required.',
-                // 'link.required' => 'Route Link  field is required.',
-                // 'link.unique' => 'Route link has already been taken.',
+                'link.required' => 'Route Link  field is required.',
+                'link.unique' => 'Route link has already been taken.',
 
             ]; 
 
             private function resetInputFields(){
                 $this->name = '';
-                // $this->link = '';
+                $this->link = '';
+                $this->order = '';
+
 
 
             }
         public function updateRouteName(){
+            // dd( $this->link);
             $this->validate();
             Navbar::where('id' ,$this->routeId)->update([
                 'route_name' =>     $this->name ,
-                // 'route_link' =>    $this->link,
+                'route_link' =>    $this->link,
+                'ordering' =>  $this->order,
                 ]);
 
                 $notification = array(

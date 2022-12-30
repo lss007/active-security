@@ -27,6 +27,9 @@
             {{__('dashboard.Add menu item')}}
             </a>
         </h6>
+        <h5>Last  Serial Order Number is  <span class=" badge badge-info">
+          {{isset($this->lastOrder->ordering) ? $this->lastOrder->ordering : ''}}</span> Next will <span class=" badge badge-danger">
+            {{isset($this->lastOrder->ordering) ? $this->lastOrder->ordering+1 : ''}}</span> </h5>
         <div class="table-responsive">
           <table class="table table-hover table-bordered mg-b-0"  wire:sortable="updateTaskOrder">
             <thead class="bg-info">

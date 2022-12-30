@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 class ViewNavbar extends Component
 {
     use WithPagination;
-    private $viewSiteNavbar;
+    private $viewSiteNavbar ,$lastOrder;
     public   $search='' ,$selectedUser  = [] ,$trashdata ;
     protected $paginationTheme = 'bootstrap';
     public function updatingSearch()
@@ -18,6 +18,9 @@ class ViewNavbar extends Component
     }
     public function render()
     {
+        
+        $this->lastOrder = Navbar::orderBy('ordering','desc')->first();
+
         $this->trashdata = Navbar::onlyTrashed()->orderBy('ordering','ASC')->get();
       $this->viewSiteNavbar =  Navbar::orderBy('ordering')->Where('route_name', 'like', '%'.trim($this->search).'%')->orderBy('ordering','ASC')->paginate(10);
         return view('livewire.backend.pages.navbar.view-navbar',[

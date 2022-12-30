@@ -8,23 +8,28 @@ use Livewire\Component;
 
 class AddNavbar extends Component
 {
-    public $getRouteNameList, $name, $link;
+    public $getRouteNameList, $name, $link ,$order, $lastOrder;
 
     public function render()
     {
-        $this->getRouteNameList = RouteNameList::get();
+        $this->lastOrder = Navbar::orderBy('ordering','desc')->first();
+        $this->getRouteNameList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
 
         return view('livewire.backend.pages.navbar.add-navbar')->layout('layouts.backend');
     }
     protected $rules = [
         'name'         => 'required',
-        // 'link'       => 'required|unique:navbars,route_link',
+        'link'       => 'required|unique:navbars,route_link',
+        'order'       => 'required|unique:navbars,ordering',
+
+        
 
     ];
     protected $messages = [
         'name.required' => 'Route Name field is required.',
-        // 'link.required' => 'Route Link  field is required.',
-        // 'link.unique' => 'Route link has already been taken.',
+        'link.required' => 'Route Link  field is required.',
+        'link.unique' => 'Route link has already been taken.',
 
 
 
@@ -34,7 +39,7 @@ class AddNavbar extends Component
         
       private function resetInputFields(){
         $this->name = '';
-        // $this->link = '';
+        $this->link = '';
 
  
     }
@@ -44,7 +49,8 @@ public function storeRouteName(){
 
             Navbar::create([
                 'route_name' =>     $this->name ,
-                // 'route_link' =>    $this->link,
+                'route_link' =>    $this->link,
+                'ordering' =>  $this->order,
                 ]);
 
                 $notification = array(
