@@ -12,8 +12,8 @@
         <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
         {{-- end frontend css  --}}
-        <!-- Toaster CSS -->
-        <script src="{{asset('frontend/js/toastr.min.js')}}" type="text/javascript"></script>
+       
+  
         <!-- Styles -->
         @livewireStyles
     </head>
@@ -66,8 +66,7 @@ breakpoints: {
              {{-- frontend site js and footer --}}
         @stack('modals')
         @livewireScripts
-        {{-- toastr js  --}}
-<script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
+
 <script>
   @if(Session::has('message'))
   var type = "{{ Session::get('alert-type','info') }}"
