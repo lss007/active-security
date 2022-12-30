@@ -42,21 +42,21 @@ class EditNavbar extends Component
             protected $rules = [
                 'name'         => 'required',
                 // 'link'       => 'required|unique:navbars,route_link,',
-                'order'       => 'required|unique:navbars,ordering',
+                // 'order'       => 'required|unique:navbars,ordering',
 
 
             ];
             protected $messages = [
                 'name.required' => 'Route Name field is required.',
-                'link.required' => 'Route Link  field is required.',
-                'link.unique' => 'Route link has already been taken.',
+                // 'link.required' => 'Route Link  field is required.',
+                // 'link.unique' => 'Route link has already been taken.',
 
             ]; 
 
             private function resetInputFields(){
                 $this->name = '';
                 $this->link = '';
-                $this->order = '';
+                // $this->order = '';
 
 
 
