@@ -82,7 +82,8 @@
                   <div class="form-group">
                     <label class="form-control-label"> Button Link  : optional</label>
                     {{-- <input class="form-control" type="text" wire:model="link"  placeholder="button link  "> --}}
-                    <select class="form-control" data-placeholder="Choose Section" wire:model="link" aria-hidden="true" >
+                    <select class="form-control" data-placeholder="Choose Section" 
+                    wire:model="link" aria-hidden="true"   onchange='Livewire.emit("selectSection", this.value)' >
                        <option label="Choose Page link "></option>
                      @if(isset($getRouteList))
                      @foreach($getRouteList as $key => $val)
@@ -99,8 +100,24 @@
                   <label class="form-control-label">Would you like to add Custom link ?<span class="tx-danger">*</span></label>
                 </div>
                 </div><!-- col-4 -->
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Hash Tag section <span class="tx-danger">*</span></label>
+                        <select class="form-control" data-placeholder="Choose Tag" wire:model="hashTag" aria-hidden="true">
+                          <option label="Choose Tag"></option>
+                              @if(isset($gethashtag))
+                              @foreach($gethashtag as $key => $val)
+                              <option value="{{$val->section_id}}"> {{$key+1}}) Section {{ucwords($val->section_id)}}</option>
+                              @endforeach
+                              {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                              @endif
+                        </select>
+                    @error('hashTag')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  </div>
+                </div>
                </div><!-- row -->
-     
+
                <div class="form-layout-footer">
                  <button class="btn btn-info mg-r-5" type="submit" wire:loading.attr="disabled">Publish Last Section</button>
                 <div  wire:loading class="pd-x-20">

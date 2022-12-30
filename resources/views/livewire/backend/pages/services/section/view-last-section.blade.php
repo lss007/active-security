@@ -6,14 +6,11 @@
           <h5>{{__('dashboard.Manage Optimal security Section')}} 
             <span class="float-right"> Total :{{isset($getServices) ?count($getServices)  : "NA" }}</span>
           </h5>
-    
         </div><!-- sl-page-title -->
         <div class="card pd-20 pd-sm-40">
-   
                 <h6 class="card-body-title">      
                     <a href="{{route('add_last_footer_section')}}" class="btn btn-teal active mg-b-10">{{__('dashboard.Add Section')}} </a>
                 </h6>
-
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
@@ -30,16 +27,9 @@
                 @foreach($getServices as $key => $service)
                   <tr>
                     <td>{{ $key +1}} </td>
-                   
                     <td class="tx-bold">{{isset($service->heading) ?  str_limit($service->heading, $limit=15 ) : "NA" }}</td>
-                
-
-          
-
                     <td class="tx-bold">
-                        
                         {!! isset($service->list1) ? str_limit($service->list1, $limit=15 ) : "NA" !!} 
-                    
                     </td>
                     <td class="tx-bold">
                             @if($service->status == 1 )
@@ -51,10 +41,8 @@
                     <td>  
                         <a href="{{route('edit_last_section',$service->id)}}" class="btn btn-sm btn-info" title="edit" >
                           <i class="fa fa-edit"></i></a>
-
                         <a href="javascript:void(0)" class="btn btn-sm btn-warning" title="Show" data-toggle="modal" data-target="#modaldemo{{$service->id}}">
                           <i class="fa fa-eye"></i></a>
-
                           @if($service->status == 1 )
                           <a href="javascript:void(0)" class="btn btn-sm btn-danger mx-2" title="Inactive" wire:click.prevent="inactive({{$service->id}})">
                           <i class="fa fa-thumbs-down"></i>
