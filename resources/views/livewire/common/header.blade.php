@@ -1,5 +1,8 @@
 
-<header>
+
+  
+<header    
+>
   @php
          $navbarlogos =  DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
          
@@ -19,7 +22,11 @@
 
 
   @endphp
-    <div class="headerCol">
+ <div wire:loading.delay.longest >
+  loading ....
+      </div> 
+
+    <div class="headerCol"  wire:loading.remove  >
       <div class="container">
         <div class="row g-2 align-items-center">
           <div class="col col-lg-auto">

@@ -17,14 +17,14 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body >
+    <body  >
     
   
             @include('livewire.common.header')
             <!-- Page Content -->
         @if (isset($header))
             <header class="bg-dark shadow" >
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"  >
                     {{ $header }}
                 </div>
             </header>

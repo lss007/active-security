@@ -1,7 +1,11 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if(isset($homeBanner))
-    <section>
+
+  
+
+    <section  >
+     
       <style>
         .bannerSection.homeBanner {
           background-image: url('{{asset('storage/Home-banner/'.$homeBanner->banner_image)}}');
@@ -17,8 +21,10 @@
           }
         }
       </style>
-      <div class="bannerSection homeBanner">
-        <div class="container">
+       
+      <div class="bannerSection homeBanner" >
+    
+        <div class="container" >
           <div class="bannerContent">
             <h1 class="xlTitle">{{ isset($homeBanner->heading) ? $homeBanner->heading : "NA"}}</h1>
             <h5 class="subTitle pt-2 pt-xl-3 pb-2 pb-xl-3">
