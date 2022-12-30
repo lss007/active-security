@@ -101,7 +101,7 @@
                     
                     @if(isset($getContactSection))
                     {!! isset($getContactSection->title)  ? html_entity_decode($getContactSection->title) : "Kontakt" !!}  
-                    @endif.</p>
+                    @endif</p>
                   <div class="contactForm">
                     <form wire:submit.prevent="sendmessage" class="formStyle">
                       <div class="row gy-3 gy-sm-4">
