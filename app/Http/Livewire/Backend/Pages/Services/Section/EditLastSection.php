@@ -4,15 +4,22 @@ namespace App\Http\Livewire\Backend\Pages\Services\Section;
 
 use Livewire\Component;
 use App\Models\PageCategory;
+use App\Models\RouteNameList;
 use App\Models\ServiceLastSection;
 class EditLastSection extends Component
 {
 
     public $pageCategory,$heading  ,$link   ,$list1  ,$list2  ,$list3 ,$button ,$list4;
+    public $getRouteList ,$showDiv;
     public function render()
     {
+        $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
+
         return view('livewire.backend.pages.services.section.edit-last-section')->layout('layouts.backend');
     
+    }
+    public function showDiv(){
+        $this->showDiv =! $this->showDiv; 
     }
     public function mount($id){
         $this->serviceId= $id;

@@ -11,5 +11,7 @@ class ServiceLastSection extends Model
     use SoftDeletes;
 
     protected $guarded =[];
-
+    public function routeName(){
+        return  $this->belongsTo(RouteNameList::class , 'link' ,'id');
+     }
 }

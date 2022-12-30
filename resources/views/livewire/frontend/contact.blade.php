@@ -132,9 +132,9 @@
                           <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="check1">
                             <label class="form-check-label" for="check1">
-                    @if(isset($getContactSection->para1) )
-                    {!! isset($getContactSection->para1)  ? html_entity_decode($getContactSection->para1) : "NA" !!}  
-                      @endif
+                             @if(isset($getContactSection->para1) )
+                                  {!! isset($getContactSection->para1)  ? html_entity_decode($getContactSection->para1) : "NA" !!}  
+                             @endif
                             </label>
                           </div>
                         </div>

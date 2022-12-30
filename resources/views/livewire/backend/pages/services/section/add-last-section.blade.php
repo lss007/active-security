@@ -72,11 +72,31 @@
      
 
                 <div class="col-lg-6">
+                  @if($showDiv)
+                  <div class="form-group">
+                    <label class="form-control-label"> Custom link : </label>
+                    <input class="form-control" type="url" wire:model="link"  placeholder="https://www.example.com/ ">
+                    @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
+                  </div>
+                  @else
                   <div class="form-group">
                     <label class="form-control-label"> Button Link  : optional</label>
-                    <input class="form-control" type="text" wire:model="link"  placeholder="button link  ">
+                    {{-- <input class="form-control" type="text" wire:model="link"  placeholder="button link  "> --}}
+                    <select class="form-control" data-placeholder="Choose Section" wire:model="link" aria-hidden="true" >
+                       <option label="Choose Page link "></option>
+                     @if(isset($getRouteList))
+                     @foreach($getRouteList as $key => $val)
+                       <option value="{{$val->id}}"> {{$key+1}}) {{ucwords($val->route_name)}}</option>
+                       @endforeach
+                       {{-- <option value="custom" class="text-danger">Custom link</option> --}}
+                       @endif
+                     </select>
                     @error('link')<span class="text-danger"> {{$message}}</span>  @enderror  
-                  
+                </div>
+                @endif
+                <div class="form-group">
+                  <input type="checkbox"  class=""   wire:click="$toggle('showDiv')">
+                  <label class="form-control-label">Would you like to add Custom link ?<span class="tx-danger">*</span></label>
                 </div>
                 </div><!-- col-4 -->
                </div><!-- row -->
