@@ -77,7 +77,44 @@
                     </div>
                   </div>
                 
-            
+                  <div class="card-header my-3">
+                    <h6 class="mg-b-0">
+                      <a class="tx-gray-800 transition">
+                   Address 2
+                      </a>
+                    </h6>
+                  </div><!-- card-header -->
+
+                  <div class="row">
+                    <div class="col-md-6">
+              
+          
+       
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">  Telefon 2   :</span> 
+                            {{ isset($contactAddress->telefon2) ? $contactAddress->telefon2 : "NA" }} </h5>
+                
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Fax 2   :</span> 
+                           {{isset($contactAddress->fax2)  ? $contactAddress->fax2 : "NA"}} </h5>
+                       
+                        <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Email 2   :</span> 
+                           {{isset($contactAddress->email2)  ? $contactAddress->email2 : "NA"}} </h5>
+                           <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Address   :</span> 
+                            {{isset($contactAddress->address2)  ? $contactAddress->address2 : "NA"}} </h5>
+                    </div>
+                    <div class="col-md-6">
+                        
+
+                            <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Security permit    :</span> 
+                              {{isset($contactAddress->permit)  ? $contactAddress->permit : "NA"}} </h5>
+
+                              <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Local Stories    :</span> 
+                                {{isset($contactAddress->local)  ? $contactAddress->local : "NA"}} </h5>
+
+                                <h5 class="mg-b-20 mg-sm-b-30"> <span class="text-primary">Source   :</span> 
+                                  {{isset($contactAddress->source)  ? $contactAddress->source : "NA"}} </h5>
+                    </div>
+                
+                  </div>
 
                  <div class="card-header my-3">
                   <h6 class="mg-b-0">

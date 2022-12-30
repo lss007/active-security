@@ -44,6 +44,8 @@ protected $listeners = ['addContactImg' ,'addContactImg2','addContactImg3'];
             $this->heading   ='';
             $this->title  ='';
             $this->para1  ='';
+
+
         }
     protected $messages = [
         'para1.required' => 'The paragraph field is required.',

@@ -11,7 +11,7 @@ class AddFooterAddress extends Component
     use WithFileUploads;
 public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid,$callTo,$mailTo,$WhatsappTo;
 
-
+public $address2 ,$telefon2 ,$fax2  ,$email2 ,$permit,$local,$source;
 
     public function render()
     {
@@ -51,6 +51,14 @@ public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid,$callTo,$mailTo,$
             $this->callTo = '';
             $this->mail_to = '';
             $this->logWhatsapp_too = '';
+            
+            $this->address2   = '';
+            $this->telefon2  = '';
+            $this->fax2  = '';
+            $this->email2  = '';
+            $this->permit  = '';
+            $this->local  = '';
+            $this->source  = '';     
         }
 
 
@@ -64,16 +72,25 @@ public $telefon ,$fax ,$email ,$address  ,$logo ,$name ,$vatid,$callTo,$mailTo,$
             $filePath = $this->logo->storeAs('footer-logo', $fileName, 'public');
     }
              FooterContactAddress::create([
-            'name' => $this->name,
-            'vatid' => $this->vatid,
-            'telefon' =>    $this->telefon,
-            'fax' =>    $this->fax,
-            'email' =>    $this->email,
-            'address' =>    $this->address,
-            'logo' =>    $fileName  ?? Null,
-            'call_to' =>  trim($this->callTo),
-            'mail_to' =>  trim($this->mailTo),
-            'Whatsapp_to' =>  trim($this->WhatsappTo),
+                'name' => $this->name,
+                'vatid' => $this->vatid,
+                'telefon' =>    $this->telefon,
+                'fax' =>    $this->fax,
+                'email' =>    $this->email,
+                'address' =>    $this->address,
+                'logo' =>    $fileName  ?? Null,
+                'call_to' =>  trim($this->callTo),
+                'mail_to' =>  trim($this->mailTo),
+                'Whatsapp_to' =>  trim($this->WhatsappTo),
+
+                'address2' =>    $this->address2,
+                'telefon' =>    $this->telefon2,
+                'email2' =>    $this->email2,
+                'fax2' =>    $this->fax2,
+                'permit' =>    $this->permit,
+                'local' =>    $this->local,
+                'source' =>  $this->source,
+
 
             ]);
             $notification = array(

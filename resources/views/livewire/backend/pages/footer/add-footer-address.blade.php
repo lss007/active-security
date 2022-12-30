@@ -11,9 +11,9 @@
        
     <div class="card pd-20 pd-sm-40">
         <h6 class="card-body-title"> 
-            <a href="{{route('footer_address')}}" class="btn btn-sm btn-success"  >Back</a>
+            <a href="{{route('footer_address')}}" class="btn btn-teal active b mg-b-10"  >Back</a>
         </h6>
-     
+
        
 
        <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
@@ -91,7 +91,78 @@
                                 @if(isset($logo)) <img id="output" src="{{$logo->temporaryUrl()}}" width="200" > @endif
                                 @error('logo')<span class="text-danger"> {{$message}}</span>  @enderror  
                      </div><!-- col-4 -->
+{{-- ------------------------------------------------------------------------------------------- --}}
+                     <hr>
+                     <div class="col-lg-12 my-3">
+                     <div class="card-header">
+                      <h6 class="mg-b-0">
+                        <a  class="tx-gray-900 transition ">
+                          Address 2 for impressum page
+                        </a>
+                      </h6>
+                    </div><!-- card-header -->
+                     </div>
+                     <div class="col-lg-12">
+                      <div class="form-group mg-b-10-force">
+                        <label class="form-control-label">Footer Contact Address 2: <span class="tx-danger">*</span></label>
+                        <textarea class="form-control"   wire:model="address2" placeholder="Contact address 2"></textarea>
+                        @error('address2')<span class="text-danger"> {{$message}}</span>  @enderror  
+        
+                      </div>
+                    </div><!-- col-4 -->
+                     <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label">Telefon 2: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" wire:model="telefon2"  placeholder="Telefon 2">
+                        @error('telefon2')<span class="text-danger"> {{$message}}</span>  @enderror  
+                    </div>
+                    </div><!-- col-4 -->
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Fax 2: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" wire:model="fax2"  placeholder="Fax 2 ">
+                        @error('fax2')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+              
+                    <div class="col-lg-6">
+                       <div class="form-group">
+                         <label class="form-control-label"> Email 2: <span class="tx-danger">*</span></label>
+                         <input class="form-control" type="email" wire:model="email2"  placeholder="Email 2">
+                         @error('email2')<span class="text-danger"> {{$message}}</span>  @enderror  
+                       
+                     </div>
+                     </div><!-- col-4 -->
+                     <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Permit : <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" wire:model="permit"  placeholder="Permit text">
+                        @error('permit')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+               
+             
 
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Local 2: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" wire:model="local"  placeholder="Local text">
+                        @error('local')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label"> Source 2: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" wire:model="source"  placeholder="Source text">
+                        @error('source')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      
+                    </div>
+                    </div><!-- col-4 -->
+{{-- ------------------------------------------------------------------------------------------- --}}
 
 
                      <hr>

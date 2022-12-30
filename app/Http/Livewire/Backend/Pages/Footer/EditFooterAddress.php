@@ -12,6 +12,7 @@ class EditFooterAddress extends Component
     use WithFileUploads;
     public $contactId ,$editHomeBanner,  $telefon ,$fax ,$email ,$address  ,$logo ,$callTo,$mailTo,$WhatsappTo;
     public $newlogo;
+    public $address2 ,$telefon2 ,$fax2  ,$email2 ,$permit,$local,$source;
         public function mount($id){
                 $this->contactId= $id;
                 $this->editHomeBanner = FooterContactAddress::where('id', $this->contactId)->first();
@@ -23,6 +24,18 @@ class EditFooterAddress extends Component
                 $this->email =  $this->editHomeBanner->email; 
                 $this->address = $this->editHomeBanner->address;
                 $this->logo = $this->editHomeBanner->logo	;
+
+                $this->telefon2  =  $this->editHomeBanner->telefon2;
+                $this->fax2 =  $this->editHomeBanner->fax2;
+                $this->email2 =  $this->editHomeBanner->email2; 
+                $this->address2 = $this->editHomeBanner->address2;
+                
+                $this->permit = $this->editHomeBanner->permit;
+                $this->local = $this->editHomeBanner->local;
+                $this->source = $this->editHomeBanner->source;
+
+
+
                 $this->callTo = $this->editHomeBanner->call_to	;
                 $this->mailTo = $this->editHomeBanner->mail_to	;
                 $this->WhatsappTo = $this->editHomeBanner->Whatsapp_to	;
@@ -52,6 +65,14 @@ class EditFooterAddress extends Component
                 $this->email = '';
                 $this->address = '';
                 $this->logo = '';
+                $this->address2   = '';
+                $this->telefon2  = '';
+                $this->fax2  = '';
+                $this->email2  = '';
+                $this->permit  = '';
+                $this->local  = '';
+                $this->source  = '';  
+
                 $this->callTo = '';
                 $this->mail_to = '';
                 $this->logWhatsapp_too = '';
@@ -87,9 +108,19 @@ class EditFooterAddress extends Component
             'email' =>    $this->email,
             'address' =>    $this->address,
 
+            'address2' =>    $this->address2,
+            'telefon2' =>    $this->telefon2,
+            'email2' =>    $this->email2,
+            'fax2' =>    $this->fax2,
+            'permit' =>    $this->permit,
+            'local' =>    $this->local,
+            'source' =>  $this->source,
+
             'call_to' =>  trim($this->callTo),
             'mail_to' =>  trim($this->mailTo),
             'Whatsapp_to' =>  trim($this->WhatsappTo),
+
+
      
             ]);
                  
