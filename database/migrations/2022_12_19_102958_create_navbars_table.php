@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('navbars', function (Blueprint $table) {
             $table->id();
             $table->string('route_name')->nullable();
-            $table->string('route_link')->nullable()->unique();
+            $table->string('route_link')->nullable();
             $table->integer('ordering')->default(0);
             $table->integer('status')->default(1)->nullable();
             $table->SoftDeletes();

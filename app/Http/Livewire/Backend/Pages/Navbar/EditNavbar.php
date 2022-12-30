@@ -25,6 +25,9 @@ class EditNavbar extends Component
         if( $this->editNavRoute != Null){
             $this->name =  $this->editNavRoute->route_name; 
             $this->link =  $this->editNavRoute->route_link; 
+            $this->order =  $this->editNavRoute->ordering; 
+
+            
        
 
         }
@@ -38,7 +41,7 @@ class EditNavbar extends Component
      }
             protected $rules = [
                 'name'         => 'required',
-                'link'       => 'required|unique:navbars,route_link,',
+                // 'link'       => 'required|unique:navbars,route_link,',
                 'order'       => 'required|unique:navbars,ordering',
 
 

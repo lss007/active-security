@@ -59,7 +59,7 @@
                   <div class="form-group">
                       <label class="form-control-label">Order no :<span class="tx-danger">*</span></label>
                       <input class="form-control" type="text" wire:model="order"  placeholder="Order no">
-                      @error('order')<span class="text-danger"> {{$message}}</span>  @enderror  
+                      @error('order')<span class="text-danger"> {{$message}}</span>  @enderror  <br>
                       <span class="text-danger">Last oder number is :
                     {{  $this->lastOrder->ordering}} </span>
                   </div>
