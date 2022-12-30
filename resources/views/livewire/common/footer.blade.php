@@ -16,7 +16,12 @@
         $footeraddress =  DB::table('footer_contact_addresses')->where('status',1)->first();
         $socialLinks =     DB::table('social_links')->where('status',1)->limit(5)->get();
         $footerlogos =  DB::table('footer_logos')->where('name','=','footer')->where('status',1)->limit(8)->get();
-    @endphp
+     
+        $footerMenu =  DB::table('navbars')->orderBy('ordering')->whereIn('ordering', [6,7,8])->where('status',1)->get();
+  
+      
+
+  @endphp
     <div class="footerColMain">
       <div class="container">
         <div class="footerTopCol">
@@ -72,10 +77,23 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-auto order-sm-last">
+              
+
               <ul class="footerLinks">
-                <li><a href="{{route('ImpressumPage')}}">Impressum</a></li>
-                <li><a href="{{route('DatenschutzPage')}}">Datenschutz</a></li>
-                <li><a href="{{route('AgbPage')}}">AGB</a></li>
+                @if(isset($footerMenu))
+                  @foreach($footerMenu as $val )
+                  
+            
+              @if($val->ordering == 6 )
+                <li><a href="{{route('AgbPage')}}">{{ $val->route_name }}</a></li>
+                @elseif($val->ordering == 7 ) 
+                <li><a href="{{route('ImpressumPage')}}">{{ $val->route_name }}</a></li>
+                @elseif($val->ordering == 8 )
+                <li><a href="{{route('DatenschutzPage')}}">{{ $val->route_name }}</a></li>
+                @else
+           @endif
+                @endforeach
+                @endif
               </ul>
             </div>
             <div class="col-sm">
