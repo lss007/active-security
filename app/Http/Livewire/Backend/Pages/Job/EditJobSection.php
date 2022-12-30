@@ -73,8 +73,14 @@ class EditJobSection extends Component
     }
     public function render()
     {
+if($this->button_link)
+{
+    $this->gethashtag = HashTag::where('page_id', $this->button_link)->get();
 
-        $this->gethashtag = HashTag::where('page_id', $this->routeId)->get();
+}else{
+
+    $this->gethashtag = HashTag::where('page_id', $this->routeId)->get();
+}
         $this->getRouteList = RouteNameList::orderBy('route_name')->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11,12,16])->get();
 
         return view('livewire.backend.pages.job.edit-job-section')->layout('layouts.backend');
