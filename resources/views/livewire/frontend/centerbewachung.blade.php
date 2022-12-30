@@ -47,12 +47,12 @@
             @if(isset($centerbewachung->button_link)) 
               @if( $gethttplink )
                 <a href="{{$centerbewachung->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
-                  {!! isset($centerbewachung->button_name)  ? html_entity_decode($centerbewachung->button_name) : "Gleich beraten lassen" !!} 
+                  {!! isset($centerbewachung->button_text)  ? html_entity_decode($centerbewachung->button_text) : "Gleich beraten lassen" !!} 
                 </a>
               @else
                   <a href="{{route($centerbewachung->routeName->route_link)}}{{isset($centerbewachung->hash_tag_id) ? '#'.$centerbewachung->hash_tag_id : ''}}" 
                     class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-                    {!! isset($centerbewachung->button_name)  ? html_entity_decode($centerbewachung->button_name) : "Gleich beraten lassen" !!} 
+                    {!! isset($centerbewachung->button_text)  ? html_entity_decode($centerbewachung->button_text) : "Gleich beraten lassen" !!} 
                   </a>
               @endif
             @endif

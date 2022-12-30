@@ -42,12 +42,12 @@
                 @if(isset($Shopmain->button_link)) 
                   @if( $gethttplink )
                     <a href="{{$Shopmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
-                      {!! isset($Shopmain->button_name)  ? html_entity_decode($Shopmain->button_name) : "Gleich beraten lassen" !!} 
+                      {!! isset($Shopmain->button_text)  ? html_entity_decode($Shopmain->button_text) : "Gleich beraten lassen" !!} 
                     </a>
                   @else
                       <a href="{{route($Shopmain->routeName->route_link)}}{{isset($Shopmain->hash_tag_id) ? '#'.$Shopmain->hash_tag_id : ''}}" 
                         class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-                        {!! isset($Shopmain->button_name)  ? html_entity_decode($Shopmain->button_name) : "Gleich beraten lassen" !!} 
+                        {!! isset($Shopmain->button_text)  ? html_entity_decode($Shopmain->button_text) : "Gleich beraten lassen" !!} 
                       </a>
                   @endif
                   @else

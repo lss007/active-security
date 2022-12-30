@@ -45,12 +45,12 @@
                 @if(isset($Reviermain->button_link)) 
                   @if( $gethttplink )
                     <a href="{{$Reviermain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
-                      {!! isset($Reviermain->button_name)  ? html_entity_decode($Reviermain->button_name) : "Gleich beraten lassen" !!} 
+                      {!! isset($Reviermain->button_text)  ? html_entity_decode($Reviermain->button_text) : "Gleich beraten lassen" !!} 
                     </a>
                   @else
                       <a href="{{route($Reviermain->routeName->route_link)}}{{isset($Reviermain->hash_tag_id) ? '#'.$Reviermain->hash_tag_id : ''}}" 
                         class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-                        {!! isset($Reviermain->button_name)  ? html_entity_decode($Reviermain->button_name) : "Gleich beraten lassen" !!} 
+                        {!! isset($Reviermain->button_text)  ? html_entity_decode($Reviermain->button_text) : "Gleich beraten lassen" !!} 
                       </a>
                   @endif
                   @else

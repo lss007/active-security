@@ -44,12 +44,12 @@
       @if(isset($Kaufhausmain->button_link)) 
         @if( $gethttplink )
           <a href="{{$Kaufhausmain->button_link}}" class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4" target="_blank">
-            {!! isset($Kaufhausmain->button_name)  ? html_entity_decode($Kaufhausmain->button_name) : "Gleich beraten lassen" !!} 
+            {!! isset($Kaufhausmain->button_text)  ? html_entity_decode($Kaufhausmain->button_text) : "Gleich beraten lassen" !!} 
           </a>
         @else
             <a href="{{route($Kaufhausmain->routeName->route_link)}}{{isset($Kaufhausmain->hash_tag_id) ? '#'.$Kaufhausmain->hash_tag_id : ''}}" 
               class="btn btnPrimary arrowBtn mt-lg-3 mt-xl-4">
-              {!! isset($Kaufhausmain->button_name)  ? html_entity_decode($Kaufhausmain->button_name) : "Gleich beraten lassen" !!} 
+              {!! isset($Kaufhausmain->button_text)  ? html_entity_decode($Kaufhausmain->button_text) : "Gleich beraten lassen" !!} 
             </a>
         @endif
         @else
