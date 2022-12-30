@@ -37,7 +37,7 @@
                   {{-- <th class="wd-15p">Title </th>--}}
                   <th class="wd-5p"> No </th> 
                   <th class="wd-20p ">Route Name</th>
-                  {{-- <th class="wd-20p ">Route link</th> --}}
+                  <th class="wd-10p ">Order no</th>
                   <th class="wd-10p">Status</th>
                   <th class="wd-20p">Action</th>
                 </tr>
@@ -57,9 +57,9 @@
                 Created at:
                 {{Carbon\Carbon::parse($value->created_at)->diffForHumans()}}
             </td>
-            {{-- <td >
-              {{isset($value->routeName->route_link) ? $value->routeName->route_link : "NA"}}
-          </td> --}}
+            <td >
+              {{isset($value->ordering) ? $value->ordering : "NA"}}
+          </td>
             
             <td> 
               @if($value->status == 1 )

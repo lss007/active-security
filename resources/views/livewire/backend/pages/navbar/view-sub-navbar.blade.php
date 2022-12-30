@@ -34,6 +34,8 @@
                   <th class="wd-5p"> No </th> 
                   <th class="wd-20p ">Main Navbar</th>
                   <th class="wd-20p ">Sublink</th>
+                  <th class="wd-10p ">Order </th>
+
                   <th class="wd-10p">Status</th>
                   <th class="wd-20p">Action</th>
                 </tr>
@@ -56,6 +58,9 @@
                 {{Carbon\Carbon::parse($value->created_at)->diffForHumans()}}
             </td>
          
+            <td >
+              {{isset($value->ordering) ? $value->ordering : "NA"}}
+          </td>
             
             <td> 
               @if($value->status == 1 )

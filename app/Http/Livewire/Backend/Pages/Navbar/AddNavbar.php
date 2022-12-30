@@ -14,8 +14,6 @@ class AddNavbar extends Component
     {
         $this->lastOrder = Navbar::orderBy('ordering','desc')->first();
         $this->getRouteNameList = RouteNameList::orderBy('route_name')->get();
-
-
         return view('livewire.backend.pages.navbar.add-navbar')->layout('layouts.backend');
     }
     protected $rules = [
