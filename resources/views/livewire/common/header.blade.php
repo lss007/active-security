@@ -21,28 +21,27 @@
 }
 </style>
 <header>
-  <div wire:loading >
-    <div class="comment br animate"></div>
-    <div class="comment br animate"></div>
-  </div>
-        @php
-      $navbarlogos = DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
-      $navitems    = DB::table('navbars')->where('status',1)->where('ordering',1)->first();
-      $navitems2   = DB::table('navbars')->where('status',1)->where('ordering',2)->first();
-      $navitems3   = DB::table('navbars')->join('route_name_lists','navbars.route_link','route_name_lists.id')->select('navbars.*','route_name_lists.route_link')->OrderBy('ordering')
+@php
+ $navbarlogos = DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
+ $navitems    = DB::table('navbars')->where('status',1)->where('ordering',1)->first();
+ $navitems2   = DB::table('navbars')->where('status',1)->where('ordering',2)->first();
+$navitems3   = DB::table('navbars')->join('route_name_lists','navbars.route_link','route_name_lists.id')->select('navbars.*','route_name_lists.route_link')->OrderBy('ordering')
       ->where('navbars.status', 1)->where('ordering',3)->first();
-      $navitems4   = DB::table('navbars')->join('route_name_lists','navbars.route_link','route_name_lists.id')->select('navbars.*','route_name_lists.route_link')->OrderBy('ordering')
+ $navitems4   = DB::table('navbars')->join('route_name_lists','navbars.route_link','route_name_lists.id')->select('navbars.*','route_name_lists.route_link')->OrderBy('ordering')
       ->where('navbars.status', 1)->where('ordering',4)->first();
-      $navitems5   = DB::table('navbars')->join('route_name_lists','navbars.route_link','route_name_lists.id')->select('navbars.*','route_name_lists.route_link')->OrderBy('ordering')
+$navitems5   = DB::table('navbars')->join('route_name_lists','navbars.route_link','route_name_lists.id')->select('navbars.*','route_name_lists.route_link')->OrderBy('ordering')
       ->where('navbars.status', 1)->where('ordering',5)->first();
-      $subnavbars  = DB::table('sub_navbars')
+ $subnavbars  = DB::table('sub_navbars')
       ->join('route_name_lists','sub_navbars.route_link','route_name_lists.id')
       ->select('sub_navbars.*','route_name_lists.route_link')
       ->OrderBy('ordering')->where('sub_navbars.status', 1)->get();
           //  dd($subnavbars);
-        @endphp
+ @endphp
+ <div wire:loading.delay.longest >
+  loading ....
+      </div> 
 
-    <div class="headerCol "  wire:loading.remove >
+    <div class="headerCol"  wire:loading.remove  >
       <div class="container">
         <div class="row g-2 align-items-center ">
           <div class="col col-lg-auto">

@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title> ative-sec.de | Sicherheitsdienst in Regensburg</title>
-        {{-- start frontend css  --}}
-        <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title> ative-sec.de | Sicherheitsdienst in Regensburg</title>
+  {{-- start frontend css  --}}
+  <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
         {{-- end frontend css  --}}
-    
-
         <!-- Styles -->
-        @livewireStyles
+    @livewireStyles
     </head>
-    <body  >
- 
-    
-            @include('livewire.common.header')
-            <!-- Page Content -->
+<body>
+     @include('livewire.common.header')
+       <!-- Page Content -->
         @if (isset($header))
             <header class="bg-dark shadow" >
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"  >

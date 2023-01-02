@@ -37,6 +37,9 @@ class PrivacyWillSeeder extends Seeder
             array('tab_id' => '1','cat_id' => '1','list' => 'Grundlegend: Authentifizieren Sie, dass Sie in Ihrem Benutzerkonto angemeldet sind','status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now()),
             array('tab_id' => '1','cat_id' => '1','list' => 'Grundlegend: Merken Sie sich die von Ihnen gewählte Sprachversion','status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now())
           );
+
+
+  
           foreach ( $privacy_wills as $key => $name) {
             PrivacyWill::create($name);
         }
