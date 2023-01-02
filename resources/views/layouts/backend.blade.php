@@ -24,13 +24,11 @@
     {{-- <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" /> --}}
     <link rel="stylesheet" href="{{asset('backend/css/dropzone.css')}}">
 
-    {{-- <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/> --}}
     <link rel="stylesheet" href="{{asset('backend/css/cropper.css')}}">
 
-    {{-- <script src="https://unpkg.com/dropzone"></script> --}}
     <script src="{{asset('backend/js/dropzone.js')}}"></script>
 
-    {{-- <script src="https://unpkg.com/cropperjs"></script> --}}
+
     <script src="{{asset('backend/js/cropper.js')}}"></script>
 
     {{--  end croper js files  --}}
@@ -45,7 +43,7 @@
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
       <!-- Toaster CSS -->
 
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+      <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
 
     @livewireStyles
     </head>
@@ -126,8 +124,7 @@
     {{-- <script src='https://foliotek.github.io/Croppie/croppie.js'></script> --}}
     
  <!-- Toaster Javascript cdn -->
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+ <script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
   <script>
       @if(Session::has('message'))
       var type = "{{ Session::get('alert-type','info') }}"

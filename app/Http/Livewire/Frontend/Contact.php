@@ -60,7 +60,7 @@ public function sendmessage()
         if($sendmessage ){  
             dispatch(new ContactMessage( $sendmessage));     
             $notification = array(
-                'message' => 'Message send successfully',
+                'message' => 'Nachricht erfolgreich gesendet',
                 'alert-type' => 'success'
             );
                 return redirect('/')->with($notification); 
@@ -69,8 +69,8 @@ public function sendmessage()
             }else 
             {
                     $notification = array(
-                            'message' => 'Nachricht erfolgreich gesendet',
-                            'alert-type' => 'success'
+                            'message' => 'E-Mail wird nicht gesendet.t',
+                            'alert-type' => 'error'
                         );
                             return redirect()->route('ContactPage')->with($notification);
                                 $this->resetInputFields(); 

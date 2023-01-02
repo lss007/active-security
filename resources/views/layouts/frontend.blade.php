@@ -10,8 +10,11 @@
   <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
+ 
   <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
-        {{-- end frontend css  --}}
+  <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
+   
+  {{-- end frontend css  --}}
         <!-- Styles -->
         {{-- <style>
 #loader{width:80px;height:80px}.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
@@ -62,6 +65,9 @@
 <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/swiper-bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/script.js')}}" type="text/javascript"></script>
+
+<script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
+
 <script>
 var swiper = new Swiper(".serviceSwiper", {
 slidesPerView: 1,
