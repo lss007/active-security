@@ -1,11 +1,11 @@
 <div>
-  <div wire:loading.delay.longest >
-    loading ....
-        </div> 
+
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if(isset($homeBanner))
-     
-    <section >
+    <div wire:loading.delay.shortest >
+      loading ....
+          </div> 
+    <section  >
 
       <style>
         .bannerSection.homeBanner {
@@ -22,11 +22,9 @@
           }
         }
       </style>
-          
-    
-          <div class="bannerSection homeBanner"  wire:loading.remove>   
 
-    
+<div class="bannerSection homeBanner" >
+
         <div class="container" >
           <div class="bannerContent">
             <h1 class="xlTitle">{{ isset($homeBanner->heading) ? $homeBanner->heading : "NA"}}</h1>
@@ -69,7 +67,7 @@
 
 
     @if(isset($active_secuirty))
-    <section>
+    <section  wire:loading.remove>
       <div class="nextSectionParent">
         <div id="1"></div>
       </div>

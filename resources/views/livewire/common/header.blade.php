@@ -1,25 +1,4 @@
-<style>
-  .comment {
-  height: 10px;
-  background: #777;
-  margin-top: 20px;
-}
 
-@keyframes fullView {
-  100% {
-    width: 100%;
-  }
-}
-  .animate {
-   animation : shimmer 2s infinite linear;
-   background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
-    background-size: 1000px 100%;
-}
-
-.br {
-  border-radius: 8px;  
-}
-</style>
 <header>
 @php
  $navbarlogos = DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
@@ -37,16 +16,18 @@ $navitems5   = DB::table('navbars')->join('route_name_lists','navbars.route_link
       ->OrderBy('ordering')->where('sub_navbars.status', 1)->get();
           //  dd($subnavbars);
  @endphp
- <div wire:loading.delay.longest >
+
+<div wire:loading.delay.shortest >
   loading ....
       </div> 
 
     <div class="headerCol"  wire:loading.remove  >
+
       <div class="container">
         <div class="row g-2 align-items-center ">
           <div class="col col-lg-auto">
             <div class="logoCol">
-              <a href="{{url('/')}}"><img src="{{(isset($navbarlogos->logo_img))  ? asset('storage/footer-logo/'.$navbarlogos->logo_img) :asset('frontend/images/logo.svg')}}" alt="Logo" /></a>
+                <a href="{{url('/')}}"><img src="{{(isset($navbarlogos->logo_img))  ?     asset('storage/footer-logo/'.$navbarlogos->logo_img) :asset('frontend/images/logo.svg')}}" alt="Logo" /></a>
             </div>
           </div>
           <div class="col-auto col-lg ">
