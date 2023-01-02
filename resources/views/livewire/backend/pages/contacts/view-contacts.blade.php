@@ -32,8 +32,9 @@
                     {{isset($getrow->email) ?  str_limit($getrow->email, $limit=20) : "NA" }}
                   </td>
                   <td>
-                    {{isset($getrow->regarding) ?  str_limit($getrow->regarding, $limit=20 ) : "NA" }}
-                    </td>
+                    {{isset($getrow->regarding) ?  str_limit($getrow->regarding, $limit=20 ) : "NA" }} <br>
+                    Created at:  {{isset($getrow->created_at) ? Carbon\Carbon::parse($getrow->created_at)->diffForHumans() : "NA"}} 
+                  </td>
                   <td> 
                     {{isset($getrow->client_message) ?  str_limit($getrow->client_message, $limit=25 ) : "NA" }}
                   </td> 
