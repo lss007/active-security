@@ -1,7 +1,9 @@
 <div>
+
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if(isset($homeBanner))
-    <section>
+     
+    <section >
       <style>
         .bannerSection.homeBanner {
           background-image: url('{{asset('storage/Home-banner/'.$homeBanner->banner_image)}}');
@@ -17,11 +19,9 @@
           }
         }
       </style>
-        <div wire:loading.delay.longest >
-          loading ....
-              </div> 
-
-      <div class="bannerSection homeBanner"  wire:loading.remove>
+        
+ 
+      <div class="bannerSection homeBanner"   >
     
         <div class="container" >
           <div class="bannerContent">

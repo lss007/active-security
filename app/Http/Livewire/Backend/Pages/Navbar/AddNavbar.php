@@ -20,19 +20,11 @@ class AddNavbar extends Component
         'name'         => 'required',
         'link'       => 'required|unique:navbars,route_link',
         'order'       => 'required|unique:navbars,ordering',
-
-        
-
     ];
     protected $messages = [
         'name.required' => 'Route Name field is required.',
         'link.required' => 'Route Link  field is required.',
         'link.unique' => 'Route link has already been taken.',
-
-
-
-
-       
     ]; 
         
       private function resetInputFields(){

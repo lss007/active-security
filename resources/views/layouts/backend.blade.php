@@ -11,10 +11,10 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="{{asset('backend/css/bracket.css')}}">
     <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('backend/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="{{asset('backend/lib/font-awesome/css/font-awesome.css')}}" >
+    <link rel="stylesheet" href="{{asset('backend/lib/Ionicons/css/ionicons.css')}}" >
+    <link rel="stylesheet" href="{{asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" >
+    {{-- <link rel="stylesheet" href="{{asset('backend/lib/rickshaw/rickshaw.min.css')}}" > --}}
     {{-- croper js files  --}}
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> --}}
     {{-- <link rel="stylesheet" href="{{asset('backend/js/jquery.js')}}"> --}}

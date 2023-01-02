@@ -12,25 +12,28 @@
         <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
         {{-- end frontend css  --}}
-       
-  
+    
+
         <!-- Styles -->
         @livewireStyles
     </head>
     <body  >
+ 
     
-  
             @include('livewire.common.header')
             <!-- Page Content -->
         @if (isset($header))
             <header class="bg-dark shadow" >
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"  >
                     {{ $header }}
+                 
                 </div>
             </header>
         @endif
             <main >
+           
                 {{ $slot }}
+           
             </main>
      <!-- Toaster Javascript cdn -->
 
