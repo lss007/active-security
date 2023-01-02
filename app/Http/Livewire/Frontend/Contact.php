@@ -66,15 +66,14 @@ public function sendmessage()
                 return redirect('/')->with($notification); 
                 $this->resetInputFields();  
 
-            }else 
-            {
+            }
                     $notification = array(
                             'message' => 'E-Mail wird nicht gesendet.t',
                             'alert-type' => 'error'
                         );
                             return redirect()->route('ContactPage')->with($notification);
                                 $this->resetInputFields(); 
-            }
+            
      
     }
  
