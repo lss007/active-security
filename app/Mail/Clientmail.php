@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\FooterContactAddress;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -27,9 +28,11 @@ class Clientmail extends Mailable
 
     public function build()
     {
+        // $geteamail=   FooterContactAddress::first();
         return $this->subject($this->sendmessage->surname.' Message')
         ->view('email.clientemail')->with([
             'surname' => $this->sendmessage->surname,
+            // 'admin' => $geteamail->name,
             'email' => $this->sendmessage->email,
             'regarding' => $this->sendmessage->regarding,
             'client_message' => $this->sendmessage->client_message, 

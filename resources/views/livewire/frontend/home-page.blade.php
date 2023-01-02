@@ -2,9 +2,7 @@
 
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if(isset($homeBanner))
-    <div wire:loading.delay.shortest >
-      loading ....
-          </div> 
+
     <section  >
 
       <style>
@@ -61,6 +59,7 @@
         </div>
       </div>
     </section>
+  
     @else 
     
     @endif

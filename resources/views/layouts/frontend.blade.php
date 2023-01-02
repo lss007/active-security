@@ -13,9 +13,16 @@
   <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
         {{-- end frontend css  --}}
         <!-- Styles -->
+        {{-- <style>
+#loader{width:80px;height:80px}.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+
+          </style> --}}
     @livewireStyles
     </head>
 <body>
+  
+  {{-- <img src="{{asset('frontend/images/circle_loading.gif')}}" class=" center" alt=" loader" id="loader" > --}}
+ 
      @include('livewire.common.header')
        <!-- Page Content -->
         @if (isset($header))
@@ -32,7 +39,22 @@
            
             </main>
      <!-- Toaster Javascript cdn -->
-
+     {{-- <script>
+      document.onreadystatechange = function() {
+      if (document.readyState !== "complete") {
+      document.querySelector(
+      "body").style.visibility = "hidden";
+      document.querySelector(
+      "#loader").style.visibility = "visible";
+      } else {
+      document.querySelector(
+      "#loader").style.display = "none";
+      document.querySelector(
+      "body").style.visibility = "visible";
+      }
+  };
+  
+  </script> --}}
         {{-- frontend site js and footer --}}
         @include('livewire.common.footer')
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
@@ -86,6 +108,7 @@ breakpoints: {
   @endif 
 </script>
 {{-- toastr js  --}}
-   
+
+  
     </body>
 </html>

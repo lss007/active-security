@@ -3,6 +3,8 @@
 namespace App\Jobs;
 
 use App\Mail\Clientmail;
+use App\Models\Contact;
+use App\Models\FooterContactAddress;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -35,8 +37,12 @@ class ContactMessage implements ShouldQueue
     public function handle()
     {
         //
+      $geteamail=   FooterContactAddress::first();
+
+    $admin_mail = $geteamail->email ?? 'kontakt@active-sec.de';
+   
         $email = new Clientmail( $this->sendmessage );
-        Mail::to('active_security@yopmail.com')->send($email);
+        Mail::to($admin_mail)->send($email);
 
     }
 }

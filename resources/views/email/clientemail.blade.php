@@ -149,10 +149,10 @@
                                                             <td class="esd-block-text es-p15t" align="left">
                                                                 <p style="color: #080505;">
                                                                     
-                                                                    Surname :  {{$surname}} <br><br>
-                                                                    Regarding :       {{$regarding}} <br><br>
-                                                                    Sender Email :       {{$email}} <br><br>
-                                                                    Client message :         {!!$client_message!!}
+                                                                  <span style=" font-weight: bold;">  Surname :  </span> {{$surname}} <br><br>
+                                                                     <span style=" font-weight: bold;"> Regarding :  </span>  {{$regarding}} <br><br>
+                                                                    <span style=" font-weight: bold;">  Sender Email : </span>      {{$email}} <br><br>
+                                                                     <span style=" font-weight: bold;"> Client message : </span>        {!!$client_message!!}
                                                                     
                                                                     <br></p>
                                                             </td>
@@ -170,7 +170,7 @@
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p15t" align="left">
                                                                                         <p style="color: #080505;">Best regards,</p>
-                                                                                        <p style="color: #080505;">System Admin </p>
+                                                                                        <p style="color: #080505;">Active Secuirty </p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
