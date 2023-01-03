@@ -8,6 +8,11 @@
             <span class="float-right"> Total :{{isset($getContacts) ?count($getContacts) : "0" }}</span> </h5>
          
         </div><!-- sl-page-title -->
+        <button wire:click.prevent="deleteSE"
+        onclick="confirm('Are you sure want to delete all ?') || event.stopImmediatePropagation()"
+        class="btn btn-danger active mg-b-10">
+    {{__('dashboard.Delete selected')}}
+</button>
         <div class="card pd-20 pd-sm-40">
         
           <div class="table-wrapper">
@@ -26,6 +31,7 @@
                 @foreach($getContacts as $getrow)
                 <tr>
                   <td>
+                    <input type="checkbox" wire:model="selectedmgs" value="{{ $getrow->id }}">
                     {{isset($getrow->surname) ?  str_limit($getrow->surname, $limit=20 ) : "NA" }}
                      </td>
                   <td> 

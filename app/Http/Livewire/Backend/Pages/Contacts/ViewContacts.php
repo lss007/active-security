@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class ViewContacts extends Component
 {
+
+    public $selectedmgs =[];
     public $getContacts;
     public function render()
     {
@@ -22,5 +24,18 @@ class ViewContacts extends Component
            'alert-type' => 'error'
        );
        return   redirect(request()->header('Referer'))->with($notification);
+       }
+
+
+       public function deleteSE(){
+        // dd($this->selectedmgs);
+        $contact = Contact::whereKey($this->selectedmgs);
+        $contact->delete();
+    
+        $notification = array(
+        'message' => 'All Data Deleted',
+        'alert-type' => 'error'
+    );
+    return   redirect(request()->header('Referer'))->with($notification);
        }
 }

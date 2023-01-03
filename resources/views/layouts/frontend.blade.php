@@ -125,7 +125,6 @@
 </head>
 <body>
   
-  {{-- <img src="{{asset('frontend/images/circle_loading.gif')}}" class=" center" alt=" loader" id="loader" > --}}
   <div id="overlay" >
     <div class="card">
       
@@ -163,22 +162,7 @@
            
             </main>
      <!-- Toaster Javascript cdn -->
-     {{-- <script>
-      document.onreadystatechange = function() {
-      if (document.readyState !== "complete") {
-      document.querySelector(
-      "body").style.visibility = "hidden";
-      document.querySelector(
-      "#loader").style.visibility = "visible";
-      } else {
-      document.querySelector(
-      "#loader").style.display = "none";
-      document.querySelector(
-      "body").style.visibility = "visible";
-      }
-  };
-  
-  </script> --}}
+
   {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> --}}
 <script>
       document.onreadystatechange = function() {
@@ -195,7 +179,6 @@
 <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/swiper-bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/script.js')}}" type="text/javascript"></script>
-
 <script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
 
 <script>
@@ -244,7 +227,5 @@ breakpoints: {
   @endif 
 </script>
 {{-- toastr js  --}}
-
-  
     </body>
 </html>

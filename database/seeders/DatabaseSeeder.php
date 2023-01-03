@@ -58,6 +58,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(PrivacyWillSeeder::class);
 
+        $this->call(HashTagSeeder::class);
+
+
 
 
         
