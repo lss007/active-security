@@ -183,7 +183,7 @@
 <script>
       document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-        $('#overlay').fadeOut();
+        $('#overlay').fadeOut(500);
       }
   };
 
