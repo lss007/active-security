@@ -22,8 +22,7 @@ class HomeClientLogoSeeder extends Seeder
     array('title' => NULL,'name' => NULL,'image' => '1668420131_p-logo-2.svg','buton' => NULL,'link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now()),
     array('title' => NULL,'name' => NULL,'image' => '1668420131_p-logo-3.svg','buton' => NULL,'link' => NULL,'status' => '1','deleted_at' => '2022-12-16 04:53:49','created_at' => now(),'updated_at' => now()),
     array('title' => NULL,'name' => NULL,'image' => '1668420131_p-logo-4.png','buton' => NULL,'link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now()),
-    array('title' => NULL,'name' => NULL,'image' => '1670391328_up1670224604_1668420246_p-logo-5.svg','buton' => NULL,'link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now()),
-    array('title' => NULL,'name' => NULL,'image' => '1670934447_up.png','buton' => NULL,'link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now())
+    array('title' => NULL,'name' => NULL,'image' => '1670391328_up1670224604_1668420246_p-logo-5.svg','buton' => NULL,'link' => NULL,'status' => '1','deleted_at' => NULL,'created_at' => now(),'updated_at' => now())
   );
           foreach ( $home_client_logos as $key => $logo) {
             HomeClientLogo::create($logo);

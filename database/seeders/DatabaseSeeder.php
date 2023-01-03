@@ -53,14 +53,16 @@ class DatabaseSeeder extends Seeder
         
         $this->call(NavbarSeeder::class);
         $this->call(SubNavbarSeeder::class);
-        
+        $this->call(PrivacySettingSeeder::class);
         $this->call(PrivacyMenuSeeder::class);
 
         $this->call(PrivacyWillSeeder::class);
 
         $this->call(HashTagSeeder::class);
+   
 
 
+        
 
 
         

@@ -34,7 +34,11 @@ class HashTagSeeder extends Seeder
                 array('page_id' => '2','section_id' => '1','tag_name' => 19,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:29:54','updated_at' => '2022-12-28 08:29:54'),
                 array('page_id' => '2','section_id' => '2','tag_name' => 20,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:29:54','updated_at' => '2022-12-28 08:29:54'),
                 array('page_id' => '3','section_id' => '1','tag_name' => 21,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:30:08','updated_at' => '2022-12-28 08:30:08'),
-                array('page_id' => '3','section_id' => '2','tag_name' => 22,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:30:08','updated_at' => '2022-12-28 08:30:08')
+                array('page_id' => '3','section_id' => '2','tag_name' => 22,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:30:08','updated_at' => '2022-12-28 08:30:08'),
+                array('page_id' => '12','section_id' => '1','tag_name' => 23,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:30:08','updated_at' => '2022-12-28 08:30:08'),
+                array('page_id' => '12','section_id' => '2','tag_name' => 24,'route_link' => NULL,'ordering' => '0','status' => '1','deleted_at' => NULL,'created_at' => '2022-12-28 08:30:08','updated_at' => '2022-12-28 08:30:08')
+            
+            
             );
   
            

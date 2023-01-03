@@ -17,8 +17,8 @@ class CookieSeeder extends Seeder
     {
         //
         /* `active`.`cookies` */
-                $cookies = array(
-                    array('text' => 'Custom Your experience on this site will be improved by allowing cookies.','decline' => 'Decline ','accept' => 'Accept ','status' => '1','deleted_at' => NULL,'created_at' =>  now(),'updated_at' => now())
+     $cookies = array(
+     array('text' => 'Diese Website verwendet Cookies. Durch die Nutzung dieser Webseite erklären Sie sich damit einverstanden, dass Cookies gesetzt werden.','decline' => 'Nur Grundlegende ','accept' => 'Alle Akzeptieren ','status' => '1','deleted_at' => NULL,'created_at' =>  now(),'updated_at' => now())
                 );
                 foreach ( $cookies as $key => $val) {
                     Cookie::create($val);
