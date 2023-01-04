@@ -16,7 +16,7 @@ class Contact extends Component
 {
 
 public $surname, $email, $regarding, $client_message  ,$Contactmain ,$getContactSection;
-
+public $checked;
 public function render()
 {
 
@@ -30,6 +30,7 @@ public function render()
         'email' => 'required|email',
         'regarding' => 'required',
         'client_message' => 'required', 
+        'checked' => 'required', 
     ];
 
     protected $messages = [
@@ -37,6 +38,9 @@ public function render()
       'email.required' => 'Email Required.',
       'regarding.required' => 'Subject Required.',
       'client_message.required' => 'Message Required.',
+
+      'checked.required' => 'Please check this field is required',
+
     ];
    private function resetInputFields(){
         $this->surname = '';

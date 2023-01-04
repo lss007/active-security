@@ -70,31 +70,36 @@
         <div class="sectionSpace">
           <div class="container">
             <div class="contentCol">
-              <h2 class="lgTitle p2">  {!! isset($companysecOne->heading)  ? html_entity_decode($companysecOne->heading) : "NA" !!}  
+              <h2 class="lgTitle p2">  {!! isset($companysecOne->heading)  ? trim($companysecOne->heading) : "NA" !!}  
 
               </h2>
               <p class="lgText p2 pt-xl-1 pb-xxl-2">
                 
-                {!! isset($companysecOne->title)  ? html_entity_decode($companysecOne->title) : "NA" !!}  
+                {!! isset($companysecOne->title)  ? trim($companysecOne->title) : "NA" !!}  
               </p>
               <p>
-                {!! isset($companysecOne->para1)  ? html_entity_decode($companysecOne->para1) : "NA" !!}  
+                {!! isset($companysecOne->para1)  ? trim($companysecOne->para1) : "NA" !!}  
               </p>
+              @if(isset($companysecOne->title2))
               <p class="lgText p2 pt-xl-1 pb-xxl-2">
-                {!! isset($companysecOne->title2)  ? html_entity_decode($companysecOne->title2) : "NA" !!}  
+                {!! isset($companysecOne->title2)  ? trim($companysecOne->title2) : "NA" !!}  
                 
               </p>
+              @endif
+              @if(isset($companysecOne->para2))
               <p>
-                {!! isset($companysecOne->para2)  ? html_entity_decode($companysecOne->para2) : "NA" !!}  
+                {!! isset($companysecOne->para2)  ? trim($companysecOne->para2) : "NA" !!}  
                 
               </p>
+              @endif
+              @if(isset($companysecOne->para3))
               <p>
-                {!! isset($companysecOne->para3)  ? html_entity_decode($companysecOne->para3) : "NA" !!} 
-
+                {!! isset($companysecOne->para3)  ? trim($companysecOne->para3) : "NA" !!} 
               </p>
+              @endif
               @if($companysecOne->para4)
               <p>
-                {!! isset($companysecOne->para4)  ? html_entity_decode($companysecOne->para4) : "NA" !!} 
+                {!! isset($companysecOne->para4)  ? trim($companysecOne->para4) : "NA" !!} 
 
               </p>
               @endif
@@ -146,19 +151,26 @@
                     {!! isset($companysecTwo->heading) ? $companysecTwo->heading : "NA"!!}
                     </h2>
            
-         
+                   @if(isset($companysecTwo->title) )
                   <p class="lgText p2 pt-1">
-                    {!! isset($companysecTwo->title)  ? html_entity_decode($companysecTwo->title) : "NA" !!} 
+                    {!! isset($companysecTwo->title)  ? trim($companysecTwo->title) : "NA" !!} 
                   </p>
+                  @endif
+                  @if(isset($companysecTwo->para1))
                   <p>
-                    {!! isset($companysecTwo->para1)  ? html_entity_decode($companysecTwo->para1) : "NA" !!} 
-                     </p>
-                  <p>      {!! isset($companysecTwo->para2)  ? html_entity_decode($companysecTwo->para2) : "NA" !!} 
+                    {!! isset($companysecTwo->para1)  ? trim($companysecTwo->para1) : "NA" !!} 
+                  </p>
+                  @endif
+                   @if( isset($companysecTwo->para2) )
+                  <p> {!! isset($companysecTwo->para2)  ? trim($companysecTwo->para2) : "NA" !!} 
 
                   </p>
-                  <p>      {!! isset($companysecTwo->para3)  ? html_entity_decode($companysecTwo->para3) : "NA" !!} 
+                  @endif
+                  @if(isset($companysecTwo->para3))
+                  <p> {!! isset($companysecTwo->para3)  ? trim($companysecTwo->para3) : "NA" !!} 
 
                   </p>
+                  @endif
                 </div>
               </div>
             </div>
@@ -206,15 +218,15 @@
               <div class="col-lg-6">
                 <div class="contentCol">
                   <h2 class="lgTitle p2">   
-                    {!! isset($companysecThree->heading)  ? html_entity_decode($companysecThree->heading) : "NA" !!} 
+                    {!! isset($companysecThree->heading)  ? trim($companysecThree->heading) : "NA" !!} 
                    </h2>
                   <p class="lgText p2 pt-1">
-                    {!! isset($companysecThree->title)  ? html_entity_decode($companysecThree->title) : "NA" !!} 
+                    {!! isset($companysecThree->title)  ? trim($companysecThree->title) : "NA" !!} 
                   </p>
                   <p>
-                    {!! isset($companysecThree->para1)  ? html_entity_decode($companysecThree->para1) : "NA" !!} 
+                    {!! isset($companysecThree->para1)  ? trim($companysecThree->para1) : "NA" !!} 
                      </p>
-                  <p>      {!! isset($companysecThree->para2)  ? html_entity_decode($companysecThree->para2) : "NA" !!} 
+                  <p>      {!! isset($companysecThree->para2)  ? trim($companysecThree->para2) : "NA" !!} 
 
                   </p>
                  

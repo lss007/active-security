@@ -130,11 +130,14 @@
                         </div>
                         <div class="col-12">
                           <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check1">
+                            <input type="checkbox" class="form-check-input" id="check1" wire:model="checked" value="1">
                             <label class="form-check-label" for="check1">
                              @if(isset($getContactSection->para1) )
                                   {!! isset($getContactSection->para1)  ? html_entity_decode($getContactSection->para1) : "NA" !!}  
                              @endif
+                             <br>
+                          @error('checked')<span class="text-danger"> {{$message}}</span> @enderror
+
                             </label>
                           </div>
                         </div>
