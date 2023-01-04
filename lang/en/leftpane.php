@@ -42,9 +42,10 @@ return [
     // top header 
     'Edit Profile' => 'Edit Profile',
     'Sign Out' => 'Sign Out',
+    'navigation menu' => 'Navigationsmenü',
     'Menubar' => 'Show Menu',
     'Show submenu' => 'Show submenu',
-   
+    'For hashtags' =>'For hashtags',
 
 
 

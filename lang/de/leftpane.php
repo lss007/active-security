@@ -43,7 +43,9 @@ return [
     'Edit Profile' => 'Profil bearbeiten',
     'Sign Out' => 'Austragen',
     'Menubar' => 'Show Menue',
+    'navigation menu' => 'Navigationsmenü',
     'Show submenu' => 'Untermenü anzeigen',
+    'For hashtags' => 'Für Hashtags',
 
 
 

@@ -1,148 +1,69 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+      @php
+        $SeoData = DB::table('seo_settings')->where('status',1)->first();
+        // dd($SeoData);
+      @endphp
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
+  <link rel="canonical" href="{{ url()->current() }}" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title> active-sec.de | Sicherheitsdienst in Regensburg</title>
-  {{-- start frontend css  --}}
-  <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
- 
-  <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
-   
+  <title>{{isset($SeoData->title) ? trim($SeoData->title) : "active-sec.de | Sicherheitsdienst in Regensburg" }}</title>
+  <meta name="description" content="{{isset($SeoData->description) ? trim($SeoData->description) : "" }}">
+  <meta name="keywords" content="{{isset($SeoData->keywords) ? trim($SeoData->keywords) : "" }}">
+  <meta name="author" content="{{isset($SeoData->author) ? $SeoData->author : "" }}">
+
+    <meta property="og:title" content="{{isset($SeoData->og_title) ? $SeoData->og_title : "" }}" />
+    <meta property="og:description" content="{{isset($SeoData->og_description) ? $SeoData->og_description : "" }}" />
+    <meta property="og:image" content="{{isset($SeoData->og_image) ? asset('storage/meta/'.$SeoData->og_image) : "" }}" />
+      {{-- start frontend css  --}}
+    <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
+      
   {{-- end frontend css  --}}
-  <style>
-    #overlay {
-      position: fixed; 
-      height: 100%; 
-      width: 100%; 
-      top:0; 
-      left: 0; 
-      background:white;
-      /* filter: blur(8px); */
-      /* -webkit-filter: blur(8px); */
-      /* Full height */
-
-      /* Center and scale the image nicely */
-      /* background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover; */
-      z-index:9999;
-     /* padding-top: 10px; */
-    }
-    body {
-      background: #f5f5f5;
-}
-
-.card {
-      position: 0;
-      -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-      background-color: #FFF;
-      border-radius: 6px;
-      height: 100%;
-      overflow: hidden;
-      width: 100%;
-      margin: 0;
-  }
-  
-  .shimmerBG {
-      animation-duration: 2.2s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
-      background: #ddd;
-      background: linear-gradient(to right, #F6F6F6 5%, #F0F0F0 20%, #F6F6F6 35%);
-      background-size: 1200px 100%;
-      animation: shimmer 3s;
-      animation-iteration-count: infinite;
-      /* background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%); */
-      background-size: 1000px 100%;
-}
-
-
-@-webkit-keyframes shimmer {
-    0% {
-        background-position: -100% 0;
-    }
-    100% {
-        background-position: 100% 0;
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -1200px 0;
-    }
-    100% {
-        background-position: 1200px 0;
-    }
-}
-  
-    .media {
-    height: 400px;
-    width: 100%;
-    margin-left: auto; 
-    margin-right: 0;
-    }
-
-.p-32 {
-    padding: 32px;
-    }
-
-.title-line {
-    height: 24px;
-    width: 100%;
-    margin-bottom: 12px;
-    border-radius: 20px;
-    }
-
-.content-line {
-    height: 8px;
-    width: 100%;
-    margin-bottom: 16px;
-    border-radius: 8px;
-}
-  
-  .end {
-      width: 40%;
-    }
-
-}
-
-
-  .m-t-24 {
-      margin-top: 24px;
-  }
-
-
-
-  </style>
   @livewireStyles
 </head>
 <body>
-  
-  <div id="overlay" >
-    <div class="card">
-      
-      <div class="p-32">
-        <div class="shimmerBG title-line"></div>
-        <div class="shimmerBG title-line end"></div>
-        <div class="shimmerBG media"></div>
 
-        <div class="shimmerBG content-line m-t-24"></div>
-        <div class="shimmerBG content-line"></div>
-        <div class="shimmerBG content-line"></div>
-        <div class="shimmerBG content-line"></div>
-        <div class="shimmerBG content-line end"></div>
-        <div class="shimmerBG content-line m-t-24"></div>
-        <div class="shimmerBG content-line"></div>
-        <div class="shimmerBG content-line"></div>
-        <div class="shimmerBG content-line"></div>
-        <div class="shimmerBG content-line end"></div>
+  <div class="loaderCol">
+    <div class="headerCol">
+      <div class="container">
+        <div class="row g-2 align-items-center">
+          <div class="col col-lg-auto">
+            <div class="logoCol placeholderBg">
+            </div>
+          </div>
+          <div class="col-auto col-lg">
+            <div class="row gy-3 gx-0 align-items-center">
+              <div class="col-lg">
+                <div class="mColPlaceholader placeholderBg"></div>
+              </div>
+              <div class="d-none d-lg-block col-lg-auto">
+                <div class="rBtnPlaceholader placeholderBg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bannerSection homeBanner">
+      <div class="container">
+        <div class="bannerContent">
+          <div>
+            <div class="titlePlaceholader placeholderBg"></div>
+            <div class="titlePlaceholader placeholderBg"></div>
+            <div class="sTitlePlaceholader placeholderBg"></div>
+            <div class="textPlaceholder placeholderBg"></div>
+            <div class="textPlaceholder placeholderBg"></div>
+            <div class="btn placeholderBg"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -164,13 +85,14 @@
      <!-- Toaster Javascript cdn -->
 
   {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> --}}
-<script>
-      document.onreadystatechange = function() {
-      if (document.readyState == "complete") {
-        $('#overlay').fadeOut(500);
-      }
-  };
 
+
+<script>
+  document.onreadystatechange = function() {
+    if (document.readyState == "complete") {
+      $('html').addClass('removePreLoader');
+    }
+  };
 </script>
         {{-- frontend site js and footer --}}
         @include('livewire.common.footer')

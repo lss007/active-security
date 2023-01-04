@@ -109,7 +109,53 @@
             </table>
           </div><!-- table-wrapper -->
         </div><!-- card -->
-        
+        @if (isset($trashdata) && count($trashdata) > 0)
+        <div class="card pd-20 pd-sm-40">
+          <h4>Restore Deleted Logos   </h4>
+          <div class="table-responsive mg-t-25">
+          <table class="table table-hover table-bordered mg-b-0">
+            <thead class="bg-danger">
+              <tr>
+      
+                <th class="wd-10p">Image </th>
+                <th class="wd-25p">Name</th>
+                <th class="wd-15p">Link </th>
+
+                <th class="wd-15p">Action</th>
+      
+              </tr>
+            </thead>
+            <tbody>
+            
+              @foreach($trashdata as $keys => $trashed)
+              <tr>
+            
+      
+                <td>   
+                  <img width="300" class="img-fluid" src="{{(!empty($trashed->logo))  
+                    ? asset('storage/social-logo/'.$trashed->logo):asset('no_image.jpg')}}" alt="..."  width="50px">
+                    </td>
+                    <th class="wd-15p">{{(isset($trashed->category) ? $trashed->category : '')}} </th>
+                    <th class="wd-15p"><a href="{{isset($trashed->link) ? $trashed->link : 'https://www.example.com/'}}">
+                      {{ isset($trashed->link) ? Str::limit($trashed->category,20,$end='....') : "NA"}}</a> </th>
+      
+                <td>
+      
+                  <button class="btn btn-primary disabled mg-b-10"  wire:click.prevent="restore({{$trashed->id}})">Restore</button>
+      
+                  <button class="btn btn-danger  mg-b-10" wire:click.prevent="fulleDelete({{$trashed->id}})">Delete</button>
+      
+              </td>
+              </tr>
+              @endforeach
+            
+      
+      
+            </tbody>
+          </table>
+          </div>
+        </div>
+          @endif
       </div><!-- sl-pagebody -->
 
 

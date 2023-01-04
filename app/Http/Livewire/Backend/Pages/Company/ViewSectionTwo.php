@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class ViewSectionTwo extends Component
 {
-    public $getSectionData ;
+    public $getSectionData  ,$trashdata;
     public function render()
     {
          $this->getSectionData = companySectionTwo::latest()->get();

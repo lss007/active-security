@@ -39,7 +39,7 @@
         <li class="nav-item"><a href="{{route('viewHomeclients')}}" class="nav-link @if(Route::is('viewHomeclients') ) active @else '' @endif"> {{__('leftpane.Client logo')}}</a></li>
         <li class="nav-item"><a href="{{route('viewHomesliders')}}" class="nav-link @if(Route::is('viewHomesliders') ) active @else '' @endif" > {{__('leftpane.Home Sliders')}}</a></li>
         <li class="nav-item"><a href="{{route('ViewHomeSection5')}}" class="nav-link @if(Route::is('ViewHomeSection5') ) active @else '' @endif">  {{__('leftpane.Home section5')}} </a></li>
-        <li class="nav-item"><a href="{{route('view_Allhashtag')}}" class="nav-link @if(Route::is('view_Allhashtag') ) active @else '' @endif">  All Hashtags <img src="{{asset('new.gif')}}" alt="" style="width:40px"> </a></li>
+        <li class="nav-item"><a href="{{route('view_Allhashtag')}}" class="nav-link @if(Route::is('view_Allhashtag') ) active @else '' @endif">  {{__('leftpane.For hashtags')}} <img src="{{asset('new.gif')}}" alt="" style="width:40px"> </a></li>
        
         
       </ul>
@@ -49,7 +49,7 @@
       <a href="javascript:void(0)" class="sl-menu-link @if ($prefix == 'en/navbar' || $prefix == 'de/navbar')  active show-sub @else @endif ">
         <div class="sl-menu-item">
           <i class="icon ion-navicon-round"></i>
-          <span class="menu-item-label">  Navbar </span>
+          <span class="menu-item-label"> {{__('leftpane.navigation menu')}}   </span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
           
         </div>
@@ -140,16 +140,18 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_socialMediaCat')}}" class="nav-link   @if(Route::is('view_socialMediaCat') ) active @else '' @endif">  {{__('leftpane.Manage Social Category')}} </a></li>
         <li class="nav-item"> <a href="{{route('view_social_media')}}" class="nav-link   @if(Route::is('view_social_media') ) active @else '' @endif">  {{__('leftpane.Manage Social Media')}}</a></li>
+        <li class="nav-item"> <a href="{{route('view_seo_setting')}}" class="nav-link   @if(Route::is('view_seo_setting') ) active @else '' @endif"> Seo Setting <img src="{{asset('new.gif')}}" alt="" style="width:40px"></a></li>
+
       </ul>
       {{-- Others --}}
-@if(Auth::user()->role_id === 3)
+    @if(Auth::user()->role_id === 3)
       <a href="#" class="sl-menu-link  @if ($prefix == 'en/others' || $prefix == 'de/others')  active show-sub @else  @endif ">
         <div class="sl-menu-item">
           <i class="fa fa-sliders"></i>
           <span class="menu-item-label">{{__('leftpane.Others')}}</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
-    </a><!-- sl-menu-link -->
+      </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{route('view_route_list')}}" class="nav-link   @if(Route::is('view_route_list') ) active @else '' @endif">  {{__('leftpane.Route list')}} </a></li>
       </ul>

@@ -72,6 +72,9 @@ use App\Http\Livewire\Backend\Pages\Navbar\ViewSubNavbar;
 use App\Http\Livewire\Backend\Pages\Privacy\AddFooterPrivacy;
 use App\Http\Livewire\Backend\Pages\Privacy\EditFooterPrivacy;
 use App\Http\Livewire\Backend\Pages\Privacy\ViewFooterPrivacy;
+use App\Http\Livewire\Backend\Pages\SeoSetting\AddSeoData;
+use App\Http\Livewire\Backend\Pages\SeoSetting\EditSeoData;
+use App\Http\Livewire\Backend\Pages\SeoSetting\ViewSeoData;
 use App\Http\Livewire\Backend\Pages\Services\AddServices;
 use App\Http\Livewire\Backend\Pages\Services\Banner\EditBanners;
 use App\Http\Livewire\Backend\Pages\Services\Banner\ViewBanners;
@@ -327,13 +330,19 @@ Route::group(['prefix' =>'social'], function () {
     Route::group(['prefix' =>'hashTag'], function () {
         Route::get('/view', ViewHashTag::class)->name('view_Allhashtag');
         Route::get('/edit/{id}', EditHashTag::class)->name('edit_Allhashtag');
-
-        
         Route::get('/add', AddHashTag::class)->name('add_Allhashtag');
-
-        
-
     });
+    Route::group(['prefix' =>'Seo-setting'], function () {
+         Route::get('/view', ViewSeoData::class)->name('view_seo_setting');
+         Route::get('/add', AddSeoData::class)->name('add_seo_setting');
+         Route::get('/edit/{id}', EditSeoData::class)->name('edit_seo_setting');
+
+         
+
+
+         
+
+});
 });
        // middle ware end
 
