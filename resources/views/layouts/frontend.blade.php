@@ -35,7 +35,8 @@
       <div class="container">
         <div class="row g-2 align-items-center">
           <div class="col col-lg-auto">
-            <div class="logoCol placeholderBg">
+            <div class="logoCol placeholderBg--">
+              <img src="{{asset('frontend/images/logo.svg')}}" alt="Logo" />
             </div>
           </div>
           <div class="col-auto col-lg">
