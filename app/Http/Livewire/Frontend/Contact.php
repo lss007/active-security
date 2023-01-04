@@ -57,22 +57,25 @@ public function sendmessage()
                     'client_message' => $this->client_message,
                     'created_at' => Carbon::now(),
                 ]);
-        // if($sendmessage ){  
-        //     dispatch(new ContactMessage( $sendmessage));     
-        //     $notification = array(
-        //         'message' => 'Nachricht erfolgreich gesendet',
-        //         'alert-type' => 'success'
-        //     );
-        //         return redirect('/')->with($notification); 
-        //         $this->resetInputFields();  
+        if($sendmessage ){  
+            dispatch(new ContactMessage( $sendmessage));     
+            $notification = array(
+                'message' => 'Nachricht erfolgreich gesendet',
+                'alert-type' => 'success'
+            );
+                return redirect('/')->with($notification); 
+                $this->resetInputFields();  
 
-        //     }
-                    $notification = array(
-                            'message' => 'Nachricht erfolgreich gesendet',
-                            'alert-type' => 'success'
-                        );
-                            return redirect()->route('ContactPage')->with($notification);
-                                $this->resetInputFields(); 
+            }else{
+                $notification = array(
+                    'message' => 'Nachricht erfolgreich gesendet',
+                    'alert-type' => 'success'
+                );
+                    return redirect()->route('ContactPage')->with($notification);
+                             $this->resetInputFields(); 
+            }
+       
+                               
             
      
     }
