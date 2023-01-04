@@ -30,7 +30,7 @@
 </head>
 <body>
 
-  <div class="loaderCol">
+  {{-- <div class="loaderCol">
     <div class="headerCol">
       <div class="container">
         <div class="row g-2 align-items-center">
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
      @include('livewire.common.header')
        <!-- Page Content -->
         @if (isset($header))

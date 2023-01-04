@@ -75,7 +75,7 @@
   --swiper-pagination-bullet-height: var(--swiper-pagination-bullet-width);
 }
 /* loader */
-html {
+/* html {
   overflow-y: hidden;
 }
 html.removePreLoader {
@@ -244,6 +244,7 @@ html.removePreLoader {
   	width: 228px;
   }
 }
+loader end  */
 html {
   overflow-x: hidden;
 }
