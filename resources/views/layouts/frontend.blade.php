@@ -25,7 +25,15 @@
     <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
     @livewireStyles
-      
+      <style>
+        .menuColMain, .bannerContent, section {
+  opacity: 0;
+  transition: all 600ms ease-in-out 0s;
+}
+.homeload .menuColMain,.homeload .bannerContent, .homeload section {
+  opacity: 1;
+}
+      </style>
   {{-- end frontend css  --}}
 </head>
 <body>
