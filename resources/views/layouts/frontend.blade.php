@@ -28,7 +28,7 @@
       <style>
         .menuColMain, .bannerContent, section {
   opacity: 0;
-  transition: all 600ms ease-in-out 0s;
+  transition: all 400ms ease-in-out 0s;
 }
 .homeload .menuColMain,.homeload .bannerContent, .homeload section {
   opacity: 1;
