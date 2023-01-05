@@ -34,12 +34,12 @@ public function render()
     ];
 
     protected $messages = [
-      'surname.required' => 'Surname Required.',
-      'email.required' => 'Email Required.',
-      'regarding.required' => 'Subject Required.',
-      'client_message.required' => 'Message Required.',
+      'surname.required' => 'Name erforderlich.',
+      'email.required' => 'E-mail erforderlich.',
+      'regarding.required' => 'Betreff erforderlich.',
+      'client_message.required' => 'Nachricht erforderlich.',
 
-      'checked.required' => 'Please check this field is required',
+      'checked.required' => 'Bestatingung  erforderlich',
 
     ];
    private function resetInputFields(){
