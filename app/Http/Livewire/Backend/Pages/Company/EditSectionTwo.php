@@ -51,6 +51,8 @@ class EditSectionTwo extends Component
             $this->title =  $this->editsections->title;
             $this->para1 =  $this->editsections->para1; 
             $this->para2 = $this->editsections->para2;
+            $this->para3 = $this->editsections->para3;
+
             $this->profile_img = $this->editsections->profile_img;
             $this->tablet_banner = $this->editsections->tablet_banner;
             $this->mobile_banner = $this->editsections->mobile_banner;
