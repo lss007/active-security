@@ -41,9 +41,16 @@
             <div class="col-sm-6 col-lg">
               <h4 class="footerTitle">Kontakt</h4>
               <ul class="footerIconOption">
-                <li><span class="optionIcon"><img src="{{ asset('frontend/images/phone-icon.svg')}}" alt="..."></span> Telefon: {{isset($footeraddress->telefon) ? $footeraddress->telefon :"NA"}}</li>
+                <li><span class="optionIcon"><img src="{{ asset('frontend/images/phone-icon.svg')}}" alt="..."></span> Telefon:  
+                  <a  href="tel:{{isset($footeraddress->call_to) ? $footeraddress->call_to :"javascript:void(0)"}}" >
+                  {{isset($footeraddress->telefon) ? $footeraddress->telefon :"NA"}} </a></li>
                 <li><span class="optionIcon"><img src="{{ asset('frontend/images/fax-icon.svg')}}" alt="..."></span> Fax:  {{isset($footeraddress->fax) ? $footeraddress->fax :"NA"}}</li>
-                <li><span class="optionIcon"><img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> {{isset($footeraddress->email) ? $footeraddress->email :"NA"}}</li>
+                <li><span class="optionIcon"><img src="{{ asset('frontend/images/email-icon.svg')}}" alt="..."></span> 
+                  <a href="mailto:{{isset($footeraddress->mail_to) ? $footeraddress->mail_to :"javascript:void(0)"}}" >
+                    <a href="mailto:{{isset($footeraddress->mail_to) ? $footeraddress->mail_to :"javascript:void(0)"}}" >
+                    {{isset($footeraddress->email) ? $footeraddress->email :"NA"}}
+                    </a>
+                </li>
               </ul>
             </div>
             <div class="col-sm-6 col-lg">
