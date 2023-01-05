@@ -81,6 +81,14 @@
 .homeload .menuColMain,.homeload .bannerContent, .homeload section {
   opacity: 1;
 }
+
+.socialIcons img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+}
 /* loader */
 /* html {
   overflow-y: hidden;
@@ -1493,6 +1501,8 @@ body .form-select {
   }
   .socialIcons img {
   	width: 38px;
+  	height: 38px;
+
   }
   .socialIcons > li + li {
   	padding-left: 8px;
