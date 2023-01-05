@@ -17,8 +17,8 @@ $navitems5   = DB::table('navbars')->join('route_name_lists','navbars.route_link
           //  dd($subnavbars);
  @endphp
 
-<div wire:loading.delay.shortest >
-  loading ....
+<div wire:loading >
+  loading....
       </div> 
 
     <div class="headerCol"  wire:loading.remove  >
@@ -54,15 +54,15 @@ $navitems5   = DB::table('navbars')->join('route_name_lists','navbars.route_link
                           <li><a href="{{isset($val->route_link) ? route($val->route_link) : "#"}}" class="@if(Route::is(isset($val->route_link) ? $val->route_link : "") ) active @else '' @endif">{{isset($val->route_name) ? $val->route_name : "NA"}}</a></li>
                     @endforeach
                     @else
-      {{-- <li><a href="{{route('ObjektPage')}}" class="@if(Route::is('ObjektPage') ) active @else '' @endif">Objekt- und Werkschutz</a></li>
-                                <li><a href="{{route('CenterbewachungPage')}}" class="@if(Route::is('CenterbewachungPage') ) active @else '' @endif">Centerbewachung</a></li>
-                                <li><a href="{{route('KaufhausdetektivePage')}}" class="@if(Route::is('KaufhausdetektivePage') ) active @else '' @endif">Kaufhausdetektive</a></li>
-                                <li><a href="{{route('baustellenbewachungPage')}}" class="@if(Route::is('baustellenbewachungPage') ) active @else '' @endif">Baustellenbewachung</a></li>
-                                <li><a href="{{route('openingAndclosingPage')}}" class="@if(Route::is('openingAndclosingPage') ) active @else '' @endif">Öffnungs-und Schließddienst</a></li>
-                                <li><a href="{{route('revierfahrtenPage')}}" class="@if(Route::is('revierfahrtenPage') ) active @else '' @endif">Revierkontrollen</a></li>
-                                <li><a href="{{route('empfangsdienst')}}" class="@if(Route::is('empfangsdienst') ) active @else '' @endif">Empfangsdienst</a></li>
-                                <li><a href="{{route('ShopGuardPage')}}" class="@if(Route::is('ShopGuardPage') ) active @else '' @endif">Shop Guard</a></li>
-                                <li><a href="{{route('VeranstaltungsSchutzPage')}}" class="@if(Route::is('VeranstaltungsSchutzPage') ) active @else '' @endif">Veranstaltungsschutz</a></li>
+      {{--  <li><a href="{{route('ObjektPage')}}" class="@if(Route::is('ObjektPage') ) active @else '' @endif">Objekt- und Werkschutz</a></li>
+            <li><a href="{{route('CenterbewachungPage')}}" class="@if(Route::is('CenterbewachungPage') ) active @else '' @endif">Centerbewachung</a></li>
+             <li><a href="{{route('KaufhausdetektivePage')}}" class="@if(Route::is('KaufhausdetektivePage') ) active @else '' @endif">Kaufhausdetektive</a></li>
+             <li><a href="{{route('baustellenbewachungPage')}}" class="@if(Route::is('baustellenbewachungPage') ) active @else '' @endif">Baustellenbewachung</a></li>
+             <li><a href="{{route('openingAndclosingPage')}}" class="@if(Route::is('openingAndclosingPage') ) active @else '' @endif">Öffnungs-und Schließddienst</a></li>
+             <li><a href="{{route('revierfahrtenPage')}}" class="@if(Route::is('revierfahrtenPage') ) active @else '' @endif">Revierkontrollen</a></li>
+             <li><a href="{{route('empfangsdienst')}}" class="@if(Route::is('empfangsdienst') ) active @else '' @endif">Empfangsdienst</a></li>
+             <li><a href="{{route('ShopGuardPage')}}" class="@if(Route::is('ShopGuardPage') ) active @else '' @endif">Shop Guard</a></li>
+             <li><a href="{{route('VeranstaltungsSchutzPage')}}" class="@if(Route::is('VeranstaltungsSchutzPage') ) active @else '' @endif">Veranstaltungsschutz</a></li>
      --}}
                      @endif
                         </ul>

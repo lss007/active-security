@@ -1,10 +1,7 @@
 <div>
-
     {{-- Care about people's approval and you will be their prisoner. --}}
     @if(isset($homeBanner))
-
     <section  >
-
       <style>
         .bannerSection.homeBanner {
           background-image: url('{{asset('storage/Home-banner/'.$homeBanner->banner_image)}}');
@@ -22,7 +19,6 @@
       </style>
 
 <div class="bannerSection homeBanner" >
-
         <div class="container" >
           <div class="bannerContent">
             <h1 class="xlTitle">{{ isset($homeBanner->heading) ? $homeBanner->heading : "NA"}}</h1>
@@ -32,14 +28,9 @@
             <p> 
               {{ isset($homeBanner->banner_paragaph) ? $homeBanner->banner_paragaph : "NA"}}
             </p>
-       
-            {{-- <a href="{{ isset($homeBanner->button_link) ? $homeBanner->button_link : "#nextSection"}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
-            {{-- <a href="{!!isset($homeBanner->button_link) ? $homeBanner->button_link.'#2' : "#1"!!}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
-           
             @php
               $httplink  =  strpos( $homeBanner->button_link, 'http') === 0;
            @endphp
-
             @if(isset($homeBanner->button_link)) 
                 @if( $httplink )
                   <a href="{{$homeBanner->button_link}}" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection" target="_blank">
@@ -50,27 +41,18 @@
                       {!! isset($homeBanner->button_text) ? $homeBanner->button_text : "Jetzt mehr erfahren"!!} 
                     </a>
                 @endif
-
              @endif
-             {{-- <a href="" class="btn btnPrimary arrowBtn mt-sm-3 mt-xl-4 scrollToSection"> --}}
-              
-             {{-- </a> --}}
           </div>
         </div>
       </div>
     </section>
-  
-    @else 
-    
+    @else   
     @endif
-
-
     @if(isset($active_secuirty))
-    <section  wire:loading.remove>
+    <section >
       <div class="nextSectionParent">
         <div id="1"></div>
       </div>
-
       <div class="sectionSpace">
         <div class="container">
           <div class="row gy-4 align-items-center">
@@ -86,14 +68,12 @@
                     ? asset('storage/Home-section/'.$active_secuirty->mobile_img) 
                     :asset('storage/Home-section/'.$active_secuirty->main_image)}}" alt=""  class="imgStyle1">
                 </picture>
-                {{-- <img src="{{(isset($this->active_secuirty->main_image)) 
-                  ? asset('storage/Home-section/'.$active_secuirty->main_image) :asset('no_image.jpg')}}" alt="..." class="imgStyle1"> --}}
               </div>
             </div>
             <div class="col-lg-6">
               <div class="contentCol">
                 <h2 class="lgTitle p2"> {{isset($active_secuirty->heading) ? $active_secuirty->heading : "NA" }}</h2>
-                <p class="lgText p2 pt-xl-1 pb-xxl-2">{!!isset($active_secuirty->sub_heading) ? $active_secuirty->sub_heading : "NA" !!}.</p>
+                <p class="lgText p2 pt-xl-1 pb-xxl-2">{!! isset($active_secuirty->sub_heading) ? trim($active_secuirty->sub_heading) : "NA" !!}</p>
                 <p>
                  {!! isset($active_secuirty->paragraph)  
                  ? html_entity_decode($active_secuirty->paragraph) : "NA" !!}  
@@ -128,8 +108,6 @@
           <div class="row gy-4 align-items-center">
             <div class="col-lg-6 order-lg-last">
               <div class="imgCol ps-lg-4">
-                {{-- <img src="{{(isset($this->HomeSectiontwo->image)) 
-                  ? asset('storage/Home-section/'.$HomeSectiontwo->image) :asset('no_image.jpg')}}" alt="..." > --}}
                   <picture>
                     <source media="(min-width:992px)" srcset="{{(isset($this->HomeSectiontwo->image)) 
                       ? asset('storage/Home-section/'.$HomeSectiontwo->image) :asset('no_image.jpg')}}">

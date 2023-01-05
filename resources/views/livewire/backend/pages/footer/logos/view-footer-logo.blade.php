@@ -181,36 +181,23 @@
               <table class="table table-hover table-bordered mg-b-0">
                 <thead class="bg-danger">
                   <tr>
-          
                     <th class="wd-15p">Image</th>
-              
                     <th>Action</th>
-          
                   </tr>
                 </thead>
                 <tbody>
-                
                   @foreach($trashdata as $keys => $trashed)
                   <tr>
-                
                     <td>   
                       <img width="300" class="img-fluid" src="{{(!empty($trashed->logo_img))  
                       ? asset('storage/footer-logo/'.$trashed->logo_img):asset('no_image.jpg')}}" alt="..." >
                         </td>
-                 
-          
                     <td>
-          
                       <button class="btn btn-primary disabled mg-b-10"  wire:click.prevent="restore({{$trashed->id}})">Restore</button>
-          
                       <button class="btn btn-danger  mg-b-10" wire:click.prevent="fulleDelete({{$trashed->id}})">Delete</button>
-          
                   </td>
                   </tr>
                   @endforeach
-                
-          
-          
                 </tbody>
               </table>
               </div>

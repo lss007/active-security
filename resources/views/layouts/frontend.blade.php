@@ -54,7 +54,8 @@
 <script>
   document.onreadystatechange = function() {
     if (document.readyState == "complete") {
-      $('html').addClass('removePreLoader');
+      $('html').addClass('homeload');
+
     }
   };
 </script>

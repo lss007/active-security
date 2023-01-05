@@ -74,6 +74,13 @@
   --swiper-pagination-bullet-width: 16px;
   --swiper-pagination-bullet-height: var(--swiper-pagination-bullet-width);
 }
+.menuColMain, .bannerContent, section {
+  opacity: 0;
+  transition: all 800ms ease-in-out 0s;
+}
+.homeload .menuColMain,.homeload .bannerContent, .homeload section {
+  opacity: 1;
+}
 /* loader */
 /* html {
   overflow-y: hidden;
