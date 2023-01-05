@@ -1,6 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); */
 
-
+/* 
 @font-face {
   font-family: 'Poppins';
   src: url('../../fonts/Poppins-Medium.eot');
@@ -51,7 +51,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 
 
@@ -83,177 +83,6 @@
   object-fit: cover;
   border-radius: 50%;
 }
-/* loader */
-/* html {
-  overflow-y: hidden;
-}
-html.removePreLoader {
-  overflow-y: initial;
-}
-
-.removePreLoader .loaderCol {
-  display: none;
-}
-.loaderCol {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	background-color: #161e29;
-  z-index: 999;
-}
-.loaderCol .bannerSection {
-	background: none !important;
-}
-.loaderCol .bannerSection::before {
-	display: none;
-}
-@keyframes placeHolderShimmer {
-  0%{ background-position: -468px 0; }
-  100%{ background-position: 468px 0; }
-}
-.placeholderBg {
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-name: placeHolderShimmer;
-  background: #f6f7f8;
-  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-  background-size: 800px 104px;
-  position: relative;
-  border-radius: 4px;
-}
-.logoCol.placeholderBg {
-	height: 40px;
-	width: 198px;
-}
-.mColPlaceholader.placeholderBg {
-	max-width: 600px;
-	width: 100%;
-	height: 50px;
-	margin: 25px auto;
-}
-.rBtnPlaceholader.placeholderBg {
-	width: 185px;
-	height: 60px;
-	border-radius: 30px;
-}
-.loaderCol .bannerContent {
-	max-width: 500px;
-}
-.titlePlaceholader.placeholderBg {
-	height: 60px;
-	margin-top: 5px;
-}
-.titlePlaceholader + .titlePlaceholader {
-	margin-top: 22px;
-	max-width: 96%;
-}
-.sTitlePlaceholader.placeholderBg {
-	height: 40px;
-	margin-top: 30px;
-	margin-bottom: 20px;
-	max-width: 92%;
-}
-.textPlaceholder.placeholderBg {
-	height: 25px;
-	margin-bottom: 12px;
-}
-.textPlaceholder + .textPlaceholder {
-	margin-top: 10px;
-	max-width: 90%;
-}
-.btn.placeholderBg {
-	height: 60px;
-	width: 295px;
-	border-radius: 30px;
-	margin-top: 25px;
-}
-
-
-@media (max-width:1399px) {
-  .rBtnPlaceholader.placeholderBg {
-  	width: 160px;
-  	height: 50px;
-  }
-  .mColPlaceholader.placeholderBg {
-  	max-width: 530px;
-  	margin: 22px auto;
-  }
-  .loaderCol .bannerContent {
-  	max-width: 440px;
-  }
-  .btn.placeholderBg {
-  	height: 50px;
-  	width: 255px;
-  	margin-top: 30px;
-  }
-  .titlePlaceholader.placeholderBg {
-  	height: 55px;
-  	margin-top: 0;
-  }
-  .sTitlePlaceholader.placeholderBg {
-  	height: 35px;
-  	margin-top: 25px;
-  	margin-bottom: 25px;
-  	max-width: 96%;
-  }
-  .titlePlaceholader + .titlePlaceholader {
-  	margin-top: 12px;
-  	max-width: 92%;
-  }
-  .textPlaceholder.placeholderBg {
-  	height: 22px;
-  	margin-bottom: 8px;
-  }
-  .textPlaceholder + .textPlaceholder {
-  	margin-top: 0;
-  }
-}
-
-@media (max-width:1199px) {
-  .mColPlaceholader.placeholderBg {
-  	max-width: 480px;
-  }
-  .titlePlaceholader.placeholderBg {
-  	height: 50px;
-  }
-  .titlePlaceholader + .titlePlaceholader {
-  	margin-top: 10px;
-  	max-width: 62%;
-  }
-  .sTitlePlaceholader.placeholderBg {
-  	height: 33px;
-  	margin-top: 15px;
-  	margin-bottom: 15px;
-  	max-width: 88%;
-  }
-  .btn.placeholderBg {
-  	margin-top: 20px;
-  }
-}
-
-@media (max-width:991px) {
-  .mColPlaceholader.placeholderBg {
-  	max-width: 100%;
-  	width: 45px;
-  	margin: 0;
-  	height: 40px;
-  }
-  .titlePlaceholader {
-  	max-width: 95%;
-  }
-  .titlePlaceholader + .titlePlaceholader {
-  	margin-top: 10px;
-  	max-width: 58%;
-  }
-  .btn.placeholderBg {
-  	height: 45px;
-  	width: 228px;
-  }
-}
-loader end  */
 html {
   overflow-x: hidden;
 }
