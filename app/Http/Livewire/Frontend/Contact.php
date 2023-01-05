@@ -39,7 +39,7 @@ public function render()
       'regarding.required' => 'Betreff erforderlich.',
       'client_message.required' => 'Nachricht erforderlich.',
 
-      'checked.required' => 'Bestatingung  erforderlich',
+      'checked.required' => 'Bestätigung erforderlich',
 
     ];
    private function resetInputFields(){
