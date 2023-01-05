@@ -28,7 +28,7 @@
       <style>
 
 
-/* @font-face {
+@font-face {
   font-family: 'Poppins';
   src: url('{{ asset('fonts/Poppins-Medium.eot') }}');
   src: url('{{ asset('fonts/Poppins-Medium.eot?#iefix') }}') format('embedded-opentype'),
@@ -84,7 +84,7 @@
 }
 body {
 	font-family: 'Poppins';
-} */
+}
 
         /* .menuColMain, .bannerContent, section {
   opacity: 0;
