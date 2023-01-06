@@ -16,7 +16,7 @@ class HomePage extends Component
  
     public function render()
     {
-        sleep(seconds:1);
+     
        $this->homeBanner =       HomeBanner::where('status',1)->first();
        $this->active_secuirty  = HomeSectionOne::where('status',1)->first();
        $this->HomeSectiontwo =  HomeSectionTwo::where('status',1)->first();
