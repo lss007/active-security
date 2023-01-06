@@ -7,7 +7,6 @@
     <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Panel </title>
-
     <!-- vendor css -->
     <link rel="stylesheet" href="{{asset('backend/css/bracket.css')}}">
     <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
@@ -19,31 +18,22 @@
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> --}}
     {{-- <link rel="stylesheet" href="{{asset('backend/js/jquery.js')}}"> --}}
     <script src="{{asset('backend/js/jquery.js')}}"></script>
-
     {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>         --}}
     {{-- <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" /> --}}
     <link rel="stylesheet" href="{{asset('backend/css/dropzone.css')}}">
-
     <link rel="stylesheet" href="{{asset('backend/css/cropper.css')}}">
-
     <script src="{{asset('backend/js/dropzone.js')}}"></script>
-
-
     <script src="{{asset('backend/js/cropper.js')}}"></script>
-
     {{--  end croper js files  --}}
     {{-- data table css  --}}
     <link href="{{asset('backend/lib/highlightjs/github.css')}}" rel="stylesheet">
     <link href="{{asset('backend//lib/select2/css/select2.min.css')}}" rel="stylesheet">
     {{-- <link href="{{asset('backend/lib/SpinKit/spinkit.css')}}" rel="stylesheet"> --}}
     <link href="{{asset('backend/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
-    
-
     {{-- end data table css  --}}
     <link rel="stylesheet" href="{{asset('backend/css/starlight.css')}}">
-      <!-- Toaster CSS -->
-
-      <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Toaster CSS -->
+    <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
 
     @livewireStyles
     </head>
@@ -132,23 +122,20 @@
           case 'info':
           toastr.info(" {{ Session::get('message') }} ");
           break;
-      
           case 'success':
           toastr.success(" {{ Session::get('message') }} ");
           break;
-      
           case 'warning':
           toastr.warning(" {{ Session::get('message') }} ");
           break;
-      
           case 'error':
           toastr.error(" {{ Session::get('message') }} ");
           break; 
       }
       @endif 
     </script>
-            {{-- toastr js  --}}
-            @livewireScripts
+  {{-- toastr js  --}}
+  @livewireScripts
    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
   </body>
 </html>

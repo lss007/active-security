@@ -5,86 +5,27 @@
         $SeoData = DB::table('seo_settings')->where('status',1)->first();
         // dd($SeoData);
       @endphp
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
-  <link rel="canonical" href="{{ url()->current() }}" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{isset($SeoData->title) ? trim($SeoData->title) : "active-sec.de | Sicherheitsdienst in Regensburg" }}</title>
-  <meta name="description" content="{{isset($SeoData->description) ? trim($SeoData->description) : "" }}">
-  <meta name="keywords" content="{{isset($SeoData->keywords) ? trim($SeoData->keywords) : "" }}">
-  <meta name="author" content="{{isset($SeoData->author) ? $SeoData->author : "" }}">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="icon/image" href="{{ asset('frontend/images/favicon.ico')}}">
+      <link rel="canonical" href="{{ url()->current() }}" />
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+      <title>{{isset($SeoData->title) ? trim($SeoData->title) : "active-sec.de | Sicherheitsdienst in Regensburg" }}</title>
+      <meta name="description" content="{{isset($SeoData->description) ? trim($SeoData->description) : "" }}">
+      <meta name="keywords" content="{{isset($SeoData->keywords) ? trim($SeoData->keywords) : "" }}">
+      <meta name="author" content="{{isset($SeoData->author) ? $SeoData->author : "" }}">
+      <meta property="og:title" content="{{isset($SeoData->og_title) ? $SeoData->og_title : "" }}" />
+      <meta property="og:description" content="{{isset($SeoData->og_description) ? $SeoData->og_description : "" }}" />
+      <meta property="og:image" content="{{isset($SeoData->og_image) ? asset('storage/meta/'.$SeoData->og_image) : "" }}" />
+    {{-- start frontend css  --}}
+      <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
 
-    <meta property="og:title" content="{{isset($SeoData->og_title) ? $SeoData->og_title : "" }}" />
-    <meta property="og:description" content="{{isset($SeoData->og_description) ? $SeoData->og_description : "" }}" />
-    <meta property="og:image" content="{{isset($SeoData->og_image) ? asset('storage/meta/'.$SeoData->og_image) : "" }}" />
-      {{-- start frontend css  --}}
-    <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('frontend/css/bootstrap.min.css.map') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('frontend/css/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('frontend/css/toastr.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" type="text/css" />
-  
       <style>
 
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('{{ asset('fonts/Poppins-Medium.eot') }}');
-  src: url('{{ asset('fonts/Poppins-Medium.eot?#iefix') }}') format('embedded-opentype'),
-      url('{{ asset('fonts/Poppins-Medium.woff2') }}') format('woff2'),
-      url('{{ asset('fonts/Poppins-Medium.woff') }}') format('woff'),
-      url('{{ asset('fonts/Poppins-Medium.ttf') }}') format('truetype'),
-      url('{{ asset('fonts/Poppins-Medium.svg#Poppins-Medium') }}') format('svg');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('{{ asset('fonts/Poppins-SemiBold.eot') }}');
-  src: url('{{ asset('fonts/Poppins-SemiBold.eot?#iefix') }}') format('embedded-opentype'),
-      url('{{ asset('fonts/Poppins-SemiBold.woff2') }}') format('woff2'),
-      url('{{ asset('fonts/Poppins-SemiBold.woff') }}') format('woff'),
-      url('{{ asset('fonts/Poppins-SemiBold.ttf') }}') format('truetype'),
-      url('{{ asset('fonts/Poppins-SemiBold.svg#Poppins-SemiBold') }}') format('svg');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('{{ asset('fonts/Poppins-Bold.eot') }}');
-  src: url('{{ asset('fonts/Poppins-Bold.eot?#iefix') }}') format('embedded-opentype'),
-      url('{{ asset('fonts/Poppins-Bold.woff2') }}') format('woff2'),
-      url('{{ asset('fonts/Poppins-Bold.woff') }}') format('woff'),
-      url('{{ asset('fonts/Poppins-Bold.ttf') }}') format('truetype'),
-      url('{{ asset('fonts/Poppins-Bold.svg#Poppins-Bold') }}') format('svg');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('{{ asset('fonts/Poppins-Regular.eot') }}');
-  src: url('{{ asset('fonts/Poppins-Regular.eot?#iefix') }}') format('embedded-opentype'),
-      url('{{ asset('fonts/Poppins-Regular.woff2') }}') format('woff2'),
-      url('{{ asset('fonts/Poppins-Regular.woff') }}') format('woff'),
-      url('{{ asset('fonts/Poppins-Regular.ttf') }}') format('truetype'),
-      url('{{ asset('fonts/Poppins-Regular.svg#Poppins-Regular') }}') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-:root {
-  --baseFont: 'Poppins';
-}
-body {
-	font-family: 'Poppins';
-}
 
         /* .menuColMain, .bannerContent, section {
   opacity: 0;
@@ -322,7 +263,7 @@ html.homeload {
   };
 </script>
         {{-- frontend site js and footer --}}
-        @include('livewire.common.footer')
+@include('livewire.common.footer')
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
 <script src="{{asset('frontend/js/jquery.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
@@ -352,9 +293,9 @@ breakpoints: {
 },
 });
 </script>
-             {{-- frontend site js and footer --}}
+  {{-- frontend site js and footer --}}
         @stack('modals')
-        @livewireScripts
+  @livewireScripts
 
 <script>
   @if(Session::has('message'))
