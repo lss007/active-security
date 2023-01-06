@@ -10,11 +10,14 @@ use Livewire\Component;
 class Kaufhausdetektive extends Component
 {
     public $Kaufhausmain, $KaufhausPagesection ,  $Kaufhaus_pagebanner;
-    public function render()
-    {
+    public function mount(){
         $this->Kaufhausmain = AllPagesBanner::where('cat_id' ,3)->where('status',1)->first();
         $this->KaufhausPagesection  = ServicesPageSection::where('page_cat_id', 3)->where('status',1)->first();
         $this->Kaufhaus_pagebanner = ServicesPageBanner::where('page_cat_id', 3)->where('status',1)->first();
+    }
+    public function render()
+    {
+
         return view('livewire.frontend.kaufhausdetektive')->layout('layouts.frontend');
     }
 }

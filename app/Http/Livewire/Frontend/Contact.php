@@ -17,11 +17,14 @@ class Contact extends Component
 
 public $surname, $email, $regarding, $client_message  ,$Contactmain ,$getContactSection;
 public $checked;
-public function render()
-{
 
+
+public function mount(){
     $this->Contactmain       =   AllPagesBanner::where('cat_id' ,12)->where('status',1)->first();
     $this->getContactSection =   ContactSection::where('status',1)->first();
+}
+public function render()
+{
 
     return view('livewire.frontend.contact')->layout('layouts.frontend');
 }

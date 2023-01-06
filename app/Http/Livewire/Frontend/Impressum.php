@@ -10,11 +10,14 @@ use Livewire\Component;
 class Impressum extends Component
 {
     public $getAddress ,$impressum_pagebanner;
-    public function render()
-    {
+    public function mount(){
         $this->getAddress = FooterContactAddress::first();
         $this->impressum_pagebanner = AllPagesBanner::where('cat_id' ,13)->where('status',1)->first();
 
+    }
+    public function render()
+    {
+     
         return view('livewire.frontend.impressum')->layout('layouts.frontend');
     }
 }
