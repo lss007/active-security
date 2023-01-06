@@ -12,7 +12,9 @@
         <ul class="pLogo">
             @if(isset( $getlogo ))
             @foreach( $getlogo  as $logo)
-          <li><img src="{{ asset('storage/Home-clients/'.$logo->image)}}" alt="..."></li>
+          <li><img src="{{(isset($logo->image)) 
+            ? asset('storage/Home-clients/'.$logo->image) :asset('no_image.jpg')}}" alt="..."></li>
+         
           @endforeach
           @endif
         </ul>
