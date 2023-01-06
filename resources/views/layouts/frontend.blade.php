@@ -269,7 +269,7 @@ html.homeload {
 <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/swiper-bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('frontend/js/script.js')}}" type="text/javascript"></script>
-<script src="{{asset('frontend/js/toastr.js')}}" type="text/javascript"></script>
+
 
 <script>
 var swiper = new Swiper(".serviceSwiper", {
@@ -297,25 +297,7 @@ breakpoints: {
         @stack('modals')
   @livewireScripts
 
-<script>
-  @if(Session::has('message'))
-  var type = "{{ Session::get('alert-type','info') }}"
-  switch(type){
-      case 'info':
-      toastr.info(" {{ Session::get('message') }} ");
-        break;
-      case 'success':
-      toastr.success(" {{ Session::get('message') }} ");
-        break;
-      case 'warning':
-      toastr.warning(" {{ Session::get('message') }} ");
-        break;
-      case 'error':
-      toastr.error(" {{ Session::get('message') }} ");
-        break; 
-  }
-  @endif 
-</script>
+
 {{-- toastr js  --}}
     </body>
 </html>
