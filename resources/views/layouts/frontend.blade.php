@@ -38,7 +38,7 @@
     </div>
   </div> --}}
  
-     @include('livewire.common.header')
+     @include('livewire.common.header'  )
        <!-- Page Content -->
         @if (isset($header))
             <header class="bg-dark shadow" >

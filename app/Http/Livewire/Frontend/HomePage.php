@@ -7,6 +7,7 @@ use App\Models\HomeSectionFive;
 use App\Models\HomeSectionOne;
 use App\Models\HomeSectionSlider;
 use App\Models\HomeSectionTwo;
+use App\Models\Navbar;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -21,6 +22,8 @@ class HomePage extends Component
         $this->HomeSectiontwo =  HomeSectionTwo::where('status',1)->first();
         $this->HomeSliders =      HomeSectionSlider::where('status',1)->get();
         $this->HomeSecFive =    HomeSectionFive::where('status',1)->first();
+   
+       
     }
     public function render()
     {

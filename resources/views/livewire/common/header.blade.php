@@ -1,5 +1,6 @@
 
 <header>
+
 @php
  $navbarlogos = DB::table('footer_logos')->where('name','=','navbar')->where('status',1)->first();
  $navitems    = DB::table('navbars')->where('status',1)->where('ordering',1)->first();
