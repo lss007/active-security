@@ -14,15 +14,17 @@ class HomePage extends Component
 {
     public $homeBanner ,$active_secuirty ,$HomeSectiontwo ,$HomeSliders ,$HomeSecFive;
  
+
+    public function mount(){
+        $this->homeBanner =       HomeBanner::where('status',1)->first();
+        $this->active_secuirty  = HomeSectionOne::where('status',1)->first();
+        $this->HomeSectiontwo =  HomeSectionTwo::where('status',1)->first();
+        $this->HomeSliders =      HomeSectionSlider::where('status',1)->get();
+        $this->HomeSecFive =    HomeSectionFive::where('status',1)->first();
+    }
     public function render()
     {
-     
-       $this->homeBanner =       HomeBanner::where('status',1)->first();
-       $this->active_secuirty  = HomeSectionOne::where('status',1)->first();
-       $this->HomeSectiontwo =  HomeSectionTwo::where('status',1)->first();
-       $this->HomeSliders =      HomeSectionSlider::where('status',1)->get();
-       $this->HomeSecFive =    HomeSectionFive::where('status',1)->first();
-
+       
         return view('livewire.frontend.home-page')->layout('layouts.frontend');
     }
 }

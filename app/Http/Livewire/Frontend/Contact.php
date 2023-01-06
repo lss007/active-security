@@ -14,9 +14,9 @@ use Livewire\Component;
 
 class Contact extends Component
 {
-    public $surname, $email, $regarding, $client_message  ,$Contactmain ,$getContactSection;
-    public $checked;
-    
+
+public $surname, $email, $regarding, $client_message  ,$Contactmain ,$getContactSection;
+public $checked;
 public function render()
 {
 
@@ -38,6 +38,7 @@ public function render()
       'email.required' => 'E-mail erforderlich.',
       'regarding.required' => 'Betreff erforderlich.',
       'client_message.required' => 'Nachricht erforderlich.',
+
       'checked.required' => 'Bestätigung erforderlich',
 
     ];

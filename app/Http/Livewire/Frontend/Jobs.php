@@ -11,11 +11,16 @@ class Jobs extends Component
 {
 
     public $Jobsmain ,$Jobs_pagebanner  ,$getJobsec ;
-    public function render()
-    {
+
+
+    public function mount(){
         $this->Jobsmain     = AllPagesBanner::where('cat_id' ,11)->where('status',1)->first();
         $this->Jobs_pagebanner  = ServicesPageBanner::where('page_cat_id', 11)->where('status',1)->first();
         $this->getJobsec =  JobSection::first();
+    }
+    public function render()
+    {
+       
         return view('livewire.frontend.jobs')->layout('layouts.frontend');
     }
 }
